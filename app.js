@@ -40,7 +40,7 @@ const TEXTS = [
 const state = {
   texts: [],
   query: "",
-  variantSearch: false,
+  variantSearch: true,
   wholeWord: true,
   caseSensitive: false,
   contextSize: 2
@@ -54,6 +54,25 @@ const contextSelect = document.querySelector("#context-size");
 const statusEl = document.querySelector("#load-status");
 const overviewEl = document.querySelector("#overview");
 const resultsEl = document.querySelector("#results");
+const TRANSLITERATION_MAP = {
+  "\u0100": "A",
+  "\u0101": "a",
+  "\u0112": "E",
+  "\u0113": "e",
+  "\u012A": "I",
+  "\u012B": "i",
+  "\u014C": "O",
+  "\u014D": "o",
+  "\u016A": "U",
+  "\u016B": "u",
+  "\u010C": "C",
+  "\u010D": "c",
+  "\u0160": "S",
+  "\u0161": "s",
+  "\u01F0": "j",
+  "\u01E6": "G",
+  "\u01E7": "g"
+};
 
 init();
 
@@ -175,7 +194,7 @@ function renderResults(summaries, search) {
     statusEl.textContent = `${state.texts.length} texts ready`;
     resultsEl.innerHTML = `
       <div class="empty-state">
-        Enter a word to compare all four texts at once. Turn on Variants to search several forms together.
+        Enter a word to compare all four texts at once. Plain letters also match diacritics, so dewan finds dēwān.
       </div>
     `;
     return;
@@ -183,7 +202,7 @@ function renderResults(summaries, search) {
 
   const containing = summaries.filter((summary) => summary.total > 0).length;
   const totalHits = summaries.reduce((sum, summary) => sum + summary.total, 0);
-  const variantLabel = search.terms.length > 1 ? ` · ${search.terms.length} variants` : "";
+  const variantLabel = search.terms.length > 1 ? ` · ${search.terms.length} terms` : "";
   statusEl.textContent = `${containing} of ${summaries.length} texts · ${totalHits} hits${variantLabel}`;
 
   resultsEl.innerHTML = summaries
@@ -210,7 +229,7 @@ function renderMatchList(matches, total) {
         .map((match) => `
           <section class="match">
             <div class="location">${escapeHtml(match.location)}</div>
-            <p class="snippet">${highlight(escapeHtml(match.snippet))}</p>
+            <p class="snippet">${highlight(match.snippet)}</p>
           </section>
         `)
         .join("")}
@@ -227,7 +246,7 @@ function getMatches(text, search) {
   const matches = [];
 
   text.records.forEach((record, recordIndex) => {
-    const target = state.caseSensitive ? record.text : record.text.toLocaleLowerCase();
+    const target = foldText(record.text, state.caseSensitive).text;
     const found = search.regex.test(target);
     search.regex.lastIndex = 0;
 
@@ -252,7 +271,7 @@ function createSearch(query) {
     return null;
   }
 
-  const normalizedTerms = state.caseSensitive ? terms : terms.map((term) => term.toLocaleLowerCase());
+  const normalizedTerms = terms.map((term) => foldText(term, state.caseSensitive).text);
   const pattern = buildPattern(normalizedTerms);
   return {
     terms,
@@ -284,15 +303,63 @@ function makeSnippet(records, recordIndex) {
     .join(" ");
 }
 
-function highlight(safeText) {
-  const terms = getSearchTerms(escapeHtml(state.query));
-  if (!terms.length) {
-    return safeText;
+function highlight(text) {
+  const search = createSearch(state.query);
+  if (!search) {
+    return escapeHtml(text);
   }
 
-  const flags = state.caseSensitive ? "gu" : "giu";
-  const pattern = buildPattern(terms);
-  return safeText.replace(new RegExp(pattern, flags), (match) => `<mark>${match}</mark>`);
+  const ranges = findMatchRanges(text, search);
+  if (!ranges.length) {
+    return escapeHtml(text);
+  }
+
+  let html = "";
+  let cursor = 0;
+  ranges.forEach(([start, end]) => {
+    html += escapeHtml(text.slice(cursor, start));
+    html += `<mark>${escapeHtml(text.slice(start, end))}</mark>`;
+    cursor = end;
+  });
+  html += escapeHtml(text.slice(cursor));
+  return html;
+}
+
+function findMatchRanges(text, search) {
+  const folded = foldText(text, state.caseSensitive);
+  const ranges = [];
+  let match;
+  search.regex.lastIndex = 0;
+
+  while ((match = search.regex.exec(folded.text)) !== null) {
+    const start = folded.map[match.index];
+    const end = folded.map[match.index + match[0].length - 1] + 1;
+    const previous = ranges[ranges.length - 1];
+    if (previous && start <= previous[1]) {
+      previous[1] = Math.max(previous[1], end);
+    } else {
+      ranges.push([start, end]);
+    }
+  }
+
+  search.regex.lastIndex = 0;
+  return ranges;
+}
+
+function foldText(value, caseSensitive = false) {
+  let text = "";
+  const map = [];
+
+  Array.from(String(value)).forEach((char, index) => {
+    const folded = TRANSLITERATION_MAP[char] || char.normalize("NFD").replace(/\p{M}/gu, "");
+    const normalized = caseSensitive ? folded : folded.toLocaleLowerCase();
+    Array.from(normalized).forEach((foldedChar) => {
+      text += foldedChar;
+      map.push(index);
+    });
+  });
+
+  return { text, map };
 }
 
 function countWords(raw) {

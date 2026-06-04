@@ -24,6 +24,25 @@ const summaryEl = document.querySelector("#pseudo-summary");
 const galleryEl = document.querySelector("#pseudo-gallery");
 const expandAllEl = document.querySelector("#expand-all");
 const collapseAllEl = document.querySelector("#collapse-all");
+const TRANSLITERATION_MAP = {
+  "\u0100": "A",
+  "\u0101": "a",
+  "\u0112": "E",
+  "\u0113": "e",
+  "\u012A": "I",
+  "\u012B": "i",
+  "\u014C": "O",
+  "\u014D": "o",
+  "\u016A": "U",
+  "\u016B": "u",
+  "\u010C": "C",
+  "\u010D": "c",
+  "\u0160": "S",
+  "\u0161": "s",
+  "\u01F0": "j",
+  "\u01E6": "G",
+  "\u01E7": "g"
+};
 
 initPseudo();
 
@@ -116,10 +135,10 @@ function populateTierFilter() {
 }
 
 function applyFilters() {
-  const query = pseudoState.query.toLocaleLowerCase();
+  const terms = getQueryTerms();
   pseudoState.filtered = pseudoState.all
     .filter((record) => !pseudoState.tier || record.tier === pseudoState.tier)
-    .filter((record) => !query || searchableText(record).includes(query))
+    .filter((record) => !terms.length || terms.some((term) => searchableText(record).includes(term)))
     .sort(sortRecords);
 
   renderPseudo();
@@ -220,7 +239,7 @@ function toggleCard(id) {
 }
 
 function searchableText(record) {
-  return [
+  return foldText([
     record.sharedWords,
     record.sourcePreview,
     record.targetPreview,
@@ -230,17 +249,80 @@ function searchableText(record) {
     record.tier,
     String(record.rank),
     String(record.score)
-  ].join(" ").toLocaleLowerCase();
+  ].join(" ")).text;
 }
 
 function highlight(value) {
-  const safe = escapeHtml(value);
-  if (!pseudoState.query) {
-    return safe;
+  const terms = getQueryTerms();
+  if (!terms.length) {
+    return escapeHtml(value);
   }
 
-  const escaped = escapeRegExp(escapeHtml(pseudoState.query));
-  return safe.replace(new RegExp(escaped, "giu"), (match) => `<mark>${match}</mark>`);
+  const pattern = buildPattern(terms);
+  const regex = new RegExp(pattern, "gu");
+  const ranges = findMatchRanges(value, regex);
+  if (!ranges.length) {
+    return escapeHtml(value);
+  }
+
+  let html = "";
+  let cursor = 0;
+  ranges.forEach(([start, end]) => {
+    html += escapeHtml(String(value).slice(cursor, start));
+    html += `<mark>${escapeHtml(String(value).slice(start, end))}</mark>`;
+    cursor = end;
+  });
+  html += escapeHtml(String(value).slice(cursor));
+  return html;
+}
+
+function getQueryTerms() {
+  return [...new Set(pseudoState.query.split(/[,\s;]+/)
+    .map((term) => foldText(term.trim()).text)
+    .filter(Boolean))];
+}
+
+function buildPattern(terms) {
+  return terms
+    .slice()
+    .sort((a, b) => b.length - a.length)
+    .map(escapeRegExp)
+    .join("|");
+}
+
+function findMatchRanges(value, regex) {
+  const folded = foldText(value);
+  const ranges = [];
+  let match;
+
+  regex.lastIndex = 0;
+  while ((match = regex.exec(folded.text)) !== null) {
+    const start = folded.map[match.index];
+    const end = folded.map[match.index + match[0].length - 1] + 1;
+    const previous = ranges[ranges.length - 1];
+    if (previous && start <= previous[1]) {
+      previous[1] = Math.max(previous[1], end);
+    } else {
+      ranges.push([start, end]);
+    }
+  }
+
+  return ranges;
+}
+
+function foldText(value) {
+  let text = "";
+  const map = [];
+
+  Array.from(String(value)).forEach((char, index) => {
+    const folded = (TRANSLITERATION_MAP[char] || char.normalize("NFD").replace(/\p{M}/gu, "")).toLocaleLowerCase();
+    Array.from(folded).forEach((foldedChar) => {
+      text += foldedChar;
+      map.push(index);
+    });
+  });
+
+  return { text, map };
 }
 
 function titleCase(value) {

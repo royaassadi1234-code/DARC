@@ -59,6 +59,7 @@ select {
 
 .site-nav {
   display: flex;
+  align-items: flex-start;
   gap: 6px;
   padding: 4px;
   border: 1px solid var(--line);
@@ -84,7 +85,8 @@ select {
 }
 
 .nav-menu {
-  position: relative;
+  display: grid;
+  gap: 4px;
 }
 
 .nav-menu summary {
@@ -99,10 +101,6 @@ select {
 }
 
 .nav-menu-list {
-  position: absolute;
-  top: calc(100% + 8px);
-  right: 0;
-  z-index: 5;
   display: grid;
   gap: 4px;
   min-width: 180px;
@@ -110,7 +108,7 @@ select {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: #ffffff;
-  box-shadow: var(--shadow);
+  box-shadow: 0 8px 22px rgba(29, 43, 57, 0.1);
 }
 
 .nav-menu-list a {

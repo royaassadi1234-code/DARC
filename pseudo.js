@@ -1,4 +1,9 @@
-const DATA_URL = "pseudo-data.json";
+const pageConfig = document.body.dataset;
+const DATA_URL = pageConfig.dataUrl || "pseudo-data.json";
+const SOURCE_KEY = pageConfig.sourceKey || "Dd";
+const TARGET_KEY = pageConfig.targetKey || "PY";
+const SOURCE_LABEL = pageConfig.sourceLabel || "DD";
+const TARGET_LABEL = pageConfig.targetLabel || "PY";
 const PAGE_SIZE = 40;
 
 const pseudoState = {
@@ -72,7 +77,10 @@ function bindPseudoEvents() {
 }
 
 function normalizeRecord(raw, index) {
-  const sentenceRangeKey = Object.keys(raw).find((key) => key.includes("PY Sentence Range")) || "PY Sentence Range";
+  const sentenceRangeKey = findKey(raw, `${TARGET_KEY} Sentence Range`, "Sentence Range");
+  const sourcePreviewKey = findKey(raw, `${SOURCE_KEY} Paragraph Preview`, `${SOURCE_LABEL} Paragraph Preview`);
+  const targetPreviewKey = findKey(raw, `${TARGET_KEY} Paragraph Preview`, `${TARGET_LABEL} Paragraph Preview`);
+
   return {
     id: `match-${index + 1}`,
     rank: Number(raw["Candidate Rank"]) || index + 1,
@@ -81,10 +89,16 @@ function normalizeRecord(raw, index) {
     cosine: raw["IDF Cosine"] || "N/A",
     sharedCount: Number(raw["Shared Distinct Words"]) || 0,
     sharedWords: raw["Shared Words"] || "N/A",
-    ddPreview: raw["Dd Paragraph Preview"] || "N/A",
-    pyPreview: raw["PY Paragraph Preview"] || "N/A",
-    pyRange: raw[sentenceRangeKey] || "N/A"
+    sourcePreview: raw[sourcePreviewKey] || "N/A",
+    targetPreview: raw[targetPreviewKey] || "N/A",
+    targetRange: raw[sentenceRangeKey] || "N/A"
   };
+}
+
+function findKey(record, preferred, fallback) {
+  return Object.keys(record).find((key) => key === preferred || key.includes(preferred)) ||
+    Object.keys(record).find((key) => key.includes(fallback)) ||
+    preferred;
 }
 
 function populateTierFilter() {
@@ -175,19 +189,19 @@ function renderCard(record) {
           <span class="siglum">Rank ${record.rank}</span>
           <strong>${highlight(record.sharedWords)}</strong>
         </span>
-        <span class="pseudo-card-meta">${titleCase(record.tier)} · ${record.score.toFixed(4)}</span>
+        <span class="pseudo-card-meta">${titleCase(record.tier)} | ${record.score.toFixed(4)}</span>
       </button>
       <div class="pseudo-card-body">
         <section>
-          <h2>DD Paragraph Preview</h2>
-          <p>${highlight(record.ddPreview)}</p>
+          <h2>${escapeHtml(SOURCE_LABEL)} Paragraph Preview</h2>
+          <p>${highlight(record.sourcePreview)}</p>
         </section>
         <section>
-          <h2>PY Paragraph Preview</h2>
-          <p>${highlight(record.pyPreview)}</p>
+          <h2>${escapeHtml(TARGET_LABEL)} Paragraph Preview</h2>
+          <p>${highlight(record.targetPreview)}</p>
         </section>
         <dl class="detail-grid">
-          <div><dt>PY Sentence Range</dt><dd>${escapeHtml(record.pyRange)}</dd></div>
+          <div><dt>${escapeHtml(TARGET_LABEL)} Sentence Range</dt><dd>${escapeHtml(record.targetRange)}</dd></div>
           <div><dt>IDF Cosine</dt><dd>${escapeHtml(record.cosine)}</dd></div>
           <div><dt>Shared Distinct Words</dt><dd>${record.sharedCount}</dd></div>
         </dl>
@@ -209,9 +223,9 @@ function toggleCard(id) {
 function searchableText(record) {
   return [
     record.sharedWords,
-    record.ddPreview,
-    record.pyPreview,
-    record.pyRange,
+    record.sourcePreview,
+    record.targetPreview,
+    record.targetRange,
     record.tier,
     String(record.rank),
     String(record.score)

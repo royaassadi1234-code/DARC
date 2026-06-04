@@ -144,7 +144,7 @@ function parseRecords(raw) {
   const lines = raw.split(/\r?\n/);
   const hasTsvRecords = lines.some((line) => {
     const trimmed = line.trim();
-    return trimmed && !trimmed.startsWith("#") && trimmed.split("\t").length >= 3;
+    return trimmed && !trimmed.startsWith("#") && isTsvRecord(trimmed);
   });
 
   return hasTsvRecords ? parseTsvRecords(lines) : parseSectionRecords(lines);
@@ -156,7 +156,7 @@ function parseTsvRecords(lines) {
       const trimmed = line.trim();
       const columns = trimmed.split("\t");
       const isComment = trimmed.startsWith("#");
-      const hasTsvShape = columns.length >= 3 && !isComment;
+      const hasTsvShape = isTsvRecord(trimmed) && !isComment;
 
       return {
         index,
@@ -167,6 +167,14 @@ function parseTsvRecords(lines) {
       };
     })
     .filter((record) => record.searchable);
+}
+
+function isTsvRecord(line) {
+  const columns = line.split("\t");
+  return columns.length >= 3 &&
+    columns[0].trim().length > 0 &&
+    columns[1].trim().length > 0 &&
+    columns.slice(2).join(" ").trim().length > 0;
 }
 
 function parseSectionRecords(lines) {

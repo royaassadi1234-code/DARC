@@ -6,7 +6,7 @@ const THIRD_KEY = pageConfig.thirdKey || "";
 const SOURCE_LABEL = pageConfig.sourceLabel || "DD";
 const TARGET_LABEL = pageConfig.targetLabel || "PY";
 const THIRD_LABEL = pageConfig.thirdLabel || "";
-const PAGE_SIZE = 40;
+const PAGE_SIZE = 5;
 
 const pseudoState = {
   all: [],
@@ -15,7 +15,7 @@ const pseudoState = {
   query: "",
   tier: "",
   sort: "rank",
-  visibleCount: PAGE_SIZE
+  currentPage: 1
 };
 
 const queryEl = document.querySelector("#pseudo-query");
@@ -72,23 +72,24 @@ async function initPseudo() {
 function bindPseudoEvents() {
   queryEl.addEventListener("input", () => {
     pseudoState.query = queryEl.value.trim();
-    pseudoState.visibleCount = PAGE_SIZE;
+    pseudoState.currentPage = 1;
     applyFilters();
   });
 
   tierEl.addEventListener("change", () => {
     pseudoState.tier = tierEl.value;
-    pseudoState.visibleCount = PAGE_SIZE;
+    pseudoState.currentPage = 1;
     applyFilters();
   });
 
   sortEl.addEventListener("change", () => {
     pseudoState.sort = sortEl.value;
+    pseudoState.currentPage = 1;
     applyFilters();
   });
 
   expandAllEl.addEventListener("click", () => {
-    pseudoState.filtered.slice(0, pseudoState.visibleCount).forEach((record) => pseudoState.expanded.add(record.id));
+    getVisibleRecords().forEach((record) => pseudoState.expanded.add(record.id));
     renderPseudo();
   });
 
@@ -162,9 +163,16 @@ function sortRecords(a, b) {
 }
 
 function renderPseudo() {
-  const visible = pseudoState.filtered.slice(0, pseudoState.visibleCount);
+  const pageCount = getPageCount();
+  if (pseudoState.currentPage > pageCount) {
+    pseudoState.currentPage = pageCount;
+  }
+
+  const visible = getVisibleRecords();
   const totalScore = pseudoState.filtered.reduce((sum, record) => sum + record.score, 0);
   const averageScore = pseudoState.filtered.length ? totalScore / pseudoState.filtered.length : 0;
+  const pageStart = pseudoState.filtered.length ? (pseudoState.currentPage - 1) * PAGE_SIZE + 1 : 0;
+  const pageEnd = Math.min(pseudoState.currentPage * PAGE_SIZE, pseudoState.filtered.length);
 
   statusEl.textContent = `${pseudoState.filtered.length} of ${pseudoState.all.length} matches`;
   summaryEl.innerHTML = `
@@ -179,9 +187,9 @@ function renderPseudo() {
       <p class="meta">Within the current result set</p>
     </article>
     <article class="text-card">
-      <div class="siglum">Visible</div>
-      <h2>${visible.length.toLocaleString()}</h2>
-      <p class="meta">Showing ${Math.min(pseudoState.visibleCount, pseudoState.filtered.length).toLocaleString()} records</p>
+      <div class="siglum">Page</div>
+      <h2>${pseudoState.currentPage.toLocaleString()}</h2>
+      <p class="meta">Showing ranks ${pageStart.toLocaleString()}-${pageEnd.toLocaleString()}</p>
     </article>
   `;
 
@@ -192,20 +200,59 @@ function renderPseudo() {
 
   galleryEl.innerHTML = `
     ${visible.map(renderCard).join("")}
-    ${pseudoState.filtered.length > visible.length ? `<button class="load-more" id="load-more" type="button">Show ${Math.min(PAGE_SIZE, pseudoState.filtered.length - visible.length)} more</button>` : ""}
+    ${renderPagination(pageCount)}
   `;
 
   galleryEl.querySelectorAll("[data-card-id]").forEach((button) => {
     button.addEventListener("click", () => toggleCard(button.dataset.cardId));
   });
 
-  const loadMore = galleryEl.querySelector("#load-more");
-  if (loadMore) {
-    loadMore.addEventListener("click", () => {
-      pseudoState.visibleCount += PAGE_SIZE;
+  galleryEl.querySelectorAll("[data-page]").forEach((button) => {
+    button.addEventListener("click", () => {
+      pseudoState.currentPage = Number(button.dataset.page);
       renderPseudo();
     });
+  });
+}
+
+function getVisibleRecords() {
+  const start = (pseudoState.currentPage - 1) * PAGE_SIZE;
+  return pseudoState.filtered.slice(start, start + PAGE_SIZE);
+}
+
+function getPageCount() {
+  return Math.max(1, Math.ceil(pseudoState.filtered.length / PAGE_SIZE));
+}
+
+function renderPagination(pageCount) {
+  if (pageCount <= 1) {
+    return "";
   }
+
+  const current = pseudoState.currentPage;
+  const pages = getPaginationPages(pageCount, current);
+  return `
+    <nav class="rank-pagination" aria-label="Rank pages">
+      ${pages.map((page) => page === "gap"
+        ? `<span class="page-gap" aria-hidden="true">...</span>`
+        : `<button class="page-dot ${page === current ? "active" : ""}" type="button" data-page="${page}" aria-label="Go to rank page ${page}">${page}</button>`
+      ).join("")}
+    </nav>
+  `;
+}
+
+function getPaginationPages(pageCount, current) {
+  const pages = new Set([1, pageCount, current, current - 1, current + 1]);
+  const ordered = [...pages]
+    .filter((page) => page >= 1 && page <= pageCount)
+    .sort((a, b) => a - b);
+
+  return ordered.flatMap((page, index) => {
+    if (index > 0 && page - ordered[index - 1] > 1) {
+      return ["gap", page];
+    }
+    return [page];
+  });
 }
 
 function renderCard(record) {

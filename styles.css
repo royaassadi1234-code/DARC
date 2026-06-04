@@ -184,8 +184,7 @@ h1 {
   font-weight: 600;
 }
 
-.action-button,
-.load-more {
+.action-button {
   min-height: 50px;
   border: 1px solid var(--accent);
   border-radius: 7px;
@@ -448,9 +447,41 @@ mark.term-6 {
   overflow-wrap: anywhere;
 }
 
-.load-more {
-  justify-self: center;
-  min-width: 180px;
+.rank-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  padding: 10px 0 2px;
+  flex-wrap: wrap;
+}
+
+.page-dot {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #c8d0d9;
+  border-radius: 999px;
+  color: var(--accent-strong);
+  background: #ffffff;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.page-dot.active {
+  color: #ffffff;
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
+.page-gap {
+  display: inline-grid;
+  place-items: center;
+  min-width: 20px;
+  height: 30px;
+  color: var(--muted);
+  font-weight: 800;
 }
 
 @media (max-width: 920px) {

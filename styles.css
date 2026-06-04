@@ -81,6 +81,31 @@ select {
   background: var(--accent);
 }
 
+.sub-nav {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 0 2px;
+  flex-wrap: wrap;
+}
+
+.sub-nav a {
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 8px 12px;
+  color: var(--accent-strong);
+  background: rgba(255, 255, 255, 0.76);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.sub-nav a.active {
+  color: #ffffff;
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
 .eyebrow {
   margin: 0 0 5px;
   color: var(--accent);

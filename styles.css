@@ -278,6 +278,21 @@ h1 {
   gap: 12px;
 }
 
+.resources-showcase {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.66)),
+    url("https://upload.wikimedia.org/wikipedia/commons/6/68/Middle_Persian_%28Pahlavi%29_Manuscript_-_Matenadaran_Museum_Yerevan.jpg") center / cover;
+  box-shadow: var(--shadow);
+}
+
+.resources-showcase .text-card {
+  background: rgba(255, 255, 255, 0.93);
+  backdrop-filter: blur(2px);
+}
+
 .resources-grid a {
   color: var(--accent-strong);
   font-weight: 800;

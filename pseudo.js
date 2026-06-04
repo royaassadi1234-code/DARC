@@ -204,22 +204,9 @@ function renderCard(record) {
           <h2>${escapeHtml(TARGET_LABEL)} Paragraph Preview</h2>
           <p>${highlight(record.targetPreview)}</p>
         </section>
-        <dl class="detail-grid">
-          ${renderDetail(`${TARGET_LABEL} Sentence Range`, record.targetRange)}
-          ${record.targetChapterStanza ? renderDetail(`${TARGET_LABEL} Chapter/Stanza`, record.targetChapterStanza) : ""}
-          ${record.targetChapter ? renderDetail(`${TARGET_LABEL} Chapter`, record.targetChapter) : ""}
-          ${record.targetStanza ? renderDetail(`${TARGET_LABEL} Stanza`, record.targetStanza) : ""}
-          ${record.targetXmlSection ? renderDetail(`${TARGET_LABEL} XML Section`, record.targetXmlSection) : ""}
-          ${renderDetail("IDF Cosine", record.cosine)}
-          ${renderDetail("Shared Distinct Words", record.sharedCount)}
-        </dl>
       </div>
     </article>
   `;
-}
-
-function renderDetail(label, value) {
-  return `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`;
 }
 
 function toggleCard(id) {

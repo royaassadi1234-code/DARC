@@ -429,33 +429,6 @@ mark {
   overflow-wrap: anywhere;
 }
 
-.detail-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-  margin: 0;
-}
-
-.detail-grid div {
-  border: 1px solid #edf0f3;
-  border-radius: 7px;
-  padding: 10px;
-  background: #fbfcfd;
-}
-
-.detail-grid dt {
-  color: var(--muted);
-  font-size: 0.78rem;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-.detail-grid dd {
-  margin: 5px 0 0;
-  color: var(--ink);
-  font-weight: 700;
-}
-
 .load-more {
   justify-self: center;
   min-width: 180px;
@@ -495,8 +468,7 @@ mark {
   }
 
   .overview,
-  .pseudo-summary,
-  .detail-grid {
+  .pseudo-summary {
     grid-template-columns: 1fr;
   }
 

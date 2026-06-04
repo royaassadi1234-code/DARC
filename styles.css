@@ -333,6 +333,26 @@ mark {
   box-shadow: inset 0 -1px 0 rgba(90, 18, 18, 0.35);
 }
 
+mark.term-2 {
+  background: #2563a7;
+}
+
+mark.term-3 {
+  background: #267052;
+}
+
+mark.term-4 {
+  background: #7a3ea3;
+}
+
+mark.term-5 {
+  background: #9a5a15;
+}
+
+mark.term-6 {
+  background: #2d6870;
+}
+
 .more {
   padding: 0 16px 15px 150px;
   color: var(--muted);

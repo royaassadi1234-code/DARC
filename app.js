@@ -73,6 +73,7 @@ const TRANSLITERATION_MAP = {
   "\u01E6": "G",
   "\u01E7": "g"
 };
+const HIGHLIGHT_CLASS_COUNT = 6;
 
 init();
 
@@ -309,41 +310,60 @@ function highlight(text) {
     return escapeHtml(text);
   }
 
-  const ranges = findMatchRanges(text, search);
+  const ranges = findMatchRanges(text, search.terms);
   if (!ranges.length) {
     return escapeHtml(text);
   }
 
   let html = "";
   let cursor = 0;
-  ranges.forEach(([start, end]) => {
+  ranges.forEach(({ start, end, termIndex }) => {
     html += escapeHtml(text.slice(cursor, start));
-    html += `<mark>${escapeHtml(text.slice(start, end))}</mark>`;
+    html += `<mark class="term-${(termIndex % HIGHLIGHT_CLASS_COUNT) + 1}">${escapeHtml(text.slice(start, end))}</mark>`;
     cursor = end;
   });
   html += escapeHtml(text.slice(cursor));
   return html;
 }
 
-function findMatchRanges(text, search) {
+function findMatchRanges(text, terms) {
   const folded = foldText(text, state.caseSensitive);
-  const ranges = [];
-  let match;
-  search.regex.lastIndex = 0;
+  const matches = [];
 
-  while ((match = search.regex.exec(folded.text)) !== null) {
-    const start = folded.map[match.index];
-    const end = folded.map[match.index + match[0].length - 1] + 1;
-    const previous = ranges[ranges.length - 1];
-    if (previous && start <= previous[1]) {
-      previous[1] = Math.max(previous[1], end);
-    } else {
-      ranges.push([start, end]);
+  terms.forEach((term, termIndex) => {
+    const foldedTerm = foldText(term, state.caseSensitive).text;
+    if (!foldedTerm) {
+      return;
     }
-  }
 
-  search.regex.lastIndex = 0;
-  return ranges;
+    const regex = new RegExp(buildPattern([foldedTerm]), "gu");
+    let match;
+    while ((match = regex.exec(folded.text)) !== null) {
+      matches.push({
+        start: folded.map[match.index],
+        end: folded.map[match.index + match[0].length - 1] + 1,
+        termIndex
+      });
+    }
+  });
+
+  return mergeRanges(matches);
+}
+
+function mergeRanges(matches) {
+  return matches
+    .sort((a, b) => a.start - b.start || (b.end - b.start) - (a.end - a.start))
+    .reduce((ranges, match) => {
+      const previous = ranges[ranges.length - 1];
+      if (previous && match.start < previous.end) {
+        if (match.end > previous.end) {
+          previous.end = match.end;
+        }
+      } else {
+        ranges.push({ ...match });
+      }
+      return ranges;
+    }, []);
 }
 
 function foldText(value, caseSensitive = false) {

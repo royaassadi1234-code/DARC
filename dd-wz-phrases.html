@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DD-WZ Phrase Matches</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body data-data-url="dd-wz-phrases-data.json" data-source-key="Dd" data-target-key="WZ" data-source-label="DD" data-target-label="WZ">
+    <main class="shell">
+      <section class="workspace" aria-labelledby="page-title">
+        <header class="masthead">
+          <div>
+            <p class="eyebrow">DD vs WZ subpart</p>
+            <h1 id="page-title">Phrase Matches</h1>
+          </div>
+          <div class="header-actions">
+            <nav class="site-nav" aria-label="Research pages">
+              <a href="index.html">Text Search</a>
+              <a href="pseudo.html">DD vs PY Matches</a>
+              <a class="active" href="dd-wz.html">DD vs WZ Matches</a>
+              <a href="py-wz.html">PY vs WZ Matches</a>
+              <a href="dd-py-wz.html">DD vs PY vs WZ</a>
+            </nav>
+            <div class="status" id="pseudo-status">Loading phrases...</div>
+          </div>
+        </header>
+
+        <nav class="sub-nav" aria-label="DD vs WZ sections">
+          <a href="dd-wz.html">Word Matches</a>
+          <a class="active" href="dd-wz-phrases.html">Phrase Matches</a>
+        </nav>
+
+        <section class="search-panel pseudo-controls" aria-label="Phrase controls">
+          <label class="search-box" for="pseudo-query">
+            <span>Search phrases or previews</span>
+            <input id="pseudo-query" type="search" placeholder="Type plain letters or several words: humat huxt" autocomplete="off" autofocus>
+          </label>
+          <div class="controls" role="group" aria-label="Phrase filters">
+            <label class="select-control" for="tier-filter"><span>Length</span><select id="tier-filter"><option value="">All</option></select></label>
+            <label class="select-control" for="sort-mode"><span>Sort</span><select id="sort-mode"><option value="rank">Rank</option><option value="score">Phrase length</option><option value="shared">Shared words</option></select></label>
+            <button class="action-button" id="expand-all" type="button">Expand</button>
+            <button class="action-button secondary" id="collapse-all" type="button">Collapse</button>
+          </div>
+        </section>
+
+        <section class="pseudo-summary" id="pseudo-summary" aria-label="Phrase summary"></section>
+        <section class="pseudo-gallery" id="pseudo-gallery" aria-live="polite"></section>
+      </section>
+    </main>
+    <script src="pseudo.js"></script>
+  </body>
+</html>

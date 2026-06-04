@@ -2,8 +2,10 @@ const pageConfig = document.body.dataset;
 const DATA_URL = pageConfig.dataUrl || "pseudo-data.json";
 const SOURCE_KEY = pageConfig.sourceKey || "Dd";
 const TARGET_KEY = pageConfig.targetKey || "PY";
+const THIRD_KEY = pageConfig.thirdKey || "";
 const SOURCE_LABEL = pageConfig.sourceLabel || "DD";
 const TARGET_LABEL = pageConfig.targetLabel || "PY";
+const THIRD_LABEL = pageConfig.thirdLabel || "";
 const PAGE_SIZE = 40;
 
 const pseudoState = {
@@ -100,6 +102,7 @@ function normalizeRecord(raw, index) {
   const sentenceRangeKey = findKey(raw, `${TARGET_KEY} Sentence Range`, "Sentence Range");
   const sourcePreviewKey = findKey(raw, `${SOURCE_KEY} Paragraph Preview`, `${SOURCE_LABEL} Paragraph Preview`);
   const targetPreviewKey = findKey(raw, `${TARGET_KEY} Paragraph Preview`, `${TARGET_LABEL} Paragraph Preview`);
+  const thirdPreviewKey = THIRD_KEY ? findKey(raw, `${THIRD_KEY} Paragraph Preview`, `${THIRD_LABEL} Paragraph Preview`) : "";
 
   return {
     id: `match-${index + 1}`,
@@ -111,6 +114,7 @@ function normalizeRecord(raw, index) {
     sharedWords: raw["Shared Words"] || "N/A",
     sourcePreview: raw[sourcePreviewKey] || "N/A",
     targetPreview: raw[targetPreviewKey] || "N/A",
+    thirdPreview: thirdPreviewKey ? raw[thirdPreviewKey] || "" : "",
     targetRange: raw[sentenceRangeKey] || "N/A",
     targetChapterStanza: raw[`${TARGET_KEY} Chapter/Stanza`] || "",
     targetChapter: raw[`${TARGET_KEY} Chapter`] || "",
@@ -224,6 +228,12 @@ function renderCard(record) {
           <h2>${escapeHtml(TARGET_LABEL)} Paragraph Preview</h2>
           <p>${highlight(record.targetPreview)}</p>
         </section>
+        ${record.thirdPreview ? `
+          <section>
+            <h2>${escapeHtml(THIRD_LABEL)} Paragraph Preview</h2>
+            <p>${highlight(record.thirdPreview)}</p>
+          </section>
+        ` : ""}
       </div>
     </article>
   `;
@@ -244,6 +254,7 @@ function searchableText(record) {
     record.sharedWords,
     record.sourcePreview,
     record.targetPreview,
+    record.thirdPreview,
     record.targetRange,
     record.targetChapterStanza,
     record.targetXmlSection,

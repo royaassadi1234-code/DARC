@@ -3,24 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DD vs PY Matches</title>
+    <title>DD vs PY vs WZ Matches</title>
     <link rel="stylesheet" href="styles.css">
   </head>
-  <body data-data-url="pseudo-data.json" data-source-key="Dd" data-target-key="PY" data-source-label="DD" data-target-label="PY">
+  <body data-data-url="dd-py-wz-data.json" data-source-key="Dd" data-target-key="PY" data-third-key="WZ" data-source-label="DD" data-target-label="PY" data-third-label="WZ">
     <main class="shell">
       <section class="workspace" aria-labelledby="page-title">
         <header class="masthead">
           <div>
-            <p class="eyebrow">Pseudo-dynamic comparison</p>
-            <h1 id="page-title">DD vs PY Matches</h1>
+            <p class="eyebrow">Three-way comparison</p>
+            <h1 id="page-title">DD vs PY vs WZ</h1>
           </div>
           <div class="header-actions">
             <nav class="site-nav" aria-label="Research pages">
               <a href="index.html">Text Search</a>
-              <a class="active" href="pseudo.html">DD vs PY Matches</a>
+              <a href="pseudo.html">DD vs PY Matches</a>
               <a href="dd-wz.html">DD vs WZ Matches</a>
               <a href="py-wz.html">PY vs WZ Matches</a>
-              <a href="dd-py-wz.html">DD vs PY vs WZ</a>
+              <a class="active" href="dd-py-wz.html">DD vs PY vs WZ</a>
             </nav>
             <div class="status" id="pseudo-status">Loading matches...</div>
           </div>
@@ -35,9 +35,7 @@
           <div class="controls" role="group" aria-label="Match filters">
             <label class="select-control" for="tier-filter">
               <span>Tier</span>
-              <select id="tier-filter">
-                <option value="">All</option>
-              </select>
+              <select id="tier-filter"><option value="">All</option></select>
             </label>
             <label class="select-control" for="sort-mode">
               <span>Sort</span>

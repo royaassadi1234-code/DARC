@@ -141,8 +141,17 @@ async function loadText(config) {
 
 function parseRecords(raw) {
   // Records are intentionally plain objects so translations or theme tags can be joined here later.
-  return raw
-    .split(/\r?\n/)
+  const lines = raw.split(/\r?\n/);
+  const hasTsvRecords = lines.some((line) => {
+    const trimmed = line.trim();
+    return trimmed && !trimmed.startsWith("#") && trimmed.split("\t").length >= 3;
+  });
+
+  return hasTsvRecords ? parseTsvRecords(lines) : parseSectionRecords(lines);
+}
+
+function parseTsvRecords(lines) {
+  return lines
     .map((line, index) => {
       const trimmed = line.trim();
       const columns = trimmed.split("\t");
@@ -151,18 +160,54 @@ function parseRecords(raw) {
 
       return {
         index,
-        location: hasTsvShape ? columns.slice(0, 2).join(" · ") : inferLocation(trimmed, index),
+        location: hasTsvShape ? columns.slice(0, 2).join(" · ") : "",
         text: hasTsvShape ? columns.slice(2).join(" ") : trimmed,
         sourceLine: trimmed,
-        searchable: !isComment && trimmed.length > 0
+        searchable: hasTsvShape && trimmed.length > 0
       };
     })
     .filter((record) => record.searchable);
 }
 
-function inferLocation(line, index) {
-  const match = line.match(/^([0-9]+(?:\.[0-9]+[a-z]?)?)/);
-  return match ? match[1] : `line ${index + 1}`;
+function parseSectionRecords(lines) {
+  const records = [];
+  let current = null;
+
+  lines.forEach((line, index) => {
+    const trimmed = line.trim();
+    if (!trimmed) {
+      return;
+    }
+
+    const section = trimmed.match(/^([0-9]+(?:\.[0-9]+[a-z]?)?)\s+(.*)$/);
+    if (section) {
+      current = {
+        index,
+        location: section[1],
+        text: section[2],
+        sourceLine: trimmed,
+        searchable: true
+      };
+      records.push(current);
+      return;
+    }
+
+    if (current) {
+      current.text += ` ${trimmed}`;
+      current.sourceLine += ` ${trimmed}`;
+      return;
+    }
+
+    records.push({
+      index,
+      location: `line ${index + 1}`,
+      text: trimmed,
+      sourceLine: trimmed,
+      searchable: true
+    });
+  });
+
+  return records;
 }
 
 function render() {

@@ -91,7 +91,11 @@ function normalizeRecord(raw, index) {
     sharedWords: raw["Shared Words"] || "N/A",
     sourcePreview: raw[sourcePreviewKey] || "N/A",
     targetPreview: raw[targetPreviewKey] || "N/A",
-    targetRange: raw[sentenceRangeKey] || "N/A"
+    targetRange: raw[sentenceRangeKey] || "N/A",
+    targetChapterStanza: raw[`${TARGET_KEY} Chapter/Stanza`] || "",
+    targetChapter: raw[`${TARGET_KEY} Chapter`] || "",
+    targetStanza: raw[`${TARGET_KEY} Stanza`] || "",
+    targetXmlSection: raw[`${TARGET_KEY} XML Section`] || ""
   };
 }
 
@@ -201,13 +205,21 @@ function renderCard(record) {
           <p>${highlight(record.targetPreview)}</p>
         </section>
         <dl class="detail-grid">
-          <div><dt>${escapeHtml(TARGET_LABEL)} Sentence Range</dt><dd>${escapeHtml(record.targetRange)}</dd></div>
-          <div><dt>IDF Cosine</dt><dd>${escapeHtml(record.cosine)}</dd></div>
-          <div><dt>Shared Distinct Words</dt><dd>${record.sharedCount}</dd></div>
+          ${renderDetail(`${TARGET_LABEL} Sentence Range`, record.targetRange)}
+          ${record.targetChapterStanza ? renderDetail(`${TARGET_LABEL} Chapter/Stanza`, record.targetChapterStanza) : ""}
+          ${record.targetChapter ? renderDetail(`${TARGET_LABEL} Chapter`, record.targetChapter) : ""}
+          ${record.targetStanza ? renderDetail(`${TARGET_LABEL} Stanza`, record.targetStanza) : ""}
+          ${record.targetXmlSection ? renderDetail(`${TARGET_LABEL} XML Section`, record.targetXmlSection) : ""}
+          ${renderDetail("IDF Cosine", record.cosine)}
+          ${renderDetail("Shared Distinct Words", record.sharedCount)}
         </dl>
       </div>
     </article>
   `;
+}
+
+function renderDetail(label, value) {
+  return `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`;
 }
 
 function toggleCard(id) {
@@ -226,6 +238,8 @@ function searchableText(record) {
     record.sourcePreview,
     record.targetPreview,
     record.targetRange,
+    record.targetChapterStanza,
+    record.targetXmlSection,
     record.tier,
     String(record.rank),
     String(record.score)

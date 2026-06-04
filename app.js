@@ -40,12 +40,14 @@ const TEXTS = [
 const state = {
   texts: [],
   query: "",
+  variantSearch: false,
   wholeWord: true,
   caseSensitive: false,
   contextSize: 2
 };
 
 const queryInput = document.querySelector("#query");
+const variantInput = document.querySelector("#variant-search");
 const wholeWordInput = document.querySelector("#whole-word");
 const caseInput = document.querySelector("#case-sensitive");
 const contextSelect = document.querySelector("#context-size");
@@ -76,6 +78,11 @@ async function init() {
 function bindEvents() {
   queryInput.addEventListener("input", () => {
     state.query = queryInput.value.trim();
+    render();
+  });
+
+  variantInput.addEventListener("change", () => {
+    state.variantSearch = variantInput.checked;
     render();
   });
 
@@ -142,11 +149,11 @@ function render() {
   const search = createSearch(state.query);
   const summaries = state.texts.map((text) => getMatches(text, search));
 
-  renderOverview(summaries);
-  renderResults(summaries);
+  renderOverview(summaries, search);
+  renderResults(summaries, search);
 }
 
-function renderOverview(summaries) {
+function renderOverview(summaries, search) {
   overviewEl.innerHTML = summaries
     .map(({ text, total }) => `
       <article class="text-card">
@@ -155,7 +162,7 @@ function renderOverview(summaries) {
             <div class="siglum">${escapeHtml(text.siglum)}</div>
             <h2>${escapeHtml(text.title)}</h2>
           </div>
-          <span class="count-pill ${state.query ? (total ? "hit" : "miss") : ""}">${state.query ? total : "..."}</span>
+          <span class="count-pill ${search ? (total ? "hit" : "miss") : ""}">${search ? total : "..."}</span>
         </header>
         <p class="meta">${text.records.length.toLocaleString()} searchable lines · ${text.wordCount.toLocaleString()} words</p>
       </article>
@@ -163,12 +170,12 @@ function renderOverview(summaries) {
     .join("");
 }
 
-function renderResults(summaries) {
-  if (!state.query) {
+function renderResults(summaries, search) {
+  if (!search) {
     statusEl.textContent = `${state.texts.length} texts ready`;
     resultsEl.innerHTML = `
       <div class="empty-state">
-        Enter a word to compare all four texts at once.
+        Enter a word to compare all four texts at once. Turn on Variants to search several forms together.
       </div>
     `;
     return;
@@ -176,7 +183,8 @@ function renderResults(summaries) {
 
   const containing = summaries.filter((summary) => summary.total > 0).length;
   const totalHits = summaries.reduce((sum, summary) => sum + summary.total, 0);
-  statusEl.textContent = `${containing} of ${summaries.length} texts · ${totalHits} hits`;
+  const variantLabel = search.terms.length > 1 ? ` · ${search.terms.length} variants` : "";
+  statusEl.textContent = `${containing} of ${summaries.length} texts · ${totalHits} hits${variantLabel}`;
 
   resultsEl.innerHTML = summaries
     .map(({ text, matches, total }) => `
@@ -202,7 +210,7 @@ function renderMatchList(matches, total) {
         .map((match) => `
           <section class="match">
             <div class="location">${escapeHtml(match.location)}</div>
-            <p class="snippet">${highlight(escapeHtml(match.snippet), state.query)}</p>
+            <p class="snippet">${highlight(escapeHtml(match.snippet))}</p>
           </section>
         `)
         .join("")}
@@ -239,12 +247,32 @@ function createSearch(query) {
     return null;
   }
 
-  const escaped = escapeRegExp(state.caseSensitive ? query : query.toLocaleLowerCase());
-  const boundary = "[\\p{L}\\p{M}\\p{N}_-]";
-  const pattern = state.wholeWord ? `(?<!${boundary})${escaped}(?!${boundary})` : escaped;
+  const terms = getSearchTerms(query);
+  if (!terms.length) {
+    return null;
+  }
+
+  const normalizedTerms = state.caseSensitive ? terms : terms.map((term) => term.toLocaleLowerCase());
+  const pattern = buildPattern(normalizedTerms);
   return {
+    terms,
     regex: new RegExp(pattern, "gu")
   };
+}
+
+function getSearchTerms(query) {
+  const terms = state.variantSearch ? query.split(/[,\s;]+/) : [query];
+  return [...new Set(terms.map((term) => term.trim()).filter(Boolean))];
+}
+
+function buildPattern(terms) {
+  const escaped = terms
+    .slice()
+    .sort((a, b) => b.length - a.length)
+    .map(escapeRegExp)
+    .join("|");
+  const boundary = "[\\p{L}\\p{M}\\p{N}_-]";
+  return state.wholeWord ? `(?<!${boundary})(?:${escaped})(?!${boundary})` : `(?:${escaped})`;
 }
 
 function makeSnippet(records, recordIndex) {
@@ -256,11 +284,14 @@ function makeSnippet(records, recordIndex) {
     .join(" ");
 }
 
-function highlight(safeText, query) {
-  const escaped = escapeRegExp(escapeHtml(query));
+function highlight(safeText) {
+  const terms = getSearchTerms(escapeHtml(state.query));
+  if (!terms.length) {
+    return safeText;
+  }
+
   const flags = state.caseSensitive ? "gu" : "giu";
-  const boundary = "[\\p{L}\\p{M}\\p{N}_-]";
-  const pattern = state.wholeWord ? `(?<!${boundary})${escaped}(?!${boundary})` : escaped;
+  const pattern = buildPattern(terms);
   return safeText.replace(new RegExp(pattern, flags), (match) => `<mark>${match}</mark>`);
 }
 

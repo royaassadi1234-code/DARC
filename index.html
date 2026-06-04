@@ -19,11 +19,15 @@
 
         <section class="search-panel" aria-label="Search controls">
           <label class="search-box" for="query">
-            <span>Search word</span>
-            <input id="query" type="search" placeholder="Type a word, e.g. ohrmazd" autocomplete="off" autofocus>
+            <span>Search word or variants</span>
+            <input id="query" type="search" placeholder="Type a word, or variants: ohrmazd, ohrmazd-iz" autocomplete="off" autofocus>
           </label>
 
           <div class="controls" role="group" aria-label="Search options">
+            <label class="control">
+              <input id="variant-search" type="checkbox">
+              <span>Variants</span>
+            </label>
             <label class="control">
               <input id="whole-word" type="checkbox" checked>
               <span>Whole word</span>

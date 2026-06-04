@@ -66,7 +66,8 @@ select {
   background: rgba(255, 255, 255, 0.72);
 }
 
-.site-nav a {
+.site-nav a,
+.site-nav summary {
   min-height: 34px;
   border-radius: 6px;
   padding: 7px 10px;
@@ -76,9 +77,50 @@ select {
   text-decoration: none;
 }
 
-.site-nav a.active {
+.site-nav a.active,
+.site-nav .nav-menu.active summary {
   color: #ffffff;
   background: var(--accent);
+}
+
+.nav-menu {
+  position: relative;
+}
+
+.nav-menu summary {
+  display: grid;
+  align-items: center;
+  cursor: pointer;
+  list-style: none;
+}
+
+.nav-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-menu-list {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 5;
+  display: grid;
+  gap: 4px;
+  min-width: 180px;
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.nav-menu-list a {
+  min-height: 32px;
+  color: var(--accent-strong);
+  white-space: nowrap;
+}
+
+.nav-menu-list a:hover {
+  background: #eef4f7;
 }
 
 .sub-nav {

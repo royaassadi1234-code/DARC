@@ -1,0 +1,923 @@
+# Wizidagiha i zadspram (WZ-K35-outdated)
+# Manuscript: K35
+# Text identifier: WZ-K35-outdated
+# Text UUID: 7adbb5bd-006f-4f33-83a8-75e650cf2435
+# Source: https://www.mpcorpus.org/corpus/sections/7adbb5bd-006f-4f33-83a8-75e650cf2435
+# API: https://www.mpcorpus.org/api/sections/?text_identifier=WZ-K35-outdated&type=sentence
+# Exported from MPCD public API on 2026-05-26
+# Paragraph source: MPCD left sidebar section_type=section
+# Format: sentence_identifier<TAB>paragraph<TAB>transcription tokens
+
+WZ-K35-outdated s1	wz 0.1	ēn ayādgār nibištag ī wizīdagīhā ī zādspram ī ǰuwānǰamān xwānēnd
+WZ-K35-outdated s2	wz 0.2	šnāyišn ī dādār ohrmazd ud amahraspandān ud hamāg yazdān ī mēnōyān ud yazdān ī gētīyān
+WZ-K35-outdated s3	wz 0.3	gōwišn ī hērbed zādspram ī ǰuwānǰamān ī nēmrōz
+WZ-K35-outdated s4	wz 1.–	abar gumēzišn ī spennāgmēnōy ud gannāgmēnōy
+WZ-K35-outdated s5	wz 1.1	hād pad dēn ōwōn paydāg kū rōšnīh azabar ud tārīkīh azēr u =šān mayānag ī harw dō wišādagīh būd
+WZ-K35-outdated s6	wz 1.2	ohrmazd andar rōšnīh ahreman andar tārīkīh ud ohrmazd az astīh ī ahreman madan =iz ō pahikār āgāh
+WZ-K35-outdated s7	wz 1.2	ahreman az astīh ud rōšnīh ī ohrmazd nē āgāh būd
+WZ-K35-outdated s8	wz 1.3	ahreman andar tom ud tārīkīh ō frōd kustān hamē raft
+WZ-K35-outdated s9	wz 1.3	did handāzišnīg ul ō abar āmad u =š tēx =ēw ī rōšnīh frāz dīd ud ǰudgōhrīh ī xwēš rāy tuxšīd kū aw =iš rasēd u =š hamōwōn pad =iš andar kāmag wārēd čiyōn pad =iz tārān
+WZ-K35-outdated s10	wz 1.4	ka frāz ō wimand mad ohrmazd abāz dāštan ī ahreman az xwēš šahr rāy frāz ō hamrānīh mad u =š pad abēzag gōwišn ī dādīg stardag kird u =š abāz ō tom abgand
+WZ-K35-outdated s11	wz 1.4	pāsbānīh az druz rāy mēnōyīhā andar ō bālist mēnōy ī āsmān āb zamīg urwar gōspand mardōm ud ātaxš brēhēnīd u =š 3000 sāl dāšt
+WZ-K35-outdated s12	wz 1.5	ahreman =iz andar tom abzār hamē ārāst
+WZ-K35-outdated s13	wz 1.5	pad sar ī 3000 sāl abāz ō wimand āmad padistād ud drāyīd kū zanam tō zanam dāmān ī tō dāmdād ī mēnōy ī tō kē spennāgmēnōy hē harwisp ān bē murnǰēnam
+WZ-K35-outdated s14	wz 1.6	ohrmazd passoxēnīd kū nē druz harwispkirdār hē
+WZ-K35-outdated s15	wz 1.7	did ahreman padistād kū bē hāzēm$$ harwisp ox ī astōmand ō adōstīh ī tō dōstīh ī man
+WZ-K35-outdated s16	wz 1.8	ohrmazd pad mēnōyxradīh dīd kū ān =iz ī ahreman padistād tuwānīg pad kirdan agar nē brīnōmand zamānag ī kōxšišn
+WZ-K35-outdated s17	wz 1.9	u =š zamān bē ō ayārīh xwāst čē =š dīd kū ahreman pad mayānǰīgīh ī ēč nērawišnīh abar ēstēd
+WZ-K35-outdated s18	wz 1.9	zamān ast harw dō xūb hamayārīh ud rāstrāyēnīdārīh
+WZ-K35-outdated s19	wz 1.9	aw =iš niyāz
+WZ-K35-outdated s20	wz 1.10	u =š pad se zamān kird ī harw zamān =ēw se hazārag
+WZ-K35-outdated s21	wz 1.11	ahreman abar ēstād
+WZ-K35-outdated s22	wz 1.12	ohrmazd dīd kū ka ahreman parwastag kirdan nē šāyēd hamē ka xwāhēd abāz ō xwēš buništ ī tārīkīh šawēd
+WZ-K35-outdated s23	wz 1.12	abzār wēš ārāyēd afrazāmpahikār bawēd
+WZ-K35-outdated s24	wz 1.12	u =š pas az zamān kirdan ahunawar frāz srūd
+WZ-K35-outdated s25	wz 1.13	u =š pad ahunawar se ēwēnag aw =iš nimūd
+WZ-K35-outdated s26	wz 1.14	fradom kū harw tis ān frārōn ī ohrmazd kām
+WZ-K35-outdated s27	wz 1.15	az ēn paydāg kū ka ān ī frārōn ohrmazd kām paydāg kū tis ast ī nē andar kām ī ohrmazd
+WZ-K35-outdated s28	wz 1.15	ačār ān az buništ =ēw ī ǰudgōhr
+WZ-K35-outdated s29	wz 1.16	didīgar ēn kū kē ān kunēd ī ohrmazd kām ā =š mizd pāddāšn xwēš ōy kē nē ān kunēd ī ohrmazd kām ā =š puhl pādifrāh xwēš
+WZ-K35-outdated s30	wz 1.17	az ēn nimāyīhēd kirbakkarān mizd ud wināhkārān pādifrāh ud mādayān ī wahišt ud dušox aziš
+WZ-K35-outdated s31	wz 1.18	sidīgar nimūd kū xwadāyīh ī ohrmazd ōy abzāyēnēd ī ō driyōšān wizārēd petyāragōmandīh
+WZ-K35-outdated s32	wz 1.19	ī =š nimūd kū astxīrān ō niyāzīgxīrān ayār bawišn čiyōn āgāhdahišnān ō anāgāhān hammōxtan tuwānīgxwāstagān ō niyāzīgxwāstagān rādīhā dādan ī xwēš
+WZ-K35-outdated s33	wz 1.19	frayād dast ī ohrmazd dāmān ēk ō did andar kōxšišnīg ardīg
+WZ-K35-outdated s34	wz 1.20	čiyōn frašegirdkirdārīh pad ēn se tis šāyēd būdan
+WZ-K35-outdated s35	wz 1.21	ast fradom rāstdēnīh ī xwad āstawānīh ī abar dōbuništagīh pad ān ristag brahm kū ohrmazd hamāgwehīh awattarīh u =š kām wisp frārōn ahreman wispwattarīh awehīh
+WZ-K35-outdated s36	wz 1.22	didīgar ēmēd ī mizd pāddāšn ī kirbakkarān ud bīm ī az puhl pādifrāh ī bazzakkarān tuxšīdan pad kirbag pahrēxtan ī az wināh
+WZ-K35-outdated s37	wz 1.23	sidīgar hamayārīh būdan ī dāmān ēk abāg did ud az hamayārīh hamspāhīh az hamspāhīh pērōzīh ī abar dušmen bawēd ī xwad frašegird
+WZ-K35-outdated s38	wz 1.24	pad ēn gōwišn stard būd abāz ō tom ōbast
+WZ-K35-outdated s39	wz 1.25	ohrmazd dām tanōmandīhā bē ō gētī būd
+WZ-K35-outdated s40	wz 1.25	fradom asmān didīgar āb sidīgar zamīg čahārom urwar panǰom gōspand šašom mardōm
+WZ-K35-outdated s41	wz 1.25	ud ātaxš andar wisp būd pargandag hammis pad šaš gōhrag ī harw gōhrag =ēw drang ī bē abar dādan and būd guft ēstēd čand miǰ =ēw ī ka ēk pad did frōd nihēnd
+WZ-K35-outdated s42	wz 1.26	3000 sāl dām tanōmand ud afrāzraftār būd
+WZ-K35-outdated s43	wz 1.26	xwaršēd māh starān ēstād hēnd andar bālist awazišnīg
+WZ-K35-outdated s44	wz 1.27	pad zamānag sar ohrmazd nigerīd kū čē sūd ast az dādan ī dām ka apōyišnīg arawišnīg awazišnīg
+WZ-K35-outdated s45	wz 1.27	u =š pad ayārīh ī spyyhl ud zurwān dām frāz brēhēnīd
+WZ-K35-outdated s46	wz 1.28	zurwān anādūg būd kū =š dām ī ohrmazd rawāg kird bē az rawāgīh ī ahreman dām
+WZ-K35-outdated s47	wz 1.28	čē buništān ēk ō did wizāyišnīg ud padīragēstišnīg būd hēnd
+WZ-K35-outdated s48	wz 1.29	u =š frazāmnigerīhā abzār =ēw ī az xwad gōhr ī tārīkīh kē =š nērōg ī zurwānīg pad =iš paywastag pōst ēwēnag ī wazagīg ud syā ud ādurestargōn frāz ō ahreman burd
+WZ-K35-outdated s49	wz 1.30	u =š pad frāzbarišnīh guft kū pad awēšān zēy abāgīh ā =iz ēd ī tō bē dawīd xwad pad suy frōd mīrēd agar pad sar ī 9000 sāl čiyōn =it padistād ud pašt abar kird zamān abar kird nē frazāmēnēd
+WZ-K35-outdated s50	wz 1.31	pad hamzamān ahreman az hamzōrān hammis bē ō starpāyag āmad
+WZ-K35-outdated s51	wz 1.32	bun ī asmān pad starpāyag dāšt az ānōh frōd ō tuhīgīh āhaxt ī andarōn ī buništ ī rōšnān ud tārān ud gyāg ī ardīg kē =š tazišn ī harw dōān padiš
+WZ-K35-outdated s52	wz 1.33	u =š tārīkīh ī abāg xwēš dāšt andar ō asmān āwurd asmān ōwōn ō tom āhaxt kū andarōn ī aškōb ī asmān čand se ēk =ēw azabar starpāyag bē rasīd
+WZ-K35-outdated s53	wz 2.–	abar andar āmadan ī ahreman ō dām
+WZ-K35-outdated s54	wz 2.1	pad dēn ōwōn paydāg kū māh frawardīn rōz ohrmazd pad nēmrōz frāz ō wimand ī asmān mad
+WZ-K35-outdated s55	wz 2.2	asmān ǰudgōhrīh rāy ōwōn bē tarsīd čiyōn mēš az gurg larzēd
+WZ-K35-outdated s56	wz 2.2	ahreman tābišnīg ud sōzišnīg pad =iš abar āmad
+WZ-K35-outdated s57	wz 2.3	pas ō āb mad ī azēr zamīg winnārd u =š tārīkīh ud ǰudmizagīh abar burd
+WZ-K35-outdated s58	wz 2.4	ud mayān ī zamīg abar āmad
+WZ-K35-outdated s59	wz 2.5	čiyōn mār homānāg ī az sūrāg =ēw abar āyēd ud hamāg zamīg zūd andar ēstād
+WZ-K35-outdated s60	wz 2.5	ud ān widarg kū abar āmad xwad ast rāh ī ō dušox kē pad ān dwārēnd dēwān druwandān
+WZ-K35-outdated s61	wz 2.6	pas ō urwar mad
+WZ-K35-outdated s62	wz 2.7	čiyōn ēk bun būd kē =š bālā čand pay =ēw ud anazg apōstag ud tarr ud šīrēn
+WZ-K35-outdated s63	wz 2.7	u =š wisp sardag zōr ī urwarān andar čihr dāšt
+WZ-K35-outdated s64	wz 2.7	ud pad nazdīkīh ī mayānag ī zamīg būd
+WZ-K35-outdated s65	wz 2.7	pad ham zamān bē hōšīd
+WZ-K35-outdated s66	wz 2.8	pas ō gāw mad ī ēkdād
+WZ-K35-outdated s67	wz 2.9	čiyōn =iš bālā čiyōn gayōmart pad bār ī āb ī dāytī mayānag ī zamīg ēstād
+WZ-K35-outdated s68	wz 2.9	u =š az gayōmart dūrīh čand bālā ī xwēš būd az =iz bār ī āb ī dāytī pad ham paymān dūr būd
+WZ-K35-outdated s69	wz 2.9	ud māyag spēd ud rōšn būd čiyōn māh
+WZ-K35-outdated s70	wz 2.9	čiyōn petyārag abar mad ohrmazd mang ī bang =iz xwānīhēd pad xwardan dād ud pēš čašm bē mušt kū tā =š az zanišn ud bazzag handraxtagīh kem bawēd
+WZ-K35-outdated s71	wz 2.9	nizār ud wēmār būd
+WZ-K35-outdated s72	wz 2.9	pad dašn ālag ōbast ud widard
+WZ-K35-outdated s73	wz 2.10	pēš az frāz madan ī ō gayōmart ēg čiyōn se*ēk =ēw ī zarduxšt bālā būd rōšn būd čiyōn xwaršēd ohrmazd xwēy brēhēnīd pad mard kirb ī sālag rōšn ud buland
+WZ-K35-outdated s74	wz 2.10	u =š abar āmad ō gayōmart u =š xwēy abar aw =iš burd and drahnā čand yatāhūwayryō =ēw abar gōwīhēd
+WZ-K35-outdated s75	wz 2.11	ka az xwēy frāz būd u =š čašm abar dāšt ā =š dīd gēhān ka tārīk būd čiyōn šab
+WZ-K35-outdated s76	wz 2.11	pad hamāg zamīg mār ud gazdumb ud wazag ud wasgōnag xrafstarān čahārpāyān abārīg ēwēnag andarwāyīgān ōwōn ēstād hēnd kū zamīg nihuft homānāg čiyōn sōzan tēx nē mānd ī =š nē dwārišn ī xrafstarān pad =iš būd
+WZ-K35-outdated s77	wz 2.11	mihr ī abāxtarīg pad hamǰuxtīh ī abāxtarīg māh ud 5ān abāxtarān ud was tārkirbān pad čihr ud dēs ī az dahāg andar wehmīh ī andarwāy tazišn dāšt
+WZ-K35-outdated s78	wz 2.11	ud škeft būd xwānišn ud garrānišn ī mazanyān
+WZ-K35-outdated s79	wz 2.12	abdom bē ō ātaxš mad ud tārīkīh ud dūd andar gumēxt
+WZ-K35-outdated s80	wz 2.13	gōšurūn čiyōn xwad būd čiyōn ruwān =iz az widardān tan pad ān homānāg garzān wāng ō ohrmazd burd čiyōn ān ī hazāragān spāh ka pad āgenēn abar garzēnd
+WZ-K35-outdated s81	wz 2.14	ohrmazd az pēš gayōmart pāsbānēnīdan abērtar tuwān būdan gumēxtag dāmān rāy az zamīg abar ō asmān šud u =š gōšurūn az pas garzān hamē šud u =š wāng burd kū =t sālārīh ī pad dāmān pad kē bē hišt
+WZ-K35-outdated s82	wz 2.15	ēn būd bālist pādixšāyīh ī ahreman čē abāg wisp zōr ī =š būd bē ō āhōgēnišn ī dāmān mad
+WZ-K35-outdated s83	wz 2.15	u =š bun ī asmān čand se ēk =ēw ō frōdrōn pad bowandagdrubuštīh kird ōwōn kū hamāg tārīk bē az rōšnīh
+WZ-K35-outdated s84	wz 2.15	čē xwad būd andar āmadan ī hamēstār dušmen andar kōxšišnīhā ī ō dād
+WZ-K35-outdated s85	wz 2.16	ud ēn ast padīrag frašegirdkirdārīh čē mahist ī druz ka andar āmad ud abārīg harw abzār az ham bun nērōg ēn andar ānābišn ī frašegirdkirdārīh ān ka dušmen ī pad andar āmad bowandag abāz dārīhēd
+WZ-K35-outdated s86	wz 2.17	mayān ī ēn harw kōxšišn ī gumēzagrāyēnišnīhā
+WZ-K35-outdated s87	wz 2.18	ahreman mēnīd kū =m bowandag mad pērōzīh čē =m škast asmān ud āhōgēnīd pad tom ud tār u =m kird pad drubuštīh
+WZ-K35-outdated s88	wz 2.18	u =m āhōgēnīd āb u =m suft zamīg ud wināhīd pad tārīkīh u =m hōšēnīd urwar
+WZ-K35-outdated s89	wz 2.18	u =m margēnīd gāw u =m wēmārēnīd gayōmart
+WZ-K35-outdated s90	wz 2.18	u =m padīrag rōšnān winnārd tārān abāxtarān
+WZ-K35-outdated s91	wz 2.18	u =m grift šahr nē mānd kas andar razm az ohrmazd nēmag bē ēk mard kē ēwtāgīhā čē šāyēd kirdan
+WZ-K35-outdated s92	wz 2.19	u =š abar frēstād astwihād abāg hazār uzwārdān yaskān ī xwad hēnd wēmārīh ī gōnaggōnag kū =š wēmārēnēnd ud margēnēnd gayōmart
+WZ-K35-outdated s93	wz 2.19	u =šān nē windād čārag
+WZ-K35-outdated s94	wz 2.19	čē wizir būd ī brīngar zurwān pad bun andar āmadan ī ahreman kū abar ō sīh zamestān gayōmart ī tbk ān ī ǰān bazišn frāz brēhēnam
+WZ-K35-outdated s95	wz 2.20	u =š pad spihr būd paydāgīh pad baxšišn ī az kirbakkarān ud bazzakkarān gumēzišnrāyēnišnān
+WZ-K35-outdated s96	wz 2.21	u =šān pad ān čim tā uzīdan ī sīh sāl nē ayāft čārag
+WZ-K35-outdated s97	wz 2.21	čē pad bun ōwōn bē dād kū ohrmazd stārag zīndagīh tar dām nē xwēšgōhrīhā bē andar band ī rōšnān būdan rāy ud kēwān margīh tar dām
+WZ-K35-outdated s98	wz 2.21	harw dō pad bun ī dām pad xwēš bālist būd hēnd čiyōn ohrmazd pad karzang pad ulāmadān ī gyānān =iz xwānīhēd
+WZ-K35-outdated s99	wz 2.21	čē gyāg ast ī =š zīndagīh pad =iš baxšīhēd kēwān pad tarāzūg pad mēx ī azēr ī zamīg ī xwad zōr ī margīh pad =iš paydāgtar pādixšāytar bawēd ī harw dō pad bālist būdan rāy gayōmart pad xwēš zīndagīh bē kird
+WZ-K35-outdated s100	wz 2.22	ud did tā sīh sāl kēwān abāz ō bālist ī ast tarāzūg nē mad
+WZ-K35-outdated s101	wz 2.22	pad ān gāh ka kēwān bē ō tarāzūg mad ohrmazd pad wahīg būd ī =š xwēš nišēb ud abarwēzīh ī kēwān abar ohrmazd rāy gayōmart pad hōy ālag ōbast ud widard
+WZ-K35-outdated s102	wz 2.22	abar padīragēstišnīh ī ān āhōgēnišn ī ahreman abar ohrmazd dāmān burd
+WZ-K35-outdated s103	wz 3.1	ka hampadisārīg =iz čiyōn =iš dāmān āhōgēnīd ēg =iš pad ān ham dranǰēnīdan xwēš wuzurgxwarrahīh nimūd
+WZ-K35-outdated s104	wz 3.2	čē čiyōn andarōn asmān āmad ēg mēnōy ī asmān artēštār homānāg baxt kē ayōšustēn zrēy paymōxt dārēd ī xwad ayōšustēn asmān ast pad burz wāng padist barišn guft ō ahreman kū nūn ka andar āmad hē ā =t abāz nē hilam
+WZ-K35-outdated s105	wz 3.2	bē winnard tā ka ohrmazd pērāmōn ī asmān any drubuštīh =ēw ī saxttar bē winnārd ī ašōāgāhīh xwānīhēd
+WZ-K35-outdated s106	wz 3.3	u =š ašōān frawahr ī artēštārān pērāmōn ī ān drubuštīh aspbārag nēzagdast ōwōn bē winnārd čiyōn wars abar sar pad homānāgīh ī zēndānbānān kē az bērōn zēndān pāyēnd ud dušmen az andarōn parwastsāmānān bērōn nē hišt āmadan
+WZ-K35-outdated s107	wz 3.4	pad ham zamān ahreman kōxšīd kū abāz ō xwēš bunag ī tārīkīh šawēd u =š widarg nē ayāft
+WZ-K35-outdated s108	wz 3.4	u =š gumānsahišnīhā bīm ī az frazāmōmandīh ī 9000 sāl sar būdan ī frašegird pad čihr bē ōšmārd
+WZ-K35-outdated s109	wz 3.5	čiyōn gōwīhēd pad gāhān kū ēdōn =iz ān ī harw dō mēnōy ō ham mad hēnd ō ān ī ōy ī fradom dahišn kū harw dō mēnōy ō tan ī gayōmart mad hēnd kē =iz pad zīndagīh ohrmazd pad ēd kār kū wēš zīndag dārād kē =iz pad azīndagīh gannāgmēnōy pad ēd kār kū wēš bē ōzanād kē =iz ēdōn ān ast tā ō ān ī abdom andar axwān kū mardōm =iz ī abārīg abar ōh rasēnd
+WZ-K35-outdated s110	wz 3.5	ud wattomīh ī druwandān ahreman ud druwandān rāy abesīhišn bē dīd ēdōn ōy ī ahlaw pāšommenišnīh ī ohrmazd ī ēmēd ī hamēyīgīh
+WZ-K35-outdated s111	wz 3.6	ēn būd fradom ardīg ī asmānān abāg ahreman
+WZ-K35-outdated s112	wz 3.7	čiyōn didīgar ō āb mad ān ham rōz ī andar dwārist asp ī karzang kē ābtōhmag tištar ham spīg ī azarag xwānīhēd abr frāz dād ī pad rōz frōdšudān paydāg čiyōn ulāmadān ī dāmrawāgīh ī karzang axtar būd ī ast axtar ī čahārom ēd rāy čē tīr māh čahārom māh ī az sāl ast
+WZ-K35-outdated s113	wz 3.8	tištar wād ō ayārīh xwāst u =š wahman ud hōm pad parwānagīh ud burz ī ābān nāf pad hamayārīh ud ardāfraward pad paymāndārīh abāg hamkārīhīd hēnd
+WZ-K35-outdated s114	wz 3.8	pad se kirb wašt ī ast mard kirb gāw kirb asp kirb
+WZ-K35-outdated s115	wz 3.8	pad harw kirb =ēw dah šab andar rōšnīh wazīd u =š sīh šab wārān pad zanišn ī xrafstarān abar hišt
+WZ-K35-outdated s116	wz 3.9	ud sreškān būd hēnd ǰud ǰud wuzurg tašt kē āb abar āhenǰīhēd
+WZ-K35-outdated s117	wz 3.9	pad ān abar bē zanīhist hēnd wispān xrafstarān bē nihang az wayendagān kē andar sūrāg ī zamīg andar šud hēnd
+WZ-K35-outdated s118	wz 3.10	pas mēnōy ī wād pad mardēwēnag pad zamīg paydāg būd rōšn ud buland u =š pad ēwēnag ī mōg =ēw ī dārēn pad pāy dāšt
+WZ-K35-outdated s119	wz 3.11	čiyōn ǰān ka tan bē ǰumbēnēd tan pad hamzōrīh frāzraftār bawēd ān mēnōy ī wād andar čihrīg wād ī andarwāyīg frāz ǰumbēnīd
+WZ-K35-outdated s120	wz 3.11	hamāg zamīg ēwkardagīhā wād frāz wāyīd
+WZ-K35-outdated s121	wz 3.12	u =š āb bē mušt u =š bē ō kustān ī zamīg abgand
+WZ-K35-outdated s122	wz 3.12	u =š zrēy ī frāxkard az =iš būd ī dārēd se ēk ī ēn zamīg
+WZ-K35-outdated s123	wz 3.12	u =š andar bē dārišn hazār čašmag ī xānīgān ī war xwānīhēd hazār ābxānīg kē =š āb az zrēy az war abar āmad frāz aw =iš rēzīhēd
+WZ-K35-outdated s124	wz 3.13	harw war =ēw harw ābxān =ēw wuzurgīh ōwōn čand ka aswār =ēw ī tagīg pad asp =ēw ī tāzīg pērāmōn hamē gardēd pad čēhel rōz bē ayābēd ī bawēd hazārnōsadwīst frasang ī agrī ī harw frasang =ēw kamist wīsthazār pay
+WZ-K35-outdated s125	wz 3.14	pas ān xrafstarān ī murd hēnd wiš ī az =iš andar zamīg bē gumēxt ān wiš bē zadan rāy tištar andar zrēy frōd šud u =š apaōš dēw padīrag bē tazīd
+WZ-K35-outdated s126	wz 3.15	fradom ardīg stōwīh abar tištar būd u =š abar paywahīd ō ohrmazd pad yasn ud niyāyišn ud nāmbarišnīh bē mad zōr ōwōn abar ō tištar burd čand dah asp ī gwšn dah uštar ī gušn dah gāw ī gušn dah kōf ka abganēnd dah rōd ī nāydāg ka pad āgenēn frāz ānayēnd
+WZ-K35-outdated s127	wz 3.16	u =š pad stōwīh bē rānēnēd apaōš dēw u =š abāz dāšt az čašmagān ī zrēy
+WZ-K35-outdated s128	wz 3.16	u =š pad ǰām ī abarnihumb =ēw ī paymānag kē frawahrān dāštan xwēškārīh čand wēšist āb abar āhext ud čand škefttar pad zanišn abar wārānēnīd sreškān ī čand mard sar ud gāw sar meh ud keh
+WZ-K35-outdated s129	wz 3.17	andar ān abr ud wārān būd tazišn ud pahikafišn ī tištar ud ātaxš ī wāzišt pad hamēstārīh ī apaōš ud spinǰagr
+WZ-K35-outdated s130	wz 3.17	ātaxš ī wāzišt pad ātaxšānwazr bē zad spinǰagr andar abrān
+WZ-K35-outdated s131	wz 3.17	dah rōzšabān wārān būd u =š pad =iš widāzīhist wiš ī xrafstarān
+WZ-K35-outdated s132	wz 3.17	pas wād bē rānēnēd ō kanārag ī zrēy ī frāxkard
+WZ-K35-outdated s133	wz 3.17	ō se bē baxšīhist u =š se zrēy az =iš būd ī xwānīhēd pūdīg kamrōd ud syāwbun
+WZ-K35-outdated s134	wz 3.18	az awēšān pūidīg xwad drayāb ī sōr ast kē =š purr ōgār pad =iš bawēd u =š band ī purr ud ōgār paywast ō māh
+WZ-K35-outdated s135	wz 3.18	u =š hamē wardišn pad ulāmadān frōdšudān ī māh pad =iš paydāgīhīd
+WZ-K35-outdated s136	wz 3.19	frāxkard pad kustag ī nēmrōz pad harburz frāz ēstēd u =š pūidīg hamsāmān ēstēd u =šān mayān war ī sadwēs kē band ō sadwēs kē kustag ī nēmrōz zrēy andar xwēškārīh ud māh kē wardišn ī harw ērān andar abzāyišn ud kāhišn purr ud ōgār hēnd
+WZ-K35-outdated s137	wz 3.20	pāymār az pēš ī māh dō wād frāz tazēnd ī andar sadwēs mānist dārēnd ēk ulāhang ud ēk frōdāhang
+WZ-K35-outdated s138	wz 3.20	pad ān ī ulāhang bawēd purr ud pad ān ī frōdāhang bawēd ōgār
+WZ-K35-outdated s139	wz 3.21	ud sadwēs war ast xwad pahlūg ī zrēy ī frāxkard čē ayōǰdahrīh ud stabrīh ī az drayāb ī sōr ka andar ō frāxkard hamē šawēd pad wād ī wuzurg ud buland =ēw abāz zanēd tā ān ī rōšn pad pākīh andar ō frāxkard ud čašmagān ī ardīwsūr šawēd
+WZ-K35-outdated s140	wz 3.22	ǰud az ēn se zrēy ī keh
+WZ-K35-outdated s141	wz 3.22	u =š pas tazēnīd az harburz az abāxtar kanārag dō rōd ī arwand ud weh ud arwand ast diglit taǰan ō frōdšudān ud wehrōd ō ulāmadān būd
+WZ-K35-outdated s142	wz 3.22	pad dō sar bē gašt bē ō zrēy šud hēnd
+WZ-K35-outdated s143	wz 3.23	pas az awēšān haštdah rōd ī wuzurg az ham harburz bē āmad hēnd
+WZ-K35-outdated s144	wz 3.23	ēn wīst rōd kē =šān bunxān pad harburz andar zamīg frōd šawēnd ud andar xwaniras abāz ō āškārīh rasēnd
+WZ-K35-outdated s145	wz 3.24	pas dō čašm ī zrēy bē ō zamīg wišāyīhist ī xwānīhist čēčast war ī dūr ī garmōgābag ud ǰuddad kē =š pad bār nišīnēd ādur ī gušnasp ī pērōzgar
+WZ-K35-outdated s146	wz 3.24	ud didīgar sōr kē harw stabrīh bē kustān abganēd ud xwēš grīw rōšn ud pāk dārēd čē handāzag homānāg ī čašm =ēw ast kē harw gardīh ud harw rēmanīh bē ō kustān abganēd
+WZ-K35-outdated s147	wz 3.24	u =š zufrīh rāy bē ō bun nē ayābīhēd čē andar ō zrēy šawēd
+WZ-K35-outdated s148	wz 3.24	u =š pad nazdīkīh nišīnēd ādur sūdīgmihr ud burzēnmihr
+WZ-K35-outdated s149	wz 3.25	ēn būd didīgar ardīg ī abāg āb
+WZ-K35-outdated s150	wz 3.26	čiyōn sidīgar ō zamīg mad ī =š padīrag ham zamīg bē winnārd
+WZ-K35-outdated s151	wz 3.27	čiyōn pad škastan ud zēnēnīdan ī zamīg abar rust harburz ī zamīg kanārag ud abārīg kōfān ī mayān girdagīh ī zamīg abar āmad pad mar dōhazārdōsadčēhelčahār u =š zamīg pad =iš hambandwinnārišnīg u =š urwarān abar rōyišn ud waxšišn u =š gōspandān az =iš parwarišn u =š mardōmān az =iš wuzurg sūd ud ayārīh būd
+WZ-K35-outdated s152	wz 3.28	ōwōn paydāg kū pēš az ēbgad ō dām madan pad hazār sāl gōhr ī kōf andar zamīg dād ēstād nāmčišt čiyōn petyārag bē ō zamīg mad pad wizendag bē waxšīd abar zamīg abar āmad čiyōn draxt homānāg kē tāg ō abar waxšēd u =š rēšag ō azēr
+WZ-K35-outdated s153	wz 3.29	rēšag ī kōfān ēk ō did bē widārīhist pad hambandīh bē winnārīhist u =š rāh ī widarg ī āb azēr ud abar pad =iš bē dahīhist kū =š āb pad =iš ōwōn homānāg tazēnd čiyōn xōn andar ragān az hamāg tan ō ǰagar zōr ud āhang dārēnd
+WZ-K35-outdated s154	wz 3.30	pad 18 sāl hammis hamāg kōfān ī ǰud az harburz frazāmīg būd hēnd
+WZ-K35-outdated s155	wz 3.31	harburz tā haštsad sāl hamē rust pad dwēsad sāl tā ō starpāyag pad dwēsad sāl tā ō māhpāyag pad dwēsad sāl tā ō xwaršēdpāyag pad dwēsad sāl tā ō asmān rust
+WZ-K35-outdated s156	wz 3.32	pas az harburz abarsēnkōf ī meh čiyōn abursān =iz xwānīhēd kē =š bun pad sagestān u =š sar pad wimand ī pārs ō čīnestān
+WZ-K35-outdated s157	wz 3.33	ēn =iz paydāg kū pas az wārān ī wuzurg ī pad bun ī dām pad bē muštan ī wād āb ō zrēy zamīg pad haft pārag andak =ēw azabar čiyōn ka zamīg pas az wārān pad ēwāz wād gyāg gyāg bē darrīhist pārag =ēw ī čand nēmag =ēw ī hamāg zamīg az mayānag wisist anī ī pērāmōn pad šaš pārag bē wisist hāwand paymān
+WZ-K35-outdated s158	wz 3.34	xwānīhistan ī kišwar pad ān čim pad kēš ēk az did paydāg bawēd
+WZ-K35-outdated s159	wz 3.35	pērāmōn xwaniras kē pārag ī mayānag ast ān šaš kišwar abesar homānāg
+WZ-K35-outdated s160	wz 3.35	bahr =ēw az zrēy ī frāxkard pērāmōn ān gašt mayān ī ān šaš kišwar
+WZ-K35-outdated s161	wz 3.35	ān kustag ī nēmrōz ī zrēy wēšag bē grift ān ī abāxtar kōf ī burz bē rust kū tā ēk az did ǰud bawānd paydāg
+WZ-K35-outdated s162	wz 3.36	ēn būd sidīgar ardīg ī abar zamīg
+WZ-K35-outdated s163	wz 3.37	čiyōn čahārom ō urwar mad ī =š pad ham urwar padīrag kōxšīd čē ān urwar bē hušk amurdād kē =š urwar gētī daxšag abar grift u =š xward bē kust u =š abāg tištarīg āb ī wārānīg bē gumēxt
+WZ-K35-outdated s164	wz 3.38	pas az wārān hamāg zamīg waxšišnān paydāgīhist bēwar sardag ī mādagwar ud sadhazār sardag andar sardag ōwōn waxšīd hēnd čiyōn az harw gōnag ud ēwēnag u =š ān bēwar sardag bē ō abāzdārišnīh ī bēwar wēmārīh payrāst
+WZ-K35-outdated s165	wz 3.39	pas az ān sadhazār sardag urwar tōhm abar grift az hamīh ī tōhm wan ī harwisptōhmag mayān ī zrēy ī frāxkard bē būd kē =š hamāg sardag urwarān az =iš hamē waxšēnd u =š sēnmurw āšyān pad =iš bawēd
+WZ-K35-outdated s166	wz 3.39	ka =š andar frāz frawāzēd ēg =iš tōhm ī hušk ō āb ōsānēd pad wārān abāz ō zamīg wārīhēd
+WZ-K35-outdated s167	wz 3.40	u =š pad nazdīkīh ī ān wan bē būd hōm ī spēd hamēstār ī zarmān zīndakkar ī murdagān anōšakkar ī zīndagān
+WZ-K35-outdated s168	wz 3.41	ēn būd tasom ardīg ī abar urwarān
+WZ-K35-outdated s169	wz 3.42	čiyōn panǰom ō gōspand mad ī =š pad ham gōspand padīrag kōxšīd
+WZ-K35-outdated s170	wz 3.43	ham čiyōn gāw ī ēkdād bē widard az ān čiyōn =iš čihr ī urwarīg dāšt panǰāh ud haft sardag ǰōrdāg dwāzdah sardag urwar ī bēšaz az hannām hannām waxšīd hēnd
+WZ-K35-outdated s171	wz 3.43	čiyōn gugān ī ēk ēk kū az kadār handām andar dāmdād paydāg
+WZ-K35-outdated s172	wz 3.44	harw urwar az handām =ēw waxšēd abzāyēnēd ī ān handām čiyōn ān ī guft kū ānōh kū gāw ō zamīg mazg bē paššixt pas ǰōrdā ul rust girgir ud kunǰid ud ālun ud miǰūg
+WZ-K35-outdated s173	wz 3.45	čiyōn kunǰid mazgčihrīh rāy xwad mazg =ēw ast ī abzāyēnāg ī mazg
+WZ-K35-outdated s174	wz 3.46	ud ān =iz gōwīhēd kū az xōn kōdak ī raz may čiyōn may xwad xōn ast ast ī urwarīg ī ō druyistčihrīh ī xōn ayārtar
+WZ-K35-outdated s175	wz 3.47	ud ān ī gōwīhēd kū az wēnīg māš kē wēnōg xwānīhēd
+WZ-K35-outdated s176	wz 3.47	wēnōgnāmīh būd did wēnīg rāy
+WZ-K35-outdated s177	wz 3.48	ud ān =iz gōwīhēd kū az suš spandān bēšazēnīdan ī spandān ī sušīg wēmārīh rāy
+WZ-K35-outdated s178	wz 3.49	az mayān ī sarbun ābešan ī wahman pad abāzēstišnīh ī ān ī akōman gand ān ī az ǰādūgān wināhišn rāy
+WZ-K35-outdated s179	wz 3.50	u =š pas rōšnīh ud zōr az tōhm ī gāw abar grift u =š ō māh burd ud rōšnīh ī andar gāw būd bē ō māh dād ud abespārd pad gāhbedīh ānōh ān tōhm pad rōšnīh ī māh bē pālūd
+WZ-K35-outdated s180	wz 3.50	u =š pad was čihragīhā bē wirāst u =š gyānōmand bē kird az ānōh frāz ō ērānwēz brēhēnīd
+WZ-K35-outdated s181	wz 3.51	fradom dō gāw ǰuxt =ēw nar ud mādag pas abārīg =iz sardagīhā tā bē ō bowandagīh ī 282 sardag
+WZ-K35-outdated s182	wz 3.51	andar zamīg čand dō frasang drahnā ī 8 hāsr paydāg būd hēnd
+WZ-K35-outdated s183	wz 3.52	ud čahārpāyān pad zamīg frāz raft hēnd ud māhīgān andar āb šnāzīd hēnd ud murwān andar andarwāy wazīd hēnd dō dō pad hangām ī gušnhilīh hamēnīhist u =šān az =iš būd ābustanīh ud zāyišn ud gugān ī =šān baxšišn ōwōn
+WZ-K35-outdated s184	wz 3.53	fradom baxšīhist ō se ī ast čahārpāy ī zamīgrawišn ud māhīg ī ābšnāzišn ud murw ī andarwāywāzišn
+WZ-K35-outdated s185	wz 3.53	pas ō panǰ ēwēnagān ī ast čahārpāy ī gardsumb ud dōgānagsumb ud panǰčang ud murw ud māhīg kē =šān māništ andar panǰ gyāg xwānīhēd ābīg ūnīg wāyendag frāxraftār ud čaragarzānīg
+WZ-K35-outdated s186	wz 3.53	ābīg māhīg ud pah ud stōr ud gōspand ud dad ud sag ud murw ī andar āb bawēd
+WZ-K35-outdated s187	wz 3.53	ūnīg samōr ud mušk ud abārīg hamāg sūrāgmānišnān ud sūrāgrawišnān
+WZ-K35-outdated s188	wz 3.53	ud wāyendag hāmōyēn murwān
+WZ-K35-outdated s189	wz 3.53	frāxraftārān dad ī nē dasthammōg
+WZ-K35-outdated s190	wz 3.53	čaragarzānīgān harw čē pad ramag ud čarag dārīhēd
+WZ-K35-outdated s191	wz 3.54	u =š pas bē ō bahrān baxt
+WZ-K35-outdated s192	wz 3.54	čiyōn gardsumbān ēk ī hamāg asp xwānīhēd ud dōgānagsumbān was čiyōn uštar ud gāw ud mēš ud buz ud abārīg dōgānagsumbān
+WZ-K35-outdated s193	wz 3.54	panǰčang sag ud xargōš ud mušk ud samōr ud abārīg ud pas murw pas māhīg
+WZ-K35-outdated s194	wz 3.55	u =š pas bē ō sardag baxt čiyōn asp hašt sardag uštar dō sardag gāw pānzdah sardag mēš panǰ ud buz panǰ sag dah ud xargōš panǰ ud samōr hašt mušk hašt murw 110 ud māhīg dah
+WZ-K35-outdated s195	wz 3.55	ast kē gugān nē ōšmurd
+WZ-K35-outdated s196	wz 3.55	paydāgnāmān apaydāgnāmān hammis 282 sardag abāg sardag andar sardag hazār ēwēnag
+WZ-K35-outdated s197	wz 3.56	murwān pad hašt ristag bē dād az ān ī wuzurgtar tā ān ī kūčaktar ōwōn bē wālēnīd čiyōn mard kē ǰōrdāg hamē kārēd
+WZ-K35-outdated s198	wz 3.56	fradom ān ī stabr dānag frāz parganēd pas ān ī mayānag pas ān ī kūč
+WZ-K35-outdated s199	wz 3.57	az ham sardagīhā čiyōn pad dāmdād gugān ōšmurd u =m andar nibēg ī tōhmagōšmārišnīh hangirdīg nibišt ud ēn gyāg hangirdīgīh =ēw ast ī nimāyīhēd
+WZ-K35-outdated s200	wz 3.58	abar sardag ī aspān
+WZ-K35-outdated s201	wz 3.58	fradom tāzīg u =šān rad spēd ī zardgōš
+WZ-K35-outdated s202	wz 3.58	didīgar pārsīg ud astar ud xar ud gōr ud asp ī ābīg ud abārīg
+WZ-K35-outdated s203	wz 3.59	ud uštar mādagwar dō daštīg ud kōfīg ast ēkkōf ud dōgānagkōf
+WZ-K35-outdated s204	wz 3.60	andar sardag ī gāw spēd ud xšēn suxr ud zard ud syāh ud pēsag ud gawāzn ud gāwmēš ud uštargāwpalang ud gāwmāhīg ud abārīg
+WZ-K35-outdated s205	wz 3.61	andar mēš ān ī dumbōmand ud ān ī adumb ud mēš ī tagal ud kurušk čiyōn =iš kōf se ast srū wuzurg ud pad =iz bārīh šāyēd ud bārag būd ī mānuščihr
+WZ-K35-outdated s206	wz 3.62	andar buz xarbuz ud tāzīg ud rāk ud āhūg ud pāzen
+WZ-K35-outdated s207	wz 3.63	andar samōr kākom ī spēd ud syā samōr ud sanǰāb ud xaz ud abārīg
+WZ-K35-outdated s208	wz 3.64	andar mušk ēk mušk ī nāfag ēk bēš mušk kē bēš zahr xwarēd u =š pad =iš nē mīrēd
+WZ-K35-outdated s209	wz 3.64	pad ān mehsūdīh dahīhist kū tā bēš xwarād bē ō zahrīh ī dāmān kam rasād
+WZ-K35-outdated s210	wz 3.64	ēk mušk =ēw ī gōnag syā kē awēšān glčk ī xār čiyōn glčk ī makōgpēs xwānīhēd ī andar kustag ī drayāb wēš bawēd frāz gazēd ayāb tōhm bē ō xwarišn abganēd
+WZ-K35-outdated s211	wz 3.64	kē xwarēd ēg =iš glčk andar tan bawēd
+WZ-K35-outdated s212	wz 3.64	ka ān glčk ān handām ī gast hambōsišn glčk pad =iš abar mēzēd az ān wēmārīh pāk bē bawēd
+WZ-K35-outdated s213	wz 3.65	andar murwān dō ǰudčihrag bē dād az abārīgān ī ast sēnmurw ud šawāg kē dahan ud dandān dārēnd pad šīr ī az pestān parwarēnd baččagān
+WZ-K35-outdated s214	wz 3.66	ēn būd panǰom ardīg ī pad gōspand
+WZ-K35-outdated s215	wz 3.67	čiyōn šašom ō gayōmart mad ān ham gayōmart padīrag bē winnārd
+WZ-K35-outdated s216	wz 3.68	čiyōn niyōxšīd gayōmart abēzag mānsrspand ī ohrmazd abēzagmenišnīhā menīd ān ī weh ahlāyīh pad zanišn ī druz
+WZ-K35-outdated s217	wz 3.69	ka widard ayōšustčihrīh rāy hašt ēwēnag ayōšust az hannām hannām bē būd hēnd ī ast zarr ud asēm ud āhen ud rōy ud arziz ud srub ud ābgēnag ud almās
+WZ-K35-outdated s218	wz 3.70	pahlomīh ī zarr rāy az ǰān ud tōhm dahīhist
+WZ-K35-outdated s219	wz 3.71	pad widardan ī gayōmart zarr spandārmad frāz padīrift ud čēhel sāl andar zamīg būd
+WZ-K35-outdated s220	wz 3.72	pad sar ī čēhel sāl rēbāhēwēnag mašī ud mašyānī abar rust hēnd ēk ō did paywast hambašn ud hamdēsag
+WZ-K35-outdated s221	wz 3.73	u =š mayānag xwarrah abar āmad pad hambašnīh ī awēšān ōwōn kū nē paydāg būd kū kadār nar ud kadār mādag ud kadār ān xwarrah ī ohrmazddād
+WZ-K35-outdated s222	wz 3.74	ēd ast ān xwarrah kē =š mardōm aw =iš dahīhist
+WZ-K35-outdated s223	wz 3.75	čiyōn gōwīhēd pad dēn kū kadār pēš būd xwarrah ayāb tan
+WZ-K35-outdated s224	wz 3.75	u =š guft ohrmazd kū =m xwarrah pēš dād pas ō ān ī dād ēstēd xwarrah tan dād kū xwēškārīh brēhēnīd u =š tan bē ō xwēškārīh dād
+WZ-K35-outdated s225	wz 3.76	pas az urwarkirbīh bē ō mardōmkirbīh wašt hēnd
+WZ-K35-outdated s226	wz 3.76	xwarrah mēnōyīhā andar ō awēšān šud
+WZ-K35-outdated s227	wz 3.77	čiyōn haftom ō ātaxš mad ī =š pad ham ātaxš padīrag kōxšīd
+WZ-K35-outdated s228	wz 3.77	ān ātaxš ō ēwēnagān bē baxt ī xwānīhēd abzōnīg wehfranāftār urwāzišt wāzišt bulandsūd
+WZ-K35-outdated s229	wz 3.78	u =š ātaxš ī abzōnīg xwad andar garōdmān bē dād u =š paydāgīh pad ātaxš ī pad zamīg sōzišnīg u =š abzōnīgīh ēd kū harw sardagān ō xwēš čihrīh abzāyīhēd
+WZ-K35-outdated s230	wz 3.79	ātaxš ī wehfranāftār ān ī andar mardōmān ud gōspandān u =š xwarišn gugārdan ud tan abzūdan ud čašmān rōšnēnīdan andar xwēškārīh
+WZ-K35-outdated s231	wz 3.80	urwāzišt ān ī andar urwarān kē =šān andar tōm dādag u =š zamīg suftan āb ayārdēnīdan ʾptn" ptš" urwarān wiškōf hučihr ud hubōy kirdan bar pazzāftan pad was mizag gōhrēnīdan andar xwēškārīh
+WZ-K35-outdated s232	wz 3.81	wāzišt ān kē =š andar abr rawišn dārēd u =š tom ud tār ī andarwāyīg zanēd
+WZ-K35-outdated s233	wz 3.81	ud stabrīh ī andarwāy bārīk ud spuk čihrag kirdan ud tagarg widāxtan ud āb ī abr dārēd paymānagīhā tāftan sreškōmand ud garmōg kirdan andar xwēškārīh
+WZ-K35-outdated s234	wz 3.82	bulandsūd =iz andar asmān ān xwarrah kē =š mehmānīh andar warahrān ātaxš čiyōn kadagxwadā abar xānag kē =š abzōnīgōzīh az rōšn waxšišnīh ī ātaxš frāz sōzišnīh ī bnd" ud pākīh ī gyāg stāyišn ī yazdān warzišn ī kirbagān
+WZ-K35-outdated s235	wz 3.83	u =š abāg druz ī mēnōy kōxšīdan parīg ud kirbān ī az drayāb abar āyēnd ud tanīg wtīh paymōxt dārēnd ud pad gand ud āhōgēnišn ī rōšnān petyārēnēnd ud pad ǰādūgīh dāmān wināhēnd zadan ud sōxtan ud ǰādūg ud parīg wānīdan ud mādagwarīhā pad šab xuftagān pāsbānēnīdan abāg srōšahlī ayār būdan xwēškārīh
+WZ-K35-outdated s236	wz 3.84	u =š pad bun dām ī hamāg zamīg pad pāsbānīh bē ō warzāwand ādur ī farnbay ud tagīg ādur ī gušnasp ud purrsūd ādur ī burzēnmihr čiyōn āsrōn ud artēštār ud wāstaryōš hēnd abespārd
+WZ-K35-outdated s237	wz 3.85	ādur ī farrbay pad xwarrahōmand kōf abar xwārizm gāh grift ud ādur ī gušnasp pad asnwand kōf ī abar ādurbādagān ud ādur ī burzēnmihr pad rēwandgar ī abar pušt ī wištāspān
+WZ-K35-outdated s238	wz 3.86	u =š stīh paydāgīh ī andar gēhān abērtar būd
+WZ-K35-outdated s239	wz 3.86	pad xwadāyīh ī hōšang ka mardōm pad gāw ī slswk az xwaniras bē ō abārīg kišwar hamē šud hēnd pad nēmag ī rāh šab =ēw pad wād ī škeft ādurpāyag ī abar pušt ī gāw pad se gyāg dhytk kē =š ātaxš pad =iš būd ō zrēy ōbast ud guharīg ī ān ēk ātaxš ī wuzurg paydāg būd ō se xwarrah kē =šān mehmānīh abar ādur ī farrbay ādur ī gušnasp ud ādur burzēnmihr
+WZ-K35-outdated s240	wz 4.–	abar āmadan ī dēn ō āwām
+WZ-K35-outdated s241	wz 4.1	homānāgīh ōwōn čiyōn frazendzāyišnīh ī pad dō hamzōrīh ī ast tōmpadīrīh ī mādagān pad zāyišn ud abāz abespārdan ī ō pidarān
+WZ-K35-outdated s242	wz 4.2	zamānīg kōxšišn ī gumēzišnīh mādagwarīhā pad dō abzār ēk dehbedīh ī bē az hamnāf dēnīh ud ēk dēn ī ō dehbedīh hamnāfīhist
+WZ-K35-outdated s243	wz 4.3	dēn mazdēsnān ka āwām az gētīrāyēnišnīh abāz ō mēnōyčihrīh hamē wardīhist pad zamīg paydāg būd fradom pad spandārmad pas pad ohrmazd čiyōn frazendpadīrišn ī mādarān ud abāz abespārdan ī ō pidarān
+WZ-K35-outdated s244	wz 4.4	paydāgīh ī dēn pad spandārmad pad ān gāh būd ka frāsyāb āb az ērānšahr abāz dāšt ud āb abāz ānīd kanīgkirbīhā pad xānag ī mānuščihr ī ērānšahr dehbed ud anērān passoxguftār būd ōh paydāgīhist
+WZ-K35-outdated s245	wz 4.5	u =š paymōxt dāšt rōšnīg paymōzan kē bē frōgīhist ō wispān kustagān hāsr =ēw drahnā ī ast frasang =ēw homānāg
+WZ-K35-outdated s246	wz 4.6	u =š pad mayān bast dāšt zarrēn kustīg ī xwad būd dēn ī mazdēsnān čē dēn band ast kē =š aw =iš paywastag sīhse band ī abar sīhse wināh kē =š hamāg wināh az =iš baxtag
+WZ-K35-outdated s247	wz 4.7	kanīgān kē =šān spandārmad bastkustīg dīd hučihr sahistan rāy pas az ān pad bastan ī kustīg taftīg būd hēnd
+WZ-K35-outdated s248	wz 4.8	ēn =iz būd mādarīh ī pad dēn ī pad spandārmad bē dahīhist pēš az zarduxšt bē ō hampursagīh mad pad 628 sāl ī =šān gugān az dēn mādayān nibēg ī pēšēnān
+WZ-K35-outdated s249	wz 4.9	nām ī zarduxšt xwānīhist abar zamīg pēš kē =š hampursagīh pad sesad sāl
+WZ-K35-outdated s250	wz 4.10	ōwōn paydāg kū andar ān ēw ka tūrān abāz … ērān pad zamīg ī niyābagīh ī hērbedān =iz pahikār būd
+WZ-K35-outdated s251	wz 4.10	ohrmazd apahikārīh rāy wuzurg gāw =ēw brēhēnīd kē =š sāmān ī ērān andar tūrān pad pštk abar sumb paydāg būd
+WZ-K35-outdated s252	wz 4.10	pad wēšag =ēw dāšt ēstēd
+WZ-K35-outdated s253	wz 4.11	hamē ka pahikārīh būd pad ān gāw sāmān bē šnāsīhist tā ka kay us purrkāmagīhā bahr =ēw az zamīg ī tūrān abāz ō ērān griftan kāmag būd
+WZ-K35-outdated s254	wz 4.12	u =š dīd kū tā ān gāw ast kirdan duščārtar čē abāg pādixšāyīh ī =š būd ā =š nē xwāst kū pad ān gāw sāmān paydāgīhēd
+WZ-K35-outdated s255	wz 4.13	3 brād būd hēnd ud ān ī seom srid ī seom xwānīhēd pad tan wuzurg pad zōr agrī ud ō kay us pad was dar frayādišnīg u =š andar wāspuhragān būd
+WZ-K35-outdated s256	wz 4.13	kay us bē ō pēš xwāst u =š framūd kū šaw ān gāw bē ōzan andar wēšag
+WZ-K35-outdated s257	wz 4.14	srid šud ka =š bē ōzadan kāmist gāw mardōmsaxwanīhā aw =iš pahikārd kū =m bē ma ōzan čē ka =m bē ōzanē ān kē =š frawahr andar hōm ī dūrōš pad zamīg paydāg bawēd kē =š nām zarduxšt ī spitāmān u =t wad kirdan andar gēhān bē gōwēd u =t pad ruwān dušxwārīh ōwōn būd čiyōn pad dēn paydāg kūš
+WZ-K35-outdated s258	wz 4.14	čiyōn =iš bawēd ōy ī wadag ka =š wattarīh gōwēd u =t hāwandīh bawēd margīh ī az =iš ān ī az margīh abar gumēxtēd kū =š az =iz margīh wattarīh
+WZ-K35-outdated s259	wz 4.15	srid ka =š ān saxwan āšnūd abāz wašt abāz ō kay us šud u =š az čēēwēnagīh āgāhēnīd
+WZ-K35-outdated s260	wz 4.15	ēn =iz guft kū gāw pad škeftīh guft kū az harw kē andar zamīg ahlāyīhkāmagtar nūn zanišn framāyēd ō gāw
+WZ-K35-outdated s261	wz 4.16	ud kay us kāmag abar ardīkkarīh guft kū nē paydāg kū ān kē =š frawahr andar hōm ī dūrōš xwad ast ayāb nē ud agar ast zāyēd ud paydāg bawēd ayāb nē
+WZ-K35-outdated s262	wz 4.16	u =š pad saxtīh framūd kū šaw u =š bē ōzan
+WZ-K35-outdated s263	wz 4.17	srid guft kū nē ādūg ham bē ōzadan čē =m az =iš garzišn bē abaxšīh pad dil
+WZ-K35-outdated s264	wz 4.18	kay us guft kū bē ō wahmān wēšag šawēd kē pad =iš mānēnd was sar ī parīgān u =t bē brīnēnd abaxšīh az dil
+WZ-K35-outdated s265	wz 4.19	srid abar šud ō wēšag dīd hēnd wasān parīgān kē =šān zafr wišād dāšt
+WZ-K35-outdated s266	wz 4.19	u =šān abar xrōsīd kū ōzan ma abaxšā
+WZ-K35-outdated s267	wz 4.20	u =š bē šud abaxšīh az dil
+WZ-K35-outdated s268	wz 4.20	abāz šud ō wēšag u =š pad mušt pušt ī gāw pad se gyāg bē škast
+WZ-K35-outdated s269	wz 4.20	gāw škeft brāmag wāng dāšt
+WZ-K35-outdated s270	wz 4.21	srid pas az ān ōzadan ī gāw az ān brāmag ī =š āšnūd ēg =iš garān anastīh būd
+WZ-K35-outdated s271	wz 4.21	abāz šud ō kay us u =š čiyōn būd āgāhēnīd u =š xwāst kū =š bē framāyēd ōzadan čē =š zīndagīh nē abāyišnīg būd
+WZ-K35-outdated s272	wz 4.22	kay us guft kū man tō bē nē ōzanam čē nē wčylyt az tō
+WZ-K35-outdated s273	wz 4.23	srid guft kū agar tō man bē nē ōzanē ēg man tō bē ōzanam
+WZ-K35-outdated s274	wz 4.24	kay us guft kū tō man bē ma ōzan čē dehbed ī gēhān ham
+WZ-K35-outdated s275	wz 4.25	srid hamē ahunsandīh kird tā =š kay us framūd kū bē ō wahmān wēšag šaw čē =š parīg =ēw ī sagkirb pad =iš ast u =t bē ōzanēd
+WZ-K35-outdated s276	wz 4.26	srid bē ō ān wēšag šud u =š ān parīg ī sagkirb dīd
+WZ-K35-outdated s277	wz 4.26	pas ō parīg zad bē ō dō būd u =š hamē zad tā bē hazār būd hēnd
+WZ-K35-outdated s278	wz 4.26	u =šān srid abar gyāg ōzad ud darrīd
+WZ-K35-outdated s279	wz 5.–	abar paydāg būdan ī zarduxštān xwarrah pēš =iz az zāyišn
+WZ-K35-outdated s280	wz 5.1	ōwōn paydāg kū pēš az čēhelpanǰ sāl ka zarduxšt bē ō hampursagīh mad ka frēnī zarduxšt mād ī =šān dugdō xwānd zād xwarrah pad ātaxšēwēnag az ān ī asarrōšnīh frōd āmad bē ō ān ātaxš gumēxt ī =š pēš būd
+WZ-K35-outdated s281	wz 5.1	az ātaxš andar ō mādar ī zarduxšt gumēxt
+WZ-K35-outdated s282	wz 5.1	se šab pad hamāg widārān ud kustag ī xānag pad ātaxš ēwēnag paydāg būd
+WZ-K35-outdated s283	wz 5.2	rāhwiderān wuzurg rōšnīhā hamē dīd
+WZ-K35-outdated s284	wz 5.3	ka =iz sālag būd ān xwarrah ī =š pad =iš rāy pad rāh hamē raft ēg =iš payrōg az =iš hamē ōbast
+WZ-K35-outdated s285	wz 6.–	abar hambōsišn ī yaštfrawahr zarduxšt
+WZ-K35-outdated s286	wz 6.1	kū =š frawahr andar hōm u =š xwarrah pēm ī gāw bē dahist
+WZ-K35-outdated s287	wz 6.1	pad frāzxwarišnīh ī pidarān ud mādarān ox bē ō hambōsišn mad čiyōn =iš gugān andar nibēg ī abar nimūdārīh ī yazišn paydāgēnīd būd
+WZ-K35-outdated s288	wz 7.–	abar abāz paywandišnīh ī zarduxšt ō ohrmazd pad dō kas ī pahlom az gētīyān ǰam ud az mēnōyān nēryōsang
+WZ-K35-outdated s289	wz 7.1	tōhmagōšmurišnīh ī zarduxšt
+WZ-K35-outdated s290	wz 7.1	ēk zarduxšt ī pōrušasp ī fradarasp ī bhʾwltʾsp ī hayčadasp ī čyhšnwš ī pytlsp ī arečataršu ī xarečare spitāmān ī wʾsyšt ī ʾyzym ī plʾh ī arǰ ī dwlslwb ī mānuščihr ī mānušxwarnar ī mānušxwarennāg ī mānuš ī nēryōsang frēstag ī ohrmazd kē =š mād būd ngzyk ī ʾlyk sridag ī bidag ī frazušag ī zušag ī fraguzag ī guzag ī ēriǰ ī frēdōn ī āspiyān
+WZ-K35-outdated s291	wz 7.1	bowandagīh ī dah āspiyān ī ǰam ī wīwanghān ī ʾynghʾn ī ʾnwšʾn ī hōšyang ī frawāg ī siyāmag ī mašī ī gayōmart
+WZ-K35-outdated s292	wz 8.–	abar škeftkōxšišnīh ī druz pad zadan ī zarduxšt
+WZ-K35-outdated s293	wz 8.1	ka =š nazd būd ō zāyišn ahreman tab dēw ud dard dēw ud wād dēw harw ēk abāg 150 dēw bē ō ōzanišn ī zarduxšt frēstād hēnd
+WZ-K35-outdated s294	wz 8.2	u =š mēnōy frāz ō mādar šud hēnd az tab ud dard ud wād awištābīhist
+WZ-K35-outdated s295	wz 8.3	ud az ānōh pad ēk frasang ǰādūg =ēw būd stlk nām ī ǰādūg bizišktom būd
+WZ-K35-outdated s296	wz 8.3	pad ēmēd ī kirdan =iš az gāh abar āxist andar ō rawišn ēstād
+WZ-K35-outdated s297	wz 8.4	frēstag ī ohrmazd wāng burd kū ma šaw ō ǰādūgān čē =t nē hēnd bēšazēnīdār bē abāz ō xānag šaw ud dast andar māl pad rōgn ī gāw ī abar ātaxš burd esm =iz bōy widāb pad xwēštan ud zahag kē =t pad aškamb
+WZ-K35-outdated s298	wz 8.5	u =š hamgōnag kird druyist būd
+WZ-K35-outdated s299	wz 8.6	u =š did abar frēstād wisp hamkārān hamzōrān u =šān nē ayāft čār abāz wašt hēnd
+WZ-K35-outdated s300	wz 8.7	u =šān guft kū az hamāg kustag ātaxš būdan rāy nē ayāft ham čār
+WZ-K35-outdated s301	wz 8.7	az harw kē =š ayār frāy hamēmāl ēg =iš abāg nē bawēd
+WZ-K35-outdated s302	wz 8.8	abar ham šab ī ka zād ahreman spāhbedān wizīd u =š gund ārāst
+WZ-K35-outdated s303	wz 8.8	ast kē abāg hazār dēw ud ast kē abāg 40000 dēw tazišnīg pahikafišnīg kōxšīd hēnd
+WZ-K35-outdated s304	wz 8.8	padīragēstišnīh ī yazdān mādagwarīhā xwad xwarrah ī pad ātaxšēwēnag pad ān zāyišn paydāg būd
+WZ-K35-outdated s305	wz 8.9	u =š brāh ud payrōg dūr gyāg payrōgīhistan rāy ēg =išān nē ayāft hēnd čār
+WZ-K35-outdated s306	wz 8.10	abdom ahreman akōman abar frēstīd u =š guft kū tō hē mynwktl kē andarōntom hē
+WZ-K35-outdated s307	wz 8.10	šawē pad frēbišn abar ō zarduxšt menišn u =š wardēn menišn ō amāh kē dēw ham
+WZ-K35-outdated s308	wz 8.11	ohrmazd wahman padīrag abar frēstīd
+WZ-K35-outdated s309	wz 8.12	akōman frāz ō pēš āmad frāz ō dar mad būd andar kāmist šud
+WZ-K35-outdated s310	wz 8.13	wahman čʾlkwylīhā abāz dād u =š bē ō akōman guft kū andar šaw
+WZ-K35-outdated s311	wz 8.14	akōman handēšīd kū =m nē tis warzišn kē =š ō man guft wahman abāz wašt
+WZ-K35-outdated s312	wz 8.14	wahman andar šud ō wārom ī zarduxšt gumēxt
+WZ-K35-outdated s313	wz 8.15	zarduxšt bē xandīd čē wahman ast mēnōyrāmēnīdār
+WZ-K35-outdated s314	wz 8.16	u =š haft ǰādūg pēš nišastag būd hēnd az rōšnīh ī andar mān brāzišnīgīhā wēnīhist xandīdan ī =š pad zāyišn ī padīrag ān ī abārīg mardōmān kē pad zāyišn bē grīyēnd bē tarsīd hēnd
+WZ-K35-outdated s315	wz 8.17	u =š pad ham zamān ī zāyišn dastwarīh ī abar dēn az ohrmazd padīrift
+WZ-K35-outdated s316	wz 8.18	čiyōn gōwīhēd pad dēn kū =š pad zāyišn guft kū čiyōn ox kāmag tō kē zōt hē kū pēšōbāy ī dāmān hē frāz ō man guft kū dastwar bawišn
+WZ-K35-outdated s317	wz 8.19	čiyōn zarduxšt gētītanīh rāy gētīēwāzīhā guft
+WZ-K35-outdated s318	wz 8.19	ohrmazd mēnōyīhā mēnōyīh rāy ā =š passox guft kū ēdōn radīhā ēdōn frārōnīhā az ahlāyīh čēgāmizēw frāz ahlawān āgāhīhā gōwēd kū dastwar ham
+WZ-K35-outdated s319	wz 8.20	didīgar rōz pōrušasp šud u =š az ǰādūgān kē andar gyāg pad āfrāh dāšt hēnd pursīd kū čē ast ka aburnāyīgān pad zāyišn bē grīyēnd ud čē ān ka bē xandēnd
+WZ-K35-outdated s320	wz 8.21	u =šān passoxēnīd kū grīyistan margōmandīh ī pad frazām dīdan xandīdan ahlawīh ī xwēš dīdan rāy
+WZ-K35-outdated s321	wz 8.21	abar brādarān ī zarduxšt hamēstārān ī karbān ud usixšān pus ī nylyw\ʾwšstʾlyš būd hēnd
+WZ-K35-outdated s322	wz 9.1	nylyw\ʾwšstʾlyš az kwhlyt kwhlyt az ešm ud mʾnwšk mānuščihr xwāharzād
+WZ-K35-outdated s323	wz 9.2	pad ān gāh ka zarduxšt zād panǰ brād būd hēnd kē =šān nām brādarōxš brādarōšan tūr ī brādrōxš ʾzʾn ud sm
+WZ-K35-outdated s324	wz 9.3	panǰbrādarīh ī awēšān kē ān ī mayānag tūr ī brādrōxš ī zarduxšt būd petyāragtar handāzag ī panǰbrādarīh ī pōrušasp frazendān kē ān ī mayānag zarduxšt būd
+WZ-K35-outdated s325	wz 9.4	ān čahār brādar ī zarduxšt dō pēš az zarduxšt ī =šān nām ltwštl ud loynzʾtl ud dō pas wtlykʾ ud hndynš
+WZ-K35-outdated s326	wz 9.5	mayānagbawišnīh ī zarduxšt pad ān čim kū ō mayānag ī pēšēmālān pasēmālān pad ān zamānag ōwōn bē yb yhst kū =š se hazārag pēš mad ud se pas tā pad ān ī būd pad čē ēwēnag bē ō pēšēnānīgān hammōzād ud abar ān ī bawēd čē ēwēnag kunišn =iz bē ō dāmān framāyēd
+WZ-K35-outdated s327	wz 9.6	čiyōn gōwīhist pad gāhān kū ān ī harw dō az tō pursēm ohrmazd kē =iz mad tā nūn kē rasād az nūn frāz
+WZ-K35-outdated s328	wz 10.–	abar uzmāyišn ī pad =iš būd kē warzkardīh ī yazadīg ud waxšwarīh nišān pad =iš wēnīhēd
+WZ-K35-outdated s329	wz 10.1	ōwōn paydāg kū didīgar rōz ka zād pōrušasp az ān panǰ brād ī az karbān tōhmag ēk xwānd u =š guft kū bē niger nišān ud daxšag ī man pus
+WZ-K35-outdated s330	wz 10.2	šud pēš ī zarduxšt nišast u =š sar ī zarduxšt saxt pēčīd kū tā bē ōzanīhād u =š ǰādūgān az =iš tars ud wišēg abēbīm bawānd passoxēnīd
+WZ-K35-outdated s331	wz 10.3	ohrmazd čiyōn pad ān dah šab pad mehmānīh frōd ō zamīg frēstād spandārmad ud ardīwsūr ud ardāfraward ī was ēg =iš nē mad ǰuttarīh ud frāz huškdast būd ōy kirb
+WZ-K35-outdated s332	wz 10.4	ān ǰādūg xwāst az pōrušasp ān ī zarduxšt yān pad ān anāgīh ī =š az xwēš kunišn ǰast
+WZ-K35-outdated s333	wz 10.5	hamzamān pōrušasp zarduxšt grift u =š ō kirb dād kū čiyōn =it xwēš kāmag pad =iš kird
+WZ-K35-outdated s334	wz 10.6	ōy stad u =š abgand ō pāy ī gāwān kē pad rāh bē ō āb hamē šud hēnd
+WZ-K35-outdated s335	wz 10.6	pēšōbāy ī gāwān ī ān ramag pad nazdīkīh bē ēstād u =š 150 gāw ī =š az pas raft hēnd az =iš abāz dāšt
+WZ-K35-outdated s336	wz 10.6	ud pōrušasp grift u =š abāz ō xānag burd
+WZ-K35-outdated s337	wz 10.7	u =š didīgar rōz bē ō pāy ī aspān abgand
+WZ-K35-outdated s338	wz 10.7	pēšōbāy ī aspān pad nazdīkīh ī zarduxšt bē ēstād u =š 150 asp ī =š az pas raft hēnd aziš abāz dāšt ud pōrušasp grift u =š abāz ō xānag burd
+WZ-K35-outdated s339	wz 10.8	u =š sidīgar rōz esm bē ō ham čīnīhist u =š zarduxšt abar bē dād u =š ātaxš abar abrōxt hambun =iz az =iš nē sōxt u =š ān būd nišān ī passāxtan ī war u =š bōxtišn
+WZ-K35-outdated s340	wz 10.9	u =š čahārom rōz bē ō āšyān ī gurg abgand
+WZ-K35-outdated s341	wz 10.10	gurg nē pad āšyān būd
+WZ-K35-outdated s342	wz 10.10	ka abāz ō sūrāg kāmist šud ka wīstčahār pay mad hamēwēnag ēstād pad gyāg hušk būd
+WZ-K35-outdated s343	wz 10.11	andar šab wahman ud srōšahlī mēš ī kurušk ī šīrpestān bē ō sūrāg burd u =š tā rōz gōhrag gōhrag šīr bē ō zarduxšt hamē dād
+WZ-K35-outdated s344	wz 10.12	andar bām mādar ī zarduxšt pad ān ēmēd kū =š ast az sūrāg bē āwurd šāyēd bē ō ān gyāg šud
+WZ-K35-outdated s345	wz 10.13	ud kurušk bērōn āmad frāz dawīd
+WZ-K35-outdated s346	wz 10.14	u =š mādar handēšīd kū gurg ast u =š guft kū =t bē ǰūd pad sagrīh az ōy bē hamē pattāy ud frāz šud
+WZ-K35-outdated s347	wz 10.14	ka =š zarduxšt druyist =iz dīd ēg =iš abar grift u =š guft kū nē daham pad zīyišn ō kas nē ka ēdar harw dō deh bē ō ham rasēnd ray ud nōdar
+WZ-K35-outdated s348	wz 10.15	čiyōn ēn dō deh andar ādurbādagān andar mēnōyān čiyōn az čēčast pad panǰāh frasang
+WZ-K35-outdated s349	wz 10.15	zarduxšt az ray ud wištāsp az nōdar būd
+WZ-K35-outdated s350	wz 10.15	ud ēn dō deh ray pad nām ī glč ī dūrīsraw ī mānuščihr kē =š zarduxšt az =iš tōhmag būd
+WZ-K35-outdated s351	wz 10.15	ud nōdar pad nām ī nōdar ī mānuščihr kē =š wištāsp az =iš tōhmag būd
+WZ-K35-outdated s352	wz 10.16	ēn būd nišān ī =š pad zāyišn
+WZ-K35-outdated s353	wz 10.17	rōz =ēw ēk az ān panǰ brād ī az karbān zarduxšt dīd u =š dagr zamān ul ō abar frōd pad hamāg kustag pad gardišn bē nigerīd
+WZ-K35-outdated s354	wz 10.18	pōrušasp pursīd kū čē ān ī ka =t ō abar nigerīd čē ān ī ka =t ō frōd čē ān ī ka =t pad hamāg kustag bē nigerīd
+WZ-K35-outdated s355	wz 10.19	u =š ēdōn passoxēnīd kū ān ī ka =m ō abar nigerīd pad ān čim ka =m dīd kū xwarrah ī im abar ō asmān šawēd az gōwišn ī im ruwān ī mardōmān abar ō wahišt šawēnd
+WZ-K35-outdated s356	wz 10.19	ān ī ka =m ō frōd nigerīd ā =m dīd kū az kirdan ī im dēw ud druz ud ǰādūg ud parīg azēr zamīgnigān bawēnd stōwīhā abāz ō dušox ōftēnd
+WZ-K35-outdated s357	wz 10.19	ān ī ka =m ō hamāg kustag bē nigerīd ā =m dīd kū gōwišn ī im pad hamāg zamīg bē ayābēd
+WZ-K35-outdated s358	wz 10.19	ud ka būd pad dād ī haft kišwarān āš paymōxt dāšt kbʾh ī az haft pōst kē =š xwarrah ī haft amahraspandān pad =iš būd
+WZ-K35-outdated s359	wz 10.20	tūr ī brādrōxš frāz šud
+WZ-K35-outdated s360	wz 10.20	ka ō dašn ālag šud zarduxšt ō hōy bē tazīd ka ō hōy ālag šud zarduxšt ō dašn tazīd
+WZ-K35-outdated s361	wz 10.20	u =š tūr ī brādarōxš pad =iš bē nihumbēd u =š aw =iš nē ayāft
+WZ-K35-outdated s362	wz 11.–	abar ǰudāhangīh ī =š abāg zādēnīdārān
+WZ-K35-outdated s363	wz 11.1	ēn =iz paydāg kū dēwān ō hanǰaman ī ǰādūgān ud hamāfrāhān wāng =ēw burd kū ān ī pōrušasp frazend abōy ud harg ud yazadānwināhīdag
+WZ-K35-outdated s364	wz 11.1	kas az mardān zanān nē menēd ud āfrāh nē padīrēd
+WZ-K35-outdated s365	wz 11.2	āgāhīh bē ō pōrušasp mad ud pōrušasp bē ō zarduxšt guft kū =m menīd kū =m zād pus kē bawēd āsrōn artēštār ud wāstaryōš
+WZ-K35-outdated s366	wz 11.2	nūn hlk ud yazadānwināhīdag hē
+WZ-K35-outdated s367	wz 11.2	raw ō karbān tā bēšāzēnēnd
+WZ-K35-outdated s368	wz 11.3	zarduxšt passox dād ēd men kū ast ān ī tō pus āsrōn artēštār ud wāstaryōš
+WZ-K35-outdated s369	wz 11.4	u =š pad framān ī pōrušasp dō asp andar ō wardyōn bast ud abāg pōrušasp šud
+WZ-K35-outdated s370	wz 11.5	ka ō ān gyāg mad hēnd pōrušasp dādestān čiyōn būd pēš ēk karb ī az ān panǰ brādarān guft
+WZ-K35-outdated s371	wz 11.6	ōy ǰādūg ǰāmag =ēw stad u =š aw =iš mst u =š guft kū ē xwarēd ēd ī tō pus tā druyist bawēd
+WZ-K35-outdated s372	wz 11.7	u =š pad ēn dādestān kird kū tā ō hamčihrīh ī awēšān wardād
+WZ-K35-outdated s373	wz 11.8	zarduxšt bē ō pōrušasp guft kū ō ōy ī =t pānag ud dastwar abāz dahē
+WZ-K35-outdated s374	wz 11.8	ud āxist ud abāz ō gyāg šud
+WZ-K35-outdated s375	wz 11.9	zarduxšt andar rāh dō aspān tišnagīh rāy āb dād u =š menīd kū abēsūd būd rawišn ī =m ō dar ī karbān bē ēn ēk ī ka =m pad ābdahišnīh ī aspān ēg =im abzāyēnīd ruwān
+WZ-K35-outdated s376	wz 12.–	abar andarggōwišnīh ī =š ō wattarān
+WZ-K35-outdated s377	wz 12.1	ēn =iz paydāg kū rōz =ēw dūrāsraw ī kirb čiyōn az ham panǰ brādarān bē ō xānag ī pōrušasp mad
+WZ-K35-outdated s378	wz 12.2	pōrušasp šīr ī aspēw ǰāmag pēš nihād u =š guft kū frāz yaz
+WZ-K35-outdated s379	wz 12.3	zarduxšt ō pōrušasp pahikārd kū nē yazam
+WZ-K35-outdated s380	wz 12.4	pōrušasp guft kū ōy ēw yazēd ʾpyt ušān tā se bār andarg pahikārd
+WZ-K35-outdated s381	wz 12.5	ul ēstād zarduxšt u =š ān ī dašn pāy ō ǰāmag pahikōft u =š bē rēxt
+WZ-K35-outdated s382	wz 12.6	u =š guft kū ʾhldīh yazam ahlawān driyōšān mardān zanān yazam pōrušasp bahr ō ōy rāy kē =š pad =iš arzānīgīh
+WZ-K35-outdated s383	wz 12.7	ud dūrīsraw bē ō zarduxšt guft kū čiyōn =it fradom ham bahr ud rōzīg bē abgand ham āt ān harw dō ā =š abar baram u =t bē murnǰēnam
+WZ-K35-outdated s384	wz 12.8	zarduxšt andarg guft kū =t ān pad bowandagmenišnīh pad harw 2 dōysr abar nigeram u =t bē murnǰēnam
+WZ-K35-outdated s385	wz 12.9	u =šān ēk ō did pad nigerišn =ēw ī tēz dagr zamān hamē nigerīd ud yazadānčihrīh ī zarduxšt abar ǰādūgīh ī ōy čērīhist
+WZ-K35-outdated s386	wz 12.10	dūrīsraw frāz āšuft u =š asp xwāst ud guft kū =m im rāy ēstād nē tuwān
+WZ-K35-outdated s387	wz 12.10	abar ō asp nišast
+WZ-K35-outdated s388	wz 12.10	ka andak =ēw šud būd garān dardīhā az asp bē ōbast ud murd
+WZ-K35-outdated s389	wz 12.10	u =š frazend ud frazendān frazend pad ham gyāg murd hēnd
+WZ-K35-outdated s390	wz 13.–	abar az =iš ahlāyīh ārzōgīh
+WZ-K35-outdated s391	wz 13.1	ēdōn paydāg kū ka sālag būd pusarān ī pwlwšp az pidar bahr xwāst hēnd u =šān pōrušasp bahr pad =iš baxt hēnd
+WZ-K35-outdated s392	wz 13.2	andar ǰāmagīhā kustīg =ēw būd dōkird ī =š pahnā čahār angust ud se bār pērāmōn kustag frāz āwurdan šāyist
+WZ-K35-outdated s393	wz 13.2	zarduxšt abar wizīd u =š frāz bast
+WZ-K35-outdated s394	wz 13.3	ēn būd az parwānagīh ī wahman kē =š pad zāyišn ō wārom bē mad u =š az harw čē nē ēwēnag menišn bē bast u =š pad ān ī ēwēnag taftīg bē kird
+WZ-K35-outdated s395	wz 14.–	abar abaxšīdārčihrīh bāristānīhā
+WZ-K35-outdated s396	wz 14.1	ēn =iz paydāg kū rōd =ēw būd u =šān brahnag zan han xwānd pad ān čim kū stabrīh ud tēzīh ī rōd rāy zan bē ka brahnag bē būd tā =š pad =iš widard nē tuwān būd ud mardōm ī pīr čiyōn pad dēn ān kē =š haftād sāl ast han xwānīhēd apadyāwandīh rāy pad xwēš zōrīh pad =iš abāz šudan nē tuwān būd
+WZ-K35-outdated s397	wz 14.2	zarduxšt pad bār ī āb bē mad az zan ud mardōm ī pīr haft tan mad būd hēnd u =š puhl ēwēnag bē widārd hēnd
+WZ-K35-outdated s398	wz 14.3	būd nišān ī puhlīh ī kunišngarān kū =šān widārgar ī ō wahišt
+WZ-K35-outdated s399	wz 15.–	abar az =iš rādčihrīh
+WZ-K35-outdated s400	wz 15.1	paydāg kū wāstar ī pōrušasp stōrān rāy hambārd ēstād nē andar tangsārīh abar stōrān ī pōrušasp bē pad abaxšišn abar stōrān ī abārīg kē =šān tangsārīh rāy az gurs ēg =išān dumb ēk ān ī did hamē xward ā =šān frāxīhā aw =iš dād
+WZ-K35-outdated s401	wz 16.–	abar ulšbkwnpšety ī =š gētī ārzōg griftan ī =š ahlāyīh rāh
+WZ-K35-outdated s402	wz 16.1	ēn =iz paydāg kū ka sālag būd andar akāmagīh ī pid ud mād frāz wašt az xānag bē šud
+WZ-K35-outdated s403	wz 16.2	u =š bē pursīd kū kē ast ahlāyīhkāmagtar driyōšān frawardārtar
+WZ-K35-outdated s404	wz 16.3	u =šān guft kū ān ī kehist pus ī tūr ī ʾwlwytwydy kē harw rōz ǰāmag ī ʾsnyn ī aspbālāy ast purr az nān ud pēm ud abārīg xwarišn bē ō driyōšān dahēd
+WZ-K35-outdated s405	wz 16.4	zarduxšt bē ō ān gyāg šud u =š hamayārīh abāg driyōšān parwardārīh rāy čand dō mard ī agrī pad xwarišn frāz ō driyōšān burd ud kār kird
+WZ-K35-outdated s406	wz 17.–	abar abaxšišnīh ī =š nē ēwāz abar mardōm bē =š abārīg =iz dāmān
+WZ-K35-outdated s407	wz 17.1	ēn =iz paydāg kū =š sag =ēw dīd kē haft bazzag zād ēstād ud hašt rōz būd tā =š ēč xwarišn nē ayāft
+WZ-K35-outdated s408	wz 17.1	harw čē =š dīd ēg =iš dahan frāz aw =iš burd ud stard homānāg būd
+WZ-K35-outdated s409	wz 17.2	zarduxšt čārag kird tēzīhā abar burdan ī nān aw =iš ka =š yblwnpšety bē murd būd
+WZ-K35-outdated s410	wz 18.–	abar xūbwizēnīh ī zan ārzōg ī xwēš ud kāmag ī pidarān rāy pēš az ān ī sazāg windišnīh xwēš tōhmag nē gumēxtan
+WZ-K35-outdated s411	wz 18.1	ēn =iz paydāg kū ka pidar ōy rāy zan xwāst zarduxšt bē ō zan pahikārd kū =m rōy bē nimāyē kū tā =š čihrag ēwēnag brahm dīd hād ēn =iz kū =š čihrag huārzōg ayāb nē šnāsīhād
+WZ-K35-outdated s412	wz 18.2	u =š zan rōy az =iš abar wašt
+WZ-K35-outdated s413	wz 18.3	ud zarduxšt guft kū kē wēnišn az man abāz kunēd nē warzēd ān ī man tarsagāyīh
+WZ-K35-outdated s414	wz 19.–	abar padīriftan ī =š āfrāh az =iz wattarān ud bazzagān xwāyišnīhā āšnūdan kē ān and čand sūdōmandīh paydāg ān padīriftan
+WZ-K35-outdated s415	wz 19.1	ēn =iz paydāg kū bē ō grōh =ēw mad kē andar gyāg pad wēšdānišnīh āšnāgtar būd hēnd
+WZ-K35-outdated s416	wz 19.1	az =išān pursīd kū čē ast ō ruwān frayādišnīgtar
+WZ-K35-outdated s417	wz 19.2	u =šān guft kū driyōšān parwardan ud wāstar ō gōspandān dādan esm ō ātaxš burdan ud hōm ō āb rēxtan ud was dēwān pad gōwišn yaštan pad gōwišn ī dēn gōwīhēd
+WZ-K35-outdated s418	wz 19.3	ēg parward zarduxšt driyōšān ud wāstarēnīd gōspandān ud esm burd ō ātaxš ud hōm hūnīd ō āb
+WZ-K35-outdated s419	wz 19.3	nē hagriz čēgām =ēw zarduxšt dēwān pad gōwišn yašt hēnd
+WZ-K35-outdated s420	wz 20.–	abar madan ī =š ō sālagīh
+WZ-K35-outdated s421	wz 20.1	ōwōn paydāg kū uzīd sīh sāl az bawišn frāz māh spandārmad ud rōz ʾnglʾn pad ān kustag az nōgrōz frāz čēhelpanǰ rōz ǰašn ī wahār būd xwānd ō gyāg =ēw pad nāmčišt paydāg būd kū mardōmān az was kustag bē ō ān ǰašnzār šud hēnd raft ēstād
+WZ-K35-outdated s422	wz 20.2	zarduxšt čiyōn bē šud ō ǰašnzār pad raft ēstād andar rāh pad dašt =ēw ēwtāk bē xuft
+WZ-K35-outdated s423	wz 20.3	u =š pad xwamn dīd kū mardōm ī gētī was ārāyišn bē ō abāxtar dāšt tā hamāg mardōm ī pad zamīg pad abāxtar paydāg bē būd hēnd u =š pad tīh ī awēšān mēdōmāh ī ārāstīyān čiyōn ārāstī pōrušasp brād būd pēšōbāy az hamāg mardōm mēdōmāh bē tā pēš ī zarduxšt šud hēnd
+WZ-K35-outdated s424	wz 20.4	nimūdār bwtr kū fradom mēdōmāh pas harwisp ox ī astōmand hāxtēnd
+WZ-K35-outdated s425	wz 21.–	abar madan ī =š bē ō hampursagīh
+WZ-K35-outdated s426	wz 21.1	uzīd ān čēhelpanǰ rōz ī ǰašnzār māh ardwahišt rōz day pad mihr bāmdād zarduxšt hōm hunīdan rāy frāz ō bār ī dāytī āb šud čiyōn hampursagīh ī zarduxšt pad =iš rāy rad ast ī ābān
+WZ-K35-outdated s427	wz 21.2	āb pad čahār xānag būd ēstād u =š zarduxšt pad =iš bē widard u =š fradom tā zang būd ud didīgar tā ō šnūg ud sidīgar tā ō wizārišn ī tlyn rān ud čahārom tā ō gardan
+WZ-K35-outdated s428	wz 21.3	ēn nimūdār būd kū =š dēn pad čahār bār ō bālist rasēd kē =š paydāgīh pad zarduxšt ud ōšīdar ud ōšīdarmāh ud sōšyans
+WZ-K35-outdated s429	wz 21.4	ka =š az āb abar āmad u =š ǰāmag pōšīd ēg =iš dīd wahman amahraspand pad mard ēwēnag ī hučihr ī rōšn ī brāzdāg kē =š wars wčymk dāšt čiyōn wčymk nišān ī dōīh ptmwzn =ēw ī abrēšom homānāg būd paymōxt dāšt kē =š nē būd ēw =iz brīn ud darz pad =iš čē xwad būd rōšnīh u =š būd bālā nō andčand zarduxšt
+WZ-K35-outdated s430	wz 21.5	u =š pursē az zarduxšt kū kē hē ud az kēān hē u =t čēkāmagtom u =t pad čē ast tuxšišn
+WZ-K35-outdated s431	wz 21.6	u =š passoxēnīd kū zarduxšt ham ī spitāmān andar axwān ahlāyīhkāmagtar u =m kāmag kū āgāh bawam ān ī yazdān kāmag ud ānand ahlāyīh warzam čand =am nimāyēnd pad ox ī ʾpčyk
+WZ-K35-outdated s432	wz 21.7	u =š framūd wahman bē ō zarduxšt kū abar raw ō hanǰaman ī mēnōyān
+WZ-K35-outdated s433	wz 21.8	andčand wahman pad nō gām bē raft zarduxšt pad nawad gām ud ka 90 gām šud būd āš dīd hanǰaman ī haft amahraspandān
+WZ-K35-outdated s434	wz 21.9	ka bē ō wīstčahār pay ī amahraspandān mad wuzurg rōšnīh ī amahraspandān rāy ēg =iš sāyag ī xwēš pad zamīg nē dīd
+WZ-K35-outdated s435	wz 21.10	hanǰaman gāh būd andar zīrān ud pad kustag ī mynhn pad bār ī āb ī dāytī
+WZ-K35-outdated s436	wz 21.11	zarduxšt namāz burd u =š guft kū namāz ō ohrmazd namāz ō amahraspandān ud frāz šud pad gāh ī pursišnīgān bē nišast
+WZ-K35-outdated s437	wz 22.–	abar frašnpursīdārīh ī zarduxšt
+WZ-K35-outdated s438	wz 22.1	pursīd az ohrmazd kū kadār ast andar tanōmand gēhān fradom ī pahlomān kadār ud sidīgar kadār
+WZ-K35-outdated s439	wz 22.2	ohrmazd passoxēnīd kū fradom pāšomīh humat didīgar hūxt sidīgar huwaršt
+WZ-K35-outdated s440	wz 22.3	pursīd zarduxšt kū kadār ast weh kadār spyltl ud kadār az harwispīn pahlom
+WZ-K35-outdated s441	wz 22.4	ohrmazd passoxēnīd kū nām ī amahraspandān weh u =šān wēnišn wehtar u =šān framānburdārīh az harwispīn pāšom
+WZ-K35-outdated s442	wz 22.5	u =š pas nimūd dōīh ī buništān ud ǰudāgīh ī abar harw rāyēnišn
+WZ-K35-outdated s443	wz 22.5	guft kū az awēšān mēnōyān ā =š dōšīd kē druwand ān ī wattar warzišn
+WZ-K35-outdated s444	wz 22.5	ahreman ān ī wattar warzišn kāmag būd ahlāyīh mēnōy ī abzōnīg
+WZ-K35-outdated s445	wz 22.5	ohrmazd ahlāyīh dōšīd
+WZ-K35-outdated s446	wz 22.5	mādagwarīhā nimūd ǰudāgīh ī abar harw rāyēnišn ī rōšnān az tārān
+WZ-K35-outdated s447	wz 22.6	u =š guft kū nē amāh mēnōyān nē kāmag nē gōwišn nē kunišn nē dēn nē axwān pad āgenēn kē rōšnīh dōšēnd ā =š gyāg abāg rōšnān kē tārīkīh abāg tārān
+WZ-K35-outdated s448	wz 22.7	u =š andar ham se rōz xrad ī harwispāgāh abar burd
+WZ-K35-outdated s449	wz 22.7	andar ham frašn ī naxwistēn bē nimūd asmān pad wuzurg rōšnīh ud bām
+WZ-K35-outdated s450	wz 22.7	u =š pad nimūdārīh ī abāz dāštan ī tom az wēnišnīh aw =iš padīragēstišnīh ī ān tom rāy
+WZ-K35-outdated s451	wz 22.8	u =š nimūd xwēš čihrag asmān handāzagīhā ka =š sar pad abardomīh ī asmān dāšt ud pāy pad asmān ī frōd dast ō harw dō ālag ī asmān bē ayāft
+WZ-K35-outdated s452	wz 22.9	u =š asmān pad ēwēnag ī warr =ēw nihuft dāšt ud šaš amahraspand pad =iš hambašnīh paydāg būd hēnd ōwōn kū padisārīg harw ēk az ān ī did angust =ēw homānāgīh paydāgīhist
+WZ-K35-outdated s453	wz 22.10	amahraspandān nimūd se ēwēnag passāxt ī pad dēn
+WZ-K35-outdated s454	wz 22.11	fradom čār ī ātaxšān ud zarduxšt pad humat hūxt huwaršt se gām frāz raft nē sōxt
+WZ-K35-outdated s455	wz 22.12	didīgar ayōšust ī garm ō war abar rēzīhist pad =iš afsard pad dast ynsbwnpšety ō amahraspandān dāšt
+WZ-K35-outdated s456	wz 22.12	ohrmazd guft kū pas az abēzagdēnīh ka pahikār ī pad dēn būd ān ī tō hāwišt ō yʾn abar rēzēnd pad dast abar gīrēnd pad ān harwisp ox ī astwand bē wurrawēnd
+WZ-K35-outdated s457	wz 22.13	sidīgar brīd pad kārd ʾn paydāg būd ī andarōn aškamb tazīd xōn ud pas dast abar mālīhist druyist būd
+WZ-K35-outdated s458	wz 22.14	ēn nimāyīhist kū tō u =t hamdēnān mkblwnpšety abēzag dēn pad ōstīgān ewwswa ōwōn kū pad čiyōn sōzišn ī ātaxš ud tazišn ī ayōšust ī garm ud brīnišn pad tēx nē wardišn az weh dēn
+WZ-K35-outdated s459	wz 23.–	abar haft frašn ī dēn handazag ī haft amahraspandān pad haft gyāg būd
+WZ-K35-outdated s460	wz 23.1	frašn ī fradom ān ī ohrmazdīg būdan rāy zarduxšt
+WZ-K35-outdated s461	wz 23.1	ohrmazdīg burdār tan bē ō hampursagīh mad pad bār ī āb ī dāytī
+WZ-K35-outdated s462	wz 23.2	didīgar wahmanīg būdan rāy abāg zarduxšt
+WZ-K35-outdated s463	wz 23.2	az panǰ ēwēnag gōspand kē gētī daxšag hēnd ī wahman panǰ ō hampursagīh mad hēnd pad hugar ud usind
+WZ-K35-outdated s464	wz 23.2	pad ān rōz pēš =iz az madan ī =šān bē ō hampursagīh uzwān bē wišāyīhist mardōmsaxwanīhā guft
+WZ-K35-outdated s465	wz 23.2	az ābīgān māhīg =ēw sardag =ēw ʾlzwʾ nām
+WZ-K35-outdated s466	wz 23.2	az ūnīgān kākom ī spēd samōr ī spēd
+WZ-K35-outdated s467	wz 23.2	az wāyendagān karšift murw =iz sēnmurw
+WZ-K35-outdated s468	wz 23.2	abārīg sardag =ēw az frāxraftārān
+WZ-K35-outdated s469	wz 23.2	xargōš kē dadān rāhnimūdār ō āb ud az čaragarzānīgān xarbuz ī spēd
+WZ-K35-outdated s470	wz 23.2	u =šān mardōmsaxwanīhā dēn az ohrmazd padīrift
+WZ-K35-outdated s471	wz 23.2	pad radīh ī panǰ ēwēnagān gumārd hēnd kū tā hamgōspandān =iz pad xwēš ēwāz čand =išān dānišn ud tuwānnērōgīh dēn ōšmurēnd
+WZ-K35-outdated s472	wz 23.2	u =š ō zarduxšt azadārīh abēšīdārīh ud hangārišnīh ī panǰ ēwēnag gōspandān =iz dēnškeftandarzīhātar framūd
+WZ-K35-outdated s473	wz 23.3	sidīgar frašn ardwahištīg būdan rāy mēnōyān ātaxšān abāg zarduxšt bē ō hampursagīh mad hēnd pad tōzān āb
+WZ-K35-outdated s474	wz 23.3	pad ān frašn abar hangārišnīh ī warahrān ātaxš pahrēz ud šnāyēnīdārīh ī hamāg ātaxšān aw =iš nimāyīhist
+WZ-K35-outdated s475	wz 23.4	čahārom frašn šahrewarīg būdan rāy mēnōy ī ayōšustān abāg zarduxšt ō hampursagīh mad hēnd pad srāy rōdestāg ī mynhn
+WZ-K35-outdated s476	wz 23.4	abar hangārišnīh ī ayōšustān rāy dādan ī zay ud zēn ud abzār bē ōh andarzēnīd
+WZ-K35-outdated s477	wz 23.5	panǰom frašn spandarmadīg būdan lad mēnōy ī kišwarān ud kustagān ud awestāmān ud rōstāgān ud dehān čand abāyišnīg būd abāg zarduxšt bē ō hampursagīh mad hēnd pad sadwēs ī pʾdls dmnnʾn čiyōn xānīg =ēw ast az asnwand kōf bē āyēd bē ō dāytī šawēd
+WZ-K35-outdated s478	wz 23.5	u =š abar pahrēz ud šnāyēnīdārīh ī zamīg ēn =iz andarzēnīd kū deh gugāh ī wābar ud rōdestāg rōdestāg dādwar ī dādāgāh
+WZ-K35-outdated s479	wz 23.5	ud awestām awestām mowbed ī rāstkāmag
+WZ-K35-outdated s480	wz 23.5	ud kustag kustag rad ī abēzag gumārdan
+WZ-K35-outdated s481	wz 23.5	azabar hamāg mēnōyān andarzbed =ēw mowbedān mowbed =ēw paydāgēnīdan u =š xwadāyīh ī ohrmazd pad =iš winnārdan
+WZ-K35-outdated s482	wz 23.6	šašom frašn hordadīg būdan rāy mēnōy ī zrēyān rōdān abāg zarduxšt ō hampursagīh mad hēnd pad asnwand kōf
+WZ-K35-outdated s483	wz 23.6	u =š abar pahrēz ud šnāyēnīdārīh ī āb guft
+WZ-K35-outdated s484	wz 23.7	haftom frašn amurdadīg būdan rāy mēnōy ī urwarān lwze zarduxšt bē ō hampursagīh mad hēnd pad dlčyn zbār pad bār ī āb ī dāytī ud ǰud gyāg
+WZ-K35-outdated s485	wz 23.7	u =š abar pahrēz ud šnāyēnīdārīh ī urwarān paydāgēnīd
+WZ-K35-outdated s486	wz 23.8	ēn 7 frašn andar drahnā ī zamestān nimāyīhist ī ast panǰ māh andar dah sāl
+WZ-K35-outdated s487	wz 23.8	abar bowandagīh ī dēn
+WZ-K35-outdated s488	wz 24.1	kū pad sar ī dah sāl mēdōmāh ī ārāstīyān pad zarduxšt āstawān būd
+WZ-K35-outdated s489	wz 24.2	pas pad ayāft frašn abāz ō hampursagīh ī ohrmazd mad u =š guft kū =m pad dah sāl mard =ēw hāxt
+WZ-K35-outdated s490	wz 24.3	ohrmazd guft kū bawēd rōzān ka =tān ān and ī nē hāxt ī xwad gēhān dādārīh ī ristāxēz ka bē az dahāg harw kas bē dād ī frašegirdkirdārīh hāxtēd ud dahāg apatitīgīh rāy zanīhēd
+WZ-K35-outdated s491	wz 24.4	pad ham frašn ka az pēš ī ohrmazd bē mad bē ō spandārmad u =š dēn bowandag pad ōš abar daxšagēnīd
+WZ-K35-outdated s492	wz 24.5	pas az ān pad dō sāl wištāsp kaygān karbān hamēstārānīh sīhse ʾnʾstk abar =iš guft
+WZ-K35-outdated s493	wz 24.5	az framān ī wištāsp pad 33 band bast
+WZ-K35-outdated s494	wz 24.5	ān sīhse ʾnʾstk nimūdār būd ī sīhse dēn ī ō hamēstārīh ī dēn ī yazdān mad
+WZ-K35-outdated s495	wz 24.5	paydāgīh ī az dēn ān sīhse band nišān ī bastan ī sīhse dād ī wattar pad sīhse kirbag ī pāšom
+WZ-K35-outdated s496	wz 24.6	gugān andar dēn tā padīriftan ī wištāsp ī dēn az zarduxšt pas az abāz nimūdārīh dādestānānōmanīhā ud was gōnag waxšwarīh ud mēnōygōhrīh ī abar wēnīhist pad gugāhīh ī se abargōwišnān amahraspandān gētīpaydāgīhā bē ō wištāsp ud hanǰamanīgān darīgān paydāg būd hēnd ī ast wahman ardwahišt ud ādur ī burzēnmihr
+WZ-K35-outdated s497	wz 25.–	abar ān ī pēš az nēkīh ī zarduxšt wēnīhist čiyōn =iš pad nimūdārīh az ohrmazd ō gēhānīgān nimūd
+WZ-K35-outdated s498	wz 25.1	kū pad dahsālagīh mēdōmāh hāxtēd pad gōspandestān wēšag kē hzwlya ud warāz gāh
+WZ-K35-outdated s499	wz 25.2	pad wīstsālagīh hāxtēd kndk ī kwndʾ pus
+WZ-K35-outdated s500	wz 25.3	pad sīhsālagīh rasēnd xyōn ō ērān dehān wardag gīrēnd ān ī hutōhmagtar az kanīgān
+WZ-K35-outdated s501	wz 25.4	pad čehelsālagīh zād wahunēm ī ʾwlwštʾlʾn
+WZ-K35-outdated s502	wz 25.5	pad čehelhaftsālagīh widerēd zarduxšt kē bawēd haftādhaft sāl čēhel rōz ardwahišt māh xwarrōz pad hašt māh wihēzag ō day māh xwarrōz yblwntyīhist čiyōn yazišnīg ham ardwahišt māh
+WZ-K35-outdated s503	wz 25.6	pad šaštsesālagīh frašōštar bē widerēd
+WZ-K35-outdated s504	wz 25.7	pad šaštčahārsālagīh ǰāmāsp čiyōn pas az zarduxšt mowbedān mowbed būd
+WZ-K35-outdated s505	wz 25.8	pad haftādsesālagīh hngwhlwš ī ǰāmāsp pus
+WZ-K35-outdated s506	wz 25.9	pad haštādsālagīh asmōxwanwad
+WZ-K35-outdated s507	wz 25.10	pad haštādsālagīh … ī ǰādūg xwānīhist ōzanīhist šaš az dēnwarān ī meh ī ast dō duxt ī zarduxšt kē =šān nām frēn ud srid ud ahlawstūd ī mēdōmāh ud any se kē =šān nāmčišt az dēn
+WZ-K35-outdated s508	wz 25.11	pad sadsālagīh az wahunēm kē pad čehelsālagīh ī dēn zād gywn zād ud pad sālagīh bē widerēd pad sadhāwištīh
+WZ-K35-outdated s509	wz 25.12	pad sesadsālagīh andar rōzšabīh bawēd pas dēn āšōbīhēd ud xwadāyīh čandīhēd
+WZ-K35-outdated s510	wz 26.–	abar se dād ī zarduxšt pad pahlomīh čāšt
+WZ-K35-outdated s511	wz 26.1	fradom ēn apahikārradīhā pad kasān ma šawēd
+WZ-K35-outdated s512	wz 26.2	didīgar ka =tān adādestānīhā abar rawānd dādestānānōmandīh pēš dārēd
+WZ-K35-outdated s513	wz 26.3	sidīgar xwēdōdah ī abēzag tōhmagrawišnīh rāy zīndagān pāšomkunišnān kē ptlʾnyk" ō huzāyišnīh ī frazendān
+WZ-K35-outdated s514	wz 27.–	abar panǰ xēm ī āsrōnān ud dah andarz kē =š hamāg andarz ī dēn abar paywastag
+WZ-K35-outdated s515	wz 27.1	ān panǰ xēm fradom awināhīh
+WZ-K35-outdated s516	wz 27.2	didīgar wizīnkirdārīh ī andarg menišnān ud gōwišnān
+WZ-K35-outdated s517	wz 27.2	mādayān bē wizīdan ī zanišn az azanišnīh čiyōn xrafstarān az gōspandān ud dahišn az adahišn čiyōn ahlawān arzānīgān az druwandān anarzānīgān
+WZ-K35-outdated s518	wz 27.3	sidīgar dastwardārīh čiyōn hamē ān ī rad ī dānāgtar ud rāstgōwišntar kē dēnāgāhīhā hammōxtēd ud rāstīhā hammōzēd
+WZ-K35-outdated s519	wz 27.4	čahārom yazišn čiyōn yazišn ī ohrmazd mādayān pad hamāg wehīh dādārīh xwadāyīh šnāxtan menīdan pad =iš dēn āstawān būdan ud kustīg nišān ī =š dēn rāy bastag čāštan
+WZ-K35-outdated s520	wz 27.4	yazišn ī rōšnān niyāyišnōmandīhā
+WZ-K35-outdated s521	wz 27.4	yazišn ī 4ān zahagān ī ast ātaxš wād zamīg ud āb kē kālbodōmand dāmān az =iš passāzīhist pāk yōǰdāsrēnīdan az nasāy ud daštān ud hixr ud abārīg wināhišn dāštan tā čihrān ī az =iš passāzīhēnd druyistčihrtar ud hubōytar ud pāktar ud kamāhōgtar bawēnd
+WZ-K35-outdated s522	wz 27.4	yazišn ī mardōm rādīhā ī abar dānišn xwāstag
+WZ-K35-outdated s523	wz 27.4	yazišn ī gōspandān wāstar ud kambēšišnīh ud paymāndārišnīh
+WZ-K35-outdated s524	wz 27.4	yazišn ī urwarān zlytwnpšetan pazzāftan ō xwarišnīh ī arzānīgān handāxtan
+WZ-K35-outdated s525	wz 27.4	yazišn ī stāyišnīg hamāg yazdān rōšnān gētīdahišnān husazāgīhā stāyīdan u =šān hamēstār kōxšīdan čiyōn bowandag stāyišnīh pad bowandag ōšmurišnīh ī dēn šāyēd
+WZ-K35-outdated s526	wz 27.4	yazišn ī kadārizēw xwēšpēšagīhā xwēškārīh čand kamwināhīhātar šāyēd rawāg dāštan
+WZ-K35-outdated s527	wz 27.5	panǰom rōzānšabān xwāyišnīhā abāg xwēš druz kōxšīdan zīndagīh drahnā az āstawānīh ī dēn bē nē waštan xwēškārīh az dast nē šbkwnty
+WZ-K35-outdated s528	wz 27.6	ān dah andarz fradom husrawīh ī xwēš sālār ud hammōzgār ud rad ud pt abāyistan rāy husrawīhāraftan
+WZ-K35-outdated s529	wz 27.7	didīgar dušsrawīh ī xwēšān sālārān nē būdan rāy az dušsrawīh škeft pahrēz būdan
+WZ-K35-outdated s530	wz 27.8	sidīgar ān ī xwēš hammōzgār pad ān ī darāztar čōb nē zadan ud nē bēšīdan rāy ān ī =š nē āšnūd az xwēš hammōzgār pad =iš nām nē srawēnīdan
+WZ-K35-outdated s531	wz 27.9	čahārom nāmpaydāgīh az ahlawān nē appurdan rāy čē hammōxt az xwēš hammōzgār rādīhā abāz ō arzānīgān abespārdan
+WZ-K35-outdated s532	wz 27.10	panǰom rawāgdēnīh rāy kirbakkarān mizd ud bazzakkarān tōzišn pad dād nihādan
+WZ-K35-outdated s533	wz 27.11	šašom ahlāyīh daxšag andar xwēš mān mehmān kirdan rāy rāh ī wehān ō xānag wišādagīhā dāštan
+WZ-K35-outdated s534	wz 27.12	haftom druz andar wārom ahōšīhā nē ēstādan
+WZ-K35-outdated s535	wz 27.13	haštom druz az wārom brīdan rāy kēn az menišn ōgārdan ud az wināh tēz ptykyk būdan
+WZ-K35-outdated s536	wz 27.14	nowom pēšrawišnīh ud pasrawišnīh ī dēn bē šnāxtan ud pēšrawišnīh ī dēn frāz ō pēš dāštan u =š kār ud bahr pad =iš xwāstan pasrawišnīh ka petyārag bē ō dēn rasēd dēn abāz ō pēš dāštan ud tan pad mkndīh ī dēn dāštan
+WZ-K35-outdated s537	wz 27.15	dahom srōšdārīh rāy andar xwadā ud rad ud dastwar ī dēnīg huniyōxš būdan
+WZ-K35-outdated s538	wz 28.–	abar se bazišn ī dēn ī ast hangirdīg ud mayānag ud gwkʾnyk kē =š baxšišn ēk ristag hambrahmīh kū xwad ast ahunawar nišān ī naskān
+WZ-K35-outdated s539	wz 28.1	pad fradomīh ahunawar baxšīhist ō se paymān čiyōn pad any dar nimūd
+WZ-K35-outdated s540	wz 28.1	pad hamristag ī gāhāniz ō se ī ast segāh ud čahārgāh ud panǰgāh
+WZ-K35-outdated s541	wz 28.1	ēdōn =iz naskān ō se ī xwānīhēd gāhānīg ud hādamānsrīg ud dādīg
+WZ-K35-outdated s542	wz 28.2	pas baxšīhēd ahunawar ō šaš ī nēmgāh xwānēnd ēdōn =iz gāhān ō šaš ī xwānīhēd gāh ud yasn hafthād ud uštwadgāh ud spandmadgāh ud wahuxšahrgāh ud wahištōštgāh
+WZ-K35-outdated s543	wz 28.2	ēdōn =iz naskān ō šaš čiyōn gāhān ō dō ī xwānīhēd ēk gāhān ī gāhānīg ī ast yašt ud ēk abārīg gāhān
+WZ-K35-outdated s544	wz 28.2	hādamānsr =iz ō dō ēk mānsr ī purrdaxšag ī ārāstār ī ast pāzen ud ratuštāytī ud ēk mānsr ī purrdaxšag ī weh ī ast abārīg hādamānsr
+WZ-K35-outdated s545	wz 28.2	dād =iz ō dō ēk dād ī ǰuddēw ī ast widēwdād ud ēk dād ī zarduxšt ī ast abārīg dād
+WZ-K35-outdated s546	wz 28.3	pas baxšīhist ō dō =ēw čiyōn ahunawar dō =ēw mārīg ud gāhān dō =ēw ī ast ahunawar ahlāyīhstāyišnīh ud yazadānkirdārīh az yānīmanō tā ō ērman ī āgenēn dō =ēw ud naskān wīstēk
+WZ-K35-outdated s547	wz 28.4	pas baxšīhist gāhān radhomānāgīhā abar čēīh ud čiyōnīh ī nimūd čiyōn pahikārradestān kē dādīg pahikārišn īg pad =iš paydāg zaxmestān kē =š tōzišn ud zaxm az =iš paydāg ud stōrestān kē =š wināh ud čandtōzišnīh ī rēš abar stōrān gōspandān az =iš paydāg artēštārān kē =š kārēzār az =iš paydāg pasušhorestān kē =š gōspand pad sālārīhēwēnīhā dāštan az =iš paydāg ǰōrdāykārestān kē =š warzīgarīh az =iš paydāg ud warestān kē =š war ud passāxt az =iš paydāg ud abārīg ī hamšōn
+WZ-K35-outdated s548	wz 28.5	pas baxšīhist gāhān ō 1016 gāh ud naskān ō hazār ēk pargard čiyōn hādōxt rad ast ī naskān ērman ī pahlom gōwišn ī abar ristāxēz rad ast ī pargardān ud abar abārīg lgltʾn ōwōn bē hambūd čiyōn hazār glym ǰōrdā ud wāstar ī bastag ka azabar ān hazār ēk wuzurg bē dahēnd kē harwispīn bē pāyēd az tagarg ud wārān ān ī garm wād ud ān ī sard
+WZ-K35-outdated s549	wz 28.6	ud pas baxšīhist gāhān ō 6666 mārīg naskān =iz hammis 6666 dādestān pad =iš brīdag
+WZ-K35-outdated s550	wz 28.6	6666 mārīg ī pad gāhān nimūdār ast ī az petyārag ō dām madan tā bē ō frazām ī šaš hazārag harw hazārag =ēw dah sadōzim ī bawēd šašt sadōzim ud harw sadōzim =ēw dah wōyγn kē =š pad =iš rasēd sarmāg ud tangīh ī škeft bawēd šašsad wōyγn ud harw wōyγn =ēw dah sāl ī ǰahēd 6000 sāl
+WZ-K35-outdated s551	wz 28.6	gāhān šaš mārīg ī fradom nimūdārīh ast ī šaš hazārag ud pas šašt any 60 sadōzim ud pas šašsad any šašsad wōyγn ud pas 6000 any 6000 sāl
+WZ-K35-outdated s552	wz 28.7	ērman ī ašawahišt hamwāz abar sar ī gāhān ān ī panǰāhhaft sāl ī sōšyans ān =iz rāy ērman az ahlāyīhstāyišnīh ī pad sar ī ērmanyazišnīh hammis panǰāhhaft mārīgān čiyōn ērman wīstčahār ahlāyīhstāyišnīh dō ud ērmanyazišnīh wīstēk hammis panǰāhhaft
+WZ-K35-outdated s553	wz 28.7	pad nām ī yazdān
+WZ-K35-outdated s554	wz 28.7	gōwišn ī zādspram ī gušnǰamān
+WZ-K35-outdated s555	wz 29.–	abar passāzišn ī mardōmān az tan ǰān ud ruwān
+WZ-K35-outdated s556	wz 29.1	kū homānāg ast tan kē =š passāzišnān hēnd gōšt ud astag ud pih ud abārīg ō xānag kē =š passāzišn az gil ud sang ud dār ud abārīg
+WZ-K35-outdated s557	wz 29.2	frāz waxšēnīdār frawahr kē dast ud pāy waxšēnēd ud narīh ud mādagīh paydāgēnēd ud rahag ud pay passāzēd ud astān ō ham barēd ud rāh ud widarg paydāgēnēd ud dar ud rōzan wišāyēd bē ō rāzkirrōg kē kadag dēsēd
+WZ-K35-outdated s558	wz 29.3	ud ǰān kē tan zīndag dārēd bē ō ātaxš ī andar gumbad abar gāh nišīnānd
+WZ-K35-outdated s559	wz 29.4	ēd rāy čē čiyōn ātaxš mānišn abar ādurgāh ud pad hamāg kustagān tabišn bē rasēnēd brāh ud payrōg pad dar bē abganēd ō slʾdʾn dīdārīh =it ud xwad pad xwarišn zīyēd ka az xwarišn frāz mānēd nizār apadyāwand šawēd fradom kustagān ī gumbad afsarēnd ka bowandag bē afsard hamāg gumbad sard bawēd ān =iz brāh ud rōšnāgīh ī wēnīhist awēnābdāg bawēd hamgōnag ǰān gōhr rōšnīh ud garmīh u =š māništ andar dil čiyōn ātaxš abar ātaxšgāh ud xōn andar rahagān widāxtag hamāg tan garm dārēd brāh ud payrōg abar barēd pad dō rōzan ī abar sar ī xwad hēnd čašmān bē abganēd wēnāgīh ī čašmān ud hambōyāgīh ī wēnīgān ud āšnawāgīh ī gōšān ud mizagdārīh ī dahan ud ptlmʾhʾkīh ī tanān ud ǰumbāgīh ī ēwēnīg az ham čihr
+WZ-K35-outdated s560	wz 29.5	u =š winnārišn ī zīndagīh pad xwarišnān āb ud ātaxš ī andar tan wizārdag paymānīg pad ān ristag nišāndārh čiyōn ka dēg =ēw xwarišn sāxtan rāy kē =š xwarišn ud āb andar azabar ātaxš nihādak ud ātaxš az bērōn āb az andarōn tābēd tā xwarišn bē ō paymān rasēd ān ī abāyišnīg az dēg bērōn gīrīhēd
+WZ-K35-outdated s561	wz 29.6	čē kumīg homānāgīh ast dēg ī xwarišn ud āb andarōn dārēd ud pad gyānīg ātaxš ēwēnīhā tābīhēd
+WZ-K35-outdated s562	wz 29.6	ka ō sāmān ī xwēš mad pad zōr ī čihr ān ī rōšn ī zōrōmand bē ō ǰagar āhenǰēd az ǰagar pad rahagān ud az rahag pad xōn bē ō sar ud abārīg tan sgēnīd ud abar mazg ī sar abzōn bawēd wēnāgīh ī čašmān ud abārīg šnāsagān u =š dast =iz ud pāy az =iš zōr padīrift ud ān ī anabāyšnīg pad zōr ī spōzāgīh bē ō bērōn spōzēd
+WZ-K35-outdated s563	wz 29.6	abdom frāzwiderišnīh ī ǰān axwardārīh wihān ud nizārīh ī gyānīg ātaxš az ham bē afsardan ī dast ud pāy ud ul uzīdan ī az dil ud sard būdan ī hamāg tan ud ǰud būdan ī rōšnāgīh ī čašmān pad ham homānāgīh ī afsardan ī ātaxš
+WZ-K35-outdated s564	wz 29.7	ud spāhbed ruwān ī xwadā ud rāyēnīdār ī tan mswš xwēš rad buništ pad =iš homānāg ō ātaxšwaxšēnīdār az gumbad pāk druyist pad nigerišn dāštan ud ātaxš abrōxtan andar xwēškārīh
+WZ-K35-outdated s565	wz 29.8	ud ān ī ka tan xuftag ruwān bērōnīhēd ast ka nazdīk ast ka dūr bē šawēd xīrān nigerēd pad wigrādagīh hangām abāz ō tan šawēd pad ān homānāgīh čiyōn ka ātaxš nihuft dar ī gumbad bast ast ka nazdīk ast ka dūr šawēd
+WZ-K35-outdated s566	wz 29.9	bē čiyōn ātaxš ī gētīyīg gumbad az passāzišn ī gētīyān ud ātaxšwaxšēnīdār mardōm ǰān ī mēnōyīg pad āfurišn ī az dādār rāyēnīdār ī tan ud ruwān ī mēnōyīg
+WZ-K35-outdated s567	wz 29.9	pad hamāg čim bazišn ud wāspuhragānīh ēwēnag bē kird ud pad =iz āzārīgdānišnīh bē ō čimxwāstārān nimūdan nē šāyēd
+WZ-K35-outdated s568	wz 29.10	bē mēnōy ō gētīyīgān pad čim ud handāzag homānāg ī nišānag ī nē šāyēd būdan šāyēd nimūdan
+WZ-K35-outdated s569	wz 29.11	ōwōn čiyōn ka mard =ēw pad būm ī hindūgān klg =ēw ī ēksrū dīd u =š griftan bē ō ērānšahr yyy nē tuwān būd u =š abāz nimūdan ī ō ērānšahrīgān rāy abar dēwār pad pahikār nēk ham homānāg bē nigārd
+WZ-K35-outdated s570	wz 30.–	abar passāzišn ī mardōmān
+WZ-K35-outdated s571	wz 30.1	kū =š homānāgīh ōwōn mardīhā čiyōn asmānīg spihr ī gardišnīg ī ast čahār mīh ī harw mīh =ēw se axtar čē hammis passāzišn ī mardōmān mādagwarīhā pad se ī ast tanīg ud gyānīg ud ruwānīg
+WZ-K35-outdated s572	wz 30.2	harw ēk =ēw se bazišn
+WZ-K35-outdated s573	wz 30.3	tanīg se ī ast tanīgirdīg ud ābīg ud wādīg
+WZ-K35-outdated s574	wz 30.4	tanīgirdīg pad haft twb uspurrīgīhist ī ast ān ī andartom mazg ud pērāmōn mazg ast ud pērāmōn ast gōšt ud pērāmōn gōšt pih ud pērāmōn pih rahag ud pērāmōn rahag pōst ud pērāmōn pōst mōy
+WZ-K35-outdated s575	wz 30.5	ud yyypīhist mazg ō māh kē =š petyārag māh ī abāxtarīg kē čiyōn māhbay pad waxšišn handām druyistčihragīhā ʾptwn abar mazgān kirdyyy māh ī abāxtarīg bē wināhēd andar abāxtarān plsp ī andarōntom dārēd
+WZ-K35-outdated s576	wz 30.6	azabar māh tīr u =š mehmānīh abar ast
+WZ-K35-outdated s577	wz 30.7	azabar tīr anāhīd u =š mehmānīh abar gōšt
+WZ-K35-outdated s578	wz 30.8	azabar anāhīd mihr u =š mehmānīg abar pih
+WZ-K35-outdated s579	wz 30.9	azabar mihr warahrān u =š mehmānīh abar xōnīg rahag
+WZ-K35-outdated s580	wz 30.10	azabar warahrān ohrmazd u =š u =š mehmānīh abar pōst hučihrgar ī tanān
+WZ-K35-outdated s581	wz 30.11	azabar ohrmazd kēwān u =š mehmānīh abar mōy
+WZ-K35-outdated s582	wz 30.12	u =š ēn ast nigārag
+WZ-K35-outdated s583	wz 30.13	gardišn ī māh pad māh =ēw tīr pad se māh anāhīd pad šaš māh ud nēm mihr pad sāl =ēw warahrān pad sāl =ēw ud nēm ohrmazd pad dwāzdah sāl kēwān pad sīh sāl
+WZ-K35-outdated s584	wz 30.14	āb andar tan mādagwarīhā čahār ī ast xōn ud drēm ud wiš ī suxr ud wiš ī syā
+WZ-K35-outdated s585	wz 30.15	xōn gōhr garm ud xwēd u =š gōn suxr u =š mizag šīrān u =š kadag pad ǰagar
+WZ-K35-outdated s586	wz 30.15	drēm sard ud xwēd ud gōn spēd ud mizag sōr u =š kadag pad suš
+WZ-K35-outdated s587	wz 30.15	wiš ī suxr garm ud hušk ud suxr ō zardīh wardišnīg u =š mizag taxl u =š kadag pad zahrag
+WZ-K35-outdated s588	wz 30.15	wiš ī syā sard ud hušk u =š gōn syā u =š mizag tlwpš u =š kadag pad spurr
+WZ-K35-outdated s589	wz 30.16	pēšōbāy az āmēzišnān xōn ō ǰagar šawēd ud pas andar ayārdēnišn kaf bē ǰagar abganēd ēg =iš čēnīd ud bē ō blgm gwʾhlēnīd
+WZ-K35-outdated s590	wz 30.16	pas zahrag ī azabar ǰagar bē ēstēd ān ī bʾlyk ī tēz ul āhenǰēd bē ō wiš ī suxr bawēd
+WZ-K35-outdated s591	wz 30.16	bʾstʾn dahan wišād dārēd qš ī suxr abar kumīg rēzēd ī xwarišn gugārēd pas stabrīh ī abāz mānēd frōd ō spurr afsānīhēd bē ō wiš ī syā bawēd
+WZ-K35-outdated s592	wz 30.17	pas az ēn harw čahār āmēzišnān tōhmagān kē pad bālist ī sar andar mazg gāh pad ān rahag pad pušt abar šawēd zōr =ēw ī azharwčahārpassāxtīh rāy paymānagīg abāz ō ǰagar āhenǰēd
+WZ-K35-outdated s593	wz 30.17	az hamāg kirb ī tan =ēw abar čēnīd andar čihrag ōstīgān bē kunēd pad tōhm ēwēnag frāz rēzīhēd u =š bawišn ud zāyišn ī mardōmān az =iš bawēd
+WZ-K35-outdated s594	wz 30.18	ān čahār āmēzišn ī ǰudčihrag ǰudkār bē ō čahār pēšag ī mardōm ī hēnd hammōzgār āsrōn ud zadār artēštār ud parwardār wāstaryōš ud plstʾl hutuxš
+WZ-K35-outdated s595	wz 30.19	tōhmag abar awēšān čiyōn šahryār abar čahār pēšagān
+WZ-K35-outdated s596	wz 30.20	ēd =iz rāy dehbedān pušt ī ērān xwānīhēd čē čiyōn tōhmag az hamāg kirb ī tanān zōr =ēw ō xwēš āhenǰēd ud pad frāzrēzišnīh daxšag ī kālbod =ēw ham homānāg az =iš dārīhēd ōwōn amaragānīhā kadārizēw ō dād rāh kāmag kunēd ī dehbedān warzēnd
+WZ-K35-outdated s597	wz 30.21	wād kadag pad dil
+WZ-K35-outdated s598	wz 30.21	ēdōnčihragīhā nē garm nē sard pad ātaxš ī andar dil kē =š sardīh ud xwēdīh ī az suš abāg āmēxtag hamēwēnag paymānīgīhā bē tābēd ud hamāg tan garm dārēd
+WZ-K35-outdated s599	wz 30.21	4ān zōrān ī tan ham =iz ōwōn pad =iš frāz rawēnd čiyōn tazāgān āb pad wād
+WZ-K35-outdated s600	wz 30.21	ka pad tābišn ātaxš ī az dil freh az paymān garm bawēd ān nērōg ī ulāhang pad gōwišn bē ō bērōn tazēd ud az frawahr ī andarwāy xunagīh padīrēd pad plwdāhang abāz ō dil šawēd
+WZ-K35-outdated s601	wz 30.21	pad padīrišn ud abespārišn ī paymānīg zōr wād ī plwltšn zīndag dārēd tan
+WZ-K35-outdated s602	wz 30.22	gyānīg se ast ǰān bōy frawahr
+WZ-K35-outdated s603	wz 30.23	ud ǰān rōšn garm ud hamgōhr ī ātaxš
+WZ-K35-outdated s604	wz 30.23	pēšōbāy abāg tōhm ī ātaxštōhmag andar ō gāh šawēd čahārom māh pad tābišn ī pad kālbod ī tan paydāg bawēnd
+WZ-K35-outdated s605	wz 30.23	fradom čašmān nigārīhēd ud ātaxšīg rōšnīh ī xwēš pad čašmān ō dīdār āwarīhēd pas pad bowandagdahišnīh ī sar pad abardomīh ī mazg gāh gīrēd
+WZ-K35-outdated s606	wz 30.23	didīgar pad ātaxš ēwēnag bē ō dil šawēd u =š ānōh ʾwstʾn ī mādagwar ast
+WZ-K35-outdated s607	wz 30.23	sidīgar az hambaxšišn ātaxškirbīhā frōd ō kumīg šawēd ānōh gāh =ēw bē gīrēd ud harw se pad hambandīh bē winnārēd čē fradom xwarišnān xwārišnān zīndakkar ī gyānān andar ō kumīg šawēd
+WZ-K35-outdated s608	wz 30.23	pad pahikār ī hordād amurdād ātaxš bē abrōzēd
+WZ-K35-outdated s609	wz 30.23	az ānōh brāh abar ō dil šawēd ātaxš ī andar dil zōrōmand bē kunēd ud az dil wād ī garmōg ī ēkčihrag
+WZ-K35-outdated s610	wz 30.23	ǰān pad 3 ātaxš ī andar tan gāh dārēd
+WZ-K35-outdated s611	wz 30.24	u =šān ǰud ǰud xwēškārīh paydāg
+WZ-K35-outdated s612	wz 30.25	čē az ān ī andar mazg ī sar baxšīhēnd swhšnʾn ī hēnd wēnāgīh ud āšnawāgīh ud hambōyāgīh ud čaxšāgīh ud ptlmʾhʾkīh
+WZ-K35-outdated s613	wz 30.26	ud ān ī andar dil mādayān kār pad wād ī ulāhang ud frōdāhang pad ātaxš ī wuzurg tāftan ī hamāg tanān ǰumbišn homānāg az hamzōr
+WZ-K35-outdated s614	wz 30.27	ud ān ī andar kumīg bē baxt ō čahār zōr ī ast āhenǰāg ud gīrāg ud gugārāg ud spōzāg
+WZ-K35-outdated s615	wz 30.28	homānāg ast zōr ī ahnčʾk kē xwarišnān xwārišnān andar ō kumīg ī xwēšīg kadag āhenǰēd čiyōn kārframān kē abzār gōšt xwarišnān xrīnēd bē ō xānag frēstēd
+WZ-K35-outdated s616	wz 30.29	ud gīrāg az sūrāg ī kumīg tābēd ud āb ī rōšn ī zōrōmand abar čēnīd ud ō čahār baxšēd ud xōn ō ǰagar ud drēm ō suš ud wiš ī suxr ō zahrag ud wiš ī syā ō spurr frēstēd ō xwarišnbaxš homānāg
+WZ-K35-outdated s617	wz 30.30	spōzāg bē ō gyāgrōb
+WZ-K35-outdated s618	wz 30.31	ud ēn 3 ātaxš ān ī andar sar āsrōn čihrag u =š ādur farnbay ayārtar ān ī andar dil artēštār čihrag u =š ādur gušnasp ayārtar ud ān ī andar kumīg wāstaryōš čihrag u =š ādur burzēnmihr ayārtar
+WZ-K35-outdated s619	wz 30.32	bōy andar ǰān gumēxtag
+WZ-K35-outdated s620	wz 30.32	ǰān mʾlšn wizīdārīhā az bōy wēš abāg ruwān tanīg zōr
+WZ-K35-outdated s621	wz 30.32	ka tan ēd kunēd ǰān andar tan ruwān bērōn ud bōy mayān ī awēšān paygāmbarīh kunēd ud āgāhīh az ruwān padīrēd ud ō ǰān nimāyēd ǰān ō nigāhbed ōš abespārēd
+WZ-K35-outdated s622	wz 30.32	ud abdom ka tan widerēd ātaxšsuxrīh rāy ka az zamīg bē ō mēnawišawēd fradom ō ātaxš gumēxtēd ud ān se rōz ī pas az marg pad nazdīkīh ī tan pādag ō kālbod ī tan hamē nigerēd pad =iš grīyēd
+WZ-K35-outdated s623	wz 30.32	ud ka sag ud way frāz šawēnd ud tan darrēnīd kāmēnd frāz tarsēd ōwōn čiyōn mēš az gurg ud ō sag ud way pahikārēd kū ma ēn ī man kirb frāz xwarēd kē =m ohrmazd abdom =iz abāz kunēd pad tan ī pasēn
+WZ-K35-outdated s624	wz 30.33	šab ī sidīgar andar bām ruwān ud tan ī druwand ka ēk az did frāz wardēnd ruwān ō bōy pahikārēd kū bē tō bawišawē ō ān ī pāšom axwān bē man ēdar frāz šbkwnty
+WZ-K35-outdated s625	wz 30.34	agar ahlaw abāg ruwān az yazdān bahr ī kardaggārān bčyhwnyt čiyōn mehāfrāh ud hamdastwar kē pad ardīg frazām abāg spāhbed bē ō dar ī šahryār šawēd ud dāšn ī huāfrāhān windēd
+WZ-K35-outdated s626	wz 30.35	frāzwaxšēnīdār frawahr abāg tōhm andar ō gāh šawēd ud pad ham gām az tōhmīh bē ō gumēzagīh ud az gumēzagīh bē ō frehxōnīh wardēnēd
+WZ-K35-outdated s627	wz 30.35	u =š pas =iz čašm ud abārīg handāmān nigārēd ud pas drubuštīhist
+WZ-K35-outdated s628	wz 30.35	az pušt pahlūg frāz waxšēnēd čiyōn tāgān pad spēzišn az draxt
+WZ-K35-outdated s629	wz 30.35	ud pas abzārān ī andarōnīg ī aškamb kardag pad xwēškārīh paydāg bē kunēd
+WZ-K35-outdated s630	wz 30.35	ud pas dast pāy angustān bē rōyēnēd az sar mazg bē ō angustān rawēd čiyōn ān ī afsard ddnʾl
+WZ-K35-outdated s631	wz 30.35	pas mizag brūg ud mōy nigārēd
+WZ-K35-outdated s632	wz 30.35	u =š mādagwarīhā kār se ī ast waxšēnīdan abzūdan pādan
+WZ-K35-outdated s633	wz 30.35	waxšēnīdan ān čiyōn ka dast ud pāy ud abārīg handāmān ī abzārīg pad waxšišn bē ō dīdār āwarēd
+WZ-K35-outdated s634	wz 30.35	abzūdan ān ī ka handām =ēw abzāyēd tā bē spurrīgīh sāmān
+WZ-K35-outdated s635	wz 30.35	pādan ān ī ka ōstīgānīhā pad xwēš sāmān gāh pāyēd
+WZ-K35-outdated s636	wz 30.36	dānišnīg se wīr xwāhēd ōš pāyēd ud xrad wizīnēd
+WZ-K35-outdated s637	wz 30.37	ruwānīg se ī ast ruwān ī andar tan ruwān ī bērōn ruwān ī pad mēnōyān axwān
+WZ-K35-outdated s638	wz 30.38	ruwān ī tanīg čiyōn tan =iz xwānīhist čē xwad mēnōy ī tan ast spāhbed homānāg ī ō dušmenān razm frēstīhist u =š hamāg spāh abzārān ristagōmand dāštan xwēškārīh ud im ast kē menēd ud gōwēd ud warzēd kāmag
+WZ-K35-outdated s639	wz 30.38	ast ī ka =š frārōn pad huīh ud ast ī ka =š abārōn pad dušīh
+WZ-K35-outdated s640	wz 30.38	ud imiz ast kē pad hukunišnīh pāddāšn ud pad duškunišnīh pādifrāh mēnōyīg hampaymānīhā abāz nimāyēd
+WZ-K35-outdated s641	wz 30.38	u =š buništ pad dō wihān kū dānišnōmand ud tuwānnērōg bawēd u =š dānišn tuwān nē čimīgīhā bē ō kār burdan ayāb =iš xwāyišn pursišn būd u =š nē xwāst andar adēnīh parwand raft čiyōn mahist parwānag ī ō dušox
+WZ-K35-outdated s642	wz 30.39	handāzag nha ī nimāyīhēd pad dēn kū ān ī kōdakxrad mardōm xwēš xradīh wattom
+WZ-K35-outdated s643	wz 30.39	ēn =iz kū hunsandīh ī pad kōdakxradīh parwānag =ēw ast ī ō dušox
+WZ-K35-outdated s644	wz 30.39	ēn =iz kū az dušdanāgīh ī az dušāgāhīh frahist mardōm druwand bawēnd ud dušoxīg bē kē murd tā nūn bē =iz kē mīrēnd az nūn frāz
+WZ-K35-outdated s645	wz 30.40	u =šān druz pad dō wihān frēbēd ō xwēš kunēd
+WZ-K35-outdated s646	wz 30.40	fradom pad ārzōgwizārišnīh ī čihr ud griftan ī andak gētīyīg rāmišn ī gumēxtag abāg wināh ī ruwān
+WZ-K35-outdated s647	wz 30.40	didīgar ahlawīhā grīw pahrēxtan az ardīg ī ast anayārīh ī abāg razmyōzān
+WZ-K35-outdated s648	wz 30.40	čihr bowandagīhā wlsdkwnišnīh rāy pad čē kunēd ēraxtag bawēd pad wināhišn ī dāmān
+WZ-K35-outdated s649	wz 30.40	ahlawīhākunišnīh rāy ērangīg pad anayārīh ī hamgōhrān
+WZ-K35-outdated s650	wz 30.41	u =š spās =iz kē =š pāddāšn pad =iš windēd pad dō wihān
+WZ-K35-outdated s651	wz 30.41	fradom pad bowandagmenišnīhā bʾristʾnčihrīhā āz ud waran ud ešm ud kēn andar xwēš čihrag zadan ud nē warzīdan ī asazāg
+WZ-K35-outdated s652	wz 30.41	didīgar pad tuxšāgīhā abzāyēnīdan ī wehdahišnān ud šnāyēnīdan ī ahlawān
+WZ-K35-outdated s653	wz 30.42	ka az āwām ī widerāgān frāz rawēd agar ahlaw bōxt pad pērōzīh u =š harwist hamgōhrān ī mēnōyčihragān abāg frāz rawēnd
+WZ-K35-outdated s654	wz 30.43	pas āmār ī sidōš nēryōsang frēstag bē āyēd ǰān bōy frawahr ud ruwān ī astwihād wāy ī wattar abārīg margēnīdārān frāz āšuft az hamzōrīh bē wisānd abāz ō ēk passāzēd ud čihrīgēwēnag bē winnārēd
+WZ-K35-outdated s655	wz 30.43	ud nēkīh ī ō ruwān rasēd hamhāgān pad =iš hambāy bawēnd ud ēk az did nērōg ud rāmišn padīrēnd
+WZ-K35-outdated s656	wz 30.44	ud agar druwand ǰān bōy frawahr ud ruwān ī andar rāh ud ruwān nigāhbed hamhāgān az =iš frāz wardēnd
+WZ-K35-outdated s657	wz 30.44	ruwān ān ī tanīg pašēmānīhā ēwtāg bē ō dušox šawēd ōwōn čiyōn widēmušt ēstēd dušmenān
+WZ-K35-outdated s658	wz 30.45	ruwān ī andar rāh mēnōy ast ī weh ud abēzagčihrag padīrag tan ōwōn winnārd ēstēd ōwōn čiyōn tan kāmagxwarišn xwarēd ud wastarg nihumbēd ān ī ruwān kāmag ka pad tan xwarišn bē ō gursagān wastarg bē ō brahnagān pad rāstīh bē baxšēd dahēd
+WZ-K35-outdated s659	wz 30.45	čiyōn tan kāmag kū kāmagīhā pad rōz šab bē xufsēd ān ī ruwān kāmag ka pad tan rōzānšabān xrad ī ahlawān xwāhēnd
+WZ-K35-outdated s660	wz 30.45	ka tan xuftag ruwān ī andar tan bērōnīhēd ruwān ī andar rāh frāz wēnēd ī =š arsōmand garānmenišnīhā pad wināh ī kird čašmgāhēnīd u =š huāfrāhīhā nimāyēd ān ī abēzag rāh ī rāst ud pad harw kār ī =š tan pad =iš āmad kāmēd
+WZ-K35-outdated s661	wz 30.47	pēšōbāy ruwān ī andar rāh frāz rawēd ō hanǰaman pēš az ʾzk ī tan bē rasēd
+WZ-K35-outdated s662	wz 30.47	ka awēšān arzānīgān pad xwāyišn frāz šawēnd ruwān ī andar rāh ō ruwān ī pad tan āfrāh gōwēd kū ǰahišn fradom passox gōwē ud ma gōwē ān ī =t hād aǰahišnīh
+WZ-K35-outdated s663	wz 30.48	ud ka tan ān weh menēd ud gōwēd ud warzēd ruwān ī andar rāh az ham humenišnīh hugōwišnīh ud hukunišnīh paymōg =ēw paymōzēd ud az nēmrōz ālag frāz rawēd ul ō abar šawēd ō tan āfrīn kunēd
+WZ-K35-outdated s664	wz 30.48	ka ān ī wad menēd gōwēd warzēd az ham dušmenišnīh dušgōwišnīh ud duškunišnīh ā =š paymōg =ēw ī tārīk paymōzēd az abāxtar nēmag frāz rawēd andar tom frōd šawēd ud abar tan nifrīn kunēd
+WZ-K35-outdated s665	wz 30.49	ruwān ī ān gyāg nigāhbed ud ganǰwar ast ī kirbag baxšēd ō dwāzdah kirbān ud daxšagān ī ast mard kirb ud kanīg kirb ud āb kirb ud urwar kirb ud abārīg
+WZ-K35-outdated s666	wz 30.50	ēd rāy čē dāmān ī gētī haft hēnd kē =šān baxšišn ō dwāzdah šnāyēnīdārīh ī dwāzdah wehdahišn kirbag ī az ham tan bē bawēd hamdaxšagān mēnōyān bē padīrift ud pād nigāh dārēnd
+WZ-K35-outdated s667	wz 30.51	hamēstār ī ēn ruwān ast mēnōyīg druz ī dwāzdahkirbīhā andar dušox dwārēnd ud bazzag ī az bēšīdārīh ī wehdahišnān bawēd padīrift padīrag ān dwāzdah mēnōy ī weh hēnd pad homānāgīh duščihr mard ud ǰeh zan ud hlbstlʾn narān ud mādagān ātaxš ī az hamēstārīh ī druzān sōzāg abāxtarīg wād ī gandag ud abārīg wināhišngarān čiyōn guharīg ayōšust kirb ud sang burrišn ī pad tēx ud zanišn ī mnsk guharīg zamīg kirb ud daxšag mān ī andar dušox ī zēndān homānāg padīrag kōf kirb sanggarānīh abar ruwān padīrag āb kirb ud urwar kirb ān ī wattar xwarišnān xwārišnān pad homānāgīh ī tar xwarišnān ī homānāg ō ōsānišn ī az tan
+WZ-K35-outdated s668	wz 30.52	ka tan widard šab ī sidīgar andar bām ōy ī ahlaw fradom wādkirb az nēmrōz ī rōšnān ālag čiyōn hubōytom wād ā =š bē ō padīrag āyēd
+WZ-K35-outdated s669	wz 30.52	ān wād ast niwēygar ī ō šādīh kē mizdag ī wahištīg dārēd
+WZ-K35-outdated s670	wz 30.52	pas ābkirb ud urwarkirb pad ēwēnag ī bōyestān homānāg ī ābōmand ī wasnhʾl ī purrškōf bē ēstēd kē =š ruwān andar frāz rawēd
+WZ-K35-outdated s671	wz 30.52	pas kanīgkirb ud mardkirb ud pas gāwkirb ī spēd nar ud mādag pas ātaxškirb kē =š pad činwadpuhl frāz widārēd ud tom ud tār ī dušoxīg zanēd
+WZ-K35-outdated s672	wz 30.52	ud pas kōf homānāg bē ēstēd kē =š ruwān pad =iš abāz uzīyēd
+WZ-K35-outdated s673	wz 30.52	ud pas ayōšustkirb ud sangkirb pad homānāgīh ī gāh ī zarrēnkird
+WZ-K35-outdated s674	wz 30.52	abdom zamīgkirb kē =š xwad mān bawēd ī ǰāwēdānag
+WZ-K35-outdated s675	wz 30.53	pas ēn dwāzdah mēnōyān hamkirrōgīhā ō ham passāzīhēnd
+WZ-K35-outdated s676	wz 30.54	pēšōbāy zamīg mān homānāg bawēd ī waskadag ī bāmīg kē =š kadag andarōn ud bērōn ud aškōb azērīg ud azabarīg čiyōn ō čihr sāzišnīgtom ud ruwān wuzurgurwāhmtom
+WZ-K35-outdated s677	wz 30.55	ud pas ābkirb ud urwarkirb pad ēwēnag ī bōyestān homānāg bē ēstēd čašmag čašmag aw =iš tāzān az =iš frāz tazēnd
+WZ-K35-outdated s678	wz 30.55	gōnag gōnag az wisp urwarkirbān gul bōy wahār ud škōf spēzēnd ud bar pazzāmēnd
+WZ-K35-outdated s679	wz 30.56	u =š ātaxš kirb andar mān pēš frāz waxšēd ud hamēšag bōy ī az hubōyān urwarān az =iš frāz damēnd ud sagkirb ayōšustkirb bē ō wasābīg gōhrān ayōšustān wardēd kē =š mān pad =iš hučihr ud xunyāg bawēd
+WZ-K35-outdated s680	wz 30.56	ud ǰāmagān ud pērāyagān ī padwasčihragīhā tāšīdag az ham baxšišn andar mān paydāg bawēnd
+WZ-K35-outdated s681	wz 30.57	gōspandkirb ō panǰ ēwēnag wasān sardagān wardēd
+WZ-K35-outdated s682	wz 30.57	pad būm čahārpāyān andar āb māhīg ud andar andarwāy murwkirb bawēnd pad wāng ī xwaš ruwān urwāhmenēnd
+WZ-K35-outdated s683	wz 30.58	ud čiyōn zīndagān az pēm gōšt urwāhmanīh ruwān az gōspandān kirbān pēm frāz dōšīhēd ud rōgn ud abārīg was gōnag az =iš bawēnd ōwōn kū gōspand kirb nē ašādīh ud az gōspandmurwkirbīh bē ō gōštkirbīh az gōštkirbīh abāz ō gōspandmurwkirbīh andar wardišn hēnd
+WZ-K35-outdated s684	wz 30.59	wād pad wād ēwēnag čihragīhā frāz wāyēd andar mān bōyestān čašmag ī ābān az wisp kustagān bōy ō ruwān barēd
+WZ-K35-outdated s685	wz 30.60	mard kirb waskirbīhā ō ruwān paydāg bawēd
+WZ-K35-outdated s686	wz 30.60	ast ī ka pad čihrag ī masādarān čiyōn pid abar frazendān
+WZ-K35-outdated s687	wz 30.60	ast ī ka pad dād ī mayān čiyōn brād abāg brādarān
+WZ-K35-outdated s688	wz 30.60	ud ast ī ka pad rāh ī aburnāyīgān čiyōn pus andar pidarān
+WZ-K35-outdated s689	wz 30.60	ast ī ka pad ēwēnag ī hamsāyagān čiyōn hamāfrāh hammizd
+WZ-K35-outdated s690	wz 30.61	ēdōn =iz kanīg kirb pad čihr ī kanīgān
+WZ-K35-outdated s691	wz 30.61	ast ī ka čiyōn mādar ud ast ī ka čiyōn xwāhar ast ī ka čiyōn duxtar ast ī ka čiyōn nārīg ud ast ī ka čiyōn paristišngar ud abārīg rāmēnāgān
+WZ-K35-outdated s692	wz 31.–	abar mard kirb ud kanīg kirb ī ō padīrag ruwān rasēnd
+WZ-K35-outdated s693	wz 31.1	kū ēd rāy čē dō axwān ʾnʾspyn ēk ō did pad warzišn ōwōn homānāg čiyōn narān nārīgān hēnd ud zāyišn ī ō gētī widerišn ī az mēnōyān widerišn ī az gētī zāyišn ī ō mēnōy
+WZ-K35-outdated s694	wz 31.1	čiyōn ka az mēnōy ō gētī hamē zāyēd pad ayārīh ī pidarān ud mādarān ud az tan ī mādarān pad widarg ī tang bē ō bērōn āyēd
+WZ-K35-outdated s695	wz 31.1	ast ī az mādarān frāz ōftēd ast ī čihrīg zāyīhēd asōhāg agōwāg araftār ud niyāzōmand ō parwardār
+WZ-K35-outdated s696	wz 31.1	ham pas andar rōzgārān pad wēšgīrišnīh ī gētīyīg zōr saxwanšnās bawēd frāzraftār
+WZ-K35-outdated s697	wz 31.1	pas az parwardārīh ī mādarān abāz ō hammōzgārīh ī pidarān abespārīhēd
+WZ-K35-outdated s698	wz 31.1	ud mad ō pornāyīhpēšagān wizīnēd kār pad xwēš pēšag kunēd
+WZ-K35-outdated s699	wz 31.1	ōwōn =iz ka az gētī bē widerēd ham pad ayārīh ī mard kirb ud kanīg ī šāyēd ō bʾst rasēd ī xwad hēnd pid ud mād ī ruwān
+WZ-K35-outdated s700	wz 31.2	rōz pas az marg ka ruwān andar bīm handāzag se rōz ī pēš zāyišn ka wād andar tan kōxšīdār
+WZ-K35-outdated s701	wz 31.3	čahārom rōz kanīg kirb ruwān padīrift u =š pad činwadpuhl ī čēhwidarg ī bīmgen ōwōn bē widārēd čiyōn mādar pad zāyišn ī aburnāyīgān
+WZ-K35-outdated s702	wz 31.4	ān kē druwand murdag ōwōn homānāg ān ī az tan frāz abganīhēd ud ō dušox ōftēd
+WZ-K35-outdated s703	wz 31.5	ān kē ahlaw pad ayārīh ī kanīg kirb ō mēnōyān axwān šawēd
+WZ-K35-outdated s704	wz 31.5	u =š ham kanīg kirb ā =š bawēd parwardār u =š hammōzēd saxwan ī mēnōyān
+WZ-K35-outdated s705	wz 31.5	u =š pas mardkirb frāz hammōzēd ristag ud nišān ud ēwēnag ud brahmag ī mēnōyīg kārrāyēnišn
+WZ-K35-outdated s706	wz 31.5	ox ka bawēd hammōxtag ud frahaxtag abar wizīnēd pēšagān kē mādayān andar čahār parwand ī hēnd āsrōnīh a artēštārīh ud wāstaryōšīh ud hutuxšīh
+WZ-K35-outdated s707	wz 32.–	abar čahār pēšagān ud abar did kunēd ī dehbedīh wattarīh
+WZ-K35-outdated s708	wz 32.1	čiyōn nimūd pad handāzag andar nibēgān ī hambadīgān kū ōy kē =š andar gētī kunišn =ēw ayāb tuwānnērōgīh =ēw ayāb mehīh =ēw ayāb xwēškārīh =ēw pad =iš sazāgīg u =š awiš bandīhēd pad rāstīh ī dārēd pad sūd sazēnīdan ān ēwēnag dānišn tuwānnērōgīh mehīh ud xwēškārīh ō ān ī ōy ruwān paywandēnd u =š pad =iz mēnōy hambrahmagīhā pad =iš bawēd
+WZ-K35-outdated s709	wz 32.2	čiyōn ǰam abāzdārišnīh ī sahm ud tangīh ud seǰ rāy ruwān ī ōy yazīhēd ud xwānīhēd pad abāzēstišnīh ī dēwānfrāzkirrēnīd hēz =iz awāstār sahm ud seǰ =iz ī nihānrawišn
+WZ-K35-outdated s710	wz 32.3	ēdōn =iz frēdōn bastan ī az ī dahāg rāy xwānīhēd pad abāzēstišn ī azkirdārān bēš
+WZ-K35-outdated s711	wz 32.4	ud karsāsp zadan ī rāhdārān ud gaygān rāy xwānīhēd pad abāzēstišnīh ī gaygkirdārān bēš
+WZ-K35-outdated s712	wz 33.–	abar =iz rāst rād frašōštar
+WZ-K35-outdated s713	wz 33.1	gōwīhēd kū frašōštar ānōh tō ō rādīh rawišn kū =t rādīh andar garōdmān kunišn
+WZ-K35-outdated s714	wz 33.1	čiyōn gētīyīhā darandarzbed ī wištāsp būd ān ī mēnōyīg ham darandarzbedīh bawēd paydāgīh az dēn
+WZ-K35-outdated s715	wz 33.1	abārīg =iz pad ham brahm ud ēwēnag
+WZ-K35-outdated s716	wz 33.1	ōwōn čiyōn kē pad gētī ābtāzīdār būd ān ī mēnōyīg wārānkirdār
+WZ-K35-outdated s717	wz 34.–	abar frašegirdkirdārīh
+WZ-K35-outdated s718	wz 34.1	kū andar dēn ōwōn nimūd ēstēd kū zarduxšt az ohrmazd pursīd kū tanōmandān ī pad zamīg bē widard hēnd pad frašegird tanōmand abāz bawēnd ayāb asāyag homānāgīhā
+WZ-K35-outdated s719	wz 34.2	ohrmazd guft kū tanōmand abāz bawēnd ʾwzynd
+WZ-K35-outdated s720	wz 34.3	ud zarduxšt pursīd kū ān kē bē widard sag ud way bē wisānd ud gurg ud dālman bē burd čiyōn abāz ō ham rasēnd
+WZ-K35-outdated s721	wz 34.4	ohrmazd guft kū ka tō kē zarduxšt hē agar =it kēbūd =ēw ī dārēn kirdan abāyē ā =t pad kirdan čiyōn hugartar bawē ka =t dār nē būd u =t brīdan ud passāxtan abāyēd ayāb ka kēbūd būd u =š taxtag ēk az zwb bē wišuft abāz passāxtan abāyēd
+WZ-K35-outdated s722	wz 34.5	zarduxšt guft kū ka dār būd hē hugartar būd hē kū ka dār nē būd hē ud ka kēbūd taxtag wišuft hē ā =m hugartar būd hē
+WZ-K35-outdated s723	wz 34.6	ohrmazd guft kū awēšān dāmān ka nē būd hēnd ā =m brēhēnīdan tuwān būd ud nūn ka būd ud wišuft abāz passāxtan hugartar
+WZ-K35-outdated s724	wz 34.7	čē =m hēnd panǰān hambārdārān padīriftār ī widardān tanōmandīh
+WZ-K35-outdated s725	wz 34.7	ēk zamīg kē abarnigāhdāštār ī gōšt ud ast ud pay ī mardōmān
+WZ-K35-outdated s726	wz 34.7	ēk āb ī nigāhbed ī xōn
+WZ-K35-outdated s727	wz 34.7	ēk urwar ī dāštār ī wars ī mōy
+WZ-K35-outdated s728	wz 34.7	ēk rōšnīh ī padīriftār ī ātaxš
+WZ-K35-outdated s729	wz 34.7	ēk wād ī =m ǰān xwāyišn ī dāmān pad frašegird hangām
+WZ-K35-outdated s730	wz 34.8	abar xwānam zamīg ud az =iš xwāham ast ud gōšt ud pay ī gayōmart ud abārīgān
+WZ-K35-outdated s731	wz 34.9	gōwēd zamīg kū čiyōn rasēnam ka nē ēn bē dānam kū kadār ān ī ōy ast ī kadār ān ī ōy
+WZ-K35-outdated s732	wz 34.10	abar xwānam āb ī arwand ī ast daglit az rōdān kū abar rasēn xōn ī ōy ī ristag mardōm
+WZ-K35-outdated s733	wz 34.11	gōwēd āb kū čiyōn rasēnam ka nē ēn dānam kū kadār ān ī ōy xōn ud kadār ān ī ōy
+WZ-K35-outdated s734	wz 34.12	abar xwānam urwar ud az ōy xwāham wars ī rist mardōm
+WZ-K35-outdated s735	wz 34.13	gōwēd urwar kū čiyōn rasēnam ka nē ēn bē dānam kū kadār ān ī ōy wars ud kadār ān ī ōy
+WZ-K35-outdated s736	wz 34.14	abar xwānam wād ud az ōy xwāham ǰān ī ōy ī ristag mardōm
+WZ-K35-outdated s737	wz 34.15	gōwēd wād kū čiyōn rasēnam ka nē ēn bē dānam kū kadār ān ī ōy ǰān ud kadār ān ī ōy
+WZ-K35-outdated s738	wz 34.16	man kē ohrmazd ham ka abāz nigeram pad zamīg āb urwar rōšnīh ud wād pad rōšndānišnīh bē dānam ēk az did bē šnāsam čē pad wispdānišnīh pad rōšnmenišnīh ēk az did ōwōn wizēham čiyōn ka šīr ī mādagān dōxt ud pad zamīg pad ham ǰōy frāz tazēnd ēk andar did
+WZ-K35-outdated s739	wz 34.16	ēd kū =m kadār mādag ōwōn bē šnāsam čiyōn ka mard =ēw sīh asp hē harw ēk rāy ǰāmag =ēw ī nišān =ēw pad =iš kū kadār asp rāy ān sīh ǰāmag āgenēn ēstēnd ēg kāmēd dānistan harw ǰāmag =ēw abar gīrēd ud nišān ī pad ǰāmag bē šnāsēd kū =m kadār asp
+WZ-K35-outdated s740	wz 34.17	abar frēstam ērman frēstag kē =š frazāmkārīh andar xwēškārīh
+WZ-K35-outdated s741	wz 34.18	bē rasēnēd ast ud xōn ud wars ud rōšnīh ud ǰān ī gayōmart ud mašī ud mašyānī
+WZ-K35-outdated s742	wz 34.19	u =š pēšōbāy abāz passāzam ast ī gayōmart u =š ān ī mašī ud mašyānī hampaywast dašnag ud hōyag bē daham
+WZ-K35-outdated s743	wz 34.20	u =m ō ham passāxtan ud abāz dādan hugartar dwāzdah dāmān ī =m pad bun bē dād
+WZ-K35-outdated s744	wz 34.20	fradom ka =m asmān winnārd astūn anabardāštār kē =š az ēč kust nē hēnd gētīyān bē dāštār
+WZ-K35-outdated s745	wz 34.20	ud didīgar ka =m zamīg winnārd asmān kū ō kadārizēw nēmag nē nazdīktar būd homānāgīh ī zardag ī xāyag mayān xāyag
+WZ-K35-outdated s746	wz 34.20	ud sidīgar ka =m xwaršēd brēhēnīd čahārom ka =m māh brēhēnīd
+WZ-K35-outdated s747	wz 34.20	panǰom ka =m andar urwarān wasgōnag rang ud čaxšišn bē būd
+WZ-K35-outdated s748	wz 34.20	šašom ka =m andar urwar ātaxš pad asōzišnīh bē dād
+WZ-K35-outdated s749	wz 34.20	haftom ka =m hušk ō zamīg bē burd ud pad hangām ī frāz waxšišn barōmand bawēnd ō xwarišn ī mardōmān ud gōspandān rasēnd
+WZ-K35-outdated s750	wz 34.20	haštom ka =m …
+WZ-K35-outdated s751	wz 34.20	nowom ka =m andar mādagān zahag bē winnārd abar nihuft tā bē nē widard u =m ǰud andar ān ārōyišn paydāgēnīd ast xōn mōy drēm pih ud srū
+WZ-K35-outdated s752	wz 34.20	dahom ka =m tanōmand murwān padparr andar andarwāy wāyēnīd
+WZ-K35-outdated s753	wz 34.20	yāzdahom ka =m āb pāy ēdōn homānāgīh ī frāzraftār dād
+WZ-K35-outdated s754	wz 34.20	dwāzdahom ka =m abr dād ul abar burdār ī āb ī wārēnīdār ī wārān
+WZ-K35-outdated s755	wz 34.21	homānāg bawēd dāmdahišnīh dēnrawāgīh frašegirdkirdārīh ō dēsīdan ī xānag
+WZ-K35-outdated s756	wz 34.22	čiyōn kadag pad se abzār frazāmīhēd ī ast būm dēwār ud aškōb
+WZ-K35-outdated s757	wz 34.22	ud ān ī dāmdahišnīh būm dēnburdārīh dēwār frašegirdkirdārīh aškōb
+WZ-K35-outdated s758	wz 34.23	čiyōn ka mard xānag kāmēd wirāstan ud mard se bē wizīnēd kē ēk pad būm wirāstan ēk pad dēwār āhextan ud ēk pad aškōb kirdan frahixtagtar
+WZ-K35-outdated s759	wz 34.23	ud ǰud ǰud pad ān kār bē ēstēnēd
+WZ-K35-outdated s760	wz 34.23	tā būm wirāst dēwār āhextan nē šāyēd
+WZ-K35-outdated s761	wz 34.24	ōy kē =š xānag framūd rōšn āgāh kū pad čand ō frazām rasēd
+WZ-K35-outdated s762	wz 34.24	ud pad =iz frahaxtkārīh ī ōy ī aškōbkirdār abēgumān būdan rāy dagrwistāx
+WZ-K35-outdated s763	wz 34.24	ka dēwār ō frazām mad ōy kē =š aškōb andar xwēškārīh aškōbēnīdan ōwōn hugar čiyōn awēšān =iz dō pad kār ī =šān pāymār
+WZ-K35-outdated s764	wz 34.25	ud did homānāg būd frašegirdkirdārīh ō šab ī tār
+WZ-K35-outdated s765	wz 34.25	ka šab ō sar šawēd xwaršēd se kanārag ī gēhān uzīd ud abāz ō xwēš gyāg mad ud gardišn frazāmēnēd nōg pad spēzišn bawēd ud tom ud tār zanēd
+WZ-K35-outdated s766	wz 34.26	homānāg būd ō māh kē pānzdah andar waxšišn pānzdah andar nirfsišn bawēd
+WZ-K35-outdated s767	wz 34.26	ka bowandag būd awēnābdāg nōg abāz zāyēd az xwaršēd šahryār ī rōšnān pad bām paydāg bawēd
+WZ-K35-outdated s768	wz 34.26	gēhān ristāxēz abāzdahišnīh pad =iš paydāgīhēd
+WZ-K35-outdated s769	wz 34.27	homānāg būd ō sāl kē pad wahārān draxt wiškuft bawēnd pad hāmīn bar dahēnd pad pādēz frazām bar dahēnd pad zamestān hušk ud murd homānāg bawēnd
+WZ-K35-outdated s770	wz 34.28	ka widerišn ī sālān spurrīgīhēd mihr abāz ō gyāg ī naxwistēn mad rōz ud šab hāwand paymān drahnā sʾlyk paymānīg bawēnd
+WZ-K35-outdated s771	wz 34.28	ud murdāxēz homānāg az huškdārān draxtān nōg warg spēzīhēnd ud nhʾl wiškōfīhēnd
+WZ-K35-outdated s772	wz 34.29	ōstīgānīh ī abāzdahišnīh rāy harw čihrān frazām ō bun hamhangōšīdag bawēnd čiyōn mardōm kē =šān bawišn az tōhm tazēnd čiyōn urwarān kē =šān bawišn az tōhmag bowandagfrazāmīh pad hamtōhmīh
+WZ-K35-outdated s773	wz 34.30	pad dēn ōwōn paydāg kū ahreman ka andar ō dām dwārist dušdēn ǰehsardag ōwōn pad hambāz dāšt čiyōn mard zanīhā bāmbišn
+WZ-K35-outdated s774	wz 34.30	ānōh xwad ast ī dēw gāh u =š dušdēn ǰehsardag yyy
+WZ-K35-outdated s775	wz 34.30	xwad ast sar ī hamāg ǰehhā dēwān garānpetyāragtar ō mard ī ahlaw
+WZ-K35-outdated s776	wz 34.31	u =š dušdēn ǰahī hamǰuxt āhōgēnīdan ī mādagān rāy abāg hamǰuxtīhist kū tā mādagān āhōgēnād
+WZ-K35-outdated s777	wz 34.31	ud āhōgēnīdagīh ī mādagān rāy narān āhōgēnānd ud az xwēškārīh wardānd
+WZ-K35-outdated s778	wz 34.32	u =š pas wizīd spāhbed sālār ī xwad ast āz
+WZ-K35-outdated s779	wz 34.32	u =š čahār spāhbed pad hamkārīh frāz dād hēnd ī ast ešm ud zamestān ud zarmān ud seǰ pad homānāgīh ī xwarāsān ud xwarofrān ud nēmrōz ud abāxtar spāhbed
+WZ-K35-outdated s780	wz 34.33	abar wazīd ō āz dašnag sālār ud hōyag sālār ī ast sūy tišn ēdōn =iz zarmān šēwan mōyag ēdōn =iz seǰ frehbūd ud ēbbūd
+WZ-K35-outdated s781	wz 34.34	pad frašegird fradom čār ī āz xwāhīhēd
+WZ-K35-outdated s782	wz 34.34	ast ēd rāy čē spāhbed sālār ast ī abārīgān druzān ahreman ī dušdēn nērōg az ōy wēš
+WZ-K35-outdated s783	wz 34.35	pad =iz bunrawāgīh ī dām ka zurwān wazag kirb paymōg ī tārīk ud ādurestarēn rawāgīh rāy frāz ō ahreman burd pad ēn pašt kū ēn ast ān zay ī ātaxš homānāg sōzišnīg ud hamāg dāmān pad =iš aweštābōmand xwad gōhr ī āz dārēd
+WZ-K35-outdated s784	wz 34.35	ka zamānag ī 9000 sāl bē ō frazām mad ān čē =t pad būm bē padīrift kū bē hāzē harwisp ox ī astōmand ō adōstīh ī ohrmazd dōstīh ī xwēš xwad wurrawišn ī abar ēkbuništagīh kū
+WZ-K35-outdated s785	wz 34.35	ham ān kē abzāyēnīdār zadār bowandag nē frazāmēnēd pad awēšān zay abāgīh āz ēd ī tō bē ǰōyēd dām ī tō xwad pad sūy frāz mīrēd
+WZ-K35-outdated s786	wz 34.35	čē nē ayābēd az ohrmazd dāmān xwarišn homānāgīh ī wazag =ēw kē andar āb zīndag ud tā āb hamē āhōgēnīd āš xwad pad =iš hamē zīyēd ud ka =š āb az =iš abāz grift murdag hušk bawēd
+WZ-K35-outdated s787	wz 34.36	ud āz ēkčihrīhā nē tuwān būd āhōgēnīdan tā dāmān plkndk bawēd
+WZ-K35-outdated s788	wz 34.36	uš zōrān pad ǰomā rawāg būdan andar dām rāy ō se baxt ī ast čihrīg bē čihr ud bērōn az čihr
+WZ-K35-outdated s789	wz 34.36	čihrīg ān ka andar xwardārīh kē =š ǰān aw =iš bastag
+WZ-K35-outdated s790	wz 34.36	bēčihrīg kāmagōmandīh ī abar gumēzišn kē xwad waran xwānīhēd kē pad wēnišn ī ō brazy ī andarōn hangēzīhēd ud čihr ī tan awištābīhēd
+WZ-K35-outdated s791	wz 34.36	bērōn az čihr ārzōg ī ō kadārizēw nēkīh ī wēnēd ayāb āšnawēd
+WZ-K35-outdated s792	wz 34.37	harw twp =ēw ō dō baxt
+WZ-K35-outdated s793	wz 34.37	ān ī čihrīg ast sūy tišn
+WZ-K35-outdated s794	wz 34.37	ān ī bēčihrīg ast rēzāg padīrāg
+WZ-K35-outdated s795	wz 34.37	ān ī bērōn az čihr ast abarīhā handōxtan pēnīhā bē nē dādan
+WZ-K35-outdated s796	wz 34.38	ēd ast kē =š wattarīh andar parwand ud paydāg kū abdom čārgarīh ī āz rāy ašawahišt pad hamzōrīh ī ērman frēstag bē ō zamīg āyēd ō dāmān abar garānwināhīh ī gōspandsardagān zadan ud kamsūdīh ī az =iš nimāyēd
+WZ-K35-outdated s797	wz 34.38	ēn =iz framāyēd kū mard hēd
+WZ-K35-outdated s798	wz 34.38	ma ēdōn gōspand bē kuštār bawēd čiyōn =tān pēš frāz pad kunišn kušt
+WZ-K35-outdated s799	wz 34.39	ka nazd ō frašegirdkirdārīh bawēd niyōxšīdārān ī ašawahišt framān az gōspandzadārīh ud gōštxwarišnīh bē wardēnd ud čahār ēk nērōg ī āz bē kāhēd nēkīh ī andar tan ī ōy ast bē ānābīhēd tom =iz ud tārbahrīhā zanīhēd mēnōyīgīh ō čihr abērtar paymōzīhēd dānišnān rōšntar ayābīhēd
+WZ-K35-outdated s800	wz 34.40	frazendān ī az awēšān zāyēnd āz andar tan apadyāwandtar tan kamgandagtar ō yazdān čihr hampaywandtar
+WZ-K35-outdated s801	wz 34.40	pad hammōxtārīh ī yazdān az pēmxwarišnīh wardēnd ud nēmag nērōg ī āz bē kāhēd
+WZ-K35-outdated s802	wz 34.41	awēšān =iz zāyišnān axwarišnīh rāy hubōy kamtārīk mēnōyčihr ud azāyišnōmand bawēnd
+WZ-K35-outdated s803	wz 34.42	ud pas āz dēw nē ayāftan ī nērōg az ohrmazd dāmān rāy bē ō ahreman kē =š pad spāhbedān sālār paydāgēnīd ruzdīhā andar ō dāmān rad pahikārd kū =m sagr huburd kunēd čē nē ayābam az ohrmazd dāmān xwarišn zōrān
+WZ-K35-outdated s804	wz 34.43	pad framān ī ahreman dēw ī xwurdag bē abesīhēnīd
+WZ-K35-outdated s805	wz 34.43	abdom ān čahār spāhbedān frāz mānēnd ud any dō ī ahreman ud āz
+WZ-K35-outdated s806	wz 34.44	frāz ō zamīg āyēnd ohrmazd ahreman srōš āz
+WZ-K35-outdated s807	wz 34.44	ōy ohrmazd ahreman zanēd
+WZ-K35-outdated s808	wz 34.44	tā baxtīg būd āz abāg ahreman čār nē ayābēd ān =iz rāy ka ohrmazd wispdādār ī rōšnīh u =š tārīkīh ī ahreman petyārag srōšahlī ī paymānīg ast mēnōy ī paymān u =š frehbūd ud ēbbūdīh ī āz petyārag hambarīhā hēnd pad kōxšišn
+WZ-K35-outdated s809	wz 34.45	bē čiyōn āz abāg baxtīg la bawēd ahreman ēwtāk u =š hamēmāl se dō ī ǰudgōhr ī ast ohrmazd ud srōš ud ēk ī hamgōhr ī ast āz ī baxtīgtar
+WZ-K35-outdated s810	wz 34.45	ka =š ayār bē ō hamēmālīh gašt hambadīg pērōzēnīd
+WZ-K35-outdated s811	wz 34.46	ka panǰāhhaft sāl ō frašegirdkirdārīh abāz ō zāyišn bawēd ī sōšyans ān ī pad spurrīgkarīh ud zarduxšt bē dahīhēd
+WZ-K35-outdated s812	wz 34.47	abar zarduxšt ōwōn paydāg kū pad sālagīh bē ō hampursagīh ī ohrmazd mad u =š dēn padīrift u =š dādīgīh rawāgēnīd pad panǰāhhaft sāl dēn pad haft kišwar bahragīhā bē mad
+WZ-K35-outdated s813	wz 34.47	čiyōn dēn ō rawāgīh mad druz az āškāragpaydāgīh bē ō azēr zamīg wirēxt bahrīhā nērōg =išān agārīhist
+WZ-K35-outdated s814	wz 34.48	ka ān spurrgar frēstag ī ast sōšyans parwānag ī ērman pad zamīg paydāg bawēd pad hamhandāzagīh pad sālagīh bē ō mēnōyān hampursēd
+WZ-K35-outdated s815	wz 34.48	dād ī frašegirdkirdārīh ham pad panǰāhhaft sāl bowandagrawāgīhā pad haft kišwar bē rawēd pad bowandagrawāgīh anābīhēd druz az dāmān
+WZ-K35-outdated s816	wz 34.49	ka ēbgad ō dām mad frāz 6000 sāl ī ōšmurdīg ī ast az frawardīn māh ohrmazd rōz tā rōzgār abāz ō frawardīn māh ohrmazd rōz gašt mānd ēstēd ō uspurrīgīh ī 6000 sāl ī wihēzagīg čahār sāl homānāgīh abzāyīhēd čē harw čahār sāl rōz =ēw ī wihēzag nē abzōn pad 6000 sāl čahār sāl homānāg bawēd
+WZ-K35-outdated s817	wz 34.49	pad ān gāh nišān bawēd ī ristāxēz ud spihr bē ǰumbēd rawišn ī xwaršēd mān starān wnyt ud ēk bawēnd
+WZ-K35-outdated s818	wz 34.49	čiyōn spihr wardišnīg andarwāy ud zlyhʾh hammis zamīgmānišnān az čihrīg bē wardēd pad zamīg pad homānāgīh ī čšmhīhā ī āb wasān gyāgān čašmag ī ātaxš ul ʾwzynd
+WZ-K35-outdated s819	wz 34.50	ēd rāy čē ohrmazd pad āb bē dād pad ātaxš frazāmīhēd čē āb čihr dārēd ī rōšnāg ud waxšāg ātaxš sōzāg ud pādīrāngar ī tōhm čiyōn ka tom ī urwarān bē ō āb rasēd ā =š zōr ī waxšagīh az =iš xwēd bawēd
+WZ-K35-outdated s820	wz 34.51	ka ān ātaxš pad zamīg paydāg bawēd ābān andar ō ʾwpʾlīhišn ēstēnd ud wayān =iz az wārišn abāz ēstēnd tā āb pad zamīg frahistān abāz ō awērānīh abespārīhād ud čihrān ī abar zamīg ātaxšhamīgīh rāy gōnag ō rōgnywaxšēnēd wardād ud nizār apadyāwand bawēnd
+WZ-K35-outdated s821	wz 34.52	ka se māh ō ristāxēz abāz ō ardīg bawēd ī wuzurg čiyōn pad bun dāmdahišn andar kōxšišnīh ī druz nawad rōzšabān kārēzār būd
+WZ-K35-outdated s822	wz 34.52	ardīg ī ast sīh rōz šab pad wārān ī xrafstarzadār
+WZ-K35-outdated s823	wz 34.52	sīh rōz šab pad tāzišn az mznydy kē =š urwar pad =iš waxšēd
+WZ-K35-outdated s824	wz 34.52	sīh rōz šab pad wād kē āb bē rānēnēd zamīg ērdārišn uldārišn gawr ud čagād bē kird
+WZ-K35-outdated s825	wz 34.53	bē čiyōn ān ī wuzurg ardīg pad bun pad wārišn ī āb ud wād ī ābrānēnāg būd ān ī pad tābišn ud tazišn ī az ātaxš ud škeft wād ī ātaxšabrōzāg
+WZ-K35-outdated s826	wz 34.54	čiyōn ān ardīg abar nawad rōzšabān yazdān abāg dēwān čangīhā būd ān ī pad abdom āškārag paydāgīhā wēnīhēd šabān andar andarwāz ātaxškirb ī marddēs mēnōyān menēd ātaxšīg pad bārag ī asp homānāg škeft abēgumān bawēnd
+WZ-K35-outdated s827	wz 35.–	abar fraškirdkirdārīh kū mādayān az hamāg haftān
+WZ-K35-outdated s828	wz 35.1	čiyōn nimāyīhēd pad dēn kū haft hēm ī hammenišn ī hamkunišn ī az ān hammenišnīh hamgōwišnīh hēm azarmān ud amarg ud asūyišn ud apūyišn
+WZ-K35-outdated s829	wz 35.2	ka ašmāh kē mardōm bawēd hammenišn hamgōwišn hamkunišn ā =tān azarmānīh ud awēmārīh ud asūyišnīh ud apūyišnīh ēdōn čiyōn amāh kē amahraspand hēm
+WZ-K35-outdated s830	wz 35.3	ān hamē pad zamīg winnārdag būdan rāy frāz dād dehbedān ī ahōš kē ǰud andar drubuštīh ī ōstīgān kū ast kē =š pad was kē azabar zamīg rāh ī aw =iš pad drayāb ī tom ud tār ast kē =š kōf ī wuzurg ō tēx
+WZ-K35-outdated s831	wz 35.4	nām ī haftān andar dēn ōwōn paydāg kū ast kē az tōhmag ī ēriǰ ī ast wan ī ǰudbēš ud ašem@yahmāi@ušt ud yōšt ī friyānān ud gōbedšah ud ast kē az tōhmag ī tōzān ī ast ašwazdād =iz ī pōrdaxštiyān ēk kē =š nām fradaxšt ī xumbīgān kē bīm az ešm rāy andar xumb parwarīhist ud pišōtan ī wištāspān
+WZ-K35-outdated s832	wz 35.5	čiyōn haftān baxšišn ō dwāzdah ī ast
+WZ-K35-outdated s833	wz 35.5	ohrmazd dōbazišnīh ī wizārīhēd xwadāyīh ud mahistdanāgīh
+WZ-K35-outdated s834	wz 35.5	ud wahuman dō ī ast wēnīh ud menišn
+WZ-K35-outdated s835	wz 35.5	ud ardwahišt dō ī ast rāstīh ud tarsāgāhīh pāšomīh
+WZ-K35-outdated s836	wz 35.5	ud šahrewar dō ī ast xwadāyīh ud kāmag
+WZ-K35-outdated s837	wz 35.5	ud spandārmad dō ī ast abzōn ud bowandagmenišnīh
+WZ-K35-outdated s838	wz 35.5	ud hordād ud amurdād kē amargīh rāy ǰuxtag =ēw hēnd hamērawišnīh zōr bē dahīhēd ō dōān pad frašegirdkirdārīh
+WZ-K35-outdated s839	wz 35.6	čiyōn az =iš se ahōšīh andar wpl pad šaš wyčstk ī ast tūs ud gēw ud ān kē =š ahōš ī ast garišāsp kē =š bālā panǰsad nāy ī zarduxšt ud nāy ī zarduxšt čiyōn =im handāzag kē hāwand zarduxšt abar grift pad ātaxš plmkl ēstād se nāy ud nēm ī abāg būd bawēd 1759 frawahr ī ašōān pad druyist dāštan pad =iš gumārdag hēnd
+WZ-K35-outdated s840	wz 35.6	šašom kay husrōy kē awēšān harwispīn abar hangēzēnīd
+WZ-K35-outdated s841	wz 35.7	čiyōn pad haftān dehbedān xwadāyīh ī haftān amahraspandān ō frašegirdkirdārīh payrāstag winnārīhistag ān =iz pad dēn bē winnārīhēd haftīh ī haftān amahraspandān
+WZ-K35-outdated s842	wz 35.8	handāzag ī zarduxšt ī padīrift ohrmazd čiyōn wispāgāh dēn ī ohrmazd dānišn hammōxt u =š pad =iš ēstād wispāgāh būd frahaxtīh
+WZ-K35-outdated s843	wz 35.9	kē =š fradom dēn padīrift ašawahišt stāyīd ahūīh ud radīh ī ohrmazd
+WZ-K35-outdated s844	wz 35.9	ōy ī pēšōbāyīhā bē ō hāwištīh ī zarduxšt tazēd mēdōmāh ī ārāstīyān čiyōn ārāstī ud pōrušasp brād būd hēnd
+WZ-K35-outdated s845	wz 35.10	čē tahmagtar būd huxwadā kay wištāsp šahrewarīh
+WZ-K35-outdated s846	wz 35.11	hudōs ī wištāsp nārīg zarduxšt meh ayār spandarmadīh
+WZ-K35-outdated s847	wz 35.12	ud rādčihrīg frašōštar ud ǰāmāsp kē =šān hambandīh ī ēk abāg did rāy pad =iz xwānišn andar ēd stāyišn gōwēd hordadīh ud amurdadīh pad ān ī hamē winnārīhist amargīh ī dēnīgān
+WZ-K35-outdated s848	wz 35.13	pad dēn zarduxšt ohrmazd handāzagīh rāy čiyōn ohrmazd šaš amahraspandān kē xwēš menišn gōwišn kunišn bowandagmenišnīh bowandaggōwišnīh bowandagkunišnīh abzār brēhēnīd ān zarduxšt az xwēš čārag se pus zād handāzag ī wahman ardwahišt ud šahrewar
+WZ-K35-outdated s849	wz 35.13	u =šān radīh abar se būm pad =iš baxt ī ast zamīg ud war ī ǰamkird ud kangdiz
+WZ-K35-outdated s850	wz 35.13	ud se duxtag pad handāzag ī spandārmad hordād ud amurdād
+WZ-K35-outdated s851	wz 35.14	ān =iz ī wuzurg hamīh ī frašegirdkirdārān ham pad haft mard kē =šān xwarrah az haftān amahraspandān
+WZ-K35-outdated s852	wz 35.14	pēšōbāy zāyīhēd sōšyans andar xwaniras
+WZ-K35-outdated s853	wz 35.14	rōšnčašm ud xwarčašm pad arzah ud sawah kē =šān xwaršēd čašm ī gēhān pad =iš āyēd ud šawēd
+WZ-K35-outdated s854	wz 35.14	fradadxwarrah ud widadxwarrah pad fradadafš wīdadafš
+WZ-K35-outdated s855	wz 35.14	wourunēm ud wourusūd pad wōrubaršt wōruǰaršt
+WZ-K35-outdated s856	wz 35.15	ka frašegird frazāmēnīd kāmēnd yazišn abar frašegird yaštan rāy az slhtkʾn amarg dāmān bē ō ham āwarīhēd pad handāzag ī ān ī yazišn yašt ī zarduxšt pad =iš āstawānīhīd
+WZ-K35-outdated s857	wz 35.15	pad guharīg hōm ān ī zīndakkar ī ast hōm ī spēd ī andar zrēyān kē =š murdagān pad =iš zīndag ud zīndagān pad =iš amarg yhd
+WZ-K35-outdated s858	wz 35.15	guharīg šīr ān ī gāw ī hadāyōš ī andar drubuštīh =ēw ī ayōšustēn pad sālārīh ī gōbedšah pādag
+WZ-K35-outdated s859	wz 35.15	guharīg ātaxš ī wuzurg ātaxš ī zīndagdāštār ī gyānwarān
+WZ-K35-outdated s860	wz 35.15	guharīg yašt yazišn stāyišn ī abar frašegirdkirdārīh ī wehīh paydāgīhā
+WZ-K35-outdated s861	wz 35.16	sōšyans pad xwaniras nišīnēd pad zōtān gāh ān =iz šaš frašegirdkirdār ī pad šaš kišwar pad handāzag hāwanān ātrawaxš fraburdār ud ābard āsnūdār rehwiškar
+WZ-K35-outdated s862	wz 35.17	ud haftān amahraspandān pad wārom ī haftān frašegirdkirdārān gāh gīrēnd
+WZ-K35-outdated s863	wz 35.17	ohrmazd zōt abāg sōšyans
+WZ-K35-outdated s864	wz 35.17	wahman hāwanān abāg rōšnčašm
+WZ-K35-outdated s865	wz 35.17	ardwahišt ātrawaxš kē =š daxšag ātaxš abāg xwarčašm
+WZ-K35-outdated s866	wz 35.17	šahrewar fraburdār abāg frādadxwarrah
+WZ-K35-outdated s867	wz 35.17	spandārmad ābard abāg widadxwarrah
+WZ-K35-outdated s868	wz 35.17	hordād āsnūdār abāg wōrunēm
+WZ-K35-outdated s869	wz 35.17	amurdād rehwiškar abāg wōrusūd
+WZ-K35-outdated s870	wz 35.17	harw ēk pad kišwar ī xwēš ud hamkāmagīh ī haftān amahraspandān rāy ān čē ēk handēšēd ēg hamāgān dānēnd ān ī ēk gōwēd hamāgān xwānēnd ān ī ēk kunēd hamāgān wēnēnd
+WZ-K35-outdated s871	wz 35.18	čiyōn ān ī gōwēd pad spand kū ēg awēšān mard pad ān ī abzōnīg xrad pad menišn ō ham wēnēnd čiyōn nūn mardōm pad čašm ēg awēšān mard pad ān ī abzōnīg xrad pad menišn ō ham pursēnd čiyōn nūn mardōm pad uzwān
+WZ-K35-outdated s872	wz 35.19	māh spandārmad rōz aštād pad uzayrin gāh pad zōtīh ī sōšyans ud hamīh ī šašān hamān frašegirdkirdārān ul uzīyišnīh ī wispān rōšntōhmagān rāy yašt ī frašegirdkirdārīh frāz srāyēnd
+WZ-K35-outdated s873	wz 35.20	kird yašt pad homānāgīh ī ǰam ka =š pad sūrāgōmand ī zarrēn ān sumbāg bē wardēnīd
+WZ-K35-outdated s874	wz 35.20	abar xwānēd sōšyans ī pērōzgar kū ul ēstēd tanōmand hēd yazdān dāšt hēd widard hēd
+WZ-K35-outdated s875	wz 35.21	abar zamīg abar āyēd ērman ī tankirdār ud frašegirdkirdār sōšyans pad nērōgīh ī rōšnān
+WZ-K35-outdated s876	wz 35.22	ud ērman frēstag band =ēw pad dast dārēd kē harw mardōm =ēw rāy ī bē widard ā =š band =ēw az =iš āgustag pad homānāgīh ī dāmwandag kē =š murw ud māhīg pad =iš gīrīhēd ud azēr zamīg andar dušox wistard dārīhēd
+WZ-K35-outdated s877	wz 35.23	pad xwānišn ī paywāzag panǰ ēk widardān az zamīg ul uzīhēnd kālbodōmand ud gyānīg pad bašn čihrag čiyōn ka bē widard hēnd az ān ī zamīg kū =šān ǰān az tanōmandīh bē āmad
+WZ-K35-outdated s878	wz 35.24	dō dō uzīhēnd pid pus zan šōy hērbed hāwišt framādār niyōxšāg
+WZ-K35-outdated s879	wz 35.25	nām ī uzayrin gāh az ul uzīyišnīh
+WZ-K35-outdated s880	wz 35.26	aybisrūsrimaybigāyān ī wispān rōšn tōhmagān rāy pad hamēwēnīg yašt kunēd panǰ ēk ul uzīyēd ā =š ǰān dahēd u =š aybī nām az ǰān ast
+WZ-K35-outdated s881	wz 35.27	ušahin gāh ahōšīh ī wispān rōšntōhmagān rāy pad hamēwēnag yašt kunēd ahōš bawēnd ud ušahin nām az ahōšīh
+WZ-K35-outdated s882	wz 35.28	hāwan gāh hamīh ī wispān rōšntōhmagān rāy pad hamēwēnag yašt kunēd wād ī wʾnkkl kē kunišngarān ō hanǰaman xwānēd ān panǰ ēk az =iš hamēyīg bē ō isadwāstarān hanǰaman ī mayānag zamīg nayēd
+WZ-K35-outdated s883	wz 35.28	ud hāwan nām az hamīh
+WZ-K35-outdated s884	wz 35.29	rabihwin gāh rāmišn ī wispān rōšntōhmagān rāy pad hamēwēnag yašt kird pad ān gāh ēk abāg did bē šnāsēnd nām pursēnd hangirdīg čē =šān abar mad ō ǰān abāz uzwārēnd ēk ōy ī did rāmēnēnd
+WZ-K35-outdated s885	wz 35.29	ud rabihwin nām az rāmišn
+WZ-K35-outdated s886	wz 35.30	asmān zāmyad mārspand anagrān rōz ī ahunwad gāh tā ō uzayrin gāh harw rōz pad uzayrin gāh panǰ ēk az widardān ul uzīhēnd pad aybisrūsrim gyānōmand pad ušahin ahōš bawēnd pad hāwan ō hamīh ī hanǰaman xwānīhēnd pad rabihwin ēk ōy ī did rāmēnēnd
+WZ-K35-outdated s887	wz 35.31	ud ahunwad gāh ka dō zamān ī ast ēk ī rōzšabānīg ō šab abāz ohrmazd pad abāgīh ī srōšahlī az nēmrōz ālag sāmān frāz ō hanǰaman rasēd abar hamēšagsūd gāh ī xwaδāt nišīnēd
+WZ-K35-outdated s888	wz 35.32	paydāgīh ī ahlawān andar druwandān ōwōn čiyōn asp ī spēd andar asp ī syā
+WZ-K35-outdated s889	wz 35.33	frēstag kē =š xwēškārīh šspīh zanēd ahlaw az druwand bē wizārīhēd ašōān az kustag =ēw druwandān az didīgar kust ōwōn ēstēd čiyōn šabān kē ramag ī gōspandān spēd az syā wizīnēd ud ǰud kunēd
+WZ-K35-outdated s890	wz 35.34	hamāg dāmān abdīh bē šnāxt ī ohrmazd az wispwattarīh ī ahrimankāmagīh bowandag abaxš ud pad ohrmazd ōstīgānīhā āstawān
+WZ-K35-outdated s891	wz 35.35	ahreman ud māzanīgān ud āz spāhbed ī abārīg dēwān stard homānāgīhā pad xwēš hamēstārīh wānīdagīhā bē ō mardōmān dīdārīg bawēnd
+WZ-K35-outdated s892	wz 35.36	ud ān wēnišn rāy mardōm az nmyk ī ahreman bē ō ohrmazd wardēnd
+WZ-K35-outdated s893	wz 35.37	ud rōšnān ǰud ǰud hamēstār ī xwēš zanēnd čiyōn wahman akōman ardwahišt indar šahrewar sawul spandārmad nānghayt ud hordād amurdād tāriǰ zariǰ gōšurun druz ī gurgtōhmag mēnōy ī zōhr abēzōhrīh az zarmānīh
+WZ-K35-outdated s894	wz 35.38	čiyōn gōwēd pad dēn kū wānīhēd pad āštīh anāštīh pad rādīh ārādīh pad bowandagmenišnīh tarmenišnīh pad ān ī rāstgōwišn ān ī drōgōwišn pad ahlāyīh druz pad ahlawīh druwandīh
+WZ-K35-outdated s895	wz 35.39	ka gāh ī šab andar āyēd amahraspandān ō gētī daxšagān gumēxtēnd ohrmazd ō sōšyans ud hammis mardōmān kū tā abēzagkām nēkdahišn ōstīgāngāh awardišnīgdwār bawēnd wahman ō gōspandān ašawahišt ō ātaxšān šahrewar ō ayōšustān spandārmad ō zamīgān hordād ō ābān amurdād ō urwarān kū tā ǰud ǰud pad xwēš čihrīh abēzagīhā ud ōstīgānīhā tā spntmt gāh mēnōyīg andar xwēš daxšagān hēnd spntmt gāh az daxšagān bērōn bē rasēnd ohrmazd pad xwaniras šaš amahraspandān pad ān šaš kišwar paydāg bawēnd
+WZ-K35-outdated s896	wz 35.40	pas ān gāh ātaxš ī wuzurg az ān ī asarrōšnīh frōd āyēd pad hamāg zamīg payrōg bē abganēd
+WZ-K35-outdated s897	wz 35.40	tāg =ēw pad dast dārēd pad homānāgīh ī draxt =ēw kē =š tāgān azabar rēšag ō frōd harw ahlaw =ēw rāy tāg =ēw harw druwand =ēw rāy rēšag =ēw ud ahlišwang ī mādagčihrag pad sar ī draxt ud xār dēw pad bun ī draxt ēstēd ud ahlišwang harw ahlaw =ēw rāy tāg =ēw ud xār harw druwand =ēw rāy rēšag =ēw ō dast dahēnd ēk az did ǰud bē bawēnd druwand az ahlaw
+WZ-K35-outdated s898	wz 35.41	pad ān gāh hamāg mardōm pad ēwbār garzēnd ud ars pad zamīg frāz rēzēnd čē pid wēnēd kē =š pus abāz ō dušox abganēnd ud pus pid brād kē =š brād zan kē =š šawišōy kē =š zan dōst kē =š dōst
+WZ-K35-outdated s899	wz 35.42	abar xwānēnd druwandān ō ahlawān kū ān ī man pid ud brād ud šōy ud zan ud dōst čiyōn kū =t pad zamīg nē hammōxt ō man ān ī abēzag rāh ī rāst ut bē nē wardēnīd ham az wināh u =t nē hāxt ham ō kirbag kū =m nūn pad ǰudāgīh ī az xwēšān hamhāgān abāz ō dušox abāyēd šud bē hamrāhīhā bē ō wahišt ī bāmīg šud ham
+WZ-K35-outdated s900	wz 35.42	ud agar =iš nimūd būd hē āštīh az xwēš menišn kū =m čim ān dōst kē =m pad zamīg arzānīg dāšt pad xwarišn wastarg kadag u =m pad mēnōy arzānīg nē dāšt pad ān ī az xwarišnīhā xwaštar ud wastarg čābuktar ud az xānag drubušttar ud az asp ī arwand tēztar
+WZ-K35-outdated s901	wz 35.43	abārīg =iz ruwānān kē ān ī dōstān āhōg nē abāz nimūdār būd bē āwēnēnd ud agar =iš nimūd būd ā =š abāz čašm āwurd pad ān bahrag garāndardtar bawēd
+WZ-K35-outdated s902	wz 35.43	ān tāgān pad homānāgīh ī gardūn =ēw bawēd ī sepāyag ī zarrēn homānāg u =š ahlawān pad =iš abar ō wahišt šawēnd pad wehmenišnīh abar ō starpāyag pad wehgōwišnīh abar ō māhpāyag pad wehkunišnīh abar ō xwaršēdpāyag
+WZ-K35-outdated s903	wz 35.44	druwandān pad ǰumbēnišn ī ān tāg ō dušox ōftēnd pad se dar frōd ōftēnd harw dar =ēw čiyōn tan =ēw ī spšʾpstk
+WZ-K35-outdated s904	wz 35.44	pad dušmad dušhūxt dušxwaršt ō dušox šawēnd
+WZ-K35-outdated s905	wz 35.45	wčkšabān ašōān andar wahišt hēnd az xwēš menišn gōwišn kunišn šādīhēnd druwandān andar dušox az dušmad dušhūxt dušxwaršt bēšīhēnd
+WZ-K35-outdated s906	wz 35.46	ka druwandān az dušox abar āmad hēnd ǰamkirrēnīdārān wazagkirbīhā abāz ō dušox ōftēnd ud ān gyāg bawēnd
+WZ-K35-outdated s907	wz 35.47	rōz ī ohrmazd bāmdād mēnōy ī zamīg xwad bowandagmenišn spandārmad mād ī wispān zāyišnōmand ī abar zamīg kē hamčihrīh az fradomīh ī druz andar ō dām dwārist tā abdom ī rōzān humihrīhā harwisp dām čē hamāg frazend hēnd abaxšāyēd abar ahlawān dušxwārīh ī =šān abar tan rāy ud abar druwandān pādifrāh ī =šān abar ruwān rāy
+WZ-K35-outdated s908	wz 35.48	u =š hagriz nē xwāst xwāyišn az ohrmazd čē bowandagmenišnīh rāy tā spurrfrazāmīh ī kārān burd mān ud ham šahr pad ān gāh pēš ohrmazd bē ēstēd ud gōwēd kū pādifrāh ā =šān was bowandag
+WZ-K35-outdated s909	wz 35.49	pad ham zamān ērman hamāg druwandān abar āwarēd
+WZ-K35-outdated s910	wz 35.50	ahlawān =iz abāz ō zamīg āyēnd ud nē pad ān čihrag ī ka bē widard hēnd ud nē az ān āmēzišn ī ka pēš passazīhist bē rōšn gil ī bē az tārīkīh āb ī bē az zahr ud ādur ī bē az dūd hubōy wād ī purr drūdīh passāxtag bawānd tanōmandān
+WZ-K35-outdated s911	wz 35.51	u =šān ast pad rōšnīh ōwōn homānāg čiyōn bēlūr az gōhrān u =šān gōšt abar ast homānāgīh ōwōn čiyōn wst az draxtān u =šān pīh abar ast ōwōn homānāg paywastag čiyōn zanǰīrag ī zarrēn pad bēlūr wirāstag u =šān xōn andar rahagān ōwōn homānāg tazēnd čiyōn may ī bōyāg pad ǰām ī zarrēn u =šān āmēzišn andar tan hubōytar hēnd kū mušk ud anbar ud kāpūr kē buland bawēnd ud sahīg ud paymānīg bawēnd pad paymān ī gayōmart pad bašn ud čihrag homānāg ō sālān
+WZ-K35-outdated s912	wz 35.52	harw mard =ēw kē pad zamīg zan ēk būd ā =š ān ēwēnag kē =š was būd ā =š ān was bawānd kē =š nē būd ā =š zan =ēw hambašn hamčihrīh pēš ēstādag mard ān ēk zan hamčihrīh rāy ā =š dōsttar dārēd kū wisp kanīg ī abar zamīg zan =iz mard hamīhēd ud nē urwāzēnd ō anī =z
+WZ-K35-outdated s913	wz 35.53	u =šān nigerišn ī ēk ō did ōwōn pad hamdādestān hučašmīhā čiyōn meh abar keh ōwōn nigerīdār nēkīhkāmag čiyōn pid abar frazendān keh andar meh ōwōn framānburdār ēgānag niyōxšīdār čiyōn dahišn andar dādār ohrmazd u =šān petyāragīh … wirāyīhēd ātaxš gāw ī ēkdād kirbag ast ī passazagīhā xwarišn

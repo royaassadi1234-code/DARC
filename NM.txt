@@ -1,0 +1,406 @@
+# Namagiha i manuscihr (NM-K35)
+# Manuscript: K35
+# Text identifier: NM-K35
+# Text UUID: 114a48d8-b46b-45ff-bed2-7dbf02c10a2c
+# Source: https://www.mpcorpus.org/corpus/sections/114a48d8-b46b-45ff-bed2-7dbf02c10a2c
+# API: https://www.mpcorpus.org/api/sections/?text_identifier=NM-K35&type=sentence
+# Exported from MPCD public API on 2026-05-26
+# Paragraph source: MPCD left sidebar section_type=section
+# Format: sentence_identifier<TAB>paragraph<TAB>transcription tokens
+
+NM-K35 s1	NM1 0.1	, pad nām ud ayārīh ī dādār ohrmazd ud wispān yazdān hamāg yazdān ī mēnōyān yazdān gētīyān
+NM-K35 s2	NM1 0.1	paččēn nāmag ī hērbed manuščihr ī ǰuwānǰamān kē =š ō wehān ī sīrgān kird pad $ andarg wizīrkird ī hērbed zādspram ī ǰuwānǰamān kird
+NM-K35 s3	NM1 1.1	nām ī yazdān kē =tān dagrzīwišnīhā druwistrawišnmehmānīhā ahlāyīhwaxšišn ud xradpānagīhā ruwānfrēstag xunakkārīhā brāzišnīg abrang andar farroxīh parwast abzōnīg ābādīh ud pad wisp dōaxwānīg abardar nēkīh spurr bahr ud meh burzišn dārānd
+NM-K35 s4	NM1 1.2	dānāgīhā druwistīhā ud dēnīgwizārīhā nāmag ī =tān pad payg frēstīd framūd mad
+NM-K35 s5	NM1 1.2	u =m abāg =iz zarīgēnāg āgāhīh ī pad any , dar andar parwast ēstād pas =iz wuzurg mādagīh ud meh arzīh ī az ān ī ašmāh garōdmānīgīhā winnārdagīhā ud čihrīg xwarīg nāzišn ī =m ōh dānist ī drōdīg āgāhīh rāy az āgāhīh ī abar =tān awiš drōdōmandīh xūb winnārdagīh nāmčištīg rāmišn X padīrift
+NM-K35 s6	NM1 1.2	u =m pad =š ō yazdān spās hangārd
+NM-K35 s7	NM1 1.2	abar razmīg ī ēn gumēzišnīg axwān tis =iz xīrān ī gētī pad xrad ayārīh čand šāyēd X frārōn rāmišn dādīh sūd asazišnīg kirbag xwāst padīrift abzāyēnīd ōwōn sazēd čiyōn ān =iz ī abar , čihr ī dānāgān guft ēstēd kū az =iz rāyēnišn ī gumēzag xīrān ī āhōgēnīdag pad nērōg ī xrad sūd kirbag ōwōn wizīnēnd ud harrōbēnēnd ud hanǰēnd čiyōn sag xīr az āb wispgen zarr az xāk
+NM-K35 s8	NM1 1.3	u =m rāmišn čand az ham drōd āgāhīh rāy abzūd
+NM-K35 s9	NM1 1.3	nōg meh ārzōg ī abar paywastīhā madan ī az =iz nūn X frāz āgāhīh ī abar druwistwinnirdagīh drōdagxīrīh ud kirbag frayistīhā ud abzōnīgīhā ud ruwānkāmagīh ī ašmāh kē wuzurg dēnmenīdārīh hangārd kirbagīh payrāst
+NM-K35 s10	NM1 1.3	huwīrīh ud yazdān wāspuhragānīh ī =tān ast rāy az abzōn ī =tān wispfarroxīh ud tabīgīhā urwāzišnīhā kāmagtom
+NM-K35 s11	NM1 1.3	ud hamēyīhā ka =tān wēnišn ǰārīhā ka handāzīhēd xwēš dēn sūd ud ruwān urwāhm drōdōmandīh xūbestišnīh čē =m andar ašmāh kām kunišn man āgāhēnīd framāyēd pad yazdān kām
+NM-K35 s12	NM1 2.1	enyā nibišt ī =tān mayān nāmag framūd frēstīd ēg =im nigerīd ,
+NM-K35 s13	NM1 2.1	u =m aziš dušoxtār zarīg wēnišn dušoxkār pad sam škeftīhā ō dil menišn abganād
+NM-K35 s14	NM1 2.1	u =m garānīhā aboxšist abar xwēš hammis ī pad rašnōmand tarāzūg adrōzišn passāxt andar zūrspāhīh ī xwad ud ēč rāst nērōgīh ī hambadīg dād ēstēd ō xwāstēn kēnwišāgīh ī padīrag wasōz druz kē ōwōn wiyābāngar dušdānāg ud § purrfrēb kū =š ān =iz ī čihrīg ahlāyīhdōšīdārtom ud ōstīgān rāstīhkāmagtom dēnīg frārōnristagtom uskārišnāgāhtom ruwān škeftpahrēzišntom ud pad astxrad gōšōsrūdxrad wizīdagtom pad hamāgīhā rāstīhāhangīgtom ōwōn frēftan gumānēnīdan ast ud pad nēst nēst pad ast homānāg awi =š nimūdan tuwān
+NM-K35 s15	NM1 2.1	čiyōn ān =iz hangōšīdag ī andar dēn gōwēd kū ahlāyīh menēd pad ēd dārēd , kū =m kirbag ēw kird ud drōzišn windēd kū =š wināh ō bun bawēd kē ō nasāōmand āb bēzōhr frāz barēd ayāb kē abar nihuftag tārīk bēzōhr frāz barēd andar šab
+NM-K35 s16	NM1 2.2	ud man pad ēn nē gumān kū ōy mow kām abāg ahlāyīh nē hamwimand
+NM-K35 s17	NM1 2.2	čē frārāst šnāxt dānist ēstēd kū xwēš rāy ō tan druwistrawišnīh ud ō ǰān dagrzīwišnīh nē pahrēzag kū =š frārāstīh paywastagīh ī =š hammis tan abzārān ud ǰān abzārān ō ān ī padiš šnāyišn ī yazdān ud warzišn ī dēn ud rawāgīh ud wābarīgānīh ī čāštag ī rāst dastwarān abzāyišn bawēd
+NM-K35 s18	NM1 2.2	az =iz hamēšagkārīh nibēgārayišnīh ud hanǰamanīggōwišnīh ī =š abar abarg ī dēn ērang ī ǰudpahikārišn paydāg ,
+NM-K35 s19	NM1 2.2	čiyōn =iš abar andarg ī awēšān kē ān ō ān mānāg guft ān =iš nūn , xwad nibišt ud was bōzišn ārāst ēstēd
+NM-K35 s20	NM1 2.3	ēn =iz āgāh ham kū bē ānōh kū pad ēč ēwēnag yōǰdāsrgar nē hāzīhēd ēg =iš wuzurg kār ī čiyōn yōǰdāsrgarīh ī ast X šustārīh ī dēnīgnērangīhā ō āsrōnīh pēšag § abzār az dastwarān hilēnd
+NM-K35 s21	NM1 2.3	šustārīh ī nē dēnīgnērangīhā andar pāyramīgān pad kirdag nihād abārōn garānbazagīhā čē mādagwar abzār ī ruwānbōzišnīhā pāšom nēkīh X ī mardōmān yōǰdāsrgarīh ī mardōmān guft
+NM-K35 s22	NM1 2.3	yōǰdāsrgarīh ī mardōmān X ud pākīh ast ī pad ruwān kū pas az zāyišn ī pāšom ēw
+NM-K35 s23	NM1 2.3	ka be zād hēnd ā =šān tis ēw yōǰdāsrīh ī pad ruwān weh
+NM-K35 s24	NM1 2.4	ud any gyāg nimūd ēstēd kū , yōǰdāsrīh ī =iz pad ruwān pad yōǰdāsrīh ī tan šāyēd xwēšēnīd
+NM-K35 s25	NM1 2.4	čiyōn čē ān guft ēstēd kū =š yōǰdāsrgar xwāst
+NM-K35 s26	NM1 2.4	u =š guft abāyēd kū ēdōn pad ōy ī rist tan be ēstād ham
+NM-K35 s27	NM1 2.4	axwāstār ham pad menišn axwāstār ham pad gōwišn axwāstār ham pad kunišn ī wizārīhēd kū rēmanīh rāy pad menišn ud gōwišn kunišn kirbag xwāst nē tuwān
+NM-K35 s28	NM1 2.4	xwāhēd ō man yōǰdāsrīh kū =m be šōyēd
+NM-K35 s29	NM1 2.4	čiyōn aziš X paydāgīhēd kū ka ān kē =š tan nē yōǰdāsr tā ka =š be šōyēnd pad menišn gōwišn ud kunišn kirbag xwāst nē tuwān u =š ruwān yōǰdāsrēnīd nē tuwān ēg pad =iz yōǰdāsrīh ī ruwān awizīrišnīg ast az ān ī tan X yōǰdāsrīh kē =š yōǰdāsrēnīdārīh ī dēn ān hēnd ī āšnāg ī pad dēnīg nērang
+NM-K35 s30	NM1 2.4	ka ēn , ēdōn hammis dēnburdārān dēndastwarān mādayān ōy kē pad dēn mazdēsnān āgāhtar kirdārtar andar harwisp mān wis ud zand ud deh wēš abērtar mard ī ahlaw ī gōwāguzwān ī rāstguftār ī srūdgāhān ī āgāhnērang ī frahaxtkār ī husrawxēm ud ruwāndōst pad yōǰdāsrgarīh ī winnārdan ud menīdan abzāyēnīdan abēr čimīg
+NM-K35 s31	NM1 2.6	ōh =iz ka āwām ōwōn asāzīg druz ōwōn was kōxšišn ud staft zōhrārāstār ōwōn gōwišnīh ēw ī ka =iz hambāst menišn wehān pad winnārdan pattāyēnīdan ī hamfrārōn pēšag tuxšēm
+NM-K35 s32	NM1 2.6	ēg =iz nōg nōg az frahist šahrān ōwōn pad hanǰābišn ēstēd ī =mān padiš čimīgīhā garān bēš ud bīm
+NM-K35 s33	NM1 2.6	ud yazdān ō amāh frayādišnīgīhā rasānd rasēnānd ārāstār ī ēd ud abārīg =iz dēnīg ristag pad yazdān nām ud xwābarīh ud purrxwārīh ud aboxšišnīgīh meh tuwāngarīh , tuwānīgīh
+NM-K35 s34	NM1 3.1	ēn =iz az ašmāh xwāyišnīg ham kū rāstkāmīhā ud an kē īhā ī =tān ast pāzag abar nibišt nibēsam ōwōn hučašmīhā ud payrāstārīhā nigerīd framāyēd čiyōn gōhrān ēwēnag
+NM-K35 s35	NM1 3.1	čē abāg man ham sahišn hēd ham passazagtom abāz āgāhēnīdan framāyēd kū =š padiš ōstīgānmenišnīgtar bawam
+NM-K35 s36	NM1 3.1	ud agar ast ī =tān any ēwēnag sahēd abāg čim bōzišn ī =tān sahēd ōwōn abāz nimūdan framāyēd čiyōn hamhāg ī āhōg abazguftār ud abāz nimūdār rāy guft ēstēd čē was ast čim kē rāy =itān niyābag hučašmīhā nigerišnīh ī abar nibēsišn
+NM-K35 s37	NM1 3.2	fradom ēd kū man abārīg =iz mowān dibīrīh nē pēšag ōy kē =š frahang ēw nē wāspuhragānkārīhā bē pardaxt ī az ān ī frēzwānīgtar xwēš kārīh ēg =iš awestādīh paristagīh ī padiš nē framāyišn
+NM-K35 s38	NM1 3.2	ān =iz rāy dānāgān rāstxwāyišnān abar nibēsišn mowān mādayān tan ī dādestān barēnd ud čābukīh ī ēwāz passāzišn ī dibīrīh aziš kam framāyēnd
+NM-K35 s39	NM1 3.3	didīgar ēn kū andar ēn sezdēn āwām wišēg ān kē =š dardagīh ud wasabāmīh az =iz pidarān awiš mānd az hamahlān šahr uzwāyīg ud was ziyān mad ēstēd ī pad aradīg darmānbarīh dādīg čāraggarīh purrranǰ bē pad =iz dēnburdār kē gētīyīgrāyēnišnīgtar āmār az hamēstārān garān bīm purrranǰīh ō passāzišn ī abē bahr aniyābag
+NM-K35 s40	NM1 3.4	sidīgar ēn kū dānāg ī mēnōynigerišn ī dēn dastwar ī āgāhdādestān ka =iz xwad andar gētīy xūbxīr abē bīm ud wābarīgān ēg =iz az =iš aboxšayišn andīhā dilzinǰagīh pad āzārišn bēšišn ī ō wehdahišnān paywast ēstēd
+NM-K35 s41	NM1 3.4	ud was ēwēnag pēš wēnīhā āgāhīh ī abar gētīyīg mēnōyīg anāgīh rāy hamēšag and andar sōhišn andar menišn čand =iš dil bē ō čābukwāzagīh ud saxwanpassāzišnīh nē pardazēd ud čiyōn andar dēn pad pursišn gōwēd kū kē andar ox ī astōmand tēztar waxrīhēd pāsoxīhēd kū gušn ī wēnāgxīr zarduxšt kē abar harw dō ān ī mad ēstēd ān =iz rasēd ān =iz ī wattar wōyγ wēnēd čiyōn ān =iz ī andar anī =z frāzwābarīgānīh čiyōn ēn dānēd kū az ēn nēkīh čē nēkīh ud anāgīh =iz dānēd
+NM-K35 s42	NM1 3.4	hufraward hudēnān pēšōbāy farroxzādān nibišt hād az xwēš kardag ǰān weh šnāsēd u =š meh handēmān ō čēhwidarg payrāstag ud ārzōg ī gētīy kamniwāzišn bawēd
+NM-K35 s43	NM1 3.5	čahārom ēn kū man wāspuhragānīhātar abar xīr ī pēšag awizīrišnīg was kārīh ōwōn ī ān =iz ī hufraward ud mehfrazānag hudēnān pēšōbāy ǰuwānǰam šābuhrān abāg čand pus ham dūdag nāfag mowīmard hamēw rāyēnīd
+NM-K35 s44	NM1 3.5	ān =im ēwtāgīhā ud kamayārīhā pad rayēnīdārīh andar bunkamīh ī artēštārān wasīh ī hamēstārān zūd zūdrasišnīh ī petyārag čārag xwastārīh ī pad abāz dāštan wizend ud aweštāb ud adādīhādārišnīh ī ātaxšān mazdēsnān rāy =im hamēšagranǰagīh ōwōn ī =m az ham dar frayist hangām guft
+NM-K35 s45	NM1 3.5	tōš =iz ud čēhmenišnīh wasīhā hilēd ō ōwōn čēhagōmand nibēsišn kē nigerišn ī wigrādōšīhā ud āsānmenišnīhā padiš andar abāyēd bē =m ō xwārēntar nibēsišn pardazišn andak wisānīg
+NM-K35 s46	NM1 3.5	u =m nāmčišt andar ēn widarg ka nāmag ī ašmāh mad ud hangām ī rōzīgdahišnīh ī ō paristišngarān ī hamēw pērōzgar ātaxš ud man šud abāyist ī ō sīrāb ud čand čāraggarīh ī frēzwānīg rāy kār wēš pardazišn kam būd
+NM-K35 s47	NM1 3.6	panǰom ēn kū agar =iz az =im hamāg kārān winnārdan rastag ud harw rāyēnišn xwēš kām ud sam pardaxtag menišn āsādag ud dil āsādag menišn urwāhmen būd hē
+NM-K35 s48	NM1 3.6	ēg =iz =im az xwānd ī and nibišt and nōg bēš ud čēhag bē ō dil ud menišn paywast hē ī =m ōš xrad az wimandīg passāzišnīh saxwanān wizūdag māndag būd hē
+NM-K35 s49	NM1 3.7	šašom ēn kū ān =iz ī wigrādōštar mard ka az nibēsišn ī kišwar frazānag ēw ī rāstkām ōwōn škeft ud pas wēnēd ī =š az ham škeftīh pafšīrišn abzūdan ud wattarīh rasīdan gumān rāy andar saxwanān zōrīh kamfrayādīh būd nē gumān
+NM-K35 s50	NM1 3.8	haftom ēn kū agar ān šaš ī =m nibišt ēč nē hē ēg =iz ašmāh wizīdag wehgōhrīh ud stūdag huxradīh ud passandīdag bowandagmenišnīh burzīdag wehān frāy ud ōstīgān was dōšāramīh ōwōn ī pad čē rāstīhā rāstsahišnīhā nibēsam hučašmīhā rāstwizīngarīhā nigerīdan dōstwārīhā payrāst kirdan ud wirāstārīh tuxšīd frārāst saham
+NM-K35 s51	NM1 4.1	u =m wistāxīh ī abar nibēsišnīh ī andar ōwōn a pardazišnīh mādayān az ham čim ud ašmāh kē =tān yazdān pāsbānēnānd šōyišn ī pad baršnūm
+NM-K35 s52	NM1 4.1	az kardag bē nē hilēd čiyōn pēšēnīgān guft ēstēd kū ka az kār hilīhēd harw āb ātaxš urwar ud mard ī ašō gōspand ud harwisp dām ī ohrmazd bēšīd ud kāst ud nišēbēnīd bawēd mowīmard
+NM-K35 s53	NM1 4.2	čiyōn gōwīhēd pad dēn kū ōy tan ī rist kē =š nasuš abar dwārīd ēstēd čē a hunsandīhā spitāmān zarduxšt ān kē abar rist ā =š ān xwaršēd abar bē tābēd ōwōn a hunsandīhā ān māh ēdōn a hunsandīhā awēšān stārag šnāyēnēd spitāmān zarduxšt ān mard ī yōǰdāsr ka ān abar rist ā =š frāz aziš nasuš kird kē rēman būd ēstēd šnāyēnēd ātaxš šnāyēnēd āb šnāyēnēd zamīg šnāyēnēd gōspand šnāyēnēd urwar ud šnāyēnēd nar ī ahlaw šnāyēnēd nāyrīg ī ašō harw dō čiyōn =iš abestāg
+NM-K35 s54	NM1 4.3	ka yōǰdāsrgar nē bawēd hamāg yazdān az gētīyīg bēšīd ahušnūd bawēnd ud yōǰdāsrgarān ī dēnīg ī dānāg kār ī yōǰdāsrgarīh čiyōn =išān az pōryōtkēšān pad kardag awiš mad nūn =iz abāz nē dāštan u =š nē wizūdan frārōn dād
+NM-K35 s55	NM1 4.3	kirbag nē wardēnīdan waštag ī nē druyist nē frārōn dād kirbag nē padīrift kār az =iš nē kirdan abēr dānāgīhā ud drīstxradīhā handēšīdan u =tān padiš abartarīhā stāyišn burzišn ud spās ud āfrīn xwēšīg
+NM-K35 s56	NM1 4.3	čē guft ēstēd kū pad hamāg kār ī dādestān kirdan ud dāštan ī pōryōtkēšān az harw tis ēw mehmādagwartar ud harw ān raft ud kardag kē az awēšān andar mad ēstēnd pad rāst dastwarīh pōryōtkēšān āšnāg būd hēnd
+NM-K35 s57	NM1 4.3	bē anyēwēnagīh ī tāštīg dānišnīhā ud rōšn bōzišnīhā pad paydāgīh az dēn ud čāštag ī dastwarān bē āwarīhēd ēg =iš wardēnīdan nē dastwarīhā ud ōy kē =š wizīr ī pānzdah pad nām nibēsīhēd čiyōn agīh ud a passāxtagīh ī ham nibēsišn nē ham gōnagīh ī abāg dēn čē =š pēš xōg nē būd rāy pad ōy wizīrīh ī nē abē gumān ham
+NM-K35 s58	NM1 4.4	u =š andar =iz nibišt paydāgēnīd ud wizīrēnīd kū ǰār ēw tā yōǰdāsrgar rasēd ī āgāhnērang kē ōwōn šōyēd čiyōn pad dēn paydāg guft ēstēd
+NM-K35 s59	NM1 4.4	ōwōn šust tis ōwōn saham kē rāy az ān čiyōn yōǰdāsrgar ī xūb šustār nūn =iz ast ān ī =š azēr nibišt rōšn frārāst kū nē =iz wizīrēnīd hē pad ān kambōzišnīh ī andar ān nibištag paydāg ud nē wābar gōwišn hē
+NM-K35 s60	NM1 4.5	čē agar ōh =iz ōy pad abartarīhā ud āgāhdēnīh frazānagdānišnīh frazānagdānišnīh rāstdastwarīh mehpōryōtkēšīh stūdag paydāg az hammis nūnēnīgān dastwarān frāzīg tāyag hē būd hē ēg =iz abāg mowmardān āwāmfrazānagān ohrmazd mowbedān ī pēš būd hēnd nē hāwand hē
+NM-K35 s61	NM1 4.5	ud ka =iz hamāg abestāg zand warm wābartom āgāhmānsr zarduštōtom mow ēw pad ohrmazd ud ohrmazdmowbedīh aγrī saxwanwirāy hudēn kay ēw pad mādayān dahībedīh mad ēstād hē
+NM-K35 s62	NM1 4.5	ēg =išān pad dād kardag wardēnīdan ayāb ǰud az uskār ud hamdranǰišnīh ud ham dādestānīh ī mowān ī dēnsarān ud sālārān ham dādestānīh ī čašmag wehān xwad sahišnīhā nē padīrišnīg nē uspurrīg hē
+NM-K35 s63	NM1 4.5	bē wābar gōwišn ān ī ast būd bawēd ī =šān pad anōšagsaxwanīh rāstpahikārišnīh bowandagzōrīg uskārišnīh abāg mehān menišn uskārd ēstēd
+NM-K35 s64	NM1 4.5	az =iz čāštag ī rāst dastwarān pad wēš gugāyīh bōzišn ī ēwarīg ō hanǰamanīgān ī dād šahr nimūd frayist mowmardān dādestānšnāsān ī kustag kustag padiš xwastūgēnīdan āwištag ī ham šahr andar harw čahār pāygōs abar kird hē
+NM-K35 s65	NM1 4.5	az =iš hangōšīdag paydāg az =iz ān ī anōšagruwān wehšābuhr ī mowbedān mowbed ud anī =z ohrmazd mowbedān guft čāštag ī u =šān pas =iz kardag padiš nē wardēnīdan gōwišn ī any dastwar padiš nē āgārēnīdan
+NM-K35 s66	NM1 4.5	bē ān ī =šān pad ēwarīh padīrift az gōwišn ī abārīg dastwarān pad wābartar dāštan ud kardag ī any ēwēnaggōwišnān nē wardēnīdan dādīg sahist ōwōn būd
+NM-K35 s67	NM1 4.5	čiyōn ān ī wehšābuhr pad hanǰaman ī anōšagruwān husrōy ī šahān šah ī kawādān wīstēk ān bazišnīhā ōwōn nimūd ī mowān padiš ēstād hēnd u =šān nibišt āwišt kū ōwōn mowān padiš ham dādestān būd čiyōn wizīrēnīd u =šān pas ān and wizīr ī ōy ōwōn nimūd mowān padiš ham dādestān būd hēnd
+NM-K35 s68	NM1 4.5	pad mādagwarīh ēwarpāyagīh ud andar kardag ī ōstīgān dāštan abārīg ī =š guft ōwōn dārēd čiyōn abārīg gōwišn ī ēk ēk az awēšān dastwarān
+NM-K35 s69	NM1 5.1	uskārišnīg čāštan ān nibištag ī =tān mayān nibištag ī nāmag āyēd drustbōzišnīh ēw andar nēst ī padiš ān ī frārōndārišnīhā kardag wardēnīdan sazēd čē agar ōh =iz ān ī =š az gōwišn ī mēdyōmāh ud abarg ud sōšāns nibišt ēstēd ǰud ǰud gōwišn čāštag ī ham dastwarān ast ēg =iz passāzišnpaydāgīh ī aziš nē ōwōn čiyōn ān ī =š pad frāzsāzišnīh parwastag
+NM-K35 s70	NM1 5.1	u =š paydāg sahist pargast kū ōy mow gām az rāstīh čaft ayāb =iš menišn ō kāmagwizīrīh rawēd ayāb =iš āgāhīhā ān ēwēnag ī nibišt ī čiyōn =iš pad ox wurrawist kū nigēz ī dēn čāštag ī dastwarān ast
+NM-K35 s71	NM1 5.1	bē tā rasišn ī a brādarōd sōšāns kas pad bowandag dānišn a waxr andar axwān nē ud agar nāmčišt druz pad menišn ī dēndastwarān uzmānīgtar kōxšēd tā wizīr ī dēn
+NM-K35 s72	NM1 5.1	ud pattāyīh =iz brādarōdōmandīh ī xīrān ān ast ka abēzagmenišnān saxtag nigerīd purrguftārān tēzwīrīh ud dēnīgčihrān hučašmīh abar bōzišn abar nigerišnīg ham mow afrēftārīh ī xwad ud saxtagnigerišnīh kām ī =š abar purrwistarišnīh ī dēnīg hamag rāy tēzwīrīh ud āhang ī =š ō bōzišnīh dēnīg hammōg rāy tēzwīrīh ud āhang ī =š ō bōzišn ī dēn ērang ī ǰudpahikārān winnārdan rāy hučašmīh abar xwēš bōzišn ī kē =š xōg ast
+NM-K35 s73	NM1 5.2	ān =iz ī =š az ān bōzišnīhā parwastag passāxtag paydāgēnīdag menīd az ēn se čim abērtar abar saham ān ī =š saxtagnigerišnīh
+NM-K35 s74	NM1 5.2	saxtagnigerišnīh ī mēdyōmāh pad čāštag mēdyōmāhīg ud ān ī abarg ud sōšāns harw ēk pad čāštag ēw ōšmurd u =š tēzbrīnīhā harw čē ēk az awēšān guft pad paydāgīh ī az čāštag ēw wizīr abar kird
+NM-K35 s75	NM1 5.2	u =š hučašmīhā pad bōzišn ī xwēš uspurrīg menīd u =š nē mad ēstēd ī passazag ham uskār ud abāz nimūdār rāy an ēdōnīh awiš nē āhumbīhist
+NM-K35 s76	NM1 5.2	ud ka pāsox ī rāst abāz nimūdārān ašnawēd pad bowandagmenišnīh uzwārēd xwad xwastūgīhēd kū čāštag mēdyōmāh nē hamāg gōwišn ī mēdyōmāh čē was dādestān ast mēdyōmāh ēwēnag ēw guft pad mādagwar čāštag ī mēdyōmāhīg anīyēwēnag wizirēnīd ēstēd nē harw čē mēdyōmāh guft nē xūb pad čāštag ī mēdyōmāhīg ēwar kū nē šāyēd čē was ī pad šāyistagīh guft ēstēd
+NM-K35 s77	NM1 6.1	ān ī andar ān nāmag nibišt kū pad čāštag ī sōšāns ōwōn gōwēd kū yōǰdāsrgar dō ōh abāyēd harw ān šāyēd kē =š yašt kird ēstēd ēdōnīhā ham dādestāntar būd hēnd kū ka ēk ā =iz ast ī šāyēd abārīg ī =š pad hamband nibišt ān bē čiyōn =iš gōwišn ī abarg pad čāštag ēw ī az =iš ān rāy ān ī paydāgīh az =iš sahist ī čiyōn =iš wizīrēnīd
+NM-K35 s78	NM1 6.1	ēg =iš ka =š āfrāhēnāg pāsox ī abāz nimūdār rasēd rāstkāmagīh rāy xwad xwastūgīhēd kū abarg pad ēk ī az dastwarān ō mar āyēd ud ān ī mādagwar čāštag sōšāns guft kū ham dādestāntar būd hēnd kū ka ēk ast ā ašāyēd
+NM-K35 s79	NM1 6.2	ān gugāhīh =iz ī čand dastwar ud mādagwar ī čāštag ēw ham pāzag pad =iz čāštag mēdyōmāhīg guft ēstēd kū ka ōy kē hamēw šōyēd pišag šnāsēd ēg =iš yōǰdāsrgar ēk was
+NM-K35 s80	NM1 6.2	ka pad mādagwar ī dō čāštag ka ēk ast šāyistagīh paydāg ēw tāg gōwišn ī abarg rāy bē nē akārēnišn čē abarg bē čiyōn =iš xwad ōwōn sahist guft yōǰdāsrgar dō ōh abāyēd
+NM-K35 s81	NM1 6.2	enyā any dastwar abāg ham gugāy būdan nē paydāg u =š xwad =iz ēn nē spēzīd kū any ēwēnag būdan nē šāyēd čē =š wēnišn ī xwēš čiyōn =iš sahist guft
+NM-K35 s82	NM1 6.3	ēk ōy abārīg wizīd pōryōtkēšān pad ēn ham dādestān bē būd hēnd kū vīkaiieha kār čiyōn =iš wizārišn ēn kū dādestān ī =š mowān abar ǰudpahikār hēnd ān ī mow ēw ēw ēwēnag gōwēd dō mow ī =š hāwand anīyēwēnag gōwēd kār az ān dō gugāh kunišn
+NM-K35 s83	NM1 6.3	čiyōn az ham nimāyišn ēn =iz paydāgīhēd kū pad =iz xwastūgīh ī abarg ka yōǰdāsrgar ēk ast pad šāyistan dārišn pattāyēš tā =š gugāhīh ān ī =t nibišt kū mēdyōmāh guft kū harw pēšag se bār šōyišn ud nūn yōǰdāsrgarān ēk bār
+NM-K35 s84	NM1 6.3	ān hamgōnag čāšt ēstēd čiyōn =iš nibišt bē mēdyōmāh se bāršōyišnīh nē tāšišnīg šōyišnīh bē uskārišnīg guft u =š ēn =iz nē guft kū ka se bār nē šōyēd ā nē šāyēd
+NM-K35 s85	NM1 6.3	abarg guft kū ka ēk bār šōyēd ā šāyēd ud abar ēn ēw bār mēdyōmāh dādestān pasēmālīhā ud abarg dādestān pēšēmālīh čē mardōm andar zīndagīh fradom dārišn abar pākīh nē frēzwānīgīh ī šōyišn ud pas rēmanīhīhēd ī =š andar dēn šōyišnōmandīh abar gōwēd tā čand bāršōyišnīh paydāgīhēd ēg =iš dārišn abar ēk bār ī ast fradom mar
+NM-K35 s86	NM1 6.3	ōy kē wēš az ēk bāršōyišnīh gōwēd pēšēmālpahikārišnīh nē paydāgīh ōy kunišn tā ka paydāgēnīd dārišn abar gōwišn ī ōy kē pasēmāldādestānīhā ēk bāršōyišnīh guft
+NM-K35 s87	NM1 6.3	az ham bē agar =iz ōh =iz wēššōyišnīh ast ī xūbīh ī kār pas gōwišn ī abarg abar ēn ēk bār bōzišnīgtar paydāg ān ī mēdyōmāh ō paydāgīh niyāz
+NM-K35 s88	NM1 7.1	ud ān ī nibišt kū pad čāštag ī abarg ōwōn paydāg kū pv.9.32 harw tan ēw pad kemistīh āb ēw dōlag gōmēz ēw dōlag ī wehmār ōh abāyēd ān hamgōnag pad čāštag ī mēdyōmāh guft ēstēd kū āb ud gōmēz ka šāyēd hamāg bē yazišn ka nē pad nidomīh ī harw tan ēw rāy āb ēw dōlag ud gōmēz ēw dōlag ī wehmār ān gyāg bē nihišn ud pas ōh gumēzišn
+NM-K35 s89	NM1 7.1	ud az ān čiyōn dō čāštag ōwōn guft ēštēd kār az ēn kirdan bōzišnīgtar ud drīstdādestānīhātar
+NM-K35 s90	NM1 7.2	u =mān bōzišn ēw ī drīst nē šnāxt ud paydāgčimīhā bē ō dānišn nē mad kū kem az ēn paymān šāyēd
+NM-K35 s91	NM1 7.2	bē ēn nē tāštīgdānišn ham kū kem az ēn nē šāyēd čē āgāhīh ī abāg az ān ī awēšān āgāhīh kē pēš dastwar uskārdār ō ōy paywastār būd hēnd ān ī =m āšnūd kū ast kē paymānag ī āb ud gōmēz kāstan rāy bōzišn ēn gōwēd kū pad harw tis ēw kār ī ēn wizārēd kū ka andčand =iš az =iš tan paydāg šāyēd
+NM-K35 s92	NM1 7.2	u =m wāzag druyistbōzišnīgīh ēw nē dīd čē meh frazānag hudēnān pēšōbāy hufraward ǰuwānǰam ud anī =z uskārdārān dādestān humenišnān sahišn ōwōn būd kū ān wāzag abar ān guft ēstēd ī =š az dēn čāštag ī dastwarān paymānag ī pad kemistīh nē paydāg
+NM-K35 s93	NM1 7.2	ud pas ka hambun =iz ast šāyēd ēg =iš ān ī =š paymānag ī pad kemistīh paydāg kem az kemistīh nē xūb agar pad čāštag pad šāyist guft ēstēd wēšgugāhīh rāy wābarīgāntar ud kār aziš kirdan dādīgtar čē ān čāštag ōh xwastūg kū gōwišn ī dastwarān wēšgugāhīh kār
+NM-K35 s94	NM1 7.3	ēn ān ast ham bāstag yōǰdāsrgarān gyānsahmān andar kār dāšt ud wehān menišnīgīhā pad =išān ayār ud nērōgdādār būd abēr čimīg ud nūn =iz yōǰdāsr se xwēš wāspuhragāntar ham paymānag andar kār dašt framūd ēstēd
+NM-K35 s95	NM1 7.3	ān ī =m dīd u =m ō dānišn madag abērtar ka =m xwad šust ham paymānag andar kār dāšt ēstēd
+NM-K35 s96	NM1 7.3	ud agar =iz ast yōǰdāsrgar kē āb ud gōmēz ī yaštag bowandag pad kār nē rāyēnēd ēg =iz nē wattar kū ka hambun =iz nē bawēd u =š nērang =iz ī dēnīg nē bawēd
+NM-K35 s97	NM1 7.3	u =š wendīdādyazišnīh =iz abestāggōwišnīh =iz wāzgīrišnīh =iz čiyōn =iš pursīd zarduxšt az ohrmazd kū čiyōn yōǰdāsrom kū tā airiieme nē bawēd ast kē hamāg gōwēd
+NM-K35 s98	NM1 7.3	čiyōn pad ātaxš ud čiyōn pad āb ud čiyōn pad zamīg čiyōn pad gōspand ud čiyōn pad urwar ud čiyōn pad mard ī ašō ud čiyōn pad nārīg ī ašōnīy čiyōn pad star ud čiyōn pad māh ud čiyōn pad xwaršēd čiyōn pad ān ī asar rōšnīh ud čiyōn pad anagr rōšnīh čiyōn pad harwisp ī ābādīh ohrmazddād kē az ahlāyīh paydāgīh
+NM-K35 s99	NM1 7.3	u =š guft ohrmazd kū yōǰdahrīh srāyēš zarduxšt kū windēdād ēw bē yaz yōǰdāsr pas bawēd
+NM-K35 s100	NM1 7.3	čiyōn =im guft kū windēdād ēw nē yazēnd kū ān ī =š nibišt nērang pad kār dārēnd ēn ēč nē zanēd u =š ēg =iz wizīr framān ī sālārān ī dēn nē abar bē hišt
+NM-K35 s101	NM1 7.3	baršnūm bē abar ēn niyābag bawēd kū āb ud gōmēz ī yaštag pad paymānag dastwarān čāšt ēstēd andar kār dār
+NM-K35 s102	NM1 7.3	enyā abāg =iz ēd kū ān ī pad dō čāštag guft ēstēd ēwar drīsttar pas =iz ast kū =šān tuwān awiš nē ayābīhēd pad čāštag ēw pad šāyist guft ēstēd ud man nē šayistagīh nē wizīrēnam
+NM-K35 s103	NM1 7.4	ud ān =iz sesad sang ī pad pādyāb ī āwāsēnīdag ō gōmēz ud āb abgand rāy nibišt ān ham gōnāg =iz čāšt ēstēd ud ā =iz ōh =iz ka nē abganēd pad ast čāštag ī šāyēd
+NM-K35 s104	NM1 7.4	ēg =iz arzānīh ud āwāsīh ī sang rāy yōǰdāsrgarān padiš kambōzišnīgtar ud ān tis ōwōn xwār pad kirdan ōwōn hučār
+NM-K35 s105	NM1 7.4	pad ast čāštag ī nē xūb yōǰdāsrgarān pad xwār dāštan abēr sūdagīhā bē =š nē šāyist nē guft ēstēd pad čāštag ī abarg guft ēstēd kū šāyēd
+NM-K35 s106	NM1 8.1	ud ān ī nibišt kū pad sagādom paydāg kū gōmēz ī yaštag ka gandag bawēd bē ayārdēnišn ōwōn ī frāz ō ātaxš nē barēnd kū gand bē ō ātaxš rasēd čē agar ān gand bē ō ātaxš rasēd xwēdīh rāy pad hixr abar frāzbarišnīh ō ātaxs ān āsterēd ān ham gōnag čāšt ēstēd ma agar az ān ī guft ēg =iš sahist kū hixrīh ī rēmanīh ī gōmēz gandag nē
+NM-K35 s107	NM1 8.2	bē =š bowandagmenišnīhātar ud uspurrīgīhā uzwārīhātar sazēd nigerīdan čē ān ī =š guft kū pad hixr frāz barišnīh ī ō ātaxš āsterēd nē rēmānīh ī gōmēz bē paymānag ī wināh rāy pad ēn kū =š and wināh ō bun bawēd čand ōy rēmānīh ī gōmēz bē gand ud xwēdīh rāy čiyōn kē =iz āb ī pāk yōǰdāsr bē ō ātaxs barēnd padiš wināhōmand bawēd
+NM-K35 s108	NM1 8.3	ēn =iz wāz ēw kū paymānag ī wināh nē remānīh ī gōmēz rāy guft ēstēd hangōšīdag az =iz ān paydāg ī zōhr ī xar ud xūg rāy guft ēstēd kū ka wēš az paymānag ī framūdag bē ō ātaxš barēnd pad hixr frāzbarišnīh ī ō ātaxš āsterēd ud ēg =iz ān gōšt pad pākīh wizīrēnīd pad bē dādan ī ō gāhānbār guft ēstēd
+NM-K35 s109	NM1 8.4	xwad =iz gōmēz gandag frārāst kū ēd rāy framūd ēstēd kū bē ayārdēnišn kū tā ka bē ayārdēnīd ēg =iš kār framāyēnd enyā agar bē agārēnišn pas ō ayārdēnišn nē niyāz ayārdēnišn
+NM-K35 s110	NM1 8.5	rēmanān abar yōǰdahrēnišn paydāg kū hixr bē ōwōn kū nē hixr ud ōwōn pāk kū ān =iz ī any yōǰdahrēnēd
+NM-K35 s111	NM1 8.6	ka =š xwad nibišt kū pad sagādom ōwōn paydāg kū gōmēz ī yaštag ī gandag pad ātaxš bē ayārdēnišn pas paydāg kū gōmēz ī nē ēwāz ān se rōz grift ēstēd bē ān =iz ī kahwan ī yaštag ī gandag būdag ī abāz ayārdēnīdag ka pad kār dārēnd xūb
+NM-K35 s112	NM1 8.7	ud ān ī sagādom paydāg mādagwar kū ēk az dastwarān ēwtāgīhā guft ān gandagīh ān rāy guft ēstēd tā ka =š gandagīh ēw rasēd ī ǰudēwēnag az ān ī =š čihrīgīhā padiš ast
+NM-K35 s113	NM1 9.1	ud ān ī nibišt kū mēdyōmāh ud abarg sōšāns harw se mad ēstād hēnd ud ān rāy kē ēdōn šust čiyōn nūn hamēw šōyēnd ēwar kū šāyēd
+NM-K35 s114	NM1 9.1	u =šān pad šāyist hē mēdyōmāh guft hē kū nē čē yōǰdāsrgar ēk bawēd
+NM-K35 s115	NM1 9.1	abārīg ī čiyōn andar ān dar nibišt ī =š tēznigerišnīh rāy az gōwišn ī awēšān ōwōn sahist u =š awēšān =iz az čāštag ī pad nām ī awēšān ōwōn nē wizīd čiyōn =im pēš nišānēnīd
+NM-K35 s116	NM1 9.1	bē nē ōwōn šnāsēm kū agar awēšān harw se mādagwarān ī harw se čāštag mādagwarīh būd hē ud kas rāy kē ēdōn šust hē kū yōǰdāsrgar ēk būd mēdyōmāhīg ud sōšānsīg guft hē kū šāyēd čē dastwarān ēdōn ham dādestāntar būd hēnd kū ka ēk yōǰdāsrgar ast ā šāyēd
+NM-K35 s117	NM1 9.1	ud ka =šān pad šāyēd hē kū =šān ǰud az dast abārīg pēšag ēw bār šust ud abarg guft hē šāyēd čē =š se bāršōyišnīh pad abestāg nē guft
+NM-K35 s118	NM1 9.1	ud ka pad šāyēd hē kū sesad sang pad āb ud gōmēz nē abganēd abargīg guft kū šāyēd čē sagīzag kār nēst
+NM-K35 s119	NM1 9.1	ud ka pad šāyēd hē kū pad ān maγ šōyīhist kē kas padiš šust ud sāldrahnāy padiš nē uzīd ēstēd bē =šān stad abāz nihād mēdyōmahīg guft hē kū šāyēd čē ka =š sag abāz nihād ā =š wistarišn kird ud ka =š wārān ēw ēdōn padiš bē bawēd ī andarrōn bērōn hamāg gyāg bē xwist ā šāyēd
+NM-K35 s120	NM1 9.1	ud agar kas ēw gōwēd kū ēn ān ast ī nērang ēw pad dastwarīh ī čāštag ēw ud ēk pad dastwarīh ī any čāštag pad ēč čāštag harw nērang ī andar ēd šōyišn ī čiyōn pad kardag dārēnd bē bōxtan nē šāyēd
+NM-K35 s121	NM1 9.1	ān pāsox ēn =iz kū harw nērang ōwōn kunišn čiyōn kē guft bōzišnīgtar u =š paydāgīh ī dēn gugāhīh ī dastwarān abāg hambandtar
+NM-K35 s122	NM1 9.1	ud nē pad ān čim kū mēdyōmāhīg pad nērang ēw bōzišnōmandtar pas ān tis ī abarg bōzišnōmandtar ud kār az gōwišn ī mēdyōmahīg kunišn bē harw ān čē mēdyōmāh bōzišnōmandtar az mēdyōmāh ud harw ān ī abarg bōzišnōmandtar az abarg ud ān ī any dastwar bōzišnōmandtar az ān dastwar padīrišn ī wēšbōzišntar
+NM-K35 s123	NM1 9.2	ud hangerd harw ān ī awēšān dastwarān guft kē pad rāst dastwarīh wizīn ī kišwar frazānagān framān ī dādīgīhā šahryārān abar būd ēstēd bē ān čē =š padīraggōwišnīh wēšgugāhtar ud paydāgbōzišntar ayāb az nigēz ī dēn ud čāštag ī dēndastwarān pad an ēdōnīh paydāgīhēd ēg =iš hamāgīhā padīrēnd ud kār aziš kirdan dastwarīhā ud bōzišnōmandīhā
+NM-K35 s124	NM1 9.2	ud ēn =iz ōwōn saham ud agar =iz ǰud ǰud čāštag pad šāyēd hē ēg =išān pad nē šāyistīh tāštīg nē wizīrēnīd hē čē mēdyōmāh bē čiyōn =iš sahišnīg guft kū harw pēšag ēw se bār ōh šōyišn enyā =š nē wizīrēnīd kū ka hamāg ēk bār šōyēd ā nē šāyēd
+NM-K35 s125	NM1 9.2	pad mādagwar čāštag ī mēdyōmāhīg ud šōyišn ī pad dād ī wizāragdēnān rāy gōwēd kū kē rēman bē bawēd pad ān dād bē šōyēd ēd kū =š šust pad šust dārišn ham nē kird ēstēd ud agar ōh =iz any dastwar guft kū harw kē rēman bē bawēd ud nē pad dād pōryōtkēšīh šōyēd nē pad šust dārišn
+NM-K35 s126	NM1 9.3	ēg =iz pad mādagwar čāštag ī mēdyōmāhīg ān šōyišn ī pad dād ī pāragdēnān šōyīhēd nē guft kū nē šāyēd
+NM-K35 s127	NM1 9.3	ud ān ī pad dād i pōryōtkēšān šōyīhēd kē was dastwar pad xūb dārēnd čiyōn sazēd handēšīd kū se bāršōyišnīh rāy guft hē kū nē šāyēd ōh =iz ka ōy =iz pad ēn ham dādestān būd kū gōwišn ī dastwarān pad hāwandīh ud wēšgugāyīh ī dastwarān rāh ō xwastūgīh būd hē ī abar ān ud kū andar warōmandīh ēw dastwarīhā ud ān =iz ī abarg ud šōšans hangōšīdag tis ham dānist šāyēd
+NM-K35 s128	NM1 10.1	ud abārīg was ī =m gōwizār pāsox nē nibišt ud ast ī wizīrišnīgīh ī aziš ast ī nāpardazišnīh ud ast ī afrēzwānīh ud abārīg =iz ī =m nibišt mādayān ka uškārišn ud handāzišn ī abar ōwōn rāyēnišn nē andar amaragān bē mowān āgenēn niyābag bawēd
+NM-K35 s129	NM1 10.2	ud ēn =iz and ī =m nibišt ēd rāy ka =tān nibišt ēw awiš mad ēstēd ī =m abāz nimāyišn passazag sahist kū pas saxtagnigerišnīhā nibēsīhēd ōwōn =iz dānēnd az wehkāmagān ī menišnīg ruwāndōstān ī saxtagnigerišnān kē =šān az ān nibēsišn ast ī gumānīgīh andar dil ud menišn bē mānād u =m az ān bē ēn and abāz nimūdan xūb sahist
+NM-K35 s130	NM1 10.2	ud ēg =iš =im andar was ēwēnag zarīgwidārišnīg čēhišnīh ī abar ham dar ēn andar handēšišn ast kū pas ma agar ham mowīmard kē =š ān nibišt frēstīd kē =š yazdān āsnūdagxradīh ōstīgān awezmāyišnīg zāmēnīdan ī yōǰdāsrgar ī kustagīhā rāy ān nibišt kird kū tā =š aziš škōyīhēnd ud spurrīg paymānīgīh ī āb gōmēz bowandaggōwišnīh ī abestāg abārīg xūbnērangīh spurrīgtar ō kār kunānd ud passandišnīgtar rawānd
+NM-K35 s131	NM1 10.2	ud agar =iz az =iš ham wihān rāy nibišt nē bōzišnīg bē =š waxrhandēšišnīhā čē ān ēwēnag nibištag ēč čim nē kunišn
+NM-K35 s132	NM1 10.3	bē agar =iš pad ān čim nibišt pad ast ī kamgrāytar paydāg ud man nūn škeftsahišnīh pad ān abērtar ka =m mehfrazānagīh az =iš dīd ēstādan rāy ēn gumān nē būd kū saxwan mehdādestān ī ast dād ī āsrōnīh pēšag kardag ī hamāg kišwar hudēnān bē az uskār ī man ud abarīg mowān dēnīgnigerān wizīr ēw kunēnd
+NM-K35 s133	NM1 10.3	enyā sahišn ī =š andar wizīr nē ōwōn škeft dāram čē agar nūn =iz pad saxtagnigerišnīh frāz čaft ēstēd ēg =iz bun zāyišn az ǰudčāštagīh ī awēšān pōryōtkēšān meh dastwarān meh pēš būd hēnd
+NM-K35 s134	NM1 10.3	awēšān būd zofrīh ud was brahmīh ī dēn rāy was sahišn uskār wizīr kardag =iz az āgenēn ǰudwimand ēwāz ǰuddādestānīh ī hērbedān abāg naskōšmārdārān bē mayān =iz xwad abartom rāst dastwarān bē andar āštīh ud ham ayārīh ud dōšāram ī =šān āgenēn was ǰudsahišnīh ud ǰuddādestānīh ud ǰudčāštagīh ud ǰudgriftagīh ud ǰudkardagīh būd
+NM-K35 s135	NM1 10.3	čiyōn ān =iz ī abar se mowbedān mowbed ī frāztar ī =šān nām ādur ī farnbay ud windād ud ādurbōzēd kē ǰud ǰud wirāstdēn kišwardastwar ud āwāmfrazānag būd hēnd
+NM-K35 s136	NM1 10.4	ōh =iz ī ka sahišn pas ō mow dastwar ōwōn ayābīhist čiyōn abar spitāmān zardušt guft ēstēd kū fradōm ǰār ka =š amahrspand dīd hēnd ēg =iš menīd kū hēnd endar ud sāwal ud nānghāyh ud tāwriǰ ud zāirīǰ kē hēnd mazantom az dēwān
+NM-K35 s137	NM1 10.4	abāg waxrīh ud zēfānīh ī ān ōwōn nibištag garānīh ud ziyānīh ī ān ōwōn wizīr bundāštīgīh ud kambōzišnīh ī ōy ōwōn nibištag passāxt ud pas =iz ašmā pad dād wehmenišnīh sahišn ōwōn waxrīhist ī =š az pōryōtkēšān dastwarān ōwōn paydāgīhēd čiyōn =iš gōwišn =iz ī awēšān abāg nibištag ham dēn bowandagīhā waštag menišn az ān ī dastwarān čāštag čaft
+NM-K35 s138	NM1 10.5	bē čiyōn ham wizīr ud ān ī ham mānāg ī ham wizīr ud agar frayist wizirēnīd az =iš nē padīrišn ud kār az =iš nē kunišn enyā gāh abartom dēnwarzīdārīh ōstīgān dārišn pad frāztom āgāhīh ud wēnāgīh ī =š andar dēn ī mazdēsnān rāstpāyagīhā menišn
+NM-K35 s139	NM1 10.5	ud abārīg dēnīg āgāhīhā ud ruwānbōzišnīg wizīr ī az dēn ī mazdēsnān čāštag ī rāst dastwarān āškāragēnīd paydāgēnīd sazāgīhā padīrišn wābarēnišn
+NM-K35 s140	NM1 10.5	ud čiyōn =im hangōšīdag az =iz abarg nibišt ud abar =iz bōzišn ī ǰudgriftagīh ud ǰudčāštagīh nē frayist az hambasāngōwišnīh ī an ērang dēn ī mazdēsnān nē =iz az stēzag pahikār ī āgenēn bē az sahišn ī rāstkāmīhā būd bōzišn wasīhā ast bē zamānīg az nibēsišn ī padīrag waxrīg zyānīg nibištag ī ān mowīmard ō pardazišn kam
+NM-K35 s141	NM1 11.1	u =m nigerīd ēstēd nihangīhā mard ēw ī xwēš abāg nāmag ī gugānīg padīragpahikārišnīg ziyānnimāyišnīg bōzišnāgāhēnišnīg ud ō wirāyišn niyāzišnīg ud ō ān mowīmard frēstīd
+NM-K35 s142	NM1 11.1	az =im mard ī pad ham kār frēstīd paydāgīhist drang ī padiš tā frāz pardaxt ī =m ō gugānīgtar nāmag čē ān ī az dūr wirāst abāyēd gugān rōšngarīh padiš awizīrišnīgtar
+NM-K35 s143	NM1 11.1	enyā agar ham mow andar nazdīkīh būd hē ēg =im ham wēnišnīhā andak saxwan az ān waxr wardēnīd ud pad ān ī pišag pad =iz nibēsišn ī gugānīgtar ud āgahēnišn ī was bōzišntar
+NM-K35 s144	NM1 11.2	u =m nūn =iz nigerišn uskār ud čāragxwāhīh ast kū agar kārān ī awizīrišnīg padiš čēhišnīg ōwōn winnārdan šāyēd ī =m māhīgān se pardāxtan tuwān xwad ud frēzwānkārīhā pad wirāstārīh bē ō pēš ī ham mow šawam ud ēn wirāyišn xūbīhā handāzam
+NM-K35 s145	NM1 11.2	ud āhīd was čim ast kē rāy wihēz ī az gyāg duščārag u =m ǰār ēw zamānīg nāmag ēw awiš nibišt ud abāg ēn nāmag frēstīd
+NM-K35 s146	NM1 11.3	yazdānpānagmardak ī guharīg awiš ēw frēstīd enyā =š ham pay abāg mard ī xwēš awestwār gōkānīgtar pahikārišnīgtar awiš nibēsam āgāhīhā =iz ī =š padiš kū =š gōwizārtar āgāhēnēm āgāhīhēm
+NM-K35 s147	NM1 11.3	pad bē agar pad ēn ī =m nibišt ayāb xwad nihangīhā bē ō pārs āyēd enyā pad =iz wirēxtan ī xwad čāragxwāh bawam abar nē mōšom ka yazdān abāyēd ud yazdān čiyōn nēktar
+NM-K35 s148	NM1 11.3	pad ēn abārīg rāyēnišn handāzānd ōy mow abartarīhā abzār ud dēnāgāhīh ī =š xwāst az sūd ī dēn pēš ma appārīhēd
+NM-K35 s149	NM1 11.4	dēn ī dēn mazdēsn ārāyišn ud wirāyišn ud wābarīgānīh abrāz rasād ašmāh hammis dēnniyōxšīdārān andar sarīg abartarfarroxīh pad hamāg nēkīh burzišnīgīh bawād enyā pad ōwōn menišnīg dōstīh dušwār čēhīdārīh rawāgīhā āgāhēnišn ī =tān ō man ān =im wazurgīhā spāsdārīh abzūd ud ō ašmā āfrīnēnīd agar padiš nigerēd uskārēd ān =itān čimīg sahēd ka =tān wēnišn bawēd
+NM-K35 s150	NM1 11.4	ō rāst nibištār dibīr ēw kē mārīg bē nē wardēnēd framūd tā =m ēn nāmag ī =m ō ašmā nibišt ān ī sazēd paččēn nibēsēd ō ham yazdānpānagmardak ud abāg ān nāmag dād framāyēd tā awiš frēstēd čē ast ī ka āgāh saham kū xūbtar
+NM-K35 s151	NM1 11.5	u =tān yazdān nōg nōg purrpaymānīhā ud spurrabrāzīhā abzāyēnānd mehēnānd rāmišn ud drōd ahlāyīh ud ābādīh ud burzišn farroxīh paywandānd wisp ō nēkfrazāmīh
+NM-K35 s152	NM1 11.6	mānuščihr ǰuwānǰamān nibišt rōz māh spandārmad andar ahlāyīhurwāzišnīh ud dēnstayišnīh ud yazdānabestāmīh spāsdārīh ī andar dādār ī ohrmazd ud amahraspandān hamāg yazdān mēnōyan ud yazdān gētīyān
+NM-K35 s153	NM1 11.6	yazdān niyāyišn ō hamag māh kē =š ham rōz pad frāznām
+NM-K35 s154	NM2 1.0	paččēn ī nāmag ī hērbed manuščihr ǰuwānǰamān kē =š ō hērbed brād zādspram kird ,
+NM-K35 s155	NM2 1.1	nām ī yazdān kē hērbed ī xwadāy abartom pērōzgarīh ī andar harw dō axwān kāmaghanǰām burzišnīh dārānd
+NM-K35 s156	NM2 1.1	[yazdān] kāmīhā az frazandān hammis druwisttan rawāgxwēškārīh ud ō hērbed ī xwadāy anōšēnwēnišn drōdāgāhīh purrārzōg ud pad harw dar andar yazdān spāsdār ham
+NM-K35 s157	NM2 1.2	nāmag ī =tān andar māh ābān az nēwšābuhr nibištan framūd X mad
+NM-K35 s158	NM2 1.2	u =m az kišwar arz ud druyistīh ud drōdōmandīh ī hērbed ī xwadāy andar yazdān spāsdārīh abzūdan be abāyist hē ī ka =tān āgāhīh ī xwēš ast nibišt hē čē =tān nibēsišn ī nāmag nē ōwōn čiyōn dūrān kē gugānīg nibēsēnd bē čiyōn nazdīkān kē , menēnd kū nōg nōg hamwār āgāhīh āmēzē
+NM-K35 s159	NM2 1.3	ān =iz ī =tān nibišt framūd pad nišānag ōwōn nihuftag ī =m X wizēhišn awiš nē čiyōn , gugān mayān nāmag paydāg
+NM-K35 s160	NM2 1.3	ud az nūn frāz āgāhīh rōšntar framāyād nibišt čē =m apardazišnīgīh ī abar was darīhā rāy bē ō nišānšnāsīh dil nē pardāxt
+NM-K35 s161	NM2 1.4	hērbed xwadāy āgāhēnēm kū andar ēn tāhīg nibišt ēw bē ō man mad ī =tān bē wehān sīrgān bēš ud zarīg ud čēhag ōwōn paymōzīhist ī =š hangōšīdag ī ka hufraward pidarān az astōmand axwān ēwarzīd
+NM-K35 s162	NM2 1.5	čē ēdōn čiyōn akārīh ī čašm hamāg zanišnīh ī hāwand ēdōn =iz gazišn X ud āhōgēnišn ī ō ōš ud xrad rasēd hamāg zanišnīh ī hāwand
+NM-K35 s163	NM2 1.6	abar wimand ī , abēzag āstxrad ī ārāstīh bowandag ī mānsr paywehag(?) kē =š ān ī mahist āgāhīh ī dēn ī mazdēsnān abāgēnīd ēstēd
+NM-K35 s164	NM2 1.6	andak =iz pasxradīh ud waxrwēnišnīh garānawrandīhātar ud zištārangīhātar
+NM-K35 s165	NM2 1.7	u =m fradom =iz andōh pad ka =tān spurrīg ulmatīh fradom rōšnīh xwēš be wināhīd u =tān dudīgarīh ī man be ānāft
+NM-K35 s166	NM2 1.7	ud ān wizīr ī ka =iz rāst hē ēg =iz az ān čiyōn dād ēw ī kišwar ud dādestān ēw ī gēhānmasāy X ast
+NM-K35 s167	NM2 1.8	ka =z pad šādurwān ī mowān X hanǰaman ī pārs dar abārīg was hamrasišnīh uskārd ud ēwhazār hudēn mow padiš hamsahišnīh āwišt ēstē ēg =iz ǰuduskārišnīh padīraghandāzišnīh ī abāg man abārīg sarān mowān ī dēn frārāst wizīr padiš brīnēnīd ud dād padiš nihād ud framān abar dād nē sazist hē
+NM-K35 s168	NM2 1.9	u =tān ēn =iz andar abāyist nigerist hē kū ka magīhā ī tan pad wizēn ī čahār pāšomān ī zamānag winnārīhēd ēg =iz ān ī dēn ī dastwar dādestānīh az harw dādestān meh ud ēwēnag ud dād ī kišwar
+NM-K35 s169	NM2 1.9	bē pad uskār ī ham pāšomān X enyā wizīrēnīdan nē xūb
+NM-K35 s170	NM2 1.10	u =tān ān āmārēnīdan abāyist hē ī guft kū ma ān warzē zarduxšt ka tō se ayāb čahār hambrādag andar wis ī stāyīdār ī hanǰamanīg ēd gōwānd ēdōn ast dušmenišnīh
+NM-K35 s171	NM2 1.11	ēg =iš =tān ēn wāzag nē āmārēnīd
+NM-K35 s172	NM2 1.11	u =tān saxtagīhā ud tēznigerišnīhā ; wizīrēnīd
+NM-K35 s173	NM2 1.11	u =tān ō xwēš bōzišnīg menīd kū =m abar hanǰaman ī abar sīrāb uskārd wināh =iz andarg nē paydāgēnīd
+NM-K35 s174	NM2 1.12	ēd framāyēd dānist kū agar =tān pad hanǰaman ī tuγzγuz guft ē hē andargguftār kam =iz būd hē
+NM-K35 s175	NM2 1.13	sahom kū ašmāh abar ēn xīr andar xwēš ōwōn wēš hēd čiyōn zarduxšt ī ādurfarnbay ka =š waxšagīhā winnārd
+NM-K35 s176	NM2 1.13	aziš ādurfarnbay xwad wēšīhīd
+NM-K35 s177	NM2 1.13	u =š bē ōh nibišt kū musalmānān X ka =šān āšnūd ēg =išān nēk passandīd
+NM-K35 s178	NM2 1.13	ud rāzīgān pāsox nibišt kū agar =itān andar dūr =iz nihād hē ēg =išān weh =iz passandīd hē
+NM-K35 s179	NM2 1.14	ēn ī ašmāh az ān ī ōy kird wasyār garādar
+NM-K35 s180	NM2 1.14	pāsox ī az kustān anāgtar
+NM-K35 s181	NM2 1.14	dusrawīh ī andar mardōmān uzwāyišnīgdar
+NM-K35 s182	NM2 1.14	ud bār ī pad ruwān garān xwarānīhādar
+NM-K35 s183	NM2 1.14	ud darrišn , pahikārišn ī ohrmazd ud zarduxšt škeft āmārīhātar bawēd
+NM-K35 s184	NM2 1.15	u =m ēn =iz abēr ka =tān xwēš dēnāgāhīh ud ruwānbōzāgīh ōwōn zūr pad ān hangōšīdag ī ōy tanbuzišk kē ka =šān dandāndard zad rāy pursīd ēg =iš pāsox dahēd kū bē kan
+NM-K35 s185	NM2 1.15	u =šān pāsoxēnīd kū amāh buzešk ān hamē abāyēd kū , dandān =iz ī wēmār druyist kunēd
+NM-K35 s186	NM2 1.15	ēg =iš dandān kanam az ān frāxīhādar wasyārdar
+NM-K35 s187	NM2 1.16	ud agar hudēnān =iz ī ērānšahr frazānagīh ud dēnāgāhīh ī hērbed ī xwadāy pad ān hamē pad abāyēd kū tā pēšag =iz ī wēmār darmān wirāyišn ārāyišn handāzēd ēg =iš pad pēšag bē abganēd was niyāz ēw ō xrad dānāgīh ī hērbed xwadāy nēst
+NM-K35 s188	NM2 1.17	čē āwāmīg hēnd ī pādixšāyīhā kē pad was gōnag huērīh nāmagānīh nē passand hamē kunēnd
+NM-K35 s189	NM2 1.17	wasīhā gōnag ī gētīyīhā xwārtar ud āsānīhādar ī pad nibišt barēnd wēš az ēn ī hērbed hamē dahēnd
+NM-K35 s190	NM2 1.17	ud abdom kas =iz nē hamē padīrēd ǰud ān ī dušdānāg druwand
+NM-K35 s191	NM2 2.1	u =m ān nibištag pad xwurdag nigerīd
+NM-K35 s192	NM2 2.1	ud abēr apassazag , ō gōwišn frazānagān ud dēnāgāhān čē saxwan saxtag bōzišn ud nizōr nimāyišn aparwast
+NM-K35 s193	NM2 2.1	ēdōn saham kū nē frēstēnišn ī abar ōwōn rāh X bē samēnišn ēw ī yōǰdāsrgarān ōwōn nibišt kū tā ham sam rāy abērtar škōyīhēnd ud spurrīg andarkārdārišnīh ī āb ud gōmēz ud pahrēz ud rawišn ud kunišn nērang čiyōn kār passazag ō dastwarān abērtar kunānd
+NM-K35 s194	NM2 2.1	az =iz ān abērtar saham kū =tān hamdādestānīh xwēšīhišnīh ēn X nimāyišn kird
+NM-K35 s195	NM2 2.2	ka =m andar wizīr dīd ān ōwōn ī =tān nibišt ēstēd kū ǰārēw tā yōǰdāsrgar rasēd ī ōwōn šōyēd čiyōn pad dēn paydāg ī az bē ka yōǰdāsrgar ī dēnīg astīh az =iz nērangšnāsīh ī hērbed ī xwadāy paydāg az ham bē wizīr kār nēst ,
+NM-K35 s196	NM2 2.2	bē ēg =iz ōwōn nibēsišn X kirdan abēr saxtagnigerišnīh čē az sampadīrišnīh ī yōǰdāsrgarān ān wirāyišn abar xwēš xēmag ud rawišn paydāg kirdan was zyān adādīh škefthandēšišnīh ī mardōmān dusrawīh ī wizīrgar aziš zāyīhēd
+NM-K35 s197	NM2 2.2	ud ān sam wišeg ī yōǰdāsrgarān pad any rāh hangāštan čimīgtar būd hē
+NM-K35 s198	NM2 2.3	ān ī =tān ēdōn nimūd čiyōn ka spurrīg ēstē pad paydāgīh hē
+NM-K35 s199	NM2 2.3	u =tān nibišt ēn mānāg kū ast ī az čāštag ēw ēwēnag nē šāyēd
+NM-K35 s200	NM2 2.3	čē ēdōn kunišn ī kāmist pad =iz čāštag ēw harw nērang andar ān kār šāyēd mānāg passāzišn ō saxwan ī zūrpahikārdārān mānāgdar nē druyist
+NM-K35 s201	NM2 2.3	čē ka ast ī mēdyōmāh xūbtar az čāštag ī abarg frārāst xūb ka X harw nērang ēw pad čāštag xūb
+NM-K35 s202	NM2 2.3	u =š nērang nē wēš paydāg kū bōzišn frārāst pad dārišn
+NM-K35 s203	NM2 2.3	ōh =iz ān ī ka mēdyōmāh sebāršōyišnīg abarg ēkbāršōyišnīg guft , mēdyōmāh pasēmāl ud abarg pasēmāl
+NM-K35 s204	NM2 2.3	ud ān rāy paydāgīh kunišn tā ka mēdyōmāh bōxtēd
+NM-K35 s205	NM2 2.3	abar ān ī dādestān ī gōwišn ī abarg dārišn pad bōxtagīh
+NM-K35 s206	NM2 2.4	ān ī abarg guft kū dō yōǰdāsrgar ōh abāyēd mēdyōmāh =iz guft kū ēk was
+NM-K35 s207	NM2 2.4	az ān čiyōn =iš čāštag sōšyans hamgugāh pad ān ī =š guft ēdōn hamdādestāntar būd hēnd kū ka ēk ast ašāyēd
+NM-K35 s208	NM2 2.4	čiyōn , hamgugāh =iz čand dastwar paydāgēnīd bawēd xwad abarg abārīg hērbedān hamdādestān būd hēnd kū bi.vīkaiiehe kār
+NM-K35 s209	NM2 2.4	mēdyōmāh bōxtag nē ēd rāy kū abarg pad ēwbāršōyišnīg bōzišnīgdar ud kār az čāštag ī abarg kunišn bē ēwbāršōyišnīg az abarg ī pēšēmāl ēk , yōǰdāsrgar az mēdyōmāh ī wēš gugāh padīrišn ud rāyēnišn
+NM-K35 s210	NM2 2.5	ud starhangārān =iz , estišn ī axtarān ǰast ka ān ī mihr māh az zīg ī šahriyārān ān ī kēwān az zīg ī hindūg ud ān ī warahrān az zīg ī ptalmayōš kunēnd estišn abēr xūb , āyēd
+NM-K35 s211	NM2 2.5	zūrpassāzišn anārangak abar X āwurd guft tuwān kū ēn estišn pad ǰast ud zīg ī nē šāyēd
+NM-K35 s212	NM2 2.5	čē agar X zīg ī šahryārān druyist az ān čiyōnīh kēwān warahrān nē az zīg kirdan nē xūbtan
+NM-K35 s213	NM2 2.5	agar zīg ī hindūg rāst az ān čiyōnīh mihr māh warahrān nē az ān X zīg kird nē xūb
+NM-K35 s214	NM2 2.5	agar X zīg ī ptalmayōs rāst az ān čiyōnīh mihr ud māh ud kēwān [nē] az ān X zīg ē X kirdan nē xūb kē rāy pad ēč X zīg ē nē rāst
+NM-K35 s215	NM2 2.5	ēn sahwarzišn passāxt tuwān saxtmenišn =iz wurrawēnd bē rāstān ud dānāgān wizēn kunēnd X gōwēnd kū ēn ē estišn abēr xūb
+NM-K35 s216	NM2 2.5	čē ān ī pad X zīg ī šahryārān rāsttar =iz az ān [ī] X X X X šahryārān ān [ī] pad X zīg ī ptalmayōš xūbdar ān kird ēstēd
+NM-K35 s217	NM2 2.6	ašmāh šnāsēd kū hamgōnag ān hangōšīdag ī se čāštag ī =tān nibišt abāg ēn ī =m nišānēnīd hangōšīdag kirdan handāxtan framāyēd tā awiš rōšntar wēnēd
+NM-K35 s218	NM2 2.6	az hučašmīh ī abar xwēš bōzišn ud tēzwīrīh ī anuskārdag abāg āhōg abāznimūdārān hambarīh ī pad ān pēšēnīgān dād ōstīg framāyēd pahrēxtan
+NM-K35 s219	NM2 2.6	čē kē abdīh ud abardarīh ī ān X ī pēšēnīgān uskārd winnārd menīd nē šnāsēd xwad dānišn andar ān pēšēnīgān xrad nē pad ēr ud hammōzišnīg dārēd xwēštanmenīh wēšīh =iz ī pad xwēš ud frahang azīš paydāg xwēštan dādestān čiyōn framāyēd šnāxtan
+NM-K35 s220	NM2 3.1	ēn =iz abar dušxwār ī =tān andar nibišt tēzkāmīh ud ruzdīh ī ō nōg dād ud nām ud ārzōg ī paygāmbarīhā dādnihišnīh abar paydāgīhēd čiyōn ān =iz ī =tān abar gōwišn ī az se čāštag xwurdagčīnīh abar dād ī nōg tēzbrīnīh ud kird
+NM-K35 s221	NM2 3.1	u =tān ruzdīh ud wadag rāy frasnātə̄e ud upasnātə̄e ul hišt pānzdah
+NM-K35 s222	NM2 3.1	mard ēk ī =š pas abāz ō pānzdah ī ēk ēw āwurd ud se bār ī harw bār ī ēk hāsr tā =z ka ayābēd , yōǰdāsrgar tazēd
+NM-K35 s223	NM2 3.1	čiyōn ma X agar sīh frasang =iz frāy bawēd wisp , kirbag abgarīhā čahār frasang ud frāy nibišt
+NM-K35 s224	NM2 3.1	ud ān =iz ī ōwōn dastwarān dād ēstēd ka ō se kas pad ān ēwēnag pahikārd ayāb ān ōy wināh ud tōzišn awi =š baxšīhēd sanǰīhēnēd čiyōn ān kunišn ud tōzišn ī wināh X nūn ma agar ō hērbed X baxšīhēd
+NM-K35 s225	NM2 3.1	čē agar , pargast ēč kas nēst kē čiyōn abāyēd yōǰdāsrgarīh xūb kunēnd ēg ašmāh yōǰdāsrgarīh kirdan frēzwānīg būd
+NM-K35 s226	NM2 3.1	čē ān kār ēdōn awizīrišnīg kū ān kē abar rist kū rēman būd ēstēd ud ā =š star =iz ud māh ud xwaršēd ahunsandīhā padiš tābēnd
+NM-K35 s227	NM2 3.1	ōwōn frayādišnīg ka meh šnāyēnīdārīh ī ātaxš āb ud zamīg ud gōspand nar ahlaw ud nārīg ī ahlaw ē padiš ast
+NM-K35 s228	NM2 3.1	ōwōn , wuzurg arz kū yōǰdāsrīh ī tan nēst ā =š ruwān yōǰdāsrēnīdan nē tuwān
+NM-K35 s229	NM2 3.1	ka andar kišwar ēw mard ēw ast kē =š tuwān kirdan ān mard nē pādixšāy bē ka kunēd
+NM-K35 s230	NM2 3.2	pas ka ān ī abartom kirdārīh ī abar andar dēn ud ān ī pāšom āgāhīh ī az dēn ān ud [ī] mahist sālārīh ī pad dēn ōwōn hamē pahikārēd ī =tān pad =iz xwurdag ī andar nām ī sālārīh pahikārišn ud spurrīg ēg ka =tān xwad nē tuwān ē kirdan ēg =it kas pad dīd ašmāh kunišn hē kirdan
+NM-K35 s231	NM2 3.2	ēd kū nērangāgāh hēd ǰud =iz az wuzurg abzārīh frāzdom dēnāgāhīh ī =tān hamīg
+NM-K35 s232	NM2 3.2	az =iz ān ī =tān nērangšnāsīhā andar harw se čāštag nibišt nibišt paydāg
+NM-K35 s233	NM2 3.2	ān nērangīhā ān =iz ī saxtar guft ēstēd nē ān ast ī kirdan nē šāyēd
+NM-K35 s234	NM2 3.2	ašmāh padiš ast ī be tuwānīg hēd ī =t pad ēč ēwēnag bē madan nē tuwān ka ēwāzkārīhā ud āb ud gōmēz and ayābē čand se mard ayāb mard ēw padiš šāyē šustan
+NM-K35 s235	NM2 3.2	ēg =iz ān ī sardārišn , sāmān padiš nē bōzišnīg
+NM-K35 s236	NM2 3.3	u =tān āb gōmēz pad ān nērang ī pad harw se čāštag šāyēd yašt ud drōnyāz ī xwēš abārīg ī andar =itān passand hēnd pad hamayārīh grift
+NM-K35 s237	NM2 3.3	ud yōǰdāsrgar ēw ī purr passand kird abāyist gumārdan pas ō šahr āwištan kū yōǰdāsrēnīdārīh čiyōn man framūd ud man hamē kunam passandīdagtar az ān ī abārīg yōǰdāsrgarān
+NM-K35 s238	NM2 3.3	čē =m āb gōmēz hamāg yašt u =m tīrēst sang čiyōn framūd ēstēd awiš abgand u =m andar se rōz ī ka kird kār framūd u =m harw pēšag se bār šust u =m harw tan ēw rāy maγ nōg ēw ārāst u =m maγ ēw padiš šust kār nē framūd u =m šustārīh ī pad yōǰdāsrgar ud harw nērang ōwōn kird ī čiyōn harw se čāštag pad wehīh guft ēstēd X
+NM-K35 s239	NM2 3.3	ašmāh weh ī kustag abar yōǰdāsrgarīh ī =tān X andar xwēškārīh bārestān bawēd tā kū dīdag rāyēnēnd kē =tān ahy pad šustārīh rāh ō man wišādag , tā ka =tān pad ēn ēwēnag kird hē hambāstīhā ān ī ašmāh kunišn burzīd ān ī ašmāh nibēsišn stūd hē
+NM-K35 s240	NM2 3.3	ēg =iš ka X nibēsēd kū ān ī čiyōn nūn hamē kunēnd drōzišnīgar andar ast
+NM-K35 s241	NM2 3.3	ud man ēk wattar , dānam čē ēn šōyišn ud pēšag yōǰdāsrēnīdārīh ī čiyōn az dēn paydāg ud dastwar čāštag ud pōryōtkēšān ī passandišnīg andar kār dāštan az mayān abar dārēd
+NM-K35 s242	NM2 3.3	ān xwad šnāsēd kū andar ohrmazd hammist , weh dāmān čiyōn ērixtag pad čašm ī wehān dānāgān čiyōn anāg wāy , padišnāsēnīg
+NM-K35 s243	NM2 3.3	u =tān saxwan ān abar bawēd ī čiyōn ud gāzar ēw rāy gōwēnd kū ǰāmag ēw awi =š dād kū =š ālūd padiš pāk bē šōy
+NM-K35 s244	NM2 3.3	ōy ǰāmag grift abar , ātaxš nihād sōxt
+NM-K35 s245	NM2 3.3	u =š guft kū =m ālūd anālūdīh harw dō abāz wizārd
+NM-K35 s246	NM2 4.1	hangird agar wizīr az dād ī zarduxšt ēdōn wizīrēnēd čiyōn =iš guft ud agar nē az ān hamē kunēd abestāg čāštag ō mayān ma āwarēd
+NM-K35 s247	NM2 4.2	čē pānzdah bār ī =tān nibišt ud agar az dēn ī zarduxšt ā =š pānzdah bār ī ulīg ud pānzdah bār ī frōdēn ud ēk ī frārāst guft
+NM-K35 s248	NM2 4.3	agar az nihād xīr ēw ēg =iš ēn ēč nē hamē abāyēd
+NM-K35 s249	NM2 4.3	čē mar ēw be zanēd ān ī pad , angust frāz gīrēd ud pāk ayāb zard ēw ī zarrgōn be zanēd pāk ayāb gēk ē be zanēd pāk
+NM-K35 s250	NM2 4.3	bē nē pāk ēw yōǰdāsr bē X dēw ēw pāk
+NM-K35 s251	NM2 4.4	u =m ēn =iz abēr škeft kū ka =tān ēn nē āmārēnīd kū ka yōǰdāsrgar nē hē ayābihē ēg =iš xwad ud abāyē kirdan
+NM-K35 s252	NM2 4.4	ēg =itān ēn dānišn čiyōn ayāft kē =tān padiš āgāhī mad kū hamāg yōǰdāsrgarān ī ērānšahr yōǰdāsrgarīh čiyōn hamē kunēnd
+NM-K35 s253	NM2 4.5	ka čiyōn man saham ēg =itān rāyēnišn ī xānag kadagxwadāy ī xwēš bowandag āgāhī nēst ēg =itān wizōyišn , āmār āgāhīh ī X abar hamāg yōǰdāsrgarān ī ērānšahr čiyōn , be ayābīhist
+NM-K35 s254	NM2 4.6	agar =itān ān frēzwānīgtar be hišt u =tān wizōyišn āmār abar ān ī hamāg kišwar kird nē dēnframānīhā ud druwistxradīhā agar =itān čiyōn šōyišnīh ī yōǰdāsrgarān [ī] ērānšahr bowandag ō dānišn nē mad ēstēd čiyōn ka =šān nām =iz marag nē dānēd ēwar kū =šān xēm ud xōg kunišn kam =iz šnāxtan
+NM-K35 s255	NM2 4.6	ēg =itān čim wizīrēnīdan abāyist kū pad ērānšahr hamāg yōǰdādgar ōwōn hamē šōyēnd čiyōn pad nāšahist paydāg az čē ēwarīh be guft nibišt
+NM-K35 s256	NM2 5.1	agar ēn ī =tān guft dānišn ēw ī sūdabgār ēg =itān az man pad nihān dāštan , čim rāy abāyist
+NM-K35 s257	NM2 5.1	ka ēdōn saham kū agar =itān dānišn ēw druwist ayāft hē ēg =itān pad fradom meh ī az harw kē āwām bē ō man āhuftan niyābag būd hē
+NM-K35 s258	NM2 5.2	agar =itān ēn wizīr pēš ēdōn sahist andar ka pad pārs ud ē ka pad sīrgān būd hēd abāg dēnāgāhān dānāgān dastwarān nē uskārd nē āhuft
+NM-K35 s259	NM2 5.3	čē agar =itān pēš nē šnāxt ēg =itān pad saraxs sarāz kadām frazānag ud dēnāgāh ayāft kē =š abar rōšnēnīd hēd
+NM-K35 s260	NM2 5.4	agar =itān pēš uskārišnīg andar nigerišn handāzišn būd [u] [-tān] [xūbtar] [handāxtan] [rāy] [abarpād] [kird] [ēg] [-itān] pad sarāz kadām dastwar ayāft ī =tān ka abāg ōy uskārd būd pad spurrīg xwad tan pad bōzišn az uskār ī abāg man abārīg mowān ud dastwarān wizīrišnīg dāšt
+NM-K35 s261	NM2 5.5	agar =itān andar pārs škand ī az man rāy nē wizīrēnīd ān ka xwad šnāsēd kū man xwēštan andar ašmāh nē =iz pad pāyag ī hašāgirdīh bē pad ān ī bandagīh mānāg dāšt
+NM-K35 s262	NM2 5.5	u =m madan ī ašmāh rāy hambār =iz ī zyān tars ī ī =tān ō xwēš handōxt pad nibišt kird xwēštan andar wīdwarēnīd ēstēd
+NM-K35 s263	NM2 5.6	ān agar =itān dēnbōzišnīhā bē ō man nimūd hē ēg =im ōstīgānīhā padīrift ud rāyēnīd hē
+NM-K35 s264	NM2 5.7	agar =itān hamayārīh ī man rāy ān ī dādīg wizīr rawāgēnīd hangirdtar =iz būd hē
+NM-K35 s265	NM2 5.7	ud agar nimāyišn ī dēnīg padiš bōzišnīg druyist ēg =itān ō man nimūdan kamranǰtar būd hē kū ō abārīg kē az wizīr paydāgīh ī dēn āgāhīh ī kam
+NM-K35 s266	NM2 5.7	agar ǰuttarīh ēw andar būd hē ēg =itān pāsox ī druwist az man abērtar mad hē
+NM-K35 s267	NM2 5.8	ud agar šnāsēd kū pad paydāgīh ī pad dēn ō man nimūdan nē šāyēd ān bōzišn ī paydāgēnidan nē šāyēd pad =iz abārīg ud gyāg ōwōn nē wizīrēnišn
+NM-K35 s268	NM2 5.9	ud čiyōn pad =iz pārs agar =itān pad sīrgān ān rāy nē wizīrēnīd ka =tān šnāxt kū =tān aziš nē padīrēnd ān =itān dānist abāyist kū =tān pad nimūdārīh was X , winnārdan nē tuwān
+NM-K35 s269	NM2 5.10	agar =itān nūn čim menīd ka az sarāz pad nibēg zišt windišn § ud bōzišn ēw ī škastag be nibēsēd rawāg bawēd āhōgwigrās ī ēn dar was
+NM-K35 s270	NM2 5.11	az- =iš ēk druxtpaštīh ī abāg man
+NM-K35 s271	NM2 5.11	čē , šnāsēd kū =tān čiyōn sōgandīg az man padīrift kū ō paǰasāhi zarduxšt ud nē šawēd u =š abāg nē kōxšēd hamēmālīh nōgdādīh nē tuxšēd , mēnōy gētī anāgīh nē abzāyēd čē hambār ī ruwān warzēd
+NM-K35 s272	NM2 5.12	u =t pad abāzwaštag ān kird ī =m aziš nišēb ī ǰān
+NM-K35 s273	NM2 5.12	čē dahīg ka nārāstīhā ī ud wizīr rāy rēš ī ruwān frārāst
+NM-K35 s274	NM2 5.12	ud bē agar =iz rāst , bōzišnīg hē ēg =iz guft dušāgāhīh xwad wizūdārīhā hē
+NM-K35 s275	NM2 5.12	čē =m nē gumānāg bē agar ǰahišnīg saxtag dānišn ud ēčand ī ān =iz =šān andar wēnišn hē
+NM-K35 s276	NM2 5.13	u =šān pad wasgōwišnīh ī čiyōn wīzareš ud wasranǰīh ī čiyōn ǰānkanišnīh hamē nimāyēh
+NM-K35 s277	NM2 5.13	enyā andar ērānšahr harw gyāg kū ēn āgāhīh be rasēd ēg =it pad ahlomōγ ud dēndušmen dārēnd
+NM-K35 s278	NM2 5.14	u =tān pad ēn waranīgkārīh was spāh andar šahrān kē xwēš āyēbēnīd ud ō ādurbād paywast
+NM-K35 s279	NM2 5.14	čē tā =iz wāspuhragāntom šustārān sīrgān kē =šān pad frāxīh ī az amahraspandān hamē menīd hē pad ēn § § abāg hamēmālān guft hamgugāh
+NM-K35 s280	NM2 5.14	ōwōn wašt hēnd , [ī] [=šān] [nām] [ī] [ašmāh] [bē] [az] [hērbed] [ī] [nibišt]
+NM-K35 s281	NM2 5.14	[u] [=šān] [ō] [man] [nibišt] kū ēn garāntom wizend tō čārag abāyēd xwāst
+NM-K35 s282	NM2 5.14	ud nē šnasēm tis ēw ī pad škorwišn ī ašmāh ud nērōg ī hamēstār spurrīgtar az ēn rāh ī =t grift
+NM-K35 s283	NM2 5.15	u =m ān =iz rāy abar dušxwārtar ka bun ēn škefišn burz X paywehag ī =š aziš šāyēd būd harw āgāh ham
+NM-K35 s284	NM2 5.16	ašmāh ēdōn hamē nigerēd čiyōn nē pasayād ud nē pēšwēn bē zamānīg nigerišn
+NM-K35 s285	NM2 5.16	ān =iz pad xwahlgen hangōšīdag ān kē pad frāz xwistčašmīh nigerēd
+NM-K35 s286	NM2 5.16	u =š was gōn wahāg ō wēnišn ī čašm handēmānīhēd
+NM-K35 s287	NM2 5.16	ēč nēst
+NM-K35 s288	NM2 5.16	ud agar =iš xrad nē wizēngar škeftīhā padiš frēbīhēd
+NM-K35 s289	NM2 5.16	ud ast =iz ī ka dō māh ast =iš gōwēd , padiš drāytar būd
+NM-K35 s290	NM2 5.17	§ =im abēr garān taxl ud dušxwār ka man kē rāmēnīdārīh āsāngarīh ī ašmāh rāy tan =iz ǰān bē ō škeft puhl abespārd ud taftīgmenišnīhā wurrawam dād
+NM-K35 s291	NM2 5.18	u =m apardazišnīh rāy āgāhīh =iz ī drōdpursišnīg āgāhīh dāšnīgmenišnīhā wurrawam dād
+NM-K35 s292	NM2 5.18	u =m apardazišnīh rāy āgāh ud sūd ud zyānīgdil
+NM-K35 s293	NM2 5.18	u =šān nibištan aziš pargūdag
+NM-K35 s294	NM2 5.19	ēg =im kē pad apardazišnīh and nibēsišn ī āzārdārīh ī bēšīdārīhā ī padīragpahikārīhā bē ō ašmāh hamē abāyēd nibištan ī =š frazām nē handāsišn andar dil ī man ast
+NM-K35 s295	NM2 6.1	ka pad hangām nibēsam xūbtar ēd framāyēd šnāxtan kū abāg =iz ōstīgānmihrīh ud čihrīg ērmenišnīh ī man
+NM-K35 s296	NM2 6.1	pas =iz ān ē ka =m ašmāh frāy az rāh ī brādarīh ud abartar =iz az pid ud rad ud sālār xwadāy dastwar dāšt hēd u =m tan ǰān nām ud rāmišn , nē mihr ī čihrag bē gāh ī dēn framān ī yazdān
+NM-K35 s297	NM2 6.2	ān rāy ka abēzagdēnīh frazānagdānišnīh ačaftišnīg rāstīh ī ōwōn aziš dīd hēd ī =m dil gugāhīhist kū pad =iz noit̰ astaca , spitāmān zarduxšt guft ōstīgān hēd
+NM-K35 s298	NM2 6.2	ud az ān čiyōn =im ō dēn wašt kē =t parwānag ī ō ān ī pahlom axw ast mahist pānag ārāstār ašmāh šnāxt hēd ān =im menīd pad ēmēd ī ān ī abartom pādāšn hamāg tars ī āwāmīh widāram ud gāh ī ān dēn dād kē =m ān rāy ašmāh ōwōn pad abartarīh menīd hēd
+NM-K35 s299	NM2 6.3	ud agar pargast az ašmāh ayāb any kas hamēstārīh ī hamdēn ud kastārīh X ud wišuftārīh ī dād pēšag wēnam padīragēstišn ī ud hamēstārīh ud ōwōn ōstīgān kunam čiyōn =im zrēh ērtanīh ud rāmēnīdārīh ī hērbed ī xwadāy kird ,
+NM-K35 s300	NM2 6.4	u =tān , abēgumānīhā frārāst ēd bawēd kū agar az ēn wizīr ī nābōzišnīg bē nē wardēd bē ud agar az ērānšahr bērōn bawam enyā =tān mahist hampahikār bawam
+NM-K35 s301	NM2 6.5	ud ēdōn sahom kū az hamēstārīh ī man abar ašmāh zyān wēš šāyēd būd kū az was hamēmāl ī čiyōn hudēnān pēšōbāy was ī čiyōn hamnām ī man
+NM-K35 s302	NM2 6.6	ud az =iz bēšud ī man ud nābūd ī =tān ayār ēw ī čiyōn man ziyān ī ašmāh nē kam šāyēd būd kū ān ī az was hamēmāl kē =šān man ast ī abāzdāštār ham
+NM-K35 s303	NM2 6.6	ēd dānēd kū man mihr dōšāram ī kas ud āzarm ī kas rāy
+NM-K35 s304	NM2 6.7	az warzišn ī dēn nē čaftom ud gāh ī dēn rāy ō ēč kas petyārdār bawam
+NM-K35 s305	NM2 6.7	ka =iz =im dōšihist dōst bawēd ēg =iš hampahikār bawam
+NM-K35 s306	NM2 6.8	zīg meh tuhišn rāstīh hangām ī ǰān rōšn ayāft
+NM-K35 s307	NM2 7.1	ēn =iz ān šnāxtan tuwān ī =m pad andarg pad nibištag bē ō wehān ī sīrgān nibišt čiyōn ma agar =itān paččēn ēw frēstēnd
+NM-K35 s308	NM2 7.1	u =m ān ēwēnag nibēsišn nazd ō kas kunišn mānāg būd ō , darrišn ud darrēnišn ī xwēš hannām ud abarbarišnīh ī ān darmān rāy ān ī sōzāg dardgar dārūn
+NM-K35 s309	NM2 7.1	kē dēnīg ī =iš čārag az ōstīgān ēstādan tā pad ān ī dēn framān
+NM-K35 s310	NM2 7.1	[ā] [-m] ēn nāmag ī apardazišnīh ēw ī abēr was ud čiyōn menišnīh ēw ī abēr garān hamčiyōn =im azd ī abar ham dar mad abēr widangīg nibišt
+NM-K35 s311	NM2 7.2	ud hampay ī ēn nāmag mard ī xwēš abāg nāmag ī gugānīgtar ud [dagrīhātar] [ud] [pahikārišnīgtar] [frēstam]
+NM-K35 s312	NM2 7.2	[ka] [=šān] [abāyēd] [xwad] [-iz] [andar] čāragxwāhīh ; ī abar ān ham kū kārīhā hāmōyēn ōwōn winnāram ī =m semāhag ē pardāxt tuwān xwad ō [kū] ašmāh hēd āyam
+NM-K35 s313	NM2 7.3	ud ān ī passazagwizīrīh abāz wirāyīhēd ka =šān abāyēd ,
+NM-K35 s314	NM2 7.4	ašmāh nūn =iz passāzišn ī soxanān ī tuwān padiš hamnišīdār ud tēzwirāstār būd ud čand pēšist rōšnīhā ud wizard abar wardēnīdan ī ān wizīr čim kē rāy =itān pad mehdādestānīh sahišnīh nibišt
+NM-K35 s315	NM2 7.5	bē šnāxt ī =tān sazāgīhā ud nēwardēnīdan ; ī ān ī abestāg nērangīhā yōǰdāsrgarīhā frārāst , nibištan ud abar yōǰdāsrgarān kār ī yōǰdāsrgarīh čiyōn pad kirdan ī wehān andar āmad pad čāštag ī dastwarān šahistagīh paydāg
+NM-K35 s316	NM2 7.5	čand šāyēd xūbtar kirdan pēš pad wehīh tuxšīdan
+NM-K35 s317	NM2 7.6	abar =iz dād ī pānzdah bār wardēnīdan čiyōn ērān rāy kē yōǰdāsrgar ayābišn hēnd bē yōǰdāsrgarān ayābišnān rāy framūd ēstēd andar ērān dehān , kū yōǰdāsrgarān ast ō kirdag nē kird rāy framān dād
+NM-K35 s318	NM2 8.1	abārīg ī =tān waxr nibišt pad padīrīh abāz wirāstan nāmag pad , pēšīh ō sīrgān ud sīrāb abārīg kū =tān wizīr kird , ēdōn nibištan ī wināhišn ī būd abāz wirāyīhēd
+NM-K35 s319	NM2 8.2	čē agar ašmāh pargast ēn raft ī nōg winnārd aziš bē nē wardēd pad padīragīh bēšāzēnīdārīh abāz nē rawēd ēn abārīg =iz čiyōn =it nūn § rasīdag bē nē hilēd pas frazendān xwēš grāmīgān ī dōšist kē dānam X kū =šān ašmāh srāyēnēd ud pad pānagīh nē čēhēd ašmāh X hamēmāl hē
+NM-K35 s320	NM2 8.2	ān man pad apanāhīh asālārīh pad panāh ud sālār pad yazdān abestāmīh hišt
+NM-K35 s321	NM2 8.3	ādurān ātaxšān kē rāyēnīdār pāsbān pānag ī čiyōn man ma agar ēdōn zūd nē ayābēnd pad xwad pāsbānīh ud sālārīh abāz , ō mān sirāb ī kirdan
+NM-K35 s322	NM2 8.4	ud xwad az ērān dehān ēwarzīdan ō dūrtar kišwar kū sraw ī abar wadkird ī ašmāh nē ašnawam franāftan
+NM-K35 s323	NM2 8.5	andar xwēškārīh čē =m hil pad āb bē ō čīn ayāb pad būm bē ō hrōm franāftan bē =m pad wāy ō abargar uzīd abēr kāmagtar kū ka ānōh bawam kū ašmāh rāy az =išān stāyišn ān ašnawom ī =m pāsox ul ayāft rāy ēg =im margīh hāwand
+NM-K35 s324	NM2 8.5	u =m abarwārag [ī] ān andargpahikārīh frēzwānīhēd ī čiyōn kē abāg xwēš ǰān kōxšēd
+NM-K35 s325	NM2 9.1	ud X ēn =iz ēd framāyēd uzwārd kū rēmanān ī ērān X dehān ka any šustār nē ayābēnd ēg =išān pad be šustan rāh ō ašmāh kē nērangšnās ud šōyišntuwānīg hēd frāztomāgāh ī dēnīgān hēd
+NM-K35 s326	NM2 9.2	tā ka ašmāh pixšustārīh huayārīh rāh dilgišnīg nāmag hamāg =iz ān ī awēšān wināh ašmāh ō xwēš X , baxšēd ī =šān pas rāh ēdōn ō šōyišn ī paṇcadasa , ān hangām abarwārag ān wināh be hilēnd ī upasnātə̄e rāy nōgwaxšīdārīh wināhgārīh ōy xwēš kē =šān ān dād nihād ,
+NM-K35 s327	NM2 9.3	u =tān gōšt dahmān rāstīhā ī =m wihānag rāy ān abar hamē gōwēnd čiyōn =išān bē ō hērbed ēw guft kū =t čē rāy § gāušdāg frāmōš nē būd
+NM-K35 s328	NM2 9.3	u =t ēsm ud bōy ān rāy ka be xward nē šāyēd be framušt
+NM-K35 s329	NM2 9.4	u =tān tis hangōšīdag hamē gōwēnd kū čiyōn ka bahr ī sālārīh ēdōn abāymānīdīhā hamē xwāhišn kū tā =z xwurdagān xwurdag ī ast mayānag ēw ī az nām ī pēšōbāyīh tā dastwarīh ī =š bē nām ēw ī sādag dēnīgān nē rawāzišn ēč tis andar nēst
+NM-K35 s330	NM2 9.5	ōwōn sāxtan pahikār ēw pad kār ī ō sālārīh kunēd
+NM-K35 s331	NM2 9.5	ōwōn xwārbār hē kū ān ī abartom kār ī xwad yōǰdāsrēnīdārīh xwad ud kirdan ayāb hammōzēnīd ayāb uzēnag az šahr xwāst ī rawāgēnīd
+NM-K35 s332	NM2 9.5	abāzāhang hē ānāftan ēdōn ruzdīhā hamē wizīrēnē
+NM-K35 s333	NM2 9.6	u =m ēn društīha hamāg ān rāy nibišt X čē ān ī any kas pad dušhomānāgīh ōwōn padīrag ārāyēd ud gōwēd ī wirāst kam šāyēd
+NM-K35 s334	NM2 9.6	ka hangāmīg ud X āfrāhīg dōstīhā ud burādarīhā nibēsam pad wirāstārīh framāyēd tuxšīd čimīgtar kū bahr abar bahr ēdōn uzīhēd
+NM-K35 s335	NM2 9.7	pad hukahwanīh mehdād ī pas wirāstan duščār
+NM-K35 s336	NM2 9.7	ud pad ān hangārišn kū =šān az sečāštagīh parwastan nimūd xwad pad rāsthangāmīh xraduzwārīg nigerēd xwad dānēd kū nē čimīg ud pēš tis
+NM-K35 s337	NM2 9.8	ǰudwurrrōyišnān ī sardag sardag was xānagwiškinn ī škeft pad =iz passāzišn nimāyišn ī gōwišn ī , dastwarān abar ēn dar abar dōnānīh abar =iz yazišngarīh ud abar xwad dēn passāxtan
+NM-K35 s338	NM2 9.8	ašmāh dānāgīhā bōzišn ī hamdēn pēšag ārang ǰudristagān ān nibišt ī frārāst kū =tān nūn =iz ayād padīrag xwad ud xwēš ārāst dānēd
+NM-K35 s339	NM2 9.8	duškāmagān ēn =iz gōwēnd kū agar ān rāy kū yōǰdāsrgarān yōǰdādrgarīh ēdōn nē hamē kunēnd ī pad harw se čāštag ayāb harw nērang ī pad čāštag ēw šāyēd yōǰdāsrgarān yōǰdāsrgarīh be abāyēd hišt
+NM-K35 s340	NM2 9.10	pas abar dōnānīh yazišngarīh wasīhā ēn ī čiyōn ēn šāyēd guft
+NM-K35 s341	NM2 9.10	abar čiyōn šāyēd guft kū ka hudēnān nē ēdōn hamē rawēnd čiyōn pad abestāg zand , čāštag guft ēstēd pas dēn be abāyēd hišt
+NM-K35 s342	NM2 9.11	ud abārīg was saxwan ī im mānāg tis be zāyīhēd
+NM-K35 s343	NM2 9.11	ud ān ī ādurbād nišānag az ašmāh nāmēnīd ēstēd
+NM-K35 s344	NM2 9.11	pad ēn čim andar menišn ī mardōmān abarīhēd
+NM-K35 s345	NM2 9.12	u =m andar tund awištāb ēn and nibišt bowandag sahom
+NM-K35 s346	NM2 9.12	u =tān hamēyīgīhā drōd ud harw farroxīh mehmānīhā padiš pattāyišnīg winnārišnīg bawēd
+NM-K35 s347	NM2 9.12	pad garān dard dušxwārag andōh bēš ud zarīg ud tēmār ud čēhag manuščihr ǰuwānǰamān ī pārs ud kirmān āsrōnān pēšag framādār nibišt
+NM-K35 s348	NM2 9.13	andar šnāyišn ud spās ud āfrīn ī dādār ohrmazd ud amahraspandān hamāg yazdān ī mēnōyān ud yazdān ī gētīyān hamāg frawahr ī ašōān namāz ō rad ī buland az dādār ohrmazd ud aštag aštagtom spitamān zarduxšt
+NM-K35 s349	NM2 9.15	xwāyišnīg windišnīg az tis ahlāyīh
+NM-K35 s350	NM2 9.15	meh ud weh ud pāšom zarduxšt
+NM-K35 s351	NM2 9.15	ēk ast rāh [ī] ahlāyīh [ud] [abārīg] [ān] [ī] [ǰudrāh] [ī] wisp any ān ē ahlāyīh
+NM-K35 s352	NM3 1.0	nām ī yazdān
+NM-K35 s353	NM3 1.0	paččēn ī wišādag ī hērbed xwadāy manuščihr ī ǰuwānčimān garān wināhīh ī nāšāyist ī šōyišn ī pad pānzdah bār X ī
+NM-K35 s354	NM3 1.0	nām ī yazdān
+NM-K35 s355	NM3 1.1	man manuščihrān ī ǰuwānǰamān pārs kermān rad bē ō ašnawišn mad kū pad ast kustag ī ērānšahr awēšān kē nasā any rēmanīh ōwōn čiyōn andar any pēšagšōyišnīh wizīrēnīd ēstēd pānzdah bār pad gōmēz ī ēk bār pad āb hamē šōyēnd xwēštan pad pāk hamē dārēnd ud ō āb ātaxš ud pādyābīh X barsom pādyābīh hamē šawēnd
+NM-K35 s356	NM3 1.1	ēdōn hamē gōwēnd kū zādspram ǰuwānǰamān ēn ēwēnag šōyišn framūd
+NM-K35 s357	NM3 1.1	dastwarān dād , abēr škeft , garān ō ēn ī man sahišn ud grift ud passand ud āwāzag sahist
+NM-K35 s358	NM3 1.1	u =m niyābag ī dāštan āgāhīhā ī hudēnān ī kustagīhā ī ērānšahr ōstīgēnēnīdārīh ī =š abar šōyišn ī pad baršnūm rāy xwēš sahišn pad =iz nibištag hangirdīg rōšnēnīdan
+NM-K35 s359	NM3 1.2	u =m pēš =iz abar frēzwānīgīh ī baršnūm čand paččēn ōwōn ī nibištag āwišt čiyōn ō āgāhān rōšn
+NM-K35 s360	NM3 1.2	nōgīhā =iz nibēsam kū man az dēn ud wizīr dastwarān čāštagīhā pōryōtkēšān kirdag āgāhīh sahišn ōwōn kū šōyišn ī az rēmanān az āb rēmanīh pad nasā ud any gētīyīg paywēšagīh dahēnd
+NM-K35 s361	NM3 1.2	ān ī ast ī pad xwarrah ī , amaragān āšnāg baršnūm pad pēšag =iz xwānīhēd ka nērang ī ēwēnīhā pādan tan az paywēšag asar ī gētīyīg pāk kunēnd ast andar nō mag(a)k ud kiš pad yaštan =iz gōmēz ud āb ud abārīg abzār ud nērang ī čiyōn andar dēn čāštag paydāg
+NM-K35 s362	NM3 1.2	ud nūn =iz yōǰdāsrgarān ī čiyōn azēr , nibēsīhēd pad kirdag dārēnd
+NM-K35 s363	NM3 1.2	šōyišn ka ēdōn šōyēnd čiyōn pad gōwišn ī se čāštag ī pad [mēdyōmāhīg] [abargīg] [sōšānsīg] āšnāg ayāb gōwišn ī ēk az ān se čāštag ayāb pad gōwišn ī ēk az dastwarān ī ān se čāštag pad šāyistīh , paydāg ayāb pad kirdag ī pōryōtkēšān ī ham ān se čāštagīhā andar =am āmad ēstēd
+NM-K35 s364	NM3 1.3	hamāgīhā passandišnīg ī bōzišn saham ān ēwēnag šōyišn pad baršnūm ī dādīhā ān ēwēnag šustār pad yōǰdāsrgar ī passandišnīg dāram
+NM-K35 s365	NM3 1.3	ud har ēwēnag rēmanān ī čiyōn nibišt kē pad čegāmiz , frēzwānīg čārag yōǰdāsrgar ī čiyōn nibišt kē nūn =iz šahr šahr gyāg gyāg gumārd passandīd ēstēnd ayāft pad baršnūm čiyōn nibišt šust tuwān
+NM-K35 s366	NM3 1.3	ēg =išān šōyišnīh pānzdah bār pad ēč ēwēnag nē bōzišn
+NM-K35 s367	NM3 1.3	u =šān tēzīhā pad baršnūm ī čiyōn nibišt šust frēzwānīg
+NM-K35 s368	NM3 1.4	az ham ēwēnag šōyišn ī pad , baršnūm ī čiyōn menīhēd āb ud ātaxš ud abārīg ī pahrēzišn ī nē kirdan , adastwarīhā garānwināhīhā
+NM-K35 s369	NM3 1.4	ka ham šōyišn ī pad any šōyišn ī ǰud az baršnūm rāy xwēš tan pad pāk dārēnd garānwināhīhātar
+NM-K35 s370	NM3 1.4	čiyōn ka pad baršnūm čiyōn nibišt nē šōyēnd pad pānzdah bār ī čiyōn nibišt ayāb kadām =iz ēw šōyišn ī ǰud az baršnūm X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X ī čiyōn nibišt šōyēnd az ān rēmanīh ī pad pēšagšōyišn ī wizīrēnīd ēstēd pāk nē bawēnd
+NM-K35 s371	NM3 1.4	ka bē az ačārīh mehdādestānīh bē ō āb ātaxš šawēnd wināh garān
+NM-K35 s372	NM3 1.4	ka ō paymān ī barsom pādyābīh šawēnd apādyāb
+NM-K35 s373	NM3 1.4	āgāhīhā yazišn ī padiš kirdan nē dastwarīhā
+NM-K35 s374	NM3 1.4	ud ham ēwēnag rēmanān kē pad ēč frēzwānīg čārag pad baršnūm ī čiyōn nibišt šōyišn nē tuwān abar ān kū čiyōn čārag ī padiš ayābēm pad baršnūm ī čiyōn nibišt šōyam menišn ōstīgān dāštan madan ō čār pad baršnūm ī čiyōn nibišt šōyam frēzwānīg
+NM-K35 s375	NM3 1.4	hangird baršnūm ī čiyōn nibišt dād ast ī =iz awizīrišnīg az bun ī frahīd kirbag
+NM-K35 s376	NM3 1.4	ud yōǰdāsrgarīh ī tan ruwān awiš paywastag
+NM-K35 s377	NM3 1.5	awēšān pōryōtkēšān ī pēšēnīgān winnārd nimāyēnīd kē =šān gāh abar amāh pasēnīgān ī nūnēn ī axwīhā ud hammōzgārīhā xwadāyīhā =iz amāh andar awēšān , pāyag hašāgirdīhā ud radīhīhā ud niyōxšīdārīhā bandagīhā
+NM-K35 s378	NM3 1.5	abar ham ud abārīg =iz dādestān kirdan dāštan ī awēšān pōryōtkēšān kird čāšišn ī ēk =iz az awēšān , dastwarān meh abartar az ān ī amāh gōwišn ud wizīr
+NM-K35 s379	NM3 1.5	ud harw ast ristag ī , andar ērānšahr abar bē abgand ī baršnūm ī čiyōn =am nibišt abar =iz hamāg rēmanān ī čiyōn nibišt kē pad čēgāmizē frēzwānīg čārag pad baršnūm ī čiyōn =am nibišt , šust tuwān , pad baršnūm ī čiyōn =am [nibišt] nē šōyēd ud pad pānzdah bār ī čiyōn =am nibišt šust framūd pad pāk wizīrēnīd ud pad dād nihād pad kirdan rāyēnīd
+NM-K35 s380	NM3 1.6	agar zādspram ayāb any kas pad nām ī dastwarīh kirdan framūd guft ayāb wizīrēnīd pad dād nihād rawāg kird u =š padiš dastwarīhā dād , X , sahišn ud wizīrkird ī man ēn kū ham gōwišn anēwēnag ham framān , adādīhā ham wizīr drōčāšišnīh ud ham dād abārōn kām rawāggarīh garānwināhīhā
+NM-K35 s381	NM3 1.6	ud ham dastwarīh nē padīrišn kār az =iš nē kunišn
+NM-K35 s382	NM3 1.6	kē =š kird aziš tēz petit bawišn
+NM-K35 s383	NM3 1.6	ud ān kē andar ērānšahr pad nām ī dastwarīh hamāg čāragōmand ī rēmanān ī čiyōn nibišt rāy [ān] ēwēnag šōyišn wizīrēnīd ān ēwēnag dād , nihād pad ahlomōγ margarzān hangārišn
+NM-K35 s384	NM3 1.7	ēdōn ka =š andar kāmagōmandīh bē az bīm ačārīh ān ēwēnag wizīrēnīd ān ēwēnagīh dād nihād čiyōn nibišt rēmanbūd pānzdah bār pad gōmēz X ēk [bār] pad āb ayāb any kadāmagān =iz ēwēnag ī ǰud az baršnūm ī čiyōn =im nibišt šust u =š pad čegāmiz frēzwānīg čārag pad baršnūm ī čiyōn nibišt šust tuwān ēg =iš kird patitīh andar nō maγ pad baršnūm ī čiyōn =im nibišt abāz šōyišn
+NM-K35 s385	NM3 1.7	tā abāz šust ī , čiyōn =im nibišt ō āb ud ātaxš paymān ī pādyābīh nē šawišn
+NM-K35 s386	NM3 1.8	u =m ēn nāmag āgāhbawišnīh ī kadāmagān =iz hudēnān ī ērānšahr framān ī dēn sahišn grift , passand ī man manuščihr ǰuwānǰamān rāy pad xwēš nibēg X X X {nibišt} {čand07} , paččēnīhā āwišt māh hordād ī pērōzgar ī sāl dwēsadudpanǰāh ī yazdegird andar yazdān abestāmīh , ud spāsdārīh ,
+NM-K35 s387	NM3 1.9	namāz ō rad buland kē dādār ohrmazd ud aštag ašōtom , yaštfrawahr spitāmān zarduxšt X
+NM-K35 s388	NM3 1.9	az xwāhišnān wandišnān tis ēw ahlāyīh meh weh pāšom , ast X zarduxšt
+NM-K35 s389	NM3 1.9	ēk ast rāh ī pāšom ahlāyīh kē rāh ī pōryōtkēšān
+NM-K35 s390	NM3 1.9	wisp ān ī any abāzwaštag arāhīh , ,
+NM-K35 s391	NM3 1.9	X X X X X X X X X X X X X X X
+NM-K35 s392	NM3 1.9	X X X X X X X X X X X
+NM-K35 s393	NM3 1.9	X X X X X X X X X X X X
+NM-K35 s394	NM3 1.9	X X X X X X X X X X X
+NM-K35 s395	NM3 1.9	§
+NM-K35 s396	NM3 1.9	,

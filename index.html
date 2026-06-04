@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Druz Text Search</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="workspace" aria-labelledby="page-title">
+        <header class="masthead">
+          <div>
+            <p class="eyebrow">Research workspace</p>
+            <h1 id="page-title">Parallel Text Search</h1>
+          </div>
+          <div class="status" id="load-status">Loading texts...</div>
+        </header>
+
+        <section class="search-panel" aria-label="Search controls">
+          <label class="search-box" for="query">
+            <span>Search word</span>
+            <input id="query" type="search" placeholder="Type a word, e.g. ohrmazd" autocomplete="off" autofocus>
+          </label>
+
+          <div class="controls" role="group" aria-label="Search options">
+            <label class="control">
+              <input id="whole-word" type="checkbox" checked>
+              <span>Whole word</span>
+            </label>
+            <label class="control">
+              <input id="case-sensitive" type="checkbox">
+              <span>Case sensitive</span>
+            </label>
+            <label class="select-control" for="context-size">
+              <span>Context</span>
+              <select id="context-size">
+                <option value="1">Short</option>
+                <option value="2" selected>Medium</option>
+                <option value="4">Wide</option>
+              </select>
+            </label>
+          </div>
+        </section>
+
+        <section class="overview" id="overview" aria-label="Text overview"></section>
+        <section class="results" id="results" aria-live="polite"></section>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

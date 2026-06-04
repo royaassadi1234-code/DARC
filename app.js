@@ -299,7 +299,7 @@ function getMatches(text, search) {
     if (found) {
       matches.push({
         location: record.location,
-        snippet: makeSnippet(text.records, recordIndex)
+        snippet: makeSnippet(text.records, recordIndex, search)
       });
     }
   });
@@ -340,13 +340,33 @@ function buildPattern(terms) {
   return state.wholeWord ? `(?<!${boundary})(?:${escaped})(?!${boundary})` : `(?:${escaped})`;
 }
 
-function makeSnippet(records, recordIndex) {
+function makeSnippet(records, recordIndex, search) {
+  const focused = makeFocusedSnippet(records[recordIndex].text, search);
+  if (focused) {
+    return focused;
+  }
+
   const start = Math.max(0, recordIndex - state.contextSize);
   const end = Math.min(records.length, recordIndex + state.contextSize + 1);
   return records
     .slice(start, end)
     .map((record) => record.text)
     .join(" ");
+}
+
+function makeFocusedSnippet(text, search) {
+  const ranges = findMatchRanges(text, search.terms);
+  if (!ranges.length) {
+    return "";
+  }
+
+  const first = ranges[0];
+  const radius = 240 + state.contextSize * 80;
+  const start = Math.max(0, first.start - radius);
+  const end = Math.min(text.length, first.end + radius);
+  const prefix = start > 0 ? "... " : "";
+  const suffix = end < text.length ? " ..." : "";
+  return `${prefix}${text.slice(start, end)}${suffix}`;
 }
 
 function highlight(text) {

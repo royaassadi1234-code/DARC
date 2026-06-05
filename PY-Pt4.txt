@@ -1377,79 +1377,79 @@ PY-Pt4 s1338	28.0	aṣ̌əmvohū se
 PY-Pt4 s1339	28.1	frauuarāne , ud , hāuuanə̄e , ud , sāuuaŋhə̄e , ud , raϑβąm , ud , frasastaiiaēca , ud wāzgīrišnīh
 PY-Pt4 s1340	28.2	yānīmmanō gāhān bun
 PY-Pt4 s1341	28.2	huǰahišn xūbfrazām bawād pad dādār dōšišn šnāyišn dādār ohrmazd ī rāyōmand ī xwarrahōmand abestāg ī gāhān ud zand huǰahišn ud xūbmurwāg xūbfrazām bawād
-PY-Pt4 s1342	caby_ch28_stSupplPY1	čiyōn ox kāmag čiyōn ohrmazd kāmag ēdōn radīhā ēdōn frārōnīhā az ahlāyīh kār ud kirbag čēgāmizēw
-	caby_ch28_stSupplPY1	kār ud kirbag ēdōn frārōnīhā čiyōn ohrmazd kāmag
-PY-Pt4 s1343	caby_ch28_stSupplPY1	ān =iš wahman dahišn kū ān mizd ud pādāšn ī wahman dahēd ā =iz [ō] ōy dahēd kē andar axwān kunišn ī ohrmazd kū ān kunēd ī ohrmazd abāyēd
-PY-Pt4 s1344	caby_ch28_stSupplPY1	ast kē ēdōn gōwēd ay ān =iš ī pad wahman dahišn kū ān mizd pādāšn ī pad wahman bē dahēnd ā =iz [ō] ōy X dahēnd
-PY-Pt4 s1345	caby_ch28_stSupplPY1	ay ādurbād ī zarduštān guft kū az ān ī wahman dahišn andar axwān kunišngar andar dānēnd
-PY-Pt4 s1346	caby_ch28_stSupplPY1	xwadāyīh =iš ō ohrmazd kū =š xwadāyīh ast pad sūd ī ohrmazd dāšt bawēd kē ō driyōšān dahēd wāsān kū =šān ǰādaggōwīh kunēd
-PY-Pt4 s1347	caby_ch28_stSupplPY1	wezest čahrušāmrūdīg gōwišn
-PY-Pt4 s1348	caby_ch28_stSupplPY2	ahlāyīh ābādīh pahlom ast ābādīh =ēw ahlāyīh weh
-PY-Pt4 s1349	caby_ch28_stSupplPY2	nēk ast ān ahlāyīh ud nēk ōy mard =iz nēk kē ahlāyīhēnīdār ān ī pahlom ahlāyīh kū ōh kunēnd
-PY-Pt4 s1350	caby_ch28_stSupplPY2	wezest srišāmrūdīg gōwišn
-PY-Pt4 s1351	caby_ch28_stSupplPY3	ahunawar yazam
-PY-Pt4 s1352	caby_ch28_stSupplPY3	ud ahlāyīh pahlom ī nēk ī amarg ī abzōnīg yazam
-PY-Pt4 s1353	caby_ch28_stSupplPY4	kē az astān ēdōn pad yazišn abar weh kū yazišn ān weh ī ohrmazd ī xwadāy rāy kunēnd ohrmazd āgāh az ahlāyīhabāgīh X čēgāmizēw
-	caby_ch28_stSupplPY4	čēgāmizēw kār ud kirbag [pad] mizd ud pādāšn āgāh dahēd
-	caby_ch28_stSupplPY4	hanǰamanīgān narān mādagān yazam amahraspandān ,
-PY-Pt4 s1354	gy_ch27b_st15	ān gāhān čiyōn ast panǰ gāh ī ast , ahunawayt gāh , uštawayt gāh , spandmayn gāh , wohuxšahr gāh , wahištōyšt gāh , u =š bazišnīg ast , abazišnīg , yazamaide vaŋhuca , andargīg azēr ēn nibēsīhēd
-PY-Pt4 s1355	caby_ch28b_st2	gāhān bun
-PY-Pt4 s1356	caby_ch28b_st2	frāgām pad dast frāz nihišn ō barsom barišn pad =iz abārīg hamgōnag kunišn , hāwan škeftan
-PY-Pt4 s1357	caby_ch28b_st2	ud yān menišn ud yān gōwišn ud yān kunišn frārōn rāy pad nēkīh arzānīg būd ahlaw zardušt
-PY-Pt4 s1358	caby_ch28b_st2	menišn gōwišn kunišn frārōn rāy pad nēkīh arzānīg būd
-PY-Pt4 s1359	caby_ch28b_st2	frāz amahraspandān gāhān grift kū =šān pad stī frāz dāšt
-PY-Pt4 s1360	caby_ch28b_st2	niyāyišn ō ašmāh gāhān ī ahlawī
-PY-Pt4 s1361	caby_ch28b_st3	ān mizd ī ōy ohrmazd xwēš xwāyam pad niyāyišn ī ka ǰādaggōwīh ī yazdān ud wehān kunam ustāndast menišnīg pad rāmišn ī xwēš
-PY-Pt4 s1362	caby_ch28b_st3	pad mēnōyīgīh ī ohrmazd ī fradom pad gāhānīgīh abzāyēnišn ahlāyīh ī pad harwist kunišn kū kunišn tis hamāg pad gāhānīgīh kunišn
-PY-Pt4 s1363	caby_ch28b_st3	pad ān ī wahman xrad pad āsnxrad šnāyēnišn =iz gōšurun kū pahrēz ī gōspandān pad dānāgīh kunišn
-PY-Pt4 s1364	caby_ch28b_st3	wezest bišāmrūdīg gōwišn
-PY-Pt4 s1365	caby_ch28b_st4	pahikārišn
-PY-Pt4 s1366	caby_ch28b_st4	kē ō ašmāh ohrmazd bē rasān pad wahman kū pad frārōnīh bowandag bē ō xwēšīh ī ašmāh mad hān ō man dahēd pad harw dō axwān ī astōmandān ud kē =z mēnōyān nēkīh ī ēdar ud ān =iz ī ānōh ābādīh az ahlāyīhabāgīh kū =m padēxwīh pad frārōnīh dahēd kē ō ōy ī rāmēnīdār dahēd xwārīh ī pad rāmēnišn be abāyēd kirdan
-PY-Pt4 s1367	caby_ch28b_st5	frāzgōwišnīh franāmišn
-PY-Pt4 s1368	caby_ch28b_st5	kē ašmāh ašawahišt xwēš hān ud wahman =iz ī fradom kū pad xwēšīh ī ašmāh ēstān ud ohrmazd =iz ā =š xwēš hān kē =š ān ī awēšān xwadāyīh pad anizārwindišnīh kū =š pāduxšāyīh ī abar amahraspandān stabr ōy =iz ī wālišndādār spandārmad ā =š xwēš hān ān ō man pad rāmišn pad xwānišn rasēd
-PY-Pt4 s1369	caby_ch28b_st5	ka =tān ōh xwānān ā =m pad rāmišn abar ōh rasēd
-PY-Pt4 s1370	caby_ch28b_st6	frāzgōwišnīh franāmišn
-PY-Pt4 s1371	caby_ch28b_st6	kē ruwān andar garōdmān dahēd ā =š pad abāgīh ī wahman
-PY-Pt4 s1372	caby_ch28b_st6	ay harw kē dahēd ā [=š] pad abāgīh wahman dād bawēd
-PY-Pt4 s1373	caby_ch28b_st6	ā =š tarsagāyī =yiz ō kunišngarān kē ōy rāy kunēd ī sazēd
-PY-Pt4 s1374	caby_ch28b_st6	āgāh bawēd pad ān ī ohrmazd dēn ī ohrmazd
-PY-Pt4 s1375	caby_ch28b_st6	čand xwāstār ud tuwānīg ham ānand hammōxtam xwāyišn ī ahlāyīh kār ud kirbag
-PY-Pt4 s1376	caby_ch28b_st7	frašn hāzišn ī pad abarxwāyišnīh
-PY-Pt4 s1377	caby_ch28b_st7	ašawahišt kay tō wēnam pad ān ī wahman āgāhdahišnīh
-PY-Pt4 s1378	caby_ch28b_st7	ēn dānam kū =t andar ān zamān wēnam ka harw kas pad frārōnīh āgāh be kay bawēd
-PY-Pt4 s1379	caby_ch28b_st7	ud gāh =iz ī ohrmazd kay wēnam ī sūdxwāstār ān gāh ī pad srōš dānīhēd kū ka dastwar dārēnd šāyēd dānist kū nēkīh ī az ān gāh čē
-PY-Pt4 s1380	caby_ch28b_st7	ān mānsr ī mahist ā =š wurrōyēnišn X dahišn ōy kē xrad stard ēstēd pad uzwān
-PY-Pt4 s1381	caby_ch28b_st7	ōy =iz kē xrad stard ēstēd ā =š tis =ēw ēn pahlom ka hērbedestān kunēd
-PY-Pt4 s1382	caby_ch28b_st8	hāzišn yān
-PY-Pt4 s1383	caby_ch28b_st8	yān frāzgōwišnīh
-PY-Pt4 s1384	caby_ch28b_st8	rasišn wahman ō tan ī kasān
-PY-Pt4 s1385	caby_ch28b_st8	dahē =m , ašawahišt dahišn dērǰānīh kū =m ān tis ma dahād ī pad tan ī pasēn abāz abāyān ōzad pad ān ī rāst saxwan tō ohrmazd ī ō zardušt nimūd ēstēd
-PY-Pt4 s1386	caby_ch28b_st8	ā =t az ōy ī ōzōmand wištāsp ast X X rāmēnišn ham kū =t pad nēkīh frāz ō xwadāyān nayišn ham ud manīgān =iz ohrmazd hāwištān man ā =iz =t pad nēkīh frāz nayišn hēnd kē bēšīdārān bēš X bawēd ka ēdōn kunēd tarwēnišn kū bēš ī az awēšān akār bawēd
-PY-Pt4 s1387	caby_ch28b_st9	dahē =m ašawahišt ān tarsagāyīh ī pad wahman ābādīh kū =m tarsagāyīh =ēw ī ēdōn dahād ī pad tan ī pasēn abāz nē abāyānd ōzad
-PY-Pt4 s1388	caby_ch28b_st9	dahē tō spandārmad ān ī az wištāsp xwāyišn mowbedānmowbedīh ud manīgān =iz hāwištān ī man ā =šān mowbedānmowbedīh dah
-PY-Pt4 s1389	caby_ch28b_st9	u =m dahē stāyīdār ī pāduxšā ī ohrmazd wištāsp ka ēd ī ašmāh mānsr srāyēnd kū dēn ī ašmāh gōwānd ārāyišn dahēd kū rawāg kunēd
-PY-Pt4 s1390	caby_ch28b_st10	pahikār
-PY-Pt4 s1391	caby_ch28b_st10	ka pahlomīh ī tō dēn ī tō ī pahlom az abārīg tis pad ahlāyīh ī pahlom ō ham dōšān pad frārōnīh ohrmazd ā =m pad xwāyišn windēnē mard ī frašōštar kū =m frašōštar pad hāwištīh be dahē ud manīgān =iz frašōštar u =š hāwištīh dah
-PY-Pt4 s1392	caby_ch28b_st10	ō =z awēšān ēg rād hē hamētāōwisp pad wahman kū frašōštar ud hāwištān ī frašōštar tā tan pasēn hamē nēkīh pad =iš kun
-PY-Pt4 s1393	caby_ch28b_st11	nayišn frāzgōwišnīh
-PY-Pt4 s1394	caby_ch28b_st11	frāzgōwišnīh
-PY-Pt4 s1395	caby_ch28b_st11	anāyišnīh nē ō ašmāh ohrmazd
-PY-Pt4 s1396	caby_ch28b_st11	ēn nē kunam kū bē ō ašmāh nē āyam
-PY-Pt4 s1397	caby_ch28b_st11	ud ašawahišt =iz pad yān nē āzāram yān =iz =ēw nē xwāyam ī ašawahišt dušwār sahēd wahman =iz pahlom ā =š nē āzāram kē ō ēd ī ašmāh hassārīh dahēd stāyīdārān kū ušēdar ud ušēdarmāh ud sōšāns bē ō hampursagīh ī ašmāh ānayēd
-PY-Pt4 s1398	caby_ch28b_st11	ašmāh dōšag hēd pad xwāyišn ī xwadāyīh sūdimand kū xwadāyīh ī sūdimand bē dōšēd ud bē dahēd
-PY-Pt4 s1399	caby_ch28b_st12	yān frāzgōwišnīh
-PY-Pt4 s1400	caby_ch28b_st12	kē ēdōn ahlāyīh āgāh hānd ud ān ī wahman dahišn kū pad rāstīh ud frārōnīh bowandag āgāh be būd hānd ī frārōn ohrmazd ā =m pad awēšān purr hanbārēd kāmag kū =m nēkīh pad =š kunēd ka ēdōn pad ān ī ašmāh asūdag windēnēd xwarišn u wastarg pad ān X srāyišn
-PY-Pt4 s1401	caby_ch28b_st12	ka pad yazišn ī ašmāh sūdag nē bawēd ā =š xwarišn ud wastarg windēnēd
-PY-Pt4 s1402	caby_ch28b_st13	pahikār
-PY-Pt4 s1403	caby_ch28b_st13	frašn
-PY-Pt4 s1404	caby_ch28b_st13	kē pad nigerišn ahlāyīh bē pāyam ud wahman =iz tā hamērawišnīh kū rāstīh ud frārōnīh pānagīh kunam [tō] ān ohrmazd frāz ō man hammōzē ēd ī tō pad gōwišn mēnōyīgīh gāhānīgīh ī az ēd tō pad dahān paydāg ī az ān paydāg ī tō pad dahān be gōwē kē andar axwān fradom būd kū ān ī fradom ā =š dād gāhānīgīh būd
-PY-Pt4 s1405	caby_ch28b_st14	ahiiā yāsā , , , bišāmrūdīg gōwišn
-PY-Pt4 s1406	caby_ch28b_st15	yaϑāahūvairiiō , čahrušāmrūdīg gōwišn ,
-PY-Pt4 s1407	caby_ch28b_st16	aṣ̌əmvohū , srišāmrūdīg gōwišn
-PY-Pt4 s1408	caby_ch28b_st17	pad ahe.yāsā X hād yazam
-PY-Pt4 s1409	caby_ch28b_st18	yeŋ́hēhātąm , yazišn pad hād sar , gāhānīg ēwāmrūdīg
-PY-Pt4 s1410	caby_ch28b_st18	brīn hādān yazišn pad hād sar
-PY-Pt4 s1411	caby_ch28b_st18	yāzdah wezest sīhudse gāh
+PY-Pt4 s1342	28.SupplPY1	čiyōn ox kāmag čiyōn ohrmazd kāmag ēdōn radīhā ēdōn frārōnīhā az ahlāyīh kār ud kirbag čēgāmizēw
+	28.SupplPY1	kār ud kirbag ēdōn frārōnīhā čiyōn ohrmazd kāmag
+PY-Pt4 s1343	28.SupplPY1	ān =iš wahman dahišn kū ān mizd ud pādāšn ī wahman dahēd ā =iz [ō] ōy dahēd kē andar axwān kunišn ī ohrmazd kū ān kunēd ī ohrmazd abāyēd
+PY-Pt4 s1344	28.SupplPY1	ast kē ēdōn gōwēd ay ān =iš ī pad wahman dahišn kū ān mizd pādāšn ī pad wahman bē dahēnd ā =iz [ō] ōy X dahēnd
+PY-Pt4 s1345	28.SupplPY1	ay ādurbād ī zarduštān guft kū az ān ī wahman dahišn andar axwān kunišngar andar dānēnd
+PY-Pt4 s1346	28.SupplPY1	xwadāyīh =iš ō ohrmazd kū =š xwadāyīh ast pad sūd ī ohrmazd dāšt bawēd kē ō driyōšān dahēd wāsān kū =šān ǰādaggōwīh kunēd
+PY-Pt4 s1347	28.SupplPY1	wezest čahrušāmrūdīg gōwišn
+PY-Pt4 s1348	28.SupplPY2	ahlāyīh ābādīh pahlom ast ābādīh =ēw ahlāyīh weh
+PY-Pt4 s1349	28.SupplPY2	nēk ast ān ahlāyīh ud nēk ōy mard =iz nēk kē ahlāyīhēnīdār ān ī pahlom ahlāyīh kū ōh kunēnd
+PY-Pt4 s1350	28.SupplPY2	wezest srišāmrūdīg gōwišn
+PY-Pt4 s1351	28.SupplPY3	ahunawar yazam
+PY-Pt4 s1352	28.SupplPY3	ud ahlāyīh pahlom ī nēk ī amarg ī abzōnīg yazam
+PY-Pt4 s1353	28.SupplPY4	kē az astān ēdōn pad yazišn abar weh kū yazišn ān weh ī ohrmazd ī xwadāy rāy kunēnd ohrmazd āgāh az ahlāyīhabāgīh X čēgāmizēw
+	28.SupplPY4	čēgāmizēw kār ud kirbag [pad] mizd ud pādāšn āgāh dahēd
+	28.SupplPY4	hanǰamanīgān narān mādagān yazam amahraspandān ,
+PY-Pt4 s1354	27b.15	ān gāhān čiyōn ast panǰ gāh ī ast , ahunawayt gāh , uštawayt gāh , spandmayn gāh , wohuxšahr gāh , wahištōyšt gāh , u =š bazišnīg ast , abazišnīg , yazamaide vaŋhuca , andargīg azēr ēn nibēsīhēd
+PY-Pt4 s1355	28b.2	gāhān bun
+PY-Pt4 s1356	28b.2	frāgām pad dast frāz nihišn ō barsom barišn pad =iz abārīg hamgōnag kunišn , hāwan škeftan
+PY-Pt4 s1357	28b.2	ud yān menišn ud yān gōwišn ud yān kunišn frārōn rāy pad nēkīh arzānīg būd ahlaw zardušt
+PY-Pt4 s1358	28b.2	menišn gōwišn kunišn frārōn rāy pad nēkīh arzānīg būd
+PY-Pt4 s1359	28b.2	frāz amahraspandān gāhān grift kū =šān pad stī frāz dāšt
+PY-Pt4 s1360	28b.2	niyāyišn ō ašmāh gāhān ī ahlawī
+PY-Pt4 s1361	28b.3	ān mizd ī ōy ohrmazd xwēš xwāyam pad niyāyišn ī ka ǰādaggōwīh ī yazdān ud wehān kunam ustāndast menišnīg pad rāmišn ī xwēš
+PY-Pt4 s1362	28b.3	pad mēnōyīgīh ī ohrmazd ī fradom pad gāhānīgīh abzāyēnišn ahlāyīh ī pad harwist kunišn kū kunišn tis hamāg pad gāhānīgīh kunišn
+PY-Pt4 s1363	28b.3	pad ān ī wahman xrad pad āsnxrad šnāyēnišn =iz gōšurun kū pahrēz ī gōspandān pad dānāgīh kunišn
+PY-Pt4 s1364	28b.3	wezest bišāmrūdīg gōwišn
+PY-Pt4 s1365	28b.4	pahikārišn
+PY-Pt4 s1366	28b.4	kē ō ašmāh ohrmazd bē rasān pad wahman kū pad frārōnīh bowandag bē ō xwēšīh ī ašmāh mad hān ō man dahēd pad harw dō axwān ī astōmandān ud kē =z mēnōyān nēkīh ī ēdar ud ān =iz ī ānōh ābādīh az ahlāyīhabāgīh kū =m padēxwīh pad frārōnīh dahēd kē ō ōy ī rāmēnīdār dahēd xwārīh ī pad rāmēnišn be abāyēd kirdan
+PY-Pt4 s1367	28b.5	frāzgōwišnīh franāmišn
+PY-Pt4 s1368	28b.5	kē ašmāh ašawahišt xwēš hān ud wahman =iz ī fradom kū pad xwēšīh ī ašmāh ēstān ud ohrmazd =iz ā =š xwēš hān kē =š ān ī awēšān xwadāyīh pad anizārwindišnīh kū =š pāduxšāyīh ī abar amahraspandān stabr ōy =iz ī wālišndādār spandārmad ā =š xwēš hān ān ō man pad rāmišn pad xwānišn rasēd
+PY-Pt4 s1369	28b.5	ka =tān ōh xwānān ā =m pad rāmišn abar ōh rasēd
+PY-Pt4 s1370	28b.6	frāzgōwišnīh franāmišn
+PY-Pt4 s1371	28b.6	kē ruwān andar garōdmān dahēd ā =š pad abāgīh ī wahman
+PY-Pt4 s1372	28b.6	ay harw kē dahēd ā [=š] pad abāgīh wahman dād bawēd
+PY-Pt4 s1373	28b.6	ā =š tarsagāyī =yiz ō kunišngarān kē ōy rāy kunēd ī sazēd
+PY-Pt4 s1374	28b.6	āgāh bawēd pad ān ī ohrmazd dēn ī ohrmazd
+PY-Pt4 s1375	28b.6	čand xwāstār ud tuwānīg ham ānand hammōxtam xwāyišn ī ahlāyīh kār ud kirbag
+PY-Pt4 s1376	28b.7	frašn hāzišn ī pad abarxwāyišnīh
+PY-Pt4 s1377	28b.7	ašawahišt kay tō wēnam pad ān ī wahman āgāhdahišnīh
+PY-Pt4 s1378	28b.7	ēn dānam kū =t andar ān zamān wēnam ka harw kas pad frārōnīh āgāh be kay bawēd
+PY-Pt4 s1379	28b.7	ud gāh =iz ī ohrmazd kay wēnam ī sūdxwāstār ān gāh ī pad srōš dānīhēd kū ka dastwar dārēnd šāyēd dānist kū nēkīh ī az ān gāh čē
+PY-Pt4 s1380	28b.7	ān mānsr ī mahist ā =š wurrōyēnišn X dahišn ōy kē xrad stard ēstēd pad uzwān
+PY-Pt4 s1381	28b.7	ōy =iz kē xrad stard ēstēd ā =š tis =ēw ēn pahlom ka hērbedestān kunēd
+PY-Pt4 s1382	28b.8	hāzišn yān
+PY-Pt4 s1383	28b.8	yān frāzgōwišnīh
+PY-Pt4 s1384	28b.8	rasišn wahman ō tan ī kasān
+PY-Pt4 s1385	28b.8	dahē =m , ašawahišt dahišn dērǰānīh kū =m ān tis ma dahād ī pad tan ī pasēn abāz abāyān ōzad pad ān ī rāst saxwan tō ohrmazd ī ō zardušt nimūd ēstēd
+PY-Pt4 s1386	28b.8	ā =t az ōy ī ōzōmand wištāsp ast X X rāmēnišn ham kū =t pad nēkīh frāz ō xwadāyān nayišn ham ud manīgān =iz ohrmazd hāwištān man ā =iz =t pad nēkīh frāz nayišn hēnd kē bēšīdārān bēš X bawēd ka ēdōn kunēd tarwēnišn kū bēš ī az awēšān akār bawēd
+PY-Pt4 s1387	28b.9	dahē =m ašawahišt ān tarsagāyīh ī pad wahman ābādīh kū =m tarsagāyīh =ēw ī ēdōn dahād ī pad tan ī pasēn abāz nē abāyānd ōzad
+PY-Pt4 s1388	28b.9	dahē tō spandārmad ān ī az wištāsp xwāyišn mowbedānmowbedīh ud manīgān =iz hāwištān ī man ā =šān mowbedānmowbedīh dah
+PY-Pt4 s1389	28b.9	u =m dahē stāyīdār ī pāduxšā ī ohrmazd wištāsp ka ēd ī ašmāh mānsr srāyēnd kū dēn ī ašmāh gōwānd ārāyišn dahēd kū rawāg kunēd
+PY-Pt4 s1390	28b.10	pahikār
+PY-Pt4 s1391	28b.10	ka pahlomīh ī tō dēn ī tō ī pahlom az abārīg tis pad ahlāyīh ī pahlom ō ham dōšān pad frārōnīh ohrmazd ā =m pad xwāyišn windēnē mard ī frašōštar kū =m frašōštar pad hāwištīh be dahē ud manīgān =iz frašōštar u =š hāwištīh dah
+PY-Pt4 s1392	28b.10	ō =z awēšān ēg rād hē hamētāōwisp pad wahman kū frašōštar ud hāwištān ī frašōštar tā tan pasēn hamē nēkīh pad =iš kun
+PY-Pt4 s1393	28b.11	nayišn frāzgōwišnīh
+PY-Pt4 s1394	28b.11	frāzgōwišnīh
+PY-Pt4 s1395	28b.11	anāyišnīh nē ō ašmāh ohrmazd
+PY-Pt4 s1396	28b.11	ēn nē kunam kū bē ō ašmāh nē āyam
+PY-Pt4 s1397	28b.11	ud ašawahišt =iz pad yān nē āzāram yān =iz =ēw nē xwāyam ī ašawahišt dušwār sahēd wahman =iz pahlom ā =š nē āzāram kē ō ēd ī ašmāh hassārīh dahēd stāyīdārān kū ušēdar ud ušēdarmāh ud sōšāns bē ō hampursagīh ī ašmāh ānayēd
+PY-Pt4 s1398	28b.11	ašmāh dōšag hēd pad xwāyišn ī xwadāyīh sūdimand kū xwadāyīh ī sūdimand bē dōšēd ud bē dahēd
+PY-Pt4 s1399	28b.12	yān frāzgōwišnīh
+PY-Pt4 s1400	28b.12	kē ēdōn ahlāyīh āgāh hānd ud ān ī wahman dahišn kū pad rāstīh ud frārōnīh bowandag āgāh be būd hānd ī frārōn ohrmazd ā =m pad awēšān purr hanbārēd kāmag kū =m nēkīh pad =š kunēd ka ēdōn pad ān ī ašmāh asūdag windēnēd xwarišn u wastarg pad ān X srāyišn
+PY-Pt4 s1401	28b.12	ka pad yazišn ī ašmāh sūdag nē bawēd ā =š xwarišn ud wastarg windēnēd
+PY-Pt4 s1402	28b.13	pahikār
+PY-Pt4 s1403	28b.13	frašn
+PY-Pt4 s1404	28b.13	kē pad nigerišn ahlāyīh bē pāyam ud wahman =iz tā hamērawišnīh kū rāstīh ud frārōnīh pānagīh kunam [tō] ān ohrmazd frāz ō man hammōzē ēd ī tō pad gōwišn mēnōyīgīh gāhānīgīh ī az ēd tō pad dahān paydāg ī az ān paydāg ī tō pad dahān be gōwē kē andar axwān fradom būd kū ān ī fradom ā =š dād gāhānīgīh būd
+PY-Pt4 s1405	28b.14	ahiiā yāsā , , , bišāmrūdīg gōwišn
+PY-Pt4 s1406	28b.15	yaϑāahūvairiiō , čahrušāmrūdīg gōwišn ,
+PY-Pt4 s1407	28b.16	aṣ̌əmvohū , srišāmrūdīg gōwišn
+PY-Pt4 s1408	28b.17	pad ahe.yāsā X hād yazam
+PY-Pt4 s1409	28b.18	yeŋ́hēhātąm , yazišn pad hād sar , gāhānīg ēwāmrūdīg
+PY-Pt4 s1410	28b.18	brīn hādān yazišn pad hād sar
+PY-Pt4 s1411	28b.18	yāzdah wezest sīhudse gāh
 PY-Pt4 s1412	29.1	xšmuaybī hād bun
 PY-Pt4 s1413	29.1	ēn gyāg ud harw gyāg gāh =ēw ǰīw ō barsom barišn
 PY-Pt4 s1414	29.1	frāzgōwišnīh zardušt

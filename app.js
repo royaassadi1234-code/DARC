@@ -43,7 +43,8 @@ const state = {
   variantSearch: true,
   wholeWord: true,
   caseSensitive: false,
-  contextSize: 2
+  contextSize: 2,
+  resultPages: {}
 };
 
 const queryInput = document.querySelector("#query");
@@ -74,6 +75,7 @@ const TRANSLITERATION_MAP = {
   "\u01E7": "g"
 };
 const HIGHLIGHT_CLASS_COUNT = 6;
+const RESULTS_PER_PAGE = 12;
 
 init();
 
@@ -98,26 +100,41 @@ async function init() {
 function bindEvents() {
   queryInput.addEventListener("input", () => {
     state.query = queryInput.value.trim();
+    resetResultPages();
     render();
   });
 
   variantInput.addEventListener("change", () => {
     state.variantSearch = variantInput.checked;
+    resetResultPages();
     render();
   });
 
   wholeWordInput.addEventListener("change", () => {
     state.wholeWord = wholeWordInput.checked;
+    resetResultPages();
     render();
   });
 
   caseInput.addEventListener("change", () => {
     state.caseSensitive = caseInput.checked;
+    resetResultPages();
     render();
   });
 
   contextSelect.addEventListener("change", () => {
     state.contextSize = Number(contextSelect.value);
+    resetResultPages();
+    render();
+  });
+
+  resultsEl.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-result-page]");
+    if (!button) {
+      return;
+    }
+
+    state.resultPages[button.dataset.textId] = Number(button.dataset.resultPage);
     render();
   });
 }
@@ -269,14 +286,19 @@ function renderResults(summaries, search) {
           </div>
           <span class="count-pill ${total ? "hit" : "miss"}">${total}</span>
         </header>
-        ${total ? renderMatchList(matches, total) : `<div class="empty-state">No matches in this text.</div>`}
+        ${total ? renderMatchList(text.id, matches, total) : `<div class="empty-state">No matches in this text.</div>`}
       </article>
     `)
     .join("");
 }
 
-function renderMatchList(matches, total) {
-  const visible = matches.slice(0, 12);
+function renderMatchList(textId, matches, total) {
+  const pageCount = Math.ceil(total / RESULTS_PER_PAGE);
+  const currentPage = clampPage(state.resultPages[textId] || 1, pageCount);
+  state.resultPages[textId] = currentPage;
+  const start = (currentPage - 1) * RESULTS_PER_PAGE;
+  const visible = matches.slice(start, start + RESULTS_PER_PAGE);
+
   return `
     <div class="matches">
       ${visible
@@ -288,8 +310,53 @@ function renderMatchList(matches, total) {
         `)
         .join("")}
     </div>
-    ${total > visible.length ? `<div class="more">${total - visible.length} more matches in this text</div>` : ""}
+    ${pageCount > 1 ? renderResultPagination(textId, currentPage, pageCount) : ""}
   `;
+}
+
+function renderResultPagination(textId, currentPage, pageCount) {
+  return `
+    <nav class="rank-pagination result-pagination" aria-label="Result pages">
+      ${getVisiblePages(currentPage, pageCount)
+        .map((page) => page === "gap"
+          ? `<span class="page-gap" aria-hidden="true">...</span>`
+          : `<button
+              class="page-dot ${page === currentPage ? "active" : ""}"
+              type="button"
+              data-text-id="${escapeHtml(textId)}"
+              data-result-page="${page}"
+              aria-label="Show result page ${page}"
+              ${page === currentPage ? `aria-current="page"` : ""}
+            >${page}</button>`)
+        .join("")}
+    </nav>
+  `;
+}
+
+function getVisiblePages(currentPage, pageCount) {
+  if (pageCount <= 7) {
+    return Array.from({ length: pageCount }, (_, index) => index + 1);
+  }
+
+  const pages = new Set([1, pageCount, currentPage - 1, currentPage, currentPage + 1]);
+  const ordered = [...pages]
+    .filter((page) => page >= 1 && page <= pageCount)
+    .sort((a, b) => a - b);
+
+  return ordered.flatMap((page, index) => {
+    if (index === 0 || page === ordered[index - 1] + 1) {
+      return [page];
+    }
+    return ["gap", page];
+  });
+}
+
+function clampPage(page, pageCount) {
+  return Math.min(Math.max(page, 1), pageCount);
+}
+
+function resetResultPages() {
+  state.resultPages = {};
 }
 
 function getMatches(text, search) {

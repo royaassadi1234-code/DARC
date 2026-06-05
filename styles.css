@@ -625,6 +625,11 @@ mark.term-6 {
   flex-wrap: wrap;
 }
 
+.result-pagination {
+  border-top: 1px solid var(--line);
+  padding: 12px 16px 14px;
+}
+
 .page-dot {
   display: inline-grid;
   place-items: center;

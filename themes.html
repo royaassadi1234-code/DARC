@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Druz Text Search</title>
+    <title>Thematic Comparison</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
@@ -11,13 +11,13 @@
       <section class="workspace" aria-labelledby="page-title">
         <header class="masthead">
           <div>
-            <p class="eyebrow">Research workspace</p>
-            <h1 id="page-title">Parallel Text Search</h1>
+            <p class="eyebrow">Systematic theme analysis</p>
+            <h1 id="page-title">Thematic Comparison</h1>
           </div>
           <div class="header-actions">
             <nav class="site-nav" aria-label="Research pages">
-              <a class="active" href="index.html">Text search</a>
-              <a href="themes.html">Themes</a>
+              <a href="index.html">Text search</a>
+              <a class="active" href="themes.html">Themes</a>
               <details class="nav-menu">
                 <summary>word matches</summary>
                 <div class="nav-menu-list">
@@ -39,32 +39,33 @@
               <a href="resources.html">Resources</a>
               <a href="about.html">about</a>
             </nav>
-            <div class="status" id="load-status">Loading texts...</div>
+            <div class="status" id="theme-status">Loading themes...</div>
           </div>
         </header>
 
-        <section class="search-panel" aria-label="Search controls">
-          <label class="search-box" for="query">
-            <span>Search word or variants</span>
-            <input id="query" type="search" placeholder="Type plain letters or several words: dewan ohrmazd" autocomplete="off" autofocus>
+        <section class="search-panel theme-controls" aria-label="Theme controls">
+          <label class="select-control" for="theme-select">
+            <span>Theme</span>
+            <select id="theme-select"></select>
           </label>
 
-          <div class="controls" role="group" aria-label="Search options">
+          <label class="search-box" for="theme-keywords">
+            <span>Theme keywords</span>
+            <input id="theme-keywords" type="search" autocomplete="off">
+          </label>
+
+          <div class="controls" role="group" aria-label="Theme options">
             <label class="control">
-              <input id="variant-search" type="checkbox" checked>
-              <span>Multiple words</span>
-            </label>
-            <label class="control">
-              <input id="whole-word" type="checkbox" checked>
+              <input id="theme-whole-word" type="checkbox" checked>
               <span>Whole word</span>
             </label>
             <label class="control">
-              <input id="case-sensitive" type="checkbox">
+              <input id="theme-case-sensitive" type="checkbox">
               <span>Case sensitive</span>
             </label>
-            <label class="select-control" for="context-size">
+            <label class="select-control" for="theme-context">
               <span>Context</span>
-              <select id="context-size">
+              <select id="theme-context">
                 <option value="1">Short</option>
                 <option value="2" selected>Medium</option>
                 <option value="4">Wide</option>
@@ -73,11 +74,11 @@
           </div>
         </section>
 
-        <section class="overview" id="overview" aria-label="Text overview"></section>
-        <section class="results" id="results" aria-live="polite"></section>
+        <section class="theme-overview" id="theme-overview" aria-label="Theme overview"></section>
+        <section class="theme-comparison" id="theme-comparison" aria-live="polite"></section>
       </section>
     </main>
 
-    <script src="app.js"></script>
+    <script src="themes.js"></script>
   </body>
 </html>

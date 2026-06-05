@@ -298,6 +298,82 @@ h1 {
   font-weight: 800;
 }
 
+.theme-controls {
+  grid-template-columns: minmax(190px, 0.34fr) minmax(280px, 1fr) auto;
+}
+
+.theme-overview {
+  display: grid;
+  grid-template-columns: minmax(280px, 1.4fr) minmax(170px, 0.7fr) repeat(4, minmax(130px, 0.6fr));
+  gap: 12px;
+}
+
+.theme-description-card h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+}
+
+.theme-comparison {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  align-items: start;
+}
+
+.theme-column {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.theme-column header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px;
+  border-bottom: 1px solid var(--line);
+  background: #fbfcfd;
+}
+
+.theme-column h2 {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.theme-passages {
+  display: grid;
+}
+
+.theme-hit {
+  display: grid;
+  gap: 8px;
+  padding: 14px;
+  border-top: 1px solid #edf0f3;
+}
+
+.theme-hit:first-child {
+  border-top: 0;
+}
+
+.theme-hit-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--accent-strong);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.theme-hit p {
+  margin: 0;
+  color: #24313e;
+  font-size: 0.94rem;
+  line-height: 1.58;
+  overflow-wrap: anywhere;
+}
+
 .about-panel {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.64fr);
@@ -661,14 +737,17 @@ mark.term-6 {
 
 @media (max-width: 920px) {
   .search-panel,
-  .pseudo-controls {
+  .pseudo-controls,
+  .theme-controls {
     grid-template-columns: 1fr;
   }
 
   .overview,
   .resources-grid,
   .expertise-grid,
-  .pseudo-summary {
+  .pseudo-summary,
+  .theme-overview,
+  .theme-comparison {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -701,7 +780,9 @@ mark.term-6 {
   .overview,
   .resources-grid,
   .expertise-grid,
-  .pseudo-summary {
+  .pseudo-summary,
+  .theme-overview,
+  .theme-comparison {
     grid-template-columns: 1fr;
   }
 

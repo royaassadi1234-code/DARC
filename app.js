@@ -275,9 +275,18 @@ function renderOverview(summaries, search) {
 function renderOccurrenceDiagram(occurrences, search) {
   if (!search) {
     occurrenceEl.innerHTML = `
-      <div class="empty-state">
-        Search a word or several words to see their occurrence diagram and chapter/stanza trail.
-      </div>
+      <article class="diagram-card">
+        <header>
+          <div>
+            <div class="siglum">Diagram</div>
+            <h2>Occurrence Diagram</h2>
+          </div>
+          <span class="count-pill">0</span>
+        </header>
+        <div class="empty-state">
+          Search a word or several words to see a diagram comparison and the chapter/stanza trail for each text.
+        </div>
+      </article>
     `;
     return;
   }
@@ -290,7 +299,7 @@ function renderOccurrenceDiagram(occurrences, search) {
       <header>
         <div>
           <div class="siglum">Diagram</div>
-          <h2>Word Occurrences Across Texts</h2>
+          <h2>Occurrence Diagram</h2>
         </div>
         <span class="count-pill ${totalOccurrences ? "hit" : "miss"}">${totalOccurrences}</span>
       </header>
@@ -300,6 +309,8 @@ function renderOccurrenceDiagram(occurrences, search) {
           <span><i class="legend-swatch term-${(index % HIGHLIGHT_CLASS_COUNT) + 1}"></i>${escapeHtml(term)}</span>
         `).join("")}
       </div>
+
+      <p class="diagram-note">Bars show total occurrences in each text. The lists below give every chapter/stanza or line location.</p>
 
       <div class="occurrence-chart" aria-label="Occurrence bars">
         ${occurrences.map((summary) => renderOccurrenceRow(summary, maxTotal)).join("")}

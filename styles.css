@@ -272,10 +272,6 @@ h1 {
   gap: 12px;
 }
 
-.occurrence-panel {
-  display: grid;
-}
-
 .diagram-card {
   overflow: hidden;
   border: 1px solid var(--line);
@@ -327,6 +323,148 @@ h1 {
   line-height: 1.45;
 }
 
+.diagram-controls {
+  grid-template-columns: minmax(300px, 1fr) auto;
+}
+
+.diagram-tool {
+  display: grid;
+}
+
+.diagram-split {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.48fr) minmax(0, 1fr);
+  gap: 18px;
+  padding: 16px;
+}
+
+.vertical-chart {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(58px, 1fr));
+  align-items: end;
+  gap: 18px;
+  min-height: 360px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px 18px 14px;
+  background:
+    linear-gradient(180deg, rgba(36, 92, 115, 0.08) 1px, transparent 1px) 0 0 / 100% 25%,
+    #fbfcfd;
+}
+
+.vertical-bar-group {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 10px;
+  height: 100%;
+  min-height: 320px;
+}
+
+.vertical-bar-shell {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  height: 280px;
+  border: 1px solid #c8d0d9;
+  border-radius: 999px 999px 8px 8px;
+  padding: 5px;
+  background: #eef1f4;
+}
+
+.vertical-bar-stack {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.vertical-bar-segment {
+  min-height: 3px;
+  background: var(--red);
+}
+
+.vertical-bar-segment.term-2 {
+  background: #2563a7;
+}
+
+.vertical-bar-segment.term-3 {
+  background: #267052;
+}
+
+.vertical-bar-segment.term-4 {
+  background: #7a3ea3;
+}
+
+.vertical-bar-segment.term-5 {
+  background: #9a5a15;
+}
+
+.vertical-bar-segment.term-6 {
+  background: #2d6870;
+}
+
+.vertical-bar-label {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  color: var(--accent-strong);
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.vertical-bar-label span {
+  color: var(--muted);
+}
+
+.linear-occurrences {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+.linear-occurrence-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.linear-occurrence-card header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  background: #fbfcfd;
+}
+
+.linear-occurrence-card h2 {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.linear-lines {
+  display: grid;
+  gap: 10px;
+  padding: 12px 14px;
+}
+
+.linear-lines p {
+  margin: 0;
+  color: #24313e;
+  font-size: 0.94rem;
+  line-height: 1.58;
+  overflow-wrap: anywhere;
+}
+
+.linear-lines mark {
+  margin-right: 4px;
+  font-weight: 800;
+}
+
 .legend-swatch {
   width: 10px;
   height: 10px;
@@ -334,127 +472,24 @@ h1 {
   background: var(--red);
 }
 
-.occurrence-chart {
-  display: grid;
-  gap: 12px;
-  padding: 16px;
-}
-
-.occurrence-row {
-  display: grid;
-  grid-template-columns: 84px 1fr;
-  align-items: center;
-  gap: 12px;
-}
-
-.occurrence-label {
-  display: flex;
-  justify-content: space-between;
-  gap: 8px;
-  color: var(--accent-strong);
-  font-size: 0.88rem;
-  font-weight: 800;
-}
-
-.occurrence-label span {
-  color: var(--muted);
-}
-
-.occurrence-track {
-  height: 24px;
-  overflow: hidden;
-  border: 1px solid #c8d0d9;
-  border-radius: 999px;
-  background: #eef1f4;
-}
-
-.occurrence-stack {
-  display: flex;
-  min-width: 2px;
-  height: 100%;
-  overflow: hidden;
-  border-radius: inherit;
-}
-
-.occurrence-segment {
-  min-width: 2px;
-  background: var(--red);
-}
-
-.legend-swatch.term-2,
-.occurrence-segment.term-2 {
+.legend-swatch.term-2 {
   background: #2563a7;
 }
 
-.legend-swatch.term-3,
-.occurrence-segment.term-3 {
+.legend-swatch.term-3 {
   background: #267052;
 }
 
-.legend-swatch.term-4,
-.occurrence-segment.term-4 {
+.legend-swatch.term-4 {
   background: #7a3ea3;
 }
 
-.legend-swatch.term-5,
-.occurrence-segment.term-5 {
+.legend-swatch.term-5 {
   background: #9a5a15;
 }
 
-.legend-swatch.term-6,
-.occurrence-segment.term-6 {
+.legend-swatch.term-6 {
   background: #2d6870;
-}
-
-.occurrence-locations {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
-  padding: 0 16px 16px;
-}
-
-.occurrence-location-card {
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: #ffffff;
-}
-
-.occurrence-location-card header {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 12px;
-  border-bottom: 1px solid var(--line);
-  background: #fbfcfd;
-}
-
-.occurrence-location-card h2 {
-  margin: 0;
-  font-size: 0.96rem;
-  line-height: 1.25;
-}
-
-.occurrence-list {
-  display: grid;
-  gap: 7px;
-  max-height: 260px;
-  margin: 0;
-  padding: 12px 12px 12px 34px;
-  overflow: auto;
-}
-
-.occurrence-list li {
-  padding-left: 2px;
-  color: #24313e;
-  font-size: 0.9rem;
-  line-height: 1.45;
-}
-
-.occurrence-list mark {
-  margin-left: 6px;
-  font-size: 0.78rem;
-  font-weight: 800;
 }
 
 .resources-grid {
@@ -923,6 +958,7 @@ mark.term-6 {
 @media (max-width: 920px) {
   .search-panel,
   .pseudo-controls,
+  .diagram-controls,
   .theme-controls {
     grid-template-columns: 1fr;
   }
@@ -931,10 +967,13 @@ mark.term-6 {
   .resources-grid,
   .expertise-grid,
   .pseudo-summary,
-  .occurrence-locations,
   .theme-overview,
   .theme-comparison {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .diagram-split {
+    grid-template-columns: 1fr;
   }
 
   .about-panel {
@@ -967,7 +1006,6 @@ mark.term-6 {
   .resources-grid,
   .expertise-grid,
   .pseudo-summary,
-  .occurrence-locations,
   .theme-overview,
   .theme-comparison {
     grid-template-columns: 1fr;
@@ -987,9 +1025,10 @@ mark.term-6 {
     gap: 5px;
   }
 
-  .occurrence-row {
-    grid-template-columns: 1fr;
-    gap: 7px;
+  .vertical-chart {
+    grid-template-columns: repeat(4, minmax(42px, 1fr));
+    gap: 10px;
+    padding: 14px 10px;
   }
 
   .more {

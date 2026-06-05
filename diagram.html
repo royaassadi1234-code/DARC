@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Thematic Comparison</title>
+    <title>Occurrence Diagram</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
@@ -11,14 +11,14 @@
       <section class="workspace" aria-labelledby="page-title">
         <header class="masthead">
           <div>
-            <p class="eyebrow">Systematic theme analysis</p>
-            <h1 id="page-title">Thematic Comparison</h1>
+            <p class="eyebrow">Diagram comparison</p>
+            <h1 id="page-title">Occurrence Diagram</h1>
           </div>
           <div class="header-actions">
             <nav class="site-nav" aria-label="Research pages">
               <a href="index.html">Text search</a>
-              <a href="diagram.html">Diagram</a>
-              <a class="active" href="themes.html">Themes</a>
+              <a class="active" href="diagram.html">Diagram</a>
+              <a href="themes.html">Themes</a>
               <details class="nav-menu">
                 <summary>word matches</summary>
                 <div class="nav-menu-list">
@@ -40,46 +40,36 @@
               <a href="resources.html">Resources</a>
               <a href="about.html">about</a>
             </nav>
-            <div class="status" id="theme-status">Loading themes...</div>
+            <div class="status" id="diagram-status">Loading texts...</div>
           </div>
         </header>
 
-        <section class="search-panel theme-controls" aria-label="Theme controls">
-          <label class="select-control" for="theme-select">
-            <span>Theme</span>
-            <select id="theme-select"></select>
+        <section class="search-panel diagram-controls" aria-label="Diagram search controls">
+          <label class="search-box" for="diagram-query">
+            <span>Search word or words</span>
+            <input id="diagram-query" type="search" placeholder="Type plain letters or several words: druz ohrmazd" autocomplete="off" autofocus>
           </label>
 
-          <label class="search-box" for="theme-keywords">
-            <span>Theme keywords</span>
-            <input id="theme-keywords" type="search" autocomplete="off">
-          </label>
-
-          <div class="controls" role="group" aria-label="Theme options">
+          <div class="controls" role="group" aria-label="Diagram options">
             <label class="control">
-              <input id="theme-whole-word" type="checkbox" checked>
+              <input id="diagram-multiple" type="checkbox" checked>
+              <span>Multiple words</span>
+            </label>
+            <label class="control">
+              <input id="diagram-whole-word" type="checkbox" checked>
               <span>Whole word</span>
             </label>
             <label class="control">
-              <input id="theme-case-sensitive" type="checkbox">
+              <input id="diagram-case-sensitive" type="checkbox">
               <span>Case sensitive</span>
-            </label>
-            <label class="select-control" for="theme-context">
-              <span>Context</span>
-              <select id="theme-context">
-                <option value="1">Short</option>
-                <option value="2" selected>Medium</option>
-                <option value="4">Wide</option>
-              </select>
             </label>
           </div>
         </section>
 
-        <section class="theme-overview" id="theme-overview" aria-label="Theme overview"></section>
-        <section class="theme-comparison" id="theme-comparison" aria-live="polite"></section>
+        <section class="diagram-tool" id="diagram-tool" aria-live="polite"></section>
       </section>
     </main>
 
-    <script src="themes.js"></script>
+    <script src="diagram.js"></script>
   </body>
 </html>

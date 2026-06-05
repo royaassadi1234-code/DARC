@@ -333,23 +333,46 @@ h1 {
 
 .diagram-split {
   display: grid;
-  grid-template-columns: minmax(300px, 0.48fr) minmax(0, 1fr);
+  grid-template-columns: minmax(380px, 0.55fr) minmax(0, 0.45fr);
   gap: 18px;
   padding: 16px;
+  align-items: start;
 }
 
 .vertical-chart {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(4, minmax(58px, 1fr));
   align-items: end;
   gap: 18px;
-  min-height: 360px;
-  border: 1px solid var(--line);
+  min-height: 390px;
+  border: 1px solid #c8d0d9;
   border-radius: 8px;
-  padding: 18px 18px 14px;
+  padding: 24px 20px 48px 42px;
   background:
-    linear-gradient(180deg, rgba(36, 92, 115, 0.08) 1px, transparent 1px) 0 0 / 100% 25%,
+    linear-gradient(180deg, rgba(36, 92, 115, 0.1) 1px, transparent 1px) 0 24px / 100% 25%,
     #fbfcfd;
+}
+
+.vertical-chart::before,
+.vertical-chart::after {
+  position: absolute;
+  content: "";
+  background: #8ea1b0;
+}
+
+.vertical-chart::before {
+  left: 30px;
+  top: 24px;
+  bottom: 46px;
+  width: 2px;
+}
+
+.vertical-chart::after {
+  left: 30px;
+  right: 18px;
+  bottom: 46px;
+  height: 2px;
 }
 
 .vertical-bar-group {
@@ -357,7 +380,8 @@ h1 {
   grid-template-rows: 1fr auto;
   gap: 10px;
   height: 100%;
-  min-height: 320px;
+  min-height: 318px;
+  z-index: 1;
 }
 
 .vertical-bar-shell {
@@ -365,19 +389,20 @@ h1 {
   align-items: end;
   justify-content: center;
   height: 280px;
-  border: 1px solid #c8d0d9;
-  border-radius: 999px 999px 8px 8px;
-  padding: 5px;
-  background: #eef1f4;
+  border-radius: 6px 6px 0 0;
+  background: transparent;
 }
 
 .vertical-bar-stack {
   display: flex;
   flex-direction: column-reverse;
-  width: 100%;
+  width: min(100%, 54px);
   min-height: 0;
   overflow: hidden;
-  border-radius: inherit;
+  border: 1px solid rgba(23, 63, 82, 0.16);
+  border-bottom: 0;
+  border-radius: 6px 6px 0 0;
+  box-shadow: 0 8px 18px rgba(29, 43, 57, 0.12);
 }
 
 .vertical-bar-segment {
@@ -422,6 +447,9 @@ h1 {
   display: grid;
   gap: 12px;
   align-content: start;
+  max-height: 520px;
+  overflow: auto;
+  padding-right: 4px;
 }
 
 .linear-occurrence-card {

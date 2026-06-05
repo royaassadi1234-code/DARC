@@ -6,7 +6,7 @@
     "IDF Cosine": "0.9068",
     "Shared Distinct Words": "6",
     "Shared Words": "rawišn, garōdmān, frašōštar, rādīh, ānōh, kunišn",
-    "PY Paragraph Preview": "caby_ch46_st16: frašōštar ānōh tō ō rādīh rawišn kū =t rādīh andar garōdmān kunišn",
+    "PY Paragraph Preview": "46.16: frašōštar ānōh tō ō rādīh rawišn kū =t rādīh andar garōdmān kunišn",
     "WZ Paragraph Preview": "WZ 33.1: gōwīhēd kū frašōštar ānōh tō ō rādīh rawišn kū =t rādīh andar garōdmān kunišn",
     "WZ Chapter/Stanza": "33.1"
   },
@@ -17,7 +17,7 @@
     "IDF Cosine": "0.6000",
     "Shared Distinct Words": "8",
     "Shared Words": "wattar, warzišn, ahreman, abzōnīg, kāmag, mēnōy, būd, ahlāyīh",
-    "PY Paragraph Preview": "caby_ch30_st5: az dōān mēnōyān ā =š dōšīd kē druwand ān ī wattar warzišn ahreman ān ī wattar warzišn kāmag būd ahlāyīh mēnōy ī abzōnīg ohrmazd ahlāyīh dōšīd ud ka =iz =š ān ī saxt sag nihuft",
+    "PY Paragraph Preview": "30.5: az dōān mēnōyān ā =š dōšīd kē druwand ān ī wattar warzišn ahreman ān ī wattar warzišn kāmag būd ahlāyīh mēnōy ī abzōnīg ohrmazd ahlāyīh dōšīd ud ka =iz =š ān ī saxt sag nihuft",
     "WZ Paragraph Preview": "WZ 22.5: ahreman ān ī wattar warzišn kāmag būd ahlāyīh mēnōy ī abzōnīg",
     "WZ Chapter/Stanza": "22.5"
   },
@@ -28,7 +28,7 @@
     "IDF Cosine": "0.6095",
     "Shared Distinct Words": "3",
     "Shared Words": "hūxt, humat, huwaršt",
-    "PY Paragraph Preview": "caby_ch19_st17: humat ud hūxt ud huwaršt",
+    "PY Paragraph Preview": "19.17: humat ud hūxt ud huwaršt",
     "WZ Paragraph Preview": "WZ 22.2: ohrmazd passoxēnīd kū fradom pāšomīh humat didīgar hūxt sidīgar huwaršt",
     "WZ Chapter/Stanza": "22.2"
   },
@@ -39,7 +39,7 @@
     "IDF Cosine": "0.5322",
     "Shared Distinct Words": "5",
     "Shared Words": "frāxraftār, čaragarzānīg, ūnīg, wāyendag, ābīg",
-    "PY Paragraph Preview": "caby_ch71_st9: harwisp =iz gōspand ī ābīg [ūnīg] ud wāyendag ud čaragarzānīg ud frāxraftār yazam",
+    "PY Paragraph Preview": "71.9: harwisp =iz gōspand ī ābīg [ūnīg] ud wāyendag ud čaragarzānīg ud frāxraftār yazam",
     "WZ Paragraph Preview": "WZ 3.53: pas ō panǰ ēwēnagān ī ast čahārpāy ī gardsumb ud dōgānagsumb ud panǰčang ud murw ud māhīg kē =šān māništ andar panǰ gyāg xwānīhēd ābīg ūnīg wāyendag frāxraftār ud čaragarzānīg",
     "WZ Chapter/Stanza": "3.53"
   },
@@ -50,7 +50,7 @@
     "IDF Cosine": "0.4076",
     "Shared Distinct Words": "13",
     "Shared Words": "gannāgmēnōy, wēš, abdom, abārīg, axwān, dahišn, fradom, mardōm, mad, kār, mēnōy, hēnd, ēdōn",
-    "PY Paragraph Preview": "caby_ch30_st4: ēdōn =iz ān harw dō mēnōy ō ham mad hēnd ō ān ī ōy fradom dahišn kū harw dō mēnōy ō gayōmard mad hēnd kē =iz pad zīwandagīh ohrmazd pad ēd kār kū wēš zīwandag dārānd u kē =iz pad azīwandagīh gannāgmēnōy pad ēd kār kū wēš be ōzanānd kē =iz ēdōn ān ast X ō ān ī abdom andar axwān kū mardōm =iz abārīg abar ōh rasēd",
+    "PY Paragraph Preview": "30.4: ēdōn =iz ān harw dō mēnōy ō ham mad hēnd ō ān ī ōy fradom dahišn kū harw dō mēnōy ō gayōmard mad hēnd kē =iz pad zīwandagīh ohrmazd pad ēd kār kū wēš zīwandag dārānd u kē =iz pad azīwandagīh gannāgmēnōy pad ēd kār kū wēš be ōzanānd kē =iz ēdōn ān ast X ō ān ī abdom andar axwān kū mardōm =iz abārīg abar ōh rasēd",
     "WZ Paragraph Preview": "WZ 3.5: čiyōn gōwīhēd pad gāhān kū ēdōn =iz ān ī harw dō mēnōy ō ham mad hēnd ō ān ī ōy ī fradom dahišn kū harw dō mēnōy ō tan ī gayōmart mad hēnd kē =iz pad zīndagīh ohrmazd pad ēd kār kū wēš zīndag dārād kē =iz pad azīndagīh gannāgmēnōy pad ēd kār kū wēš bē ōzanād kē =iz ēdōn ān ast tā ō ān ī abdom andar axwān kū mardōm =iz ī abārīg abar ōh rasēnd",
     "WZ Chapter/Stanza": "3.5"
   },
@@ -61,7 +61,7 @@
     "IDF Cosine": "0.4178",
     "Shared Distinct Words": "7",
     "Shared Words": "āgāhīhā, radīhā, čēgāmizēw, ahlawān, frāz, ēdōn, ahlāyīh",
-    "PY Paragraph Preview": "caby_ch57_st3: čiyōn ox kāmag čiyōn ohrmazd kāmag kē zōt hē frāz ō man gōw ēdōn radīhā ēdōn dastwarīhā az ahlāyīh čēgāmizēw frāz ahlawān āgāhīhā gōwam",
+    "PY Paragraph Preview": "57.3: čiyōn ox kāmag čiyōn ohrmazd kāmag kē zōt hē frāz ō man gōw ēdōn radīhā ēdōn dastwarīhā az ahlāyīh čēgāmizēw frāz ahlawān āgāhīhā gōwam",
     "WZ Paragraph Preview": "WZ 8.19: ohrmazd mēnōyīhā mēnōyīh rāy ā =š passox guft kū ēdōn radīhā ēdōn frārōnīhā az ahlāyīh čēgāmizēw frāz ahlawān āgāhīhā gōwēd kū dastwar ham",
     "WZ Chapter/Stanza": "8.19"
   },
@@ -72,7 +72,7 @@
     "IDF Cosine": "0.4151",
     "Shared Distinct Words": "7",
     "Shared Words": "wattomīh, dīd, ahreman, druwandān, rāy, ēdōn, ahlaw",
-    "PY Paragraph Preview": "caby_ch30_st4: wattomīh druwandān ahreman druwandān rāy abesihēnišnīh be dīd ēdōn ān ahlaw pahlommenišnīh ohrmazd ēmēdag hamēyīgīhā",
+    "PY Paragraph Preview": "30.4: wattomīh druwandān ahreman druwandān rāy abesihēnišnīh be dīd ēdōn ān ahlaw pahlommenišnīh ohrmazd ēmēdag hamēyīgīhā",
     "WZ Paragraph Preview": "WZ 3.5: ud wattomīh ī druwandān ahreman ud druwandān rāy abesīhišn bē dīd ēdōn ōy ī ahlaw pāšommenišnīh ī ohrmazd ī ēmēd ī hamēyīgīh",
     "WZ Chapter/Stanza": "3.5"
   },
@@ -105,7 +105,7 @@
     "IDF Cosine": "0.3826",
     "Shared Distinct Words": "6",
     "Shared Words": "amahraspand, hēm, tān, amāh, čiyōn, ēdōn",
-    "PY Paragraph Preview": "caby_ch58_st5: čiyōn =tān amāh dād hēm amahraspand =ēd ēdōn amāh srāyišn dahēd",
+    "PY Paragraph Preview": "58.5: čiyōn =tān amāh dād hēm amahraspand =ēd ēdōn amāh srāyišn dahēd",
     "WZ Paragraph Preview": "WZ 35.2: ka ašmāh kē mardōm bawēd hammenišn hamgōwišn hamkunišn ā =tān azarmānīh ud awēmārīh ud asūyišnīh ud apūyišnīh ēdōn čiyōn amāh kē amahraspand hēm",
     "WZ Chapter/Stanza": "35.2"
   },
@@ -116,7 +116,7 @@
     "IDF Cosine": "0.4410",
     "Shared Distinct Words": "3",
     "Shared Words": "frāxkard, mayān, zrēy",
-    "PY Paragraph Preview": "caby_ch42_st4: xar =iz ī ahlaw yazam kē ēstēd mayān zrēy ī frāxkard",
+    "PY Paragraph Preview": "42.4: xar =iz ī ahlaw yazam kē ēstēd mayān zrēy ī frāxkard",
     "WZ Paragraph Preview": "WZ 3.35: bahr =ēw az zrēy ī frāxkard pērāmōn ān gašt mayān ī ān šaš kišwar",
     "WZ Chapter/Stanza": "3.35"
   },
@@ -138,7 +138,7 @@
     "IDF Cosine": "0.4103",
     "Shared Distinct Words": "3",
     "Shared Words": "xwarrah, xwēškārīh, tan",
-    "PY Paragraph Preview": "caby_ch9_st4: hād xwarrah ast ī xwēškārīh ud ast ī pad tan ī mard ud ān ī pad tan ī ǰam",
+    "PY Paragraph Preview": "9.4: hād xwarrah ast ī xwēškārīh ud ast ī pad tan ī mard ud ān ī pad tan ī ǰam",
     "WZ Paragraph Preview": "WZ 3.75: u =š guft ohrmazd kū =m xwarrah pēš dād pas ō ān ī dād ēstēd xwarrah tan dād kū xwēškārīh brēhēnīd u =š tan bē ō xwēškārīh dād",
     "WZ Chapter/Stanza": "3.75"
   },
@@ -149,7 +149,7 @@
     "IDF Cosine": "0.3709",
     "Shared Distinct Words": "4",
     "Shared Words": "dāšt, ēstād, abāz, hēnd",
-    "PY Paragraph Preview": "caby_ch9_st5: hād hamē būd [hēnd] bē az wināh abāz dāšt ēstād hēnd",
+    "PY Paragraph Preview": "9.5: hād hamē būd [hēnd] bē az wināh abāz dāšt ēstād hēnd",
     "WZ Paragraph Preview": "WZ 10.6: pēšōbāy ī gāwān ī ān ramag pad nazdīkīh bē ēstād u =š 150 gāw ī =š az pas raft hēnd az =iš abāz dāšt",
     "WZ Chapter/Stanza": "10.6"
   },
@@ -160,7 +160,7 @@
     "IDF Cosine": "0.3875",
     "Shared Distinct Words": "3",
     "Shared Words": "wehfranāftār, ātaxš, tan",
-    "PY Paragraph Preview": "caby_ch17_st12: ātaxš ī wehfranāftār yazam ān ī andar tan ī mardōm",
+    "PY Paragraph Preview": "17.12: ātaxš ī wehfranāftār yazam ān ī andar tan ī mardōm",
     "WZ Paragraph Preview": "WZ 3.79: ātaxš ī wehfranāftār ān ī andar mardōmān ud gōspandān u =š xwarišn gugārdan ud tan abzūdan ud čašmān rōšnēnīdan andar xwēškārīh",
     "WZ Chapter/Stanza": "3.79"
   },
@@ -171,7 +171,7 @@
     "IDF Cosine": "0.3838",
     "Shared Distinct Words": "3",
     "Shared Words": "bōy, ǰān, frawahr",
-    "PY Paragraph Preview": "caby_ch55_st1: harwisp gēhān ud tan kē =m pāduxšāyīh abar tan ud ǰān ud kirb ud tuhišn ud bōy ud ruwān frawahr bē =iz daham ān =iz niwēyēnam",
+    "PY Paragraph Preview": "55.1: harwisp gēhān ud tan kē =m pāduxšāyīh abar tan ud ǰān ud kirb ud tuhišn ud bōy ud ruwān frawahr bē =iz daham ān =iz niwēyēnam",
     "WZ Paragraph Preview": "WZ 30.22: gyānīg se ast ǰān bōy frawahr",
     "WZ Chapter/Stanza": "30.22"
   },
@@ -182,7 +182,7 @@
     "IDF Cosine": "0.3600",
     "Shared Distinct Words": "4",
     "Shared Words": "widarg, dušox, druwandān, rāh",
-    "PY Paragraph Preview": "caby_ch48_st2: ka gōwānd man ēd ī tō āgāhīh ohrmazd dēn ī tō pēš az ān ī ka ō man ān ī pad zamīg widarg rasēd ud rāh ī wahišt ud dušox tā zīndagīh čiyōn ahlawān ohrmazd wānānd druwandān az kird ī man",
+    "PY Paragraph Preview": "48.2: ka gōwānd man ēd ī tō āgāhīh ohrmazd dēn ī tō pēš az ān ī ka ō man ān ī pad zamīg widarg rasēd ud rāh ī wahišt ud dušox tā zīndagīh čiyōn ahlawān ohrmazd wānānd druwandān az kird ī man",
     "WZ Paragraph Preview": "WZ 2.5: ud ān widarg kū abar āmad xwad ast rāh ī ō dušox kē pad ān dwārēnd dēwān druwandān",
     "WZ Chapter/Stanza": "2.5"
   },
@@ -193,7 +193,7 @@
     "IDF Cosine": "0.3795",
     "Shared Distinct Words": "3",
     "Shared Words": "mowbedān, mowbed, čiyōn",
-    "PY Paragraph Preview": "caby_ch10_st13: čiyōn mowbedān mowbed az pāduxšāyīh rāmišn ōy =iz az yaštārīh ay rāmišn ēdōn",
+    "PY Paragraph Preview": "10.13: čiyōn mowbedān mowbed az pāduxšāyīh rāmišn ōy =iz az yaštārīh ay rāmišn ēdōn",
     "WZ Paragraph Preview": "WZ 25.7: pad šaštčahārsālagīh ǰāmāsp čiyōn pas az zarduxšt mowbedān mowbed būd",
     "WZ Chapter/Stanza": "25.7"
   },
@@ -204,7 +204,7 @@
     "IDF Cosine": "0.3768",
     "Shared Distinct Words": "3",
     "Shared Words": "čahārom, sidīgar, didīgar",
-    "PY Paragraph Preview": "caby_ch27_st9: pad ān ī didīgar ud sidīgar ud čahārom hamēdōn be afšārišn",
+    "PY Paragraph Preview": "27.9: pad ān ī didīgar ud sidīgar ud čahārom hamēdōn be afšārišn",
     "WZ Paragraph Preview": "WZ 1.25: fradom asmān didīgar āb sidīgar zamīg čahārom urwar panǰom gōspand šašom mardōm",
     "WZ Chapter/Stanza": "1.25"
   },
@@ -215,7 +215,7 @@
     "IDF Cosine": "0.3526",
     "Shared Distinct Words": "4",
     "Shared Words": "āšnāgtar, paydāg, hēnd, būd",
-    "PY Paragraph Preview": "caby_ch9_st1: ān paydāg , kū =š šnāxt ēd rāy [čē] ān zamān abāg yazdān wēš būd ēstād u =š yazad āšnāgtar būd hēnd",
+    "PY Paragraph Preview": "9.1: ān paydāg , kū =š šnāxt ēd rāy [čē] ān zamān abāg yazdān wēš būd ēstād u =š yazad āšnāgtar būd hēnd",
     "WZ Paragraph Preview": "WZ 19.1: ēn =iz paydāg kū bē ō grōh =ēw mad kē andar gyāg pad wēšdānišnīh āšnāgtar būd hēnd",
     "WZ Chapter/Stanza": "19.1"
   },
@@ -226,7 +226,7 @@
     "IDF Cosine": "0.3732",
     "Shared Distinct Words": "3",
     "Shared Words": "srūd, ahunawar, frāz",
-    "PY Paragraph Preview": "caby_ch27_st8: huxūbframānīh ud pānagīh čāšam ō kasān ēd gōwam kū xūbframānīhā rawēd ahunawar kē pad ahlāyīh frāz srūd",
+    "PY Paragraph Preview": "27.8: huxūbframānīh ud pānagīh čāšam ō kasān ēd gōwam kū xūbframānīhā rawēd ahunawar kē pad ahlāyīh frāz srūd",
     "WZ Paragraph Preview": "WZ 1.12: u =š pas az zamān kirdan ahunawar frāz srūd",
     "WZ Chapter/Stanza": "1.12"
   },
@@ -237,7 +237,7 @@
     "IDF Cosine": "0.3703",
     "Shared Distinct Words": "3",
     "Shared Words": "amurdād, hordād, spandārmad",
-    "PY Paragraph Preview": "caby_ch5_st5: ān =iz ī weh menišn wahman yazam ud ān =iz ī weh xwadāyīh xšahrewar ān =iz ī weh dēn ud ān =iz ī weh sālārīh hordād amurdād ud ān =iz ī weh bowandagmenišnīh spandārmad",
+    "PY Paragraph Preview": "5.5: ān =iz ī weh menišn wahman yazam ud ān =iz ī weh xwadāyīh xšahrewar ān =iz ī weh dēn ud ān =iz ī weh sālārīh hordād amurdād ud ān =iz ī weh bowandagmenišnīh spandārmad",
     "WZ Paragraph Preview": "WZ 35.13: ud se duxtag pad handāzag ī spandārmad hordād ud amurdād",
     "WZ Chapter/Stanza": "35.13"
   },
@@ -248,7 +248,7 @@
     "IDF Cosine": "0.3644",
     "Shared Distinct Words": "3",
     "Shared Words": "āsrōn, wāstaryōš, artēštār",
-    "PY Paragraph Preview": "caby_ch34_st14: čē ān ohrmazd ā =m kāmag ī ō ōy ī tanōmand ud ǰānōmand ī āsrōn dahīhēd kē pad wahman kunišn artēštār ud kē pad gāw az warzišn wāstaryōš",
+    "PY Paragraph Preview": "34.14: čē ān ohrmazd ā =m kāmag ī ō ōy ī tanōmand ud ǰānōmand ī āsrōn dahīhēd kē pad wahman kunišn artēštār ud kē pad gāw az warzišn wāstaryōš",
     "WZ Paragraph Preview": "WZ 11.3: zarduxšt passox dād ēd men kū ast ān ī tō pus āsrōn artēštār ud wāstaryōš",
     "WZ Chapter/Stanza": "11.3"
   },
@@ -259,7 +259,7 @@
     "IDF Cosine": "0.3533",
     "Shared Distinct Words": "3",
     "Shared Words": "grift, xānag, abāz",
-    "PY Paragraph Preview": "caby_ch9_st7: hād abzārwisī ōy būd kū xānag ī az abarmānd ī pidarān was būd ān =iz ī dahāg pad stahmagīh abāz grift",
+    "PY Paragraph Preview": "9.7: hād abzārwisī ōy būd kū xānag ī az abarmānd ī pidarān was būd ān =iz ī dahāg pad stahmagīh abāz grift",
     "WZ Paragraph Preview": "WZ 10.6: ud pōrušasp grift u =š abāz ō xānag burd",
     "WZ Chapter/Stanza": "10.6"
   },
@@ -281,7 +281,7 @@
     "IDF Cosine": "0.3172",
     "Shared Distinct Words": "3",
     "Shared Words": "bulandsūd, warahrān, ātaxš",
-    "PY Paragraph Preview": "caby_ch59_st12: ātaxš ī bulandsūd yazam warahrān pad ēwkardagīh",
+    "PY Paragraph Preview": "59.12: ātaxš ī bulandsūd yazam warahrān pad ēwkardagīh",
     "WZ Paragraph Preview": "WZ 3.82: bulandsūd =iz andar asmān ān xwarrah kē =š mehmānīh andar warahrān ātaxš čiyōn kadagxwadā abar xānag kē =š abzōnīgōzīh az rōšn waxšišnīh ī ātaxš frāz sōzišnīh ī bnd\" ud pākīh ī gyāg stāyišn ī yazdān warzišn ī kirbagān",
     "WZ Chapter/Stanza": "3.82"
   },
@@ -292,7 +292,7 @@
     "IDF Cosine": "0.3162",
     "Shared Distinct Words": "3",
     "Shared Words": "hāwandīh, gōwēd, bawēd",
-    "PY Paragraph Preview": "caby_ch65_st6: tarmenišnīh ān bawēd ka gōwēd hād ēn āb ī rōyēnāg u =š pad hāwandīh ō ōy armēšt dahišn",
+    "PY Paragraph Preview": "65.6: tarmenišnīh ān bawēd ka gōwēd hād ēn āb ī rōyēnāg u =š pad hāwandīh ō ōy armēšt dahišn",
     "WZ Paragraph Preview": "WZ 4.14: čiyōn =iš bawēd ōy ī wadag ka =š wattarīh gōwēd u =t hāwandīh bawēd margīh ī az =iš ān ī az margīh abar gumēxtēd kū =š az =iz margīh wattarīh",
     "WZ Chapter/Stanza": "4.14"
   },
@@ -303,7 +303,7 @@
     "IDF Cosine": "0.2704",
     "Shared Distinct Words": "6",
     "Shared Words": "anāštīh, āštīh, tarmenišnīh, rādīh, druz, ahlāyīh",
-    "PY Paragraph Preview": "caby_ch60_st7: wānīhād az ēn mān pad srōš asruštīh ud pad āštīh anāštīh ud pad rādīh arādīh ud pad ērmenišnīh tarmenišnīh ud pad ān ī rāst gōwišn ān ī drō gōwišn ud pad ahlāyīh druz kē =iz andar ān [ān] ī amahraspandān yazišn ud niyāyišn ī srōš pad dastwar ān ī weh yazišn ud niyāyišn ī narīhā yazdān ī narān rāy ōh kunēnd ān ī weh yazišn ud niyāyišn ī mādagīhā yazdān ī mādagān rāy ōh kunēnd pad hubarišnīh ud nēkbarišnīh ud ayārbarišnīh",
+    "PY Paragraph Preview": "60.7: wānīhād az ēn mān pad srōš asruštīh ud pad āštīh anāštīh ud pad rādīh arādīh ud pad ērmenišnīh tarmenišnīh ud pad ān ī rāst gōwišn ān ī drō gōwišn ud pad ahlāyīh druz kē =iz andar ān [ān] ī amahraspandān yazišn ud niyāyišn ī srōš pad dastwar ān ī weh yazišn ud niyāyišn ī narīhā yazdān ī narān rāy ōh kunēnd ān ī weh yazišn ud niyāyišn ī mādagīhā yazdān ī mādagān rāy ōh kunēnd pad hubarišnīh ud nēkbarišnīh ud ayārbarišnīh",
     "WZ Paragraph Preview": "WZ 35.38: čiyōn gōwēd pad dēn kū wānīhēd pad āštīh anāštīh pad rādīh ārādīh pad bowandagmenišnīh tarmenišnīh pad ān ī rāstgōwišn ān ī drōgōwišn pad ahlāyīh druz pad ahlawīh druwandīh",
     "WZ Chapter/Stanza": "35.38"
   },
@@ -314,7 +314,7 @@
     "IDF Cosine": "0.3052",
     "Shared Distinct Words": "3",
     "Shared Words": "kanārag, frāxkard, zrēy",
-    "PY Paragraph Preview": "caby_ch65_st4: ud āyōzēd harwisp kanārag ī zrēy ī frāxkard , kū bē kōbēnēd ān ī harwispīn ō mayān āyōzēd ka ān X ō awēšān abar frāz tazānēd pad ǰudkardagīh ka ān X ō awēšān abar frāz rēzēd pad ēwkardagīh arədwisūr aniwast kē andar ān hazār war ud hazār ābxān",
+    "PY Paragraph Preview": "65.4: ud āyōzēd harwisp kanārag ī zrēy ī frāxkard , kū bē kōbēnēd ān ī harwispīn ō mayān āyōzēd ka ān X ō awēšān abar frāz tazānēd pad ǰudkardagīh ka ān X ō awēšān abar frāz rēzēd pad ēwkardagīh arədwisūr aniwast kē andar ān hazār war ud hazār ābxān",
     "WZ Paragraph Preview": "WZ 3.17: pas wād bē rānēnēd ō kanārag ī zrēy ī frāxkard",
     "WZ Chapter/Stanza": "3.17"
   },
@@ -325,7 +325,7 @@
     "IDF Cosine": "0.2996",
     "Shared Distinct Words": "3",
     "Shared Words": "mādag, nar, awēšān",
-    "PY Paragraph Preview": "caby_ch4_st27: hanǰamanīgān narān ud mādagān yazam amahraspandān čē nar X awēšān weh hēnd ud mādag awēšān",
+    "PY Paragraph Preview": "4.27: hanǰamanīgān narān ud mādagān yazam amahraspandān čē nar X awēšān weh hēnd ud mādag awēšān",
     "WZ Paragraph Preview": "WZ 3.73: u =š mayānag xwarrah abar āmad pad hambašnīh ī awēšān ōwōn kū nē paydāg būd kū kadār nar ud kadār mādag ud kadār ān xwarrah ī ohrmazddād",
     "WZ Chapter/Stanza": "3.73"
   },
@@ -336,7 +336,7 @@
     "IDF Cosine": "0.2989",
     "Shared Distinct Words": "3",
     "Shared Words": "kāhišn, abzāyišn, māh",
-    "PY Paragraph Preview": "caby_ch44_st3: az kē ka māh waxšēd ud nirfsēd ī tō kū =š abzāyišn ud kāhišn az kē",
+    "PY Paragraph Preview": "44.3: az kē ka māh waxšēd ud nirfsēd ī tō kū =š abzāyišn ud kāhišn az kē",
     "WZ Paragraph Preview": "WZ 3.19: frāxkard pad kustag ī nēmrōz pad harburz frāz ēstēd u =š pūidīg hamsāmān ēstēd u =šān mayān war ī sadwēs kē band ō sadwēs kē kustag ī nēmrōz zrēy andar xwēškārīh ud māh kē wardišn ī harw ērān andar abzāyišn ud kāhišn purr ud ōgār hēnd",
     "WZ Chapter/Stanza": "3.19"
   },
@@ -347,7 +347,7 @@
     "IDF Cosine": "0.2964",
     "Shared Distinct Words": "3",
     "Shared Words": "ārzōg, gētī, ahlāyīh",
-    "PY Paragraph Preview": "caby_ch35_st1: harwist ān ī ahlawān stī yazam kē mēnōy ud kē =z gētī pad ārzōg ī ō ān ī weh ahlāyīh abāyist ī ō kār ud kirbag rāy ud ārzōg ī dēn ī weh ī mazdēsnān abāyist ī ō dēn rāy",
+    "PY Paragraph Preview": "35.1: harwist ān ī ahlawān stī yazam kē mēnōy ud kē =z gētī pad ārzōg ī ō ān ī weh ahlāyīh abāyist ī ō kār ud kirbag rāy ud ārzōg ī dēn ī weh ī mazdēsnān abāyist ī ō dēn rāy",
     "WZ Paragraph Preview": "WZ 16.–: abar ulšbkwnpšety ī =š gētī ārzōg griftan ī =š ahlāyīh rāh",
     "WZ Chapter/Stanza": "16.–"
   },
@@ -358,7 +358,7 @@
     "IDF Cosine": "0.2920",
     "Shared Distinct Words": "3",
     "Shared Words": "zād, pus, mad",
-    "PY Paragraph Preview": "caby_ch9_st7: ud ō ōy X mad ābādīh ka az ōy pus ul zād kē abzārwis frēdōn",
+    "PY Paragraph Preview": "9.7: ud ō ōy X mad ābādīh ka az ōy pus ul zād kē abzārwis frēdōn",
     "WZ Paragraph Preview": "WZ 11.2: āgāhīh bē ō pōrušasp mad ud pōrušasp bē ō zarduxšt guft kū =m menīd kū =m zād pus kē bawēd āsrōn artēštār ud wāstaryōš",
     "WZ Chapter/Stanza": "11.2"
   },
@@ -380,7 +380,7 @@
     "IDF Cosine": "0.2872",
     "Shared Distinct Words": "3",
     "Shared Words": "garōdmān, abzōnīg, ātaxš",
-    "PY Paragraph Preview": "caby_ch17_st12: ātaxš ī abzōnīg yazam ān ī andar garōdmān pēš ī ohrmazd pad mēnōyīh ēstēd",
+    "PY Paragraph Preview": "17.12: ātaxš ī abzōnīg yazam ān ī andar garōdmān pēš ī ohrmazd pad mēnōyīh ēstēd",
     "WZ Paragraph Preview": "WZ 3.78: u =š ātaxš ī abzōnīg xwad andar garōdmān bē dād u =š paydāgīh pad ātaxš ī pad zamīg sōzišnīg u =š abzōnīgīh ēd kū harw sardagān ō xwēš čihrīh abzāyīhēd",
     "WZ Chapter/Stanza": "3.78"
   },
@@ -391,7 +391,7 @@
     "IDF Cosine": "0.2823",
     "Shared Distinct Words": "3",
     "Shared Words": "brēhēnīd, dām, frāz",
-    "PY Paragraph Preview": "caby_ch71_st6: harwisp =iz dām ī ohrmazddād ī ahlawī yazam kē pad ahlāyīh dād ud pad ahlāyīh frāz brēhēnīd u =š pad ahlāyīh dādwarīh u =š pad ahlāyīh frāzyazišnīh ōy ī ahlaw kē andar ahlawān pad ahlāyīh āšnāg",
+    "PY Paragraph Preview": "71.6: harwisp =iz dām ī ohrmazddād ī ahlawī yazam kē pad ahlāyīh dād ud pad ahlāyīh frāz brēhēnīd u =š pad ahlāyīh dādwarīh u =š pad ahlāyīh frāzyazišnīh ōy ī ahlaw kē andar ahlawān pad ahlāyīh āšnāg",
     "WZ Paragraph Preview": "WZ 1.27: u =š pad ayārīh ī spyyhl ud zurwān dām frāz brēhēnīd",
     "WZ Chapter/Stanza": "1.27"
   },
@@ -402,7 +402,7 @@
     "IDF Cosine": "0.2638",
     "Shared Distinct Words": "4",
     "Shared Words": "hutuxš, āsrōn, wāstaryōš, artēštār",
-    "PY Paragraph Preview": "caby_ch19_st16: ēd =iz gōwišn ohrmazd guft sepaymān , čahārpēšag , āsrōn ud artēštār ud wāstaryōš ud hutuxš panǰradīh mānbed ud wisbed ud zandbed ud dehbed ud zarduštōtom",
+    "PY Paragraph Preview": "19.16: ēd =iz gōwišn ohrmazd guft sepaymān , čahārpēšag , āsrōn ud artēštār ud wāstaryōš ud hutuxš panǰradīh mānbed ud wisbed ud zandbed ud dehbed ud zarduštōtom",
     "WZ Paragraph Preview": "WZ 30.18: ān čahār āmēzišn ī ǰudčihrag ǰudkār bē ō čahār pēšag ī mardōm ī hēnd hammōzgār āsrōn ud zadār artēštār ud parwardār wāstaryōš ud plstʾl hutuxš",
     "WZ Chapter/Stanza": "30.18"
   },
@@ -413,7 +413,7 @@
     "IDF Cosine": "0.2791",
     "Shared Distinct Words": "3",
     "Shared Words": "amurdād, hordād, ātaxš",
-    "PY Paragraph Preview": "caby_ch58_st7: niyāyišn ō tō ātaxš ī ohrmazd ī kē pad ān ī mahist kār bē rasē pad passāxt ī pad tan ī pasēn pad ān ī meh ayārīh ud pad ān ī meh rāmišn dahišn ī hordād ud amurdād",
+    "PY Paragraph Preview": "58.7: niyāyišn ō tō ātaxš ī ohrmazd ī kē pad ān ī mahist kār bē rasē pad passāxt ī pad tan ī pasēn pad ān ī meh ayārīh ud pad ān ī meh rāmišn dahišn ī hordād ud amurdād",
     "WZ Paragraph Preview": "WZ 30.23: pad pahikār ī hordād amurdād ātaxš bē abrōzēd",
     "WZ Chapter/Stanza": "30.23"
   },
@@ -435,7 +435,7 @@
     "IDF Cosine": "0.2713",
     "Shared Distinct Words": "3",
     "Shared Words": "tuwān, dāmān, būd",
-    "PY Paragraph Preview": "caby_ch9_st8: ān [ēd] āmār kū harw ān ziyān ī =š pad dāmān ī ohrmazd tuwān būd ā =š be kird ud im būd tis ī =š tuwān būd [kirdan] u =š nē kird",
+    "PY Paragraph Preview": "9.8: ān [ēd] āmār kū harw ān ziyān ī =š pad dāmān ī ohrmazd tuwān būd ā =š be kird ud im būd tis ī =š tuwān būd [kirdan] u =š nē kird",
     "WZ Paragraph Preview": "WZ 34.36: ud āz ēkčihrīhā nē tuwān būd āhōgēnīdan tā dāmān plkndk bawēd",
     "WZ Chapter/Stanza": "34.36"
   },
@@ -446,7 +446,7 @@
     "IDF Cosine": "0.2710",
     "Shared Distinct Words": "3",
     "Shared Words": "ātaxšān, šnāyēnīdārīh, ātaxš",
-    "PY Paragraph Preview": "caby_ch4_st18: awēšān niwēyēnam tō ātaxš ī ohrmazd pus tō kē pad yazišn hē abāg harwispīn ātaxšān pad yazišn ud niyāyišn ud šnāyēnīdārīh ud frāzāfrīgānīh",
+    "PY Paragraph Preview": "4.18: awēšān niwēyēnam tō ātaxš ī ohrmazd pus tō kē pad yazišn hē abāg harwispīn ātaxšān pad yazišn ud niyāyišn ud šnāyēnīdārīh ud frāzāfrīgānīh",
     "WZ Paragraph Preview": "WZ 23.3: pad ān frašn abar hangārišnīh ī warahrān ātaxš pahrēz ud šnāyēnīdārīh ī hamāg ātaxšān aw =iš nimāyīhist",
     "WZ Chapter/Stanza": "23.3"
   },
@@ -457,7 +457,7 @@
     "IDF Cosine": "0.2518",
     "Shared Distinct Words": "4",
     "Shared Words": "gušn, uštar, asp, dah",
-    "PY Paragraph Preview": "caby_ch44_st18: čiyōn rāstīhā pad ān mizd arzānīg bawam kū =m afrēftārīhā xwēš bawēd dah asp ī gušn ud uštar",
+    "PY Paragraph Preview": "44.18: čiyōn rāstīhā pad ān mizd arzānīg bawam kū =m afrēftārīhā xwēš bawēd dah asp ī gušn ud uštar",
     "WZ Paragraph Preview": "WZ 3.15: fradom ardīg stōwīh abar tištar būd u =š abar paywahīd ō ohrmazd pad yasn ud niyāyišn ud nāmbarišnīh bē mad zōr ōwōn abar ō tištar burd čand dah asp ī gwšn dah uštar ī gušn dah gāw ī gušn dah kōf ka abganēnd dah rōd ī nāydāg ka pad āgenēn frāz ānayēnd",
     "WZ Chapter/Stanza": "3.15"
   },
@@ -468,7 +468,7 @@
     "IDF Cosine": "0.2648",
     "Shared Distinct Words": "3",
     "Shared Words": "warzam, ānand, čand",
-    "PY Paragraph Preview": "caby_ch35_st7: ēdōn ān ī ašmāh warzam dēn ud frāz =iz āgāhēnam ō kasān ānand čand pad tuwān xwāstār hēm",
+    "PY Paragraph Preview": "35.7: ēdōn ān ī ašmāh warzam dēn ud frāz =iz āgāhēnam ō kasān ānand čand pad tuwān xwāstār hēm",
     "WZ Paragraph Preview": "WZ 21.6: u =š passoxēnīd kū zarduxšt ham ī spitāmān andar axwān ahlāyīhkāmagtar u =m kāmag kū āgāh bawam ān ī yazdān kāmag ud ānand ahlāyīh warzam čand =am nimāyēnd pad ox ī ʾpčyk",
     "WZ Chapter/Stanza": "21.6"
   },
@@ -479,7 +479,7 @@
     "IDF Cosine": "0.2254",
     "Shared Distinct Words": "6",
     "Shared Words": "brēhēnīd, gōspand, urwar, zamīg, ātaxš, mēnōy",
-    "PY Paragraph Preview": "caby_ch19_st3: u =š guft ohrmazd kū baxtārīh ān būd ī az ahunawar spitāmān zardušt ān mēnōy kē dēn rawāg kunēd kē ān dēn az ahunawar brēhēnīd ēstēd kē =š ō tō frāz guft kū pēš az asmān pēš az āb pēš az zamīg pēš az gōspand pēš az urwar pēš az ātaxš ī ohrmazd pus pēš az mard ī ahlaw gayōmard pēš az dēwān kē xrad stard ēstēd mardōmān pēš az harwisp ox ī astōmand dahišn ī xwadāyīh ud pēš az harwisp ābādīh ī ohrmazddād ī az ahlāyīh paydāgīh",
+    "PY Paragraph Preview": "19.3: u =š guft ohrmazd kū baxtārīh ān būd ī az ahunawar spitāmān zardušt ān mēnōy kē dēn rawāg kunēd kē ān dēn az ahunawar brēhēnīd ēstēd kē =š ō tō frāz guft kū pēš az asmān pēš az āb pēš az zamīg pēš az gōspand pēš az urwar pēš az ātaxš ī ohrmazd pus pēš az mard ī ahlaw gayōmard pēš az dēwān kē xrad stard ēstēd mardōmān pēš az harwisp ox ī astōmand dahišn ī xwadāyīh ud pēš az harwisp ābādīh ī ohrmazddād ī az ahlāyīh paydāgīh",
     "WZ Paragraph Preview": "WZ 1.4: pāsbānīh az druz rāy mēnōyīhā andar ō bālist mēnōy ī āsmān āb zamīg urwar gōspand mardōm ud ātaxš brēhēnīd u =š 3000 sāl dāšt",
     "WZ Chapter/Stanza": "1.4"
   },
@@ -490,7 +490,7 @@
     "IDF Cosine": "0.2626",
     "Shared Distinct Words": "3",
     "Shared Words": "kirb, gāw, mard",
-    "PY Paragraph Preview": "caby_ch19_st8: ēd =iz guft kū pēš az ān asmān dād pēš az āb pēš az zamīg pēš az urwar ud pēš az gāw ī [čahār]padištān dahišn ī gāw ēkdād pēš az mard ī ahlaw ī dōpadištān dahišn ī gayōmard pēš az ān ī xwaršēd brīn kirb tan xwaršēd",
+    "PY Paragraph Preview": "19.8: ēd =iz guft kū pēš az ān asmān dād pēš az āb pēš az zamīg pēš az urwar ud pēš az gāw ī [čahār]padištān dahišn ī gāw ēkdād pēš az mard ī ahlaw ī dōpadištān dahišn ī gayōmard pēš az ān ī xwaršēd brīn kirb tan xwaršēd",
     "WZ Paragraph Preview": "WZ 3.8: pad se kirb wašt ī ast mard kirb gāw kirb asp kirb",
     "WZ Chapter/Stanza": "3.8"
   },
@@ -501,7 +501,7 @@
     "IDF Cosine": "0.2615",
     "Shared Distinct Words": "3",
     "Shared Words": "ōzad, gyāg, šān",
-    "PY Paragraph Preview": "caby_ch4_st4: awēšān niwēyēnam ī =m guft amahraspandān huxwadāyān ī hudahāgān hamēzīwandagān ī hamēsūdān ēk =ēw kū be nē mīrēnd ud ēk =ēw kū ōzad nē šāyēnd kē pad ān ī wahman mānēnd kū =šān mehmānīh ān gyāg kū wahman kē =iz wahman",
+    "PY Paragraph Preview": "4.4: awēšān niwēyēnam ī =m guft amahraspandān huxwadāyān ī hudahāgān hamēzīwandagān ī hamēsūdān ēk =ēw kū be nē mīrēnd ud ēk =ēw kū ōzad nē šāyēnd kē pad ān ī wahman mānēnd kū =šān mehmānīh ān gyāg kū wahman kē =iz wahman",
     "WZ Paragraph Preview": "WZ 4.26: u =šān srid abar gyāg ōzad ud darrīd",
     "WZ Chapter/Stanza": "4.26"
   },
@@ -534,7 +534,7 @@
     "IDF Cosine": "0.2536",
     "Shared Distinct Words": "3",
     "Shared Words": "āyēnd, zamīg, frāz",
-    "PY Paragraph Preview": "caby_ch12_st8: frāz pad menišn rād ham ō kāmagāyišnān kāmagmānišnān kē pad abāyist bē ō dēn āyēnd ud pad dēn bē ēstēnd ā =šān menišnīg rādīh abar kunam kē abar pad ēn zamīg pad gōspandōmandīh mānēnd daxšag gōwēd",
+    "PY Paragraph Preview": "12.8: frāz pad menišn rād ham ō kāmagāyišnān kāmagmānišnān kē pad abāyist bē ō dēn āyēnd ud pad dēn bē ēstēnd ā =šān menišnīg rādīh abar kunam kē abar pad ēn zamīg pad gōspandōmandīh mānēnd daxšag gōwēd",
     "WZ Paragraph Preview": "WZ 34.44: frāz ō zamīg āyēnd ohrmazd ahreman srōš āz",
     "WZ Chapter/Stanza": "34.44"
   },
@@ -545,7 +545,7 @@
     "IDF Cosine": "0.2259",
     "Shared Distinct Words": "5",
     "Shared Words": "hampursagīh, rōz, frāz, rāy, čiyōn",
-    "PY Paragraph Preview": "caby_ch43_st7: čiyōn ān rōz daxšag rōz ī frāz ō hampursagīh nimūd ēstēd kū daxšag čiyōn kunam abar ēd tō gēhān ud tan rāy nimūd ēstēd",
+    "PY Paragraph Preview": "43.7: čiyōn ān rōz daxšag rōz ī frāz ō hampursagīh nimūd ēstēd kū daxšag čiyōn kunam abar ēd tō gēhān ud tan rāy nimūd ēstēd",
     "WZ Paragraph Preview": "WZ 21.1: uzīd ān čēhelpanǰ rōz ī ǰašnzār māh ardwahišt rōz day pad mihr bāmdād zarduxšt hōm hunīdan rāy frāz ō bār ī dāytī āb šud čiyōn hampursagīh ī zarduxšt pad =iš rāy rad ast ī ābān",
     "WZ Chapter/Stanza": "21.1"
   },
@@ -556,7 +556,7 @@
     "IDF Cosine": "0.2515",
     "Shared Distinct Words": "3",
     "Shared Words": "abārīg, gāhān, čiyōn",
-    "PY Paragraph Preview": "caby_ch10_st18: awēšān tō hōm gāhān čiyōn tō ud abārīg yazdān az gāhān rāmišn tō az ēn pargard u =t awēšān hēnd stāyišn stāyišn ī tō ēn pargard",
+    "PY Paragraph Preview": "10.18: awēšān tō hōm gāhān čiyōn tō ud abārīg yazdān az gāhān rāmišn tō az ēn pargard u =t awēšān hēnd stāyišn stāyišn ī tō ēn pargard",
     "WZ Paragraph Preview": "WZ 28.2: ēdōn =iz naskān ō šaš čiyōn gāhān ō dō ī xwānīhēd ēk gāhān ī gāhānīg ī ast yašt ud ēk abārīg gāhān",
     "WZ Chapter/Stanza": "28.2"
   },
@@ -567,7 +567,7 @@
     "IDF Cosine": "0.2501",
     "Shared Distinct Words": "3",
     "Shared Words": "abzāyēnīd, menīd, rāy",
-    "PY Paragraph Preview": "caby_ch43_st4: ēdōn =m tō rāy menīd tagīg abzōnīg ohrmazd ka ān harw dō pad tuwān tō xwad ayārīd kū tis mēnōy ud gētī tō be abzāyēnīd",
+    "PY Paragraph Preview": "43.4: ēdōn =m tō rāy menīd tagīg abzōnīg ohrmazd ka ān harw dō pad tuwān tō xwad ayārīd kū tis mēnōy ud gētī tō be abzāyēnīd",
     "WZ Paragraph Preview": "WZ 11.9: zarduxšt andar rāh dō aspān tišnagīh rāy āb dād u =š menīd kū abēsūd būd rawišn ī =m ō dar ī karbān bē ēn ēk ī ka =m pad ābdahišnīh ī aspān ēg =im abzāyēnīd ruwān",
     "WZ Chapter/Stanza": "11.9"
   },
@@ -578,7 +578,7 @@
     "IDF Cosine": "0.2498",
     "Shared Distinct Words": "3",
     "Shared Words": "esm, bōy, ātaxš",
-    "PY Paragraph Preview": "caby_ch8_st2: esm ud bōy ō ātaxš barišn",
+    "PY Paragraph Preview": "8.2: esm ud bōy ō ātaxš barišn",
     "WZ Paragraph Preview": "WZ 8.4: frēstag ī ohrmazd wāng burd kū ma šaw ō ǰādūgān čē =t nē hēnd bēšazēnīdār bē abāz ō xānag šaw ud dast andar māl pad rōgn ī gāw ī abar ātaxš burd esm =iz bōy widāb pad xwēštan ud zahag kē =t pad aškamb",
     "WZ Chapter/Stanza": "8.4"
   },
@@ -589,7 +589,7 @@
     "IDF Cosine": "0.2485",
     "Shared Distinct Words": "3",
     "Shared Words": "gētī, mēnōy, rāy",
-    "PY Paragraph Preview": "caby_ch19_st20: ohrmazd frāz guft čē =š rāy frāz guft ahlaw mēnōy ud gētī , nēkīh ī mēnōy ud gētī rāy",
+    "PY Paragraph Preview": "19.20: ohrmazd frāz guft čē =š rāy frāz guft ahlaw mēnōy ud gētī , nēkīh ī mēnōy ud gētī rāy",
     "WZ Paragraph Preview": "WZ 31.1: kū ēd rāy čē dō axwān ʾnʾspyn ēk ō did pad warzišn ōwōn homānāg čiyōn narān nārīgān hēnd ud zāyišn ī ō gētī widerišn ī az mēnōyān widerišn ī az gētī zāyišn ī ō mēnōy",
     "WZ Chapter/Stanza": "31.1"
   },
@@ -600,7 +600,7 @@
     "IDF Cosine": "0.2475",
     "Shared Distinct Words": "3",
     "Shared Words": "wāstar, gōspandān, šān",
-    "PY Paragraph Preview": "caby_ch35_st4: u =šān rāmišn =iz ud wāstar =iz dahišn gōspandān rāmišn ud abēbīmīh",
+    "PY Paragraph Preview": "35.4: u =šān rāmišn =iz ud wāstar =iz dahišn gōspandān rāmišn ud abēbīmīh",
     "WZ Paragraph Preview": "WZ 19.2: u =šān guft kū driyōšān parwardan ud wāstar ō gōspandān dādan esm ō ātaxš burdan ud hōm ō āb rēxtan ud was dēwān pad gōwišn yaštan pad gōwišn ī dēn gōwīhēd",
     "WZ Chapter/Stanza": "19.2"
   },
@@ -611,7 +611,7 @@
     "IDF Cosine": "0.2448",
     "Shared Distinct Words": "3",
     "Shared Words": "dāšt, paydāg, būd",
-    "PY Paragraph Preview": "caby_ch9_st7: u =š xwadāy =ēw ud xwēšāwand =ēw paydāg nē būd ōy dāšt",
+    "PY Paragraph Preview": "9.7: u =š xwadāy =ēw ud xwēšāwand =ēw paydāg nē būd ōy dāšt",
     "WZ Paragraph Preview": "WZ 3.10: pas mēnōy ī wād pad mardēwēnag pad zamīg paydāg būd rōšn ud buland u =š pad ēwēnag ī mōg =ēw ī dārēn pad pāy dāšt",
     "WZ Chapter/Stanza": "3.10"
   },
@@ -622,7 +622,7 @@
     "IDF Cosine": "0.2260",
     "Shared Distinct Words": "4",
     "Shared Words": "xward, hušk, urwar, mad",
-    "PY Paragraph Preview": "caby_ch9_st4: kē =š kird pad ān ī ōy xwadāyīh amarg pah ud wīr ud ahōšišn āb ud urwar kū ān ī nē abāyēd hušk nē hušk xwarišn xwarān anabesihišn kū ka ēk xward būd ēk mad būd",
+    "PY Paragraph Preview": "9.4: kē =š kird pad ān ī ōy xwadāyīh amarg pah ud wīr ud ahōšišn āb ud urwar kū ān ī nē abāyēd hušk nē hušk xwarišn xwarān anabesihišn kū ka ēk xward būd ēk mad būd",
     "WZ Paragraph Preview": "WZ 3.37: čiyōn čahārom ō urwar mad ī =š pad ham urwar padīrag kōxšīd čē ān urwar bē hušk amurdād kē =š urwar gētī daxšag abar grift u =š xward bē kust u =š abāg tištarīg āb ī wārānīg bē gumēxt",
     "WZ Chapter/Stanza": "3.37"
   },
@@ -633,7 +633,7 @@
     "IDF Cosine": "0.2408",
     "Shared Distinct Words": "3",
     "Shared Words": "mēnōyān, axwān, tan",
-    "PY Paragraph Preview": "caby_ch40_st2: ān ī ōy ān ō amāh dahē pad =iz ēn axwān ud pad =iz mēnōyān kū ēdōn pad ān ēdōn abar rasēm ō ēd ī tō hamhāgīh hamkirdārīh ahlāyīh =iz hamētāōwisp tā tan ī pasēn",
+    "PY Paragraph Preview": "40.2: ān ī ōy ān ō amāh dahē pad =iz ēn axwān ud pad =iz mēnōyān kū ēdōn pad ān ēdōn abar rasēm ō ēd ī tō hamhāgīh hamkirdārīh ahlāyīh =iz hamētāōwisp tā tan ī pasēn",
     "WZ Paragraph Preview": "WZ 30.37: ruwānīg se ī ast ruwān ī andar tan ruwān ī bērōn ruwān ī pad mēnōyān axwān",
     "WZ Chapter/Stanza": "30.37"
   },
@@ -644,7 +644,7 @@
     "IDF Cosine": "0.2401",
     "Shared Distinct Words": "3",
     "Shared Words": "ǰān, ruwān, tan",
-    "PY Paragraph Preview": "caby_ch39_st1: ēdar ēdōn yazam kē ān ī gōspandān ruwān tan ǰān dād ohrmazd ud ān ī amāgān ruwān ud paswīgān =iz kē amāh zīwišnxwāstār hēnd nēkīh ā =š dād awēšān =iz ī tō ān ī artēštār awēšān kē hēnd wāstaryōš ā =š dād",
+    "PY Paragraph Preview": "39.1: ēdar ēdōn yazam kē ān ī gōspandān ruwān tan ǰān dād ohrmazd ud ān ī amāgān ruwān ud paswīgān =iz kē amāh zīwišnxwāstār hēnd nēkīh ā =š dād awēšān =iz ī tō ān ī artēštār awēšān kē hēnd wāstaryōš ā =š dād",
     "WZ Paragraph Preview": "WZ 29.–: abar passāzišn ī mardōmān az tan ǰān ud ruwān",
     "WZ Chapter/Stanza": "29.–"
   },
@@ -655,7 +655,7 @@
     "IDF Cosine": "0.2045",
     "Shared Distinct Words": "6",
     "Shared Words": "āgenēn, gyāg, amāh, kunišn, kāmag, dēn",
-    "PY Paragraph Preview": "caby_ch19_st15: nē amāh menišn ud nē hammōxtišn man ān nē hammōxt ēstam ī tō hammōxt ēstē ud nē xrad čē man xrad pad frārōnīh dāram ud tō pad abārōnīh dārē ud nē kāmag čē man kāmag abāyist frārōn ud tō abārōn ud nē saxwan čē man ān ī frārōn gōwam ud tō ān ī abārōn gōwē ud nē kunišn čē man kunišn frārōn ud tō abārōn nē dēn čē man dēn gāhānīgīh ud tō ǰādūgīh , nē ruwān ā =šān pad āgenēn xwēš čē ān kē pad tis ī man ēstēnd ud ān kē pad tis tō ēstēnd ā =šān ruwān nē pad ēd gyāg , ōy kē ēd guft...",
+    "PY Paragraph Preview": "19.15: nē amāh menišn ud nē hammōxtišn man ān nē hammōxt ēstam ī tō hammōxt ēstē ud nē xrad čē man xrad pad frārōnīh dāram ud tō pad abārōnīh dārē ud nē kāmag čē man kāmag abāyist frārōn ud tō abārōn ud nē saxwan čē man ān ī frārōn gōwam ud tō ān ī abārōn gōwē ud nē kunišn čē man kunišn frārōn ud tō abārōn nē dēn čē man dēn gāhānīgīh ud tō ǰādūgīh , nē ruwān ā =šān pad āgenēn xwēš čē ān kē pad tis ī man ēstēnd ud ān kē pad tis tō ēstēnd ā =šān ruwān nē pad ēd gyāg , ōy kē ēd guft...",
     "WZ Paragraph Preview": "WZ 22.6: u =š guft kū nē amāh mēnōyān nē kāmag nē gōwišn nē kunišn nē dēn nē axwān pad āgenēn kē rōšnīh dōšēnd ā =š gyāg abāg rōšnān kē tārīkīh abāg tārān",
     "WZ Chapter/Stanza": "22.6"
   },
@@ -666,7 +666,7 @@
     "IDF Cosine": "0.2377",
     "Shared Distinct Words": "3",
     "Shared Words": "nām, amahraspandān, šān",
-    "PY Paragraph Preview": "caby_ch51_st22: kē būd hēnd ud kē =iz hēnd awēšān yazam pad ān xwēš nām amahraspandān u =šān abar rasam ō ayārīh",
+    "PY Paragraph Preview": "51.22: kē būd hēnd ud kē =iz hēnd awēšān yazam pad ān xwēš nām amahraspandān u =šān abar rasam ō ayārīh",
     "WZ Paragraph Preview": "WZ 22.4: ohrmazd passoxēnīd kū nām ī amahraspandān weh u =šān wēnišn wehtar u =šān framānburdārīh az harwispīn pāšom",
     "WZ Chapter/Stanza": "22.4"
   },
@@ -688,7 +688,7 @@
     "IDF Cosine": "0.2370",
     "Shared Distinct Words": "3",
     "Shared Words": "pēš, mad, dēn",
-    "PY Paragraph Preview": "caby_ch71_st1: pursīd frašōštar ī ahlaw ō ahlaw zardušt kū passox gōw pēštar zardušt ay pēš a[z] dēn tō mad hē",
+    "PY Paragraph Preview": "71.1: pursīd frašōštar ī ahlaw ō ahlaw zardušt kū passox gōw pēštar zardušt ay pēš a[z] dēn tō mad hē",
     "WZ Paragraph Preview": "WZ 24.4: pad ham frašn ka az pēš ī ohrmazd bē mad bē ō spandārmad u =š dēn bowandag pad ōš abar daxšagēnīd",
     "WZ Chapter/Stanza": "24.4"
   },
@@ -699,7 +699,7 @@
     "IDF Cosine": "0.2345",
     "Shared Distinct Words": "3",
     "Shared Words": "gyāg, mard, kār",
-    "PY Paragraph Preview": "caby_ch9_st23: hād ka mard bē paydāgēnīd pad gyāg andar kār ēstēd",
+    "PY Paragraph Preview": "9.23: hād ka mard bē paydāgēnīd pad gyāg andar kār ēstēd",
     "WZ Paragraph Preview": "WZ 16.4: zarduxšt bē ō ān gyāg šud u =š hamayārīh abāg driyōšān parwardārīh rāy čand dō mard ī agrī pad xwarišn frāz ō driyōšān burd ud kār kird",
     "WZ Chapter/Stanza": "16.4"
   },
@@ -710,7 +710,7 @@
     "IDF Cosine": "0.2343",
     "Shared Distinct Words": "3",
     "Shared Words": "zanān, driyōšān, mardān",
-    "PY Paragraph Preview": "caby_ch57_st14: srōšahlī ī hurust ī pērōzgar kē driyōšān mardān ud zanān ā =šān amāwandān andar mān ō ham tāšēd kū =šān dahēd kē pas az hūfrāšmōdād xešm pad wistarišnōmand snē X ān guxrūn xwar zanēd",
+    "PY Paragraph Preview": "57.14: srōšahlī ī hurust ī pērōzgar kē driyōšān mardān ud zanān ā =šān amāwandān andar mān ō ham tāšēd kū =šān dahēd kē pas az hūfrāšmōdād xešm pad wistarišnōmand snē X ān guxrūn xwar zanēd",
     "WZ Paragraph Preview": "WZ 12.6: u =š guft kū ʾhldīh yazam ahlawān driyōšān mardān zanān yazam pōrušasp bahr ō ōy rāy kē =š pad =iš arzānīgīh",
     "WZ Chapter/Stanza": "12.6"
   },
@@ -721,7 +721,7 @@
     "IDF Cosine": "0.2333",
     "Shared Distinct Words": "3",
     "Shared Words": "stard, dēwān, mardōmān",
-    "PY Paragraph Preview": "caby_ch34_st5: pēš ašmāh az harwistīn pēš guft hēd kū tuwāngartar hēd az dēwān kē xrad stard ēstēd ud mardōmān",
+    "PY Paragraph Preview": "34.5: pēš ašmāh az harwistīn pēš guft hēd kū tuwāngartar hēd az dēwān kē xrad stard ēstēd ud mardōmān",
     "WZ Paragraph Preview": "WZ 35.35: ahreman ud māzanīgān ud āz spāhbed ī abārīg dēwān stard homānāgīhā pad xwēš hamēstārīh wānīdagīhā bē ō mardōmān dīdārīg bawēnd",
     "WZ Chapter/Stanza": "35.35"
   },
@@ -732,7 +732,7 @@
     "IDF Cosine": "0.2333",
     "Shared Distinct Words": "3",
     "Shared Words": "brād, pid, dōst",
-    "PY Paragraph Preview": "caby_ch45_st11: sūdimandān dastwar ped xwadāy ān ī abzōnīg dēn dōst ud brād ud pid ohrmazd",
+    "PY Paragraph Preview": "45.11: sūdimandān dastwar ped xwadāy ān ī abzōnīg dēn dōst ud brād ud pid ohrmazd",
     "WZ Paragraph Preview": "WZ 35.41: pad ān gāh hamāg mardōm pad ēwbār garzēnd ud ars pad zamīg frāz rēzēnd čē pid wēnēd kē =š pus abāz ō dušox abganēnd ud pus pid brād kē =š brād zan kē =š šawišōy kē =š zan dōst kē =š dōst",
     "WZ Chapter/Stanza": "35.41"
   },
@@ -743,7 +743,7 @@
     "IDF Cosine": "0.2294",
     "Shared Distinct Words": "3",
     "Shared Words": "astōmand, harwisp, man",
-    "PY Paragraph Preview": "caby_ch9_st1: kē man az harwisp ox ī astōmand ā =m X nēktar dīd hē čē =t ān ī xwēš ǰān nēk kird ēstēd ud amarg",
+    "PY Paragraph Preview": "9.1: kē man az harwisp ox ī astōmand ā =m X nēktar dīd hē čē =t ān ī xwēš ǰān nēk kird ēstēd ud amarg",
     "WZ Paragraph Preview": "WZ 1.7: did ahreman padistād kū bē hāzēm$$ harwisp ox ī astōmand ō adōstīh ī tō dōstīh ī man",
     "WZ Chapter/Stanza": "1.7"
   },
@@ -765,7 +765,7 @@
     "IDF Cosine": "0.2225",
     "Shared Distinct Words": "3",
     "Shared Words": "wištāsp, zarduxšt, būd",
-    "PY Paragraph Preview": "caby_ch12_st12: u =m kāmag ān ī āb u =m kāmag ān ī urwar u =m kāmag ān ī gōspand ī hudahāg u =m kāmag ohrmazd kē gōspand dād ud mard ī ahlaw u =m kāmag ān būd zarduxšt u =m kāmag ān ī kay wištāsp u =m kāmag ān ī frašōštar ud ǰāmāsp u =m kāmag ān ī kadārizēw sūdōmandān ī āškāragwarzīdārān ī ahlawān",
+    "PY Paragraph Preview": "12.12: u =m kāmag ān ī āb u =m kāmag ān ī urwar u =m kāmag ān ī gōspand ī hudahāg u =m kāmag ohrmazd kē gōspand dād ud mard ī ahlaw u =m kāmag ān būd zarduxšt u =m kāmag ān ī kay wištāsp u =m kāmag ān ī frašōštar ud ǰāmāsp u =m kāmag ān ī kadārizēw sūdōmandān ī āškāragwarzīdārān ī ahlawān",
     "WZ Paragraph Preview": "WZ 10.15: zarduxšt az ray ud wištāsp az nōdar būd",
     "WZ Chapter/Stanza": "10.15"
   },
@@ -776,7 +776,7 @@
     "IDF Cosine": "0.2224",
     "Shared Distinct Words": "3",
     "Shared Words": "tān, kunišn, frāz",
-    "PY Paragraph Preview": "caby_ch32_st5: u =tān wattar kunišn ud gōwišn kē frāz čāšēd ō kasān kū az ōy druwand gannāgmēnōy pāduxšāyīh",
+    "PY Paragraph Preview": "32.5: u =tān wattar kunišn ud gōwišn kē frāz čāšēd ō kasān kū az ōy druwand gannāgmēnōy pāduxšāyīh",
     "WZ Paragraph Preview": "WZ 34.38: ma ēdōn gōspand bē kuštār bawēd čiyōn =tān pēš frāz pad kunišn kušt",
     "WZ Chapter/Stanza": "34.38"
   },
@@ -787,7 +787,7 @@
     "IDF Cosine": "0.2083",
     "Shared Distinct Words": "4",
     "Shared Words": "āyēd, hamē, mēnōy, tan",
-    "PY Paragraph Preview": "caby_ch53_st7: u =š parrōn =iz murnǰēnēd ōrōn =iz kū hamē pad tan andar šawēd bē āyēd az ān ānōh mēnōy druwandān arasišn bē",
+    "PY Paragraph Preview": "53.7: u =š parrōn =iz murnǰēnēd ōrōn =iz kū hamē pad tan andar šawēd bē āyēd az ān ānōh mēnōy druwandān arasišn bē",
     "WZ Paragraph Preview": "WZ 31.1: čiyōn ka az mēnōy ō gētī hamē zāyēd pad ayārīh ī pidarān ud mādarān ud az tan ī mādarān pad widarg ī tang bē ō bērōn āyēd",
     "WZ Chapter/Stanza": "31.1"
   },
@@ -798,7 +798,7 @@
     "IDF Cosine": "0.2209",
     "Shared Distinct Words": "3",
     "Shared Words": "ēstād, dēn, čiyōn",
-    "PY Paragraph Preview": "caby_ch19_st19: čiyōn ka pad humat kū dēn pad humatpāyag ēstād",
+    "PY Paragraph Preview": "19.19: čiyōn ka pad humat kū dēn pad humatpāyag ēstād",
     "WZ Paragraph Preview": "WZ 35.8: handāzag ī zarduxšt ī padīrift ohrmazd čiyōn wispāgāh dēn ī ohrmazd dānišn hammōxt u =š pad =iš ēstād wispāgāh būd frahaxtīh",
     "WZ Chapter/Stanza": "35.8"
   },
@@ -809,7 +809,7 @@
     "IDF Cosine": "0.2068",
     "Shared Distinct Words": "4",
     "Shared Words": "winnārd, asmān, fradom, hēnd",
-    "PY Paragraph Preview": "caby_ch22_st26: xwāyam ō ēn yazišn awēšān frawahr kē fradom būd hēnd ī mānīgān ud wisīgān ud zandīgān ud dehīgān kē =šān asmān winnārd kē =šān āb winnārd kē =šān zamīg winnārd kē =šān gōspand winnārd kē =šān andar burdār pus winnārd abarnihuft abēwidard kū zīndag",
+    "PY Paragraph Preview": "22.26: xwāyam ō ēn yazišn awēšān frawahr kē fradom būd hēnd ī mānīgān ud wisīgān ud zandīgān ud dehīgān kē =šān asmān winnārd kē =šān āb winnārd kē =šān zamīg winnārd kē =šān gōspand winnārd kē =šān andar burdār pus winnārd abarnihuft abēwidard kū zīndag",
     "WZ Paragraph Preview": "WZ 34.20: fradom ka =m asmān winnārd astūn anabardāštār kē =š az ēč kust nē hēnd gētīyān bē dāštār",
     "WZ Chapter/Stanza": "34.20"
   },
@@ -820,7 +820,7 @@
     "IDF Cosine": "0.2185",
     "Shared Distinct Words": "3",
     "Shared Words": "frārōn, fradom, tis",
-    "PY Paragraph Preview": "caby_ch51_st3: ān ō ān ī ašmāh ō dēn ī ašmāh niyōxšīdār ō ham rawišn kē ašmāh pad kunišn sālār hēd kū pad wināh ud kirbag āmār kunēd ohrmazd ud ašawahišt kē =tān ān ī pad uzwān saxwan pad wahman kē =m az awēšān tō ohrmazd fradom frāzdaxšagēnīdār hē kū =m az amahraspandān tis ī frārōn fradom tō pad daxšag be kunē",
+    "PY Paragraph Preview": "51.3: ān ō ān ī ašmāh ō dēn ī ašmāh niyōxšīdār ō ham rawišn kē ašmāh pad kunišn sālār hēd kū pad wināh ud kirbag āmār kunēd ohrmazd ud ašawahišt kē =tān ān ī pad uzwān saxwan pad wahman kē =m az awēšān tō ohrmazd fradom frāzdaxšagēnīdār hē kū =m az amahraspandān tis ī frārōn fradom tō pad daxšag be kunē",
     "WZ Paragraph Preview": "WZ 1.14: fradom kū harw tis ān frārōn ī ohrmazd kām",
     "WZ Chapter/Stanza": "1.14"
   },
@@ -831,7 +831,7 @@
     "IDF Cosine": "0.2183",
     "Shared Distinct Words": "3",
     "Shared Words": "frāxkard, zrēy, buland",
-    "PY Paragraph Preview": "caby_ch65_st3: kē pad amāwandīh frāz tazēd az hugar ī buland abar ō zrēy ī frāxkard",
+    "PY Paragraph Preview": "65.3: kē pad amāwandīh frāz tazēd az hugar ī buland abar ō zrēy ī frāxkard",
     "WZ Paragraph Preview": "WZ 3.21: ud sadwēs war ast xwad pahlūg ī zrēy ī frāxkard čē ayōǰdahrīh ud stabrīh ī az drayāb ī sōr ka andar ō frāxkard hamē šawēd pad wād ī wuzurg ud buland =ēw abāz zanēd tā ān ī rōšn pad pākīh andar ō frāxkard ud čašmagān ī ardīwsūr šawēd",
     "WZ Chapter/Stanza": "3.21"
   },
@@ -842,7 +842,7 @@
     "IDF Cosine": "0.2174",
     "Shared Distinct Words": "3",
     "Shared Words": "ēkdād, gāw, urwar",
-    "PY Paragraph Preview": "caby_ch71_st28: ēdōn pad ān ōy tarsagāhīh ka gāw ēkdād tan be dād ohrmazd urwar waxšēnīd kū =š be abzāyēnīd",
+    "PY Paragraph Preview": "71.28: ēdōn pad ān ōy tarsagāhīh ka gāw ēkdād tan be dād ohrmazd urwar waxšēnīd kū =š be abzāyēnīd",
     "WZ Paragraph Preview": "WZ 3.43: ham čiyōn gāw ī ēkdād bē widard az ān čiyōn =iš čihr ī urwarīg dāšt panǰāh ud haft sardag ǰōrdāg dwāzdah sardag urwar ī bēšaz az hannām hannām waxšīd hēnd",
     "WZ Chapter/Stanza": "3.43"
   },
@@ -853,7 +853,7 @@
     "IDF Cosine": "0.2156",
     "Shared Distinct Words": "3",
     "Shared Words": "raft, ēstād, čiyōn",
-    "PY Paragraph Preview": "caby_ch43_st13: pad dagrrasišnīh ī ǰān pad tan ī pasēn kē ō ēd ī ašmāh nē kas pad nigēzišn raft pad kāmag ēstād u =š ēd ī tō xwadāyīh guft kū ēdōn čiyōn man ēstād kas nē ēstād",
+    "PY Paragraph Preview": "43.13: pad dagrrasišnīh ī ǰān pad tan ī pasēn kē ō ēd ī ašmāh nē kas pad nigēzišn raft pad kāmag ēstād u =š ēd ī tō xwadāyīh guft kū ēdōn čiyōn man ēstād kas nē ēstād",
     "WZ Paragraph Preview": "WZ 20.2: zarduxšt čiyōn bē šud ō ǰašnzār pad raft ēstād andar rāh pad dašt =ēw ēwtāk bē xuft",
     "WZ Chapter/Stanza": "20.2"
   },
@@ -864,7 +864,7 @@
     "IDF Cosine": "0.2107",
     "Shared Distinct Words": "3",
     "Shared Words": "mad, kār, xwēš",
-    "PY Paragraph Preview": "caby_ch9_st25: nēk tō kū tan ī tō nēk mad ēstēd kē pad ān ī xwēš ōz kāmagxwadāy hē hōm kū =t ōz pad ān kār ī =t abāyēd ā =t tuwān dāštan",
+    "PY Paragraph Preview": "9.25: nēk tō kū tan ī tō nēk mad ēstēd kē pad ān ī xwēš ōz kāmagxwadāy hē hōm kū =t ōz pad ān kār ī =t abāyēd ā =t tuwān dāštan",
     "WZ Paragraph Preview": "WZ 31.1: ud mad ō pornāyīhpēšagān wizīnēd kār pad xwēš pēšag kunēd",
     "WZ Chapter/Stanza": "31.1"
   },
@@ -875,7 +875,7 @@
     "IDF Cosine": "0.2096",
     "Shared Distinct Words": "3",
     "Shared Words": "gētī, rasēd, ruwān",
-    "PY Paragraph Preview": "caby_ch44_st8: čiyōn ēn ī man ruwān ān weh urwāhmanīh rasēd pad ān harw dō ka tis ī mēnōy ud gētī xūb kunam",
+    "PY Paragraph Preview": "44.8: čiyōn ēn ī man ruwān ān weh urwāhmanīh rasēd pad ān harw dō ka tis ī mēnōy ud gētī xūb kunam",
     "WZ Paragraph Preview": "WZ 31.1: ōwōn =iz ka az gētī bē widerēd ham pad ayārīh ī mard kirb ud kanīg ī šāyēd ō bʾst rasēd ī xwad hēnd pid ud mād ī ruwān",
     "WZ Chapter/Stanza": "31.1"
   },
@@ -886,7 +886,7 @@
     "IDF Cosine": "0.2094",
     "Shared Distinct Words": "3",
     "Shared Words": "xwāst, tuwān, rāy",
-    "PY Paragraph Preview": "caby_ch65_st11: ma kas awēšān rāy xwāyād ziyān kū =šān ma tuwān bawād kird xwāst ma =iz snah ud ma margīh ud ma kēn ud ma apparišn",
+    "PY Paragraph Preview": "65.11: ma kas awēšān rāy xwāyād ziyān kū =šān ma tuwān bawād kird xwāst ma =iz snah ud ma margīh ud ma kēn ud ma apparišn",
     "WZ Paragraph Preview": "WZ 12.10: dūrīsraw frāz āšuft u =š asp xwāst ud guft kū =m im rāy ēstād nē tuwān",
     "WZ Chapter/Stanza": "12.10"
   },
@@ -897,7 +897,7 @@
     "IDF Cosine": "0.1959",
     "Shared Distinct Words": "4",
     "Shared Words": "menišn, kunišn, dēn, gōwišn",
-    "PY Paragraph Preview": "caby_ch48_st4: kē dahēd menišn ohrmazd ō wehīh ud kē =iz ō wattarīh ōy dēn pad kunišn ud gōwišn",
+    "PY Paragraph Preview": "48.4: kē dahēd menišn ohrmazd ō wehīh ud kē =iz ō wattarīh ōy dēn pad kunišn ud gōwišn",
     "WZ Paragraph Preview": "WZ 35.13: pad dēn zarduxšt ohrmazd handāzagīh rāy čiyōn ohrmazd šaš amahraspandān kē xwēš menišn gōwišn kunišn bowandagmenišnīh bowandaggōwišnīh bowandagkunišnīh abzār brēhēnīd ān zarduxšt az xwēš čārag se pus zād handāzag ī wahman ardwahišt ud šahrewar",
     "WZ Chapter/Stanza": "35.13"
   },
@@ -908,7 +908,7 @@
     "IDF Cosine": "0.1932",
     "Shared Distinct Words": "4",
     "Shared Words": "agar, ǰān, ruwān, frāz",
-    "PY Paragraph Preview": "caby_ch71_st15: čē agar zardušt awēšān gōwišn tā ō ān ī abdom wardišn ǰān frāz gōwē barsom ast kē ēdōn gōwēd ay pad abdom wardišn ǰān frāz gōwē bē tō ōy tanom man kē ohrmazd ham ruwān az ān ī wattom axwān pad ānand zahyā ud pahnā bētanišnīh čand ēn zamīg , X X X X X X X",
+    "PY Paragraph Preview": "71.15: čē agar zardušt awēšān gōwišn tā ō ān ī abdom wardišn ǰān frāz gōwē barsom ast kē ēdōn gōwēd ay pad abdom wardišn ǰān frāz gōwē bē tō ōy tanom man kē ohrmazd ham ruwān az ān ī wattom axwān pad ānand zahyā ud pahnā bētanišnīh čand ēn zamīg , X X X X X X X",
     "WZ Paragraph Preview": "WZ 30.44: ud agar druwand ǰān bōy frawahr ud ruwān ī andar rāh ud ruwān nigāhbed hamhāgān az =iš frāz wardēnd",
     "WZ Chapter/Stanza": "30.44"
   },
@@ -919,7 +919,7 @@
     "IDF Cosine": "0.2053",
     "Shared Distinct Words": "3",
     "Shared Words": "dēw, hēnd, būd",
-    "PY Paragraph Preview": "caby_ch44_st20: čiyōn hagriz ohrmazd dēw huxwadāy būd hēnd",
+    "PY Paragraph Preview": "44.20: čiyōn hagriz ohrmazd dēw huxwadāy būd hēnd",
     "WZ Paragraph Preview": "WZ 8.1: ka =š nazd būd ō zāyišn ahreman tab dēw ud dard dēw ud wād dēw harw ēk abāg 150 dēw bē ō ōzanišn ī zarduxšt frēstād hēnd",
     "WZ Chapter/Stanza": "8.1"
   },
@@ -930,7 +930,7 @@
     "IDF Cosine": "0.2039",
     "Shared Distinct Words": "3",
     "Shared Words": "mardōm, ātaxš, tan",
-    "PY Paragraph Preview": "caby_ch59_st12: ātaxš ī wehfranāftār yazam ān ī andar tan ī mardōm",
+    "PY Paragraph Preview": "59.12: ātaxš ī wehfranāftār yazam ān ī andar tan ī mardōm",
     "WZ Paragraph Preview": "WZ 29.9: bē čiyōn ātaxš ī gētīyīg gumbad az passāzišn ī gētīyān ud ātaxšwaxšēnīdār mardōm ǰān ī mēnōyīg pad āfurišn ī az dādār rāyēnīdār ī tan ud ruwān ī mēnōyīg",
     "WZ Chapter/Stanza": "29.9"
   },
@@ -941,7 +941,7 @@
     "IDF Cosine": "0.1903",
     "Shared Distinct Words": "4",
     "Shared Words": "spand, menišn, gōwēd, awēšān",
-    "PY Paragraph Preview": "caby_ch4_st19: awēšān niwēyēnam mānsrspand ī ahlaw ī kāmagox kū =š kāmag pad menišn abāg ān ī ox rāst ast kē ēdōn gōwēd hād ān =iz ī kasān ēdōn be kunēd dād ǰuddēw dād zardušt harw ēk dagrabarrawišnīh mēnōy ī spand ud dēn ī weh ī mazdēsnān pad ēwkardagīh pad yazišn ud niyāyišn ud šnāyēnīdārīh ud frāzāfrīgānīh",
+    "PY Paragraph Preview": "4.19: awēšān niwēyēnam mānsrspand ī ahlaw ī kāmagox kū =š kāmag pad menišn abāg ān ī ox rāst ast kē ēdōn gōwēd hād ān =iz ī kasān ēdōn be kunēd dād ǰuddēw dād zardušt harw ēk dagrabarrawišnīh mēnōy ī spand ud dēn ī weh ī mazdēsnān pad ēwkardagīh pad yazišn ud niyāyišn ud šnāyēnīdārīh ud frāzāfrīgānīh",
     "WZ Paragraph Preview": "WZ 35.18: čiyōn ān ī gōwēd pad spand kū ēg awēšān mard pad ān ī abzōnīg xrad pad menišn ō ham wēnēnd čiyōn nūn mardōm pad čašm ēg awēšān mard pad ān ī abzōnīg xrad pad menišn ō ham pursēnd čiyōn nūn mardōm pad uzwān",
     "WZ Chapter/Stanza": "35.18"
   },
@@ -952,7 +952,7 @@
     "IDF Cosine": "0.1889",
     "Shared Distinct Words": "4",
     "Shared Words": "rāh, kirdan, xwēš, ahlāyīh",
-    "PY Paragraph Preview": "caby_ch34_st12: hammōzē ō amāh ān ī ahlāyīh rāh rāh ī pōryōtkēšīh kē pad wahman xwēšīh kū pad frārōnīh ō xwēš šāyēd kirdan",
+    "PY Paragraph Preview": "34.12: hammōzē ō amāh ān ī ahlāyīh rāh rāh ī pōryōtkēšīh kē pad wahman xwēšīh kū pad frārōnīh ō xwēš šāyēd kirdan",
     "WZ Paragraph Preview": "WZ 27.11: šašom ahlāyīh daxšag andar xwēš mān mehmān kirdan rāy rāh ī wehān ō xānag wišādagīhā dāštan",
     "WZ Chapter/Stanza": "27.11"
   },
@@ -963,7 +963,7 @@
     "IDF Cosine": "0.2003",
     "Shared Distinct Words": "3",
     "Shared Words": "wattar, dād, dēn",
-    "PY Paragraph Preview": "caby_ch32_st10: ōy mard ō ēn ī man sraw murnǰēnišn dād kū =š arawāgīh ō dēn dād kē =š wattar pad wēnišn guft",
+    "PY Paragraph Preview": "32.10: ōy mard ō ēn ī man sraw murnǰēnišn dād kū =š arawāgīh ō dēn dād kē =š wattar pad wēnišn guft",
     "WZ Paragraph Preview": "WZ 24.5: paydāgīh ī az dēn ān sīhse band nišān ī bastan ī sīhse dād ī wattar pad sīhse kirbag ī pāšom",
     "WZ Chapter/Stanza": "24.5"
   },
@@ -974,7 +974,7 @@
     "IDF Cosine": "0.1764",
     "Shared Distinct Words": "5",
     "Shared Words": "nūn, tuwān, hēnd, būd, awēšān",
-    "PY Paragraph Preview": "caby_ch33_st10: ka pad harwist ēstānd huzīwišnīh kū ō ēn kār ēstānd kū bun pad xwēšīh ī ašmāh dārānd kē =em būd hēnd abarmānd az pidarān kē =iz =m hēnd handōxt xwēš ohrmazd kē =iz =m bawēnd az nūn frāz pad ēd ī tō dōšišn awēšān baxšānd kū =m pad abāyist ī tō tuwān bawād dāštan",
+    "PY Paragraph Preview": "33.10: ka pad harwist ēstānd huzīwišnīh kū ō ēn kār ēstānd kū bun pad xwēšīh ī ašmāh dārānd kē =em būd hēnd abarmānd az pidarān kē =iz =m hēnd handōxt xwēš ohrmazd kē =iz =m bawēnd az nūn frāz pad ēd ī tō dōšišn awēšān baxšānd kū =m pad abāyist ī tō tuwān bawād dāštan",
     "WZ Paragraph Preview": "WZ 34.6: ohrmazd guft kū awēšān dāmān ka nē būd hēnd ā =m brēhēnīdan tuwān būd ud nūn ka būd ud wišuft abāz passāxtan hugartar",
     "WZ Chapter/Stanza": "34.6"
   },
@@ -985,7 +985,7 @@
     "IDF Cosine": "0.1974",
     "Shared Distinct Words": "3",
     "Shared Words": "urwar, zamīg, man",
-    "PY Paragraph Preview": "caby_ch65_st13: ēn ō man dah ēn zamīg ud ēn urwar",
+    "PY Paragraph Preview": "65.13: ēn ō man dah ēn zamīg ud ēn urwar",
     "WZ Paragraph Preview": "WZ 34.16: man kē ohrmazd ham ka abāz nigeram pad zamīg āb urwar rōšnīh ud wād pad rōšndānišnīh bē dānam ēk az did bē šnāsam čē pad wispdānišnīh pad rōšnmenišnīh ēk az did ōwōn wizēham čiyōn ka šīr ī mādagān dōxt ud pad zamīg pad ham ǰōy frāz tazēnd ēk andar did",
     "WZ Chapter/Stanza": "34.16"
   },
@@ -996,7 +996,7 @@
     "IDF Cosine": "0.1971",
     "Shared Distinct Words": "3",
     "Shared Words": "čand, rōšn, āgāh",
-    "PY Paragraph Preview": "caby_ch32_st7: awēšān kēnīg nē tis āgāh hēnd ān zanišn ī rōšn kū pādufrāh pad ruwān čē ud čand nē dānēnd kē zanišn hammōxtēnd ān tis hammōxtēnd ī =šān pad ruwān zanišn bawēd kē srūd ēstēd kū pad ān ī xwīnāhen ā =šān dazēd kē awēšān tō ohrmazd ōy =iz ī riftag āgāh hē kū ōy =iz ī wināhgārtar pādufrāh dānē",
+    "PY Paragraph Preview": "32.7: awēšān kēnīg nē tis āgāh hēnd ān zanišn ī rōšn kū pādufrāh pad ruwān čē ud čand nē dānēnd kē zanišn hammōxtēnd ān tis hammōxtēnd ī =šān pad ruwān zanišn bawēd kē srūd ēstēd kū pad ān ī xwīnāhen ā =šān dazēd kē awēšān tō ohrmazd ōy =iz ī riftag āgāh hē kū ōy =iz ī wināhgārtar pādufrāh dānē",
     "WZ Paragraph Preview": "WZ 34.24: ōy kē =š xānag framūd rōšn āgāh kū pad čand ō frazām rasēd",
     "WZ Chapter/Stanza": "34.24"
   },
@@ -1007,7 +1007,7 @@
     "IDF Cosine": "0.1838",
     "Shared Distinct Words": "4",
     "Shared Words": "esm, burd, gōspandān, ātaxš",
-    "PY Paragraph Preview": "caby_ch62_st9: agar ō ōy ān bard esm ī pad ahlāyīh burd barsom =iz ī pad ahlāyīh frāz wistard urwar hayanbāg ān X [ōy] pas āfrīnēnēd ātaxš ī ohrmazd ka hušnūd ud abišt ud sagr kū abar ō tō rawād ān ī gōspandān ramag ud ān ī wīrān purrrawišnīh mard ī ǰuyān",
+    "PY Paragraph Preview": "62.9: agar ō ōy ān bard esm ī pad ahlāyīh burd barsom =iz ī pad ahlāyīh frāz wistard urwar hayanbāg ān X [ōy] pas āfrīnēnēd ātaxš ī ohrmazd ka hušnūd ud abišt ud sagr kū abar ō tō rawād ān ī gōspandān ramag ud ān ī wīrān purrrawišnīh mard ī ǰuyān",
     "WZ Paragraph Preview": "WZ 19.3: ēg parward zarduxšt driyōšān ud wāstarēnīd gōspandān ud esm burd ō ātaxš ud hōm hūnīd ō āb",
     "WZ Chapter/Stanza": "19.3"
   },
@@ -1029,7 +1029,7 @@
     "IDF Cosine": "0.1949",
     "Shared Distinct Words": "3",
     "Shared Words": "sāmān, xwāst, būd",
-    "PY Paragraph Preview": "caby_ch9_st10: srid ī sāmān ī sūdxwāstār hād sridīh =š ēd būd kū pus ī sidīgar būd u =š sūdxwāstārīh =š ēd būd kū sūd dāmān nēk dānist xwāst man sidīgar az mardōmān andar astōmandān gēhān hunīd =om",
+    "PY Paragraph Preview": "9.10: srid ī sāmān ī sūdxwāstār hād sridīh =š ēd būd kū pus ī sidīgar būd u =š sūdxwāstārīh =š ēd būd kū sūd dāmān nēk dānist xwāst man sidīgar az mardōmān andar astōmandān gēhān hunīd =om",
     "WZ Paragraph Preview": "WZ 4.12: u =š dīd kū tā ān gāw ast kirdan duščārtar čē abāg pādixšāyīh ī =š būd ā =š nē xwāst kū pad ān gāw sāmān paydāgīhēd",
     "WZ Chapter/Stanza": "4.12"
   },
@@ -1040,7 +1040,7 @@
     "IDF Cosine": "0.1945",
     "Shared Distinct Words": "3",
     "Shared Words": "pādifrāh, mizd, kunēd",
-    "PY Paragraph Preview": "caby_ch53_st7: ēdōn =iz =š pad ān ī ašmāh gyāg mizd ast ōy zan pad ān ī maγīh pad ān abēzag wattarīh kū =š pādifrāh be kunēnd ka =š āzūzag rawēd pad bun ī haxt zan =ēw ka pašn be kunēd ud abāz ēstēd",
+    "PY Paragraph Preview": "53.7: ēdōn =iz =š pad ān ī ašmāh gyāg mizd ast ōy zan pad ān ī maγīh pad ān abēzag wattarīh kū =š pādifrāh be kunēnd ka =š āzūzag rawēd pad bun ī haxt zan =ēw ka pašn be kunēd ud abāz ēstēd",
     "WZ Paragraph Preview": "WZ 1.16: didīgar ēn kū kē ān kunēd ī ohrmazd kām ā =š mizd pāddāšn xwēš ōy kē nē ān kunēd ī ohrmazd kām ā =š puhl pādifrāh xwēš",
     "WZ Chapter/Stanza": "1.16"
   },
@@ -1051,7 +1051,7 @@
     "IDF Cosine": "0.1941",
     "Shared Distinct Words": "3",
     "Shared Words": "frazām, bar, dahēnd",
-    "PY Paragraph Preview": "caby_ch44_st10: kē ān ī man frazānagīh kū frazām ī tis pad frārōnīh dānēd ā =š ēd tō īšt bar kū ān mizd ī ō tō dahēnd , ō =iz ōy dahēnd hunsand ham ohrmazd ka man kam nē dahēnd",
+    "PY Paragraph Preview": "44.10: kē ān ī man frazānagīh kū frazām ī tis pad frārōnīh dānēd ā =š ēd tō īšt bar kū ān mizd ī ō tō dahēnd , ō =iz ōy dahēnd hunsand ham ohrmazd ka man kam nē dahēnd",
     "WZ Paragraph Preview": "WZ 34.27: homānāg būd ō sāl kē pad wahārān draxt wiškuft bawēnd pad hāmīn bar dahēnd pad pādēz frazām bar dahēnd pad zamestān hušk ud murd homānāg bawēnd",
     "WZ Chapter/Stanza": "34.27"
   },
@@ -1062,7 +1062,7 @@
     "IDF Cosine": "0.1931",
     "Shared Distinct Words": "3",
     "Shared Words": "pursišn, xwāyišn, bawēd",
-    "PY Paragraph Preview": "caby_ch43_st10: čē pursišn tō kē =t ēdōn pad ān amāwandīh pad ān pursišn ka ō tō ī pādixšā ohrmazd pad xwāyišn dahēd amāwandīh kū ka dēn gōwē ā =t amāwandīh bawēd",
+    "PY Paragraph Preview": "43.10: čē pursišn tō kē =t ēdōn pad ān amāwandīh pad ān pursišn ka ō tō ī pādixšā ohrmazd pad xwāyišn dahēd amāwandīh kū ka dēn gōwē ā =t amāwandīh bawēd",
     "WZ Paragraph Preview": "WZ 30.38: u =š buništ pad dō wihān kū dānišnōmand ud tuwānnērōg bawēd u =š dānišn tuwān nē čimīgīhā bē ō kār burdan ayāb =iš xwāyišn pursišn būd u =š nē xwāst andar adēnīh parwand raft čiyōn mahist parwānag ī ō dušox",
     "WZ Chapter/Stanza": "30.38"
   },
@@ -1073,7 +1073,7 @@
     "IDF Cosine": "0.1805",
     "Shared Distinct Words": "4",
     "Shared Words": "nām, šān, hēnd, būd",
-    "PY Paragraph Preview": "caby_ch63_st4: kē būd hēnd ud kē =iz hēnd awēšān yazam pad ān ī xwēš nām u =šān abar rasam ō ayārīh kū =šān hamāg ayārōmandīh ōh kunam ud ōh daham",
+    "PY Paragraph Preview": "63.4: kē būd hēnd ud kē =iz hēnd awēšān yazam pad ān ī xwēš nām u =šān abar rasam ō ayārīh kū =šān hamāg ayārōmandīh ōh kunam ud ōh daham",
     "WZ Paragraph Preview": "WZ 9.2: pad ān gāh ka zarduxšt zād panǰ brād būd hēnd kē =šān nām brādarōxš brādarōšan tūr ī brādrōxš ʾzʾn ud sm",
     "WZ Chapter/Stanza": "9.2"
   },
@@ -1084,7 +1084,7 @@
     "IDF Cosine": "0.1921",
     "Shared Distinct Words": "3",
     "Shared Words": "ǰān, kunēd, tan",
-    "PY Paragraph Preview": "caby_ch46_st18: kē ō man ǰān kū hāwištīh ī man kunēd ōy pad =iz tan pahlom kū =š pad gētī tis =ēw ēn pahlom",
+    "PY Paragraph Preview": "46.18: kē ō man ǰān kū hāwištīh ī man kunēd ōy pad =iz tan pahlom kū =š pad gētī tis =ēw ēn pahlom",
     "WZ Paragraph Preview": "WZ 30.32: ka tan ēd kunēd ǰān andar tan ruwān bērōn ud bōy mayān ī awēšān paygāmbarīh kunēd ud āgāhīh az ruwān padīrēd ud ō ǰān nimāyēd ǰān ō nigāhbed ōš abespārēd",
     "WZ Chapter/Stanza": "30.32"
   },
@@ -1095,7 +1095,7 @@
     "IDF Cosine": "0.1915",
     "Shared Distinct Words": "3",
     "Shared Words": "kāmag, xwēš, dād",
-    "PY Paragraph Preview": "caby_ch32_st15: ēdōn awēšān abar ka dahēnd kū =šān ēn tis ō xwēš dād kē =šān nē zīndagīh pad pādixšāyīh kāmag kū [=šān] pad pādixšāyīh ī xwēš zīndagīh ī kasān nē abāyēd",
+    "PY Paragraph Preview": "32.15: ēdōn awēšān abar ka dahēnd kū =šān ēn tis ō xwēš dād kē =šān nē zīndagīh pad pādixšāyīh kāmag kū [=šān] pad pādixšāyīh ī xwēš zīndagīh ī kasān nē abāyēd",
     "WZ Paragraph Preview": "WZ 10.5: hamzamān pōrušasp zarduxšt grift u =š ō kirb dād kū čiyōn =it xwēš kāmag pad =iš kird",
     "WZ Chapter/Stanza": "10.5"
   },
@@ -1117,7 +1117,7 @@
     "IDF Cosine": "0.1904",
     "Shared Distinct Words": "3",
     "Shared Words": "āsrōn, wāstaryōš, artēštār",
-    "PY Paragraph Preview": "caby_ch11_st5: kē az man ān sūr zīnēnēd ayāb truftēnēd ayāb bē apparēd kē =š ō man dād ohrmazd ahlaw ērwārag abāg uzwān ān =iz ī hōy dōysr ay nē andar ān ī ōy mān zāyēd āsrōn nē artēštār ud nē wāstaryōš",
+    "PY Paragraph Preview": "11.5: kē az man ān sūr zīnēnēd ayāb truftēnēd ayāb bē apparēd kē =š ō man dād ohrmazd ahlaw ērwārag abāg uzwān ān =iz ī hōy dōysr ay nē andar ān ī ōy mān zāyēd āsrōn nē artēštār ud nē wāstaryōš",
     "WZ Paragraph Preview": "WZ 30.31: ud ēn 3 ātaxš ān ī andar sar āsrōn čihrag u =š ādur farnbay ayārtar ān ī andar dil artēštār čihrag u =š ādur gušnasp ayārtar ud ān ī andar kumīg wāstaryōš čihrag u =š ādur burzēnmihr ayārtar",
     "WZ Chapter/Stanza": "30.31"
   },
@@ -1128,7 +1128,7 @@
     "IDF Cosine": "0.1784",
     "Shared Distinct Words": "4",
     "Shared Words": "spandārmad, dām, ruwān, ahlawān",
-    "PY Paragraph Preview": "caby_ch49_st10: ēdōn =iz ohrmazd ēd ī tō dām bē pāyēnd wahman ud ān =iz ī ahlawān ruwān ān ī niyāyišnōmand spandārmad ī abzōnīg",
+    "PY Paragraph Preview": "49.10: ēdōn =iz ohrmazd ēd ī tō dām bē pāyēnd wahman ud ān =iz ī ahlawān ruwān ān ī niyāyišnōmand spandārmad ī abzōnīg",
     "WZ Paragraph Preview": "WZ 35.47: rōz ī ohrmazd bāmdād mēnōy ī zamīg xwad bowandagmenišn spandārmad mād ī wispān zāyišnōmand ī abar zamīg kē hamčihrīh az fradomīh ī druz andar ō dām dwārist tā abdom ī rōzān humihrīhā harwisp dām čē hamāg frazend hēnd abaxšāyēd abar ahlawān dušxwārīh ī =šān abar tan rāy ud abar druwandān pādifrāh ī =šān abar ruwān rāy",
     "WZ Chapter/Stanza": "35.47"
   },
@@ -1139,7 +1139,7 @@
     "IDF Cosine": "0.1891",
     "Shared Distinct Words": "3",
     "Shared Words": "druz, xwēš, šān",
-    "PY Paragraph Preview": "caby_ch31_st4: manīgān =iz hāwištān ī man xwadāyīh az ōy ī ōzōmand kū [=šān] pādixšāyīh az sōšāns dād kē ān ī ōy gurdīh kū =š pad abzār ī xwēš tuwān bawēd kirdan wānīhēd druz",
+    "PY Paragraph Preview": "31.4: manīgān =iz hāwištān ī man xwadāyīh az ōy ī ōzōmand kū [=šān] pādixšāyīh az sōšāns dād kē ān ī ōy gurdīh kū =š pad abzār ī xwēš tuwān bawēd kirdan wānīhēd druz",
     "WZ Paragraph Preview": "WZ 30.40: u =šān druz pad dō wihān frēbēd ō xwēš kunēd",
     "WZ Chapter/Stanza": "30.40"
   },
@@ -1150,7 +1150,7 @@
     "IDF Cosine": "0.1759",
     "Shared Distinct Words": "4",
     "Shared Words": "winnārd, asmān, zamīg, būd",
-    "PY Paragraph Preview": "caby_ch66_st21: pad ahlāyīh bēdaham awēšān frawahr kē fradom būd hēnd ī mānīgān ud wisīgān ud zandīgān ud dehīgān kē =šān asmān winnārd kē =šān āb winnārd kē [=šān] zamīg winnārd kē =šān gōspand winnārd kē =šān andar burdār pus winnārd abarnihuft abēwidard kū zīndag",
+    "PY Paragraph Preview": "66.21: pad ahlāyīh bēdaham awēšān frawahr kē fradom būd hēnd ī mānīgān ud wisīgān ud zandīgān ud dehīgān kē =šān asmān winnārd kē =šān āb winnārd kē [=šān] zamīg winnārd kē =šān gōspand winnārd kē =šān andar burdār pus winnārd abarnihuft abēwidard kū zīndag",
     "WZ Paragraph Preview": "WZ 34.20: ud didīgar ka =m zamīg winnārd asmān kū ō kadārizēw nēmag nē nazdīktar būd homānāgīh ī zardag ī xāyag mayān xāyag",
     "WZ Chapter/Stanza": "34.20"
   },
@@ -1161,7 +1161,7 @@
     "IDF Cosine": "0.1669",
     "Shared Distinct Words": "5",
     "Shared Words": "aybisrūsrim, uzayrin, ušahin, hāwan, gāh",
-    "PY Paragraph Preview": "caby_ch25_st4: ahlawān ī wehān ī abzārān ī abzōnīgān frawahr stāyēm ud xwānam xwēšēnam ud yazam ī mānīgān ud wisīgān ud zandīgān ud dehīgān zarduštrōtomān kū kē ahlaw frawahr gāh ušahin abāg hāwan ud rapihwin ud uzayrin ud aybisrūsrim",
+    "PY Paragraph Preview": "25.4: ahlawān ī wehān ī abzārān ī abzōnīgān frawahr stāyēm ud xwānam xwēšēnam ud yazam ī mānīgān ud wisīgān ud zandīgān ud dehīgān zarduštrōtomān kū kē ahlaw frawahr gāh ušahin abāg hāwan ud rapihwin ud uzayrin ud aybisrūsrim",
     "WZ Paragraph Preview": "WZ 35.30: asmān zāmyad mārspand anagrān rōz ī ahunwad gāh tā ō uzayrin gāh harw rōz pad uzayrin gāh panǰ ēk az widardān ul uzīhēnd pad aybisrūsrim gyānōmand pad ušahin ahōš bawēnd pad hāwan ō hamīh ī hanǰaman xwānīhēnd pad rabihwin ēk ōy ī did rāmēnēnd",
     "WZ Chapter/Stanza": "35.30"
   },
@@ -1183,7 +1183,7 @@
     "IDF Cosine": "0.1855",
     "Shared Distinct Words": "3",
     "Shared Words": "keh, gāw, meh",
-    "PY Paragraph Preview": "caby_ch68_st30: [ud] [gāw] [ud] [gayōmard] [guft] [niyāyišn] [ī] [man] [ōy] [wēš] [padīrēd] [kē] [meh] [andar] [keh] [ud] [keh] [andar] [meh] [wizēn] [dānēd] [kirdan]",
+    "PY Paragraph Preview": "68.30: [ud] [gāw] [ud] [gayōmard] [guft] [niyāyišn] [ī] [man] [ōy] [wēš] [padīrēd] [kē] [meh] [andar] [keh] [ud] [keh] [andar] [meh] [wizēn] [dānēd] [kirdan]",
     "WZ Paragraph Preview": "WZ 3.16: u =š pad ǰām ī abarnihumb =ēw ī paymānag kē frawahrān dāštan xwēškārīh čand wēšist āb abar āhext ud čand škefttar pad zanišn abar wārānēnīd sreškān ī čand mard sar ud gāw sar meh ud keh",
     "WZ Chapter/Stanza": "3.16"
   },
@@ -1205,7 +1205,7 @@
     "IDF Cosine": "0.1832",
     "Shared Distinct Words": "3",
     "Shared Words": "nigerīd, mardōmān, gōwišn",
-    "PY Paragraph Preview": "caby_ch47_st1: az abzōnīgmēnōyīh ud pahlommenišnīh ka ān ī mad ēstād ā =m be kird ud ān ī nē mad ēstād rāy ā =m be nigerīd ud az ān ī ahlāyīh kunišn ud gōwišn ud kunišn ī frārōn rāy ī =m ōh kird ud gōwišn ī frārōn rāy ī =m ōh guft ā =m ō xwēšān dād hordād ud amurdād mizd ō mardōmān",
+    "PY Paragraph Preview": "47.1: az abzōnīgmēnōyīh ud pahlommenišnīh ka ān ī mad ēstād ā =m be kird ud ān ī nē mad ēstād rāy ā =m be nigerīd ud az ān ī ahlāyīh kunišn ud gōwišn ud kunišn ī frārōn rāy ī =m ōh kird ud gōwišn ī frārōn rāy ī =m ōh guft ā =m ō xwēšān dād hordād ud amurdād mizd ō mardōmān",
     "WZ Paragraph Preview": "WZ 10.19: u =š ēdōn passoxēnīd kū ān ī ka =m ō abar nigerīd pad ān čim ka =m dīd kū xwarrah ī im abar ō asmān šawēd az gōwišn ī im ruwān ī mardōmān abar ō wahišt šawēnd",
     "WZ Chapter/Stanza": "10.19"
   },
@@ -1227,7 +1227,7 @@
     "IDF Cosine": "0.1824",
     "Shared Distinct Words": "3",
     "Shared Words": "rasēd, kār, tan",
-    "PY Paragraph Preview": "caby_ch36_st2: pad ān ī meh kār bē rasēd pad passāxt ī pad tan ī pasēn",
+    "PY Paragraph Preview": "36.2: pad ān ī meh kār bē rasēd pad passāxt ī pad tan ī pasēn",
     "WZ Paragraph Preview": "WZ 27.14: nowom pēšrawišnīh ud pasrawišnīh ī dēn bē šnāxtan ud pēšrawišnīh ī dēn frāz ō pēš dāštan u =š kār ud bahr pad =iš xwāstan pasrawišnīh ka petyārag bē ō dēn rasēd dēn abāz ō pēš dāštan ud tan pad mkndīh ī dēn dāštan",
     "WZ Chapter/Stanza": "27.14"
   },
@@ -1238,7 +1238,7 @@
     "IDF Cosine": "0.1816",
     "Shared Distinct Words": "3",
     "Shared Words": "pēš, būd, frāz",
-    "PY Paragraph Preview": "caby_ch68_st29: āb dahēd ō amāgān ān nēkīh ī =mān az ašmāh pēš =iz frāz windīd pad yašt ī pad ātaxš sar X [būd] kē pad yašt ī pad āb bun guft",
+    "PY Paragraph Preview": "68.29: āb dahēd ō amāgān ān nēkīh ī =mān az ašmāh pēš =iz frāz windīd pad yašt ī pad ātaxš sar X [būd] kē pad yašt ī pad āb bun guft",
     "WZ Paragraph Preview": "WZ 8.12: akōman frāz ō pēš āmad frāz ō dar mad būd andar kāmist šud",
     "WZ Chapter/Stanza": "8.12"
   },
@@ -1249,7 +1249,7 @@
     "IDF Cosine": "0.1801",
     "Shared Distinct Words": "3",
     "Shared Words": "rāstīh, kunišn, bawēd",
-    "PY Paragraph Preview": "caby_ch45_st8: kē pad wahman kunišn ud gōwišn āgāh bawēd pad rāstīh ī ohrmazd pad dēn ī ohrmazd",
+    "PY Paragraph Preview": "45.8: kē pad wahman kunišn ud gōwišn āgāh bawēd pad rāstīh ī ohrmazd pad dēn ī ohrmazd",
     "WZ Paragraph Preview": "WZ 32.1: čiyōn nimūd pad handāzag andar nibēgān ī hambadīgān kū ōy kē =š andar gētī kunišn =ēw ayāb tuwānnērōgīh =ēw ayāb mehīh =ēw ayāb xwēškārīh =ēw pad =iš sazāgīg u =š awiš bandīhēd pad rāstīh ī dārēd pad sūd sazēnīdan ān ēwēnag dānišn tuwānnērōgīh mehīh ud xwēškārīh ō ān ī ōy ruwān paywandēnd u =š pad =iz mēnōy hambrahmagīhā pad =iš bawēd",
     "WZ Chapter/Stanza": "32.1"
   },
@@ -1260,7 +1260,7 @@
     "IDF Cosine": "0.1793",
     "Shared Distinct Words": "3",
     "Shared Words": "paydāg, hād, būd",
-    "PY Paragraph Preview": "caby_ch9_st1: hād nē pad yašt ī fradom būd az pēš paydāg u =š dānist kū hōm ōh rasēd",
+    "PY Paragraph Preview": "9.1: hād nē pad yašt ī fradom būd az pēš paydāg u =š dānist kū hōm ōh rasēd",
     "WZ Paragraph Preview": "WZ 1.1: hād pad dēn ōwōn paydāg kū rōšnīh azabar ud tārīkīh azēr u =šān mayānag ī harw dō wišādagīh būd",
     "WZ Chapter/Stanza": "1.1"
   },
@@ -1271,7 +1271,7 @@
     "IDF Cosine": "0.1681",
     "Shared Distinct Words": "4",
     "Shared Words": "ramag, gōspandān, xwēškārīh, ahlaw",
-    "PY Paragraph Preview": "caby_ch6_st3: frāydādārfšēy mēnōy =ēw abāg rapihwin hamkār ud ramag gōspandān be abzāyēnēd ud zand =iz ī ahlaw ī ahlāyīh rad yazam mardōm ī andar xwēškārīh rad",
+    "PY Paragraph Preview": "6.3: frāydādārfšēy mēnōy =ēw abāg rapihwin hamkār ud ramag gōspandān be abzāyēnēd ud zand =iz ī ahlaw ī ahlāyīh rad yazam mardōm ī andar xwēškārīh rad",
     "WZ Paragraph Preview": "WZ 35.33: frēstag kē =š xwēškārīh šspīh zanēd ahlaw az druwand bē wizārīhēd ašōān az kustag =ēw druwandān az didīgar kust ōwōn ēstēd čiyōn šabān kē ramag ī gōspandān spēd az syā wizīnēd ud ǰud kunēd",
     "WZ Chapter/Stanza": "35.33"
   },
@@ -1282,7 +1282,7 @@
     "IDF Cosine": "0.1479",
     "Shared Distinct Words": "7",
     "Shared Words": "šahrewar, amurdād, hordād, spandārmad, gōspandān, ašawahišt, wahman",
-    "PY Paragraph Preview": "caby_ch70_st2: ān ī awēšān amāh dād [kū] [=mān] [dād] ān awēšān u =mān ān abēzagīh kū pad tis ī awēšān abēzag be bawēm frāz gōwam ud frāz =iz čāšam ō kasān kē ohrmazd ud kē wahman ud kē ašawahišt kē šahrewar ud kē spandārmad ud kē hordād ud amurdād kē gōspandān tan ud gōspandān ruwān ud kē ātaxš ī ohrmazd kē srōšahlī ud kē rašn ī ristag ud kē mihr ī frāygāwyōd ud kē wād ī ahlaw X ud kē dēn ī weh ī mazdēsnān kē dahmān ī wehān āfrīn ud kē dahmān ī wehān adrōzišnīh ud kē dahmān ī wehān arān...",
+    "PY Paragraph Preview": "70.2: ān ī awēšān amāh dād [kū] [=mān] [dād] ān awēšān u =mān ān abēzagīh kū pad tis ī awēšān abēzag be bawēm frāz gōwam ud frāz =iz čāšam ō kasān kē ohrmazd ud kē wahman ud kē ašawahišt kē šahrewar ud kē spandārmad ud kē hordād ud amurdād kē gōspandān tan ud gōspandān ruwān ud kē ātaxš ī ohrmazd kē srōšahlī ud kē rašn ī ristag ud kē mihr ī frāygāwyōd ud kē wād ī ahlaw X ud kē dēn ī weh ī mazdēsnān kē dahmān ī wehān āfrīn ud kē dahmān ī wehān adrōzišnīh ud kē dahmān ī wehān arān...",
     "WZ Paragraph Preview": "WZ 35.39: ka gāh ī šab andar āyēd amahraspandān ō gētī daxšagān gumēxtēnd ohrmazd ō sōšyans ud hammis mardōmān kū tā abēzagkām nēkdahišn ōstīgāngāh awardišnīgdwār bawēnd wahman ō gōspandān ašawahišt ō ātaxšān šahrewar ō ayōšustān spandārmad ō zamīgān hordād ō ābān amurdād ō urwarān kū tā ǰud ǰud pad xwēš čihrīh abēzagīhā ud ōstīgānīhā tā spntmt gāh mēnōyīg andar xwēš daxšagān hēnd spntmt gāh az daxšagān bērōn bē rasēnd ohrmazd pad xwaniras šaš amahraspandān pad ān šaš kišwar paydāg...",
     "WZ Chapter/Stanza": "35.39"
   },
@@ -1293,7 +1293,7 @@
     "IDF Cosine": "0.1777",
     "Shared Distinct Words": "3",
     "Shared Words": "bahr, paydāg, ēdōn",
-    "PY Paragraph Preview": "caby_ch44_st17: ud sālārbawišnīh ī abar hordād ud amurdād ēdōn pad mānsr kū mizd ēdōn dahēnd čiyōn az mānsr paydāg kē bahr az ahlāyīhabāgīh",
+    "PY Paragraph Preview": "44.17: ud sālārbawišnīh ī abar hordād ud amurdād ēdōn pad mānsr kū mizd ēdōn dahēnd čiyōn az mānsr paydāg kē bahr az ahlāyīhabāgīh",
     "WZ Paragraph Preview": "WZ 13.1: ēdōn paydāg kū ka sālag būd pusarān ī pwlwšp az pidar bahr xwāst hēnd u =šān pōrušasp bahr pad =iš baxt hēnd",
     "WZ Chapter/Stanza": "13.1"
   },
@@ -1304,7 +1304,7 @@
     "IDF Cosine": "0.1772",
     "Shared Distinct Words": "3",
     "Shared Words": "išān, mad, dēn",
-    "PY Paragraph Preview": "caby_ch45_st11: mad =išān dēwān ud pas mardōmān tarmenišnīh kē =šān ēn tarmenīd ēn dām any az ān kē ēn bowandag menēd ēn dēn",
+    "PY Paragraph Preview": "45.11: mad =išān dēwān ud pas mardōmān tarmenišnīh kē =šān ēn tarmenīd ēn dām any az ān kē ēn bowandag menēd ēn dēn",
     "WZ Paragraph Preview": "WZ 34.47: čiyōn dēn ō rawāgīh mad druz az āškāragpaydāgīh bē ō azēr zamīg wirēxt bahrīhā nērōg =išān agārīhist",
     "WZ Chapter/Stanza": "34.47"
   },
@@ -1315,7 +1315,7 @@
     "IDF Cosine": "0.1766",
     "Shared Distinct Words": "3",
     "Shared Words": "asmān, pēš, zamīg",
-    "PY Paragraph Preview": "caby_ch61_st1: ahlāyīh ī pahlom framāyēm ēn tis ī ō pēš gōwam andarg zamīg ud andarg asmān",
+    "PY Paragraph Preview": "61.1: ahlāyīh ī pahlom framāyēm ēn tis ī ō pēš gōwam andarg zamīg ud andarg asmān",
     "WZ Paragraph Preview": "WZ 2.14: ohrmazd az pēš gayōmart pāsbānēnīdan abērtar tuwān būdan gumēxtag dāmān rāy az zamīg abar ō asmān šud u =š gōšurūn az pas garzān hamē šud u =š wāng burd kū =t sālārīh ī pad dāmān pad kē bē hišt",
     "WZ Chapter/Stanza": "2.14"
   },
@@ -1337,7 +1337,7 @@
     "IDF Cosine": "0.1755",
     "Shared Distinct Words": "3",
     "Shared Words": "kustīg, dēn, čiyōn",
-    "PY Paragraph Preview": "caby_ch9_st28: u =š aybyāghanīh ēd kū čiyōn kustīg abāg mard ēwkardag dēn =iz abāg hōm ēdōn ēwkardag",
+    "PY Paragraph Preview": "9.28: u =š aybyāghanīh ēd kū čiyōn kustīg abāg mard ēwkardag dēn =iz abāg hōm ēdōn ēwkardag",
     "WZ Paragraph Preview": "WZ 27.4: čahārom yazišn čiyōn yazišn ī ohrmazd mādayān pad hamāg wehīh dādārīh xwadāyīh šnāxtan menīdan pad =iš dēn āstawān būdan ud kustīg nišān ī =š dēn rāy bastag čāštan",
     "WZ Chapter/Stanza": "27.4"
   },
@@ -1348,7 +1348,7 @@
     "IDF Cosine": "0.1747",
     "Shared Distinct Words": "3",
     "Shared Words": "rawāg, dāštan, šāyēd",
-    "PY Paragraph Preview": "caby_ch32_st9: kē =šān bē ān ī man īšt appurd paymān ī kird dāšt xwāstag ī pad dastwar ī man abāyēd dāštan ī ka šāyēd dāštan pad ān rāh šāyēd dāštan ī ārzōg ast pad wahman , kū ka pad frārōnīh dārēnd abāyišnīg pad awēšān saxwan ī mēnōyīhā ohrmazd ī ašawahišt ō ašmāh garzēd kū =m gāhānīgīh nē rawāg man =iz garzam",
+    "PY Paragraph Preview": "32.9: kē =šān bē ān ī man īšt appurd paymān ī kird dāšt xwāstag ī pad dastwar ī man abāyēd dāštan ī ka šāyēd dāštan pad ān rāh šāyēd dāštan ī ārzōg ast pad wahman , kū ka pad frārōnīh dārēnd abāyišnīg pad awēšān saxwan ī mēnōyīhā ohrmazd ī ašawahišt ō ašmāh garzēd kū =m gāhānīgīh nē rawāg man =iz garzam",
     "WZ Paragraph Preview": "WZ 27.4: yazišn ī kadārizēw xwēšpēšagīhā xwēškārīh čand kamwināhīhātar šāyēd rawāg dāštan",
     "WZ Chapter/Stanza": "27.4"
   },
@@ -1359,7 +1359,7 @@
     "IDF Cosine": "0.1743",
     "Shared Distinct Words": "3",
     "Shared Words": "gōwē, tan, frāz",
-    "PY Paragraph Preview": "caby_ch44_st6: ān harw dō frāz gōwē tis ī ahlawān ud druwandān ā =t ēdōn ān āškārag kū tan ī pasēn bawēd",
+    "PY Paragraph Preview": "44.6: ān harw dō frāz gōwē tis ī ahlawān ud druwandān ā =t ēdōn ān āškārag kū tan ī pasēn bawēd",
     "WZ Paragraph Preview": "WZ 30.47: ka awēšān arzānīgān pad xwāyišn frāz šawēnd ruwān ī andar rāh ō ruwān ī pad tan āfrāh gōwēd kū ǰahišn fradom passox gōwē ud ma gōwē ān ī =t hād aǰahišnīh",
     "WZ Chapter/Stanza": "30.47"
   },
@@ -1370,7 +1370,7 @@
     "IDF Cosine": "0.1629",
     "Shared Distinct Words": "4",
     "Shared Words": "bōy, ēdar, axwān, ruwān",
-    "PY Paragraph Preview": "caby_ch26_st3: pōryōtkēšān fradom niyōšišnhammōzišnān kē fradom hāwišt ī zardušt būd hēnd ēdar ahlawān narān ud nāyrīgān axwān gāh ud dēn X kunišn bōy āšnāg ruwān ud frawahr yazam kē wehmard ud ahlaw būd hēnd",
+    "PY Paragraph Preview": "26.3: pōryōtkēšān fradom niyōšišnhammōzišnān kē fradom hāwišt ī zardušt būd hēnd ēdar ahlawān narān ud nāyrīgān axwān gāh ud dēn X kunišn bōy āšnāg ruwān ud frawahr yazam kē wehmard ud ahlaw būd hēnd",
     "WZ Paragraph Preview": "WZ 30.33: šab ī sidīgar andar bām ruwān ud tan ī druwand ka ēk az did frāz wardēnd ruwān ō bōy pahikārēd kū bē tō bawišawē ō ān ī pāšom axwān bē man ēdar frāz šbkwnty",
     "WZ Chapter/Stanza": "30.33"
   },
@@ -1381,7 +1381,7 @@
     "IDF Cosine": "0.1737",
     "Shared Distinct Words": "3",
     "Shared Words": "dāštan, mad, abāz",
-    "PY Paragraph Preview": "caby_ch46_st4: pad ān ī mad ēstēd xwadāyīh ohrmazd hamēstārēnišn hēnd kū az wināh abāz abāyēnd dāštan ud zanišn hēnd",
+    "PY Paragraph Preview": "46.4: pad ān ī mad ēstēd xwadāyīh ohrmazd hamēstārēnišn hēnd kū az wināh abāz abāyēnd dāštan ud zanišn hēnd",
     "WZ Paragraph Preview": "WZ 1.4: ka frāz ō wimand mad ohrmazd abāz dāštan ī ahreman az xwēš šahr rāy frāz ō hamrānīh mad u =š pad abēzag gōwišn ī dādīg stardag kird u =š abāz ō tom abgand",
     "WZ Chapter/Stanza": "1.4"
   },
@@ -1392,7 +1392,7 @@
     "IDF Cosine": "0.1619",
     "Shared Distinct Words": "4",
     "Shared Words": "ruwān, kāmag, ahlawān, čiyōn",
-    "PY Paragraph Preview": "caby_ch71_st16: čiyōn =t kāmag ahlaw ēdōn hē ahlaw frāz widārēn[ā] ruwān tarist čēhwidarg ō ān ī pahlom axwān ī ahlawān rasē",
+    "PY Paragraph Preview": "71.16: čiyōn =t kāmag ahlaw ēdōn hē ahlaw frāz widārēn[ā] ruwān tarist čēhwidarg ō ān ī pahlom axwān ī ahlawān rasē",
     "WZ Paragraph Preview": "WZ 30.45: čiyōn tan kāmag kū kāmagīhā pad rōz šab bē xufsēd ān ī ruwān kāmag ka pad tan rōzānšabān xrad ī ahlawān xwāhēnd",
     "WZ Chapter/Stanza": "30.45"
   },
@@ -1403,7 +1403,7 @@
     "IDF Cosine": "0.1713",
     "Shared Distinct Words": "3",
     "Shared Words": "gēhān, frāz, čiyōn",
-    "PY Paragraph Preview": "caby_ch65_st9: čiyōn pad awēšān yazišn ī ōh kunam ā =mān rādīh bawād kū =mān tis dād bawād kē ohrmazd frāz guft ō zardušt ud zardušt frāz guft andar gēhān ī astōmandān",
+    "PY Paragraph Preview": "65.9: čiyōn pad awēšān yazišn ī ōh kunam ā =mān rādīh bawād kū =mān tis dād bawād kē ohrmazd frāz guft ō zardušt ud zardušt frāz guft andar gēhān ī astōmandān",
     "WZ Paragraph Preview": "WZ 2.11: ka az xwēy frāz būd u =š čašm abar dāšt ā =š dīd gēhān ka tārīk būd čiyōn šab",
     "WZ Chapter/Stanza": "2.11"
   },
@@ -1414,7 +1414,7 @@
     "IDF Cosine": "0.1712",
     "Shared Distinct Words": "3",
     "Shared Words": "paydāgīh, dēn, čiyōn",
-    "PY Paragraph Preview": "caby_ch46_st3: andar axwān pad paydāgīh āškārag frāz pad ahlāyīh franāmēnd pad warzišn ud hammōxtišn ī ān ī sūdōmandān xrad ēdōn čiyōn az dēn paydāg",
+    "PY Paragraph Preview": "46.3: andar axwān pad paydāgīh āškārag frāz pad ahlāyīh franāmēnd pad warzišn ud hammōxtišn ī ān ī sūdōmandān xrad ēdōn čiyōn az dēn paydāg",
     "WZ Paragraph Preview": "WZ 33.1: čiyōn gētīyīhā darandarzbed ī wištāsp būd ān ī mēnōyīg ham darandarzbedīh bawēd paydāgīh az dēn",
     "WZ Chapter/Stanza": "33.1"
   },
@@ -1425,7 +1425,7 @@
     "IDF Cosine": "0.1707",
     "Shared Distinct Words": "3",
     "Shared Words": "rawēd, rāh, frāz",
-    "PY Paragraph Preview": "caby_ch6_st2: u =š frāygāwyōdīh ēd kū mardōm ēwtāg pad dašt frāz rawēd pad rāh ī mihr",
+    "PY Paragraph Preview": "6.2: u =š frāygāwyōdīh ēd kū mardōm ēwtāg pad dašt frāz rawēd pad rāh ī mihr",
     "WZ Paragraph Preview": "WZ 30.48: ud ka tan ān weh menēd ud gōwēd ud warzēd ruwān ī andar rāh az ham humenišnīh hugōwišnīh ud hukunišnīh paymōg =ēw paymōzēd ud az nēmrōz ālag frāz rawēd ul ō abar šawēd ō tan āfrīn kunēd",
     "WZ Chapter/Stanza": "30.48"
   },
@@ -1436,7 +1436,7 @@
     "IDF Cosine": "0.1701",
     "Shared Distinct Words": "3",
     "Shared Words": "abāz, tis, wahman",
-    "PY Paragraph Preview": "caby_ch33_st5: bē =m ayābēnē pad dagrzīwišnīh ān pad xwadāyīh ī wahman kū =m ān tis ma dahād ī pad tan ī pasēn abāz abāyēnd ōzad",
+    "PY Paragraph Preview": "33.5: bē =m ayābēnē pad dagrzīwišnīh ān pad xwadāyīh ī wahman kū =m ān tis ma dahād ī pad tan ī pasēn abāz abāyēnd ōzad",
     "WZ Paragraph Preview": "WZ 8.14: akōman handēšīd kū =m nē tis warzišn kē =š ō man guft wahman abāz wašt",
     "WZ Chapter/Stanza": "8.14"
   },
@@ -1447,7 +1447,7 @@
     "IDF Cosine": "0.1695",
     "Shared Distinct Words": "3",
     "Shared Words": "zan, kāmag, xwēš",
-    "PY Paragraph Preview": "caby_ch30_st2: kāmag amāh bē wizīnišn kē mard ud zan hēm ō ān ī xwēš tan kū =mān tis ī frārōn az ān ī abārōn bē wizīnišn u =mān ān ī frārōn ōh kunišn",
+    "PY Paragraph Preview": "30.2: kāmag amāh bē wizīnišn kē mard ud zan hēm ō ān ī xwēš tan kū =mān tis ī frārōn az ān ī abārōn bē wizīnišn u =mān ān ī frārōn ōh kunišn",
     "WZ Paragraph Preview": "WZ 18.–: abar xūbwizēnīh ī zan ārzōg ī xwēš ud kāmag ī pidarān rāy pēš az ān ī sazāg windišnīh xwēš tōhmag nē gumēxtan",
     "WZ Chapter/Stanza": "18.–"
   },
@@ -1458,7 +1458,7 @@
     "IDF Cosine": "0.1689",
     "Shared Distinct Words": "3",
     "Shared Words": "xwāst, mān, šān",
-    "PY Paragraph Preview": "caby_ch32_st1: ān ōy dēwān pad man menišnīh kū =mān menišn ēdōn frārōn čiyōn zardušt ān ī ohrmazd urwāhmanīh ā =šān ōh xwāst",
+    "PY Paragraph Preview": "32.1: ān ōy dēwān pad man menišnīh kū =mān menišn ēdōn frārōn čiyōn zardušt ān ī ohrmazd urwāhmanīh ā =šān ōh xwāst",
     "WZ Paragraph Preview": "WZ 35.48: u =š hagriz nē xwāst xwāyišn az ohrmazd čē bowandagmenišnīh rāy tā spurrfrazāmīh ī kārān burd mān ud ham šahr pad ān gāh pēš ohrmazd bē ēstēd ud gōwēd kū pādifrāh ā =šān was bowandag",
     "WZ Chapter/Stanza": "35.48"
   },
@@ -1469,7 +1469,7 @@
     "IDF Cosine": "0.1686",
     "Shared Distinct Words": "3",
     "Shared Words": "abāz, ruwān, ēstēd",
-    "PY Paragraph Preview": "caby_ch32_st6: waskēnīgān ī kēn xwāyīhēd kū wināhgārān pādufrāh kunēnd kē srūd ēstēd kē guft ēstēd kū ka awēšān hassār kū pādufrāh pad ān zamān bowandag be kunēnd ka ruwān abāz ō tan dahēnd",
+    "PY Paragraph Preview": "32.6: waskēnīgān ī kēn xwāyīhēd kū wināhgārān pādufrāh kunēnd kē srūd ēstēd kē guft ēstēd kū ka awēšān hassār kū pādufrāh pad ān zamān bowandag be kunēnd ka ruwān abāz ō tan dahēnd",
     "WZ Paragraph Preview": "WZ 30.52: ud pas kōf homānāg bē ēstēd kē =š ruwān pad =iš abāz uzīyēd",
     "WZ Chapter/Stanza": "30.52"
   },
@@ -1480,7 +1480,7 @@
     "IDF Cosine": "0.1683",
     "Shared Distinct Words": "3",
     "Shared Words": "čašm, xwaršēd, šān",
-    "PY Paragraph Preview": "caby_ch64_st7: ēdōn ān warzam kē pēš =iz awēšān kird kē =šān pad ān ī wahman čašm rōyēnīd kū =šān pad frārōnīh pad daxšag be kird pad rōšnīh ī xwaršēd andar rōz ud ōš ān ī arus andar bāmīg ā =šān pad daxšag be kird ān ī ašmāh tarsagāyīh ud niyāyišn ohrmazd ī =šān X pad daxšag kird",
+    "PY Paragraph Preview": "64.7: ēdōn ān warzam kē pēš =iz awēšān kird kē =šān pad ān ī wahman čašm rōyēnīd kū =šān pad frārōnīh pad daxšag be kird pad rōšnīh ī xwaršēd andar rōz ud ōš ān ī arus andar bāmīg ā =šān pad daxšag be kird ān ī ašmāh tarsagāyīh ud niyāyišn ohrmazd ī =šān X pad daxšag kird",
     "WZ Paragraph Preview": "WZ 35.14: rōšnčašm ud xwarčašm pad arzah ud sawah kē =šān xwaršēd čašm ī gēhān pad =iš āyēd ud šawēd",
     "WZ Chapter/Stanza": "35.14"
   },
@@ -1491,7 +1491,7 @@
     "IDF Cosine": "0.1683",
     "Shared Distinct Words": "3",
     "Shared Words": "dāšt, gāh, būd",
-    "PY Paragraph Preview": "caby_ch9_st11: hād mardmenišnīh ēd būd kū [=š] dil pad gāh dāšt",
+    "PY Paragraph Preview": "9.11: hād mardmenišnīh ēd būd kū [=š] dil pad gāh dāšt",
     "WZ Paragraph Preview": "WZ 4.4: paydāgīh ī dēn pad spandārmad pad ān gāh būd ka frāsyāb āb az ērānšahr abāz dāšt ud āb abāz ānīd kanīgkirbīhā pad xānag ī mānuščihr ī ērānšahr dehbed ud anērān passoxguftār būd ōh paydāgīhist",
     "WZ Chapter/Stanza": "4.4"
   },
@@ -1502,7 +1502,7 @@
     "IDF Cosine": "0.1660",
     "Shared Distinct Words": "3",
     "Shared Words": "tazēnd, ēstēd, frāz",
-    "PY Paragraph Preview": "caby_ch65_st3: ī meh ān ī arədwisūr ī dūrfrāznāmīg kū =š nām dūr gyāg šud ēstēd kē ast kū =š ānand mehīh čand harwisp awēšān āb kē pad zamīg abar frāz tazēnd",
+    "PY Paragraph Preview": "65.3: ī meh ān ī arədwisūr ī dūrfrāznāmīg kū =š nām dūr gyāg šud ēstēd kē ast kū =š ānand mehīh čand harwisp awēšān āb kē pad zamīg abar frāz tazēnd",
     "WZ Paragraph Preview": "WZ 30.55: ud pas ābkirb ud urwarkirb pad ēwēnag ī bōyestān homānāg bē ēstēd čašmag čašmag aw =iš tāzān az =iš frāz tazēnd",
     "WZ Chapter/Stanza": "30.55"
   },
@@ -1513,7 +1513,7 @@
     "IDF Cosine": "0.1650",
     "Shared Distinct Words": "3",
     "Shared Words": "pāy, hamāg, tan",
-    "PY Paragraph Preview": "caby_ch65_st12: zōr ān ī pad pāy , ōz ān ī pad bāzā , nērōg ī ān ī pad hamāg tan ,",
+    "PY Paragraph Preview": "65.12: zōr ān ī pad pāy , ōz ān ī pad bāzā , nērōg ī ān ī pad hamāg tan ,",
     "WZ Paragraph Preview": "WZ 29.6: abdom frāzwiderišnīh ī ǰān axwardārīh wihān ud nizārīh ī gyānīg ātaxš az ham bē afsardan ī dast ud pāy ud ul uzīdan ī az dil ud sard būdan ī hamāg tan ud ǰud būdan ī rōšnāgīh ī čašmān pad ham homānāgīh ī afsardan ī ātaxš",
     "WZ Chapter/Stanza": "29.6"
   },
@@ -1524,7 +1524,7 @@
     "IDF Cosine": "0.1649",
     "Shared Distinct Words": "3",
     "Shared Words": "warzēnd, kunēd, čiyōn",
-    "PY Paragraph Preview": "caby_ch35_st6: awēšān =iz ī ān =ē hērbed ēdōn ast čiyōn ān warzēnd kū ān ī hāwišt kunēd ā =š abar ōh šawēd ud ān ī hāwišt az kasān abar šawēd ā =š abar nē šawēd",
+    "PY Paragraph Preview": "35.6: awēšān =iz ī ān =ē hērbed ēdōn ast čiyōn ān warzēnd kū ān ī hāwišt kunēd ā =š abar ōh šawēd ud ān ī hāwišt az kasān abar šawēd ā =š abar nē šawēd",
     "WZ Paragraph Preview": "WZ 30.20: ēd =iz rāy dehbedān pušt ī ērān xwānīhēd čē čiyōn tōhmag az hamāg kirb ī tanān zōr =ēw ō xwēš āhenǰēd ud pad frāzrēzišnīh daxšag ī kālbod =ēw ham homānāg az =iš dārīhēd ōwōn amaragānīhā kadārizēw ō dād rāh kāmag kunēd ī dehbedān warzēnd",
     "WZ Chapter/Stanza": "30.20"
   },
@@ -1535,7 +1535,7 @@
     "IDF Cosine": "0.1637",
     "Shared Distinct Words": "3",
     "Shared Words": "būdan, dastwar, rad",
-    "PY Paragraph Preview": "caby_ch33_st1: pad ōy ī rad kunišn rāzēnišn pad dastwar kē druwand u =š ahlaw kāmēd būdan kē =iz ahlaw u =š ahlawtar kāmēd būd kē =iz ō ōy ham mad ēstēd ān ī drō , ud kē =iz ō ān ī abēzag kū hamestagānīg",
+    "PY Paragraph Preview": "33.1: pad ōy ī rad kunišn rāzēnišn pad dastwar kē druwand u =š ahlaw kāmēd būdan kē =iz ahlaw u =š ahlawtar kāmēd būd kē =iz ō ōy ham mad ēstēd ān ī drō , ud kē =iz ō ān ī abēzag kū hamestagānīg",
     "WZ Paragraph Preview": "WZ 27.15: dahom srōšdārīh rāy andar xwadā ud rad ud dastwar ī dēnīg huniyōxš būdan",
     "WZ Chapter/Stanza": "27.15"
   },
@@ -1546,7 +1546,7 @@
     "IDF Cosine": "0.1513",
     "Shared Distinct Words": "4",
     "Shared Words": "tāg, dast, sar, bun",
-    "PY Paragraph Preview": "caby_ch71_st28: gauue , datuš barsom bun tā sar šustan , aδāiš , ēk tāg frāgām az pas ī barsom datuš az dast hōy ul widārišn , tāiš , ān ī didīgar az pas ī barsom datuš az dast ī dašn ul widārišn",
+    "PY Paragraph Preview": "71.28: gauue , datuš barsom bun tā sar šustan , aδāiš , ēk tāg frāgām az pas ī barsom datuš az dast hōy ul widārišn , tāiš , ān ī didīgar az pas ī barsom datuš az dast ī dašn ul widārišn",
     "WZ Paragraph Preview": "WZ 35.40: tāg =ēw pad dast dārēd pad homānāgīh ī draxt =ēw kē =š tāgān azabar rēšag ō frōd harw ahlaw =ēw rāy tāg =ēw harw druwand =ēw rāy rēšag =ēw ud ahlišwang ī mādagčihrag pad sar ī draxt ud xār dēw pad bun ī draxt ēstēd ud ahlišwang harw ahlaw =ēw rāy tāg =ēw ud xār harw druwand =ēw rāy rēšag =ēw ō dast dahēnd ēk az did ǰud bē bawēnd druwand az ahlaw",
     "WZ Chapter/Stanza": "35.40"
   },
@@ -1557,7 +1557,7 @@
     "IDF Cosine": "0.1611",
     "Shared Distinct Words": "3",
     "Shared Words": "druz, dast, dēn",
-    "PY Paragraph Preview": "caby_ch30_st8: pad awēšān hammōxtišn ī ohrmazd pad dēn ī ohrmazd ka ō ōy kē ahlāyīh kū pad tis ī frārōn hammōxt ēstēd ā =š ō dast dahīhēd druz druz ī ahlomōγīh",
+    "PY Paragraph Preview": "30.8: pad awēšān hammōxtišn ī ohrmazd pad dēn ī ohrmazd ka ō ōy kē ahlāyīh kū pad tis ī frārōn hammōxt ēstēd ā =š ō dast dahīhēd druz druz ī ahlomōγīh",
     "WZ Paragraph Preview": "WZ 27.5: panǰom rōzānšabān xwāyišnīhā abāg xwēš druz kōxšīdan zīndagīh drahnā az āstawānīh ī dēn bē nē waštan xwēškārīh az dast nē šbkwnty",
     "WZ Chapter/Stanza": "27.5"
   },
@@ -1568,7 +1568,7 @@
     "IDF Cosine": "0.1599",
     "Shared Distinct Words": "3",
     "Shared Words": "šāyēd, mard, kirdan",
-    "PY Paragraph Preview": "caby_ch33_st6: az ān ayārēnēd pad wahman az ān čiyōn mard wehmard warzišn dahēd ī pad paymān kār kū tan ī pasēn ōy rāy weh šāyēd kirdan",
+    "PY Paragraph Preview": "33.6: az ān ayārēnēd pad wahman az ān čiyōn mard wehmard warzišn dahēd ī pad paymān kār kū tan ī pasēn ōy rāy weh šāyēd kirdan",
     "WZ Paragraph Preview": "WZ 2.18: u =m grift šahr nē mānd kas andar razm az ohrmazd nēmag bē ēk mard kē ēwtāgīhā čē šāyēd kirdan",
     "WZ Chapter/Stanza": "2.18"
   },
@@ -1579,7 +1579,7 @@
     "IDF Cosine": "0.1588",
     "Shared Distinct Words": "3",
     "Shared Words": "amurdād, hordād, rāy",
-    "PY Paragraph Preview": "caby_ch68_st35: az abzōnīgmēnōyīh ud pahlommenišnīh ka ān ī mad ēstēd ā =m be kird ud ān ī nē mad ēstēd rāy ā =m be nigerīd ud az ān ī ahlāyīh kunišn ud gōwišn ud kunišn ī frārōn rāy ī =m ōh kird gōwišn ī frārōn rāy ī =m ōh guft ā =m ō xwēšān dād hordād ud amurdād mizd ō mardōmān ān ī ohrmazd xwadāy pad bowandagmenišnīh",
+    "PY Paragraph Preview": "68.35: az abzōnīgmēnōyīh ud pahlommenišnīh ka ān ī mad ēstēd ā =m be kird ud ān ī nē mad ēstēd rāy ā =m be nigerīd ud az ān ī ahlāyīh kunišn ud gōwišn ud kunišn ī frārōn rāy ī =m ōh kird gōwišn ī frārōn rāy ī =m ōh guft ā =m ō xwēšān dād hordād ud amurdād mizd ō mardōmān ān ī ohrmazd xwadāy pad bowandagmenišnīh",
     "WZ Paragraph Preview": "WZ 35.5: ud hordād ud amurdād kē amargīh rāy ǰuxtag =ēw hēnd hamērawišnīh zōr bē dahīhēd ō dōān pad frašegirdkirdārīh",
     "WZ Chapter/Stanza": "35.5"
   },
@@ -1590,7 +1590,7 @@
     "IDF Cosine": "0.1580",
     "Shared Distinct Words": "3",
     "Shared Words": "gōspandān, gāhān, čiyōn",
-    "PY Paragraph Preview": "caby_ch10_st20: [hād] čiyōn pad gāhān guft kū kē ō gōspandān niyāyišn ā =š az gōspandān niyāyišn ,",
+    "PY Paragraph Preview": "10.20: [hād] čiyōn pad gāhān guft kū kē ō gōspandān niyāyišn ā =š az gōspandān niyāyišn ,",
     "WZ Paragraph Preview": "WZ 28.4: pas baxšīhist gāhān radhomānāgīhā abar čēīh ud čiyōnīh ī nimūd čiyōn pahikārradestān kē dādīg pahikārišn īg pad =iš paydāg zaxmestān kē =š tōzišn ud zaxm az =iš paydāg ud stōrestān kē =š wināh ud čandtōzišnīh ī rēš abar stōrān gōspandān az =iš paydāg artēštārān kē =š kārēzār az =iš paydāg pasušhorestān kē =š gōspand pad sālārīhēwēnīhā dāštan az =iš paydāg ǰōrdāykārestān kē =š warzīgarīh az =iš paydāg ud warestān kē =š war ud passāxt az =iš paydāg ud abārīg ī hamšōn",
     "WZ Chapter/Stanza": "28.4"
   },
@@ -1601,7 +1601,7 @@
     "IDF Cosine": "0.1579",
     "Shared Distinct Words": "3",
     "Shared Words": "paydāg, dēn, frāz",
-    "PY Paragraph Preview": "caby_ch19_st8: frāz ēd gōwišn X guft dēn ī ahūōmand ī radōmand kē ēd az =iš paydāg kū xwadāy ud dastwar dārišn",
+    "PY Paragraph Preview": "19.8: frāz ēd gōwišn X guft dēn ī ahūōmand ī radōmand kē ēd az =iš paydāg kū xwadāy ud dastwar dārišn",
     "WZ Paragraph Preview": "WZ 2.1: pad dēn ōwōn paydāg kū māh frawardīn rōz ohrmazd pad nēmrōz frāz ō wimand ī asmān mad",
     "WZ Chapter/Stanza": "2.1"
   },
@@ -1623,7 +1623,7 @@
     "IDF Cosine": "0.1551",
     "Shared Distinct Words": "3",
     "Shared Words": "wēš, ruwān, abāg",
-    "PY Paragraph Preview": "caby_ch29_st5: ēdōn az ašmāh amahraspandān pad ustānaxwīh menišnīg ud ustāndastīh tuxšāgīhā franāmam ō ohrmazd ān kū az amahraspandān ō tis ohrmazd wēš franāmam ud tis ī ohrmazd wēš kunam kū ān man ruwān gāw ī az abāg bawād kū =m ruwān mizd dahānd",
+    "PY Paragraph Preview": "29.5: ēdōn az ašmāh amahraspandān pad ustānaxwīh menišnīg ud ustāndastīh tuxšāgīhā franāmam ō ohrmazd ān kū az amahraspandān ō tis ohrmazd wēš franāmam ud tis ī ohrmazd wēš kunam kū ān man ruwān gāw ī az abāg bawād kū =m ruwān mizd dahānd",
     "WZ Paragraph Preview": "WZ 30.32: ǰān mʾlšn wizīdārīhā az bōy wēš abāg ruwān tanīg zōr",
     "WZ Chapter/Stanza": "30.32"
   },
@@ -1645,7 +1645,7 @@
     "IDF Cosine": "0.1538",
     "Shared Distinct Words": "3",
     "Shared Words": "tan, dēn, čiyōn",
-    "PY Paragraph Preview": "caby_ch68_st7: pad ān yazišn ud niyāyišn čiyōn awēšān ābān ast andar tan mardōmān kē dādīhātom yazišn ud niyāyišn ud az ahlāyīh ī pahlom čiyōn az dēn paydāg āb ī weh ī pahlom ī ohrmazddād ī ahlawī yazam",
+    "PY Paragraph Preview": "68.7: pad ān yazišn ud niyāyišn čiyōn awēšān ābān ast andar tan mardōmān kē dādīhātom yazišn ud niyāyišn ud az ahlāyīh ī pahlom čiyōn az dēn paydāg āb ī weh ī pahlom ī ohrmazddād ī ahlawī yazam",
     "WZ Paragraph Preview": "WZ 3.75: čiyōn gōwīhēd pad dēn kū kadār pēš būd xwarrah ayāb tan",
     "WZ Chapter/Stanza": "3.75"
   },
@@ -1656,7 +1656,7 @@
     "IDF Cosine": "0.1536",
     "Shared Distinct Words": "3",
     "Shared Words": "ǰān, tan, frāz",
-    "PY Paragraph Preview": "caby_ch12_st3: frāz pad menišn ud frāz pad gōwišn ud frāz pad kunišn ud frāz pad ox menišnīg ud frāz pad tan ud ān =iz ī xwēš ǰān kū tan pad xwēšīh ī ašmāh dāram",
+    "PY Paragraph Preview": "12.3: frāz pad menišn ud frāz pad gōwišn ud frāz pad kunišn ud frāz pad ox menišnīg ud frāz pad tan ud ān =iz ī xwēš ǰān kū tan pad xwēšīh ī ašmāh dāram",
     "WZ Paragraph Preview": "WZ 3.11: čiyōn ǰān ka tan bē ǰumbēnēd tan pad hamzōrīh frāzraftār bawēd ān mēnōy ī wād andar čihrīg wād ī andarwāyīg frāz ǰumbēnīd",
     "WZ Chapter/Stanza": "3.11"
   },
@@ -1667,7 +1667,7 @@
     "IDF Cosine": "0.1535",
     "Shared Distinct Words": "3",
     "Shared Words": "sidīgar, didīgar, fradom",
-    "PY Paragraph Preview": "caby_ch27_st3: pad ēn wāzag harw ēk dō bār pad sidīgar yatāhūwayryō ham pad ēn wāzīhā harw ēk se bār kōftan ēdōn kē fradom bawēd se bār pad didīgar šaš bār pad sidīgar nō bār",
+    "PY Paragraph Preview": "27.3: pad ēn wāzag harw ēk dō bār pad sidīgar yatāhūwayryō ham pad ēn wāzīhā harw ēk se bār kōftan ēdōn kē fradom bawēd se bār pad didīgar šaš bār pad sidīgar nō bār",
     "WZ Paragraph Preview": "WZ 21.2: āb pad čahār xānag būd ēstād u =š zarduxšt pad =iš bē widard u =š fradom tā zang būd ud didīgar tā ō šnūg ud sidīgar tā ō wizārišn ī tlyn rān ud čahārom tā ō gardan",
     "WZ Chapter/Stanza": "21.2"
   },
@@ -1678,7 +1678,7 @@
     "IDF Cosine": "0.1532",
     "Shared Distinct Words": "3",
     "Shared Words": "hamāg, hēnd, būd",
-    "PY Paragraph Preview": "caby_ch15_st2: kē būd hēnd ud kē =iz bawēnd awēšān yazam pad ān ī xwēš nām u =šān abar rasam ō ayārīh kū =šān hamāg ayārōmandīh ōh kunam ud ōh daham",
+    "PY Paragraph Preview": "15.2: kē būd hēnd ud kē =iz bawēnd awēšān yazam pad ān ī xwēš nām u =šān abar rasam ō ayārīh kū =šān hamāg ayārōmandīh ōh kunam ud ōh daham",
     "WZ Paragraph Preview": "WZ 3.30: pad 18 sāl hammis hamāg kōfān ī ǰud az harburz frazāmīg būd hēnd",
     "WZ Chapter/Stanza": "3.30"
   },
@@ -1700,7 +1700,7 @@
     "IDF Cosine": "0.1263",
     "Shared Distinct Words": "7",
     "Shared Words": "ǰeh, zan, druz, mard, mēnōy, tan, čiyōn",
-    "PY Paragraph Preview": "caby_ch53_st6: ēdōn čiyōn pad ān harw dō tis ī gētī ud mēnōy āškārag mard ud zan pad wehīh ēdōn ǰeh ud mar pad wattarīh druz az ān bahr kū =š nīrmad az ōy kē =š hamēšag pāsbānīh pad frāydahišnīh kū =š xwēš tan ēdōn tuwān dāštan ka pad abārōnīh hanbōh pad dar dārēd",
+    "PY Paragraph Preview": "53.6: ēdōn čiyōn pad ān harw dō tis ī gētī ud mēnōy āškārag mard ud zan pad wehīh ēdōn ǰeh ud mar pad wattarīh druz az ān bahr kū =š nīrmad az ōy kē =š hamēšag pāsbānīh pad frāydahišnīh kū =š xwēš tan ēdōn tuwān dāštan ka pad abārōnīh hanbōh pad dar dārēd",
     "WZ Paragraph Preview": "WZ 30.51: hamēstār ī ēn ruwān ast mēnōyīg druz ī dwāzdahkirbīhā andar dušox dwārēnd ud bazzag ī az bēšīdārīh ī wehdahišnān bawēd padīrift padīrag ān dwāzdah mēnōy ī weh hēnd pad homānāgīh duščihr mard ud ǰeh zan ud hlbstlʾn narān ud mādagān ātaxš ī az hamēstārīh ī druzān sōzāg abāxtarīg wād ī gandag ud abārīg wināhišngarān čiyōn guharīg ayōšust kirb ud sang burrišn ī pad tēx ud zanišn ī mnsk guharīg zamīg kirb ud daxšag mān ī andar dušox ī zēndān homānāg padīrag kōf kirb sanggarānīh...",
     "WZ Chapter/Stanza": "30.51"
   },
@@ -1711,7 +1711,7 @@
     "IDF Cosine": "0.1425",
     "Shared Distinct Words": "4",
     "Shared Words": "būdan, rāh, dād, rāy",
-    "PY Paragraph Preview": "caby_ch10_st9: čē =š dōst ī stāyīdār rāy ō man guft ohrmazd kū =m [weh] dād az ahlāyīh ī pahlom kū [=m] dēnburdār weh dād kū dēn čē dēn =iz rawāgīh pad rāh ī dēnburdārān šāyēd būdan",
+    "PY Paragraph Preview": "10.9: čē =š dōst ī stāyīdār rāy ō man guft ohrmazd kū =m [weh] dād az ahlāyīh ī pahlom kū [=m] dēnburdār weh dād kū dēn čē dēn =iz rawāgīh pad rāh ī dēnburdārān šāyēd būdan",
     "WZ Paragraph Preview": "WZ 35.3: ān hamē pad zamīg winnārdag būdan rāy frāz dād dehbedān ī ahōš kē ǰud andar drubuštīh ī ōstīgān kū ast kē =š pad was kē azabar zamīg rāh ī aw =iš pad drayāb ī tom ud tār ast kē =š kōf ī wuzurg ō tēx",
     "WZ Chapter/Stanza": "35.3"
   },
@@ -1722,7 +1722,7 @@
     "IDF Cosine": "0.1519",
     "Shared Distinct Words": "3",
     "Shared Words": "raft, hēnd, frāz",
-    "PY Paragraph Preview": "caby_ch9_st5: pānzdahsālagārōysišn frāz raft hēnd pid ud pus kadārizēw",
+    "PY Paragraph Preview": "9.5: pānzdahsālagārōysišn frāz raft hēnd pid ud pus kadārizēw",
     "WZ Paragraph Preview": "WZ 3.52: ud čahārpāyān pad zamīg frāz raft hēnd ud māhīgān andar āb šnāzīd hēnd ud murwān andar andarwāy wazīd hēnd dō dō pad hangām ī gušnhilīh hamēnīhist u =šān az =iš būd ābustanīh ud zāyišn ud gugān ī =šān baxšišn ōwōn",
     "WZ Chapter/Stanza": "3.52"
   },
@@ -1733,7 +1733,7 @@
     "IDF Cosine": "0.1495",
     "Shared Distinct Words": "3",
     "Shared Words": "mizd, dād, rāy",
-    "PY Paragraph Preview": "caby_ch46_st9: čiyōn ō tō ašawahišt tan pad hāwištīh dād ō man kē dahēd čiyōn ašawahišt ān ī gōspand tāšīdār rāy guft kū abāyēd dād xwāyam ān harw dō ī tō pad wahman mizd",
+    "PY Paragraph Preview": "46.9: čiyōn ō tō ašawahišt tan pad hāwištīh dād ō man kē dahēd čiyōn ašawahišt ān ī gōspand tāšīdār rāy guft kū abāyēd dād xwāyam ān harw dō ī tō pad wahman mizd",
     "WZ Paragraph Preview": "WZ 27.10: panǰom rawāgdēnīh rāy kirbakkarān mizd ud bazzakkarān tōzišn pad dād nihādan",
     "WZ Chapter/Stanza": "27.10"
   },
@@ -1744,7 +1744,7 @@
     "IDF Cosine": "0.1494",
     "Shared Distinct Words": "3",
     "Shared Words": "dāštan, ruwān, tan",
-    "PY Paragraph Preview": "caby_ch12_st3: ud pad xwēšīh ī ašmāh dāštan ēd kū agar =m tan ruwān rāy bē abāyēd dādan bē daham",
+    "PY Paragraph Preview": "12.3: ud pad xwēšīh ī ašmāh dāštan ēd kū agar =m tan ruwān rāy bē abāyēd dādan bē daham",
     "WZ Paragraph Preview": "WZ 30.38: ruwān ī tanīg čiyōn tan =iz xwānīhist čē xwad mēnōy ī tan ast spāhbed homānāg ī ō dušmenān razm frēstīhist u =š hamāg spāh abzārān ristagōmand dāštan xwēškārīh ud im ast kē menēd ud gōwēd ud warzēd kāmag",
     "WZ Chapter/Stanza": "30.38"
   },
@@ -1755,7 +1755,7 @@
     "IDF Cosine": "0.1279",
     "Shared Distinct Words": "6",
     "Shared Words": "tuwān, paydāg, šān, būd, rāy, čiyōn",
-    "PY Paragraph Preview": "caby_ch19_st9: frāz man pad abzōnīgīh ud mēnōyīh ā =m guft abzōnīgīh ud mēnōyīh rāy ā =m tuwān būd guftan harwisp ān ahlawān stī rāy ō zardušt guft kē hēnd ud kē būd hēnd ud kē bawēnd pad kunišnrawišnīh kū tā =š ān ī az =š paydāg ōh kunēnd u =šān kirbag bawād ēn kunišn andar axwān ō ohrmazd kū ān kunēd ī ohrmazd abāyēd ā =š ēdōn kunēd čiyōn az ēn pargard paydāg",
+    "PY Paragraph Preview": "19.9: frāz man pad abzōnīgīh ud mēnōyīh ā =m guft abzōnīgīh ud mēnōyīh rāy ā =m tuwān būd guftan harwisp ān ahlawān stī rāy ō zardušt guft kē hēnd ud kē būd hēnd ud kē bawēnd pad kunišnrawišnīh kū tā =š ān ī az =š paydāg ōh kunēnd u =šān kirbag bawād ēn kunišn andar axwān ō ohrmazd kū ān kunēd ī ohrmazd abāyēd ā =š ēdōn kunēd čiyōn az ēn pargard paydāg",
     "WZ Paragraph Preview": "WZ 14.1: ēn =iz paydāg kū rōd =ēw būd u =šān brahnag zan han xwānd pad ān čim kū stabrīh ud tēzīh ī rōd rāy zan bē ka brahnag bē būd tā =š pad =iš widard nē tuwān būd ud mardōm ī pīr čiyōn pad dēn ān kē =š haftād sāl ast han xwānīhēd apadyāwandīh rāy pad xwēš zōrīh pad =iš abāz šudan nē tuwān būd",
     "WZ Chapter/Stanza": "14.1"
   },
@@ -1766,7 +1766,7 @@
     "IDF Cosine": "0.1486",
     "Shared Distinct Words": "3",
     "Shared Words": "panǰ, hamāg, dēn",
-    "PY Paragraph Preview": "caby_ch19_st14: xwadāyīh ō ohrmazd čāšīd bawēd kū =š ohrmazd abar tan ī xwēš xwadāy kird bawēd kē ān kunēd kē az abestāg paydāg u =š ay driyōšān wāsān čāšīd bawēd kū =š nēkīh pad =š kird bawēd kē dōstīh ī spitāmān dēn ī spitāmān panǰ dādwarīh būd kū =š wizīr panǰ andar būd harwisp gōwišn frāzgōwišnīh būd hamāg gōwišn ān ī ohrmazd būd",
+    "PY Paragraph Preview": "19.14: xwadāyīh ō ohrmazd čāšīd bawēd kū =š ohrmazd abar tan ī xwēš xwadāy kird bawēd kē ān kunēd kē az abestāg paydāg u =š ay driyōšān wāsān čāšīd bawēd kū =š nēkīh pad =š kird bawēd kē dōstīh ī spitāmān dēn ī spitāmān panǰ dādwarīh būd kū =š wizīr panǰ andar būd harwisp gōwišn frāzgōwišnīh būd hamāg gōwišn ān ī ohrmazd būd",
     "WZ Paragraph Preview": "WZ 27.–: abar panǰ xēm ī āsrōnān ud dah andarz kē =š hamāg andarz ī dēn abar paywastag",
     "WZ Chapter/Stanza": "27.–"
   },
@@ -1777,7 +1777,7 @@
     "IDF Cosine": "0.1481",
     "Shared Distinct Words": "3",
     "Shared Words": "mēnōyān, yazdān, abāg",
-    "PY Paragraph Preview": "caby_ch22_st27: xwāyam ō ēn yazišn frawahr ī ohrmazd ud amahraspandān abāg harwispīn ahlawān frawahr ī mēnōyān yazdān",
+    "PY Paragraph Preview": "22.27: xwāyam ō ēn yazišn frawahr ī ohrmazd ud amahraspandān abāg harwispīn ahlawān frawahr ī mēnōyān yazdān",
     "WZ Paragraph Preview": "WZ 34.54: čiyōn ān ardīg abar nawad rōzšabān yazdān abāg dēwān čangīhā būd ān ī pad abdom āškārag paydāgīhā wēnīhēd šabān andar andarwāz ātaxškirb ī marddēs mēnōyān menēd ātaxšīg pad bārag ī asp homānāg škeft abēgumān bawēnd",
     "WZ Chapter/Stanza": "34.54"
   },
@@ -1788,7 +1788,7 @@
     "IDF Cosine": "0.1474",
     "Shared Distinct Words": "3",
     "Shared Words": "dōst, abēzag, abāyēd",
-    "PY Paragraph Preview": "caby_ch46_st14: zardušt kē tō ahlaw dōst pad ēd meh maγīh pad ēd abēzag wehīh ā =t ō kē frāzsrāyišndahišnīh kāmag kū =t dēn ō kē abāyēd ka gōwē",
+    "PY Paragraph Preview": "46.14: zardušt kē tō ahlaw dōst pad ēd meh maγīh pad ēd abēzag wehīh ā =t ō kē frāzsrāyišndahišnīh kāmag kū =t dēn ō kē abāyēd ka gōwē",
     "WZ Paragraph Preview": "WZ 35.42: abar xwānēnd druwandān ō ahlawān kū ān ī man pid ud brād ud šōy ud zan ud dōst čiyōn kū =t pad zamīg nē hammōxt ō man ān ī abēzag rāh ī rāst ut bē nē wardēnīd ham az wināh u =t nē hāxt ham ō kirbag kū =m nūn pad ǰudāgīh ī az xwēšān hamhāgān abāz ō dušox abāyēd šud bē hamrāhīhā bē ō wahišt ī bāmīg šud ham",
     "WZ Chapter/Stanza": "35.42"
   },
@@ -1799,7 +1799,7 @@
     "IDF Cosine": "0.1467",
     "Shared Distinct Words": "3",
     "Shared Words": "druwandān, ahlawān, čiyōn",
-    "PY Paragraph Preview": "caby_ch30_st11: ān harw dō wābarīgānīh hammōxtišn ī ohrmazd dād ō mardōmān ud kē xīnāhen , ā =iz hammōxtišn ān tis kū tā =m pad passāxt dazišn nē bawād kē =iz dagr rēš az ān passāxt druwandān sūd =iz ī ahlawān kū čiyōn abāyēd kirdan",
+    "PY Paragraph Preview": "30.11: ān harw dō wābarīgānīh hammōxtišn ī ohrmazd dād ō mardōmān ud kē xīnāhen , ā =iz hammōxtišn ān tis kū tā =m pad passāxt dazišn nē bawād kē =iz dagr rēš az ān passāxt druwandān sūd =iz ī ahlawān kū čiyōn abāyēd kirdan",
     "WZ Paragraph Preview": "WZ 35.32: paydāgīh ī ahlawān andar druwandān ōwōn čiyōn asp ī spēd andar asp ī syā",
     "WZ Chapter/Stanza": "35.32"
   },
@@ -1810,7 +1810,7 @@
     "IDF Cosine": "0.1466",
     "Shared Distinct Words": "3",
     "Shared Words": "hanǰaman, rasēd, srōšahlī",
-    "PY Paragraph Preview": "caby_ch57_st17: srōšahlī ī hurust ī pērōzgar ī tagīg ud tēz ud ōzōmand ud škeft abzār ud buland kē az harwisp ardīg az hamāg kārēzār wizārd bē rasēd bē ānōh ō hanǰaman amahraspandān",
+    "PY Paragraph Preview": "57.17: srōšahlī ī hurust ī pērōzgar ī tagīg ud tēz ud ōzōmand ud škeft abzār ud buland kē az harwisp ardīg az hamāg kārēzār wizārd bē rasēd bē ānōh ō hanǰaman amahraspandān",
     "WZ Paragraph Preview": "WZ 35.31: ud ahunwad gāh ka dō zamān ī ast ēk ī rōzšabānīg ō šab abāz ohrmazd pad abāgīh ī srōšahlī az nēmrōz ālag sāmān frāz ō hanǰaman rasēd abar hamēšagsūd gāh ī xwaδāt nišīnēd",
     "WZ Chapter/Stanza": "35.31"
   },
@@ -1821,7 +1821,7 @@
     "IDF Cosine": "0.1363",
     "Shared Distinct Words": "4",
     "Shared Words": "dām, rasēd, sāl, bawēd",
-    "PY Paragraph Preview": "caby_ch31_st6: mānsr ī hamāgrawišn kū hamāg dām pad rāh ī mānsr abāz ō xwēšīh ī ohrmazd rasēd ī ka pad ahlāyīh dārēnd ō nūn ā =š amargrawišnīh az =š bawēd andar ān panǰāhudhaft sāl",
+    "PY Paragraph Preview": "31.6: mānsr ī hamāgrawišn kū hamāg dām pad rāh ī mānsr abāz ō xwēšīh ī ohrmazd rasēd ī ka pad ahlāyīh dārēnd ō nūn ā =š amargrawišnīh az =š bawēd andar ān panǰāhudhaft sāl",
     "WZ Paragraph Preview": "WZ 28.6: 6666 mārīg ī pad gāhān nimūdār ast ī az petyārag ō dām madan tā bē ō frazām ī šaš hazārag harw hazārag =ēw dah sadōzim ī bawēd šašt sadōzim ud harw sadōzim =ēw dah wōyγn kē =š pad =iš rasēd sarmāg ud tangīh ī škeft bawēd šašsad wōyγn ud harw wōyγn =ēw dah sāl ī ǰahēd 6000 sāl",
     "WZ Chapter/Stanza": "28.6"
   },
@@ -1832,7 +1832,7 @@
     "IDF Cosine": "0.1451",
     "Shared Distinct Words": "3",
     "Shared Words": "tan, frāz, čiyōn",
-    "PY Paragraph Preview": "caby_ch19_st12: čiyōn frāz ēdar guft kū xwadāy ud dastwar dārišn čiyōn ēn tis ēdōn guft čiyōn ēn dādestān ēdōn =iz ō ōy ox rad dahēd kū tan bē ō hērbedestān dahēd",
+    "PY Paragraph Preview": "19.12: čiyōn frāz ēdar guft kū xwadāy ud dastwar dārišn čiyōn ēn tis ēdōn guft čiyōn ēn dādestān ēdōn =iz ō ōy ox rad dahēd kū tan bē ō hērbedestān dahēd",
     "WZ Paragraph Preview": "WZ 30.21: 4ān zōrān ī tan ham =iz ōwōn pad =iš frāz rawēnd čiyōn tazāgān āb pad wād",
     "WZ Chapter/Stanza": "30.21"
   },
@@ -1843,7 +1843,7 @@
     "IDF Cosine": "0.1449",
     "Shared Distinct Words": "3",
     "Shared Words": "padīrag, hēnd, būd",
-    "PY Paragraph Preview": "caby_ch65_st6: kē awēšān burdār būd hēnd , ō padīrag ān ī az ān ī nazdist āb stad ēstēd zōhr ā =šān ō ān dād",
+    "PY Paragraph Preview": "65.6: kē awēšān burdār būd hēnd , ō padīrag ān ī az ān ī nazdist āb stad ēstēd zōhr ā =šān ō ān dād",
     "WZ Paragraph Preview": "WZ 8.16: u =š haft ǰādūg pēš nišastag būd hēnd az rōšnīh ī andar mān brāzišnīgīhā wēnīhist xandīdan ī =š pad zāyišn ī padīrag ān ī abārīg mardōmān kē pad zāyišn bē grīyēnd bē tarsīd hēnd",
     "WZ Chapter/Stanza": "8.16"
   },
@@ -1854,7 +1854,7 @@
     "IDF Cosine": "0.1449",
     "Shared Distinct Words": "3",
     "Shared Words": "asp, dāšt, abāz",
-    "PY Paragraph Preview": "caby_ch11_st2: asp ō ōy burdār rafēd kū ma bawē arwandān āyōxtār kū =t tāxtan ma tuwān bawād ma arwandān abar nišastan ma arwandān abar nihāxtan kū abāz dāšt ma tuwān bawād",
+    "PY Paragraph Preview": "11.2: asp ō ōy burdār rafēd kū ma bawē arwandān āyōxtār kū =t tāxtan ma tuwān bawād ma arwandān abar nišastan ma arwandān abar nihāxtan kū abāz dāšt ma tuwān bawād",
     "WZ Paragraph Preview": "WZ 10.7: pēšōbāy ī aspān pad nazdīkīh ī zarduxšt bē ēstād u =š 150 asp ī =š az pas raft hēnd aziš abāz dāšt ud pōrušasp grift u =š abāz ō xānag burd",
     "WZ Chapter/Stanza": "10.7"
   },
@@ -1865,7 +1865,7 @@
     "IDF Cosine": "0.1447",
     "Shared Distinct Words": "3",
     "Shared Words": "mazdēsnān, hamāg, dēn",
-    "PY Paragraph Preview": "caby_ch12_st14: ō ohrmazd harwisp ābādīh čāšam kū bun ud bar hamāg pad xwēšīh ī ohrmazd dāram ēd =š ast dēn ī mazdēsnān āstawānīh bowandag",
+    "PY Paragraph Preview": "12.14: ō ohrmazd harwisp ābādīh čāšam kū bun ud bar hamāg pad xwēšīh ī ohrmazd dāram ēd =š ast dēn ī mazdēsnān āstawānīh bowandag",
     "WZ Paragraph Preview": "WZ 4.6: u =š pad mayān bast dāšt zarrēn kustīg ī xwad būd dēn ī mazdēsnān čē dēn band ast kē =š aw =iš paywastag sīhse band ī abar sīhse wināh kē =š hamāg wināh az =iš baxtag",
     "WZ Chapter/Stanza": "4.6"
   },
@@ -1876,7 +1876,7 @@
     "IDF Cosine": "0.1424",
     "Shared Distinct Words": "3",
     "Shared Words": "hamāg, šān, rāy",
-    "PY Paragraph Preview": "caby_ch69_st1: ōy kē [az] ahlāyīhabāgīh ī pahlom kū abāgīh ī az ahlāyīh rāy yazdān ān meh ī man yazišn abar ō ōy āgāh ohrmazd kē būd hēnd ud kē =iz bawēnd awēšān yazam pad ān ī xwēš nām u =šān abar rasam ō ayārīh kū =šān hamāg ayārōmandīh ōh kunam ud ōh daham",
+    "PY Paragraph Preview": "69.1: ōy kē [az] ahlāyīhabāgīh ī pahlom kū abāgīh ī az ahlāyīh rāy yazdān ān meh ī man yazišn abar ō ōy āgāh ohrmazd kē būd hēnd ud kē =iz bawēnd awēšān yazam pad ān ī xwēš nām u =šān abar rasam ō ayārīh kū =šān hamāg ayārōmandīh ōh kunam ud ōh daham",
     "WZ Paragraph Preview": "WZ 8.7: u =šān guft kū az hamāg kustag ātaxš būdan rāy nē ayāft ham čār",
     "WZ Chapter/Stanza": "8.7"
   },
@@ -1887,7 +1887,7 @@
     "IDF Cosine": "0.1416",
     "Shared Distinct Words": "3",
     "Shared Words": "bawēnd, nām, rāy",
-    "PY Paragraph Preview": "caby_ch69_st3: ōy kē az ahlāyīhabāgīh ī pahlom [kū] [abāgīh] az ahlāyīh rāy az yazdān ān meh ī man yazišn abar ō ōy āgāh ohrmazd kē būd hēnd ud kē =iz bawēnd awēšān yazam pad ān ī xwēš nām u =šān abar rasam ō ayārīh kū =šān hamāg ayārōmandīh ōh kunam ud ōh daham",
+    "PY Paragraph Preview": "69.3: ōy kē az ahlāyīhabāgīh ī pahlom [kū] [abāgīh] az ahlāyīh rāy az yazdān ān meh ī man yazišn abar ō ōy āgāh ohrmazd kē būd hēnd ud kē =iz bawēnd awēšān yazam pad ān ī xwēš nām u =šān abar rasam ō ayārīh kū =šān hamāg ayārōmandīh ōh kunam ud ōh daham",
     "WZ Paragraph Preview": "WZ 35.27: ušahin gāh ahōšīh ī wispān rōšntōhmagān rāy pad hamēwēnag yašt kunēd ahōš bawēnd ud ušahin nām az ahōšīh",
     "WZ Chapter/Stanza": "35.27"
   },
@@ -1898,7 +1898,7 @@
     "IDF Cosine": "0.1416",
     "Shared Distinct Words": "3",
     "Shared Words": "āmad, hēnd, awēšān",
-    "PY Paragraph Preview": "caby_ch9_st24: hōm awēšān kē kirsāgīg hēnd ā =šān bē az xwadāyīh nišānēd kē rust hēnd pad xwadāyīhkāmagīh kū pad xwadāyīh ul āmad ēstēnd kē dawēnd kū nē amāh rāy pas āsrō pad abarōšmurišnīh pad kāmag andar deh rawēnd",
+    "PY Paragraph Preview": "9.24: hōm awēšān kē kirsāgīg hēnd ā =šān bē az xwadāyīh nišānēd kē rust hēnd pad xwadāyīhkāmagīh kū pad xwadāyīh ul āmad ēstēnd kē dawēnd kū nē amāh rāy pas āsrō pad abarōšmurišnīh pad kāmag andar deh rawēnd",
     "WZ Paragraph Preview": "WZ 3.23: pas az awēšān haštdah rōd ī wuzurg az ham harburz bē āmad hēnd",
     "WZ Chapter/Stanza": "3.23"
   },
@@ -1909,7 +1909,7 @@
     "IDF Cosine": "0.1399",
     "Shared Distinct Words": "3",
     "Shared Words": "šab, srōšahlī, rōz",
-    "PY Paragraph Preview": "caby_ch57_st44: srōšahlī ī hurust ī pērōzgar kē buland pad tan bulandēbyāst pad kār dādestān ī stabr andar ohrmazd dāmān nišast ēstēd kē tā se bār andar ham rōz ud ham šab ō ēn kišwar wazēd ī xwanires ī bāmīg",
+    "PY Paragraph Preview": "57.44: srōšahlī ī hurust ī pērōzgar kē buland pad tan bulandēbyāst pad kār dādestān ī stabr andar ohrmazd dāmān nišast ēstēd kē tā se bār andar ham rōz ud ham šab ō ēn kišwar wazēd ī xwanires ī bāmīg",
     "WZ Paragraph Preview": "WZ 10.11: andar šab wahman ud srōšahlī mēš ī kurušk ī šīrpestān bē ō sūrāg burd u =š tā rōz gōhrag gōhrag šīr bē ō zarduxšt hamē dād",
     "WZ Chapter/Stanza": "10.11"
   },
@@ -1920,7 +1920,7 @@
     "IDF Cosine": "0.1395",
     "Shared Distinct Words": "3",
     "Shared Words": "gōspandān, gōspand, čiyōn",
-    "PY Paragraph Preview": "caby_ch29_st2: ēdōn ān ī gōspand tāšīdār ohrmazd pursīd kū ašawahišt kē tō gōspandān rad kū ēn dādestān čiyōn kū rad ī gōspandān kē",
+    "PY Paragraph Preview": "29.2: ēdōn ān ī gōspand tāšīdār ohrmazd pursīd kū ašawahišt kē tō gōspandān rad kū ēn dādestān čiyōn kū rad ī gōspandān kē",
     "WZ Paragraph Preview": "WZ 30.58: ud čiyōn zīndagān az pēm gōšt urwāhmanīh ruwān az gōspandān kirbān pēm frāz dōšīhēd ud rōgn ud abārīg was gōnag az =iš bawēnd ōwōn kū gōspand kirb nē ašādīh ud az gōspandmurwkirbīh bē ō gōštkirbīh az gōštkirbīh abāz ō gōspandmurwkirbīh andar wardišn hēnd",
     "WZ Chapter/Stanza": "30.58"
   },
@@ -1931,7 +1931,7 @@
     "IDF Cosine": "0.1389",
     "Shared Distinct Words": "3",
     "Shared Words": "widarg, abāz, xwēš",
-    "PY Paragraph Preview": "caby_ch50_st7: ēdōn ān ī ašmāh āyōzam ō kār ud dādestān ī ašmāh kē dōšag abāyišnīg ud arwand hēd abarkār pad rasišn ī ō widarg niyāyišn ī ašmāh rāy kū tā ka ō ānōh rasān ā =m niyāyišn ī ō ašmāh tuwān bawād kirdan ohrmazd ud ašawahišt ud čēr wahman čēr abāz wahman griftār bawān ān =im ī az ašmāh ast ayārīh kū =m ān ayārīh ī ašmāh ō xwēš tuwān bawād kirdan",
+    "PY Paragraph Preview": "50.7: ēdōn ān ī ašmāh āyōzam ō kār ud dādestān ī ašmāh kē dōšag abāyišnīg ud arwand hēd abarkār pad rasišn ī ō widarg niyāyišn ī ašmāh rāy kū tā ka ō ānōh rasān ā =m niyāyišn ī ō ašmāh tuwān bawād kirdan ohrmazd ud ašawahišt ud čēr wahman čēr abāz wahman griftār bawān ān =im ī az ašmāh ast ayārīh kū =m ān ayārīh ī ašmāh ō xwēš tuwān bawād kirdan",
     "WZ Paragraph Preview": "WZ 3.4: pad ham zamān ahreman kōxšīd kū abāz ō xwēš bunag ī tārīkīh šawēd u =š widarg nē ayāft",
     "WZ Chapter/Stanza": "3.4"
   },
@@ -1942,7 +1942,7 @@
     "IDF Cosine": "0.1372",
     "Shared Distinct Words": "3",
     "Shared Words": "rasēd, bawēd, čiyōn",
-    "PY Paragraph Preview": "caby_ch65_st12: abarwēz ān bawēd kē čiyōn rasēd pad gyāg stōw kunēd",
+    "PY Paragraph Preview": "65.12: abarwēz ān bawēd kē čiyōn rasēd pad gyāg stōw kunēd",
     "WZ Paragraph Preview": "WZ 34.50: ēd rāy čē ohrmazd pad āb bē dād pad ātaxš frazāmīhēd čē āb čihr dārēd ī rōšnāg ud waxšāg ātaxš sōzāg ud pādīrāngar ī tōhm čiyōn ka tom ī urwarān bē ō āb rasēd ā =š zōr ī waxšagīh az =iš xwēd bawēd",
     "WZ Chapter/Stanza": "34.50"
   },
@@ -1953,7 +1953,7 @@
     "IDF Cosine": "0.1368",
     "Shared Distinct Words": "3",
     "Shared Words": "paydāgīh, rasēd, dēn",
-    "PY Paragraph Preview": "caby_ch44_st15: ka pad ān ī ōy zamān az ahlāyīhabāgīh pad paydāgīh pāduxšā bawē kū =t andar ān zamān pāduxšāyīh bowandag bawēd ham X ān spāh ī ayāhōg rasēd kū ruwān abāz ō tan dahēnd awēšān wābarīgānīh kē tō ohrmazd pad nigēzišn nigēxt kū dēn rawāgīh bowandag bawēd andar ān zamān",
+    "PY Paragraph Preview": "44.15: ka pad ān ī ōy zamān az ahlāyīhabāgīh pad paydāgīh pāduxšā bawē kū =t andar ān zamān pāduxšāyīh bowandag bawēd ham X ān spāh ī ayāhōg rasēd kū ruwān abāz ō tan dahēnd awēšān wābarīgānīh kē tō ohrmazd pad nigēzišn nigēxt kū dēn rawāgīh bowandag bawēd andar ān zamān",
     "WZ Paragraph Preview": "WZ 21.3: ēn nimūdār būd kū =š dēn pad čahār bār ō bālist rasēd kē =š paydāgīh pad zarduxšt ud ōšīdar ud ōšīdarmāh ud sōšyans",
     "WZ Chapter/Stanza": "21.3"
   },
@@ -1964,7 +1964,7 @@
     "IDF Cosine": "0.1366",
     "Shared Distinct Words": "3",
     "Shared Words": "mad, abāg, hēnd",
-    "PY Paragraph Preview": "caby_ch30_st6: ō pursišn abar mad hēnd kū =šān abāg dēwān hampursīd bawēd kē [=šān] dōšīd ān ī wattar pad menišn",
+    "PY Paragraph Preview": "30.6: ō pursišn abar mad hēnd kū =šān abāg dēwān hampursīd bawēd kē [=šān] dōšīd ān ī wattar pad menišn",
     "WZ Paragraph Preview": "WZ 23.3: sidīgar frašn ardwahištīg būdan rāy mēnōyān ātaxšān abāg zarduxšt bē ō hampursagīh mad hēnd pad tōzān āb",
     "WZ Chapter/Stanza": "23.3"
   },
@@ -1975,7 +1975,7 @@
     "IDF Cosine": "0.1365",
     "Shared Distinct Words": "3",
     "Shared Words": "zanišn, dahišn, čiyōn",
-    "PY Paragraph Preview": "caby_ch57_st14: u =š ēdōn ōy bāstān kamāl pad zanišn abar āhōgēnēd kū =š andar škennēd čiyōn ōzōmand ōy ī nihān dahišn",
+    "PY Paragraph Preview": "57.14: u =š ēdōn ōy bāstān kamāl pad zanišn abar āhōgēnēd kū =š andar škennēd čiyōn ōzōmand ōy ī nihān dahišn",
     "WZ Paragraph Preview": "WZ 27.2: mādayān bē wizīdan ī zanišn az azanišnīh čiyōn xrafstarān az gōspandān ud dahišn az adahišn čiyōn ahlawān arzānīgān az druwandān anarzānīgān",
     "WZ Chapter/Stanza": "27.2"
   },
@@ -1986,7 +1986,7 @@
     "IDF Cosine": "0.1363",
     "Shared Distinct Words": "3",
     "Shared Words": "wināh, mizd, kirbag",
-    "PY Paragraph Preview": "caby_ch32_st6: āškāragāmārēnīdār ohrmazd kū pad wināh ud kirbag āmār kunēd ān ī pahlom āgāh ī pad wahman mizd dānēd kū ō kē abāyēd dād pad ēd tō ud ašmāh ohrmazd xwadāyīh ān ī ahlāyīh hammōxtišn bē dānīhēd",
+    "PY Paragraph Preview": "32.6: āškāragāmārēnīdār ohrmazd kū pad wināh ud kirbag āmār kunēd ān ī pahlom āgāh ī pad wahman mizd dānēd kū ō kē abāyēd dād pad ēd tō ud ašmāh ohrmazd xwadāyīh ān ī ahlāyīh hammōxtišn bē dānīhēd",
     "WZ Paragraph Preview": "WZ 1.22: didīgar ēmēd ī mizd pāddāšn ī kirbakkarān ud bīm ī az puhl pādifrāh ī bazzakkarān tuxšīdan pad kirbag pahrēxtan ī az wināh",
     "WZ Chapter/Stanza": "1.22"
   },
@@ -1997,7 +1997,7 @@
     "IDF Cosine": "0.1362",
     "Shared Distinct Words": "3",
     "Shared Words": "abāg, frāz, ahlaw",
-    "PY Paragraph Preview": "caby_ch65_st7: ma amāh āb abāg ōy frāz dahē āb ī weh pahlom ī ohrmazddād ī ahlaw",
+    "PY Paragraph Preview": "65.7: ma amāh āb abāg ōy frāz dahē āb ī weh pahlom ī ohrmazddād ī ahlaw",
     "WZ Paragraph Preview": "WZ 30.42: ka az āwām ī widerāgān frāz rawēd agar ahlaw bōxt pad pērōzīh u =š harwist hamgōhrān ī mēnōyčihragān abāg frāz rawēnd",
     "WZ Chapter/Stanza": "30.42"
   },
@@ -2008,7 +2008,7 @@
     "IDF Cosine": "0.1362",
     "Shared Distinct Words": "3",
     "Shared Words": "mad, hēnd, čiyōn",
-    "PY Paragraph Preview": "caby_ch31_st14: kē mad ud kē =iz rasēd kē abām dahēd az dāsrān az ān ō ōy ī ahlaw az ān čiyōn abāyēd dād ohrmazd ud kē =iz ō druwandān čiyōn awēšān hēnd hangirdīgīh ēdōn",
+    "PY Paragraph Preview": "31.14: kē mad ud kē =iz rasēd kē abām dahēd az dāsrān az ān ō ōy ī ahlaw az ān čiyōn abāyēd dād ohrmazd ud kē =iz ō druwandān čiyōn awēšān hēnd hangirdīgīh ēdōn",
     "WZ Paragraph Preview": "WZ 11.5: ka ō ān gyāg mad hēnd pōrušasp dādestān čiyōn būd pēš ēk karb ī az ān panǰ brādarān guft",
     "WZ Chapter/Stanza": "11.5"
   },
@@ -2019,7 +2019,7 @@
     "IDF Cosine": "0.1345",
     "Shared Distinct Words": "3",
     "Shared Words": "dām, dārēd, hamāg",
-    "PY Paragraph Preview": "caby_ch68_st30: mihr ī frāygāwyōd guft kū niyāyišn ō man ōy kird bawēd kē mihr ī ruwān ī xwēš xūb [ud] [nēk] [dārēd] [čē] [ka] [=š] [mihr] [ī] [ruwān] [ī] [xwēš] [xūb] [ud] [nēk] dāšt bawēd ā =š hamāg dām ī ohrmazd xūb dāšt bawēd",
+    "PY Paragraph Preview": "68.30: mihr ī frāygāwyōd guft kū niyāyišn ō man ōy kird bawēd kē mihr ī ruwān ī xwēš xūb [ud] [nēk] [dārēd] [čē] [ka] [=š] [mihr] [ī] [ruwān] [ī] [xwēš] [xūb] [ud] [nēk] dāšt bawēd ā =š hamāg dām ī ohrmazd xūb dāšt bawēd",
     "WZ Paragraph Preview": "WZ 34.35: pad =iz bunrawāgīh ī dām ka zurwān wazag kirb paymōg ī tārīk ud ādurestarēn rawāgīh rāy frāz ō ahreman burd pad ēn pašt kū ēn ast ān zay ī ātaxš homānāg sōzišnīg ud hamāg dāmān pad =iš aweštābōmand xwad gōhr ī āz dārēd",
     "WZ Chapter/Stanza": "34.35"
   },
@@ -2030,7 +2030,7 @@
     "IDF Cosine": "0.1341",
     "Shared Distinct Words": "3",
     "Shared Words": "hamāg, kunēd, bawēd",
-    "PY Paragraph Preview": "caby_ch20_st3: bē =š čāšt bawēd harwisp kār ud kirbag pad mānsr paydāg ō ōy harwisp mānsr kē abestāg ud zand warm kū ān ī harwisp mānsr hamāg kār ud kirbag ī pad abestāg ud zand paydāg kunēd",
+    "PY Paragraph Preview": "20.3: bē =š čāšt bawēd harwisp kār ud kirbag pad mānsr paydāg ō ōy harwisp mānsr kē abestāg ud zand warm kū ān ī harwisp mānsr hamāg kār ud kirbag ī pad abestāg ud zand paydāg kunēd",
     "WZ Paragraph Preview": "WZ 30.17: az hamāg kirb ī tan =ēw abar čēnīd andar čihrag ōstīgān bē kunēd pad tōhm ēwēnag frāz rēzīhēd u =š bawišn ud zāyišn ī mardōmān az =iš bawēd",
     "WZ Chapter/Stanza": "30.17"
   },
@@ -2041,7 +2041,7 @@
     "IDF Cosine": "0.1337",
     "Shared Distinct Words": "3",
     "Shared Words": "kēn, wināh, rāy",
-    "PY Paragraph Preview": "caby_ch31_st13: kē hampursēd pad ān ī āškārag kirbag āškārag abāyēd kirdan ohrmazd ud kē hampursēd pad ān ī nihānīg wināh nihānīg wēš kunēnd kē pad ān ī kōdag kēn ān ī meh uzmāyēd bōzišn rāy kū wināh =ēw xwurdag be kunēd ud pas ēk ī stabr be kunēd kū tā ān paydāg nē bawād ān pad harw dō čašm ēd kū wēnē",
+    "PY Paragraph Preview": "31.13: kē hampursēd pad ān ī āškārag kirbag āškārag abāyēd kirdan ohrmazd ud kē hampursēd pad ān ī nihānīg wināh nihānīg wēš kunēnd kē pad ān ī kōdag kēn ān ī meh uzmāyēd bōzišn rāy kū wināh =ēw xwurdag be kunēd ud pas ēk ī stabr be kunēd kū tā ān paydāg nē bawād ān pad harw dō čašm ēd kū wēnē",
     "WZ Paragraph Preview": "WZ 27.13: haštom druz az wārom brīdan rāy kēn az menišn ōgārdan ud az wināh tēz ptykyk būdan",
     "WZ Chapter/Stanza": "27.13"
   },

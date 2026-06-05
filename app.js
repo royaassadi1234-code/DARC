@@ -54,6 +54,7 @@ const caseInput = document.querySelector("#case-sensitive");
 const contextSelect = document.querySelector("#context-size");
 const statusEl = document.querySelector("#load-status");
 const overviewEl = document.querySelector("#overview");
+const occurrenceEl = document.querySelector("#occurrence-panel");
 const resultsEl = document.querySelector("#results");
 const TRANSLITERATION_MAP = {
   "\u0100": "A",
@@ -177,7 +178,7 @@ function parseTsvRecords(lines) {
 
       return {
         index,
-        location: hasTsvShape ? columns.slice(0, 2).join(" · ") : "",
+        location: hasTsvShape ? formatTsvLocation(columns) : "",
         text: hasTsvShape ? columns.slice(2).join(" ") : trimmed,
         sourceLine: trimmed,
         searchable: hasTsvShape && trimmed.length > 0
@@ -192,6 +193,15 @@ function isTsvRecord(line) {
     columns[0].trim().length > 0 &&
     columns[1].trim().length > 0 &&
     columns.slice(2).join(" ").trim().length > 0;
+}
+
+function formatTsvLocation(columns) {
+  const first = columns[0].trim();
+  const second = columns[1].trim();
+  if (/outdated|K35/i.test(first)) {
+    return second.replace(/^[A-Za-z]+\s+/, "");
+  }
+  return [first, second].filter(Boolean).join(" · ");
 }
 
 function parseSectionRecords(lines) {
@@ -238,8 +248,10 @@ function parseSectionRecords(lines) {
 function render() {
   const search = createSearch(state.query);
   const summaries = state.texts.map((text) => getMatches(text, search));
+  const occurrences = state.texts.map((text) => getOccurrenceSummary(text, search));
 
   renderOverview(summaries, search);
+  renderOccurrenceDiagram(occurrences, search);
   renderResults(summaries, search);
 }
 
@@ -258,6 +270,92 @@ function renderOverview(summaries, search) {
       </article>
     `)
     .join("");
+}
+
+function renderOccurrenceDiagram(occurrences, search) {
+  if (!search) {
+    occurrenceEl.innerHTML = `
+      <div class="empty-state">
+        Search a word or several words to see their occurrence diagram and chapter/stanza trail.
+      </div>
+    `;
+    return;
+  }
+
+  const maxTotal = Math.max(1, ...occurrences.map((summary) => summary.total));
+  const totalOccurrences = occurrences.reduce((sum, summary) => sum + summary.total, 0);
+
+  occurrenceEl.innerHTML = `
+    <article class="diagram-card">
+      <header>
+        <div>
+          <div class="siglum">Diagram</div>
+          <h2>Word Occurrences Across Texts</h2>
+        </div>
+        <span class="count-pill ${totalOccurrences ? "hit" : "miss"}">${totalOccurrences}</span>
+      </header>
+
+      <div class="term-legend" aria-label="Searched word legend">
+        ${search.terms.map((term, index) => `
+          <span><i class="legend-swatch term-${(index % HIGHLIGHT_CLASS_COUNT) + 1}"></i>${escapeHtml(term)}</span>
+        `).join("")}
+      </div>
+
+      <div class="occurrence-chart" aria-label="Occurrence bars">
+        ${occurrences.map((summary) => renderOccurrenceRow(summary, maxTotal)).join("")}
+      </div>
+
+      <div class="occurrence-locations" aria-label="Chapter and stanza locations">
+        ${occurrences.map(renderOccurrenceLocations).join("")}
+      </div>
+    </article>
+  `;
+}
+
+function renderOccurrenceRow(summary, maxTotal) {
+  return `
+    <section class="occurrence-row">
+      <div class="occurrence-label">
+        <strong>${escapeHtml(summary.text.siglum)}</strong>
+        <span>${summary.total.toLocaleString()}</span>
+      </div>
+      <div class="occurrence-track" aria-label="${escapeHtml(summary.text.siglum)} occurrence count">
+        <div class="occurrence-stack" style="width: ${summary.total ? Math.max(2, (summary.total / maxTotal) * 100).toFixed(2) : 0}%">
+          ${summary.termCounts.map((count, index) => count ? `
+            <span
+              class="occurrence-segment term-${(index % HIGHLIGHT_CLASS_COUNT) + 1}"
+              style="width: ${(count / summary.total) * 100}%"
+              title="${escapeHtml(summary.terms[index])}: ${count}"
+            ></span>
+          ` : "").join("")}
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function renderOccurrenceLocations(summary) {
+  return `
+    <section class="occurrence-location-card">
+      <header>
+        <div>
+          <div class="siglum">${escapeHtml(summary.text.siglum)}</div>
+          <h2>${escapeHtml(summary.text.title)}</h2>
+        </div>
+        <span class="count-pill ${summary.total ? "hit" : "miss"}">${summary.total}</span>
+      </header>
+      ${summary.occurrences.length ? `
+        <ol class="occurrence-list">
+          ${summary.occurrences.map((occurrence) => `
+            <li>
+              <span class="location">${escapeHtml(occurrence.location)}</span>
+              <mark class="term-${(occurrence.termIndex % HIGHLIGHT_CLASS_COUNT) + 1}">${escapeHtml(occurrence.term)}</mark>
+            </li>
+          `).join("")}
+        </ol>
+      ` : `<div class="empty-state">No occurrences in this text.</div>`}
+    </section>
+  `;
 }
 
 function renderResults(summaries, search) {
@@ -359,6 +457,40 @@ function resetResultPages() {
   state.resultPages = {};
 }
 
+function getOccurrenceSummary(text, search) {
+  if (!search) {
+    return {
+      text,
+      terms: [],
+      termCounts: [],
+      occurrences: [],
+      total: 0
+    };
+  }
+
+  const termCounts = search.terms.map(() => 0);
+  const occurrences = [];
+
+  text.records.forEach((record) => {
+    findTermOccurrences(record.text, search.terms).forEach((occurrence) => {
+      termCounts[occurrence.termIndex] += 1;
+      occurrences.push({
+        location: record.location,
+        term: search.terms[occurrence.termIndex],
+        termIndex: occurrence.termIndex
+      });
+    });
+  });
+
+  return {
+    text,
+    terms: search.terms,
+    termCounts,
+    occurrences,
+    total: occurrences.length
+  };
+}
+
 function getMatches(text, search) {
   if (!search) {
     return { text, matches: [], total: 0 };
@@ -380,6 +512,29 @@ function getMatches(text, search) {
   });
 
   return { text, matches, total: matches.length };
+}
+
+function findTermOccurrences(text, terms) {
+  const folded = foldText(text, state.caseSensitive);
+  const occurrences = [];
+
+  terms.forEach((term, termIndex) => {
+    const foldedTerm = foldText(term, state.caseSensitive).text;
+    if (!foldedTerm) {
+      return;
+    }
+
+    const regex = new RegExp(buildPattern([foldedTerm]), "gu");
+    let match;
+    while ((match = regex.exec(folded.text)) !== null) {
+      occurrences.push({
+        start: folded.map[match.index],
+        termIndex
+      });
+    }
+  });
+
+  return occurrences.sort((a, b) => a.start - b.start || a.termIndex - b.termIndex);
 }
 
 function createSearch(query) {

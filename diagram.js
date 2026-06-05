@@ -126,7 +126,7 @@ function renderDiagram() {
       <header>
         <div>
           <div class="siglum">Diagram</div>
-          <h2>Vertical Occurrence Comparison</h2>
+          <h2>Occurrence Frequency by Text</h2>
         </div>
         <span class="count-pill ${total ? "hit" : "miss"}">${total}</span>
       </header>
@@ -138,7 +138,7 @@ function renderDiagram() {
       </div>
 
       <section class="diagram-split" aria-label="Diagram and occurrence locations">
-        <div class="vertical-chart" aria-label="Vertical occurrence bars">
+        <div class="vertical-chart" aria-label="Occurrence frequency bars">
           ${summaries.map((summary) => renderVerticalBar(summary, maxTotal)).join("")}
         </div>
         <div class="linear-occurrences" aria-label="Linear occurrence lists">

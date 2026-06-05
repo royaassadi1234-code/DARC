@@ -1,0 +1,78 @@
+{
+  "metadata": {
+    "title": "Thematic Network Template",
+    "description": "Fill this file with your manually defined themes, text links, and confirmed passages.",
+    "version": "1.0"
+  },
+  "texts": [
+    {
+      "id": "dd",
+      "label": "DD",
+      "title": "Dadestan i Denig"
+    },
+    {
+      "id": "py",
+      "label": "PY",
+      "title": "Pahlavi Yasna"
+    },
+    {
+      "id": "wz",
+      "label": "WZ",
+      "title": "Wizidagiha i Zadspram"
+    },
+    {
+      "id": "nm",
+      "label": "NM",
+      "title": "Namagiha i Manuscihr"
+    }
+  ],
+  "themes": [
+    {
+      "id": "example-theme",
+      "label": "Example Theme",
+      "description": "Write a short scholarly description of the theme here.",
+      "keywords": [
+        "keyword-one",
+        "keyword-two",
+        "keyword-three"
+      ],
+      "status": "draft",
+      "confirmedPassages": [
+        {
+          "textId": "dd",
+          "location": "36.4",
+          "passageLabel": "Optional short label",
+          "note": "Why this passage belongs to the theme."
+        },
+        {
+          "textId": "py",
+          "location": "31.1",
+          "passageLabel": "Optional short label",
+          "note": "Why this passage belongs to the theme."
+        }
+      ],
+      "links": [
+        {
+          "sourceTextId": "dd",
+          "targetTextId": "py",
+          "strength": 2,
+          "basis": "Shared theme, vocabulary, motif, or direct comparison.",
+          "confirmed": true,
+          "passagePairs": [
+            {
+              "sourceLocation": "36.4",
+              "targetLocation": "31.1",
+              "note": "Explain the relationship between these two passages."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Use status values such as draft, reviewed, or confirmed.",
+    "Use strength to control network edge thickness later: 1 = weak, 2 = medium, 3 = strong.",
+    "Add as many themes, confirmedPassages, and links as needed.",
+    "Keep textId values matching one of: dd, py, wz, nm."
+  ]
+}

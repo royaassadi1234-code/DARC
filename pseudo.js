@@ -426,10 +426,23 @@ function renderPersianTranscriptionBlock(value) {
 }
 
 function toArabicTranscription(value) {
-  return String(value)
-    .split(/(\s+|[.,;:!?()[\]{}<>]+)/u)
-    .map((part) => /[\p{L}\p{M}\p{N}=_-]/u.test(part) ? transliterateWord(part) : part)
-    .join("");
+  const parts = String(value).split(/(\s+|[.,;:!?()[\]{}<>]+)/u);
+  let output = "";
+
+  parts.forEach((part) => {
+    if (/[\p{L}\p{M}\p{N}=_-]/u.test(part)) {
+      if (isStandaloneEzafe(part)) {
+        output = output.replace(/\s+$/u, "") + "ِ";
+        return;
+      }
+      output += transliterateWord(part);
+      return;
+    }
+
+    output += part;
+  });
+
+  return output;
 }
 
 function transliterateWord(word) {
@@ -438,6 +451,10 @@ function transliterateWord(word) {
   let body = word.replace(/^[=_.:-]+|[=_.:-]+$/g, "").toLocaleLowerCase();
   if (!body) {
     return word;
+  }
+  const initialE = body.startsWith("e");
+  if (initialE) {
+    body = body.slice(1);
   }
 
   const replacements = [
@@ -456,8 +473,13 @@ function transliterateWord(word) {
     s: "س", w: "و", v: "و", x: "خ", y: "ی", z: "ز", q: "ق"
   };
 
-  const transcribed = Array.from(body).map((char) => chars[char] || char).join("");
+  const transcribed = `${initialE ? "ای" : ""}${Array.from(body).map((char) => chars[char] || char).join("")}`;
   return `${prefix}${transcribed}${suffix}`;
+}
+
+function isStandaloneEzafe(value) {
+  const clean = String(value).replace(/^[=_.:-]+|[=_.:-]+$/g, "").toLocaleLowerCase();
+  return clean === "ī" || clean === "i";
 }
 
 function highlightPlainSegment(segment, ranges, offset, options = {}) {

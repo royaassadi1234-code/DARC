@@ -9,17 +9,8 @@ const TEXTS = [
     themes: []
   },
   {
-    id: "nm",
-    siglum: "NM",
-    title: "Namagiha ī Manuščihr",
-    file: "NM.txt",
-    language: "Middle Persian",
-    translation: null,
-    themes: []
-  },
-  {
     id: "py",
-    siglum: "PY-Pt4",
+    siglum: "PY",
     title: "Pahlavi Yasna",
     file: "PY-Pt4.txt",
     language: "Middle Persian",
@@ -31,6 +22,15 @@ const TEXTS = [
     siglum: "WZ",
     title: "Wizīdagīhā ī Zādspram",
     file: "WZ.txt",
+    language: "Middle Persian",
+    translation: null,
+    themes: []
+  },
+  {
+    id: "nm",
+    siglum: "NM",
+    title: "Namagiha ī Manuščihr",
+    file: "NM.txt",
     language: "Middle Persian",
     translation: null,
     themes: []

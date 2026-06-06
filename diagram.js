@@ -1,8 +1,8 @@
 const DIAGRAM_TEXTS = [
   { id: "dd", siglum: "DD", title: "Dadestan i Denig", file: "Dd.txt" },
-  { id: "nm", siglum: "NM", title: "Namagiha i Manuscihr", file: "NM.txt" },
   { id: "py", siglum: "PY", title: "Pahlavi Yasna", file: "PY-Pt4.txt" },
-  { id: "wz", siglum: "WZ", title: "Wizidagiha i Zadspram", file: "WZ.txt" }
+  { id: "wz", siglum: "WZ", title: "Wizidagiha i Zadspram", file: "WZ.txt" },
+  { id: "nm", siglum: "NM", title: "Namagiha i Manuscihr", file: "NM.txt" }
 ];
 
 const diagramState = {

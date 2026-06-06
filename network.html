@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Occurrence Diagram</title>
+    <title>Thematic Network</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
@@ -11,15 +11,15 @@
       <section class="workspace" aria-labelledby="page-title">
         <header class="masthead">
           <div>
-            <p class="eyebrow">Diagram comparison</p>
-            <h1 id="page-title">Occurrence Diagram</h1>
+            <p class="eyebrow">Manual thematic network</p>
+            <h1 id="page-title">Thematic Network</h1>
           </div>
           <div class="header-actions">
             <nav class="site-nav" aria-label="Research pages">
               <a href="index.html">Text search</a>
-              <a class="active" href="diagram.html">Diagram</a>
+              <a href="diagram.html">Diagram</a>
               <a href="themes.html">Themes</a>
-              <a href="network.html">Network</a>
+              <a class="active" href="network.html">Network</a>
               <details class="nav-menu">
                 <summary>word matches</summary>
                 <div class="nav-menu-list">
@@ -41,36 +41,22 @@
               <a href="resources.html">Resources</a>
               <a href="about.html">about</a>
             </nav>
-            <div class="status" id="diagram-status">Loading texts...</div>
+            <div class="status" id="network-status">Loading network...</div>
           </div>
         </header>
 
-        <section class="search-panel diagram-controls" aria-label="Diagram search controls">
-          <label class="search-box" for="diagram-query">
-            <span>Search word or words</span>
-            <input id="diagram-query" type="search" placeholder="Type plain letters or several words: druz ohrmazd" autocomplete="off" autofocus>
+        <section class="search-panel network-controls" aria-label="Network controls">
+          <label class="select-control" for="network-theme">
+            <span>Theme</span>
+            <select id="network-theme"></select>
           </label>
-
-          <div class="controls" role="group" aria-label="Diagram options">
-            <label class="control">
-              <input id="diagram-multiple" type="checkbox" checked>
-              <span>Multiple words</span>
-            </label>
-            <label class="control">
-              <input id="diagram-whole-word" type="checkbox" checked>
-              <span>Whole word</span>
-            </label>
-            <label class="control">
-              <input id="diagram-case-sensitive" type="checkbox">
-              <span>Case sensitive</span>
-            </label>
-          </div>
+          <div class="network-title" id="network-title"></div>
         </section>
 
-        <section class="diagram-tool" id="diagram-tool" aria-live="polite"></section>
+        <section class="network-workspace" id="network-workspace" aria-live="polite"></section>
       </section>
     </main>
 
-    <script src="diagram.js"></script>
+    <script src="network.js"></script>
   </body>
 </html>

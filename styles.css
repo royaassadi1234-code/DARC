@@ -596,9 +596,11 @@ h1 {
 
 .theme-comparison {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(280px, 1fr));
   gap: 12px;
   align-items: start;
+  overflow-x: auto;
+  padding-bottom: 6px;
 }
 
 .theme-column {
@@ -634,6 +636,13 @@ h1 {
   border-top: 1px solid #edf0f3;
 }
 
+.theme-hit-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(180px, 0.85fr);
+  gap: 12px;
+  align-items: start;
+}
+
 .theme-hit:first-child {
   border-top: 0;
 }
@@ -653,6 +662,10 @@ h1 {
   font-size: 0.94rem;
   line-height: 1.58;
   overflow-wrap: anywhere;
+}
+
+.theme-hit .dictionary-translation {
+  font-size: 0.84rem;
 }
 
 .network-controls {
@@ -1209,9 +1222,16 @@ mark.term-6 {
   .resources-grid,
   .expertise-grid,
   .pseudo-summary,
-  .theme-overview,
-  .theme-comparison {
+  .theme-overview {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .theme-comparison {
+    grid-template-columns: repeat(4, minmax(280px, 1fr));
+  }
+
+  .theme-hit-content {
+    grid-template-columns: 1fr;
   }
 
   .diagram-split {
@@ -1252,9 +1272,12 @@ mark.term-6 {
   .resources-grid,
   .expertise-grid,
   .pseudo-summary,
-  .theme-overview,
-  .theme-comparison {
+  .theme-overview {
     grid-template-columns: 1fr;
+  }
+
+  .theme-comparison {
+    grid-template-columns: repeat(4, minmax(260px, 1fr));
   }
 
   .controls {

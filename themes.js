@@ -259,8 +259,10 @@ function renderThemeHit(match, terms) {
         <span>${escapeHtml(match.location)}</span>
         <span>${match.score} keyword${match.score === 1 ? "" : "s"}</span>
       </div>
-      <p>${highlightTheme(match.snippet, terms, { annotate: true })}</p>
-      <p class="dictionary-translation">${renderDictionaryTranslation(match.snippet)}</p>
+      <div class="theme-hit-content">
+        <p>${highlightTheme(match.snippet, terms, { annotate: true })}</p>
+        <p class="dictionary-translation">${renderDictionaryTranslation(match.snippet)}</p>
+      </div>
     </section>
   `;
 }

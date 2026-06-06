@@ -2,11 +2,43 @@
     "source":  "MPCD REST API lemmas endpoint, filtered to local workspace vocabulary",
     "sourceUrl":  "https://www.mpcorpus.org/api/lemmas/",
     "dictionaryUrl":  "https://www.mpcorpus.org/dict/1c97e496-4f82-4896-ae04-d562727c5161/",
-    "generatedAt":  "2026-06-06T03:53:32Z",
+    "generatedAt":  "2026-06-06T04:19:12Z",
     "workspaceVocabularyFile":  "workspace-vocabulary.json",
-    "workspaceVocabularyCount":  16146,
-    "matchedEntryCount":  532,
+    "workspaceVocabularyCount":  24929,
+    "matchedEntryCount":  632,
     "entries":  [
+                    {
+                        "word":  "=iz",
+                        "meanings":  [
+                                         "actually",
+                                         "after all",
+                                         "afterwards",
+                                         "also",
+                                         "and",
+                                         "as well",
+                                         "at all",
+                                         "especially",
+                                         "even",
+                                         "exactly",
+                                         "for instance",
+                                         "however",
+                                         "indeed",
+                                         "instead",
+                                         "just",
+                                         "namely",
+                                         "only",
+                                         "precisely",
+                                         "right",
+                                         "same",
+                                         "simply",
+                                         "still",
+                                         "though",
+                                         "too",
+                                         "very",
+                                         "well",
+                                         "yet"
+                                     ]
+                    },
                     {
                         "word":  "abar",
                         "meanings":  [
@@ -190,6 +222,12 @@
                                      ]
                     },
                     {
+                        "word":  "ahaxt",
+                        "meanings":  [
+                                         "unconverted, unpersuaded"
+                                     ]
+                    },
+                    {
                         "word":  "ahlaw",
                         "meanings":  [
                                          "just",
@@ -255,11 +293,24 @@
                                      ]
                     },
                     {
+                        "word":  "amar",
+                        "meanings":  [
+                                         "countless",
+                                         "numberless"
+                                     ]
+                    },
+                    {
                         "word":  "amarg",
                         "meanings":  [
                                          "deathless",
                                          "immortal",
                                          "without death"
+                                     ]
+                    },
+                    {
+                        "word":  "amurdad",
+                        "meanings":  [
+                                         "Amurdad"
                                      ]
                     },
                     {
@@ -272,6 +323,14 @@
                         "word":  "anahlaw",
                         "meanings":  [
                                          "unrighteous"
+                                     ]
+                    },
+                    {
+                        "word":  "anast",
+                        "meanings":  [
+                                         "Anast (demon)",
+                                         "non-existence",
+                                         "untrue"
                                      ]
                     },
                     {
@@ -429,6 +488,21 @@
                                      ]
                     },
                     {
+                        "word":  "appar",
+                        "meanings":  [
+                                         "illegal confiscation",
+                                         "robber",
+                                         "robbery"
+                                     ]
+                    },
+                    {
+                        "word":  "appar-",
+                        "meanings":  [
+                                         "remove",
+                                         "to rob"
+                                     ]
+                    },
+                    {
                         "word":  "appurd",
                         "meanings":  [
                                          "remove",
@@ -443,9 +517,21 @@
                                      ]
                     },
                     {
+                        "word":  "arad",
+                        "meanings":  [
+                                         "without rad"
+                                     ]
+                    },
+                    {
                         "word":  "aramag",
                         "meanings":  [
                                          "without herds"
+                                     ]
+                    },
+                    {
+                        "word":  "arang",
+                        "meanings":  [
+                                         "Arang (river)"
                                      ]
                     },
                     {
@@ -483,6 +569,13 @@
                         "word":  "arwandasp",
                         "meanings":  [
                                          "with swift horses"
+                                     ]
+                    },
+                    {
+                        "word":  "arz-",
+                        "meanings":  [
+                                         "be worth",
+                                         "to be worth, valuable"
                                      ]
                     },
                     {
@@ -547,6 +640,12 @@
                         "word":  "awestarag",
                         "meanings":  [
                                          "razor"
+                                     ]
+                    },
+                    {
+                        "word":  "awis",
+                        "meanings":  [
+                                         "without village"
                                      ]
                     },
                     {
@@ -643,6 +742,12 @@
                                      ]
                     },
                     {
+                        "word":  "bam",
+                        "meanings":  [
+                                         "Bam"
+                                     ]
+                    },
+                    {
                         "word":  "band",
                         "meanings":  [
                                          "bond",
@@ -665,6 +770,24 @@
                                      ]
                     },
                     {
+                        "word":  "band-",
+                        "meanings":  [
+                                         "bind",
+                                         "chaining",
+                                         "close",
+                                         "closing, shutting",
+                                         "fastening, fixing",
+                                         "imprisoning",
+                                         "restraining, banning",
+                                         "to close, shut",
+                                         "to fasten, fix",
+                                         "to imprison, fetter, lock up",
+                                         "to restrain, ban",
+                                         "to tie, bind",
+                                         "tying, binding"
+                                     ]
+                    },
+                    {
                         "word":  "bandag",
                         "meanings":  [
                                          "servant",
@@ -682,6 +805,31 @@
                         "word":  "bar",
                         "meanings":  [
                                          "fruit"
+                                     ]
+                    },
+                    {
+                        "word":  "bar-",
+                        "meanings":  [
+                                         "bring",
+                                         "carry",
+                                         "carrying",
+                                         "carrying away",
+                                         "carrying out",
+                                         "deliver",
+                                         "exhibit",
+                                         "offering",
+                                         "put",
+                                         "to behave",
+                                         "to bring forth, offer",
+                                         "to carry, bring, take",
+                                         "to lead, bring",
+                                         "to produce, bring up",
+                                         "to reach",
+                                         "to render, provide, convey",
+                                         "to ride",
+                                         "to suffer, endure",
+                                         "to undertake",
+                                         "to win, prevail"
                                      ]
                     },
                     {
@@ -864,6 +1012,12 @@
                                      ]
                     },
                     {
+                        "word":  "bud",
+                        "meanings":  [
+                                         "Buddha"
+                                     ]
+                    },
+                    {
                         "word":  "buland",
                         "meanings":  [
                                          "elevated",
@@ -967,6 +1121,12 @@
                                      ]
                     },
                     {
+                        "word":  "burrag",
+                        "meanings":  [
+                                         "cut"
+                                     ]
+                    },
+                    {
                         "word":  "burz",
                         "meanings":  [
                                          "Burz",
@@ -974,6 +1134,20 @@
                                          "exalted",
                                          "high",
                                          "loud"
+                                     ]
+                    },
+                    {
+                        "word":  "burz-",
+                        "meanings":  [
+                                         "exalt",
+                                         "honour",
+                                         "praise"
+                                     ]
+                    },
+                    {
+                        "word":  "burzand",
+                        "meanings":  [
+                                         "exalted"
                                      ]
                     },
                     {
@@ -1017,6 +1191,36 @@
                                      ]
                     },
                     {
+                        "word":  "dah-",
+                        "meanings":  [
+                                         "age",
+                                         "create",
+                                         "created",
+                                         "creating",
+                                         "donation",
+                                         "give",
+                                         "giving",
+                                         "grant",
+                                         "put",
+                                         "set",
+                                         "to appoint",
+                                         "to bequeath",
+                                         "to bestow, donate, provide",
+                                         "to bring about",
+                                         "to create, issue",
+                                         "to define, identify as",
+                                         "to determine",
+                                         "to establish, ordain",
+                                         "to give",
+                                         "to present",
+                                         "to put, set",
+                                         "to set (into the world)",
+                                         "to transfer, confer",
+                                         "to yield, cause, procure",
+                                         "transfer"
+                                     ]
+                    },
+                    {
                         "word":  "dahan",
                         "meanings":  [
                                          "jaws",
@@ -1043,6 +1247,13 @@
                         "word":  "dam",
                         "meanings":  [
                                          "plenum"
+                                     ]
+                    },
+                    {
+                        "word":  "dam-",
+                        "meanings":  [
+                                         "blow",
+                                         "breathe"
                                      ]
                     },
                     {
@@ -1314,6 +1525,12 @@
                                      ]
                     },
                     {
+                        "word":  "duzz-",
+                        "meanings":  [
+                                         "to steal"
+                                     ]
+                    },
+                    {
                         "word":  "farnbay",
                         "meanings":  [
                                          "Ädur Farnbay, son of FarroxzÄd",
@@ -1370,6 +1587,12 @@
                                      ]
                     },
                     {
+                        "word":  "frahaxt-",
+                        "meanings":  [
+                                         "to be encouraged"
+                                     ]
+                    },
+                    {
                         "word":  "frahaxtag",
                         "meanings":  [
                                          "educated, trained, skilled"
@@ -1385,6 +1608,20 @@
                                          "most",
                                          "mostly",
                                          "worst"
+                                     ]
+                    },
+                    {
+                        "word":  "franaftan",
+                        "meanings":  [
+                                         "betake oneself (to)",
+                                         "depart",
+                                         "go",
+                                         "go forward",
+                                         "move forward",
+                                         "proceed",
+                                         "reach",
+                                         "set out to do something",
+                                         "step forward"
                                      ]
                     },
                     {
@@ -1471,6 +1708,12 @@
                                      ]
                     },
                     {
+                        "word":  "gand-",
+                        "meanings":  [
+                                         "to stink"
+                                     ]
+                    },
+                    {
                         "word":  "gandag",
                         "meanings":  [
                                          "foul",
@@ -1514,9 +1757,28 @@
                                      ]
                     },
                     {
+                        "word":  "garmag",
+                        "meanings":  [
+                                         "warmth",
+                                         "wrathful"
+                                     ]
+                    },
+                    {
                         "word":  "gast",
                         "meanings":  [
                                          "defilement"
+                                     ]
+                    },
+                    {
+                        "word":  "gaw",
+                        "meanings":  [
+                                         "hand (daevic)"
+                                     ]
+                    },
+                    {
+                        "word":  "gawazn",
+                        "meanings":  [
+                                         "deer"
                                      ]
                     },
                     {
@@ -1639,6 +1901,13 @@
                                      ]
                     },
                     {
+                        "word":  "griyistan",
+                        "meanings":  [
+                                         "cry",
+                                         "weep"
+                                     ]
+                    },
+                    {
                         "word":  "guft",
                         "meanings":  [
                                          "declare",
@@ -1743,6 +2012,14 @@
                                      ]
                     },
                     {
+                        "word":  "haftan",
+                        "meanings":  [
+                                         "observe",
+                                         "take care of",
+                                         "to observe, take care of"
+                                     ]
+                    },
+                    {
                         "word":  "haftom",
                         "meanings":  [
                                          "seventh"
@@ -1782,6 +2059,24 @@
                         "word":  "hamband",
                         "meanings":  [
                                          "connected"
+                                     ]
+                    },
+                    {
+                        "word":  "hamband-",
+                        "meanings":  [
+                                         "compose;bind together",
+                                         "encircle",
+                                         "form",
+                                         "intertwine"
+                                     ]
+                    },
+                    {
+                        "word":  "hambast",
+                        "meanings":  [
+                                         "compose;bind together",
+                                         "encircle",
+                                         "form",
+                                         "intertwine"
                                      ]
                     },
                     {
@@ -1945,12 +2240,63 @@
                                      ]
                     },
                     {
+                        "word":  "haxt-",
+                        "meanings":  [
+                                         "to be converted, persuaded",
+                                         "to be drawn, attracted"
+                                     ]
+                    },
+                    {
+                        "word":  "hil-",
+                        "meanings":  [
+                                         "abandoning",
+                                         "allowing, permitting",
+                                         "emit",
+                                         "leave",
+                                         "let",
+                                         "letting",
+                                         "releasing, dismissing",
+                                         "renounce",
+                                         "to abandon",
+                                         "to allow, permit",
+                                         "to avoid, eschew",
+                                         "to desist",
+                                         "to give up, relinquish, forfeit, forsake",
+                                         "to leave",
+                                         "to leave (alone)",
+                                         "to leave behind",
+                                         "to leave for the benefit of so.",
+                                         "to leave over",
+                                         "to leave, cede",
+                                         "to leave, depart",
+                                         "to leave, stop",
+                                         "to let",
+                                         "to let mate",
+                                         "to let so. to a place",
+                                         "to let, cause, allow",
+                                         "to omit, skip",
+                                         "to put, set",
+                                         "to release",
+                                         "to release, dismiss",
+                                         "to release, let out",
+                                         "to remit (a debt)",
+                                         "to unleash, let loose",
+                                         "to withdraw, remove"
+                                     ]
+                    },
+                    {
                         "word":  "hixr",
                         "meanings":  [
                                          "dry dead matter",
                                          "dry refuse",
                                          "excretions",
                                          "impure substance (in general)"
+                                     ]
+                    },
+                    {
+                        "word":  "hordad",
+                        "meanings":  [
+                                         "Hordad"
                                      ]
                     },
                     {
@@ -1997,6 +2343,13 @@
                                          "good thinking",
                                          "good thoughts",
                                          "of good thoughts"
+                                     ]
+                    },
+                    {
+                        "word":  "hun-",
+                        "meanings":  [
+                                         "extract",
+                                         "to press out, extract juice from"
                                      ]
                     },
                     {
@@ -2113,6 +2466,13 @@
                                      ]
                     },
                     {
+                        "word":  "kaf-",
+                        "meanings":  [
+                                         "fall",
+                                         "rive"
+                                     ]
+                    },
+                    {
                         "word":  "kaft",
                         "meanings":  [
                                          "fall",
@@ -2138,6 +2498,12 @@
                                      ]
                     },
                     {
+                        "word":  "kamag",
+                        "meanings":  [
+                                         "Kamag bird"
+                                     ]
+                    },
+                    {
                         "word":  "kamar",
                         "meanings":  [
                                          "waist"
@@ -2159,6 +2525,29 @@
                         "word":  "kamramag",
                         "meanings":  [
                                          "of few herds"
+                                     ]
+                    },
+                    {
+                        "word":  "kan-",
+                        "meanings":  [
+                                         "annul",
+                                         "break up",
+                                         "cut",
+                                         "demolish",
+                                         "destroy",
+                                         "destroying",
+                                         "dig",
+                                         "engrave",
+                                         "eradicate",
+                                         "extract",
+                                         "liquidate",
+                                         "raze",
+                                         "razing",
+                                         "rip off",
+                                         "rip out",
+                                         "scrape",
+                                         "tear",
+                                         "to cancel, annul"
                                      ]
                     },
                     {
@@ -2216,6 +2605,13 @@
                                      ]
                     },
                     {
+                        "word":  "kar",
+                        "meanings":  [
+                                         "Kar (a fish)",
+                                         "whale shark"
+                                     ]
+                    },
+                    {
                         "word":  "karab",
                         "meanings":  [
                                          "Karab",
@@ -2260,6 +2656,13 @@
                                          "person, someone",
                                          "somebody",
                                          "someone"
+                                     ]
+                    },
+                    {
+                        "word":  "kast",
+                        "meanings":  [
+                                         "humiliated",
+                                         "reduction"
                                      ]
                     },
                     {
@@ -2398,6 +2801,45 @@
                     },
                     {
                         "word":  "kirdan",
+                        "meanings":  [
+                                         "accomplishing",
+                                         "acting",
+                                         "build",
+                                         "building",
+                                         "causing",
+                                         "committing",
+                                         "contracting, stipulating",
+                                         "do",
+                                         "doing",
+                                         "issuing",
+                                         "make",
+                                         "making",
+                                         "performing, practising, exercising",
+                                         "pursuing",
+                                         "realise",
+                                         "to accomplish, manage",
+                                         "to act, conduct",
+                                         "to appoint",
+                                         "to build, make",
+                                         "to cause, effect",
+                                         "to commit",
+                                         "to contract, stipulate",
+                                         "to deal with, proceed",
+                                         "to declare, determine",
+                                         "to do",
+                                         "to fix, determine",
+                                         "to issue",
+                                         "to make",
+                                         "to make so. (be/become) so./sth.",
+                                         "to perform, practise, exercise",
+                                         "to provide, produce",
+                                         "to pursue",
+                                         "to put, place",
+                                         "to submit"
+                                     ]
+                    },
+                    {
+                        "word":  "kun-",
                         "meanings":  [
                                          "accomplishing",
                                          "acting",
@@ -2587,6 +3029,27 @@
                                      ]
                     },
                     {
+                        "word":  "men-",
+                        "meanings":  [
+                                         "consider",
+                                         "considering",
+                                         "respect",
+                                         "think",
+                                         "thinking",
+                                         "to be mindful of, care about",
+                                         "to believe, imagine, think",
+                                         "to consider",
+                                         "to think"
+                                     ]
+                    },
+                    {
+                        "word":  "mih",
+                        "meanings":  [
+                                         "contrary, opposite",
+                                         "false"
+                                     ]
+                    },
+                    {
                         "word":  "mihr",
                         "meanings":  [
                                          "bond",
@@ -2685,6 +3148,12 @@
                                      ]
                     },
                     {
+                        "word":  "murwag",
+                        "meanings":  [
+                                         "bird"
+                                     ]
+                    },
+                    {
                         "word":  "must",
                         "meanings":  [
                                          "complaining",
@@ -2743,6 +3212,24 @@
                                      ]
                     },
                     {
+                        "word":  "nay",
+                        "meanings":  [
+                                         "cane",
+                                         "reed",
+                                         "size"
+                                     ]
+                    },
+                    {
+                        "word":  "nay-",
+                        "meanings":  [
+                                         "conduct",
+                                         "delegate",
+                                         "guide",
+                                         "lead",
+                                         "to abduct"
+                                     ]
+                    },
+                    {
                         "word":  "nazd",
                         "meanings":  [
                                          "near"
@@ -2767,6 +3254,25 @@
                                      ]
                     },
                     {
+                        "word":  "niger-",
+                        "meanings":  [
+                                         "behold",
+                                         "consider",
+                                         "dealing",
+                                         "have a look",
+                                         "look",
+                                         "look at",
+                                         "look, observe",
+                                         "notice",
+                                         "observe",
+                                         "observing",
+                                         "ponder",
+                                         "see",
+                                         "to inspect",
+                                         "watch"
+                                     ]
+                    },
+                    {
                         "word":  "nihang",
                         "meanings":  [
                                          "a selected few",
@@ -2777,6 +3283,12 @@
                                          "short account",
                                          "small",
                                          "something small"
+                                     ]
+                    },
+                    {
+                        "word":  "nihaxtan",
+                        "meanings":  [
+                                         "to lunge"
                                      ]
                     },
                     {
@@ -2813,6 +3325,12 @@
                         "word":  "nihumbag",
                         "meanings":  [
                                          "cover"
+                                     ]
+                    },
+                    {
+                        "word":  "nirmad",
+                        "meanings":  [
+                                         "(material) advantage"
                                      ]
                     },
                     {
@@ -2911,6 +3429,12 @@
                                      ]
                     },
                     {
+                        "word":  "padag",
+                        "meanings":  [
+                                         "lowly, low-value"
+                                     ]
+                    },
+                    {
                         "word":  "padist",
                         "meanings":  [
                                          "promise, vow",
@@ -2928,6 +3452,13 @@
                         "word":  "pahast",
                         "meanings":  [
                                          "pen, sheepfold"
+                                     ]
+                    },
+                    {
+                        "word":  "pahikar",
+                        "meanings":  [
+                                         "picture",
+                                         "picture, image"
                                      ]
                     },
                     {
@@ -2977,6 +3508,23 @@
                                      ]
                     },
                     {
+                        "word":  "pardaxtan",
+                        "meanings":  [
+                                         "be accomplished",
+                                         "be done with",
+                                         "be free",
+                                         "deal with",
+                                         "exhausted",
+                                         "finished; be ready with",
+                                         "freed of",
+                                         "get rid of",
+                                         "let go of",
+                                         "set about untertake",
+                                         "to be accomplished, finished",
+                                         "to be left over, remain"
+                                     ]
+                    },
+                    {
                         "word":  "pargandag",
                         "meanings":  [
                                          "distributed",
@@ -3011,6 +3559,14 @@
                                          "domain",
                                          "enclosure",
                                          "girdle, KustÄ«g"
+                                     ]
+                    },
+                    {
+                        "word":  "parwand-",
+                        "meanings":  [
+                                         "enclosing",
+                                         "to contain, comprise",
+                                         "to enclose, surround"
                                      ]
                     },
                     {
@@ -3097,6 +3653,14 @@
                                      ]
                     },
                     {
+                        "word":  "passand-",
+                        "meanings":  [
+                                         "approve",
+                                         "approve of",
+                                         "like"
+                                     ]
+                    },
+                    {
                         "word":  "passazag",
                         "meanings":  [
                                          "adequate",
@@ -3112,6 +3676,12 @@
                                          "answer, reply",
                                          "defence plea",
                                          "reply"
+                                     ]
+                    },
+                    {
+                        "word":  "past",
+                        "meanings":  [
+                                         "declination"
                                      ]
                     },
                     {
@@ -3155,6 +3725,16 @@
                                          "relative",
                                          "relatives",
                                          "something related to"
+                                     ]
+                    },
+                    {
+                        "word":  "paywand-",
+                        "meanings":  [
+                                         "adhere",
+                                         "connect",
+                                         "connection",
+                                         "to adhere",
+                                         "transmit"
                                      ]
                     },
                     {
@@ -3294,6 +3874,12 @@
                                      ]
                     },
                     {
+                        "word":  "radan",
+                        "meanings":  [
+                                         "(a type of precious stone)"
+                                     ]
+                    },
+                    {
                         "word":  "raft",
                         "meanings":  [
                                          "behaving",
@@ -3309,6 +3895,12 @@
                                          "to end, be lost",
                                          "to move, go",
                                          "to walk, go around"
+                                     ]
+                    },
+                    {
+                        "word":  "raft-",
+                        "meanings":  [
+                                         "to verbally attack"
                                      ]
                     },
                     {
@@ -3330,6 +3922,13 @@
                                          "chariot",
                                          "ecliptic",
                                          "track"
+                                     ]
+                    },
+                    {
+                        "word":  "rah-",
+                        "meanings":  [
+                                         "escape",
+                                         "evade"
                                      ]
                     },
                     {
@@ -3365,9 +3964,67 @@
                                      ]
                     },
                     {
+                        "word":  "ras-",
+                        "meanings":  [
+                                         "appear",
+                                         "arrive",
+                                         "become",
+                                         "come",
+                                         "reach",
+                                         "to appear, happen, come",
+                                         "to arrive, get to",
+                                         "to arrive, reach",
+                                         "to befall, happen to, afflict",
+                                         "to pass to, go to",
+                                         "to reach, come, attain"
+                                     ]
+                    },
+                    {
+                        "word":  "rasan",
+                        "meanings":  [
+                                         "rope"
+                                     ]
+                    },
+                    {
+                        "word":  "rast",
+                        "meanings":  [
+                                         "escape",
+                                         "evade"
+                                     ]
+                    },
+                    {
                         "word":  "rastag",
                         "meanings":  [
                                          "secure"
+                                     ]
+                    },
+                    {
+                        "word":  "rastan",
+                        "meanings":  [
+                                         "escape",
+                                         "evade"
+                                     ]
+                    },
+                    {
+                        "word":  "raw-",
+                        "meanings":  [
+                                         "going",
+                                         "to behave",
+                                         "to consort, be in contact",
+                                         "to continue, go on, proceed",
+                                         "to devolve",
+                                         "to emanate",
+                                         "to end, be lost",
+                                         "to move, go",
+                                         "to walk, go around"
+                                     ]
+                    },
+                    {
+                        "word":  "rawag",
+                        "meanings":  [
+                                         "go",
+                                         "move",
+                                         "proceed"
                                      ]
                     },
                     {
@@ -3388,6 +4045,13 @@
                         "meanings":  [
                                          "vine",
                                          "vineyard"
+                                     ]
+                    },
+                    {
+                        "word":  "raz-",
+                        "meanings":  [
+                                         "colour",
+                                         "dye"
                                      ]
                     },
                     {
@@ -3441,6 +4105,12 @@
                                      ]
                     },
                     {
+                        "word":  "sad",
+                        "meanings":  [
+                                         "hundred"
+                                     ]
+                    },
+                    {
                         "word":  "sag",
                         "meanings":  [
                                          "canid",
@@ -3460,6 +4130,22 @@
                         "word":  "sagr",
                         "meanings":  [
                                          "sated"
+                                     ]
+                    },
+                    {
+                        "word":  "sah-",
+                        "meanings":  [
+                                         "appear",
+                                         "consider",
+                                         "find",
+                                         "look like",
+                                         "regard",
+                                         "seem",
+                                         "seem proper",
+                                         "seem to think",
+                                         "think",
+                                         "to approve",
+                                         "to consider proper"
                                      ]
                     },
                     {
@@ -3618,6 +4304,24 @@
                                      ]
                     },
                     {
+                        "word":  "sayist",
+                        "meanings":  [
+                                         "lie down"
+                                     ]
+                    },
+                    {
+                        "word":  "sayistan",
+                        "meanings":  [
+                                         "lie down"
+                                     ]
+                    },
+                    {
+                        "word":  "sazag",
+                        "meanings":  [
+                                         "pass"
+                                     ]
+                    },
+                    {
                         "word":  "sazist",
                         "meanings":  [
                                          "be proper",
@@ -3675,6 +4379,14 @@
                         "meanings":  [
                                          "scute",
                                          "shield"
+                                     ]
+                    },
+                    {
+                        "word":  "spar-",
+                        "meanings":  [
+                                         "kick",
+                                         "trample",
+                                         "tread"
                                      ]
                     },
                     {
@@ -3820,6 +4532,12 @@
                                      ]
                     },
                     {
+                        "word":  "starag",
+                        "meanings":  [
+                                         "Starag"
+                                     ]
+                    },
+                    {
                         "word":  "stard",
                         "meanings":  [
                                          "confused",
@@ -3855,6 +4573,19 @@
                                      ]
                     },
                     {
+                        "word":  "sumb-",
+                        "meanings":  [
+                                         "pierce",
+                                         "to pierce, bore"
+                                     ]
+                    },
+                    {
+                        "word":  "sus",
+                        "meanings":  [
+                                         "degree"
+                                     ]
+                    },
+                    {
                         "word":  "sust",
                         "meanings":  [
                                          "lenient",
@@ -3884,6 +4615,14 @@
                                      ]
                     },
                     {
+                        "word":  "tab-",
+                        "meanings":  [
+                                         "grow hot",
+                                         "light up",
+                                         "shine"
+                                     ]
+                    },
+                    {
                         "word":  "tad",
                         "meanings":  [
                                          "to spin",
@@ -3892,6 +4631,14 @@
                     },
                     {
                         "word":  "taft",
+                        "meanings":  [
+                                         "grow hot",
+                                         "light up",
+                                         "shine"
+                                     ]
+                    },
+                    {
+                        "word":  "taftan",
                         "meanings":  [
                                          "grow hot",
                                          "light up",
@@ -3934,6 +4681,13 @@
                                          "personal",
                                          "self",
                                          "somebody"
+                                     ]
+                    },
+                    {
+                        "word":  "tan-",
+                        "meanings":  [
+                                         "to spin",
+                                         "to stretch, move"
                                      ]
                     },
                     {
@@ -3981,6 +4735,13 @@
                                      ]
                     },
                     {
+                        "word":  "tars-",
+                        "meanings":  [
+                                         "be afraid",
+                                         "fear"
+                                     ]
+                    },
+                    {
                         "word":  "tasom",
                         "meanings":  [
                                          "fourth"
@@ -4001,6 +4762,44 @@
                                          "plank",
                                          "tablet",
                                          "tablet, plank, (chess) board"
+                                     ]
+                    },
+                    {
+                        "word":  "taxtan",
+                        "meanings":  [
+                                         "charge",
+                                         "flow",
+                                         "gallop",
+                                         "hasten",
+                                         "roaming",
+                                         "run",
+                                         "run, flow",
+                                         "rush",
+                                         "speed",
+                                         "to result",
+                                         "track"
+                                     ]
+                    },
+                    {
+                        "word":  "taz-",
+                        "meanings":  [
+                                         "charge",
+                                         "flow",
+                                         "gallop",
+                                         "hasten",
+                                         "roaming",
+                                         "run",
+                                         "run, flow",
+                                         "rush",
+                                         "speed",
+                                         "to result",
+                                         "track"
+                                     ]
+                    },
+                    {
+                        "word":  "tazan",
+                        "meanings":  [
+                                         "course"
                                      ]
                     },
                     {
@@ -4035,6 +4834,12 @@
                         "word":  "turk",
                         "meanings":  [
                                          "Turk"
+                                     ]
+                    },
+                    {
+                        "word":  "tus",
+                        "meanings":  [
+                                         "Tus"
                                      ]
                     },
                     {
@@ -4084,6 +4889,27 @@
                                      ]
                     },
                     {
+                        "word":  "uz-",
+                        "meanings":  [
+                                         "come out",
+                                         "depart",
+                                         "emerge",
+                                         "end (of time)",
+                                         "exit",
+                                         "expiring",
+                                         "go by",
+                                         "go off",
+                                         "go off/by",
+                                         "go out",
+                                         "leave",
+                                         "lost",
+                                         "pass",
+                                         "pass away",
+                                         "rise",
+                                         "to go by"
+                                     ]
+                    },
+                    {
                         "word":  "uzayrin",
                         "meanings":  [
                                          "Uzayrin",
@@ -4124,6 +4950,12 @@
                                      ]
                     },
                     {
+                        "word":  "wahag",
+                        "meanings":  [
+                                         "woad"
+                                     ]
+                    },
+                    {
                         "word":  "wahman",
                         "meanings":  [
                                          "Wahman",
@@ -4139,6 +4971,14 @@
                         "meanings":  [
                                          "Â§",
                                          "tree"
+                                     ]
+                    },
+                    {
+                        "word":  "wanand",
+                        "meanings":  [
+                                         "Vega",
+                                         "Vega (lunar mansion)",
+                                         "Vega (tree)"
                                      ]
                     },
                     {
@@ -4199,6 +5039,27 @@
                         "word":  "warz",
                         "meanings":  [
                                          "miraculous power"
+                                     ]
+                    },
+                    {
+                        "word":  "warz-",
+                        "meanings":  [
+                                         "accomplish",
+                                         "act",
+                                         "cultivate",
+                                         "cultivating",
+                                         "do",
+                                         "execute",
+                                         "fulfil",
+                                         "make",
+                                         "perform",
+                                         "practice",
+                                         "practise",
+                                         "produce",
+                                         "realise",
+                                         "to treat",
+                                         "work",
+                                         "working"
                                      ]
                     },
                     {
@@ -4273,6 +5134,25 @@
                         "meanings":  [
                                          "bird",
                                          "volant animal"
+                                     ]
+                    },
+                    {
+                        "word":  "waz-",
+                        "meanings":  [
+                                         "blow",
+                                         "blow (of wind)",
+                                         "damage",
+                                         "doff",
+                                         "draw",
+                                         "drive",
+                                         "float",
+                                         "fly",
+                                         "harm",
+                                         "hover",
+                                         "move",
+                                         "remove",
+                                         "to neglect",
+                                         "to set aside"
                                      ]
                     },
                     {
@@ -4357,6 +5237,12 @@
                                      ]
                     },
                     {
+                        "word":  "wiftag",
+                        "meanings":  [
+                                         "passive sodomite"
+                                     ]
+                    },
+                    {
                         "word":  "wimand",
                         "meanings":  [
                                          "border",
@@ -4368,6 +5254,12 @@
                                          "limit",
                                          "limits",
                                          "perimeter"
+                                     ]
+                    },
+                    {
+                        "word":  "winastag",
+                        "meanings":  [
+                                         "spoilt"
                                      ]
                     },
                     {
@@ -4403,6 +5295,14 @@
                                          "every",
                                          "everyone",
                                          "everything"
+                                     ]
+                    },
+                    {
+                        "word":  "wist",
+                        "meanings":  [
+                                         "shoot",
+                                         "throw",
+                                         "toss"
                                      ]
                     },
                     {
@@ -4446,6 +5346,12 @@
                         "meanings":  [
                                          "valid, genuine",
                                          "validly"
+                                     ]
+                    },
+                    {
+                        "word":  "worunem",
+                        "meanings":  [
+                                         "Worunem"
                                      ]
                     },
                     {
@@ -4546,6 +5452,16 @@
                                      ]
                     },
                     {
+                        "word":  "xwah-",
+                        "meanings":  [
+                                         "request",
+                                         "to thresh (fig.)",
+                                         "to thresh (grain)",
+                                         "to tread, trample",
+                                         "touch"
+                                     ]
+                    },
+                    {
                         "word":  "xwamn",
                         "meanings":  [
                                          "dream",
@@ -4569,6 +5485,12 @@
                                      ]
                     },
                     {
+                        "word":  "xwanirah",
+                        "meanings":  [
+                                         "Xwaniras"
+                                     ]
+                    },
+                    {
                         "word":  "xwaniras",
                         "meanings":  [
                                          "Xwaniras"
@@ -4579,6 +5501,30 @@
                         "meanings":  [
                                          "Xwar",
                                          "Xwar (day)"
+                                     ]
+                    },
+                    {
+                        "word":  "xwar-",
+                        "meanings":  [
+                                         "consuming",
+                                         "eat",
+                                         "eating",
+                                         "food, meal",
+                                         "to consume",
+                                         "to drink",
+                                         "to eat",
+                                         "to profit, consume",
+                                         "to take in, accept",
+                                         "to take, prepare"
+                                     ]
+                    },
+                    {
+                        "word":  "xwaran",
+                        "meanings":  [
+                                         "assembly",
+                                         "banquet",
+                                         "congregation",
+                                         "feast, banquet"
                                      ]
                     },
                     {
@@ -4640,6 +5586,16 @@
                                      ]
                     },
                     {
+                        "word":  "xwastan",
+                        "meanings":  [
+                                         "request",
+                                         "to thresh (fig.)",
+                                         "to thresh (grain)",
+                                         "to tread, trample",
+                                         "touch"
+                                     ]
+                    },
+                    {
                         "word":  "xwaytumayt",
                         "meanings":  [
                                          "XáµaÄtumaitÄ« (HÄiti)"
@@ -4682,6 +5638,22 @@
                                          "long liturgy",
                                          "workshop",
                                          "Yasna (HaptaÅhÄiti)"
+                                     ]
+                    },
+                    {
+                        "word":  "yaz-",
+                        "meanings":  [
+                                         "celebrate",
+                                         "celebrate (a ritual)",
+                                         "celebrating",
+                                         "consecrate",
+                                         "perform sacrifice",
+                                         "perform worship (without object)",
+                                         "performing of worship",
+                                         "sacrifice",
+                                         "to ritually perform (a liturgical text)",
+                                         "to worship",
+                                         "worship"
                                      ]
                     },
                     {
@@ -4824,6 +5796,33 @@
                                      ]
                     },
                     {
+                        "word":  "zan-",
+                        "meanings":  [
+                                         "beat",
+                                         "beaten",
+                                         "beating, hitting",
+                                         "defeat",
+                                         "defeating, beating",
+                                         "harming, hurting",
+                                         "hit",
+                                         "killing",
+                                         "push",
+                                         "smite",
+                                         "strike",
+                                         "to beat",
+                                         "to beat, hit, strike",
+                                         "to close, tie",
+                                         "to cut down, fell",
+                                         "to defeat",
+                                         "to defeat, beat",
+                                         "to graft",
+                                         "to harm, hurt",
+                                         "to hit",
+                                         "to smite, kill",
+                                         "to touch, contaminate, inflict"
+                                     ]
+                    },
+                    {
                         "word":  "zandbed",
                         "meanings":  [
                                          "lord of the tribe"
@@ -4868,6 +5867,14 @@
                         "meanings":  [
                                          "instrument",
                                          "weapon"
+                                     ]
+                    },
+                    {
+                        "word":  "zay-",
+                        "meanings":  [
+                                         "beseech",
+                                         "demand, request",
+                                         "request"
                                      ]
                     },
                     {

@@ -571,12 +571,30 @@ function getMeanings(token) {
 function getDictionaryKeys(value) {
   const raw = String(value).trim();
   const trimmed = raw.replace(/^[=_.:;,[\](){}<>]+|[=_.:;,[\](){}<>]+$/g, "");
-  return [...new Set([
-    raw,
-    trimmed,
-    foldText(raw).text,
-    foldText(trimmed).text
-  ].map((key) => key.toLowerCase()).filter(Boolean))];
+  const seeds = [raw, trimmed, foldText(raw).text, foldText(trimmed).text]
+    .map((key) => key.toLowerCase())
+    .filter(Boolean);
+  const variants = new Set(seeds);
+
+  seeds.forEach((key) => {
+    [
+      key.replace(/^=+/, ""),
+      key.replace(/^u-/, ""),
+      key.replace(/^i-/, ""),
+      key.replace(/^pad-/, ""),
+      key.replace(/^az-/, ""),
+      key.replace(/^o-/, ""),
+      key.replace(/^ud-/, ""),
+      key.replace(/-(iz|is|im|it|san|man|tan)$/, "")
+    ].forEach((variant) => {
+      const clean = variant.replace(/^[=_.:-]+|[=_.:-]+$/g, "");
+      if (clean) {
+        variants.add(clean);
+      }
+    });
+  });
+
+  return [...variants];
 }
 
 function findMatchRanges(text, terms) {

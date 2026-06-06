@@ -4,6 +4,41 @@ $textFiles = @("Dd.txt", "PY-Pt4.txt", "WZ.txt", "NM.txt") + @(Get-ChildItem -Na
 $wordPattern = "[\p{L}\p{M}\p{N}=_-]+"
 $vocabulary = [System.Collections.Generic.HashSet[string]]::new()
 
+function Get-LookupForms {
+  param([string]$Value)
+
+  $raw = $Value.Trim()
+  if (-not $raw) {
+    return @()
+  }
+
+  $forms = [System.Collections.Generic.HashSet[string]]::new()
+  $lower = $raw.ToLowerInvariant().Trim("-", "=", "_")
+  if ($lower) { [void]$forms.Add($lower) }
+
+  $folded = $lower.Normalize([Text.NormalizationForm]::FormD) -replace "\p{M}", ""
+  if ($folded) { [void]$forms.Add($folded) }
+
+  foreach ($form in @($lower, $folded)) {
+    if (-not $form) { continue }
+    foreach ($variant in @(
+      ($form -replace "^=+", ""),
+      ($form -replace "^u-", ""),
+      ($form -replace "^i-", ""),
+      ($form -replace "^pad-", ""),
+      ($form -replace "^az-", ""),
+      ($form -replace "^o-", ""),
+      ($form -replace "^ud-", ""),
+      ($form -replace "-(iz|is|im|it|san|man|tan)$", "")
+    )) {
+      $clean = $variant.Trim("-", "=", "_")
+      if ($clean) { [void]$forms.Add($clean) }
+    }
+  }
+
+  return @($forms)
+}
+
 foreach ($file in $textFiles) {
   if (-not (Test-Path $file)) {
     continue
@@ -11,9 +46,10 @@ foreach ($file in $textFiles) {
 
   $text = [System.IO.File]::ReadAllText((Join-Path (Get-Location) $file))
   foreach ($match in [regex]::Matches($text, $wordPattern)) {
-    $token = $match.Value.Trim("-", "=", "_")
-    if ($token.Length -ge 2 -and -not ($token -match "^\d")) {
-      [void]$vocabulary.Add($token.ToLowerInvariant())
+    foreach ($token in Get-LookupForms $match.Value) {
+      if ($token.Length -ge 2 -and -not ($token -match "^\d")) {
+        [void]$vocabulary.Add($token)
+      }
     }
   }
 }
@@ -76,8 +112,8 @@ do {
         continue
       }
 
-      $key = $word.ToLowerInvariant()
-      if (-not $vocabulary.Contains($key)) {
+      $keys = Get-LookupForms $word
+      if (-not ($keys | Where-Object { $vocabulary.Contains($_) })) {
         continue
       }
 

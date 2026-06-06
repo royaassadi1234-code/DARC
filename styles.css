@@ -622,11 +622,9 @@ h1 {
 
 .theme-comparison {
   display: grid;
-  grid-template-columns: repeat(4, minmax(280px, 1fr));
+  grid-template-columns: 1fr;
   gap: 12px;
   align-items: start;
-  overflow-x: auto;
-  padding-bottom: 6px;
 }
 
 .theme-column {
@@ -652,14 +650,23 @@ h1 {
 }
 
 .theme-passages {
-  display: grid;
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 12px;
+  scroll-snap-type: x proximity;
 }
 
 .theme-hit {
   display: grid;
   gap: 8px;
-  padding: 14px;
-  border-top: 1px solid #edf0f3;
+  flex: 0 0 min(430px, 88vw);
+  min-width: 0;
+  border: 1px solid #edf0f3;
+  border-radius: 7px;
+  padding: 12px;
+  background: #ffffff;
+  scroll-snap-align: start;
 }
 
 .theme-hit-content {
@@ -667,7 +674,7 @@ h1 {
 }
 
 .theme-hit:first-child {
-  border-top: 0;
+  border-top: 1px solid #edf0f3;
 }
 
 .theme-hit-meta {
@@ -1272,10 +1279,6 @@ mark.term-6 {
     padding-bottom: 6px;
   }
 
-  .theme-comparison {
-    grid-template-columns: repeat(4, minmax(280px, 1fr));
-  }
-
   .diagram-split {
     grid-template-columns: 1fr;
   }
@@ -1319,10 +1322,6 @@ mark.term-6 {
 
   .theme-overview {
     grid-template-columns: minmax(300px, 1.35fr) minmax(170px, 0.55fr) repeat(4, minmax(135px, 0.55fr));
-  }
-
-  .theme-comparison {
-    grid-template-columns: repeat(4, minmax(260px, 1fr));
   }
 
   .controls {

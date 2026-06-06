@@ -213,20 +213,6 @@ function renderThemeOverview(theme, terms, results) {
       <h2>${escapeHtml(theme.label)}</h2>
       <p class="meta">${escapeHtml(theme.description || "Keyword-assisted theme comparison")}</p>
     </article>
-    <article class="text-card">
-      <div class="siglum">Keywords</div>
-      <h2>${terms.length.toLocaleString()}</h2>
-      <p class="meta">${escapeHtml(terms.slice(0, 10).join(", "))}${terms.length > 10 ? " ..." : ""}</p>
-    </article>
-    ${results
-      .map((result) => `
-        <article class="text-card">
-          <div class="siglum">${escapeHtml(result.text.siglum)}</div>
-          <h2>${result.matches.length.toLocaleString()}</h2>
-          <p class="meta">Suggested theme passages</p>
-        </article>
-      `)
-      .join("")}
   `;
 }
 

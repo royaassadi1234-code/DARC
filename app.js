@@ -344,7 +344,6 @@ function renderMatchList(textId, matches, total) {
             <div class="location">${escapeHtml(match.location)}</div>
             <div>
               <p class="snippet">${highlight(match.snippet, { annotate: true })}</p>
-              <p class="dictionary-translation">${renderDictionaryTranslation(match.snippet)}</p>
             </div>
           </section>
         `)
@@ -557,23 +556,6 @@ function highlightSegment(segment, ranges, offset) {
     });
   html += escapeHtml(segment.slice(cursor));
   return html;
-}
-
-function renderDictionaryTranslation(value) {
-  const glosses = getWordTokens(value)
-    .map((token) => {
-      const meanings = getMeanings(token);
-      return meanings.length ? meanings.slice(0, 2).join("/") : "...";
-    })
-    .filter(Boolean);
-
-  return glosses.length
-    ? `<span>English dictionary gloss:</span> ${glosses.map(escapeHtml).join(" ")}`
-    : `<span>English dictionary gloss:</span> unavailable`;
-}
-
-function getWordTokens(value) {
-  return String(value).match(/[\p{L}\p{M}\p{N}=_-]+/gu) || [];
 }
 
 function getMeanings(token) {

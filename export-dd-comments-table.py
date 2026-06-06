@@ -15,6 +15,7 @@ ROOT = Path(__file__).resolve().parent
 PDF_PATH = ROOT / "dd 1.pdf"
 OUT_PATH = ROOT / "dd-comments-aligned.docx"
 DD_EN_PATH = ROOT / "DD-en.txt"
+DD_SOURCE_PATH = ROOT / "Dd.txt"
 
 
 def annotation_words(page: fitz.Page, annot: fitz.Annot) -> str:
@@ -99,6 +100,7 @@ def ocr_number(value: str) -> str:
 def extract_annotations() -> list[dict[str, object]]:
     doc = fitz.open(PDF_PATH)
     dd_translations = load_dd_translations()
+    dd_source = load_dd_source_records()
     comments = []
     left_highlights_by_page: dict[int, list[dict[str, object]]] = {}
 
@@ -130,9 +132,31 @@ def extract_annotations() -> list[dict[str, object]]:
             annot = annot.next
 
     for comment in comments:
-        comment["transliteration"] = align_left_highlights(comment, left_highlights_by_page.get(comment["page"], []))
+        raw_transliteration = align_left_highlights(comment, left_highlights_by_page.get(comment["page"], []))
+        comment["transliteration"] = correct_transliteration_highlights(
+            raw_transliteration,
+            str(comment.get("section") or ""),
+            dd_source,
+        )
 
     return comments
+
+
+def load_dd_source_records() -> dict[str, str]:
+    records: dict[str, str] = {}
+    current_location = ""
+    for line in DD_SOURCE_PATH.read_text(encoding="utf-8").splitlines():
+        trimmed = line.strip()
+        if not trimmed:
+            continue
+        section = re.match(r"^([0-9]+(?:\.[0-9]+[a-z]?)?)\s+(.*)$", trimmed)
+        if section:
+            current_location = section.group(1)
+            records[current_location] = section.group(2)
+            continue
+        if current_location:
+            records[current_location] = f"{records[current_location]} {trimmed}"
+    return records
 
 
 def load_dd_translations() -> list[tuple[str, str]]:
@@ -193,6 +217,142 @@ def align_left_highlights(comment: dict[str, object], left_items: list[dict[str,
         if text and text not in words:
             words.append(text)
     return "; ".join(words)
+
+
+def correct_transliteration_highlights(raw: str, section: str, dd_source: dict[str, str]) -> str:
+    if not raw or not section:
+        return raw
+    source_text = source_text_for_section(section, dd_source)
+    if not source_text:
+        return raw
+
+    corrected = []
+    for part in [item.strip() for item in raw.split(";") if item.strip()]:
+        corrected_part = closest_source_phrase(part, source_text)
+        if corrected_part and corrected_part not in corrected:
+            corrected.append(corrected_part)
+        elif part not in corrected:
+            corrected.append(part)
+    return "; ".join(corrected)
+
+
+def source_text_for_section(section: str, dd_source: dict[str, str]) -> str:
+    nearby = nearby_source_text(section, dd_source)
+    if nearby:
+        return nearby
+    if section in dd_source:
+        return dd_source[section]
+    related = [
+        text for location, text in dd_source.items()
+        if location.startswith(f"{section}") and re.match(rf"^{re.escape(section)}[a-z]$", location)
+    ]
+    if related:
+        return " ".join(related)
+    chapter, _, stanza = section.partition(".")
+    if chapter and stanza:
+        related = [
+            text for location, text in dd_source.items()
+            if location.startswith(f"{chapter}.{stanza}") and re.match(rf"^{re.escape(chapter)}\.{re.escape(stanza)}[a-z]$", location)
+        ]
+        if related:
+            return " ".join(related)
+    return ""
+
+
+def nearby_source_text(section: str, dd_source: dict[str, str]) -> str:
+    match = re.match(r"^(\d+)\.(\d+)", section)
+    if not match:
+        return ""
+    chapter = int(match.group(1))
+    stanza = int(match.group(2))
+    wanted = {
+        f"{chapter}.{number}"
+        for number in range(max(0, stanza - 2), stanza + 4)
+    }
+    chunks = []
+    for location, text in dd_source.items():
+        base = re.sub(r"[a-z]$", "", location)
+        if base in wanted:
+            chunks.append(text)
+    return " ".join(chunks)
+
+
+def closest_source_phrase(ocr_phrase: str, source_text: str) -> str:
+    source_tokens = tokenize_transliteration(source_text)
+    query_tokens = tokenize_transliteration(ocr_phrase)
+    if not source_tokens or not query_tokens:
+        return ""
+
+    query_folded = fold_transliteration(" ".join(query_tokens))
+    best_score = 0.0
+    best_phrase = ""
+    min_size = max(1, len(query_tokens) - 1)
+    max_size = min(len(source_tokens), len(query_tokens) + 2)
+
+    for size in range(min_size, max_size + 1):
+        for start in range(0, len(source_tokens) - size + 1):
+            phrase_tokens = source_tokens[start : start + size]
+            phrase = " ".join(phrase_tokens)
+            phrase_folded = fold_transliteration(phrase)
+            score = SequenceMatcher(None, query_folded, phrase_folded).ratio()
+            if query_folded and (query_folded in phrase_folded or phrase_folded in query_folded):
+                score += 0.35
+            if score > best_score:
+                best_score = score
+                best_phrase = phrase
+
+    if best_score >= 0.58:
+        return best_phrase
+
+    corrected_tokens = []
+    for token in query_tokens:
+        corrected = closest_source_token(token, source_tokens)
+        if corrected:
+            corrected_tokens.append(corrected)
+    return " ".join(corrected_tokens) if corrected_tokens else ocr_phrase
+
+
+def closest_source_token(ocr_token: str, source_tokens: list[str]) -> str:
+    query = fold_transliteration(ocr_token)
+    if not query:
+        return ""
+    best_score = 0.0
+    best_token = ""
+    for token in source_tokens:
+        folded = fold_transliteration(token)
+        score = SequenceMatcher(None, query, folded).ratio()
+        if query in folded or folded in query:
+            score += 0.25
+        if score > best_score:
+            best_score = score
+            best_token = token
+    return best_token if best_score >= 0.62 else ocr_token
+
+
+def tokenize_transliteration(value: str) -> list[str]:
+    cleaned = re.sub(r"\[[^\]]+\]|<[^>]+>", " ", value)
+    return re.findall(r"[\wāēīōūčšǰγθδĀĒĪŌŪČŠǰ-]+", cleaned, flags=re.UNICODE)
+
+
+def fold_transliteration(value: str) -> str:
+    replacements = {
+        "ā": "a",
+        "ē": "e",
+        "ī": "i",
+        "ō": "o",
+        "ū": "u",
+        "č": "c",
+        "š": "s",
+        "ǰ": "j",
+        "γ": "g",
+        "θ": "t",
+        "δ": "d",
+    }
+    text = value.lower()
+    for source, target in replacements.items():
+        text = text.replace(source, target)
+    text = text.replace("ı", "i")
+    return re.sub(r"[^a-z0-9-]+", " ", text).strip()
 
 
 def build_docx(rows: list[dict[str, object]]) -> None:

@@ -608,6 +608,97 @@ h1 {
   grid-template-columns: minmax(190px, 0.34fr) minmax(280px, 1fr) auto;
 }
 
+.trans-controls {
+  grid-template-columns: minmax(220px, 0.35fr);
+}
+
+.trans-reader {
+  display: grid;
+  gap: 12px;
+}
+
+.trans-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.trans-heading h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.trans-list {
+  display: grid;
+  gap: 10px;
+}
+
+.trans-card {
+  display: grid;
+  gap: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.trans-entry-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.trans-entry-list > div {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+
+.trans-entry-list dt {
+  color: var(--accent-strong);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.trans-entry-list dd {
+  margin: 0;
+  color: #24313e;
+  line-height: 1.62;
+  overflow-wrap: anywhere;
+}
+
+.trans-entry-list details summary {
+  display: inline-flex;
+  width: fit-content;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid #c8d0d9;
+  border-radius: 999px;
+  padding: 3px 9px;
+  color: var(--accent-strong);
+  background: #fbfcfd;
+  font-size: 0.78rem;
+  font-weight: 800;
+  list-style: none;
+}
+
+.trans-entry-list details summary::-webkit-details-marker {
+  display: none;
+}
+
+.trans-entry-list details p {
+  margin: 8px 0 0;
+  border: 1px solid #d7dee5;
+  border-radius: 7px;
+  padding: 10px 12px;
+  background: #fbfcfd;
+}
+
 .theme-overview {
   display: grid;
   grid-template-columns: minmax(320px, 1.35fr) minmax(180px, 0.55fr) repeat(4, minmax(140px, 0.55fr));
@@ -1262,7 +1353,8 @@ mark.term-6 {
   .pseudo-controls,
   .diagram-controls,
   .network-controls,
-  .theme-controls {
+  .theme-controls,
+  .trans-controls {
     grid-template-columns: 1fr;
   }
 
@@ -1354,5 +1446,10 @@ mark.term-6 {
 
   .pseudo-card-meta {
     white-space: normal;
+  }
+
+  .trans-entry-list > div {
+    grid-template-columns: 1fr;
+    gap: 5px;
   }
 }

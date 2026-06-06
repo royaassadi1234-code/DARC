@@ -87,6 +87,37 @@ def section_near_annotation(page: fitz.Page, annot: fitz.Annot) -> str:
     return ""
 
 
+def section_near_left_annotation(page: fitz.Page, annot: fitz.Annot) -> str:
+    left_column = fitz.Rect(0, 0, page.rect.width * 0.52, annot.rect.y1 + 4)
+    text_before = clean_text(page.get_textbox(left_column))
+    markers = re.findall(r"\((?:Int\.?\s*|In[tU]\.?\s*)?[0-9OILSIVX]+\s*[\.:,\\]?\s*[0-9OILS]*\)", text_before, re.I)
+    for marker in reversed(markers):
+        section = section_from_text(marker)
+        if section:
+            return section
+    return nearest_page_section(page, annot)
+
+
+def nearest_page_section(page: fitz.Page, annot: fitz.Annot) -> str:
+    words = page.get_text("words")
+    marker_pattern = re.compile(r"^\(?([0-9OILS]+)[\.:,\\]([0-9OILS]+)\)?$")
+    candidates = []
+    for word in words:
+        x0, y0, x1, y1, text = word[:5]
+        match = marker_pattern.match(text.strip())
+        if not match:
+            continue
+        section = f"{ocr_number(match.group(1))}.{ocr_number(match.group(2))}"
+        same_column = (x1 < page.rect.width * 0.52 and annot.rect.x1 < page.rect.width * 0.52) or (
+            x0 > page.rect.width * 0.50 and annot.rect.x0 > page.rect.width * 0.52
+        )
+        if same_column:
+            candidates.append((abs(y0 - annot.rect.y0), y0, section))
+    if not candidates:
+        return ""
+    return sorted(candidates)[0][2]
+
+
 def ocr_number(value: str) -> str:
     return (
         value.upper()
@@ -102,6 +133,7 @@ def extract_annotations() -> list[dict[str, object]]:
     dd_translations = load_dd_translations()
     dd_source = load_dd_source_records()
     comments = []
+    independent_left_comments = []
     left_highlights_by_page: dict[int, list[dict[str, object]]] = {}
 
     for page_index, page in enumerate(doc):
@@ -124,10 +156,18 @@ def extract_annotations() -> list[dict[str, object]]:
             if not item["section"]:
                 item["section"] = section_from_translation_text(text, dd_translations)
 
+            is_left = annot.rect.x1 < page.rect.width * 0.52
+            if is_left and not item["section"]:
+                item["section"] = section_near_left_annotation(page, annot)
+
             if content and annot.rect.x0 > page.rect.width * 0.52:
+                item["row_type"] = "translation-comment"
                 comments.append(item)
-            elif annot.rect.x1 < page.rect.width * 0.52:
+            elif is_left:
                 left_highlights_by_page.setdefault(page_index + 1, []).append(item)
+                if content:
+                    item["row_type"] = "transliteration-comment"
+                    independent_left_comments.append(item)
 
             annot = annot.next
 
@@ -139,7 +179,22 @@ def extract_annotations() -> list[dict[str, object]]:
             dd_source,
         )
 
-    return comments
+    for comment in independent_left_comments:
+        comment["transliteration"] = correct_transliteration_highlights(
+            str(comment.get("text") or ""),
+            str(comment.get("section") or ""),
+            dd_source,
+        )
+        comment["text"] = ""
+
+    return sorted(comments + independent_left_comments, key=lambda row: (int(row.get("page") or 0), rect_sort_key(row)))
+
+
+def rect_sort_key(row: dict[str, object]) -> tuple[float, float]:
+    rect = row.get("rect")
+    if isinstance(rect, fitz.Rect):
+        return (rect.y0, rect.x0)
+    return (0, 0)
 
 
 def load_dd_source_records() -> dict[str, str]:
@@ -360,14 +415,14 @@ def build_docx(rows: list[dict[str, object]]) -> None:
     document.core_properties.title = "DD annotated translation comments aligned with transliteration highlights"
     document.add_heading("DD annotated translation comments", level=1)
     intro = document.add_paragraph(
-        "Extracted from dd 1.pdf. Rows contain comments on highlighted translation passages and nearby highlighted words in the transliteration column."
+        "Extracted from dd 1.pdf. Rows contain comments on highlighted translation passages plus independent commented highlights in the transliteration column."
     )
     intro.style.font.size = Pt(10)
 
     table = document.add_table(rows=1, cols=5)
     table.alignment = WD_TABLE_ALIGNMENT.CENTER
     table.style = "Table Grid"
-    headers = ["Chapter.Stanza", "PDF page", "Highlighted transliteration word(s)", "Highlighted translation passage", "Comment"]
+    headers = ["Chapter.Stanza", "PDF page", "Highlighted/corrected transliteration word(s)", "Highlighted translation passage", "Comment"]
     for cell, header in zip(table.rows[0].cells, headers):
         cell.text = header
         for paragraph in cell.paragraphs:

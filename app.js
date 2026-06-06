@@ -605,6 +605,10 @@ function transliterateWord(word) {
   if (body === "čē" || body === "ce") {
     return `${prefix}چه${suffix}`;
   }
+  const initialA = body.startsWith("a");
+  if (initialA) {
+    body = body.slice(1);
+  }
   const initialE = body.startsWith("e");
   if (initialE) {
     body = body.slice(1);
@@ -626,7 +630,7 @@ function transliterateWord(word) {
     s: "س", w: "و", v: "و", x: "خ", y: "ی", z: "ز", q: "ق"
   };
 
-  const transcribed = `${initialE ? "ای" : ""}${Array.from(body).map((char) => chars[char] || char).join("")}`;
+  const transcribed = `${initialA ? "ا" : ""}${initialE ? "ای" : ""}${Array.from(body).map((char) => chars[char] || char).join("")}`;
   return `${prefix}${transcribed}${suffix}`;
 }
 

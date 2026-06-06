@@ -313,7 +313,7 @@ function searchableText(record) {
 }
 
 function highlight(value) {
-  return highlightTerms(value, getQueryTerms());
+  return highlightTerms(value, getQueryTerms(), { plain: IS_PHRASE_PAGE });
 }
 
 function highlightPreview(value, record) {
@@ -321,10 +321,10 @@ function highlightPreview(value, record) {
     ...getPhraseTerms(record),
     ...getQueryTerms()
   ];
-  return highlightTerms(value, terms);
+  return highlightTerms(value, terms, { plain: IS_PHRASE_PAGE });
 }
 
-function highlightTerms(value, terms) {
+function highlightTerms(value, terms, options = {}) {
   if (!terms.length) {
     return escapeHtml(value);
   }
@@ -338,7 +338,10 @@ function highlightTerms(value, terms) {
   let cursor = 0;
   ranges.forEach(({ start, end, termIndex }) => {
     html += escapeHtml(String(value).slice(cursor, start));
-    html += `<mark class="term-${(termIndex % HIGHLIGHT_CLASS_COUNT) + 1}">${escapeHtml(String(value).slice(start, end))}</mark>`;
+    const matchedText = escapeHtml(String(value).slice(start, end));
+    html += options.plain
+      ? `<strong class="plain-match">${matchedText}</strong>`
+      : `<mark class="term-${(termIndex % HIGHLIGHT_CLASS_COUNT) + 1}">${matchedText}</mark>`;
     cursor = end;
   });
   html += escapeHtml(String(value).slice(cursor));

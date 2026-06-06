@@ -1027,6 +1027,11 @@ mark.term-6 {
   background: #2d6870;
 }
 
+.plain-match {
+  color: inherit;
+  font-weight: 800;
+}
+
 .more {
   padding: 0 16px 15px 150px;
   color: var(--muted);

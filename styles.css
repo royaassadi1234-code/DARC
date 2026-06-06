@@ -1032,6 +1032,27 @@ mark.term-6 {
   font-weight: 800;
 }
 
+.dict-word {
+  cursor: help;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: rgba(64, 83, 99, 0.45);
+  text-underline-offset: 3px;
+}
+
+.dictionary-translation {
+  border-left: 3px solid #c8d0d9;
+  padding-left: 10px;
+  color: #405363;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.dictionary-translation span {
+  color: var(--accent);
+  font-weight: 800;
+}
+
 .more {
   padding: 0 16px 15px 150px;
   color: var(--muted);

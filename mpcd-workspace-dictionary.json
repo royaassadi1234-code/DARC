@@ -1,0 +1,12 @@
+{
+    "source":  "MPCD REST API lemmas endpoint, filtered to local workspace vocabulary",
+    "sourceUrl":  "https://www.mpcorpus.org/api/lemmas/",
+    "dictionaryUrl":  "https://www.mpcorpus.org/dict/1c97e496-4f82-4896-ae04-d562727c5161/",
+    "generatedAt":  "2026-06-06T03:35:31Z",
+    "workspaceVocabularyFile":  "workspace-vocabulary.json",
+    "workspaceVocabularyCount":  14381,
+    "matchedEntryCount":  0,
+    "entries":  [
+
+                ]
+}

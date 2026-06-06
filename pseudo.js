@@ -8,10 +8,12 @@ const TARGET_LABEL = pageConfig.targetLabel || "PY";
 const THIRD_LABEL = pageConfig.thirdLabel || "";
 const PAGE_SIZE = 5;
 const IS_PHRASE_PAGE = DATA_URL.includes("phrases");
+const DICTIONARY_URL = "mpcd-workspace-dictionary.json";
 
 const pseudoState = {
   all: [],
   filtered: [],
+  dictionary: new Map(),
   expanded: new Set(),
   query: "",
   tier: "",
@@ -54,19 +56,45 @@ async function initPseudo() {
   bindPseudoEvents();
 
   try {
-    const response = await fetch(DATA_URL);
+    const [response, dictionary] = await Promise.all([
+      fetch(DATA_URL),
+      loadDictionary()
+    ]);
     if (!response.ok) {
       throw new Error(`Could not load ${DATA_URL}`);
     }
 
     const data = await response.json();
     pseudoState.all = data.map(normalizeRecord);
+    pseudoState.dictionary = dictionary;
     populateTierFilter();
     applyFilters();
   } catch (error) {
     statusEl.textContent = "Data loading failed";
     galleryEl.innerHTML = `<div class="empty-state">The pseudo-dynamic data could not be loaded.</div>`;
     console.error(error);
+  }
+}
+
+async function loadDictionary() {
+  try {
+    const response = await fetch(DICTIONARY_URL);
+    if (!response.ok) {
+      return new Map();
+    }
+
+    const data = await response.json();
+    return new Map((data.entries || []).flatMap((entry) => {
+      const meanings = (entry.meanings || []).filter(Boolean);
+      if (!entry.word || !meanings.length) {
+        return [];
+      }
+      const keys = getDictionaryKeys(entry.word);
+      return keys.map((key) => [key, meanings]);
+    }));
+  } catch (error) {
+    console.warn("Dictionary glosses unavailable", error);
+    return new Map();
   }
 }
 
@@ -270,16 +298,16 @@ function renderCard(record) {
       <div class="pseudo-card-body">
         <section>
           <h2>${escapeHtml(SOURCE_LABEL)} Paragraph Preview</h2>
-          <p>${highlightPreview(record.sourcePreview, record)}</p>
+          ${renderPreviewBlock(record.sourcePreview, record)}
         </section>
         <section>
           <h2>${escapeHtml(TARGET_LABEL)} Paragraph Preview</h2>
-          <p>${highlightPreview(record.targetPreview, record)}</p>
+          ${renderPreviewBlock(record.targetPreview, record)}
         </section>
         ${record.thirdPreview ? `
           <section>
             <h2>${escapeHtml(THIRD_LABEL)} Paragraph Preview</h2>
-            <p>${highlightPreview(record.thirdPreview, record)}</p>
+            ${renderPreviewBlock(record.thirdPreview, record)}
           </section>
         ` : ""}
       </div>
@@ -316,6 +344,17 @@ function highlight(value) {
   return highlightTerms(value, getQueryTerms(), { plain: IS_PHRASE_PAGE });
 }
 
+function renderPreviewBlock(value, record) {
+  const terms = [
+    ...getPhraseTerms(record),
+    ...getQueryTerms()
+  ];
+  return `
+    <p>${highlightTerms(value, terms, { plain: IS_PHRASE_PAGE, annotate: true })}</p>
+    <p class="dictionary-translation">${renderDictionaryTranslation(value)}</p>
+  `;
+}
+
 function highlightPreview(value, record) {
   const terms = [
     ...getPhraseTerms(record),
@@ -325,6 +364,10 @@ function highlightPreview(value, record) {
 }
 
 function highlightTerms(value, terms, options = {}) {
+  if (options.annotate) {
+    return annotateText(value, terms, options);
+  }
+
   if (!terms.length) {
     return escapeHtml(value);
   }
@@ -346,6 +389,96 @@ function highlightTerms(value, terms, options = {}) {
   });
   html += escapeHtml(String(value).slice(cursor));
   return html;
+}
+
+function annotateText(value, terms, options = {}) {
+  const text = String(value);
+  const ranges = terms.length ? findMatchRanges(text, terms) : [];
+  const wordPattern = /[\p{L}\p{M}\p{N}=_-]+/gu;
+  let html = "";
+  let cursor = 0;
+  let match;
+
+  while ((match = wordPattern.exec(text)) !== null) {
+    html += highlightPlainSegment(text.slice(cursor, match.index), ranges, cursor, options);
+    const token = match[0];
+    const tokenStart = match.index;
+    const tokenEnd = tokenStart + token.length;
+    const tokenHtml = highlightPlainSegment(token, ranges, tokenStart, options);
+    const meanings = getMeanings(token);
+    html += meanings.length
+      ? `<span class="dict-word" title="${escapeHtml(meanings.join("; "))}">${tokenHtml}</span>`
+      : tokenHtml;
+    cursor = tokenEnd;
+  }
+
+  html += highlightPlainSegment(text.slice(cursor), ranges, cursor, options);
+  return html;
+}
+
+function highlightPlainSegment(segment, ranges, offset, options = {}) {
+  if (!ranges.length || !segment) {
+    return escapeHtml(segment);
+  }
+
+  let html = "";
+  let cursor = 0;
+  const segmentEnd = offset + segment.length;
+  ranges
+    .filter((range) => range.start < segmentEnd && range.end > offset)
+    .forEach((range) => {
+      const start = Math.max(0, range.start - offset);
+      const end = Math.min(segment.length, range.end - offset);
+      if (start < cursor) {
+        return;
+      }
+      html += escapeHtml(segment.slice(cursor, start));
+      const matchedText = escapeHtml(segment.slice(start, end));
+      html += options.plain
+        ? `<strong class="plain-match">${matchedText}</strong>`
+        : `<mark class="term-${(range.termIndex % HIGHLIGHT_CLASS_COUNT) + 1}">${matchedText}</mark>`;
+      cursor = end;
+    });
+  html += escapeHtml(segment.slice(cursor));
+  return html;
+}
+
+function renderDictionaryTranslation(value) {
+  const glosses = getWordTokens(value)
+    .map((token) => {
+      const meanings = getMeanings(token);
+      return meanings.length ? meanings.slice(0, 2).join("/") : "...";
+    })
+    .filter(Boolean);
+
+  return glosses.length
+    ? `<span>English dictionary gloss:</span> ${glosses.map(escapeHtml).join(" ")}`
+    : `<span>English dictionary gloss:</span> unavailable`;
+}
+
+function getWordTokens(value) {
+  return String(value).match(/[\p{L}\p{M}\p{N}=_-]+/gu) || [];
+}
+
+function getMeanings(token) {
+  for (const key of getDictionaryKeys(token)) {
+    const meanings = pseudoState.dictionary.get(key);
+    if (meanings?.length) {
+      return meanings;
+    }
+  }
+  return [];
+}
+
+function getDictionaryKeys(value) {
+  const raw = String(value).trim();
+  const trimmed = raw.replace(/^[=_.:;,[\](){}<>]+|[=_.:;,[\](){}<>]+$/g, "");
+  return [...new Set([
+    raw,
+    trimmed,
+    foldText(raw).text,
+    foldText(trimmed).text
+  ].map((key) => key.toLowerCase()).filter(Boolean))];
 }
 
 function getPhraseTerms(record) {

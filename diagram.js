@@ -115,7 +115,7 @@ function renderDiagram() {
   }
 
   const summaries = diagramState.texts.map((text) => getOccurrenceSummary(text, search));
-  const maxTotal = Math.max(1, ...summaries.map((summary) => summary.total));
+  const maxCount = Math.max(1, ...summaries.flatMap((summary) => summary.termCounts));
   const total = summaries.reduce((sum, summary) => sum + summary.total, 0);
   const textsWithHits = summaries.filter((summary) => summary.total > 0).length;
   const variantLabel = search.terms.length > 1 ? ` | ${search.terms.length} words` : "";
@@ -139,7 +139,7 @@ function renderDiagram() {
 
       <section class="diagram-split" aria-label="Diagram and occurrence locations">
         <div class="vertical-chart" aria-label="Occurrence frequency bars">
-          ${summaries.map((summary) => renderVerticalBar(summary, maxTotal)).join("")}
+          ${summaries.map((summary) => renderVerticalBar(summary, maxCount)).join("")}
         </div>
         <div class="linear-occurrences" aria-label="Linear occurrence lists">
           ${summaries.map((summary) => renderLinearOccurrences(summary, search.terms)).join("")}
@@ -149,21 +149,26 @@ function renderDiagram() {
   `;
 }
 
-function renderVerticalBar(summary, maxTotal) {
-  const height = summary.total ? Math.max(8, (summary.total / maxTotal) * 100) : 0;
-
+function renderVerticalBar(summary, maxCount) {
   return `
     <section class="vertical-bar-group">
-      <div class="vertical-bar-shell" aria-label="${escapeHtml(summary.text.siglum)} ${summary.total} occurrences">
-        <div class="vertical-bar-stack" style="height: ${height.toFixed(2)}%">
-          ${summary.termCounts.map((count, index) => count ? `
-            <span
-              class="vertical-bar-segment term-${(index % HIGHLIGHT_CLASS_COUNT) + 1}"
-              style="height: ${(count / summary.total) * 100}%"
-              title="${escapeHtml(summary.terms[index])}: ${count}"
-            ></span>
-          ` : "").join("")}
-        </div>
+      <div class="vertical-bar-bars" aria-label="${escapeHtml(summary.text.siglum)} ${summary.total} occurrences">
+        ${summary.termCounts.map((count, index) => {
+          const height = count ? Math.max(7, (count / maxCount) * 100) : 0;
+          return `
+            <div class="vertical-bar-item">
+              <div class="vertical-bar-shell">
+                <span
+                  class="vertical-single-bar term-${(index % HIGHLIGHT_CLASS_COUNT) + 1}"
+                  style="height: ${height.toFixed(2)}%"
+                  title="${escapeHtml(summary.terms[index])}: ${count}"
+                  aria-label="${escapeHtml(summary.terms[index])}: ${count}"
+                ></span>
+              </div>
+              <span class="vertical-term-label">${escapeHtml(shortenTerm(summary.terms[index]))}</span>
+            </div>
+          `;
+        }).join("")}
       </div>
       <div class="vertical-bar-label">
         <strong>${escapeHtml(summary.text.siglum)}</strong>
@@ -171,6 +176,10 @@ function renderVerticalBar(summary, maxTotal) {
       </div>
     </section>
   `;
+}
+
+function shortenTerm(term) {
+  return term.length > 10 ? `${term.slice(0, 9)}...` : term;
 }
 
 function renderLinearOccurrences(summary, terms) {

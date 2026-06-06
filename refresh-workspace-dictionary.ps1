@@ -30,7 +30,7 @@ $vocabularyOut = [ordered]@{
 )
 
 $entries = @{}
-$baseUrl = "https://www.mpcorpus.org/api/lemmas/?page_size=100"
+$baseUrl = "https://www.mpcorpus.org/api/lemmas/?page_size=1000"
 $page = 1
 $retryLimit = 3
 

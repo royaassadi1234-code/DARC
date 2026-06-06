@@ -520,6 +520,12 @@ h1 {
   font-weight: 800;
 }
 
+.term-gloss {
+  margin-left: 6px;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
 .legend-swatch {
   width: 10px;
   height: 10px;

@@ -7,6 +7,7 @@ const DIAGRAM_TEXTS = [
 
 const diagramState = {
   texts: [],
+  dictionary: new Map(),
   query: "",
   multipleWords: true,
   wholeWord: true,
@@ -21,6 +22,7 @@ const statusEl = document.querySelector("#diagram-status");
 const toolEl = document.querySelector("#diagram-tool");
 
 const HIGHLIGHT_CLASS_COUNT = 6;
+const DICTIONARY_URL = "mpcd-workspace-dictionary.json";
 const TRANSLITERATION_MAP = {
   "\u0100": "A",
   "\u0101": "a",
@@ -47,13 +49,39 @@ async function initDiagram() {
   bindDiagramEvents();
 
   try {
-    diagramState.texts = await Promise.all(DIAGRAM_TEXTS.map(loadText));
+    const [texts, dictionary] = await Promise.all([
+      Promise.all(DIAGRAM_TEXTS.map(loadText)),
+      loadDictionary()
+    ]);
+    diagramState.texts = texts;
+    diagramState.dictionary = dictionary;
     statusEl.textContent = `${diagramState.texts.length} texts ready`;
     renderDiagram();
   } catch (error) {
     statusEl.textContent = "Text loading failed";
     toolEl.innerHTML = `<div class="empty-state">The text files could not be loaded.</div>`;
     console.error(error);
+  }
+}
+
+async function loadDictionary() {
+  try {
+    const response = await fetch(DICTIONARY_URL);
+    if (!response.ok) {
+      return new Map();
+    }
+
+    const data = await response.json();
+    return new Map((data.entries || []).flatMap((entry) => {
+      const meanings = (entry.meanings || []).filter(Boolean);
+      if (!entry.word || !meanings.length) {
+        return [];
+      }
+      return getDictionaryKeys(entry.word).map((key) => [key, meanings]);
+    }));
+  } catch (error) {
+    console.warn("Dictionary glosses unavailable", error);
+    return new Map();
   }
 }
 
@@ -133,7 +161,7 @@ function renderDiagram() {
 
       <div class="term-legend" aria-label="Searched word legend">
         ${search.terms.map((term, index) => `
-          <span><i class="legend-swatch term-${(index % HIGHLIGHT_CLASS_COUNT) + 1}"></i>${escapeHtml(term)}</span>
+          <span><i class="legend-swatch term-${(index % HIGHLIGHT_CLASS_COUNT) + 1}"></i>${renderDictionaryWord(term)}</span>
         `).join("")}
       </div>
 
@@ -199,8 +227,9 @@ function renderLinearOccurrences(summary, terms) {
             .map((occurrence) => occurrence.location);
           return `
             <p>
-              <mark class="term-${(termIndex % HIGHLIGHT_CLASS_COUNT) + 1}">${escapeHtml(term)}</mark>:
+              <mark class="term-${(termIndex % HIGHLIGHT_CLASS_COUNT) + 1}">${renderDictionaryWord(term)}</mark>:
               ${locations.length ? locations.map(escapeHtml).join(", ") : "none"}
+              <span class="term-gloss">${escapeHtml(getTermGloss(term))}</span>
             </p>
           `;
         }).join("")}
@@ -379,6 +408,40 @@ function foldText(value, caseSensitive = false) {
   });
 
   return { text, map };
+}
+
+function renderDictionaryWord(term) {
+  const meanings = getMeanings(term);
+  const word = escapeHtml(term);
+  return meanings.length
+    ? `<span class="dict-word" title="${escapeHtml(meanings.join("; "))}">${word}</span>`
+    : word;
+}
+
+function getTermGloss(term) {
+  const meanings = getMeanings(term);
+  return meanings.length ? `(${meanings.slice(0, 2).join("; ")})` : "";
+}
+
+function getMeanings(token) {
+  for (const key of getDictionaryKeys(token)) {
+    const meanings = diagramState.dictionary.get(key);
+    if (meanings?.length) {
+      return meanings;
+    }
+  }
+  return [];
+}
+
+function getDictionaryKeys(value) {
+  const raw = String(value).trim();
+  const trimmed = raw.replace(/^[=_.:;,[\](){}<>]+|[=_.:;,[\](){}<>]+$/g, "");
+  return [...new Set([
+    raw,
+    trimmed,
+    foldText(raw).text,
+    foldText(trimmed).text
+  ].map((key) => key.toLowerCase()).filter(Boolean))];
 }
 
 function escapeRegExp(value) {

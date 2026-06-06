@@ -8,6 +8,7 @@ const THEME_TEXTS = [
 const themeState = {
   texts: [],
   themes: [],
+  dictionary: new Map(),
   selectedThemeId: "",
   keywords: "",
   wholeWord: true,
@@ -26,6 +27,7 @@ const overviewEl = document.querySelector("#theme-overview");
 const comparisonEl = document.querySelector("#theme-comparison");
 
 const THEME_PAGE_SIZE = 5;
+const DICTIONARY_URL = "mpcd-workspace-dictionary.json";
 const TRANSLITERATION_MAP = {
   "\u0100": "A",
   "\u0101": "a",
@@ -56,9 +58,11 @@ async function initThemes() {
       loadThemes(),
       Promise.all(THEME_TEXTS.map(loadText))
     ]);
+    const dictionary = await loadDictionary();
 
     themeState.themes = themes;
     themeState.texts = texts;
+    themeState.dictionary = dictionary;
     themeState.selectedThemeId = themes[0]?.id || "";
     populateThemeSelect();
     syncKeywordInput();
@@ -67,6 +71,27 @@ async function initThemes() {
     statusEl.textContent = "Theme loading failed";
     comparisonEl.innerHTML = `<div class="empty-state">The theme comparison data could not be loaded.</div>`;
     console.error(error);
+  }
+}
+
+async function loadDictionary() {
+  try {
+    const response = await fetch(DICTIONARY_URL);
+    if (!response.ok) {
+      return new Map();
+    }
+
+    const data = await response.json();
+    return new Map((data.entries || []).flatMap((entry) => {
+      const meanings = (entry.meanings || []).filter(Boolean);
+      if (!entry.word || !meanings.length) {
+        return [];
+      }
+      return getDictionaryKeys(entry.word).map((key) => [key, meanings]);
+    }));
+  } catch (error) {
+    console.warn("Dictionary glosses unavailable", error);
+    return new Map();
   }
 }
 
@@ -234,7 +259,8 @@ function renderThemeHit(match, terms) {
         <span>${escapeHtml(match.location)}</span>
         <span>${match.score} keyword${match.score === 1 ? "" : "s"}</span>
       </div>
-      <p>${highlightTheme(match.snippet, terms)}</p>
+      <p>${highlightTheme(match.snippet, terms, { annotate: true })}</p>
+      <p class="dictionary-translation">${renderDictionaryTranslation(match.snippet)}</p>
     </section>
   `;
 }
@@ -382,7 +408,11 @@ function makeSnippet(records, recordIndex, terms) {
   return records.slice(start, end).map((record) => record.text).join(" ");
 }
 
-function highlightTheme(text, terms) {
+function highlightTheme(text, terms, options = {}) {
+  if (options.annotate) {
+    return annotateText(text, terms);
+  }
+
   const ranges = findMatchRanges(text, terms);
   if (!ranges.length) {
     return escapeHtml(text);
@@ -397,6 +427,93 @@ function highlightTheme(text, terms) {
   });
   html += escapeHtml(text.slice(cursor));
   return html;
+}
+
+function annotateText(value, terms = []) {
+  const text = String(value);
+  const ranges = terms.length ? findMatchRanges(text, terms) : [];
+  const wordPattern = /[\p{L}\p{M}\p{N}=_-]+/gu;
+  let html = "";
+  let cursor = 0;
+  let match;
+
+  while ((match = wordPattern.exec(text)) !== null) {
+    html += highlightSegment(text.slice(cursor, match.index), ranges, cursor);
+    const token = match[0];
+    const tokenStart = match.index;
+    const tokenEnd = tokenStart + token.length;
+    const tokenHtml = highlightSegment(token, ranges, tokenStart);
+    const meanings = getMeanings(token);
+    html += meanings.length
+      ? `<span class="dict-word" title="${escapeHtml(meanings.join("; "))}">${tokenHtml}</span>`
+      : tokenHtml;
+    cursor = tokenEnd;
+  }
+
+  html += highlightSegment(text.slice(cursor), ranges, cursor);
+  return html;
+}
+
+function highlightSegment(segment, ranges, offset) {
+  if (!ranges.length || !segment) {
+    return escapeHtml(segment);
+  }
+
+  let html = "";
+  let cursor = 0;
+  const segmentEnd = offset + segment.length;
+  ranges
+    .filter((range) => range.start < segmentEnd && range.end > offset)
+    .forEach((range) => {
+      const start = Math.max(0, range.start - offset);
+      const end = Math.min(segment.length, range.end - offset);
+      if (start < cursor) {
+        return;
+      }
+      html += escapeHtml(segment.slice(cursor, start));
+      html += `<mark>${escapeHtml(segment.slice(start, end))}</mark>`;
+      cursor = end;
+    });
+  html += escapeHtml(segment.slice(cursor));
+  return html;
+}
+
+function renderDictionaryTranslation(value) {
+  const glosses = getWordTokens(value)
+    .map((token) => {
+      const meanings = getMeanings(token);
+      return meanings.length ? meanings.slice(0, 2).join("/") : "...";
+    })
+    .filter(Boolean);
+
+  return glosses.length
+    ? `<span>English dictionary gloss:</span> ${glosses.map(escapeHtml).join(" ")}`
+    : `<span>English dictionary gloss:</span> unavailable`;
+}
+
+function getWordTokens(value) {
+  return String(value).match(/[\p{L}\p{M}\p{N}=_-]+/gu) || [];
+}
+
+function getMeanings(token) {
+  for (const key of getDictionaryKeys(token)) {
+    const meanings = themeState.dictionary.get(key);
+    if (meanings?.length) {
+      return meanings;
+    }
+  }
+  return [];
+}
+
+function getDictionaryKeys(value) {
+  const raw = String(value).trim();
+  const trimmed = raw.replace(/^[=_.:;,[\](){}<>]+|[=_.:;,[\](){}<>]+$/g, "");
+  return [...new Set([
+    raw,
+    trimmed,
+    foldText(raw).text,
+    foldText(trimmed).text
+  ].map((key) => key.toLowerCase()).filter(Boolean))];
 }
 
 function findMatchRanges(text, terms) {

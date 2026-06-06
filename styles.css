@@ -999,32 +999,32 @@ h1 {
 }
 
 mark {
-  border-radius: 4px;
-  padding: 0 2px;
-  color: #ffffff;
-  background: var(--red);
+  border-radius: 0;
+  padding: 0;
+  color: inherit;
+  background: transparent;
   font-weight: 800;
-  box-shadow: inset 0 -1px 0 rgba(90, 18, 18, 0.35);
+  box-shadow: none;
 }
 
 mark.term-2 {
-  background: #2563a7;
+  background: transparent;
 }
 
 mark.term-3 {
-  background: #267052;
+  background: transparent;
 }
 
 mark.term-4 {
-  background: #7a3ea3;
+  background: transparent;
 }
 
 mark.term-5 {
-  background: #9a5a15;
+  background: transparent;
 }
 
 mark.term-6 {
-  background: #2d6870;
+  background: transparent;
 }
 
 .plain-match {

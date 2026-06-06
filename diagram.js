@@ -102,12 +102,12 @@ function renderDiagram() {
         <header>
           <div>
             <div class="siglum">Diagram</div>
-            <h2>Vertical Occurrence Comparison</h2>
+            <h2>Vertical Attestation Comparison</h2>
           </div>
           <span class="count-pill">0</span>
         </header>
         <div class="empty-state">
-          Search a word or several words to compare their occurrences across all four texts.
+          Search a word or several words to compare their attestations across all four texts.
         </div>
       </article>
     `;
@@ -126,7 +126,7 @@ function renderDiagram() {
       <header>
         <div>
           <div class="siglum">Diagram</div>
-          <h2>Occurrence Frequency by Text</h2>
+          <h2>Attestation Frequency by Text</h2>
         </div>
         <span class="count-pill ${total ? "hit" : "miss"}">${total}</span>
       </header>

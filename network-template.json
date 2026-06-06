@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "Thematic Network Template",
-    "description": "Fill this file with your manually defined themes, text links, and confirmed passages.",
+    "title": "The story of Dahāg",
+    "description": "Example thematic network entry for the Dahāg material and resurrection.",
     "version": "1.0"
   },
   "texts": [
@@ -28,41 +28,64 @@
   ],
   "themes": [
     {
-      "id": "example-theme",
-      "label": "Example Theme",
-      "description": "Write a short scholarly description of the theme here.",
+      "id": "dahag-resurrection",
+      "label": "Resurrection (ristāxēz)",
+      "description": "A thematic comparison of passages connected with the story of Dahāg, resurrection, and final restoration.",
+      "visibleTextIds": [
+        "dd",
+        "wz"
+      ],
       "keywords": [
-        "keyword-one",
-        "keyword-two",
-        "keyword-three"
+        "duš-dēn",
+        "dēw ud Druz",
+        "Frēdōn",
+        "Sāmān Kersāsp",
+        "Dahāg",
+        "ristāxēz",
+        "frašegirdkirdārīh",
+        "az ī dahāg",
+        "rist",
+        "hangēz",
+        "yazdān"
       ],
       "status": "draft",
       "confirmedPassages": [
         {
           "textId": "dd",
-          "location": "36.4",
-          "passageLabel": "Optional short label",
-          "note": "Why this passage belongs to the theme."
+          "location": "36.84",
+          "passageLabel": "DD passage on Dahāg and resurrection",
+          "note": "Use this passage as the DD witness for the Dahāg/resurrection theme."
         },
         {
-          "textId": "py",
-          "location": "31.1",
-          "passageLabel": "Optional short label",
-          "note": "Why this passage belongs to the theme."
+          "textId": "wz",
+          "location": "24.3",
+          "passageLabel": "WZ passage on Dahāg and ristāxēz",
+          "note": "Use this passage as one WZ witness for the resurrection theme."
+        },
+        {
+          "textId": "wz",
+          "location": "32.4",
+          "passageLabel": "WZ passage on Dahāg and final restoration",
+          "note": "Use this passage as another WZ witness for the Dahāg/resurrection theme."
         }
       ],
       "links": [
         {
           "sourceTextId": "dd",
-          "targetTextId": "py",
-          "strength": 2,
-          "basis": "Shared theme, vocabulary, motif, or direct comparison.",
+          "targetTextId": "wz",
+          "strength": 3,
+          "basis": "Shared Dahāg/resurrection theme and overlapping vocabulary around Dahāg, ristāxēz, and final restoration.",
           "confirmed": true,
           "passagePairs": [
             {
-              "sourceLocation": "36.4",
-              "targetLocation": "31.1",
-              "note": "Explain the relationship between these two passages."
+              "sourceLocation": "36.84",
+              "targetLocation": "24.3",
+              "note": "Compare DD 36.84 with WZ 24.3 for the role of Dahāg in resurrection/final events."
+            },
+            {
+              "sourceLocation": "36.84",
+              "targetLocation": "32.4",
+              "note": "Compare DD 36.84 with WZ 32.4 for the same Dahāg/resurrection complex."
             }
           ]
         }

@@ -1,8 +1,8 @@
 const THEME_TEXTS = [
-  { id: "dd", siglum: "DD", title: "Dadestan i Denig", file: "Dd.txt" },
-  { id: "py", siglum: "PY", title: "Pahlavi Yasna", file: "PY-Pt4.txt" },
-  { id: "wz", siglum: "WZ", title: "Wizidagiha i Zadspram", file: "WZ.txt" },
-  { id: "nm", siglum: "NM", title: "Namagiha i Manuscihr", file: "NM.txt" }
+  { id: "dd", siglum: "DD", title: "Dadestan i Denig", file: "Dd.txt", englishFile: "DD-en.txt" },
+  { id: "py", siglum: "PY", title: "Pahlavi Yasna", file: "PY-Pt4.txt", englishFile: "PY-en.txt" },
+  { id: "wz", siglum: "WZ", title: "Wizidagiha i Zadspram", file: "WZ.txt", englishFile: "WZ-en.txt" },
+  { id: "nm", siglum: "NM", title: "Namagiha i Manuscihr", file: "NM.txt", englishFile: "NM-en.txt" }
 ];
 
 const themeState = {
@@ -147,17 +147,31 @@ async function loadThemes() {
 }
 
 async function loadText(config) {
-  const response = await fetch(config.file);
+  const [response, englishRaw] = await Promise.all([
+    fetch(config.file),
+    fetchOptionalText(config.englishFile)
+  ]);
   if (!response.ok) {
     throw new Error(`Could not load ${config.file}`);
   }
 
   const raw = await response.text();
+  const englishRecords = englishRaw ? parseRecords(englishRaw) : [];
   return {
     ...config,
     raw,
-    records: parseRecords(raw)
+    records: parseRecords(raw),
+    englishByLocation: new Map(englishRecords.map((record) => [record.location, record.text]))
   };
+}
+
+async function fetchOptionalText(file) {
+  try {
+    const response = await fetch(file);
+    return response.ok ? response.text() : "";
+  } catch {
+    return "";
+  }
 }
 
 function populateThemeSelect() {
@@ -245,14 +259,14 @@ function renderThemeColumn(result, terms) {
         <span class="count-pill ${total ? "hit" : "miss"}">${total}</span>
       </header>
       <div class="theme-passages">
-        ${visible.length ? visible.map((match) => renderThemeHit(match, terms)).join("") : `<div class="empty-state">No suggested passages for this theme.</div>`}
+        ${visible.length ? visible.map((match) => renderThemeHit(match, terms, result.text)).join("") : `<div class="empty-state">No suggested passages for this theme.</div>`}
       </div>
       ${total > THEME_PAGE_SIZE ? renderThemePagination(result.text.id, currentPage, pageCount) : ""}
     </article>
   `;
 }
 
-function renderThemeHit(match, terms) {
+function renderThemeHit(match, terms, text) {
   return `
     <section class="theme-hit">
       <div class="theme-hit-meta">
@@ -262,7 +276,7 @@ function renderThemeHit(match, terms) {
       <div class="theme-hit-content">
         <div>
           <p>${highlightTheme(match.snippet, terms, { annotate: true })}</p>
-          ${renderPersianTranscriptionBlock(match.snippet)}
+          ${renderTranslationActions(match.snippet, text.englishByLocation?.get(match.location))}
         </div>
       </div>
     </section>
@@ -458,12 +472,18 @@ function annotateText(value, terms = []) {
   return html;
 }
 
-function renderPersianTranscriptionBlock(value) {
+function renderTranslationActions(value, englishText = "") {
   return `
-    <details class="pers-trans">
-      <summary>Pers. Trans.</summary>
-      <p dir="rtl" lang="fa">${escapeHtml(toArabicTranscription(value))}</p>
-    </details>
+    <div class="translation-actions">
+      <details class="eng-trans">
+        <summary>Eng. Transl.</summary>
+        <p>${englishText ? escapeHtml(englishText) : "English translation will be added later."}</p>
+      </details>
+      <details class="pers-trans">
+        <summary>Pers. Trans.</summary>
+        <p dir="rtl" lang="fa">${escapeHtml(toArabicTranscription(value))}</p>
+      </details>
+    </div>
   `;
 }
 

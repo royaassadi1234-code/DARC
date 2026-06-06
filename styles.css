@@ -1215,10 +1215,20 @@ mark.term-6 {
   text-underline-offset: 3px;
 }
 
+.translation-actions {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.eng-trans,
 .pers-trans {
   margin-top: 8px;
 }
 
+.eng-trans summary,
 .pers-trans summary {
   display: inline-flex;
   width: fit-content;
@@ -1234,10 +1244,12 @@ mark.term-6 {
   list-style: none;
 }
 
+.eng-trans summary::-webkit-details-marker,
 .pers-trans summary::-webkit-details-marker {
   display: none;
 }
 
+.eng-trans p,
 .pers-trans p {
   margin: 8px 0 0;
   border: 1px solid #d7dee5;
@@ -1248,6 +1260,12 @@ mark.term-6 {
   font-family: Tahoma, "Noto Naskh Arabic", "Scheherazade New", serif;
   font-size: 1rem;
   line-height: 1.8;
+}
+
+.eng-trans p {
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.65;
 }
 
 .more {

@@ -4,6 +4,7 @@ const TEXTS = [
     siglum: "DD",
     title: "Dādestān ī Dēnīg I",
     file: "Dd.txt",
+    englishFile: "DD-en.txt",
     language: "Middle Persian",
     translation: null,
     themes: []
@@ -13,6 +14,7 @@ const TEXTS = [
     siglum: "PY",
     title: "Pahlavi Yasna",
     file: "PY-Pt4.txt",
+    englishFile: "PY-en.txt",
     language: "Middle Persian",
     translation: null,
     themes: []
@@ -22,6 +24,7 @@ const TEXTS = [
     siglum: "WZ",
     title: "Wizīdagīhā ī Zādspram",
     file: "WZ.txt",
+    englishFile: "WZ-en.txt",
     language: "Middle Persian",
     translation: null,
     themes: []
@@ -31,6 +34,7 @@ const TEXTS = [
     siglum: "NM",
     title: "Namagiha ī Manuščihr",
     file: "NM.txt",
+    englishFile: "NM-en.txt",
     language: "Middle Persian",
     translation: null,
     themes: []
@@ -168,20 +172,34 @@ function bindEvents() {
 }
 
 async function loadText(config) {
-  const response = await fetch(config.file);
+  const [response, englishRaw] = await Promise.all([
+    fetch(config.file),
+    fetchOptionalText(config.englishFile)
+  ]);
   if (!response.ok) {
     throw new Error(`Could not load ${config.file}`);
   }
 
   const raw = await response.text();
   const records = parseRecords(raw);
+  const englishRecords = englishRaw ? parseRecords(englishRaw) : [];
 
   return {
     ...config,
     raw,
     records,
+    englishByLocation: new Map(englishRecords.map((record) => [record.location, record.text])),
     wordCount: countWords(raw)
   };
+}
+
+async function fetchOptionalText(file) {
+  try {
+    const response = await fetch(file);
+    return response.ok ? response.text() : "";
+  } catch {
+    return "";
+  }
 }
 
 function parseRecords(raw) {
@@ -344,7 +362,7 @@ function renderMatchList(textId, matches, total) {
             <div class="location">${escapeHtml(match.location)}</div>
             <div>
               <p class="snippet">${highlight(match.snippet, { annotate: true })}</p>
-              ${renderPersianTranscriptionBlock(match.snippet)}
+              ${renderTranslationActions(match.snippet, getEnglishText(textId, match.location))}
             </div>
           </section>
         `)
@@ -566,12 +584,23 @@ function annotateText(value, terms = []) {
   return html;
 }
 
-function renderPersianTranscriptionBlock(value) {
+function getEnglishText(textId, location) {
+  const text = state.texts.find((item) => item.id === textId);
+  return text?.englishByLocation?.get(location) || "";
+}
+
+function renderTranslationActions(value, englishText = "") {
   return `
-    <details class="pers-trans">
-      <summary>Pers. Trans.</summary>
-      <p dir="rtl" lang="fa">${escapeHtml(toArabicTranscription(value))}</p>
-    </details>
+    <div class="translation-actions">
+      <details class="eng-trans">
+        <summary>Eng. Transl.</summary>
+        <p>${englishText ? escapeHtml(englishText) : "English translation will be added later."}</p>
+      </details>
+      <details class="pers-trans">
+        <summary>Pers. Trans.</summary>
+        <p dir="rtl" lang="fa">${escapeHtml(toArabicTranscription(value))}</p>
+      </details>
+    </div>
   `;
 }
 

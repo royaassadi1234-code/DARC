@@ -9,11 +9,18 @@ const THIRD_LABEL = pageConfig.thirdLabel || "";
 const PAGE_SIZE = 5;
 const IS_PHRASE_PAGE = DATA_URL.includes("phrases");
 const DICTIONARY_URL = "mpcd-workspace-dictionary.json";
+const ENGLISH_TRANSLATION_FILES = {
+  DD: "DD-en.txt",
+  PY: "PY-en.txt",
+  WZ: "WZ-en.txt",
+  NM: "NM-en.txt"
+};
 
 const pseudoState = {
   all: [],
   filtered: [],
   dictionary: new Map(),
+  englishTranslations: new Map(),
   expanded: new Set(),
   query: "",
   tier: "",
@@ -56,9 +63,10 @@ async function initPseudo() {
   bindPseudoEvents();
 
   try {
-    const [response, dictionary] = await Promise.all([
+    const [response, dictionary, englishTranslations] = await Promise.all([
       fetch(DATA_URL),
-      loadDictionary()
+      loadDictionary(),
+      loadEnglishTranslations()
     ]);
     if (!response.ok) {
       throw new Error(`Could not load ${DATA_URL}`);
@@ -67,6 +75,7 @@ async function initPseudo() {
     const data = await response.json();
     pseudoState.all = data.map(normalizeRecord);
     pseudoState.dictionary = dictionary;
+    pseudoState.englishTranslations = englishTranslations;
     populateTierFilter();
     applyFilters();
   } catch (error) {
@@ -74,6 +83,38 @@ async function initPseudo() {
     galleryEl.innerHTML = `<div class="empty-state">The pseudo-dynamic data could not be loaded.</div>`;
     console.error(error);
   }
+}
+
+async function loadEnglishTranslations() {
+  const entries = await Promise.all(Object.entries(ENGLISH_TRANSLATION_FILES).map(async ([siglum, file]) => {
+    const raw = await fetchOptionalText(file);
+    return [siglum, parseEnglishRecords(raw)];
+  }));
+  return new Map(entries);
+}
+
+async function fetchOptionalText(file) {
+  try {
+    const response = await fetch(file);
+    return response.ok ? response.text() : "";
+  } catch {
+    return "";
+  }
+}
+
+function parseEnglishRecords(raw) {
+  const records = new Map();
+  raw.split(/\r?\n/).forEach((line) => {
+    const trimmed = line.trim();
+    if (!trimmed) {
+      return;
+    }
+    const section = trimmed.match(/^([0-9]+(?:\.[0-9]+[a-z]?)?)\s+(.*)$/);
+    if (section) {
+      records.set(section[1], section[2]);
+    }
+  });
+  return records;
 }
 
 async function loadDictionary() {
@@ -298,16 +339,16 @@ function renderCard(record) {
       <div class="pseudo-card-body">
         <section>
           <h2>${escapeHtml(SOURCE_LABEL)} Paragraph Preview</h2>
-          ${renderPreviewBlock(record.sourcePreview, record)}
+          ${renderPreviewBlock(record.sourcePreview, record, SOURCE_LABEL)}
         </section>
         <section>
           <h2>${escapeHtml(TARGET_LABEL)} Paragraph Preview</h2>
-          ${renderPreviewBlock(record.targetPreview, record)}
+          ${renderPreviewBlock(record.targetPreview, record, TARGET_LABEL)}
         </section>
         ${record.thirdPreview ? `
           <section>
             <h2>${escapeHtml(THIRD_LABEL)} Paragraph Preview</h2>
-            ${renderPreviewBlock(record.thirdPreview, record)}
+            ${renderPreviewBlock(record.thirdPreview, record, THIRD_LABEL)}
           </section>
         ` : ""}
       </div>
@@ -344,15 +385,25 @@ function highlight(value) {
   return highlightTerms(value, getQueryTerms(), { plain: IS_PHRASE_PAGE });
 }
 
-function renderPreviewBlock(value, record) {
+function renderPreviewBlock(value, record, label) {
   const terms = [
     ...getPhraseTerms(record),
     ...getQueryTerms()
   ];
   return `
     <p>${highlightTerms(value, terms, { plain: IS_PHRASE_PAGE, annotate: true })}</p>
-    ${renderPersianTranscriptionBlock(value)}
+    ${renderTranslationActions(value, getEnglishTranslationForPreview(label, record))}
   `;
+}
+
+function getEnglishTranslationForPreview(label, record) {
+  const siglum = normalizeSiglum(label);
+  const location = siglum === "WZ" ? record.targetChapterStanza : "";
+  return location ? pseudoState.englishTranslations.get(siglum)?.get(location) || "" : "";
+}
+
+function normalizeSiglum(label) {
+  return String(label || "").trim().toUpperCase().replace(/^DD$/, "DD").replace(/^DAD?$/, "DD");
 }
 
 function highlightPreview(value, record) {
@@ -416,12 +467,18 @@ function annotateText(value, terms, options = {}) {
   return html;
 }
 
-function renderPersianTranscriptionBlock(value) {
+function renderTranslationActions(value, englishText = "") {
   return `
-    <details class="pers-trans">
-      <summary>Pers. Trans.</summary>
-      <p dir="rtl" lang="fa">${escapeHtml(toArabicTranscription(value))}</p>
-    </details>
+    <div class="translation-actions">
+      <details class="eng-trans">
+        <summary>Eng. Transl.</summary>
+        <p>${englishText ? escapeHtml(englishText) : "English translation will be added later."}</p>
+      </details>
+      <details class="pers-trans">
+        <summary>Pers. Trans.</summary>
+        <p dir="rtl" lang="fa">${escapeHtml(toArabicTranscription(value))}</p>
+      </details>
+    </div>
   `;
 }
 

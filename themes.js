@@ -523,12 +523,12 @@ function findMatchRanges(text, terms) {
   const ranges = [];
 
   terms.forEach((term, termIndex) => {
-    const foldedTerm = foldText(term, themeState.caseSensitive).text;
-    if (!foldedTerm) {
+    const variants = getSearchVariants(term);
+    if (!variants.length) {
       return;
     }
 
-    const regex = new RegExp(buildPattern([foldedTerm]), "gu");
+    const regex = new RegExp(buildPattern(variants), "gu");
     let match;
     while ((match = regex.exec(folded.text)) !== null) {
       ranges.push({
@@ -540,6 +540,37 @@ function findMatchRanges(text, terms) {
   });
 
   return mergeRanges(ranges);
+}
+
+function getSearchVariants(term) {
+  const folded = foldText(term, themeState.caseSensitive).text;
+  if (!folded) {
+    return [];
+  }
+
+  const variants = new Set([folded]);
+  [
+    folded.replace(/^=+/, ""),
+    folded.replace(/^u-/, ""),
+    folded.replace(/^i-/, ""),
+    folded.replace(/^pad-/, ""),
+    folded.replace(/^az-/, ""),
+    folded.replace(/^o-/, ""),
+    folded.replace(/^ud-/, ""),
+    folded.replace(/-(iz|is|im|it|san|man|tan)$/, "")
+  ].forEach((variant) => {
+    const clean = variant.replace(/^[=_.:-]+|[=_.:-]+$/g, "");
+    if (clean) {
+      variants.add(clean);
+    }
+  });
+
+  [...variants].forEach((variant) => {
+    ["u", "i", "pad", "az", "o", "ud"].forEach((prefix) => variants.add(`${prefix}-${variant}`));
+    ["iz", "is", "im", "it", "san", "man", "tan"].forEach((suffix) => variants.add(`${variant}-${suffix}`));
+  });
+
+  return [...variants].filter(Boolean);
 }
 
 function getKeywordTerms() {

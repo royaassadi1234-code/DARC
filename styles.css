@@ -579,6 +579,31 @@ h1 {
   font-weight: 800;
 }
 
+.sources-panel {
+  display: grid;
+  gap: 12px;
+}
+
+.sources-card {
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.source-list {
+  display: grid;
+  gap: 9px;
+  margin: 12px 0 0;
+  padding-left: 20px;
+  color: #24313e;
+  font-size: 0.94rem;
+  line-height: 1.5;
+}
+
+.source-list a {
+  color: var(--accent-strong);
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
 .theme-controls {
   grid-template-columns: minmax(190px, 0.34fr) minmax(280px, 1fr) auto;
 }

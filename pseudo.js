@@ -7,6 +7,7 @@ const SOURCE_LABEL = pageConfig.sourceLabel || "DD";
 const TARGET_LABEL = pageConfig.targetLabel || "PY";
 const THIRD_LABEL = pageConfig.thirdLabel || "";
 const PAGE_SIZE = 5;
+const IS_PHRASE_PAGE = DATA_URL.includes("phrases");
 
 const pseudoState = {
   all: [],
@@ -269,16 +270,16 @@ function renderCard(record) {
       <div class="pseudo-card-body">
         <section>
           <h2>${escapeHtml(SOURCE_LABEL)} Paragraph Preview</h2>
-          <p>${highlight(record.sourcePreview)}</p>
+          <p>${highlightPreview(record.sourcePreview, record)}</p>
         </section>
         <section>
           <h2>${escapeHtml(TARGET_LABEL)} Paragraph Preview</h2>
-          <p>${highlight(record.targetPreview)}</p>
+          <p>${highlightPreview(record.targetPreview, record)}</p>
         </section>
         ${record.thirdPreview ? `
           <section>
             <h2>${escapeHtml(THIRD_LABEL)} Paragraph Preview</h2>
-            <p>${highlight(record.thirdPreview)}</p>
+            <p>${highlightPreview(record.thirdPreview, record)}</p>
           </section>
         ` : ""}
       </div>
@@ -312,7 +313,18 @@ function searchableText(record) {
 }
 
 function highlight(value) {
-  const terms = getQueryTerms();
+  return highlightTerms(value, getQueryTerms());
+}
+
+function highlightPreview(value, record) {
+  const terms = [
+    ...getPhraseTerms(record),
+    ...getQueryTerms()
+  ];
+  return highlightTerms(value, terms);
+}
+
+function highlightTerms(value, terms) {
   if (!terms.length) {
     return escapeHtml(value);
   }
@@ -331,6 +343,15 @@ function highlight(value) {
   });
   html += escapeHtml(String(value).slice(cursor));
   return html;
+}
+
+function getPhraseTerms(record) {
+  if (!IS_PHRASE_PAGE || !record.sharedWords || record.sharedWords === "N/A") {
+    return [];
+  }
+
+  const phrase = foldText(record.sharedWords.trim()).text;
+  return phrase ? [phrase] : [];
 }
 
 function getQueryTerms() {

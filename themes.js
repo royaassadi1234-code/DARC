@@ -494,6 +494,9 @@ function transliterateWord(word) {
   if (!body) {
     return word;
   }
+  if (body === "čē" || body === "ce") {
+    return `${prefix}چه${suffix}`;
+  }
   const initialE = body.startsWith("e");
   if (initialE) {
     body = body.slice(1);

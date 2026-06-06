@@ -121,6 +121,11 @@ select {
   background: #eef4f7;
 }
 
+.nav-menu-list a.active {
+  color: #ffffff;
+  background: var(--accent);
+}
+
 .sub-nav {
   display: flex;
   gap: 8px;
@@ -609,7 +614,19 @@ h1 {
 }
 
 .trans-controls {
-  grid-template-columns: minmax(220px, 0.35fr);
+  grid-template-columns: minmax(260px, 1fr) auto;
+  align-items: end;
+}
+
+.clear-button {
+  min-height: 50px;
+  border: 1px solid #c8d0d9;
+  border-radius: 7px;
+  padding: 0 16px;
+  color: var(--accent-strong);
+  background: #fbfcfd;
+  cursor: pointer;
+  font-weight: 800;
 }
 
 .trans-reader {
@@ -630,6 +647,18 @@ h1 {
 .trans-heading h2 {
   margin: 0;
   font-size: 1.1rem;
+}
+
+.trans-heading p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.trans-pagination {
+  justify-content: flex-end;
+  padding: 2px 0;
 }
 
 .trans-list {

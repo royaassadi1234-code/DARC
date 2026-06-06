@@ -7,20 +7,27 @@ const TRANS_TEXTS = [
 
 const transState = {
   texts: [],
-  selectedTextId: "dd"
+  selectedTextId: "dd",
+  searchByText: {},
+  currentPage: 1,
+  pageSize: 24
 };
 
-const textSelectEl = document.querySelector("#trans-text-select");
+const queryEl = document.querySelector("#trans-query");
+const clearEl = document.querySelector("#trans-clear");
 const statusEl = document.querySelector("#trans-status");
 const readerEl = document.querySelector("#trans-reader");
+const paginationTopEl = document.querySelector("#trans-pagination-top");
+const paginationBottomEl = document.querySelector("#trans-pagination-bottom");
 
 initTrans();
 
 async function initTrans() {
   try {
+    transState.selectedTextId = getTextIdFromUrl();
     transState.texts = await Promise.all(TRANS_TEXTS.map(loadTextBundle));
-    populateTextSelect();
     bindTransEvents();
+    syncQueryInput();
     renderReader();
   } catch (error) {
     statusEl.textContent = "Text loading failed";
@@ -30,17 +37,37 @@ async function initTrans() {
 }
 
 function bindTransEvents() {
-  textSelectEl.addEventListener("change", () => {
-    transState.selectedTextId = textSelectEl.value;
+  queryEl.addEventListener("input", () => {
+    transState.searchByText[transState.selectedTextId] = queryEl.value;
+    transState.currentPage = 1;
+    renderReader();
+  });
+
+  clearEl.addEventListener("click", () => {
+    queryEl.value = "";
+    transState.searchByText[transState.selectedTextId] = "";
+    transState.currentPage = 1;
+    renderReader();
+    queryEl.focus();
+  });
+
+  window.addEventListener("popstate", () => {
+    transState.selectedTextId = getTextIdFromUrl();
+    transState.currentPage = 1;
+    syncQueryInput();
     renderReader();
   });
 }
 
-function populateTextSelect() {
-  textSelectEl.innerHTML = transState.texts
-    .map((text) => `<option value="${escapeHtml(text.id)}">${escapeHtml(text.siglum)} - ${escapeHtml(text.title)}</option>`)
-    .join("");
-  textSelectEl.value = transState.selectedTextId;
+function getTextIdFromUrl() {
+  const requested = new URLSearchParams(window.location.search).get("text");
+  return TRANS_TEXTS.some((text) => text.id === requested) ? requested : "dd";
+}
+
+function syncQueryInput() {
+  queryEl.value = transState.searchByText[transState.selectedTextId] || "";
+  const text = TRANS_TEXTS.find((item) => item.id === transState.selectedTextId);
+  queryEl.placeholder = text ? `Search ${text.siglum}` : "Search this text";
 }
 
 async function loadTextBundle(config) {
@@ -83,19 +110,129 @@ function renderReader() {
     return;
   }
 
-  statusEl.textContent = `${text.siglum} | ${text.records.length.toLocaleString()} paragraphs`;
+  const query = transState.searchByText[text.id] || "";
+  const filteredRecords = filterRecords(text, query);
+  const pageCount = Math.max(1, Math.ceil(filteredRecords.length / transState.pageSize));
+  transState.currentPage = Math.min(Math.max(1, transState.currentPage), pageCount);
+  const pageStart = (transState.currentPage - 1) * transState.pageSize;
+  const pageRecords = filteredRecords.slice(pageStart, pageStart + transState.pageSize);
+  const rangeStart = filteredRecords.length ? pageStart + 1 : 0;
+  const rangeEnd = pageStart + pageRecords.length;
+
+  statusEl.textContent = `${text.siglum} | ${filteredRecords.length.toLocaleString()} of ${text.records.length.toLocaleString()} paragraphs`;
   readerEl.innerHTML = `
     <article class="trans-heading">
       <div>
         <div class="siglum">${escapeHtml(text.siglum)}</div>
         <h2>${escapeHtml(text.title)}</h2>
+        <p>${query ? `Search results for "${escapeHtml(query)}"` : `Page ${transState.currentPage.toLocaleString()} of ${pageCount.toLocaleString()}`}</p>
       </div>
-      <span class="count-pill hit">${text.records.length.toLocaleString()}</span>
+      <span class="count-pill hit">${rangeStart.toLocaleString()}-${rangeEnd.toLocaleString()}</span>
     </article>
-    <div class="trans-list">
-      ${text.records.map((record) => renderTransParagraph(record, text.englishByLocation.get(record.location))).join("")}
-    </div>
+    ${pageRecords.length ? `
+      <div class="trans-list">
+        ${pageRecords.map((record) => renderTransParagraph(record, text.englishByLocation.get(record.location))).join("")}
+      </div>
+    ` : `<div class="empty-state">No paragraphs found in ${escapeHtml(text.siglum)}.</div>`}
   `;
+  renderPagination(pageCount);
+  updateActiveTransLinks(text.id);
+}
+
+function filterRecords(text, query) {
+  const terms = tokenizeQuery(query);
+  if (!terms.length) {
+    return text.records;
+  }
+
+  return text.records.filter((record) => {
+    const haystack = normalizeSearchText([
+      record.location,
+      record.text,
+      text.englishByLocation.get(record.location) || ""
+    ].join(" "));
+    return terms.every((term) => haystack.includes(term));
+  });
+}
+
+function tokenizeQuery(query) {
+  return normalizeSearchText(query)
+    .split(/\s+/)
+    .map((term) => term.trim())
+    .filter(Boolean);
+}
+
+function normalizeSearchText(value) {
+  return String(value)
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[ēə]/gi, "e")
+    .replace(/[āå]/gi, "a")
+    .replace(/[īı]/gi, "i")
+    .replace(/[ō]/gi, "o")
+    .replace(/[ū]/gi, "u")
+    .replace(/[š]/gi, "s")
+    .replace(/[č]/gi, "c")
+    .replace(/[ǰ]/gi, "j")
+    .replace(/[γ]/gi, "g")
+    .replace(/[θ]/gi, "t")
+    .toLocaleLowerCase();
+}
+
+function renderPagination(pageCount) {
+  const markup = pageCount > 1 ? buildPaginationMarkup(pageCount) : "";
+  paginationTopEl.innerHTML = markup;
+  paginationBottomEl.innerHTML = markup;
+  [paginationTopEl, paginationBottomEl].forEach((container) => {
+    container.querySelectorAll("button").forEach((button) => {
+      button.addEventListener("click", () => {
+        transState.currentPage = Number(button.dataset.page);
+        renderReader();
+        readerEl.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+  });
+}
+
+function buildPaginationMarkup(pageCount) {
+  const pages = getVisiblePages(pageCount);
+  return pages.map((page) => {
+    if (page === "...") {
+      return `<span class="page-gap">...</span>`;
+    }
+    const isActive = page === transState.currentPage;
+    return `<button class="page-dot${isActive ? " active" : ""}" type="button" data-page="${page}" aria-label="Page ${page}"${isActive ? ' aria-current="page"' : ""}>${page}</button>`;
+  }).join("");
+}
+
+function getVisiblePages(pageCount) {
+  if (pageCount <= 12) {
+    return Array.from({ length: pageCount }, (_, index) => index + 1);
+  }
+
+  const pages = new Set([1, 2, pageCount - 1, pageCount]);
+  for (let page = transState.currentPage - 2; page <= transState.currentPage + 2; page += 1) {
+    if (page > 0 && page <= pageCount) {
+      pages.add(page);
+    }
+  }
+
+  return Array.from(pages)
+    .sort((a, b) => a - b)
+    .reduce((items, page, index, sorted) => {
+      if (index > 0 && page - sorted[index - 1] > 1) {
+        items.push("...");
+      }
+      items.push(page);
+      return items;
+    }, []);
+}
+
+function updateActiveTransLinks(textId) {
+  document.querySelectorAll('.nav-menu-list a[href^="trans.html?text="]').forEach((link) => {
+    const id = new URL(link.href).searchParams.get("text");
+    link.classList.toggle("active", id === textId);
+  });
 }
 
 function renderTransParagraph(record, englishText = "") {

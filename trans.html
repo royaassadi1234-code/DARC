@@ -16,7 +16,15 @@
           </div>
           <div class="header-actions">
             <nav class="site-nav" aria-label="Research pages">
-              <a class="active" href="trans.html">Trans.</a>
+              <details class="nav-menu active" open>
+                <summary>Trans.</summary>
+                <div class="nav-menu-list">
+                  <a href="trans.html?text=dd">DD</a>
+                  <a href="trans.html?text=py">PY</a>
+                  <a href="trans.html?text=wz">WZ</a>
+                  <a href="trans.html?text=nm">NM</a>
+                </div>
+              </details>
               <a href="index.html">Text search</a>
               <a href="diagram.html">Diagram</a>
               <a href="themes.html">Themes</a>
@@ -45,14 +53,17 @@
           </div>
         </header>
 
-        <section class="search-panel trans-controls" aria-label="Text selection">
-          <label class="select-control" for="trans-text-select">
-            <span>Text</span>
-            <select id="trans-text-select"></select>
+        <section class="search-panel trans-controls" aria-label="Text search">
+          <label class="search-box" for="trans-query">
+            <span>Search in selected text</span>
+            <input id="trans-query" type="search" placeholder="Search this text" autocomplete="off">
           </label>
+          <button class="clear-button" id="trans-clear" type="button">Clear</button>
         </section>
 
+        <nav class="rank-pagination trans-pagination" id="trans-pagination-top" aria-label="Text pages"></nav>
         <section class="trans-reader" id="trans-reader" aria-live="polite"></section>
+        <nav class="rank-pagination trans-pagination" id="trans-pagination-bottom" aria-label="Text pages"></nav>
       </section>
     </main>
 

@@ -351,6 +351,7 @@ function renderPreviewBlock(value, record) {
   ];
   return `
     <p>${highlightTerms(value, terms, { plain: IS_PHRASE_PAGE, annotate: true })}</p>
+    ${renderPersianTranscriptionBlock(value)}
   `;
 }
 
@@ -413,6 +414,50 @@ function annotateText(value, terms, options = {}) {
 
   html += highlightPlainSegment(text.slice(cursor), ranges, cursor, options);
   return html;
+}
+
+function renderPersianTranscriptionBlock(value) {
+  return `
+    <details class="pers-trans">
+      <summary>Pers. Trans.</summary>
+      <p dir="rtl" lang="fa">${escapeHtml(toArabicTranscription(value))}</p>
+    </details>
+  `;
+}
+
+function toArabicTranscription(value) {
+  return String(value)
+    .split(/(\s+|[.,;:!?()[\]{}<>]+)/u)
+    .map((part) => /[\p{L}\p{M}\p{N}=_-]/u.test(part) ? transliterateWord(part) : part)
+    .join("");
+}
+
+function transliterateWord(word) {
+  const prefix = word.match(/^[=_.:-]+/)?.[0] || "";
+  const suffix = word.match(/[=_.:-]+$/)?.[0] || "";
+  let body = word.replace(/^[=_.:-]+|[=_.:-]+$/g, "").toLocaleLowerCase();
+  if (!body) {
+    return word;
+  }
+
+  const replacements = [
+    ["xw", "خو"], ["kh", "خ"], ["ch", "چ"], ["sh", "ش"], ["zh", "ژ"],
+    ["θ", "ث"], ["γ", "غ"], ["δ", "ذ"], ["š", "ش"], ["č", "چ"], ["ǰ", "ج"],
+    ["ā", "ا"], ["ē", "ێ"], ["ī", "ی"], ["ō", "و"], ["ū", "و"]
+  ];
+  replacements.forEach(([from, to]) => {
+    body = body.replaceAll(from, to);
+  });
+
+  const chars = {
+    a: "َ", e: "ِ", i: "ِ", o: "ُ", u: "ُ",
+    b: "ب", p: "پ", t: "ت", j: "ج", c: "چ", d: "د", f: "ف",
+    g: "گ", h: "ه", k: "ک", l: "ل", m: "م", n: "ن", r: "ر",
+    s: "س", w: "و", v: "و", x: "خ", y: "ی", z: "ز", q: "ق"
+  };
+
+  const transcribed = Array.from(body).map((char) => chars[char] || char).join("");
+  return `${prefix}${transcribed}${suffix}`;
 }
 
 function highlightPlainSegment(segment, ranges, offset, options = {}) {

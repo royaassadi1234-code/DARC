@@ -1080,6 +1080,41 @@ mark.term-6 {
   text-underline-offset: 3px;
 }
 
+.pers-trans {
+  margin-top: 8px;
+}
+
+.pers-trans summary {
+  display: inline-flex;
+  width: fit-content;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid #c8d0d9;
+  border-radius: 999px;
+  padding: 3px 9px;
+  color: var(--accent-strong);
+  background: #fbfcfd;
+  font-size: 0.78rem;
+  font-weight: 800;
+  list-style: none;
+}
+
+.pers-trans summary::-webkit-details-marker {
+  display: none;
+}
+
+.pers-trans p {
+  margin: 8px 0 0;
+  border: 1px solid #d7dee5;
+  border-radius: 7px;
+  padding: 10px 12px;
+  color: #24313e;
+  background: #fbfcfd;
+  font-family: Tahoma, "Noto Naskh Arabic", "Scheherazade New", serif;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
 .more {
   padding: 0 16px 15px 150px;
   color: var(--muted);

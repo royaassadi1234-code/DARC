@@ -87,6 +87,7 @@ select {
 .nav-menu {
   display: grid;
   gap: 4px;
+  position: relative;
 }
 
 .nav-menu summary {
@@ -103,12 +104,21 @@ select {
 .nav-menu-list {
   display: grid;
   gap: 4px;
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 30;
   min-width: 180px;
   padding: 6px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: #ffffff;
   box-shadow: 0 8px 22px rgba(29, 43, 57, 0.1);
+}
+
+.nav-menu:nth-last-of-type(-n + 2) .nav-menu-list {
+  right: 0;
+  left: auto;
 }
 
 .nav-menu-list a {
@@ -1432,6 +1442,11 @@ mark.term-6 {
   .site-nav {
     width: 100%;
     flex-wrap: wrap;
+  }
+
+  .nav-menu:nth-last-of-type(-n + 2) .nav-menu-list {
+    right: auto;
+    left: 0;
   }
 
   .overview,

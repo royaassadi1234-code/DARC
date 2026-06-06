@@ -977,6 +977,7 @@ mark {
   padding: 0 2px;
   color: #ffffff;
   background: var(--red);
+  font-weight: 800;
   box-shadow: inset 0 -1px 0 rgba(90, 18, 18, 0.35);
 }
 

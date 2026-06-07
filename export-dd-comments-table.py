@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import re
+import json
 from difflib import SequenceMatcher
 from pathlib import Path
 
@@ -14,8 +15,10 @@ from docx.shared import Pt
 ROOT = Path(__file__).resolve().parent
 PDF_PATH = ROOT / "dd 1.pdf"
 OUT_PATH = ROOT / "dd-comments-aligned.docx"
+FALLBACK_OUT_PATH = ROOT / "dd-comments-aligned-with-english.docx"
 DD_EN_PATH = ROOT / "DD-en.txt"
 DD_SOURCE_PATH = ROOT / "Dd.txt"
+COMMENT_TRANSLATIONS_PATH = ROOT / "dd-comment-translations.json"
 
 
 def annotation_words(page: fitz.Page, annot: fitz.Annot) -> str:
@@ -410,7 +413,19 @@ def fold_transliteration(value: str) -> str:
     return re.sub(r"[^a-z0-9-]+", " ", text).strip()
 
 
-def build_docx(rows: list[dict[str, object]]) -> None:
+def load_comment_translations() -> dict[str, str]:
+    if not COMMENT_TRANSLATIONS_PATH.exists():
+        return {}
+    return json.loads(COMMENT_TRANSLATIONS_PATH.read_text(encoding="utf-8"))
+
+
+def english_comment_for(comment: str, translations: dict[str, str]) -> str:
+    if not comment:
+        return ""
+    return translations.get(comment, "")
+
+
+def build_docx(rows: list[dict[str, object]], comment_translations: dict[str, str]) -> Path:
     document = Document()
     document.core_properties.title = "DD annotated translation comments aligned with transliteration highlights"
     document.add_heading("DD annotated translation comments", level=1)
@@ -419,10 +434,17 @@ def build_docx(rows: list[dict[str, object]]) -> None:
     )
     intro.style.font.size = Pt(10)
 
-    table = document.add_table(rows=1, cols=5)
+    table = document.add_table(rows=1, cols=6)
     table.alignment = WD_TABLE_ALIGNMENT.CENTER
     table.style = "Table Grid"
-    headers = ["Chapter.Stanza", "PDF page", "Highlighted/corrected transliteration word(s)", "Highlighted translation passage", "Comment"]
+    headers = [
+        "Chapter.Stanza",
+        "PDF page",
+        "Highlighted/corrected transliteration word(s)",
+        "Highlighted translation passage",
+        "Persian comment",
+        "English translation of comment",
+    ]
     for cell, header in zip(table.rows[0].cells, headers):
         cell.text = header
         for paragraph in cell.paragraphs:
@@ -436,6 +458,7 @@ def build_docx(rows: list[dict[str, object]]) -> None:
             str(row.get("transliteration") or ""),
             str(row.get("text") or ""),
             str(row.get("comment") or ""),
+            english_comment_for(str(row.get("comment") or ""), comment_translations),
         ]
         for cell, value in zip(cells, values):
             cell.text = value
@@ -445,7 +468,13 @@ def build_docx(rows: list[dict[str, object]]) -> None:
                 for run in paragraph.runs:
                     run.font.size = Pt(9)
 
-    document.save(OUT_PATH)
+    try:
+        document.save(OUT_PATH)
+        return OUT_PATH
+    except PermissionError:
+        document.save(FALLBACK_OUT_PATH)
+        print(f"{OUT_PATH.name} is open; saved updated table to {FALLBACK_OUT_PATH.name}")
+        return FALLBACK_OUT_PATH
 
 
 def contains_rtl(value: str) -> bool:
@@ -454,8 +483,9 @@ def contains_rtl(value: str) -> bool:
 
 def main() -> None:
     rows = extract_annotations()
-    build_docx(rows)
-    print(f"Exported {len(rows)} rows to {OUT_PATH.name}")
+    comment_translations = load_comment_translations()
+    output_path = build_docx(rows, comment_translations)
+    print(f"Exported {len(rows)} rows to {output_path.name}")
 
 
 if __name__ == "__main__":

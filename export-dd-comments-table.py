@@ -432,6 +432,16 @@ def english_comment_for(comment: str, translations: dict[str, str]) -> str:
     return translations.get(comment, "")
 
 
+def english_comment_with_reference(comment: str, section: str, translations: dict[str, str]) -> str:
+    english_comment = english_comment_for(comment, translations)
+    if not english_comment or not section:
+        return english_comment
+    reference = f"(dd{section})"
+    if english_comment.endswith(reference):
+        return english_comment
+    return f"{english_comment} {reference}"
+
+
 def comment_title_for(comment: str, titles: dict[str, str]) -> str:
     if not comment:
         return ""
@@ -470,14 +480,16 @@ def build_docx(
 
     for row in rows:
         cells = table.add_row().cells
+        section = str(row.get("section") or "")
+        comment = str(row.get("comment") or "")
         values = [
-            str(row.get("section") or ""),
+            section,
             str(row.get("page") or ""),
             str(row.get("transliteration") or ""),
             str(row.get("text") or ""),
-            str(row.get("comment") or ""),
-            english_comment_for(str(row.get("comment") or ""), comment_translations),
-            comment_title_for(str(row.get("comment") or ""), comment_titles),
+            comment,
+            english_comment_with_reference(comment, section, comment_translations),
+            comment_title_for(comment, comment_titles),
         ]
         for cell, value in zip(cells, values):
             cell.text = value

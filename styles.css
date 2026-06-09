@@ -643,6 +643,34 @@ h1 {
   font-weight: 800;
 }
 
+.copy-button {
+  min-height: 50px;
+  border: 1px solid #c8d0d9;
+  border-radius: 7px;
+  padding: 0 14px;
+  color: var(--accent-strong);
+  background: #fbfcfd;
+  cursor: pointer;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.copy-button:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: #eef4f7;
+}
+
+.copy-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.56;
+}
+
+.copy-button.compact {
+  min-height: 32px;
+  padding: 0 10px;
+  font-size: 0.82rem;
+}
+
 .trans-reader {
   display: grid;
   gap: 12px;
@@ -1201,6 +1229,12 @@ h1 {
   padding: 16px 16px 12px;
   border-bottom: 1px solid var(--line);
   background: #fbfcfd;
+}
+
+.result-card-actions {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
 }
 
 .matches {

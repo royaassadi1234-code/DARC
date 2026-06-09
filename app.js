@@ -60,6 +60,7 @@ const contextSelect = document.querySelector("#context-size");
 const statusEl = document.querySelector("#load-status");
 const overviewEl = document.querySelector("#overview");
 const resultsEl = document.querySelector("#results");
+const copyResultsButton = document.querySelector("#copy-results");
 const TRANSLITERATION_MAP = {
   "\u0100": "A",
   "\u0101": "a",
@@ -160,7 +161,21 @@ function bindEvents() {
     render();
   });
 
+  copyResultsButton.addEventListener("click", async () => {
+    const search = createSearch(state.query);
+    const summaries = search ? state.texts.map((text) => getMatches(text, search)) : [];
+    await copyResults(summaries, search, copyResultsButton);
+  });
+
   resultsEl.addEventListener("click", (event) => {
+    const copyButton = event.target.closest("[data-copy-text-id]");
+    if (copyButton) {
+      const search = createSearch(state.query);
+      const summaries = search ? state.texts.map((text) => getMatches(text, search)) : [];
+      copyResults(summaries, search, copyButton, copyButton.dataset.copyTextId);
+      return;
+    }
+
     const button = event.target.closest("[data-result-page]");
     if (!button) {
       return;
@@ -299,6 +314,9 @@ function render() {
 }
 
 function renderOverview(summaries, search) {
+  copyResultsButton.disabled = !search || !summaries.some(({ total }) => total > 0);
+  copyResultsButton.textContent = "Copy results";
+
   overviewEl.innerHTML = summaries
     .map(({ text, total }) => `
       <article class="text-card">
@@ -339,7 +357,10 @@ function renderResults(summaries, search) {
             <div class="siglum">${escapeHtml(text.siglum)}</div>
             <h2>${escapeHtml(text.title)}</h2>
           </div>
-          <span class="count-pill ${total ? "hit" : "miss"}">${total}</span>
+          <div class="result-card-actions">
+            ${total ? `<button class="copy-button compact" type="button" data-copy-text-id="${escapeHtml(text.id)}">Copy</button>` : ""}
+            <span class="count-pill ${total ? "hit" : "miss"}">${total}</span>
+          </div>
         </header>
         ${total ? renderMatchList(text.id, matches, total) : `<div class="empty-state">No matches in this text.</div>`}
       </article>
@@ -415,6 +436,97 @@ function clampPage(page, pageCount) {
 
 function resetResultPages() {
   state.resultPages = {};
+}
+
+async function copyResults(summaries, search, button, textId = "") {
+  if (!search) {
+    return;
+  }
+
+  const text = buildResultsText(summaries, search, textId);
+  if (!text.trim()) {
+    return;
+  }
+
+  const originalLabel = button.textContent;
+  try {
+    await writeClipboardText(text);
+    button.textContent = "Copied";
+  } catch (error) {
+    console.error("Copy failed", error);
+    button.textContent = "Copy failed";
+  }
+
+  window.setTimeout(() => {
+    button.textContent = originalLabel;
+  }, 1600);
+}
+
+function buildResultsText(summaries, search, textId = "") {
+  const selected = textId
+    ? summaries.filter((summary) => summary.text.id === textId)
+    : summaries;
+  const totalHits = selected.reduce((sum, summary) => sum + summary.total, 0);
+  const lines = [
+    "Parallel Text Search Results",
+    `Query: ${state.query}`,
+    `Options: ${state.variantSearch ? "multiple words and variants" : "exact query"}; ${state.wholeWord ? "whole word" : "partial word"}; ${state.caseSensitive ? "case sensitive" : "case insensitive"}; context ${getContextLabel()}`,
+    `Terms: ${search.terms.join(", ")}`,
+    `Total hits: ${totalHits}`,
+    ""
+  ];
+
+  selected.forEach(({ text, matches, total }) => {
+    lines.push(`${text.siglum} - ${text.title}`);
+    lines.push(`${total} ${total === 1 ? "hit" : "hits"}`);
+
+    if (!total) {
+      lines.push("No matches.");
+      lines.push("");
+      return;
+    }
+
+    matches.forEach((match, index) => {
+      const englishText = getEnglishText(text.id, match.location);
+      lines.push(`${index + 1}. ${match.location}`);
+      lines.push(match.snippet);
+      if (englishText) {
+        lines.push(`English: ${englishText}`);
+      }
+      lines.push(`Persian transcription: ${toArabicTranscription(match.snippet)}`);
+      lines.push("");
+    });
+  });
+
+  return lines.join("\n").trim();
+}
+
+function getContextLabel() {
+  return contextSelect.selectedOptions[0]?.textContent?.toLowerCase() || String(state.contextSize);
+}
+
+async function writeClipboardText(text) {
+  if (navigator.clipboard?.writeText && window.isSecureContext) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  textarea.setAttribute("readonly", "");
+  textarea.style.position = "fixed";
+  textarea.style.left = "-9999px";
+  document.body.appendChild(textarea);
+  textarea.select();
+
+  try {
+    const copied = document.execCommand("copy");
+    if (!copied) {
+      throw new Error("Clipboard command was not accepted");
+    }
+  } finally {
+    textarea.remove();
+  }
 }
 
 function getMatches(text, search) {

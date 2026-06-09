@@ -1,0 +1,129 @@
+[
+  {
+    "id": "druz",
+    "label": "Druz",
+    "description": "Druz/Druj ranges from deceit and falsehood to a demon, class of demons, or an Ahrimanic cosmic principle.",
+    "variants": [
+      "druz",
+      "druj",
+      "drug",
+      "druxs",
+      "druxš",
+      "druzan",
+      "druzān",
+      "druzih",
+      "druzīh",
+      "druxtarih",
+      "druxtārīh",
+      "druzaskan",
+      "druzaskān",
+      "dēw druz",
+      "dew druz"
+    ],
+    "sourceTerms": [
+      "Av. druj-",
+      "Proto-Iranian *druǰ-",
+      "MP druz"
+    ],
+    "meaningCategories": [
+      {
+        "id": "arch-demon",
+        "label": "arch demon Deceit",
+        "keywords": ["arch", "cosmic", "principle", "deceit", "deceit-demon"]
+      },
+      {
+        "id": "demonic-being",
+        "label": "demonic being",
+        "keywords": ["demon", "demons", "demonic", "druzan", "druzān", "dēw", "dew"]
+      },
+      {
+        "id": "ahreman-name",
+        "label": "Ahreman called druz",
+        "keywords": ["ahriman", "ahreman", "gannag", "gannāg", "menog", "mēnōy"]
+      },
+      {
+        "id": "wrongdoing",
+        "label": "wrongdoing",
+        "keywords": ["sin", "sins", "wrong", "wicked", "wickedness", "repentance"]
+      },
+      {
+        "id": "falsehood",
+        "label": "deceit or falsehood",
+        "keywords": ["lie", "falsehood", "deception", "deceit", "deceived", "fraud"]
+      },
+      {
+        "id": "ritual-body",
+        "label": "bodily impurity or death",
+        "keywords": ["body", "corpse", "death", "pollution", "impurity", "hell"]
+      }
+    ],
+    "opposites": ["asha", "ahlāyīh", "rāstīh", "truth", "order", "Ohrmazd", "yazdān", "wehīh"],
+    "sources": [
+      {
+        "label": "Encyclopaedia Iranica, DRUJ-",
+        "url": "https://www.iranicaonline.org/articles/druj/"
+      }
+    ]
+  },
+  {
+    "id": "ahreman",
+    "label": "Ahreman",
+    "description": "Ahreman/Ahriman is the principal opponent of Ohrmazd, king of demons, and is often represented in Pahlavi as Gannag Menog.",
+    "variants": [
+      "ahreman",
+      "ahriman",
+      "ahrimen",
+      "ahriman",
+      "gannag menog",
+      "gannag menoy",
+      "gannāg mēnōy",
+      "gannāy mēnōy",
+      "gannāg mēnōg",
+      "ganag menog",
+      "ganag menoy",
+      "angra mainyu",
+      "aŋra mainiiu",
+      "akoman",
+      "akōman"
+    ],
+    "sourceTerms": [
+      "Av. aŋra- mainiiu-",
+      "MP Ahreman",
+      "MP Gannāg Mēnōy"
+    ],
+    "meaningCategories": [
+      {
+        "id": "opponent",
+        "label": "opponent of Ohrmazd",
+        "keywords": ["opponent", "ohrmazd", "creator", "counterpart", "war"]
+      },
+      {
+        "id": "king-demons",
+        "label": "king of demons",
+        "keywords": ["king", "demon", "demons", "demonic", "dēw", "dew"]
+      },
+      {
+        "id": "evil-spirit",
+        "label": "evil spirit or Gannag Menog",
+        "keywords": ["gannag", "gannāg", "menog", "menoy", "mēnōy", "spirit"]
+      },
+      {
+        "id": "destruction",
+        "label": "death and destruction",
+        "keywords": ["death", "destruction", "harm", "suffering", "decay", "old age"]
+      },
+      {
+        "id": "cosmic-war",
+        "label": "cosmic war",
+        "keywords": ["war", "attack", "assault", "nine-thousand", "resurrection"]
+      }
+    ],
+    "opposites": ["Ohrmazd", "Spenta Mainyu", "asha", "yazdān", "good creation", "light", "rōšn"],
+    "sources": [
+      {
+        "label": "Encyclopaedia Iranica, AHRIMAN",
+        "url": "https://www.iranicaonline.org/articles/ahriman/"
+      }
+    ]
+  }
+]

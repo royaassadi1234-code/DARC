@@ -627,6 +627,214 @@ h1 {
   grid-template-columns: minmax(190px, 0.34fr) minmax(280px, 1fr) auto;
 }
 
+.concept-controls {
+  grid-template-columns: minmax(160px, 0.8fr) minmax(160px, 0.8fr) minmax(190px, 1fr) minmax(140px, 0.7fr);
+}
+
+.concept-summary,
+.concept-stage {
+  display: grid;
+  gap: 12px;
+}
+
+.concept-info-card,
+.concept-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: var(--shadow);
+}
+
+.concept-info-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: start;
+  padding: 16px;
+}
+
+.concept-info-card h2 {
+  margin: 5px 0 0;
+  max-width: 880px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.3rem;
+  line-height: 1.25;
+}
+
+.concept-chip-row,
+.concept-source-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.concept-chip-row span,
+.concept-source-row a {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 9px;
+  color: var(--accent-strong);
+  background: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.concept-card > header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  background: #fbfcfd;
+}
+
+.concept-card h2 {
+  margin: 0;
+  font-size: 1.08rem;
+}
+
+.concept-svg {
+  display: block;
+  width: 100%;
+  min-height: 440px;
+  background:
+    linear-gradient(90deg, rgba(23, 33, 43, 0.04) 1px, transparent 1px) 0 0 / 20% 100%,
+    linear-gradient(180deg, rgba(23, 33, 43, 0.04) 1px, transparent 1px) 0 0 / 100% 20%,
+    #fbfcfd;
+}
+
+.concept-edge {
+  stroke-width: 2;
+  stroke-linecap: round;
+  opacity: 0.58;
+}
+
+.concept-node circle {
+  stroke: #ffffff;
+  stroke-width: 2;
+}
+
+.concept-node text {
+  fill: #ffffff;
+  font-size: 0.92rem;
+  font-weight: 800;
+  dominant-baseline: middle;
+}
+
+.concept-svg-label {
+  fill: #354150;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.legend-swatch.concept-opposite {
+  background: #a83b3b;
+}
+
+.legend-swatch.concept-highlight {
+  background: #267052;
+}
+
+.legend-swatch.concept-context {
+  background: #64748b;
+}
+
+.concept-bars {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+}
+
+.concept-bar-row {
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr) 56px;
+  gap: 12px;
+  align-items: center;
+}
+
+.concept-bar-label {
+  color: var(--accent-strong);
+  font-weight: 800;
+}
+
+.concept-bar-track {
+  overflow: hidden;
+  height: 28px;
+  border: 1px solid #c8d0d9;
+  border-radius: 7px;
+  background: #fbfcfd;
+}
+
+.concept-bar-fill {
+  display: block;
+  height: 100%;
+  min-width: 3px;
+}
+
+.concept-bar-fill.annotation {
+  background: repeating-linear-gradient(135deg, #267052 0 8px, #2e7f60 8px 16px);
+}
+
+.context-cloud {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.context-cloud span {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 7px 10px;
+  color: var(--accent-strong);
+  background: #ffffff;
+  font-weight: 800;
+}
+
+.context-cloud span.opposite {
+  color: #ffffff;
+  border-color: var(--red);
+  background: var(--red);
+}
+
+.context-cloud small {
+  color: inherit;
+  opacity: 0.72;
+}
+
+.concept-comment-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 16px;
+}
+
+.concept-comment {
+  display: grid;
+  gap: 8px;
+  border: 1px solid #edf0f3;
+  border-radius: 7px;
+  padding: 12px;
+  background: #ffffff;
+}
+
+.concept-comment h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.concept-comment p {
+  margin: 0;
+  color: #354150;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
 .trans-controls {
   grid-template-columns: minmax(260px, 1fr) auto;
   align-items: end;
@@ -1506,6 +1714,7 @@ mark.term-6 {
   .diagram-controls,
   .network-controls,
   .theme-controls,
+  .concept-controls,
   .trans-controls {
     grid-template-columns: 1fr;
   }
@@ -1527,6 +1736,11 @@ mark.term-6 {
   }
 
   .about-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .concept-info-card,
+  .concept-comment-list {
     grid-template-columns: 1fr;
   }
 }

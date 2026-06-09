@@ -3,20 +3,19 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DD-WZ Phrase Matches</title>
+    <title>Comparative Concept Map</title>
     <link rel="stylesheet" href="styles.css">
   </head>
-  <body data-data-url="dd-wz-phrases-data.json" data-source-key="Dd" data-target-key="WZ" data-source-label="DD" data-target-label="WZ">
+  <body>
     <main class="shell">
       <section class="workspace" aria-labelledby="page-title">
         <header class="masthead">
           <div>
-            <p class="eyebrow">DD vs WZ subpart</p>
-            <h1 id="page-title">Phrase Matches</h1>
+            <p class="eyebrow">Comparative concept analysis</p>
+            <h1 id="page-title">Druz and Ahreman</h1>
           </div>
           <div class="header-actions">
             <nav class="site-nav" aria-label="Research pages">
-              
               <details class="nav-menu">
                 <summary>Trans.</summary>
                 <div class="nav-menu-list">
@@ -29,7 +28,7 @@
               <a href="index.html">Text search</a>
               <a href="diagram.html">Diagram</a>
               <a href="themes.html">Themes</a>
-              <a href="concept-map.html">Concept map</a>
+              <a class="active" href="concept-map.html">Concept map</a>
               <details class="nav-menu">
                 <summary>word matches</summary>
                 <div class="nav-menu-list">
@@ -39,7 +38,7 @@
                   <a href="dd-py-wz.html">DD vs PY vs WZ</a>
                 </div>
               </details>
-              <details class="nav-menu active">
+              <details class="nav-menu">
                 <summary>phrase matches</summary>
                 <div class="nav-menu-list">
                   <a href="dd-py-phrases.html">DD vs PY</a>
@@ -49,34 +48,51 @@
                 </div>
               </details>
               <a href="resources.html">Resources</a>
-              <a href="about.html">about</a>
+              <a href="about.html">About</a>
             </nav>
-            <div class="status" id="pseudo-status">Loading phrases...</div>
+            <div class="status" id="concept-status">Loading concepts...</div>
           </div>
         </header>
 
-        <nav class="sub-nav" aria-label="DD vs WZ sections">
-          <a href="dd-wz.html">Word Matches</a>
-          <a class="active" href="dd-wz-phrases.html">Phrase Matches</a>
-        </nav>
-
-        <section class="search-panel pseudo-controls" aria-label="Phrase controls">
-          <label class="search-box" for="pseudo-query">
-            <span>Search phrases or previews</span>
-            <input id="pseudo-query" type="search" placeholder="Type plain letters or several words: humat huxt" autocomplete="off" autofocus>
+        <section class="search-panel concept-controls" aria-label="Concept map controls">
+          <label class="select-control" for="concept-select">
+            <span>Concept</span>
+            <select id="concept-select"></select>
           </label>
-          <div class="controls" role="group" aria-label="Phrase filters">
-            <label class="select-control" for="tier-filter"><span>Length</span><select id="tier-filter"><option value="">All</option></select></label>
-            <label class="select-control" for="sort-mode"><span>Sort</span><select id="sort-mode"><option value="rank">Rank</option><option value="score">Phrase length</option><option value="shared">Shared words</option></select></label>
-            <button class="action-button" id="expand-all" type="button">Expand</button>
-            <button class="action-button secondary" id="collapse-all" type="button">Collapse</button>
-          </div>
+
+          <label class="select-control" for="concept-view">
+            <span>View</span>
+            <select id="concept-view">
+              <option value="mind">Mind map</option>
+              <option value="network">Network graph</option>
+              <option value="frequency">Frequency chart</option>
+              <option value="context">Context map</option>
+            </select>
+          </label>
+
+          <label class="select-control" for="concept-color">
+            <span>Color coding</span>
+            <select id="concept-color">
+              <option value="concept">Same concept</option>
+              <option value="meaning">Different meanings</option>
+            </select>
+          </label>
+
+          <label class="select-control" for="concept-window">
+            <span>Near words</span>
+            <select id="concept-window">
+              <option value="5" selected>5 words</option>
+              <option value="8">8 words</option>
+              <option value="12">12 words</option>
+            </select>
+          </label>
         </section>
 
-        <section class="pseudo-summary" id="pseudo-summary" aria-label="Phrase summary"></section>
-        <section class="pseudo-gallery" id="pseudo-gallery" aria-live="polite"></section>
+        <section class="concept-summary" id="concept-summary" aria-label="Concept summary"></section>
+        <section class="concept-stage" id="concept-stage" aria-live="polite"></section>
       </section>
     </main>
-    <script src="pseudo.js"></script>
+
+    <script src="concept-map.js"></script>
   </body>
 </html>

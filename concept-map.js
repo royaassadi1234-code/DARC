@@ -9,16 +9,10 @@ const conceptState = {
   concepts: [],
   comments: [],
   texts: [],
-  selectedConceptId: "druz",
-  view: "mind",
-  colorMode: "concept",
-  nearWindow: 5
+  selectedConceptId: "druz"
 };
 
 const conceptSelectEl = document.querySelector("#concept-select");
-const viewEl = document.querySelector("#concept-view");
-const colorEl = document.querySelector("#concept-color");
-const windowEl = document.querySelector("#concept-window");
 const statusEl = document.querySelector("#concept-status");
 const summaryEl = document.querySelector("#concept-summary");
 const stageEl = document.querySelector("#concept-stage");
@@ -45,11 +39,6 @@ const TRANSLITERATION_MAP = {
   "\u0160": "S"
 };
 
-const MEANING_COLORS = ["#245c73", "#7a3e8f", "#267052", "#a83b3b", "#9a5a15", "#475569"];
-const CONCEPT_COLORS = {
-  druz: "#a83b3b",
-  ahreman: "#245c73"
-};
 const STOP_WORDS = new Set([
   "a", "an", "and", "are", "as", "at", "az", "be", "but", "by", "for", "from", "i", "in", "is",
   "it", "of", "on", "or", "pad", "the", "this", "to", "ud", "with", "xwesh", "xwes", "that",
@@ -83,21 +72,6 @@ async function initConceptMap() {
 function bindEvents() {
   conceptSelectEl.addEventListener("change", () => {
     conceptState.selectedConceptId = conceptSelectEl.value;
-    renderConceptMap();
-  });
-
-  viewEl.addEventListener("change", () => {
-    conceptState.view = viewEl.value;
-    renderConceptMap();
-  });
-
-  colorEl.addEventListener("change", () => {
-    conceptState.colorMode = colorEl.value;
-    renderConceptMap();
-  });
-
-  windowEl.addEventListener("change", () => {
-    conceptState.nearWindow = Number(windowEl.value);
     renderConceptMap();
   });
 }
@@ -139,16 +113,7 @@ function renderConceptMap() {
   const analysis = analyzeConcept(concept);
   statusEl.textContent = `${analysis.total} text hits | ${analysis.commentMatches.length} DD notes`;
   renderSummary(concept, analysis);
-
-  if (conceptState.view === "mind") {
-    stageEl.innerHTML = renderMindMap(concept, analysis);
-  } else if (conceptState.view === "network") {
-    stageEl.innerHTML = renderNetworkGraph(concept, analysis);
-  } else if (conceptState.view === "frequency") {
-    stageEl.innerHTML = renderFrequencyChart(concept, analysis);
-  } else {
-    stageEl.innerHTML = renderContextMap(concept, analysis);
-  }
+  stageEl.innerHTML = renderRebuildNotice(concept, analysis);
 }
 
 function analyzeConcept(concept) {
@@ -163,15 +128,11 @@ function analyzeConcept(concept) {
   });
 
   const commentMatches = getCommentMatches(concept);
-  const contextWords = getContextWords(summaries, commentMatches, concept);
-  const networkTerms = getNetworkTerms(concept, contextWords, commentMatches);
   const total = summaries.reduce((sum, summary) => sum + summary.total, 0);
 
   return {
     summaries,
     commentMatches,
-    contextWords,
-    networkTerms,
     total
   };
 }
@@ -187,8 +148,7 @@ function getConceptOccurrences(text, concept) {
         location: record.location,
         variant: record.text.slice(range.start, range.end),
         snippet,
-        meaning: inferMeaning(concept, `${record.text} ${snippet}`),
-        nearWords: getNearWords(record.text, range)
+        meaning: inferMeaning(concept, `${record.text} ${snippet}`)
       });
     });
   });
@@ -214,8 +174,7 @@ function getCommentMatches(concept) {
         ...comment,
         textId: "dd",
         textSiglum: "DD",
-        meaning: inferMeaning(concept, combined),
-        nearWords: getCommentNearWords(comment, concept)
+        meaning: inferMeaning(concept, combined)
       };
     })
     .filter(Boolean);
@@ -319,159 +278,61 @@ function renderSummary(concept, analysis) {
   `;
 }
 
-function renderMindMap(concept, analysis) {
-  const branches = analysis.summaries.map((summary, index) => {
-    const y = 82 + index * 88;
-    const x = index % 2 === 0 ? 118 : 662;
-    const textAnchor = index % 2 === 0 ? "start" : "end";
-    const lineEnd = index % 2 === 0 ? x + 122 : x - 122;
-    const color = getColor(concept, topMeaning(summary.occurrences), index);
-    return `
-      <line x1="400" y1="220" x2="${lineEnd}" y2="${y}" class="concept-edge" style="stroke:${color}"></line>
-      <g class="concept-node">
-        <circle cx="${x}" cy="${y}" r="42" style="fill:${color}"></circle>
-        <text x="${x}" y="${y - 5}" text-anchor="middle">${escapeHtml(summary.text.siglum)}</text>
-        <text x="${x}" y="${y + 15}" text-anchor="middle">${summary.total}</text>
-      </g>
-      <text x="${index % 2 === 0 ? x + 58 : x - 58}" y="${y + 5}" text-anchor="${textAnchor}" class="concept-svg-label">
-        ${escapeHtml(topMeaning(summary.occurrences)?.label || "no matches")}
-      </text>
-    `;
-  }).join("");
+function renderRebuildNotice(concept, analysis) {
+  const textRows = analysis.summaries
+    .map((summary) => `
+      <tr>
+        <th scope="row">${escapeHtml(summary.text.siglum)}</th>
+        <td>${escapeHtml(summary.text.title)}</td>
+        <td>${summary.total}</td>
+      </tr>
+    `)
+    .join("");
 
   return `
-    <article class="concept-card">
+    <article class="concept-card concept-rebuild-card">
       <header>
         <div>
-          <div class="siglum">Mind map</div>
-          <h2>Concept in the center, branches for each text</h2>
+          <div class="siglum">Rebuild mode</div>
+          <h2>Visual concept maps are hidden for now</h2>
         </div>
-        <span class="count-pill hit">${analysis.total}</span>
+        <span class="count-pill">${analysis.total}</span>
       </header>
-      <svg class="concept-svg" viewBox="0 0 800 440" role="img" aria-label="Mind map for ${escapeHtml(concept.label)}">
-        <g class="concept-node">
-          <circle cx="400" cy="220" r="70" style="fill:${getColor(concept)}"></circle>
-          <text x="400" y="214" text-anchor="middle">${escapeHtml(concept.label)}</text>
-          <text x="400" y="238" text-anchor="middle">${analysis.total} hits</text>
-        </g>
-        ${branches}
-      </svg>
-    </article>
-  `;
-}
-
-function renderNetworkGraph(concept, analysis) {
-  const center = { x: 400, y: 245 };
-  const terms = analysis.networkTerms;
-  const nodes = terms.map((term, index) => {
-    const angle = (Math.PI * 2 * index) / Math.max(1, terms.length) - Math.PI / 2;
-    const radius = term.type === "opposite" ? 195 : 150 + (index % 3) * 28;
-    const x = center.x + Math.cos(angle) * radius;
-    const y = center.y + Math.sin(angle) * radius;
-    const color = term.type === "opposite" ? "#a83b3b" : term.type === "highlight" ? "#267052" : "#64748b";
-    return { ...term, x, y, color };
-  });
-
-  return `
-    <article class="concept-card">
-      <header>
-        <div>
-          <div class="siglum">Network</div>
-          <h2>Concept connected to opposites, highlighted terms, and nearby words</h2>
+      <div class="concept-rebuild-body">
+        <p>
+          The earlier mind map, network graph, frequency chart, and context map were too noisy.
+          This page is paused while we rebuild the concept analysis from a cleaner review table.
+        </p>
+        <div class="concept-next-grid">
+          <section>
+            <h3>Data kept</h3>
+            <ul class="source-list">
+              <li>${escapeHtml(concept.label)} variants from <strong>concept-map-data.json</strong></li>
+              <li>Occurrences across DD, PY, WZ, and NM</li>
+              <li>${analysis.commentMatches.length} matching DD comment notes from <strong>dd-comments-aligned-with-english.docx</strong></li>
+            </ul>
+          </section>
+          <section>
+            <h3>Next rebuild step</h3>
+            <ul class="source-list">
+              <li>Create a review table for Druz first</li>
+              <li>Use four meanings: Ahreman, demon, falsehood, unclear</li>
+              <li>Confirm each row before drawing new charts</li>
+            </ul>
+          </section>
         </div>
-        <span class="count-pill hit">${terms.length}</span>
-      </header>
-      <div class="term-legend">
-        <span><i class="legend-swatch concept-opposite"></i>Opposite</span>
-        <span><i class="legend-swatch concept-highlight"></i>DOCX highlight</span>
-        <span><i class="legend-swatch concept-context"></i>Near word</span>
+        <table class="concept-review-preview">
+          <caption>Available text hits for ${escapeHtml(concept.label)}</caption>
+          <thead>
+            <tr>
+              <th scope="col">Text</th>
+              <th scope="col">Title</th>
+              <th scope="col">Hits</th>
+            </tr>
+          </thead>
+          <tbody>${textRows}</tbody>
+        </table>
       </div>
-      <svg class="concept-svg" viewBox="0 0 800 500" role="img" aria-label="Network graph for ${escapeHtml(concept.label)}">
-        ${nodes.map((node) => `<line x1="${center.x}" y1="${center.y}" x2="${node.x.toFixed(1)}" y2="${node.y.toFixed(1)}" class="concept-edge" style="stroke:${node.color}"></line>`).join("")}
-        <g class="concept-node">
-          <circle cx="${center.x}" cy="${center.y}" r="62" style="fill:${getColor(concept)}"></circle>
-          <text x="${center.x}" y="${center.y + 5}" text-anchor="middle">${escapeHtml(concept.label)}</text>
-        </g>
-        ${nodes.map((node) => `
-          <g class="concept-node">
-            <circle cx="${node.x.toFixed(1)}" cy="${node.y.toFixed(1)}" r="${Math.min(38, 19 + node.count * 2)}" style="fill:${node.color}"></circle>
-            <text x="${node.x.toFixed(1)}" y="${node.y.toFixed(1)}" text-anchor="middle">${escapeHtml(shorten(node.label, 12))}</text>
-          </g>
-        `).join("")}
-      </svg>
-    </article>
-  `;
-}
-
-function renderFrequencyChart(concept, analysis) {
-  const max = Math.max(1, ...analysis.summaries.map((summary) => summary.total), analysis.commentMatches.length);
-  const bars = analysis.summaries.map((summary, index) => {
-    const width = (summary.total / max) * 100;
-    const color = getColor(concept, topMeaning(summary.occurrences), index);
-    return `
-      <div class="concept-bar-row">
-        <div class="concept-bar-label">${escapeHtml(summary.text.siglum)}</div>
-        <div class="concept-bar-track">
-          <span class="concept-bar-fill" style="width:${width.toFixed(2)}%; background:${color}"></span>
-        </div>
-        <strong>${summary.total}</strong>
-      </div>
-    `;
-  }).join("");
-  const commentWidth = (analysis.commentMatches.length / max) * 100;
-
-  return `
-    <article class="concept-card">
-      <header>
-        <div>
-          <div class="siglum">Frequency</div>
-          <h2>How often the concept appears in each text</h2>
-        </div>
-        <span class="count-pill hit">${analysis.total}</span>
-      </header>
-      <div class="concept-bars">
-        ${bars}
-        <div class="concept-bar-row">
-          <div class="concept-bar-label">DD notes</div>
-          <div class="concept-bar-track">
-            <span class="concept-bar-fill annotation" style="width:${commentWidth.toFixed(2)}%"></span>
-          </div>
-          <strong>${analysis.commentMatches.length}</strong>
-        </div>
-      </div>
-    </article>
-  `;
-}
-
-function renderContextMap(concept, analysis) {
-  return `
-    <article class="concept-card">
-      <header>
-        <div>
-          <div class="siglum">Context</div>
-          <h2>Words that appear near ${escapeHtml(concept.label)}</h2>
-        </div>
-        <span class="count-pill hit">${analysis.contextWords.length}</span>
-      </header>
-      <div class="context-cloud">
-        ${analysis.contextWords.map((word) => `
-          <span class="${word.type === "opposite" ? "opposite" : ""}" style="font-size:${Math.min(1.5, 0.82 + word.count * 0.06).toFixed(2)}rem">
-            ${escapeHtml(word.label)} <small>${word.count}</small>
-          </span>
-        `).join("")}
-      </div>
-      <section class="concept-comment-list" aria-label="DD comment highlights">
-        ${analysis.commentMatches.slice(0, 16).map((comment) => `
-          <article class="concept-comment">
-            <div class="siglum">DD ${escapeHtml(comment.location)} | PDF ${escapeHtml(comment.pdfPage)}</div>
-            <h3>${escapeHtml(comment.title)}</h3>
-            <p>${escapeHtml(comment.englishComment)}</p>
-            <div class="tags">
-              ${(comment.highlightedWords || []).slice(0, 10).map((word) => `<span>${escapeHtml(word)}</span>`).join("")}
-            </div>
-          </article>
-        `).join("")}
-      </section>
     </article>
   `;
 }
@@ -493,15 +354,6 @@ function getMeaningTotals(analysis) {
   return [...meanings.values()].sort((a, b) => b.count - a.count);
 }
 
-function topMeaning(occurrences) {
-  if (!occurrences.length) {
-    return null;
-  }
-  const counts = countBy(occurrences.map((occurrence) => occurrence.meaning.id));
-  const id = Object.entries(counts).sort((a, b) => b[1] - a[1])[0]?.[0];
-  return occurrences.find((occurrence) => occurrence.meaning.id === id)?.meaning || null;
-}
-
 function inferMeaning(concept, text) {
   const folded = foldText(text).text;
   const scored = concept.meaningCategories
@@ -511,14 +363,6 @@ function inferMeaning(concept, text) {
     }))
     .sort((a, b) => b.score - a.score);
   return scored[0]?.score ? scored[0].meaning : concept.meaningCategories[0];
-}
-
-function getColor(concept, meaning = null, index = 0) {
-  if (conceptState.colorMode === "concept") {
-    return CONCEPT_COLORS[concept.id] || MEANING_COLORS[index % MEANING_COLORS.length];
-  }
-  const meaningIndex = Math.max(0, concept.meaningCategories.findIndex((item) => item.id === meaning?.id));
-  return MEANING_COLORS[meaningIndex % MEANING_COLORS.length];
 }
 
 function findConceptRanges(text, concept) {

@@ -1,5 +1,5 @@
 const TRANS_TEXTS = [
-  { id: "dd", siglum: "DD", title: "Dadestan i Denig", file: "Dd.txt", englishFile: "DD-en.txt" },
+  { id: "dd", siglum: "DD", title: "Dadestan i Denig", file: "Dd.txt", englishFile: "DD-en.txt", persianTranslationFile: "dd2mahshid-persian-translations.json" },
   { id: "py", siglum: "PY", title: "Pahlavi Yasna", file: "PY-Pt4.txt", englishFile: "PY-en.txt" },
   { id: "wz", siglum: "WZ", title: "Wizidagiha i Zadspram", file: "WZ.txt", englishFile: "WZ-en.txt" },
   { id: "nm", siglum: "NM", title: "Namagiha i Manuscihr", file: "NM.txt", englishFile: "NM-en.txt" }
@@ -71,9 +71,10 @@ function syncQueryInput() {
 }
 
 async function loadTextBundle(config) {
-  const [mainRaw, englishRaw] = await Promise.all([
+  const [mainRaw, englishRaw, persianTranslations] = await Promise.all([
     fetchRequiredText(config.file),
-    fetchOptionalText(config.englishFile)
+    fetchOptionalText(config.englishFile),
+    fetchOptionalJson(config.persianTranslationFile)
   ]);
 
   const records = parseRecords(mainRaw);
@@ -83,7 +84,8 @@ async function loadTextBundle(config) {
   return {
     ...config,
     records,
-    englishByLocation
+    englishByLocation,
+    persianTranslations
   };
 }
 
@@ -96,11 +98,26 @@ async function fetchRequiredText(file) {
 }
 
 async function fetchOptionalText(file) {
+  if (!file) {
+    return "";
+  }
   try {
     const response = await fetch(file);
     return response.ok ? response.text() : "";
   } catch {
     return "";
+  }
+}
+
+async function fetchOptionalJson(file) {
+  if (!file) {
+    return {};
+  }
+  try {
+    const response = await fetch(file);
+    return response.ok ? response.json() : {};
+  } catch {
+    return {};
   }
 }
 
@@ -131,7 +148,12 @@ function renderReader() {
     </article>
     ${pageRecords.length ? `
       <div class="trans-list">
-        ${pageRecords.map((record) => renderTransParagraph(record, text.englishByLocation.get(record.location))).join("")}
+        ${pageRecords.map((record) => renderTransParagraph(
+          record,
+          text.englishByLocation.get(record.location),
+          getPersianTranslation(text, record.location),
+          query
+        )).join("")}
       </div>
     ` : `<div class="empty-state">No paragraphs found in ${escapeHtml(text.siglum)}.</div>`}
   `;
@@ -177,6 +199,77 @@ function normalizeSearchText(value) {
     .replace(/[γ]/gi, "g")
     .replace(/[θ]/gi, "t")
     .toLocaleLowerCase();
+}
+
+function normalizeSearchTextWithMap(value) {
+  let text = "";
+  const map = [];
+
+  Array.from(String(value)).forEach((char, index) => {
+    const normalized = normalizeSearchText(char);
+    Array.from(normalized).forEach((normalizedChar) => {
+      text += normalizedChar;
+      map.push(index);
+    });
+  });
+
+  return { text, map };
+}
+
+function highlightSearchTerms(value, query) {
+  const terms = tokenizeQuery(query);
+  if (!terms.length) {
+    return escapeHtml(value);
+  }
+
+  const folded = normalizeSearchTextWithMap(value);
+  const ranges = [];
+
+  terms.forEach((term) => {
+    let cursor = 0;
+    while (term && cursor < folded.text.length) {
+      const index = folded.text.indexOf(term, cursor);
+      if (index === -1) {
+        break;
+      }
+      ranges.push({
+        start: folded.map[index],
+        end: folded.map[index + term.length - 1] + 1
+      });
+      cursor = index + Math.max(1, term.length);
+    }
+  });
+
+  const merged = mergeHighlightRanges(ranges);
+  if (!merged.length) {
+    return escapeHtml(value);
+  }
+
+  let html = "";
+  let cursor = 0;
+  const text = String(value);
+  merged.forEach((range) => {
+    html += escapeHtml(text.slice(cursor, range.start));
+    html += `<strong class="trans-search-hit">${escapeHtml(text.slice(range.start, range.end))}</strong>`;
+    cursor = range.end;
+  });
+  html += escapeHtml(text.slice(cursor));
+  return html;
+}
+
+function mergeHighlightRanges(ranges) {
+  return ranges
+    .filter((range) => Number.isInteger(range.start) && Number.isInteger(range.end) && range.end > range.start)
+    .sort((a, b) => a.start - b.start || b.end - a.end)
+    .reduce((merged, range) => {
+      const previous = merged[merged.length - 1];
+      if (previous && range.start <= previous.end) {
+        previous.end = Math.max(previous.end, range.end);
+      } else {
+        merged.push({ ...range });
+      }
+      return merged;
+    }, []);
 }
 
 function renderPagination(pageCount) {
@@ -235,7 +328,16 @@ function updateActiveTransLinks(textId) {
   });
 }
 
-function renderTransParagraph(record, englishText = "") {
+function getPersianTranslation(text, location) {
+  const chapter = baseLocation(location).split(".", 1)[0];
+  return text.persianTranslations?.[chapter] || null;
+}
+
+function baseLocation(location) {
+  return String(location).trim().replace(/[a-z]+$/i, "");
+}
+
+function renderTransParagraph(record, englishText = "", persianTranslation = null, query = "") {
   return `
     <article class="trans-card">
       <div class="theme-hit-meta">
@@ -244,22 +346,32 @@ function renderTransParagraph(record, englishText = "") {
       <dl class="trans-entry-list">
         <div>
           <dt>Trans.</dt>
-          <dd>${escapeHtml(record.text)}</dd>
+          <dd>${highlightSearchTerms(record.text, query)}</dd>
         </div>
         <div>
           <dt>Eng. Transl.</dt>
           <dd>
             <details>
               <summary>Eng. Transl.</summary>
-              <p>${englishText ? escapeHtml(englishText) : "English translation will be added later."}</p>
+              <p>${englishText ? highlightSearchTerms(englishText, query) : "English translation will be added later."}</p>
             </details>
           </dd>
         </div>
         <div>
           <dt>Pers. Trans.</dt>
           <dd>
+            ${persianTranslation ? `
+              <details class="persian-translation">
+                <summary>Pers. Translation (OCR)</summary>
+                <p dir="rtl" lang="fa">${escapeHtml(persianTranslation.text || "")}</p>
+                <p class="translation-source-note" dir="ltr">
+                  ${escapeHtml(persianTranslation.source || "DD2Mahshid.PDF OCR")}
+                  ${persianTranslation.pdfPages?.length ? ` | PDF page(s): ${escapeHtml(persianTranslation.pdfPages.join(", "))}` : ""}
+                </p>
+              </details>
+            ` : ""}
             <details>
-              <summary>Pers. Trans.</summary>
+              <summary>Pers. Transcription</summary>
               <p dir="rtl" lang="fa">${escapeHtml(toArabicTranscription(record.text))}</p>
             </details>
           </dd>

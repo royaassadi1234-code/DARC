@@ -53,10 +53,10 @@ select {
 
 .site-logo {
   display: block;
-  width: clamp(116px, 14vw, 176px);
-  height: clamp(116px, 14vw, 176px);
-  max-width: 176px;
-  max-height: 176px;
+  width: clamp(174px, 21vw, 264px);
+  height: clamp(174px, 21vw, 264px);
+  max-width: 264px;
+  max-height: 264px;
   flex: 0 0 auto;
   aspect-ratio: 1 / 1;
   border-radius: 50%;

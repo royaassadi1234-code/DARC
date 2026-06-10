@@ -44,11 +44,32 @@ select {
 }
 
 .masthead {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: end;
-  justify-content: space-between;
-  gap: 20px;
+  gap: 18px;
   padding: 8px 2px 4px;
+}
+
+.site-logo {
+  display: block;
+  width: clamp(58px, 7vw, 88px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #f6efe0;
+  box-shadow: 0 10px 24px rgba(29, 43, 57, 0.14);
+}
+
+.site-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.masthead-title {
+  min-width: 0;
 }
 
 .header-actions {
@@ -1836,10 +1857,12 @@ mark.term-6 {
 
   .masthead {
     display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
     align-items: start;
   }
 
   .header-actions {
+    grid-column: 1 / -1;
     justify-items: start;
     width: 100%;
   }

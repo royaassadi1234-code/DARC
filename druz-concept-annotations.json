@@ -1,0 +1,2398 @@
+[
+  {
+    "id": "dd0.5a",
+    "location": "dd0.5a",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": [
+      "Ahreman",
+      "The corporeal wickedness"
+    ],
+    "actionsUsedWithIt": [
+      "kōxšišn"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [
+      "yazdān",
+      "weh-Dēn ī Mazdēsnān",
+      "ahlāyīh rāh"
+    ],
+    "realm": "gētīy",
+    "theme": ["confess to Dēn"],
+    "relatedTheme": [
+      "Fraškerd"
+    ],
+    "reviewStatus": "user seed",
+    "reviewNote": "",
+    "sourceParagraph": "amāh hamist kē yazdān bandag ud pad kōxšišn ī Druz ham-spāh pad āstawānīh ī abar weh-Dēn ī Mazdēsnān ham-estišn pad ēk ān ī ahlāyīh rāh ham-tuxšišn ō gāh ī andar ān ī pāšom axwān ham-ārzōg pad ayābišn ī ō ān pāšom axwān Fraškerd ham-ēmēd hēm ān-imān kām ī ham-wēnišnīh ud ham-pursagīh [TD4_169] čimīg u-š sāl"
+  },
+  {
+    "id": "dd0.8",
+    "location": "dd0.8",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": [
+      "Ahreman",
+      "The corporeal wickedness"
+    ],
+    "actionsUsedWithIt": [
+      "kōxšīdārīh",
+      "wišōbišn",
+      "zūrīh"
+    ],
+    "adjectivesDescriptions": [
+      "škeft",
+      "garān"
+    ],
+    "metaphors": [],
+    "oppositions": [
+      "yazdān",
+      "mowbedān",
+      "dādwarān",
+      "dēnīgan",
+      "dēnīgbedān",
+      "radān",
+      "dastwarān",
+      "hērbedān",
+      "mowmardān"
+    ],
+    "realm": "gētīy",
+    "theme": ["Improvement in the living condition of priests and other religious specialists"],
+    "relatedTheme": [
+      "Social context",
+      "Adapting religious history to the real life"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "čē abāg-iz škeft kōxšīdārīh ī Druz ud garān wišōbišn ud zūrīh ī ō dēnīgān mad estēd pas-iz pad yazdān xwābarīh nūn-iz radān mowbedān dastwarān dādwarān ud abārīg-iz dēnīgan ud dēnīgbedān ī kustag-kustag ud anīz hērbedān [TD4_170] ud mowmardān ī ōšmurd-mānsr ī dranǰēnīd-zand ī uskārd-dādestān ī āgāh-dēn ī nimūdār-čim ī wizīdār-kerbag pad čand gyāg hēnd kē pad-iz ōwōn dādestān šnāxtan ud dānistan ī rāh awiš-išān wišādag ∵"
+  },
+  {
+    "id": "dd0.12",
+    "location": "dd0.12",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+ 
+    "actionsUsedWithIt": [
+      "kōxšišnīh"
+    ],
+    "adjectivesDescriptions": ["škeft"],
+    "metaphors": [
+     
+    ],
+    "oppositions": ["Manušcihr"],
+    "realm": "gētīy",
+    "theme": ["why Manušcihr delayed answering the questions"],
+    "relatedTheme": [
+      "",
+      ""
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ān ī-tān wistāxīhā wistāxgarīhā abar drāz [K35_101v] nibištan pursišn ēn-iz nimūd kū passox pad hangām nibēsam [T60a_3v] ī-m andar pardazišn bawēd ud ān ī ašmāh pad hu-čihr-pursišnīh wistāxīh čimīgtar abar gōkānīg-passoxīh ud spōz-az-gāhīh kām ī taftīg čē spōz ayāb a-bowandagīhā- -pāsoxīh handāzīhēd ud az ān ī škeft kōxšišnīh ī Druz rāy aweštāb wizōyišnīg-menišnīh ud az ān ī a-wizīrišnīg frēzwānīg kār kam pardazišnīh ast ∵"
+  },
+  {
+    "id": "dd0.26",
+    "location": "dd0.26",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Needs review",
+    "actionsUsedWithIt": [
+      "nihānēnīdārīh"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [
+      "ahlāyīh"
+    ],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ka wehān gōhrān ud ēwēnag nigerīd wizīrēnīdār wazurg sūd xwēš xwēšīgān drīstīh ud drōdīh ud ahlāyīh ud paymōgīh ud Druz nihānēnīdārīh čē-m ašmāh kām kunišn man āgāhēnīdan framāyēd"
+  },
+  {
+    "id": "dd1.3",
+    "location": "dd1.3",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Ahreman",
+    "actionsUsedWithIt": [
+      "spōz",
+      "wān"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [
+      "army / warfare",
+      "darkness"
+    ],
+    "oppositions": [
+      "yazdān",
+      "Ohrmazd"
+    ],
+    "realm": "gētīy / mēnōy",
+    "theme": [],
+    "relatedTheme": [
+      "body",
+      "tan",
+      "dēn"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "harw 3 andar dāmān meh u-šān mehmānīh pad pahlomīgān mardān ašō’ān mēnōyīg pad ān ī abēzag frawahr mēnōy-waxšīhā ō Druz kōxšāg ud spōzāg wānāg ud ānābāg ud ān ī yazdān spāh zōrēnāg mēnōy xwadāyīh ī Ohrmazd gētīyīhā pad gētīy paymōgīh ud ham-bandīh ī tan ud gyān"
+  },
+  {
+    "id": "dd1.5",
+    "location": "dd1.5",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Ahreman",
+    "actionsUsedWithIt": [],
+    "adjectivesDescriptions": [],
+    "metaphors": [
+      "army / warfare",
+      "darkness"
+    ],
+    "oppositions": [
+      "Ohrmazd",
+      "dādār"
+    ],
+    "realm": "gētīy / mēnōy",
+    "theme": [],
+    "relatedTheme": [
+      "Fraškerd",
+      "rist-āxēz",
+      "resurrection",
+      "religion",
+      "dēn"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "u-šān handāxtār gētīyīg [TD4_177] xwadāy Ohrmazd winnārāg ud ān ī abēzag dēn winnārāg ud rawāgēnāg dādār ī weh ī abēzag stāyīdār ud Druz ōšīh-estišnīh framūdār ī pad rawāg-dahišnīh [K35_105r] ī ān ī Weh-dēnīg mānsr rasišn ī ān weh rist-āxēzēnišnīh ud Fraškerd-kerdārīh ham-ayārīh ud xwēšīg spās ud abar hamist gētīy dām sālār ud nigāh-dāštār ud rāyēnīdār ud meh ud abartar hēnd"
+  },
+  {
+    "id": "dd1.9",
+    "location": "dd1.9",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Ahreman",
+    "actionsUsedWithIt": [
+      "agārēnīdār"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [
+      "darkness"
+    ],
+    "oppositions": [
+      "yazdān",
+      "dādār",
+      "wehīh"
+    ],
+    "realm": "gētīy",
+    "theme": [],
+    "relatedTheme": [
+      "dēn"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "(ēk ahlaw Zardušt kē dēn) padīriftār ud yazdān pad [TD4_178] ān ī mēnōy nērōg abēzag- -stāyišnīhā [K35_105v] rāst yaštār ud Druz az ān ī gētīy- -kerbīhā gētīyīg-kārīh agārēnīdār ud dēn ī abēzag kē-š spurr-wehīh ī Spenāg mēnōy ud a-wehīh ī Gannāg Mēnōy ud ōš- -paydāgīh ud ānābišn ī Druz ud pērōzīh-frazāmīh ī dādār ud a-kanārag-rawišnīh ī dāmānīhā bawēd mahist burdār"
+  },
+  {
+    "id": "dd2.11",
+    "location": "dd2.11",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Needs review",
+    "actionsUsedWithIt": [
+      "kōxšišn",
+      "kōxšīdār"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [
+      "dādār"
+    ],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [
+      "kōxšišn"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "čiyōn paristišn ān ī dādār ī xwābar kē dōst ō xwēš dām kōxšišn ān ī abāg Druz ī kōxšīdār kē dušmen ō dahišn ī dādār [K35_107r]"
+  },
+  {
+    "id": "dd2.19",
+    "location": "dd2.19",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Ahreman",
+    "actionsUsedWithIt": [
+      "frēb"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [
+      "darkness"
+    ],
+    "oppositions": [
+      "dādār",
+      "wehīh"
+    ],
+    "realm": "gētīy",
+    "theme": [],
+    "relatedTheme": [],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "hangerdīgtar [TD4_184] pāsox ēd kū mard ī ašō dām ast kē-š grift ān xwēškārīh ī [D7_106] aw-iš āfurrīhist u-š andar gētīy pad nē frēbīhist ī hāzāngar Druz purr-pās pad wizīdārīh az xrad ān ī dādār kām kē xwad šnāyēnīdār ud šnāxtār ud ān ī wehīh šnāxtag rawāgēnīdār az čē awiš az-iš pahrēzīhīdār u-š ēdōn abāyēd būdan čiyōn-iš ān mehīh ud wehīh pad-iz mēnōy ōstīgāntar bawēd ∵"
+  },
+  {
+    "id": "dd6.2",
+    "location": "dd6.2",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Ahreman",
+    "actionsUsedWithIt": [],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [
+      "rāstīh",
+      "Ohrmazd",
+      "dādār",
+      "wehīh"
+    ],
+    "realm": "gētīy",
+    "theme": [],
+    "relatedTheme": [
+      "Fraškerd",
+      "tan"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "pāsox ēd kū pad-iz pāsox ī ham pursišn nibišt kū dām āfurīhist bē [D7_113] rāstīh ud kāmišngarīh ī dādār ud purr-wehīhā winnārdan ī ān ī a-kanārag nēk-rawišnīh ī dāmān kē-š bīm ud bēš čiyōn ast Fraškerd ī a-brādarōd ud ān winnārišn bawēd az spurr-pādixšāyīh ī dādār ud a-pādixšāyīh ī Druz"
+  },
+  {
+    "id": "dd15.7",
+    "location": "dd15.7",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "druzān"
+    ],
+    "meaning": "Ahreman",
+    "actionsUsedWithIt": [
+      "wān"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [],
+    "realm": "gētīy",
+    "theme": [],
+    "relatedTheme": [
+      "rist-āxēz",
+      "resurrection",
+      "body",
+      "tan",
+      "dēn"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ud az ān ayādēnišn ī rist-āxēz ud rafišn ud mēnōy ī tan [K35_118v] abārīg weh mēnōyān urwāhmenīh ud ēmēd ud dēwān druzān bīm bēš rasēd ∵"
+  },
+  {
+    "id": "dd18.6b",
+    "location": "dd18.6b",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Ahreman",
+    "actionsUsedWithIt": [
+      "wān",
+      "frēb"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [
+      "darkness"
+    ],
+    "oppositions": [
+      "Ohrmazd"
+    ],
+    "realm": "gētīy / mēnōy",
+    "theme": [],
+    "relatedTheme": [
+      "rist-āxēz",
+      "resurrection",
+      "body",
+      "tan",
+      "death",
+      "religion"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ud ān ī druwand pad frēbīhistan ī az Ahrimen [D7_137] waštan ī az Ohrmazdīg pand bišttar ud pašēmāntar bawēd zayišn ud āmurzišn handēšīhēd ud pattāyīh dast-grawīh ī-š pad xwēš dast-dahišnīh andar Druz mēnōy ān paywāzišn ī az xwābarān xwābartom rasēd [T60_24r] pad rist-āxēz zamānag ∵"
+  },
+  {
+    "id": "dd21.4",
+    "location": "dd21.4",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Needs review",
+    "actionsUsedWithIt": [
+      "wān",
+      "paywāzēd"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [
+      "dādār"
+    ],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "dādār wisp-tuwān paywāzēd ud ō Druz wānišn ō ahlawān šnāyišn ō ān ī weh [T60_26v] dāmān pānag ud frayādāg baxšēd"
+  },
+  {
+    "id": "dd26.2",
+    "location": "dd26.2",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "druzān"
+    ],
+    "meaning": "Ahreman",
+    "actionsUsedWithIt": [
+      "wān"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [
+      "darkness"
+    ],
+    "oppositions": [],
+    "realm": "gētīy / dōšox",
+    "theme": [],
+    "relatedTheme": [
+      "hell",
+      "dōšox"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "pāsox ēd kū frōdīg zofāyīg ud nigūnīg ud tārīktom ud gandagtom ud samgentom an-abēdāntom ud wattom gyāg [TD4_219] ud gilistag ī dēwan ud druzān"
+  },
+  {
+    "id": "dd30.7",
+    "location": "dd30.7",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Ahreman",
+    "actionsUsedWithIt": [
+      "wān"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [
+      "Ohrmazd"
+    ],
+    "realm": "mēnōy",
+    "theme": [],
+    "relatedTheme": [],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ud ān-iz †Druz ruwān čand-iš ī az ān ī Ohrmazd andar mēnōyīg sōhišn abyōzīhēd pad nimūdan ī az ān ī Ohrmazd urwāhmenīhēd az-iš"
+  },
+  {
+    "id": "dd31.5",
+    "location": "dd31.5",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Ahreman",
+    "actionsUsedWithIt": [
+      "frēb"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [
+      "darkness"
+    ],
+    "oppositions": [],
+    "realm": "gētīy / dōšox",
+    "theme": [],
+    "relatedTheme": [
+      "Fraškerd",
+      "dōšox",
+      "tan",
+      "dēn"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "u-š ham-handāzag zōr nērōg ī-šān az ān ī ōy wināh ǰād ān tā bē ō Fraškerd zamān an-āsānīhā dardēnēnd ud bēšišnēnēnd ud pad ān ī Wizarš nīdārīh a-kāmagīhā āyēd bē ō dōšox handēmānīhēd ō Druz ud Gannāy [K35_130v] ud pašēmānīhēd az frēbišn ī waranīgīhā- -kāmagīh ud az dōšox abāz-ayāstār ō gētīy [TD4_231] ud škeft ārzōg ō kerbag"
+  },
+  {
+    "id": "dd31.9",
+    "location": "dd31.9",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Ahreman",
+    "actionsUsedWithIt": [],
+    "adjectivesDescriptions": [],
+    "metaphors": [
+      "darkness"
+    ],
+    "oppositions": [],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "u-š wināh frāzag ān pādifrāh paywastag u-š ān pādifrāh az Druz mēnōy ī xwēš wināh ī pad ān ēwēnag ud handāzag abar rasēd ī-š āzārīd ud bēšīd ud ān ī wattar yašt ud stōd paristīd"
+  },
+  {
+    "id": "dd31.10a",
+    "location": "dd31.10a",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz",
+      "druzān"
+    ],
+    "meaning": "Ahreman",
+    "actionsUsedWithIt": [
+      "wān"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [],
+    "realm": "mēnōy",
+    "theme": [],
+    "relatedTheme": [
+      "Fraškerd"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "pad Fraškerd zamānag ka wānīhēd Druz ud ān ruwānān ī druwandān 3 rōz andar āhen ī widāxtag widārēnd ud hamāg druzān duš-menišnān ī-šān az ān wināh ud pad burrišn ud škennišn ī ān āmēxtagīh ī [D7_165] ān ī druwandān ruwān [TD4_232] wināh passazagīhā [K35_132r] dardīhēnd ud aweštābīhēnd 31.10b/13\tud pad ān ī abartom šōyišnīh ī pad ān ī widāxtag āhen bē yōǰdahrīhēnd az gast ud rēbag ud pad xwābarīh ud aboxšīdārīh ī xwābarān abartom [T60_38r] āmurzīhēnd ud az didom abēzagān bawēnd čiyōn pad hangōšīdag guft estēd kū abēzagān bawēnd 2 ēwēnag ēk ī an-ālūd ēk ī āsnūd"
+  },
+  {
+    "id": "dd32.5",
+    "location": "dd32.5",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "druzaskān"
+    ],
+    "meaning": "Demon / demonic being",
+    "actionsUsedWithIt": [
+      "wān"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [
+      "darkness"
+    ],
+    "oppositions": [],
+    "realm": "dōšox",
+    "theme": [],
+    "relatedTheme": [
+      "hell"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ēk druzaskān xwānīhēd ast pad bun ī ox ī tom kū dēwān kamālāg dwārēd ānōh hamāg tār ud hamāg anāgīh ābād mān"
+  },
+  {
+    "id": "dd36.4",
+    "location": "dd36.4",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Ahreman",
+    "actionsUsedWithIt": [
+      "wān",
+      "frēb",
+      "wišōbišn"
+    ],
+    "adjectivesDescriptions": [
+      "duš-āgāh",
+      "margēnāg",
+      "kēnēnāg",
+      "purr-kēn",
+      "wišōbāg",
+      "wanīgar"
+    ],
+    "metaphors": [
+      "darkness"
+    ],
+    "oppositions": [
+      "dādār",
+      "wehīh"
+    ],
+    "realm": "gētīy",
+    "theme": [],
+    "relatedTheme": [
+      "death",
+      "marg"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ōh-iz dādār ī [D7_173] dahišn dād [K35_135r] ān ī mēnōy dām abēzag ud an-āhōgēnīd ud ān-iz ī gētīyīg dām a-marg ud a-zarmān ud a-sōyišn ud a-pōyišn ud a-bēš ud a-dard tā ka čandīd andar tam dušdā Druz kē xrad (nē) rāst wizīngar nē wehīh ī spenāgīg bē ast-škennāg ud margēnāg ud duš-āgāh ud frēbāg ud purr-kēn ud wiyābānēnāg ud wišōbāg [T60_42r] ud nanggar ud wanīgar ud purr-arešk"
+  },
+  {
+    "id": "dd36.9",
+    "location": "dd36.9",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Needs review",
+    "actionsUsedWithIt": [
+      "wān"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "u-š az zūrag nigerišn pad Waran zūr-mihōxtagīhā framūd ī-š pad wanīy kerdan ī xwēš pērōzīh [T60_42v] windād šāyist andar drang-iz 9 hazangrōzim ān ī padiš wanīyīhēd xwad Druz"
+  },
+  {
+    "id": "dd36.10",
+    "location": "dd36.10",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Ahreman",
+    "actionsUsedWithIt": [
+      "wān"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [
+      "darkness"
+    ],
+    "oppositions": [
+      "Ohrmazd",
+      "dādār",
+      "rōšn"
+    ],
+    "realm": "gētīy",
+    "theme": [],
+    "relatedTheme": [
+      "tan"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ud ōy ī abartom [K35_135v] rōšnān xwadāyān xwadāytom ud mēnōyān mēnōytom ud wispagān Ohrmazd ī dādār kē-š ō harw čār tuwān ayāftag xwad tuwān būd pad andar nē hištan ōy Druz ō parwast ī rōšnān"
+  },
+  {
+    "id": "dd36.11a",
+    "location": "dd36.11a",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Needs review",
+    "actionsUsedWithIt": [
+      "kōxšišn",
+      "wān"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [
+      "darkness"
+    ],
+    "oppositions": [
+      "rōšn"
+    ],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [
+      "kōxšišn"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "u-š pad xwēš harwist-dānāgīh šnāxt [TD4_240] ān ī ōy Druz wattarīh menišn ud zūr-mihōxtīhā handēšišn ud āgāh būd pad xwēš ud xwēš-āgāhīhā ud ōy Druz ōšīh nē padīrēd [D7_176] ud ān ī spenāgīg framāyišn ān ristīhā dānišn 36.11b/11\tčē-š nēst ān ī wehīg gōhr ud ān ī abzōnīg xrad ud nē wardēd az rōšnīgān wimand ud wehīgān kōxšišn tā ka rasēd ō dām ud kōxšēd pad uzmān parwandīhēd andar asmān ud drōšīhēd [T60_43r] andar razmān"
+  },
+  {
+    "id": "dd36.11c",
+    "location": "dd36.11c",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "druxtārīh"
+    ],
+    "meaning": "Falsehood / deceit",
+    "actionsUsedWithIt": [
+      "wān",
+      "frēb"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [
+      "weapon / armor",
+      "darkness"
+    ],
+    "oppositions": [],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ud dardīhēd purr-paymān ud uzmānīhēd spurr-sāmān u-š wišōbīhēd abzārān ud ānābīhēd zōr ī <’nylmnyh> ud wanīyīhēd zēn ī druxtārīh ud abesīhēd čār ī frēbāgīh"
+  },
+  {
+    "id": "dd36.12",
+    "location": "dd36.12",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Ahreman",
+    "actionsUsedWithIt": [
+      "kōxšišn",
+      "zanišn",
+      "drōzišn"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [
+      "dādār",
+      "rōšn"
+    ],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [
+      "resurrection",
+      "kōxšišn"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ud ham wispīn dādār ka-š andar nē hišt Ahrimen rōšnān ranǰ a-kanārag-zamānīhā estād [D7_177] Druz pad handēmānīh ō wimandīgān pad andar [K35_136r] nē hilišnīh ǰāwēdān- [TD4_241] -ranǰīhā ō dāmān hamēyīg Druz handēmānīh hamēšag-pīmīhā ā-š sahist"
+  },
+  {
+    "id": "dd36.13a",
+    "location": "dd36.13a",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Needs review",
+    "actionsUsedWithIt": [
+      "kōxšišn"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [
+      "rāstīh",
+      "rōšn"
+    ],
+    "realm": "gētīy",
+    "theme": [],
+    "relatedTheme": [
+      "tan",
+      "kōxšišn"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "u-š pēš-kōxšišn-iz ī Druz ka-š ahan ō rōšnān nē kōxšīd ud zadan ī ka-š rōšnān nē zad ud [T60_43v] tōzēnīdan ī pēš az wināh ud kēnēnīdan ī pēš az kēn ō rāstīh ud dādestānīgīh kē-š a-wardišnīg nām ud xwābarīh ud a-kēnīh kē-š ōstīgān čihr ast nē hamāg hangārd"
+  },
+  {
+    "id": "dd36.13b",
+    "location": "dd36.13b",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Ahreman",
+    "actionsUsedWithIt": [
+      "kōxšišn",
+      "kōxšīdār",
+      "zanišn",
+      "drōzišn"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [
+      "army / warfare",
+      "darkness"
+    ],
+    "oppositions": [
+      "Ohrmazd",
+      "rōšn"
+    ],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [
+      "kōxšišn"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ō ān ī pēš-kōxšīdār Druz pas az drōzišn ud kōxšišn zanišn ī rōšnīgān dādīg abāz-dārišnīh ī az rōšnān zadārīh rāy abarwēzīh ī xwēš spāh kōxšišn ud ān ī zanišn-arzānīg zadār abāz-zanišnīh ud ān ī kēnēnīdār kēnīg abāz-kēnišnīh ān ī xwēš gāh Ēbgad [D7_178] abāz ān ī an-ērmanīg wattarīh ud a-kārēnišnīh framūd 36.13c/19\tud Spenāg-kārīhā dīd ī-š pad ān ī Ohrmazdīg xrad ān ī mēnōyīg xrad andar ān ī brīnōmand zamānag ud ān ī kanāragōmand gāh ud ān ī sāmānōmand razm ud ān ī paymānīg ranǰ ān ī frazāmōmand kār padīrag Druz ī a-dād-kōxšīdār dādag kōšīd"
+  },
+  {
+    "id": "dd36.13d",
+    "location": "dd36.13d",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Needs review",
+    "actionsUsedWithIt": [],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [],
+    "realm": "gētīy",
+    "theme": [],
+    "relatedTheme": [
+      "tan"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ud andar saxt āsmān [T60_44r] zēndānīg [K35_136v] parwastan tā [TD4_242] purr-dardīhā ud spurr-uzmūdīhā bērōn abāz nē hilēnd pad ān brīn zamān ī ān Druz zūr-mihōxtīhā pērōzīh framūd"
+  },
+  {
+    "id": "dd36.15",
+    "location": "dd36.15",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Ahreman",
+    "actionsUsedWithIt": [
+      "wān"
+    ],
+    "adjectivesDescriptions": [
+      "purr-wattarīh"
+    ],
+    "metaphors": [
+      "darkness"
+    ],
+    "oppositions": [
+      "rōšn"
+    ],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "u-š baxt nēk-kerd āsmān pad 3 srišwadag ī ēk pad [D7_181] ulīh paywast ō ān ī a-sar-rōšnīh kē ān ī hamēšag-sūd ganǰ andar ud ēk [TD4_244] pad frōdīh ayāft ō ān ī zofāy tom kē ōy purr-wattarīh Druz andar [K35_137v] ud ēk mayān ī ān 2 srišwadag ēr ud abar az-iš"
+  },
+  {
+    "id": "dd36.18a",
+    "location": "dd36.18a",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Needs review",
+    "actionsUsedWithIt": [],
+    "adjectivesDescriptions": [],
+    "metaphors": [
+      "darkness"
+    ],
+    "oppositions": [
+      "wehīh"
+    ],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "u-š ō ān ī ērtom srišwadag ī āsmān pad ān yazdīg warz xwarrah wizārēnīd ǰuttarīh ud pad radīh kū tā Druz ī a-wehīh rasēd ud ān srišwadag purr-tār ud purr-dēw kunēd [TD4_245]"
+  },
+  {
+    "id": "dd36.18b",
+    "location": "dd36.18b",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Demon / demonic being",
+    "actionsUsedWithIt": [
+      "wān"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [
+      "darkness"
+    ],
+    "oppositions": [
+      "rōšn"
+    ],
+    "realm": "mēnōy",
+    "theme": [],
+    "relatedTheme": [],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ud škeft andar ān saxtīh ka [T60_36r back to 31.1] hazangrōzim [K35_138r] bawēd zēndān ī pōzēnag [T60_46r] ristag ī dēwān ān-iz ī druwandān kē dēw frēft ud az razm wirēxt pad wināh āsterīd bawēnd ud pattūgīhād andar 36.18c/29\tbē nē hilišn Druz az parwastār ī rōšnān tā zamān ī brīn ka spurrīhēd ān ī dēwān pādifrāh ud ān ī druwandān pašēmānīh"
+  },
+  {
+    "id": "dd36.26d",
+    "location": "dd36.26d",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Needs review",
+    "actionsUsedWithIt": [
+      "wān"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [
+      "dādār"
+    ],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [
+      "dēn"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ud ān ī mānsrīg čiyōn Ōšīdar ud ān ī dādīg čiyōn Ōšīdarmāh ∵ ud ān ī gāhānīg frazāmīg čiyōn Sōšāns 36.26e/37\tandarg awēšān wasān warzāwandān xwarrah-kārān dēn-burdārān weh-rāyēnīdārān kē āzwar ō wānišn ī Druz/drōzan ud kāmišn ī dādār"
+  },
+  {
+    "id": "dd36.31",
+    "location": "dd36.31",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz",
+      "druzān"
+    ],
+    "meaning": "Ahreman",
+    "actionsUsedWithIt": [
+      "kōxšīdār",
+      "wān",
+      "frēb"
+    ],
+    "adjectivesDescriptions": [
+      "ganāg"
+    ],
+    "metaphors": [
+      "weapon / armor",
+      "darkness"
+    ],
+    "oppositions": [
+      "Ohrmazd",
+      "wehīh"
+    ],
+    "realm": "gētīy",
+    "theme": [],
+    "relatedTheme": [
+      "tan"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ud ka ōy ī wisp-wehīh wisp-āgāh ārāst būd abzārān ī padīrag Druz čiyōn [T60_48v] spar ō-šān mad [K35_139v end] ān Druz ī frēbāg- [D7_188] -gōhrag ud ganāg ud dwārāg ud anāg-kām ud pēš-kōxšīdār abāg Akōman ud Xešm ud Zarmān Būšāsp ud niyāzēnāg tangīh ud But Baxt Wāy ud Waran ud Astwihād ud Wizariš dēw ud hamist Māzandarān a-mar dēwān ud druzān u-š tār tom ud waγ gazdum <wyyp̄l> spiš ud wiš ud zahr ud hammistīhā wināhišn andar ān ī ēr srišwadag"
+  },
+  {
+    "id": "dd36.36",
+    "location": "dd36.36",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Ahreman",
+    "actionsUsedWithIt": [
+      "wān"
+    ],
+    "adjectivesDescriptions": [
+      "tamīg-gōhr"
+    ],
+    "metaphors": [
+      "darkness"
+    ],
+    "oppositions": [],
+    "realm": "gētīy / mēnōy",
+    "theme": [],
+    "relatedTheme": [
+      "tan",
+      "death",
+      "marg"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "u-š nē būd ādūgīh ēč dēw ud Druz nē-iz ōy-iz dēwān dēw mazantom pad ēč gurdīh tar ān wimand ul dwāristan ∵ abāz kaft hēnd"
+  },
+  {
+    "id": "dd36.37",
+    "location": "dd36.37",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Ahreman",
+    "actionsUsedWithIt": [
+      "wān"
+    ],
+    "adjectivesDescriptions": [
+      "tamīg-gōhr"
+    ],
+    "metaphors": [
+      "weapon / armor",
+      "darkness"
+    ],
+    "oppositions": [
+      "yazdān",
+      "rōšn"
+    ],
+    "realm": "gētīy / mēnōy",
+    "theme": [],
+    "relatedTheme": [
+      "tan",
+      "death",
+      "marg"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "nūn ka nē ayāft az tamīg-gōhr Druz ud tār- -tohmagān dēwān abēzag mēnōyān yazdān rōšn Garōdmān gāh ī-š framūd pad zūrag mihōxt pērōzīh ī xwarrah gētīy dām pad 2 zay ēk abesīhēnīd ī zīndagān pad margīh zōr ud ēk dastgraw kerdan ī ruwānān pad druwandīh rāh"
+  },
+  {
+    "id": "dd36.43",
+    "location": "dd36.43",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "druzān"
+    ],
+    "meaning": "Ahreman",
+    "actionsUsedWithIt": [
+      "wān"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [
+      "marg"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "u-š kirrēnīd ō abārīgān-iz ēwēnag ēwēnag dāmān petyāragīh frahīdān dēwān druzān [D7_192]"
+  },
+  {
+    "id": "dd36.45",
+    "location": "dd36.45",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "druzān"
+    ],
+    "meaning": "Ahreman",
+    "actionsUsedWithIt": [
+      "kōxšišn",
+      "wān"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [
+      "army / warfare",
+      "darkness"
+    ],
+    "oppositions": [
+      "yazdān",
+      "Ohrmazd",
+      "rōšn"
+    ],
+    "realm": "gētīy / mēnōy",
+    "theme": [],
+    "relatedTheme": [
+      "tan",
+      "marg",
+      "religion",
+      "kōxšišn"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ud awēšān dēwān kamālīg ud māzanīgān dēwān hamist druzān a-dādestānīhā ud pēš-rawišnīhā ud pēš-ǰōyīhā ud nē pad sūd frayād ī xwēš bē pad a-sazāg kēn ud an-ēwēn arešk wizārdan wizāy ud an-abāyišnīg kām ī abar rōšnān abesīhēnišn škeft <yyzšn'> kōxšišn kōxšēnd ō wehān dāmān ī yazdān [D7_193]"
+  },
+  {
+    "id": "dd36.46",
+    "location": "dd36.46",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Demon / demonic being",
+    "actionsUsedWithIt": [
+      "kōxšišn",
+      "wān"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [
+      "army / warfare"
+    ],
+    "oppositions": [
+      "yazdān"
+    ],
+    "realm": "gētīy",
+    "theme": [],
+    "relatedTheme": [
+      "tan",
+      "kōxšišn"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ud ān ī yazdān spāh [T60_51r] dādestānōmandīhā ud pas-kōxšišnīhā ud nē pad pēš-kēnīh ud pēš-wizāyīh bē pad xwēš ziyān abāz-dārišnīh ud gundagān az kēn-wizūdārīh gurdīhā ud amāwandīhā frārōnīhā ud spurr-abarwēzīhā pērōzīh-abarwēzīhā kōxšēd [K35_143r] ud kōxšēnd ō Ahrimen ud dēwān tā frazām-kōxšišnān pērōzīh ī wehīgān ka wanīyīhēd Druz ud abēzagīhēd dām"
+  },
+  {
+    "id": "dd36.47",
+    "location": "dd36.47",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "druzān"
+    ],
+    "meaning": "Ahreman",
+    "actionsUsedWithIt": [
+      "kōxšišn"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [
+      "darkness"
+    ],
+    "oppositions": [],
+    "realm": "gētīy",
+    "theme": [],
+    "relatedTheme": [
+      "tan",
+      "kōxšišn"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ud čiyōn gētīyan andar gētīy ān ī mēnōyān kār ud ristag šnāxtan [TD4_254] az rāst nigerišn ī pad xrad ān ī <zyk'> šāyēd ī ka pad hangōšīdag ī rāst zōr ī xrad ān ī wēnābdāg ud <zyk> a-wēnābdāg az ān ī mad ud ān ī pahrist nigerēnd šnāsēnd paydāgēnēnd ōwōn frazām-iz ī ham-kōxšišn dānišn-gugāhīhā ēwar-paydāgīhā dīdārīg daxšag wēnābdāg ud nišān ī āškārag kē ō xrad ī [T60_51v&D7_194] pēšēnīgān agar ōh-iz dānišn ī abar ēd abartom dar frahīd nihuft druzān ī nihuftār az ayābišn ī gētīyan az-iz ī mad ō gētīyan ayābišn"
+  },
+  {
+    "id": "dd36.49",
+    "location": "dd36.49",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Needs review",
+    "actionsUsedWithIt": [
+      "wān"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [
+      "army / warfare"
+    ],
+    "oppositions": [
+      "yazdān",
+      "dādār",
+      "rōšn"
+    ],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "pas rōšn [TD4_255] paydāg zōrīh ī ān Druz andar amāh ēr ud ān ī dādār payrāst-rāhīh ī-š ō wanīy-būdagīh ud a-kārīh ud ēdōn-iz [K35_143v] purr-nērōgīh ī spāh ī yazdān [D7_195] ēwarīgīhā frazām- [T60_52r] -pērōzīh ī wehīgān dādār ud wisp-tuwānīhā spurrēnīdan ī-š bar ī xwēš wisp ud dahišn pad hamēyīg bowandag nēk-rawišnīh ī-š āfrīdagān pad-iš dīdārīg ud paydāg was daxšag ud nišān az-iš paydāgīhā rōšn"
+  },
+  {
+    "id": "dd36.50",
+    "location": "dd36.50",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Needs review",
+    "actionsUsedWithIt": [],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [
+      "dādār"
+    ],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ēk ēn kū dādār xwēš māništīg bagdādag ud Druz abar-rasišnīg andar-dwārīdag u-š abar-rasišnīh ō ānābišnīh daxšag ∵"
+  },
+  {
+    "id": "dd36.51",
+    "location": "dd36.51",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Ahreman",
+    "actionsUsedWithIt": [
+      "wān"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [
+      "Ohrmazd"
+    ],
+    "realm": "gētīy",
+    "theme": [],
+    "relatedTheme": [],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ēk (ēn) kū dām ī Ohrmazd mēnōy ud gētīy-iz ōy Druz nēst gētīy bē wad-mēnōyīh abyōzēd ō gētīy čiyōn andar hāwand-iš čēr ā-iz andar ēk ōwōn abarwēzīh paydāg ī mēnōyān gētīyān ī weh abar mēnōyān ī wad ∵"
+  },
+  {
+    "id": "dd36.52",
+    "location": "dd36.52",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Needs review",
+    "actionsUsedWithIt": [
+      "kōxšišn",
+      "kōxšīdār"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [
+      "army / warfare"
+    ],
+    "oppositions": [
+      "Ohrmazd"
+    ],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [
+      "kōxšišn"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ēk ēn kū-š az kōxšīdārīh pēš-zadārīh paydāg-zadīh ī pad frazām čē Druz a-dād-kōxšišnīh pēš-zadār ud ān ī [D7_196] Ohrmazd spāh pasīhā dādīg/yazdīg abāz- [T60_52v] -zadār-škenn"
+  },
+  {
+    "id": "dd36.53",
+    "location": "dd36.53",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Needs review",
+    "actionsUsedWithIt": [
+      "wān"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [
+      "army / warfare"
+    ],
+    "oppositions": [
+      "dādār"
+    ],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ān ī ka zūr Druz andar dast ī dādār bē agar-iz [TD4_256] hāwand-spāh ud hāwand-nērōg hē agar-iz harw ǰār ī dāmān zanēd ēk ǰār hāwandīhā dādīg/yazdīg abāz zanīhist ēwarīgīhā az-iš paydāgīhēd kū ka-šān zadārīh zadagīh ud āgenēn hāwandīh fradom ōy ī pēš-dast-zadārīh ud pas-kōxš zadag būd abdom ōy ī pas-kōxš zadār ud ān ī pēš-kōxš zadag bawēd ∵ [K35_144r] čē ka pēš-pahikār zanēd zanīhēd pas-pahikār abāz u-š dušmen zadag bawēd ∵"
+  },
+  {
+    "id": "dd36.57",
+    "location": "dd36.57",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Needs review",
+    "actionsUsedWithIt": [
+      "wān"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [
+      "yazdān"
+    ],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [
+      "marg"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ēk ēn kū pēš- [D7_198] -wanīyīh ī Druz rāy wēmārīh ud margīh bē ō [T60_53v] dām ī yazdān pēš mad ud ka Druz dwārist u-š wēmārēnīd axwān ī mardōmān u-š marnǰēnīd ud margēnīd zahag ī gōspandan"
+  },
+  {
+    "id": "dd36.59",
+    "location": "dd36.59",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "druzān"
+    ],
+    "meaning": "Demon / demonic being",
+    "actionsUsedWithIt": [
+      "wān"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [
+      "darkness"
+    ],
+    "oppositions": [
+      "yazdān"
+    ],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [
+      "marg"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "čiyōn-iš hangōšīdag ast wazurg bēšazišnīh bē ō dām ī yazdān paywandēd pad ham-winnārag rāst-tarāzūgīhā rasēd pad frazām bē ō druzān wēmārīh ī garān margīh ī spurr ud ō dām ī yazdān bēšazišnīh ud zīndagīh ī xwad"
+  },
+  {
+    "id": "dd36.61",
+    "location": "dd36.61",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Needs review",
+    "actionsUsedWithIt": [
+      "kōxšīdār"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [
+      "darkness"
+    ],
+    "oppositions": [
+      "Ohrmazd",
+      "dādār"
+    ],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ēk ēn kū Ohrmazd ī dādār rāyēnīdār pad xrad ī harwisp-āgāh ud Druz ī tar-nigerišn kōxšīdārīh pad Waran ī a-rāh"
+  },
+  {
+    "id": "dd36.63",
+    "location": "dd36.63",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Needs review",
+    "actionsUsedWithIt": [
+      "kōxšišn",
+      "kōxšīdār"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [
+      "darkness"
+    ],
+    "oppositions": [],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [
+      "kōxšišn"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ud was zōr ast ān ī Druz kōxšīdārīh čiyōn ∵ was-wardišnīh ī kāmag kē xwad-iz dām ō kām hamēstār ud pad ān ī an-āgenēn-zōrīh ud wiškīd-nērōgīh kōxšišnīg zōr ī-š ānāft-zōrīh tāšēd ∵ [D7_200]"
+  },
+  {
+    "id": "dd36.64",
+    "location": "dd36.64",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz",
+      "druzīh"
+    ],
+    "meaning": "Needs review",
+    "actionsUsedWithIt": [
+      "kōxšišn",
+      "kōxšīdār"
+    ],
+    "adjectivesDescriptions": [
+      "duš-āgāh"
+    ],
+    "metaphors": [],
+    "oppositions": [],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [
+      "kōxšišn"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ēk ēn kū duš-āgāhīhā-kōxšīdārīh ī Druz rāy kadāmag-ōzīhā kōxšišn ō xwēš [T60_54v] druzīh ziyānīh [K35_145r] passāxtag ud pašēmānīh ud wad-frazāmīh az-iš dīdārīg"
+  },
+  {
+    "id": "dd36.65",
+    "location": "dd36.65",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Ahreman",
+    "actionsUsedWithIt": [
+      "wān"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [
+      "darkness"
+    ],
+    "oppositions": [],
+    "realm": "gētīy / mēnōy",
+    "theme": [],
+    "relatedTheme": [
+      "marg"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ud čiyōn samgentar petyārag ī-š ō gētīy [TD4_259] dām handāxt pad margēnīdan ī zīndagān kē-š framūd pad zūr ud ēmēd kū mahist pērōzīh ast ān-iz ud ān ī ō ham Druz ōwōn xwad-ziyānīhā kū ka ān ī druwand margēnēd ān ī druwand ī-š kāmišngar ān kāmišngarīh warzišn ī wināh agārīhēd ō ānōh šawēd kū az ān frēftagīh pašēmānīhēd ān ī dēw ī wināh mēnōy kē ruwān ī ān druwand"
+  },
+  {
+    "id": "dd36.69a",
+    "location": "dd36.69a",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Ahreman",
+    "actionsUsedWithIt": [
+      "kōxšīdār",
+      "wān"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [
+      "marg"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ud nē ayāft Druz bē ō [K35_145v] awēšān ān ī ∵ awēšān frazend ud āwādag pad margīh tā ka abzūd abar [D7_202] marg ī zīndagān az ān awēšān frazend paywand ōwōn kū abāg a-paymān marnǰēnīdārīh ī purr-marg Gannāg Mēnōy ud ānāst-kōxšīdārīh ī-š [T60_55v] pad marg ud margēnīdār"
+  },
+  {
+    "id": "dd36.69b",
+    "location": "dd36.69b",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Needs review",
+    "actionsUsedWithIt": [],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [
+      "dādār",
+      "rōšn"
+    ],
+    "realm": "gētīy",
+    "theme": [],
+    "relatedTheme": [
+      "tan",
+      "marg"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "pas-iz zāyišn az margīh ud and pēš andar uzīd zamānag ud and wēš kū az ān ī 2 tanān 1000-ān bēwarān bār ud widurd ōšmār az mar sāmānēnīd ud zīndagān mardōmān andar gētīy ēdōn weh dīdārīg čand Druz pad margīh ō abesīhēnīdan kōxšāg zōr ī dādār abzōnīgīh rōšn paydāg ∵"
+  },
+  {
+    "id": "dd36.79b",
+    "location": "dd36.79b",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Needs review",
+    "actionsUsedWithIt": [
+      "wišōbišn"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [
+      "yazdān",
+      "weh-Dēn ī Mazdēsnān",
+      "rāstīh"
+    ],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [
+      "dēn"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ud frārōn gāh ī yazdān pad rāstīh zōr ham-nērōg pad-iš spurr pattāyēd nērōgīhēd abēzag Weh-dēn ī mazdesnān [T60_57r] xwad ō xwad ud wišōbīhēd ud agārēnīd <hm w’š y’t'> Druz čiyōn wēnīhēd abarwēz-ōstīgānīh ī abar-wardišnīgīh ud pērōzīh ī ham-nērōgān abar wiškīd-zōrān frazām-wišōbišnīh xwadīh-wišōbišn ∵"
+  },
+  {
+    "id": "dd36.84",
+    "location": "dd36.84",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz",
+      "druzīh"
+    ],
+    "meaning": "Needs review",
+    "actionsUsedWithIt": [
+      "wān"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [
+      "yazdān"
+    ],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [
+      "dēn"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ēk ēn kū ka ān ī duš-dēn Dahāg kē-š was-ōztom dēw ud Druz pad az-kerb abar frēg ast az band ī Frēdōn rahēd ud pad ǰādūgīh dēw bē ō gēhān marnǰēnīdār estēd ēk mard ī tagīg az rist pēš ul hangēzīhēd xwānīhēd Sāmān Kersāsp ī pad ēk gad ī [TD4_264] gāwsar ān druzīh škennēd pad ān ī [D7_207] frārōn bīm ān Dahāg ō dād ud ristag ī yazdān ānayēd ∵"
+  },
+  {
+    "id": "dd36.86a",
+    "location": "dd36.86a",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Needs review",
+    "actionsUsedWithIt": [],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [
+      "dādār"
+    ],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ēk ēn kū gumēzag razmīh ī gumēzag ast xwarrahōmand ud dahišn ī dādār ī pāyīhēd pad abēzagīh ka nē ayāft Druz ō wināhišn"
+  },
+  {
+    "id": "dd36.89",
+    "location": "dd36.89",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "druzān"
+    ],
+    "meaning": "Demon / demonic being",
+    "actionsUsedWithIt": [
+      "kōxšišn",
+      "kōxšīdār",
+      "wān"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [],
+    "realm": "mēnōy",
+    "theme": [],
+    "relatedTheme": [
+      "kōxšišn"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ud xurdruš Xešm čiyōn nē ayābēd ō kōxšēnīd ī ahlawān abganēd an-āštīh kōxšišn mayān ī druwandān ka nē ayābēd ō ān-iz ī druwandān [D7_209] kōxšīdārīh kōxšēnēd dēwān druzān āgenēn"
+  },
+  {
+    "id": "dd36.91",
+    "location": "dd36.91",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "druzān"
+    ],
+    "meaning": "Demon / demonic being",
+    "actionsUsedWithIt": [
+      "wān"
+    ],
+    "adjectivesDescriptions": [
+      "margēnāg"
+    ],
+    "metaphors": [
+      "weapon / armor"
+    ],
+    "oppositions": [
+      "yazdān"
+    ],
+    "realm": "mēnōy",
+    "theme": [],
+    "relatedTheme": [
+      "marg"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ēdōn-iz margēnāg Astwihād ī hamē ǰud-kerdār ka nē ahlaw margōmand nē-iz andar yazdān dāmān ān ī druwand mīrāg nixwārēd ō druzān pad margīh ī [TD4_266] xwad ast ǰud-garīh ī ham zōrān abzārān ∵"
+  },
+  {
+    "id": "dd36.94",
+    "location": "dd36.94",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Falsehood / deceit",
+    "actionsUsedWithIt": [
+      "wān",
+      "frēb"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [],
+    "realm": "mēnōy / dōšox",
+    "theme": [],
+    "relatedTheme": [
+      "dōšox",
+      "dēn"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ud spurr mad ō dōšox ruwān ī druwandān kē pašēmān az frēbišn ān hamist zōr ī zadārīh ud dardēnīdārīh ud kōxšēnīdārīh ud wanīdārīh ī čihrag ast ō dēw abar xwad dēw ud Druz abāz wardēd xwad ō xwad kōxšēnd ud zanēnd ud darrēnd ud darrēnd wišōbēnd tā ka andar dōšox frāy bawēnd"
+  },
+  {
+    "id": "dd36.96b",
+    "location": "dd36.96b",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Needs review",
+    "actionsUsedWithIt": [],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "kē-š wināhān ī az Druz rōz 3 ēdōn wiškīd wēzēnīhist ī āmēxtag-wināhān čiyōn burrišn taštīhēnd ud gardīhēnd wināh"
+  },
+  {
+    "id": "dd36.97",
+    "location": "dd36.97",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Needs review",
+    "actionsUsedWithIt": [
+      "wān"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [
+      "darkness"
+    ],
+    "oppositions": [
+      "dādār",
+      "rōšn"
+    ],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ud a-kārīh ī wišuftār Druz rāy pad ān ī rōšn sōhišn ī-šān dādār būd wispān ō wispān wēnēnd wispān āmurzēnd ud wispān wispān rāy ō dādār paywandīhēnd"
+  },
+  {
+    "id": "dd36.99a",
+    "location": "dd36.99a",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Needs review",
+    "actionsUsedWithIt": [
+      "wān"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [
+      "yazdān",
+      "dādār"
+    ],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ud Druz pad ān ī xwēš zēn ud pad ān ī xwēš rānišn ān ī xwēš [D7_212] kōxšēnīdārīh ud ān ī dādār [TD4_268] xwarrah ud ān ī yazdān pērōzīhēnd čē nēst bawēd andar čār nēst bawānd ud hamist arwēsīhēnd aweštābīhēnd ud ānābīhēnd"
+  },
+  {
+    "id": "dd36.99c",
+    "location": "dd36.99c",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "druzīh"
+    ],
+    "meaning": "Needs review",
+    "actionsUsedWithIt": [
+      "wān"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [
+      "darkness"
+    ],
+    "oppositions": [
+      "rōšn"
+    ],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ud ēd čē stardīhā ud a-kārīhā ud a-ǰumbāgīhā mānāg ō stī ī čihrīg wizandišn ī nigān abar nē ādūg ud abar hāwandīh kām čandišnīh [T60_60v] bērōn abganīhēnd ud ēč bahr ud bahrān bahr ī az druzīh ud tā-iz čand xwurdag ī a-baxšišn andar ēn rōšnīh parwast az druzīh nē mānēd"
+  },
+  {
+    "id": "dd36.101a",
+    "location": "dd36.101a",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Falsehood / deceit",
+    "actionsUsedWithIt": [
+      "kōxšišn",
+      "wān",
+      "drōzišn",
+      "frēb"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [],
+    "realm": "mēnōy / dōšox",
+    "theme": [],
+    "relatedTheme": [
+      "Fraškerd",
+      "dōšox",
+      "dēn",
+      "kōxšišn"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "pas az Fraškerd nē bawēd dēw čē nē bawēd [K35_149v] frēb ud nē Druz čē nēst drōzišn [D7_214] nē bawēd angraman čē nēst zadārīh nē bawēd dōšox čē nēst druwandīh nē bawēd kōxšišn čē nēst Xešm ud nē bawēd kēn čē nēst wizāy ud nē bawēd dard čē nēst wēmārīh nē bawēd čēhāg čē nēst bīm nē bawēd niyāz čē nēst Āz nē bawēd šarm čē nēst zištīh ud nē bawēd drōw čē nēst drōw-kām nē bawēd ag-dēnīh čē nēst drōw-gōwišnīh"
+  },
+  {
+    "id": "dd36.103a",
+    "location": "dd36.103a",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Needs review",
+    "actionsUsedWithIt": [],
+    "adjectivesDescriptions": [],
+    "metaphors": [
+      "weapon / armor"
+    ],
+    "oppositions": [],
+    "realm": "gētīy",
+    "theme": [],
+    "relatedTheme": [
+      "tan"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ān ī nōg ka must ō tan pahikōbišn ayāb tēx burrāg bē ō handām zanīhēd āmēxtagīh ī ǰud-gōhr Druz andar tan ō abzārān rāy ud burrišn rēš zāyēd"
+  },
+  {
+    "id": "dd38.16",
+    "location": "dd38.16",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz",
+      "druzān"
+    ],
+    "meaning": "Demon / demonic being",
+    "actionsUsedWithIt": [
+      "wān"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [
+      "darkness"
+    ],
+    "oppositions": [],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [
+      "Fraškerd",
+      "dēn"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "tarsīd harwisp dēw ud Druz az wazurg xwarrah ī [T60_66r] dēn guft kū pad ōšmurišn warzišn rawāg-dahišnīh ī ham ristag ī frazānag dēn hamāgān druzān ānābīhēd Fraškerd pad kāmag ī axwān dahīhed"
+  },
+  {
+    "id": "dd38.17",
+    "location": "dd38.17",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "druzān"
+    ],
+    "meaning": "Demon / demonic being",
+    "actionsUsedWithIt": [
+      "wān"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [
+      "darkness"
+    ],
+    "oppositions": [],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ān-iz tars rāy ēč az dēwān druzān mazantom az dēwān nē dwārīd ō sāmān ī ān ī abartom srišwadag ī pad abēzagīh an-Ēbgadīh"
+  },
+  {
+    "id": "dd38.19",
+    "location": "dd38.19",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Falsehood / deceit",
+    "actionsUsedWithIt": [
+      "wān",
+      "frēb"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [
+      "darkness"
+    ],
+    "oppositions": [
+      "Ohrmazd"
+    ],
+    "realm": "gētīy",
+    "theme": [],
+    "relatedTheme": [
+      "marg"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ēn kū Jam ī šēd ī Wīwanghān kē andar gētīy-rawišnīh pad ān ī [D7_225] gētīyīg kār purr-farroxtom ud wispān kišwarān seǰ margīh abāz-dāštār a-zarmānīh ud a-margīh būd winnārdār ka az Druz frēbīhist u-š [K35_153r] az Ohrmazd bandagīh bē ō abartom xwadāyīh ārzōgēnīd"
+  },
+  {
+    "id": "dd38.30",
+    "location": "dd38.30",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Needs review",
+    "actionsUsedWithIt": [
+      "wān"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [
+      "darkness"
+    ],
+    "oppositions": [
+      "yazdān",
+      "Ohrmazd"
+    ],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [
+      "dēn"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ka ēn kustīg bandīhēd kē-š and daxšag nišān murwāg abāg ēn xwarrahōmandān ēwēn ī ristag ī frazānagān framān ī dahībedān [T60_68v] ud wizīr ī frēstagān/paristagān abar parwast estēd ān seǰ ī nihān-rawišn kē az ān ī Jam was tars ud Druz ī a-sālārīh kē warzišn ī mardōmān ān ī Ohrmazd bandagīh a-kām dēw ud duš-dēn kē az parwand gāh ī xwarrah ī dēn purr-bīm az ham yazdān ham [TD4_282] nišānag bandōmand ud hušk-kār būd a-gumān [K35_154v]"
+  },
+  {
+    "id": "dd41.6",
+    "location": "dd41.6",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Ahreman",
+    "actionsUsedWithIt": [
+      "wān"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [],
+    "realm": "mēnōy",
+    "theme": [],
+    "relatedTheme": [
+      "marg",
+      "dēn"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ud čand ōy ī abārōn dād ī marg-arzān dād ruwān pādifrāhōmandīh ud nāf ud paywand winastagīh az-iz wurrōyišn ī mad Druz ōwōn ī-š andar sāmān dēn kerd garān bēš bīm <’ywy>īhā ān ī frārōn dād ī čiyōn dastwarān pad mēnōy wazurg stāyišnīh ud nāf paywand weh mēnōy rasišn [D7_240] čand pāddāšn ī nēkīh purr-ummēd bawēd"
+  },
+  {
+    "id": "dd47.2",
+    "location": "dd47.2",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "druzān"
+    ],
+    "meaning": "Ahreman",
+    "actionsUsedWithIt": [
+      "wān",
+      "zanišn"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [
+      "wehīh"
+    ],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ayārīh ud frayādišn ī ōy kē-š yazišn framūd ud šahr mardōmān ēg-išān frayādišn pad čē ēwēnag bawēd ud ganāy mēnōy ud dēwān ud druzān bēšišn zanišn ud dard ud duš-xwārīh čiyōn pad čē ēwēnag bawēd čim ī [TD4a_305] yazišn čiyōn [D7_258] ast čē ast yazišn kū wehīh ka kunēnd kē weh ka kunēnd čiyōn weh ka kunēnd [A96]"
+  },
+  {
+    "id": "dd47.4",
+    "location": "dd47.4",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "druzān"
+    ],
+    "meaning": "Ahreman",
+    "actionsUsedWithIt": [],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [
+      "yazdān"
+    ],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [
+      "Fraškerd",
+      "marg"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "az kerd ī yazišn ī yazdān ud šnāyišn ī weh mēnōyān nizōrīh ī druzān abzūdan ī nēk-wārānīh ud waxšišn ī urwarān ud ābādānīh ī gēhān ud drīst-rawišnīh-iz ī zīndagān ud tā-iz ān ī Fraškerd rawāgīh dāmān a-margīh aziš būd guft estēd čimīgīha."
+  },
+  {
+    "id": "dd47.24",
+    "location": "dd47.24",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Ahreman",
+    "actionsUsedWithIt": [],
+    "adjectivesDescriptions": [],
+    "metaphors": [
+      "weapon / armor"
+    ],
+    "oppositions": [
+      "yazdān",
+      "rāstīh"
+    ],
+    "realm": "gētīy",
+    "theme": [],
+    "relatedTheme": [
+      "dēn"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "pad pākīh ud abēzagīh ud rāstīh ī čand andar gumēzag gētīy baxt yazdān stāyišnīg yazišn sarēnēd ud ka ān ī ahlaw ī wirāst-xēm abāg ōy abzār ī yōǰdahr kē was [T60_85b&BA306/311] mēnōy ī nīrangīg daxšag ayādēnišn ī yazdān kām ud Druz a-kām āfrīn estēd ud sazāgīhā bē ō ham mad"
+  },
+  {
+    "id": "dd47.26",
+    "location": "dd47.26",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "druzān"
+    ],
+    "meaning": "Demon / demonic being",
+    "actionsUsedWithIt": [
+      "wān"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [
+      "darkness"
+    ],
+    "oppositions": [
+      "yazdān",
+      "dādār",
+      "rōšn"
+    ],
+    "realm": "gētīy",
+    "theme": [],
+    "relatedTheme": [
+      "tan",
+      "dēn"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ud xwānīhēd Abestāg ī wizārīhēd abēzag-stāyišnīh ī yazdān ī andar ī rōšn rōz pad ān ī frayar gāh ud tā-iz šab dēn nīrangīg rāst ōšmurišnīg ud <’wlt>išnīg ud tār nā-waxr ud nā-zēfān ēd čē pad āfrīn ī yazdān ēd čē pad [MR_266] wizāyišn ī druzān ēd čē pad spās ī xwarrahōmandān ī wazurg-kerdārān ēd čē pad handarz ī ō dāmān ī framān bandagān ēd čē abar rāst sraw ī pēšēnīgān ī bē widurdān ēd čē pad sazāg *niwēyag ī ō ahlawān ∵ ēd ī weh-kunišnān ēd čē abāyišnīg ayāftan [T60_86a] padistāg ud ēd čē a-wizīrišnīg āmurzišn ī dādār ud ēd čē pad hāwan [BA307/312] rāh ī weh-yāb-kār ōšmarīhēd"
+  },
+  {
+    "id": "dd47.37",
+    "location": "dd47.37",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "druzān"
+    ],
+    "meaning": "Demon / demonic being",
+    "actionsUsedWithIt": [],
+    "adjectivesDescriptions": [],
+    "metaphors": [
+      "weapon / armor",
+      "darkness"
+    ],
+    "oppositions": [
+      "yazdān"
+    ],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [
+      "dēn"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ud ān ī and abzār ī az hammist weh-dahišnān čand abēzagīhātar šāyēd bē ō burdan rāy nērōgēnāg ud ō abēzagīh ēmēdēnāg [MR_270] ud ō gumēzagān sahmēnāg ō druzān tarsēnāg ō yazdān-iz šnāyēnāg ∵ [A103]"
+  },
+  {
+    "id": "dd63.5",
+    "location": "dd63.5",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Needs review",
+    "actionsUsedWithIt": [
+      "kōxšišn",
+      "wān"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [
+      "marg",
+      "kōxšišn"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ud pas mad <’w> Druz ī kōxšišngar u-š wināhīd zīndagīh kerd garān margōmandīh ī xwānīhēd Gayōmard ī wizārīhēd zīndag ī mīrāg"
+  },
+  {
+    "id": "dd74.3",
+    "location": "dd74.3",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Needs review",
+    "actionsUsedWithIt": [
+      "wān"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [
+      "dādār",
+      "wehīh"
+    ],
+    "realm": "gētīy",
+    "theme": [],
+    "relatedTheme": [
+      "tan"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ud būd dastwar kē-š guft kū-šān rist nē wirāyēnd bē amaragānīhā pōryōtkēšān andar ham xwēškārīh ham-wēnišnīhā ud ham-dādestānīhā ud ham-bōzišnīhā abar ēn bē estād hēnd [T60_113a] kū hamāg mardōmān rist [D7_322] wirāyēnd čē dādār ī weh ī abuxšāwand ī purr-wehīh ēč dām abar Druz bē nē hilēd"
+  },
+  {
+    "id": "dd74.4",
+    "location": "dd74.4",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Needs review",
+    "actionsUsedWithIt": [
+      "wān"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [],
+    "realm": "gētīy / mēnōy",
+    "theme": [],
+    "relatedTheme": [
+      "tan",
+      "dēn"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "pad dēn guft estēd kū harwist rist ul estēnēd kē ahlaw kē-iz druwand ud nē kē pad Druz bē hilēd u-šān ēn-iz ēdōn wizīrēnīd kū ōy-iz ī garān-wināhtom ka menišnīg abaxš ud pašēmān az wināh bawēd ud čand-uš tuwān wizārdār ud andar āstawānīh ī pad weh dēn wināh-wizārišnīh tan ud xīr ō tōzišn pādifrāh abespārēd ēg-iš ruwān-iz ō gāh ī ahlawān madan [BA352/357] šāyēd ∵"
+  },
+  {
+    "id": "dd76.8",
+    "location": "dd76.8",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Needs review",
+    "actionsUsedWithIt": [],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [
+      "marg",
+      "dēn"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ōwōn ī ka ham padīrag kē bun-tōhmag zāyišn padiš agārīhēd ud rāh ō ziyān margīh abar grāyīhēd ud grāyīh ēwar ud ōy Druz ī āšōbgar kē-š kām a-mardōmīh ud abesīhīd-dāmīh ī-š pad zōr ī niyāz a-wēnāg [D7_326] wardēnēd ārzōg ī frēftagān mardōm dahišn az ān gyāg ī pus-xwāyišnīh ō handām ī-š padīrag kē-š padiš bawēd hēnd winastagīh ud pūdagīh"
+  },
+  {
+    "id": "dd90.3",
+    "location": "dd90.3",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Needs review",
+    "actionsUsedWithIt": [],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [],
+    "realm": "gētīy",
+    "theme": [],
+    "relatedTheme": [
+      "tan",
+      "dēn"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ān stī ī āsmān tā mad ān Druz ī čandēnāg mad ī abē-niyāz būd az winnārāg dānāgān čiyōn-išān guft kū xrad abar gugāh kū kē tan ī xwad nē čandēnāg u-š nē ast čandēnāg ud a-niyāz az winnārāg"
+  },
+  {
+    "id": "dd90.8",
+    "location": "dd90.8",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Ahreman",
+    "actionsUsedWithIt": [
+      "kōxšīdār",
+      "wān"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [
+      "dādār"
+    ],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [
+      "dēn"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ud ka mad ō āsmān ān ī čandēnāg ud kōxšīdār Druz aziš čandēnīd āsmān ∵ čē andar āsmān paywast ān ī and wisp-čār dādār [T60_132a&D7_356] pad xwēš wisp-tuwānīgīh ud ān hu-dahāg ud tagīg wād čēr abarwēz ašō’ān frawaxš ud wasān mēnōyān ī [TD4a_388] weh-xwarrah-abāgīhā payrāst ō winnārišn ī āsmān"
+  },
+  {
+    "id": "dd90.10",
+    "location": "dd90.10",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Needs review",
+    "actionsUsedWithIt": [],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [
+      "dādār"
+    ],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [
+      "dēn"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "hangerdīg gōwīhēd kū āsmān andar petyāragōmandīh čandēnīd Druz winnerd wād frawahrān pad xwarrah/dast ī dādār andar a-petyāragīh [T60_128b] ka-š [T60_132b] nēst [D7_357] čandēnāg winnerdag pad xwad-čihrīh ud xwad-zōrīh winnārāg rōz/ranǰ ī winnārišn nē ǰumbīhēd bē pad nām ī dāmān kām ī āfurrāg ∵"
+  },
+  {
+    "id": "dd93.1",
+    "location": "dd93.1",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "druz",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "Needs review",
+    "actionsUsedWithIt": [],
+    "adjectivesDescriptions": ["rāh dārēd"],
+    "metaphors": [],
+    "oppositions": ["Yazd"],
+    "realm": "getīy",
+    "theme": ["Yazd's Place and Druz's Path"],
+    "relatedTheme": [
+      "pōryōtkēšān","menišn, gowišn, kunišn", "the Mazdysnian ethical framework of good thoughts, good words, good deeds"
+    "The gāh dārēd / rāh dārēd Opposition"],
+    "reviewStatus": "machine draft",
+    "reviewNote": "the meaning of ast yazd ēw ī gāh dārēd ast Druz ī rāh dārēd should be ckecked",
+    "sourceParagraph": "ud pōryōtkēšān ī dēn-āgāhān ī pēšēnīgān ōwōn dāšt andarg ox menišn-ēw ast yazd ēw ī gāh dārēd ast Druz ī rāh dārēd ud andarg menišn gōwišn-ēw ast yazd ī gāh dārēd ud ast Druz ī rāh dārēd [T60_136b] ud andarg gōwišn kunišn-ēw ast yazd-ēw gāh dārēd ud ast Druz-ēw rāh dārēd"
+  },
+  {
+    "id": "dd93.2",
+    "location": "dd93.2",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "Druz ī tarōmad",
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "A demon created fifth by Ahreman (according to GBd 1.55, manuscript TD1), but also identified with Nānghāiθ, causes defiance (GBd 27.14). ",
+    "actionsUsedWithIt": ["rāh dārēd", "rāh dāštan"],
+    "adjectivesDescriptions": [],
+    "metaphors": [
+      "darkness"
+    ],
+    "oppositions": ["spandarmad"],
+    "realm": "getīy",
+    "theme": ["The Presence of Good and Evil in Human Faculties"],
+    "relatedTheme": [
+      "The gāh dārēd / rāh dārēd Opposition"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": ["gbd 27.14: tarōmad dēw",  "loan word from tarō.mati- (Av.)"
+ "contempt", "insubordinate thinking", "name of a demon already in the Avestan Yt 3.8, Yt 11.15."],
+    "sourceParagraph": "ud andarg ox wārom-ēw wahman gāh dārēd ud Akōman rāh dārēd ud andarg wārom kāmag-ēw srōš gāh dārēd ud xešm rāh dārēd ud andarg kāmag menišn-ēw ī spandarmad gāh dārēd ud Druz ī tarōmad rāh dārēd andarg menišn gōwišn ēw xrad gāh dārēd ud waran rāh dārēd ud andarg gōwišn kunišn-ēw dēn ī weh gāh dārēd ud xwad-dōšagīh rāh dārēd"
+  },
+  {
+    "id": "dd93.3",
+    "location": "dd93.3",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": "dēwān druzān",
+    "matchedWords": [
+      "druzān"
+    ],
+    "meaning": "General term for demonic beings, including even the arch-demon Ahreman (PY 30.10, Dk5 8.11). Hyperonym of dēw (GBd 27.24). May be male or female (Dk5 24.22). Various otherwise unnamed druzān are distinguished by indication of their respective domain of influence (e.g., druz ī ahlomōγīh, druz ī sāstārīh, tišn druz, etc.). Often depicted as inside humans' bodies and linked to bodily impurity. ",
+    "actionsUsedWithIt": [
+      "wān"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": [],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "ud amāh hāmōyēn mardōmān abēr ōšyār bawišn kū tā az ān rāh bē nē ēstam bē ō rāh ī dēwān druzān nē šawam"
+  },
+  {
+    "id": "dd93.4",
+    "location": "dd93.4",
+    "text": "DD",
+    "concept": "druz",
+    "mainWord": ["dēwān Druz", "Druz"],
+    "matchedWords": [
+      "Druz"
+    ],
+    "meaning": "unclear",
+    "actionsUsedWithIt": [
+      "frēft"
+    ],
+    "adjectivesDescriptions": [],
+    "metaphors": [],
+    "oppositions": ["mardōmān"],
+    "realm": null,
+    "theme": [],
+    "relatedTheme": [
+      "kōxšišn"
+    ],
+    "reviewStatus": "machine draft",
+    "reviewNote": "",
+    "sourceParagraph": "čē kōxšišn ī mardōmān pad ēn 3 rāh ud widarg ud kē pad ēn [D7_366] 3 rāh ud widarg bōxt az harw gyāg bōxt ud kē ānōh frēft bē ō dast ī dēwān Druz rasēd ud az ān frāz nē xwad pādixšāy bē ka ān [K35_201v] kunēd ī-š Druz framāyēnd"
+  }
+]

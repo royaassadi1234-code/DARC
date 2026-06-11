@@ -183,6 +183,19 @@ select {
   background: var(--accent);
 }
 
+.pattern-menu-list {
+  min-width: 220px;
+}
+
+.nav-menu-label {
+  padding: 7px 10px 2px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 .sub-nav {
   display: flex;
   gap: 8px;
@@ -1024,6 +1037,16 @@ h1 {
   border-radius: 8px;
   padding: 18px;
   background: #ffffff;
+}
+
+.login-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.login-actions .action-button {
+  min-height: 42px;
 }
 
 .annotation-workspace {

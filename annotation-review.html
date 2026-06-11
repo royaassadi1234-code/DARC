@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Annotation Review</title>
+    <title>How to Collaborate</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/svg+xml" href="logos/druz-logo-fire-altar-resisting-smoke-seal-no-branches-black-white-vector.svg">
   </head>
@@ -31,49 +31,55 @@
                 </div>
               </details>
               <a href="diagram.html">Diagram</a>
-              <a href="themes.html">Themes</a>
               <details class="nav-menu">
-                <summary>word matches</summary>
-                <div class="nav-menu-list">
+                <summary>Pattern</summary>
+                <div class="nav-menu-list pattern-menu-list">
+                  <span class="nav-menu-label">Semantic Motif</span>
+                  <a href="themes.html">Semantic Motif</a>
+                  <span class="nav-menu-label">Lexeme</span>
                   <a href="pseudo.html">DD vs PY</a>
                   <a href="dd-wz.html">DD vs WZ</a>
                   <a href="py-wz.html">PY vs WZ</a>
                   <a href="dd-py-wz.html">DD vs PY vs WZ</a>
-                </div>
-              </details>
-              <details class="nav-menu">
-                <summary>phrase matches</summary>
-                <div class="nav-menu-list">
+                  <span class="nav-menu-label">Collocation</span>
                   <a href="dd-py-phrases.html">DD vs PY</a>
                   <a href="dd-wz-phrases.html">DD vs WZ</a>
                   <a href="py-wz-phrases.html">PY vs WZ</a>
                   <a href="dd-py-wz-phrases.html">DD vs PY vs WZ</a>
                 </div>
               </details>
-              <a href="resources.html">Resources</a>
-              <a class="active" href="annotation-review.html">Review</a>
-              <details class="nav-menu">
+              <details class="nav-menu active">
                 <summary>About</summary>
                 <div class="nav-menu-list">
                   <a href="how-to-use.html">How to use</a>
+                  <a class="active" href="annotation-review.html">How to collaborate</a>
                   <a href="project-description.html">Project description</a>
                   <a href="about.html">Team</a>
                   <a href="methodology.html">Methodology</a>
+                  <a href="resources.html">Bib.</a>
                 </div>
               </details>
             </nav>
-            <div class="status" id="review-status">Login required</div>
+            <div class="status" id="review-status">Collaboration</div>
           </div>
         </header>
 
         <section class="login-panel" id="login-panel" aria-label="Review login">
           <form class="login-card" id="login-form">
-            <p class="eyebrow">Reviewer Login</p>
+            <p class="eyebrow">How to collaborate</p>
+            <label class="annotation-field" for="review-login">
+              <span>Login</span>
+              <input id="review-login" type="text" autocomplete="username">
+            </label>
             <label class="annotation-field" for="review-password">
               <span>Password</span>
               <input id="review-password" type="password" autocomplete="current-password">
             </label>
-            <button class="action-button" type="submit">Login</button>
+            <div class="login-actions">
+              <button class="action-button" type="submit">Login</button>
+              <a class="action-button secondary" href="mailto:roya.assadollahi@fu-berlin.de?subject=Sign%20up%20for%20Between%20Druz%20and%20Ahreman">Sign up</a>
+              <a class="action-button secondary" href="mailto:roya.assadollahi@fu-berlin.de?subject=Request%20access%20to%20annotation%20review">Request access per email</a>
+            </div>
             <p class="meta" id="login-message"></p>
           </form>
         </section>

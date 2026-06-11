@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DD-WZ Phrase Matches</title>
+    <title>Methodology</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="logos/druz-logo-source-smoke-fire-altar-page-colors.png">
   </head>
-  <body data-data-url="dd-wz-phrases-data.json" data-source-key="Dd" data-target-key="WZ" data-source-label="DD" data-target-label="WZ">
+  <body>
     <main class="shell">
       <section class="workspace" aria-labelledby="page-title">
         <header class="masthead">
@@ -15,12 +15,11 @@
             <img src="logos/druz-logo-source-smoke-fire-altar-page-colors.png" alt="">
           </a>
           <div class="masthead-title">
-            <p class="eyebrow">DD vs WZ subpart</p>
-            <h1 id="page-title">Phrase Matches</h1>
+            <p class="eyebrow">About the workspace</p>
+            <h1 id="page-title">Methodology</h1>
           </div>
           <div class="header-actions">
             <nav class="site-nav" aria-label="Research pages">
-              
               <details class="nav-menu">
                 <summary>Trans.</summary>
                 <div class="nav-menu-list">
@@ -42,7 +41,7 @@
                   <a href="dd-py-wz.html">DD vs PY vs WZ</a>
                 </div>
               </details>
-              <details class="nav-menu active">
+              <details class="nav-menu">
                 <summary>phrase matches</summary>
                 <div class="nav-menu-list">
                   <a href="dd-py-phrases.html">DD vs PY</a>
@@ -52,42 +51,35 @@
                 </div>
               </details>
               <a href="resources.html">Resources</a>
-              <details class="nav-menu">
+              <details class="nav-menu active">
                 <summary>About</summary>
                 <div class="nav-menu-list">
                   <a href="how-to-use.html">How to use</a>
                   <a href="project-description.html">Project description</a>
                   <a href="about.html">Team</a>
-                  <a href="methodology.html">Methodology</a>
+                  <a class="active" href="methodology.html">Methodology</a>
                 </div>
               </details>
             </nav>
-            <div class="status" id="pseudo-status">Loading phrases...</div>
+            <div class="status">Method</div>
           </div>
         </header>
 
-        <nav class="sub-nav" aria-label="DD vs WZ sections">
-          <a href="dd-wz.html">Word Matches</a>
-          <a class="active" href="dd-wz-phrases.html">Phrase Matches</a>
-        </nav>
-
-        <section class="search-panel pseudo-controls" aria-label="Phrase controls">
-          <label class="search-box" for="pseudo-query">
-            <span>Search phrases or previews</span>
-            <input id="pseudo-query" type="search" placeholder="Type plain letters or several words: humat huxt" autocomplete="off" autofocus>
-          </label>
-          <div class="controls" role="group" aria-label="Phrase filters">
-            <label class="select-control" for="tier-filter"><span>Length</span><select id="tier-filter"><option value="">All</option></select></label>
-            <label class="select-control" for="sort-mode"><span>Sort</span><select id="sort-mode"><option value="rank">Rank</option><option value="score">Phrase length</option><option value="shared">Shared words</option></select></label>
-            <button class="action-button" id="expand-all" type="button">Expand</button>
-            <button class="action-button secondary" id="collapse-all" type="button">Collapse</button>
+        <section class="about-panel about-hero" aria-label="Methodology">
+          <div class="about-copy">
+            <p class="eyebrow">Methodology</p>
+            <h2>Philological reading supported by structured digital comparison.</h2>
+            <p>
+              The workspace combines close reading with computational support. Texts are divided into
+              searchable units, matched by words and phrases, and connected to translations and comments.
+            </p>
+            <p>
+              Concept annotations are reviewed as interpretive data: the tools can find patterns, but the
+              final meaning depends on context, language, and scholarly judgment.
+            </p>
           </div>
         </section>
-
-        <section class="pseudo-summary" id="pseudo-summary" aria-label="Phrase summary"></section>
-        <section class="pseudo-gallery" id="pseudo-gallery" aria-live="polite"></section>
       </section>
     </main>
-    <script src="pseudo.js"></script>
   </body>
 </html>

@@ -7,6 +7,7 @@ from pathlib import Path
 
 DD_TEXT = Path("Dd.txt")
 COMMENTS_JSON = Path("dd-comment-highlights.json")
+PDF_TRANSLATIONS_JSON = Path("dd-pdf-translations.json")
 TARGET = Path("druz-concept-annotations.json")
 
 DRUZ_VARIANTS = [
@@ -166,12 +167,39 @@ def load_comments() -> dict[str, list[dict[str, object]]]:
     return by_location
 
 
+def load_pdf_translations() -> dict[str, dict[str, object]]:
+    if not PDF_TRANSLATIONS_JSON.exists():
+        return {}
+
+    return json.loads(PDF_TRANSLATIONS_JSON.read_text(encoding="utf-8"))
+
+
 def matching_comments(location: str, comments_by_location: dict[str, list[dict[str, object]]]) -> list[dict[str, object]]:
     comments = []
     comments.extend(comments_by_location.get(location, []))
     if location != base_location(location):
         comments.extend(comments_by_location.get(base_location(location), []))
     return comments
+
+
+def matching_pdf_translation(location: str, pdf_translations: dict[str, dict[str, object]]) -> str:
+    base = base_location(location)
+    candidates = [location, base]
+    if base.startswith("0."):
+        candidates.append(f"Int.{base.split('.', 1)[1]}")
+
+    for candidate in candidates:
+        translation = pdf_translations.get(candidate)
+        if translation:
+            return str(translation.get("translation", ""))
+    return ""
+
+
+def source_paragraph_with_location(location: str, text: str) -> str:
+    display_location = f"dd{location}"
+    if text.startswith(display_location):
+        return text
+    return f"{display_location} {text}"
 
 
 def combined_comment_text(comments: list[dict[str, object]]) -> str:
@@ -226,10 +254,16 @@ def infer_metaphors(text: str, comments: list[dict[str, object]]) -> list[str]:
     return candidates
 
 
-def build_entry(record: dict[str, str], comments: list[dict[str, object]]) -> dict[str, object]:
+def build_entry(
+    record: dict[str, str],
+    comments: list[dict[str, object]],
+    pdf_translations: dict[str, dict[str, object]],
+) -> dict[str, object]:
     combined = f"{record['text']} {combined_comment_text(comments)}"
     location = record["location"]
     entry = {
+        "sourceParagraph": source_paragraph_with_location(location, record["text"]),
+        "translation": matching_pdf_translation(location, pdf_translations),
         "id": f"dd{location}",
         "location": f"dd{location}",
         "text": "DD",
@@ -246,7 +280,6 @@ def build_entry(record: dict[str, str], comments: list[dict[str, object]]) -> di
         "relatedTheme": terms_present(combined, KNOWN_THEMES),
         "reviewStatus": "machine draft",
         "reviewNote": "",
-        "sourceParagraph": record["text"],
     }
 
     if location == "0.5a":
@@ -267,13 +300,14 @@ def build_entry(record: dict[str, str], comments: list[dict[str, object]]) -> di
 def main() -> None:
     records = parse_records(DD_TEXT.read_text(encoding="utf-8"))
     comments_by_location = load_comments()
+    pdf_translations = load_pdf_translations()
     entries = []
 
     for record in records:
         if not matched_words(record["text"]):
             continue
         comments = matching_comments(record["location"], comments_by_location)
-        entries.append(build_entry(record, comments))
+        entries.append(build_entry(record, comments, pdf_translations))
 
     TARGET.write_text(
         json.dumps(entries, ensure_ascii=False, indent=2) + "\n",

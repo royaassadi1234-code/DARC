@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Annotation Review</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="logos/druz-logo-source-smoke-fire-altar-page-colors.png">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="workspace" aria-labelledby="page-title">
+        <header class="masthead">
+          <a class="site-logo" href="index.html" aria-label="Druz home">
+            <img src="logos/druz-logo-source-smoke-fire-altar-page-colors.png" alt="">
+          </a>
+          <div class="masthead-title">
+            <p class="eyebrow">Restricted workspace</p>
+            <h1 id="page-title">Annotation Review</h1>
+          </div>
+          <div class="header-actions">
+            <nav class="site-nav" aria-label="Research pages">
+              <details class="nav-menu">
+                <summary>Trans.</summary>
+                <div class="nav-menu-list">
+                  <a href="trans.html?text=dd">DD</a>
+                  <a href="trans.html?text=py">PY</a>
+                  <a href="trans.html?text=wz">WZ</a>
+                  <a href="trans.html?text=nm">NM</a>
+                </div>
+              </details>
+              <a href="index.html">Text search</a>
+              <a href="diagram.html">Diagram</a>
+              <a href="themes.html">Themes</a>
+              <details class="nav-menu">
+                <summary>word matches</summary>
+                <div class="nav-menu-list">
+                  <a href="pseudo.html">DD vs PY</a>
+                  <a href="dd-wz.html">DD vs WZ</a>
+                  <a href="py-wz.html">PY vs WZ</a>
+                  <a href="dd-py-wz.html">DD vs PY vs WZ</a>
+                </div>
+              </details>
+              <details class="nav-menu">
+                <summary>phrase matches</summary>
+                <div class="nav-menu-list">
+                  <a href="dd-py-phrases.html">DD vs PY</a>
+                  <a href="dd-wz-phrases.html">DD vs WZ</a>
+                  <a href="py-wz-phrases.html">PY vs WZ</a>
+                  <a href="dd-py-wz-phrases.html">DD vs PY vs WZ</a>
+                </div>
+              </details>
+              <a href="resources.html">Resources</a>
+              <a class="active" href="annotation-review.html">Review</a>
+              <details class="nav-menu">
+                <summary>About</summary>
+                <div class="nav-menu-list">
+                  <a href="how-to-use.html">How to use</a>
+                  <a href="project-description.html">Project description</a>
+                  <a href="about.html">Team</a>
+                  <a href="methodology.html">Methodology</a>
+                </div>
+              </details>
+            </nav>
+            <div class="status" id="review-status">Login required</div>
+          </div>
+        </header>
+
+        <section class="login-panel" id="login-panel" aria-label="Review login">
+          <form class="login-card" id="login-form">
+            <p class="eyebrow">Reviewer Login</p>
+            <label class="annotation-field" for="review-password">
+              <span>Password</span>
+              <input id="review-password" type="password" autocomplete="current-password">
+            </label>
+            <button class="action-button" type="submit">Login</button>
+            <p class="meta" id="login-message"></p>
+          </form>
+        </section>
+
+        <section class="annotation-workspace hidden" id="annotation-workspace" aria-label="Annotation editor">
+          <aside class="annotation-sidebar">
+            <div class="annotation-toolbar">
+              <label class="annotation-field" for="annotation-search">
+                <span>Search</span>
+                <input id="annotation-search" type="search" placeholder="Location, word, meaning">
+              </label>
+              <label class="annotation-field" for="annotation-filter">
+                <span>Status</span>
+                <select id="annotation-filter">
+                  <option value="all">All</option>
+                  <option value="machine draft">Machine draft</option>
+                  <option value="user seed">User seed</option>
+                  <option value="needs review">Needs review</option>
+                  <option value="reviewed">Reviewed</option>
+                  <option value="approved">Approved</option>
+                </select>
+              </label>
+            </div>
+            <div class="annotation-summary" id="annotation-summary"></div>
+            <div class="annotation-list" id="annotation-list"></div>
+          </aside>
+
+          <form class="annotation-editor" id="annotation-form">
+            <div class="annotation-editor-header">
+              <div>
+                <p class="eyebrow">Current annotation</p>
+                <h2 id="annotation-title">No annotation selected</h2>
+              </div>
+              <div class="annotation-actions">
+                <button class="copy-button" id="save-entry" type="submit">Save entry</button>
+                <button class="copy-button" id="export-json" type="button">Export JSON</button>
+                <label class="copy-button file-button" for="import-json">Import JSON</label>
+                <input id="import-json" type="file" accept="application/json,.json">
+                <button class="copy-button" id="reset-draft" type="button">Reset draft</button>
+                <button class="copy-button" id="logout-review" type="button">Logout</button>
+              </div>
+            </div>
+
+            <div class="annotation-grid">
+              <label class="annotation-field wide" for="field-sourceParagraph">
+                <span>Source paragraph</span>
+                <textarea id="field-sourceParagraph" rows="7"></textarea>
+              </label>
+              <label class="annotation-field wide" for="field-translation">
+                <span>Translation</span>
+                <textarea id="field-translation" rows="6"></textarea>
+              </label>
+              <label class="annotation-field" for="field-location">
+                <span>Location</span>
+                <input id="field-location" type="text">
+              </label>
+              <label class="annotation-field" for="field-id">
+                <span>ID</span>
+                <input id="field-id" type="text">
+              </label>
+              <label class="annotation-field" for="field-concept">
+                <span>Concept</span>
+                <input id="field-concept" type="text">
+              </label>
+              <label class="annotation-field" for="field-mainWord">
+                <span>Main word</span>
+                <textarea id="field-mainWord" rows="2"></textarea>
+              </label>
+              <label class="annotation-field" for="field-matchedWords">
+                <span>Matched words</span>
+                <textarea id="field-matchedWords" rows="3"></textarea>
+              </label>
+              <label class="annotation-field" for="field-meaning">
+                <span>Meaning</span>
+                <textarea id="field-meaning" rows="3"></textarea>
+              </label>
+              <label class="annotation-field" for="field-actionsUsedWithIt">
+                <span>Actions used with it</span>
+                <textarea id="field-actionsUsedWithIt" rows="4"></textarea>
+              </label>
+              <label class="annotation-field" for="field-adjectivesDescriptions">
+                <span>Adjectives / descriptions</span>
+                <textarea id="field-adjectivesDescriptions" rows="4"></textarea>
+              </label>
+              <label class="annotation-field" for="field-metaphors">
+                <span>Metaphors</span>
+                <textarea id="field-metaphors" rows="4"></textarea>
+              </label>
+              <label class="annotation-field" for="field-oppositions">
+                <span>Oppositions</span>
+                <textarea id="field-oppositions" rows="4"></textarea>
+              </label>
+              <label class="annotation-field" for="field-realm">
+                <span>Realm</span>
+                <input id="field-realm" type="text">
+              </label>
+              <label class="annotation-field" for="field-reviewStatus">
+                <span>Review status</span>
+                <select id="field-reviewStatus">
+                  <option value="machine draft">Machine draft</option>
+                  <option value="user seed">User seed</option>
+                  <option value="needs review">Needs review</option>
+                  <option value="reviewed">Reviewed</option>
+                  <option value="approved">Approved</option>
+                </select>
+              </label>
+              <label class="annotation-field" for="field-theme">
+                <span>Theme</span>
+                <textarea id="field-theme" rows="4"></textarea>
+              </label>
+              <label class="annotation-field" for="field-relatedTheme">
+                <span>Related theme</span>
+                <textarea id="field-relatedTheme" rows="4"></textarea>
+              </label>
+              <label class="annotation-field wide" for="field-reviewNote">
+                <span>Review note</span>
+                <textarea id="field-reviewNote" rows="5"></textarea>
+              </label>
+            </div>
+          </form>
+        </section>
+      </section>
+    </main>
+
+    <script src="annotation-review.js"></script>
+  </body>
+</html>

@@ -981,6 +981,203 @@ h1 {
   gap: 12px;
 }
 
+.hidden {
+  display: none !important;
+}
+
+.login-panel {
+  display: grid;
+  place-items: center;
+  min-height: 360px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.login-card {
+  display: grid;
+  gap: 14px;
+  width: min(100%, 420px);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px;
+  background: #ffffff;
+}
+
+.annotation-workspace {
+  display: grid;
+  grid-template-columns: minmax(260px, 340px) minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+}
+
+.annotation-sidebar,
+.annotation-editor {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.annotation-sidebar {
+  position: sticky;
+  top: 14px;
+  display: grid;
+  gap: 12px;
+  max-height: calc(100vh - 28px);
+  overflow: hidden;
+  padding: 12px;
+}
+
+.annotation-toolbar {
+  display: grid;
+  gap: 10px;
+}
+
+.annotation-summary {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.annotation-summary span {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 5px 9px;
+  color: var(--accent-strong);
+  background: #f7fafb;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.annotation-list {
+  display: grid;
+  gap: 8px;
+  overflow: auto;
+  padding-right: 2px;
+}
+
+.annotation-list-item {
+  display: grid;
+  gap: 4px;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 10px;
+  color: var(--ink);
+  background: #fbfcfd;
+  cursor: pointer;
+  text-align: left;
+}
+
+.annotation-list-item.active {
+  border-color: var(--accent);
+  background: #eef4f7;
+}
+
+.annotation-list-item strong {
+  color: var(--accent-strong);
+}
+
+.annotation-list-item span,
+.annotation-list-item small {
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.annotation-editor {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+}
+
+.annotation-editor-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: start;
+}
+
+.annotation-editor-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.annotation-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.file-button {
+  cursor: pointer;
+}
+
+#import-json {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.annotation-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.annotation-field {
+  display: grid;
+  gap: 6px;
+}
+
+.annotation-field.wide {
+  grid-column: 1 / -1;
+}
+
+.annotation-field span {
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.annotation-field input,
+.annotation-field select,
+.annotation-field textarea {
+  width: 100%;
+  border: 1px solid #c8d0d9;
+  border-radius: 7px;
+  padding: 10px 11px;
+  color: var(--ink);
+  background: #fbfcfd;
+  font: inherit;
+}
+
+.annotation-field input,
+.annotation-field select {
+  min-height: 44px;
+}
+
+.annotation-field textarea {
+  min-height: 96px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.annotation-field input:focus,
+.annotation-field select:focus,
+.annotation-field textarea:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(36, 92, 115, 0.15);
+}
+
 .trans-heading {
   display: flex;
   justify-content: space-between;
@@ -1850,8 +2047,18 @@ mark.term-6 {
 
   .concept-info-card,
   .concept-comment-list,
-  .concept-next-grid {
+  .concept-next-grid,
+  .annotation-workspace {
     grid-template-columns: 1fr;
+  }
+
+  .annotation-sidebar {
+    position: static;
+    max-height: none;
+  }
+
+  .annotation-list {
+    max-height: 360px;
   }
 }
 
@@ -1887,8 +2094,17 @@ mark.term-6 {
   .resources-grid,
   .expertise-grid,
   .pseudo-summary,
-  .about-detail-grid {
+  .about-detail-grid,
+  .annotation-grid {
     grid-template-columns: 1fr;
+  }
+
+  .annotation-editor-header {
+    display: grid;
+  }
+
+  .annotation-actions {
+    justify-content: start;
   }
 
   .controls {

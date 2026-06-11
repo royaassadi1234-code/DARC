@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PY vs WZ Matches</title>
+    <title>Druz Text Search</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/svg+xml" href="logos/druz-logo-fire-altar-resisting-smoke-seal-no-branches-black-white-vector.svg">
   </head>
-  <body data-data-url="py-wz-data.json" data-source-key="PY" data-target-key="WZ" data-source-label="PY" data-target-label="WZ">
+  <body>
     <main class="shell">
       <section class="workspace" aria-labelledby="page-title">
         <header class="masthead">
@@ -21,7 +21,7 @@
           <div class="header-actions">
             <nav class="site-nav" aria-label="Research pages">
               <a href="index.html">Start</a>
-              <a href="search.html">Text search</a>
+              <a class="active" href="search.html">Text search</a>
               <details class="nav-menu">
                 <summary>Trans.</summary>
                 <div class="nav-menu-list">
@@ -32,15 +32,15 @@
                 </div>
               </details>
               <a href="diagram.html">Diagram</a>
-              <details class="nav-menu active">
+              <details class="nav-menu">
                 <summary>Pattern</summary>
                 <div class="nav-menu-list pattern-menu-list">
-                  <details class="pattern-submenu active">
+                  <details class="pattern-submenu">
                   <summary>Lexeme</summary>
                   <div class="pattern-submenu-list">
                     <a href="pseudo.html">DD vs PY</a>
                     <a href="dd-wz.html">DD vs WZ</a>
-                    <a class="active" href="py-wz.html">PY vs WZ</a>
+                    <a href="py-wz.html">PY vs WZ</a>
                     <a href="dd-py-wz.html">DD vs PY vs WZ</a>
                   </div>
                 </details>
@@ -73,44 +73,46 @@
                 </div>
               </details>
             </nav>
-            <div class="status" id="pseudo-status">Loading matches...</div>
+            <div class="status" id="load-status">Loading texts...</div>
           </div>
         </header>
 
-        <nav class="sub-nav" aria-label="PY vs WZ sections">
-          <a class="active" href="py-wz.html">Lexeme</a>
-          <a href="py-wz-phrases.html">Collocation</a>
-        </nav>
-
-        <section class="search-panel pseudo-controls" aria-label="Match controls">
-          <label class="search-box" for="pseudo-query">
-            <span>Search shared words or previews</span>
-            <input id="pseudo-query" type="search" placeholder="Type plain letters or several words: dewan ohrmazd" autocomplete="off" autofocus>
+        <section class="search-panel" aria-label="Search controls">
+          <label class="search-box" for="query">
+            <span>Search word or variants</span>
+            <input id="query" type="search" placeholder="Type plain letters or several words: dewan ohrmazd" autocomplete="off" autofocus>
           </label>
 
-          <div class="controls" role="group" aria-label="Match filters">
-            <label class="select-control" for="tier-filter">
-              <span>Tier</span>
-              <select id="tier-filter"><option value="">All</option></select>
+          <div class="controls" role="group" aria-label="Search options">
+            <label class="control">
+              <input id="variant-search" type="checkbox" checked>
+              <span>Multiple words and variants</span>
             </label>
-            <label class="select-control" for="sort-mode">
-              <span>Sort</span>
-              <select id="sort-mode">
-                <option value="rank">Rank</option>
-                <option value="score">Score</option>
-                <option value="shared">Shared words</option>
+            <label class="control">
+              <input id="whole-word" type="checkbox" checked>
+              <span>Whole word</span>
+            </label>
+            <label class="control">
+              <input id="case-sensitive" type="checkbox">
+              <span>Case sensitive</span>
+            </label>
+            <label class="select-control" for="context-size">
+              <span>Context</span>
+              <select id="context-size">
+                <option value="1">Short</option>
+                <option value="2" selected>Medium</option>
+                <option value="4">Wide</option>
               </select>
             </label>
-            <button class="action-button" id="expand-all" type="button">Expand</button>
-            <button class="action-button secondary" id="collapse-all" type="button">Collapse</button>
+            <button class="copy-button" id="copy-results" type="button" disabled>Copy results</button>
           </div>
         </section>
 
-        <section class="pseudo-summary" id="pseudo-summary" aria-label="Match summary"></section>
-        <section class="pseudo-gallery" id="pseudo-gallery" aria-live="polite"></section>
+        <section class="overview" id="overview" aria-label="Text overview"></section>
+        <section class="results" id="results" aria-live="polite"></section>
       </section>
     </main>
 
-    <script src="pseudo.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>

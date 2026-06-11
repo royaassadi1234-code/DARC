@@ -78,6 +78,12 @@ select {
   min-width: 0;
 }
 
+.masthead-title h1 {
+  max-width: 920px;
+  font-size: clamp(1.28rem, 2.2vw, 2.15rem);
+  line-height: 1.12;
+}
+
 .header-actions {
   display: grid;
   justify-items: end;

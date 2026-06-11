@@ -1,4 +1,5 @@
 const ANNOTATION_FILE = "druz-concept-annotations.json";
+const REVIEW_LOGIN = "reviewer";
 const REVIEW_PASSWORD = "druz-review";
 const SESSION_KEY = "druzAnnotationReviewLoggedIn";
 const DRAFT_KEY = "druzAnnotationReviewDraft";
@@ -13,6 +14,7 @@ const state = {
 
 const loginPanel = document.querySelector("#login-panel");
 const loginForm = document.querySelector("#login-form");
+const loginInput = document.querySelector("#review-login");
 const passwordInput = document.querySelector("#review-password");
 const loginMessage = document.querySelector("#login-message");
 const workspaceEl = document.querySelector("#annotation-workspace");
@@ -60,12 +62,13 @@ function init() {
 function bindEvents() {
   loginForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    if (passwordInput.value === REVIEW_PASSWORD) {
+    const login = loginInput.value.trim().toLowerCase();
+    if (login === REVIEW_LOGIN && passwordInput.value === REVIEW_PASSWORD) {
       sessionStorage.setItem(SESSION_KEY, "true");
       unlock();
       return;
     }
-    loginMessage.textContent = "The password is not correct.";
+    loginMessage.textContent = "The login or password is not correct.";
   });
 
   searchInput.addEventListener("input", () => {
@@ -310,6 +313,7 @@ function logout() {
   sessionStorage.removeItem(SESSION_KEY);
   workspaceEl.classList.add("hidden");
   loginPanel.classList.remove("hidden");
+  loginInput.value = "";
   passwordInput.value = "";
   statusEl.textContent = "Login required";
 }

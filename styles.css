@@ -79,9 +79,9 @@ select {
 }
 
 .masthead-title h1 {
-  max-width: 920px;
-  font-size: clamp(1.28rem, 2.2vw, 2.15rem);
-  line-height: 1.12;
+  max-width: none;
+  font-size: clamp(1rem, 1.35vw, 1.35rem);
+  line-height: 1.25;
 }
 
 .header-actions {

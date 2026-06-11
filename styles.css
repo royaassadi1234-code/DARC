@@ -100,7 +100,7 @@ select {
   grid-column: 2;
   align-self: start;
   display: grid;
-  justify-items: start;
+  justify-items: end;
   gap: 10px;
 }
 
@@ -184,16 +184,33 @@ select {
 }
 
 .pattern-menu-list {
-  min-width: 220px;
+  min-width: 230px;
 }
 
-.nav-menu-label {
-  padding: 7px 10px 2px;
-  color: var(--muted);
-  font-size: 0.72rem;
+.pattern-submenu {
+  display: grid;
+  gap: 4px;
+}
+
+.pattern-submenu > summary {
+  min-height: 32px;
+  color: var(--accent-strong);
   font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+}
+
+.pattern-submenu.active > summary {
+  color: #ffffff;
+  background: var(--accent);
+}
+
+.pattern-submenu-list {
+  display: grid;
+  gap: 4px;
+  padding-left: 12px;
+}
+
+.pattern-submenu-list a {
+  font-size: 0.84rem;
 }
 
 .sub-nav {

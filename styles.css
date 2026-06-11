@@ -1642,6 +1642,100 @@ h1 {
   line-height: 1.7;
 }
 
+.team-profile {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.team-profile-photo {
+  width: 132px;
+  height: 132px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  object-fit: cover;
+  background: #f7fafb;
+}
+
+.team-name {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 3.2vw, 3.3rem);
+  line-height: 1;
+  font-weight: 800;
+}
+
+.team-title {
+  margin: 8px 0 0;
+  color: var(--accent-strong);
+  font-size: 0.98rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.team-heading {
+  max-width: 760px;
+  margin: 0 0 12px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.25rem, 2vw, 1.8rem);
+  line-height: 1.18;
+}
+
+.acknowledgment-card {
+  display: grid;
+  gap: 12px;
+}
+
+.acknowledgment-list {
+  display: grid;
+  gap: 10px;
+}
+
+.acknowledgment-person {
+  display: grid;
+  grid-template-columns: 68px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 9px;
+  color: inherit;
+  background: #fbfcfd;
+  text-decoration: none;
+}
+
+.acknowledgment-person:hover {
+  border-color: var(--accent);
+  background: #eef4f7;
+}
+
+.acknowledgment-person img {
+  width: 68px;
+  height: 68px;
+  border-radius: 7px;
+  object-fit: cover;
+  background: #eef1f4;
+}
+
+.acknowledgment-person strong,
+.acknowledgment-person small {
+  display: block;
+}
+
+.acknowledgment-person strong {
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.acknowledgment-person small {
+  margin-top: 4px;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
 .hero-actions,
 .tags {
   display: flex;
@@ -2192,6 +2286,18 @@ mark.term-6 {
 
   .annotation-actions {
     justify-content: start;
+  }
+
+  .team-profile,
+  .acknowledgment-person {
+    grid-template-columns: 1fr;
+  }
+
+  .team-profile-photo,
+  .acknowledgment-person img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
   }
 
   .controls {

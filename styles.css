@@ -45,13 +45,15 @@ select {
 
 .masthead {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  align-items: end;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  align-items: center;
   gap: 18px;
   padding: 8px 2px 4px;
 }
 
 .site-logo {
+  grid-row: 1 / span 2;
   display: block;
   width: clamp(132px, 16vw, 204px);
   height: clamp(132px, 16vw, 204px);
@@ -75,18 +77,30 @@ select {
 }
 
 .masthead-title {
+  align-self: end;
   min-width: 0;
 }
 
 .masthead-title h1 {
   max-width: none;
-  font-size: clamp(1rem, 1.35vw, 1.35rem);
+  font-size: clamp(0.96rem, 1.12vw, 1.18rem);
   line-height: 1.25;
 }
 
+.title-line {
+  display: block;
+  white-space: nowrap;
+}
+
+.title-line + .title-line {
+  margin-top: 2px;
+}
+
 .header-actions {
+  grid-column: 2;
+  align-self: start;
   display: grid;
-  justify-items: end;
+  justify-items: start;
   gap: 10px;
 }
 
@@ -2078,6 +2092,14 @@ mark.term-6 {
     display: grid;
     grid-template-columns: auto minmax(0, 1fr);
     align-items: start;
+  }
+
+  .site-logo {
+    grid-row: auto;
+  }
+
+  .masthead-title h1 {
+    font-size: clamp(0.62rem, 2.3vw, 0.9rem);
   }
 
   .header-actions {

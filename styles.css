@@ -79,6 +79,7 @@ select {
 .masthead-title {
   align-self: end;
   min-width: 0;
+  transform: translateY(8px);
 }
 
 .masthead-title h1 {
@@ -102,6 +103,7 @@ select {
   display: grid;
   justify-items: end;
   gap: 10px;
+  transform: translateY(-8px);
 }
 
 .site-nav {
@@ -2144,6 +2146,11 @@ mark.term-6 {
     display: grid;
     grid-template-columns: auto minmax(0, 1fr);
     align-items: start;
+  }
+
+  .masthead-title,
+  .header-actions {
+    transform: none;
   }
 
   .site-logo {

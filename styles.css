@@ -1644,15 +1644,15 @@ h1 {
 
 .team-profile {
   display: grid;
-  grid-template-columns: 132px minmax(0, 1fr);
+  grid-template-columns: clamp(116px, 12vw, 148px) minmax(0, 1fr);
   gap: 16px;
   align-items: center;
   margin-bottom: 16px;
 }
 
 .team-profile-photo {
-  width: 132px;
-  height: 132px;
+  width: clamp(116px, 12vw, 148px);
+  height: clamp(116px, 12vw, 148px);
   border: 1px solid var(--line);
   border-radius: 8px;
   object-fit: cover;
@@ -1696,7 +1696,7 @@ h1 {
 
 .acknowledgment-person {
   display: grid;
-  grid-template-columns: 68px minmax(0, 1fr);
+  grid-template-columns: 82px minmax(0, 1fr);
   gap: 12px;
   align-items: center;
   border: 1px solid var(--line);
@@ -1713,8 +1713,8 @@ h1 {
 }
 
 .acknowledgment-person img {
-  width: 68px;
-  height: 68px;
+  width: 82px;
+  height: 82px;
   border-radius: 7px;
   object-fit: cover;
   background: #eef1f4;
@@ -2293,11 +2293,14 @@ mark.term-6 {
     grid-template-columns: 1fr;
   }
 
-  .team-profile-photo,
+  .team-profile-photo {
+    width: min(46vw, 160px);
+    height: min(46vw, 160px);
+  }
+
   .acknowledgment-person img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1 / 1;
+    width: min(36vw, 112px);
+    height: min(36vw, 112px);
   }
 
   .controls {

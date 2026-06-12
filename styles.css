@@ -2332,6 +2332,28 @@ mark.term-6 {
   font-weight: 800;
 }
 
+.seal-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: var(--shadow);
+}
+
+.seal-toolbar .clear-button {
+  min-height: 38px;
+}
+
+.seal-toolbar .clear-button[aria-pressed="true"] {
+  color: #ffffff;
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
 .seal-workspace {
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.62fr);
@@ -2369,6 +2391,7 @@ mark.term-6 {
 .seal-hotspots {
   position: absolute;
   inset: 0;
+  user-select: none;
 }
 
 .seal-hotspot {
@@ -2383,9 +2406,18 @@ mark.term-6 {
   background: var(--accent);
   box-shadow: 0 8px 18px rgba(23, 33, 43, 0.24);
   cursor: pointer;
+  touch-action: none;
   font-size: 0.84rem;
   font-weight: 900;
   transform: translate(-50%, -50%);
+}
+
+.seal-hotspots.moving .seal-hotspot {
+  cursor: grab;
+}
+
+.seal-hotspots.moving .seal-hotspot:active {
+  cursor: grabbing;
 }
 
 .seal-hotspot:hover,

@@ -2354,6 +2354,11 @@ mark.term-6 {
   background: var(--accent);
 }
 
+.seal-toolbar .clear-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.54;
+}
+
 .seal-workspace {
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.62fr);
@@ -2416,6 +2421,14 @@ mark.term-6 {
   cursor: grab;
 }
 
+.seal-hotspots.adding {
+  cursor: crosshair;
+}
+
+.seal-hotspots.adding .seal-hotspot {
+  cursor: default;
+}
+
 .seal-hotspots.moving .seal-hotspot:active {
   cursor: grabbing;
 }
@@ -2466,6 +2479,71 @@ mark.term-6 {
   color: #354150;
   font-size: 0.94rem;
   line-height: 1.58;
+}
+
+.seal-editor-form,
+.seal-note-editor-list,
+.seal-note-editor {
+  display: grid;
+  gap: 12px;
+}
+
+.seal-editor-form label,
+.seal-note-editor label {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.seal-editor-form input,
+.seal-editor-form textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 10px 11px;
+  color: var(--ink);
+  background: #ffffff;
+  font: inherit;
+  text-transform: none;
+  resize: vertical;
+}
+
+.seal-editor-form input:focus,
+.seal-editor-form textarea:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(52, 99, 118, 0.14);
+}
+
+.seal-position-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.seal-editor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--accent-strong);
+  font-weight: 900;
+}
+
+.seal-note-editor {
+  border: 1px solid #edf0f3;
+  border-radius: 7px;
+  padding: 12px;
+  background: #ffffff;
+}
+
+.clear-button.danger {
+  color: #8c1d2b;
+  border-color: rgba(140, 29, 43, 0.3);
 }
 
 .seal-region-panel {

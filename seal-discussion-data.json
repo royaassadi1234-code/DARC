@@ -1,0 +1,122 @@
+{
+  "title": "Fire altar seal discussion map",
+  "image": "logos/druz-logo-fire-altar-resisting-smoke-seal.png",
+  "regions": [
+    {
+      "id": "central-altar",
+      "label": "Central Fire Altar",
+      "x": 50,
+      "y": 50,
+      "theme": "ritual center",
+      "summary": "The altar can anchor discussion of ritual mediation, sacred order, and the relation between visible fire and interpretive structure.",
+      "notes": [
+        {
+          "heading": "Working reading",
+          "body": "Use this region for passages on fire, ritual authority, ordering principles, and the central place of religious knowledge."
+        },
+        {
+          "heading": "Text cluster",
+          "body": "Add DD, WZ, PY, or NM passages here when the discussion turns to ritual performance, purity, priestly mediation, or sacred transmission."
+        }
+      ]
+    },
+    {
+      "id": "upper-opening",
+      "label": "Upper Dark Opening",
+      "x": 50,
+      "y": 24,
+      "theme": "threshold",
+      "summary": "The dark oval above the center can mark a threshold, rupture, or receiving point for forces moving between levels.",
+      "notes": [
+        {
+          "heading": "Interpretive focus",
+          "body": "Use this region for texts that describe openings, passages, unseen causes, or transitions between spiritual and material orders."
+        }
+      ]
+    },
+    {
+      "id": "upper-light-flame",
+      "label": "Upper Light Flame",
+      "x": 50,
+      "y": 10,
+      "theme": "ascent and illumination",
+      "summary": "The pale flame and smoke at the top can carry discussion of ascent, illumination, cosmic order, and refined spiritual movement.",
+      "notes": [
+        {
+          "heading": "Discussion slot",
+          "body": "Add passages here that connect light, ascent, beneficent order, or spiritual purification."
+        }
+      ]
+    },
+    {
+      "id": "lower-dark-flame",
+      "label": "Lower Dark Flame",
+      "x": 50,
+      "y": 86,
+      "theme": "eruption",
+      "summary": "The black flame rising from below can represent pressure from destructive, adversarial, or contaminating forces.",
+      "notes": [
+        {
+          "heading": "Discussion slot",
+          "body": "Use this region for material on druz, Ahreman, pollution, violence, disorder, or forces that push upward into the ordered field."
+        }
+      ]
+    },
+    {
+      "id": "left-smoke",
+      "label": "Left Dark Smoke",
+      "x": 14,
+      "y": 53,
+      "theme": "encroachment",
+      "summary": "The left smoke mass can gather texts on surrounding pressure, invasion, distortion, or resistance to ordered divisions.",
+      "notes": [
+        {
+          "heading": "Discussion slot",
+          "body": "Add passages that describe hostile forces pressing against the ordered world, especially when language suggests surrounding or penetration."
+        }
+      ]
+    },
+    {
+      "id": "right-smoke",
+      "label": "Right Dark Smoke",
+      "x": 86,
+      "y": 53,
+      "theme": "counterforce",
+      "summary": "The right smoke mass can hold parallel or contrasting examples of darkness, opposition, and cosmic pressure.",
+      "notes": [
+        {
+          "heading": "Discussion slot",
+          "body": "Use this area for paired readings that compare the right and left smoke as mirrored forces or repeated textual motifs."
+        }
+      ]
+    },
+    {
+      "id": "red-branches",
+      "label": "Red Branch Network",
+      "x": 33,
+      "y": 44,
+      "theme": "distribution",
+      "summary": "The red branches can support discussion of textual branching, spread, relation, growth, or distributed concepts.",
+      "notes": [
+        {
+          "heading": "Discussion slot",
+          "body": "Add groups of terms, semantic motifs, or repeated phrases that branch across the corpus."
+        }
+      ]
+    },
+    {
+      "id": "six-sections",
+      "label": "Divided Wheel",
+      "x": 70,
+      "y": 35,
+      "theme": "classification",
+      "summary": "The radial divisions can structure categories, stages, oppositions, or sections of the argument.",
+      "notes": [
+        {
+          "heading": "Discussion slot",
+          "body": "Use this region for an outline of interpretive categories, conceptual classes, or the sequence of a presentation."
+        }
+      ]
+    }
+  ]
+}

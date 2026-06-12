@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Seal Discussion Map</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="logos/druz-logo-fire-altar-resisting-smoke-seal-no-branches-black-white-vector.svg">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="workspace" aria-labelledby="page-title">
+        <header class="masthead">
+          <a class="site-logo" href="index.html" aria-label="Druz home">
+            <img src="logos/druz-logo-fire-altar-resisting-smoke-seal-no-branches-black-white-vector.svg" alt="">
+          </a>
+          <div class="masthead-title">
+            <p class="eyebrow">Between Druz and Ahreman</p>
+            <h1 id="page-title"><span class="title-line">Reconfiguring Evil Principles in Selected Middle Persian Texts from Ninth-Century Iran:</span><span class="title-line">D&amacr;dest&amacr;n &imacr; D&emacr;n&imacr;g and Wiz&imacr;dag&imacr;h&amacr; &imacr; Z&amacr;dspram</span></h1>
+          </div>
+          <div class="header-actions">
+            <nav class="site-nav" aria-label="Research pages">
+              <a href="index.html">Start</a>
+              <details class="nav-menu">
+                <summary>Transc. &amp; Transl.</summary>
+                <div class="nav-menu-list">
+                  <a href="trans.html?text=dd">DD</a>
+                  <a href="trans.html?text=py">PY</a>
+                  <a href="trans.html?text=wz">WZ</a>
+                  <a href="trans.html?text=nm">NM</a>
+                </div>
+              </details>
+              <a href="search.html">Parallel Text Search</a>
+              <a href="diagram.html">Diagram</a>
+              <details class="nav-menu">
+                <summary>Pattern</summary>
+                <div class="nav-menu-list pattern-menu-list">
+                  <details class="pattern-submenu">
+                    <summary>Lexeme</summary>
+                    <div class="pattern-submenu-list">
+                      <a href="pseudo.html">DD vs PY</a>
+                      <a href="dd-wz.html">DD vs WZ</a>
+                      <a href="py-wz.html">PY vs WZ</a>
+                      <a href="dd-py-wz.html">DD vs PY vs WZ</a>
+                    </div>
+                  </details>
+                  <details class="pattern-submenu">
+                    <summary>Collocation</summary>
+                    <div class="pattern-submenu-list">
+                      <a href="dd-py-phrases.html">DD vs PY</a>
+                      <a href="dd-wz-phrases.html">DD vs WZ</a>
+                      <a href="py-wz-phrases.html">PY vs WZ</a>
+                      <a href="dd-py-wz-phrases.html">DD vs PY vs WZ</a>
+                    </div>
+                  </details>
+                  <details class="pattern-submenu">
+                    <summary>Semantic Motif</summary>
+                    <div class="pattern-submenu-list">
+                      <a href="themes.html">Semantic Motif</a>
+                    </div>
+                  </details>
+                </div>
+              </details>
+              <details class="nav-menu">
+                <summary>About</summary>
+                <div class="nav-menu-list">
+                  <a href="how-to-use.html">How to use</a>
+                  <a href="annotation-review.html">How to collaborate</a>
+                  <a href="project-description.html">Project description</a>
+                  <a href="about.html">Team</a>
+                  <a href="methodology.html">Methodology</a>
+                  <a href="resources.html">Bib.</a>
+                </div>
+              </details>
+            </nav>
+            <div class="status" id="seal-status">Seal map</div>
+          </div>
+        </header>
+
+        <section class="seal-workspace" aria-label="Interactive seal discussion map">
+          <article class="seal-image-panel">
+            <div class="seal-canvas">
+              <img id="seal-image" src="logos/druz-logo-fire-altar-resisting-smoke-seal.png" alt="Fire altar smoke seal with annotated regions">
+              <div class="seal-hotspots" id="seal-hotspots" aria-label="Seal regions"></div>
+            </div>
+          </article>
+
+          <aside class="seal-detail-panel" id="seal-region-detail" aria-live="polite"></aside>
+        </section>
+
+        <section class="seal-region-panel" aria-label="Seal region index">
+          <div class="siglum">Regions</div>
+          <div class="seal-region-list" id="seal-region-list"></div>
+        </section>
+      </section>
+    </main>
+    <script src="seal-discussion.js"></script>
+  </body>
+</html>

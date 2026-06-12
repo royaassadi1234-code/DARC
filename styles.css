@@ -134,6 +134,12 @@ select {
   background: var(--accent);
 }
 
+.site-nav > a[href="search.html"] {
+  max-width: 210px;
+  line-height: 1.16;
+  text-align: center;
+}
+
 .nav-menu {
   display: grid;
   gap: 4px;
@@ -1672,11 +1678,12 @@ h1 {
 .source-card-image {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: clamp(92px, 9vw, 118px);
   border: 1px solid #d7dee5;
   border-radius: 6px;
   background: #f7fafb;
   object-fit: contain;
+  object-position: center;
 }
 
 .source-card .meta {

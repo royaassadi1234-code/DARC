@@ -1691,7 +1691,7 @@ h1 {
 .source-card-media {
   display: block;
   width: 100%;
-  height: clamp(420px, 44vw, 600px);
+  aspect-ratio: 5 / 7;
   overflow: hidden;
   border: 1px solid #d7dee5;
   border-radius: 6px;

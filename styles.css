@@ -1665,6 +1665,24 @@ h1 {
   transform: translateY(-1px);
 }
 
+.source-card {
+  gap: 10px;
+}
+
+.source-card-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: 1px solid #d7dee5;
+  border-radius: 6px;
+  background: #f7fafb;
+  object-fit: contain;
+}
+
+.source-card .meta {
+  margin-top: 0;
+}
+
 .about-copy,
 .profile-card {
   border-radius: 8px;

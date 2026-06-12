@@ -2365,9 +2365,10 @@ mark.term-6 {
 
 .seal-workspace {
   display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.62fr);
+  grid-template-columns: minmax(0, min(980px, 100%));
   gap: 16px;
   align-items: start;
+  justify-content: center;
 }
 
 .seal-image-panel,
@@ -2381,6 +2382,9 @@ mark.term-6 {
 }
 
 .seal-image-panel {
+  width: 100%;
+  max-width: 980px;
+  justify-self: center;
   padding: 12px;
 }
 
@@ -2455,7 +2459,7 @@ mark.term-6 {
   overflow: auto;
   border: 1px solid var(--line);
   border-radius: 8px;
-  padding: 14px;
+  padding: 14px 48px 14px 14px;
   color: var(--ink);
   background: rgba(255, 255, 255, 0.97);
   box-shadow: 0 18px 44px rgba(23, 33, 43, 0.22);
@@ -2539,8 +2543,15 @@ mark.term-6 {
 
 .seal-detail-panel {
   display: grid;
+  width: 100%;
+  max-width: 980px;
+  justify-self: center;
   gap: 14px;
   padding: 16px;
+}
+
+.seal-detail-panel[hidden] {
+  display: none;
 }
 
 .seal-detail-panel h2 {

@@ -43,6 +43,7 @@ async function init() {
   } catch (error) {
     console.error(error);
     statusEl.textContent = "Mazdyasnian Cosmology unavailable";
+    detailEl.hidden = false;
     detailEl.innerHTML = `<div class="empty-state">The discussion map data could not be loaded.</div>`;
   }
 }
@@ -177,32 +178,24 @@ function syncActiveState() {
 
 function renderDetail(region = getActiveRegion()) {
   if (!region) {
-    detailEl.innerHTML = `<div class="empty-state">Select or add a numbered region.</div>`;
+    detailEl.hidden = true;
+    detailEl.innerHTML = "";
     return;
   }
 
   if (canEdit && editMode) {
+    detailEl.hidden = false;
     renderEditor(region);
     return;
   }
 
-  detailEl.innerHTML = `
-    <div class="siglum">${escapeHtml(region.theme || "Region")}</div>
-    <h2>${escapeHtml(region.label)}</h2>
-    <p class="meta">${escapeHtml(region.summary || "")}</p>
-    <div class="seal-note-list">
-      ${(region.notes || []).map((note) => `
-        <section class="seal-note">
-          <h3>${escapeHtml(note.heading || "Note")}</h3>
-          <p>${escapeHtml(note.body || "")}</p>
-        </section>
-      `).join("")}
-    </div>
-  `;
+  detailEl.hidden = true;
+  detailEl.innerHTML = "";
 }
 
 function renderEditor(region) {
   closeRegionPopup();
+  detailEl.hidden = false;
   detailEl.innerHTML = `
     <form class="seal-editor-form" aria-label="Edit selected region">
       <label>

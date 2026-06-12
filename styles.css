@@ -809,7 +809,7 @@ h1 {
 .concept-next-grid section {
   border: 1px solid #edf0f3;
   border-radius: 7px;
-  padding: 14px;
+  padding: 14px 48px 14px 14px;
   background: #ffffff;
 }
 
@@ -2443,6 +2443,98 @@ mark.term-6 {
   outline: none;
   background: var(--red);
   transform: translate(-50%, -50%) scale(1.16);
+}
+
+.seal-popover {
+  position: absolute;
+  z-index: 8;
+  display: grid;
+  gap: 10px;
+  width: min(340px, calc(100% - 32px));
+  max-height: min(420px, calc(100% - 32px));
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 18px 44px rgba(23, 33, 43, 0.22);
+}
+
+.seal-popover[hidden] {
+  display: none;
+}
+
+.seal-popover.is-below {
+  transform: translate(-50%, 24px);
+}
+
+.seal-popover.is-above {
+  transform: translate(-50%, calc(-100% - 24px));
+}
+
+.seal-popover.is-left {
+  transform: translate(calc(-100% - 24px), -50%);
+}
+
+.seal-popover.is-right {
+  transform: translate(24px, -50%);
+}
+
+.seal-popover.is-left.is-above {
+  transform: translate(calc(-100% - 24px), calc(-100% + 16px));
+}
+
+.seal-popover.is-left.is-below {
+  transform: translate(calc(-100% - 24px), 16px);
+}
+
+.seal-popover.is-right.is-above {
+  transform: translate(24px, calc(-100% + 16px));
+}
+
+.seal-popover.is-right.is-below {
+  transform: translate(24px, 16px);
+}
+
+.seal-popover h2 {
+  margin: 0;
+  color: var(--accent-strong);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  line-height: 1.1;
+}
+
+.seal-popover .seal-note-list {
+  gap: 8px;
+}
+
+.seal-popover .seal-note {
+  padding: 10px;
+}
+
+.seal-popover-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--accent-strong);
+  background: #ffffff;
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.seal-popover-close:hover,
+.seal-popover-close:focus-visible {
+  border-color: var(--accent);
+  outline: none;
+  background: #eef4f7;
 }
 
 .seal-detail-panel {

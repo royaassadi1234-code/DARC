@@ -2,6 +2,7 @@ const DATA_URL = "seal-discussion-data.json";
 
 const imageEl = document.querySelector("#seal-image");
 const hotspotsEl = document.querySelector("#seal-hotspots");
+const popoverEl = document.querySelector("#seal-popover");
 const regionListEl = document.querySelector("#seal-region-list");
 const detailEl = document.querySelector("#seal-region-detail");
 const statusEl = document.querySelector("#seal-status");
@@ -52,10 +53,16 @@ function bindControls() {
   window.addEventListener("pointermove", moveDrag);
   window.addEventListener("pointerup", endDrag);
   window.addEventListener("pointercancel", endDrag);
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeRegionPopup();
+    }
+  });
 
   regionListEl.addEventListener("click", (event) => {
     const button = event.target.closest("[data-region-id]");
     if (button) {
+      closeRegionPopup();
       selectRegion(button.dataset.regionId);
     }
   });
@@ -128,13 +135,22 @@ function handleCanvasClick(event) {
   const button = event.target.closest("[data-region-id]");
   if (button) {
     selectRegion(button.dataset.regionId);
+    if (!editMode) {
+      const region = getActiveRegion();
+      if (region) {
+        openRegionPopup(region);
+      }
+    }
     return;
   }
 
   if (canEdit && editMode && addMode) {
     const position = getCanvasPosition(event);
     addRegionAt(position.x, position.y);
+    return;
   }
+
+  closeRegionPopup();
 }
 
 function selectRegion(id) {
@@ -186,6 +202,7 @@ function renderDetail(region = getActiveRegion()) {
 }
 
 function renderEditor(region) {
+  closeRegionPopup();
   detailEl.innerHTML = `
     <form class="seal-editor-form" aria-label="Edit selected region">
       <label>
@@ -313,6 +330,8 @@ function setEditMode(value) {
   editMode = value;
   if (!editMode) {
     addMode = false;
+  } else {
+    closeRegionPopup();
   }
   updateToolbarState();
   renderDetail();
@@ -372,6 +391,7 @@ function deleteSelectedRegion() {
     return;
   }
   regions.splice(activeIndex, 1);
+  closeRegionPopup();
   activeId = regions[Math.max(0, activeIndex - 1)]?.id || regions[0]?.id || "";
   renderHotspots();
   renderRegionList();
@@ -436,8 +456,46 @@ function updateRegionPosition(event) {
   region.y = position.y;
   updateHotspotPosition(region);
   updateCoordinateInputs(region);
+  closeRegionPopup();
   persistDraft();
   statusEl.textContent = `${region.label}: ${region.x}, ${region.y}`;
+}
+
+function openRegionPopup(region) {
+  const orientationClass = getPopupOrientationClass(region);
+  popoverEl.className = `seal-popover ${orientationClass}`;
+  popoverEl.style.left = `${region.x}%`;
+  popoverEl.style.top = `${region.y}%`;
+  popoverEl.innerHTML = `
+    <button class="seal-popover-close" type="button" aria-label="Close popup">&times;</button>
+    <div class="siglum">${escapeHtml(region.theme || "Region")}</div>
+    <h2>${escapeHtml(region.label)}</h2>
+    <p class="meta">${escapeHtml(region.summary || "")}</p>
+    <div class="seal-note-list">
+      ${(region.notes || []).map((note) => `
+        <section class="seal-note">
+          <h3>${escapeHtml(note.heading || "Note")}</h3>
+          <p>${escapeHtml(note.body || "")}</p>
+        </section>
+      `).join("")}
+    </div>
+  `;
+  popoverEl.hidden = false;
+  popoverEl.querySelector(".seal-popover-close").addEventListener("click", closeRegionPopup);
+}
+
+function closeRegionPopup() {
+  if (popoverEl.hidden) {
+    return;
+  }
+  popoverEl.hidden = true;
+  popoverEl.innerHTML = "";
+}
+
+function getPopupOrientationClass(region) {
+  const horizontal = region.x > 62 ? "is-left" : region.x < 38 ? "is-right" : "is-centered";
+  const vertical = region.y > 58 ? "is-above" : "is-below";
+  return `${horizontal} ${vertical}`;
 }
 
 function updateHotspotPosition(region) {

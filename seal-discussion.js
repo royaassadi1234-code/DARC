@@ -5,12 +5,13 @@ const hotspotsEl = document.querySelector("#seal-hotspots");
 const regionListEl = document.querySelector("#seal-region-list");
 const detailEl = document.querySelector("#seal-region-detail");
 const statusEl = document.querySelector("#seal-status");
+const toolbarEl = document.querySelector("#seal-toolbar");
 const editToggleEl = document.querySelector("#seal-edit-toggle");
 const addRegionEl = document.querySelector("#seal-add-region");
 const deleteRegionEl = document.querySelector("#seal-delete-region");
-const copyJsonEl = document.querySelector("#seal-copy-json");
-const downloadJsonEl = document.querySelector("#seal-download-json");
 
+const DRAFT_KEY = "druz-mazdyasnian-cosmology-draft";
+const canEdit = isLocalEditorHost();
 let mapData = null;
 let regions = [];
 let activeId = "";
@@ -28,6 +29,9 @@ async function init() {
       throw new Error(`Could not load ${DATA_URL}`);
     }
     mapData = await response.json();
+    if (canEdit) {
+      mapData = loadLocalDraft(mapData);
+    }
     regions = normalizeRegions(mapData.regions || []);
     imageEl.src = mapData.image || "logos/druz-logo-fire-altar-resisting-smoke-seal.png";
     bindControls();
@@ -59,6 +63,12 @@ function bindControls() {
   detailEl.addEventListener("input", handleEditorInput);
   detailEl.addEventListener("click", handleEditorClick);
 
+  if (!canEdit) {
+    return;
+  }
+
+  toolbarEl.hidden = false;
+
   editToggleEl.addEventListener("click", () => {
     setEditMode(!editMode);
   });
@@ -71,29 +81,6 @@ function bindControls() {
   });
 
   deleteRegionEl.addEventListener("click", deleteSelectedRegion);
-
-  copyJsonEl.addEventListener("click", async () => {
-    const json = getUpdatedJson();
-    try {
-      await writeClipboardText(json);
-      flashButton(copyJsonEl, "Copied");
-    } catch (error) {
-      console.error(error);
-      flashButton(copyJsonEl, "Copy failed");
-    }
-  });
-
-  downloadJsonEl.addEventListener("click", () => {
-    const blob = new Blob([getUpdatedJson()], { type: "application/json" });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = DATA_URL;
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-    URL.revokeObjectURL(url);
-  });
 }
 
 function normalizeRegions(sourceRegions) {
@@ -144,7 +131,7 @@ function handleCanvasClick(event) {
     return;
   }
 
-  if (editMode && addMode) {
+  if (canEdit && editMode && addMode) {
     const position = getCanvasPosition(event);
     addRegionAt(position.x, position.y);
   }
@@ -178,7 +165,7 @@ function renderDetail(region = getActiveRegion()) {
     return;
   }
 
-  if (editMode) {
+  if (canEdit && editMode) {
     renderEditor(region);
     return;
   }
@@ -247,7 +234,7 @@ function renderEditor(region) {
 }
 
 function handleEditorInput(event) {
-  if (!editMode) {
+  if (!canEdit || !editMode) {
     return;
   }
 
@@ -267,12 +254,13 @@ function handleEditorInput(event) {
     const noteIndex = Number(event.target.dataset.noteIndex);
     if (region.notes[noteIndex]) {
       region.notes[noteIndex][noteField] = event.target.value;
+      persistDraft();
     }
   }
 }
 
 function handleEditorClick(event) {
-  if (!editMode) {
+  if (!canEdit || !editMode) {
     return;
   }
 
@@ -286,6 +274,7 @@ function handleEditorClick(event) {
       heading: `Text ${region.notes.length + 1}`,
       body: ""
     });
+    persistDraft();
     renderEditor(region);
     return;
   }
@@ -294,6 +283,7 @@ function handleEditorClick(event) {
   if (removeButton) {
     const noteIndex = Number(removeButton.dataset.removeNote);
     region.notes.splice(noteIndex, 1);
+    persistDraft();
     renderEditor(region);
   }
 }
@@ -303,11 +293,13 @@ function updateRegionField(region, field, rawValue, inputEl) {
     region[field] = Number(clamp(Number(rawValue) || 0, 0, 100).toFixed(2));
     inputEl.value = region[field];
     updateHotspotPosition(region);
+    persistDraft();
     statusEl.textContent = `${region.label}: ${region.x}, ${region.y}`;
     return;
   }
 
   region[field] = rawValue;
+  persistDraft();
   if (field === "label") {
     statusEl.textContent = region.label || "Untitled region";
     updateRegionLabels(region);
@@ -315,6 +307,9 @@ function updateRegionField(region, field, rawValue, inputEl) {
 }
 
 function setEditMode(value) {
+  if (!canEdit) {
+    return;
+  }
   editMode = value;
   if (!editMode) {
     addMode = false;
@@ -324,18 +319,26 @@ function setEditMode(value) {
 }
 
 function updateToolbarState() {
+  if (!canEdit) {
+    editMode = false;
+    addMode = false;
+    toolbarEl.hidden = true;
+    hotspotsEl.classList.remove("moving", "adding");
+    return;
+  }
   editToggleEl.setAttribute("aria-pressed", String(editMode));
   editToggleEl.textContent = editMode ? "Done editing" : "Move/Edit regions";
   addRegionEl.disabled = !mapData;
   addRegionEl.setAttribute("aria-pressed", String(addMode));
   deleteRegionEl.disabled = !editMode || !activeId || regions.length < 1;
-  copyJsonEl.disabled = !mapData;
-  downloadJsonEl.disabled = !mapData;
   hotspotsEl.classList.toggle("moving", editMode);
   hotspotsEl.classList.toggle("adding", editMode && addMode);
 }
 
 function addRegionAt(x, y) {
+  if (!canEdit) {
+    return;
+  }
   const number = regions.length + 1;
   const region = {
     id: createUniqueId(`new-region-${number}`),
@@ -355,12 +358,13 @@ function addRegionAt(x, y) {
   addMode = false;
   renderHotspots();
   renderRegionList();
+  persistDraft();
   selectRegion(region.id);
   statusEl.textContent = `${region.label}: ${region.x}, ${region.y}`;
 }
 
 function deleteSelectedRegion() {
-  if (!editMode || !activeId) {
+  if (!canEdit || !editMode || !activeId) {
     return;
   }
   const activeIndex = regions.findIndex((region) => region.id === activeId);
@@ -371,6 +375,7 @@ function deleteSelectedRegion() {
   activeId = regions[Math.max(0, activeIndex - 1)]?.id || regions[0]?.id || "";
   renderHotspots();
   renderRegionList();
+  persistDraft();
   if (activeId) {
     selectRegion(activeId);
   } else {
@@ -380,7 +385,7 @@ function deleteSelectedRegion() {
 }
 
 function startDrag(event) {
-  if (!editMode || addMode) {
+  if (!canEdit || !editMode || addMode) {
     return;
   }
   const button = event.target.closest("[data-region-id]");
@@ -431,6 +436,7 @@ function updateRegionPosition(event) {
   region.y = position.y;
   updateHotspotPosition(region);
   updateCoordinateInputs(region);
+  persistDraft();
   statusEl.textContent = `${region.label}: ${region.x}, ${region.y}`;
 }
 
@@ -499,43 +505,39 @@ function createUniqueId(baseId) {
   return candidate;
 }
 
-function getUpdatedJson() {
-  return JSON.stringify({ ...mapData, regions }, null, 2);
-}
-
-async function writeClipboardText(text) {
-  if (navigator.clipboard?.writeText && window.isSecureContext) {
-    await navigator.clipboard.writeText(text);
-    return;
-  }
-  const textarea = document.createElement("textarea");
-  textarea.value = text;
-  textarea.setAttribute("readonly", "");
-  textarea.style.position = "fixed";
-  textarea.style.left = "-9999px";
-  document.body.appendChild(textarea);
-  textarea.select();
-  try {
-    const copied = document.execCommand("copy");
-    if (!copied) {
-      throw new Error("Clipboard command was not accepted");
-    }
-  } finally {
-    textarea.remove();
-  }
-}
-
-function flashButton(button, label) {
-  const original = button.textContent;
-  button.textContent = label;
-  window.setTimeout(() => {
-    button.textContent = original;
-  }, 1400);
-}
-
 function findRegionElement(container, id) {
   return Array.from(container.querySelectorAll("[data-region-id]"))
     .find((element) => element.dataset.regionId === id);
+}
+
+function loadLocalDraft(fallbackData) {
+  try {
+    const draft = window.localStorage.getItem(DRAFT_KEY);
+    return draft ? JSON.parse(draft) : fallbackData;
+  } catch (error) {
+    console.warn("Could not load local cosmology draft", error);
+    return fallbackData;
+  }
+}
+
+function persistDraft() {
+  if (!canEdit) {
+    return;
+  }
+  try {
+    window.localStorage.setItem(DRAFT_KEY, JSON.stringify({ ...mapData, regions }));
+  } catch (error) {
+    console.warn("Could not save local cosmology draft", error);
+  }
+}
+
+function isLocalEditorHost() {
+  const host = window.location.hostname;
+  return window.location.protocol === "file:"
+    || host === "localhost"
+    || host === "127.0.0.1"
+    || host === "::1"
+    || host === "";
 }
 
 function clamp(value, min, max) {

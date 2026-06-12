@@ -2344,6 +2344,10 @@ mark.term-6 {
   box-shadow: var(--shadow);
 }
 
+.seal-toolbar[hidden] {
+  display: none;
+}
+
 .seal-toolbar .clear-button {
   min-height: 38px;
 }

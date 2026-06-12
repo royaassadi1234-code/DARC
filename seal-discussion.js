@@ -32,7 +32,7 @@ async function init() {
     selectRegion(regions[0]?.id || "");
   } catch (error) {
     console.error(error);
-    statusEl.textContent = "Seal map unavailable";
+    statusEl.textContent = "Mazdyasnian Cosmology unavailable";
     detailEl.innerHTML = `<div class="empty-state">The discussion map data could not be loaded.</div>`;
   }
 }
@@ -124,7 +124,7 @@ function bindEditControls() {
     editToggleEl.setAttribute("aria-pressed", String(editMode));
     editToggleEl.textContent = editMode ? "Done moving" : "Move regions";
     hotspotsEl.classList.toggle("moving", editMode);
-    statusEl.textContent = editMode ? "Move regions" : (regions.find((region) => region.id === activeId)?.label || "Seal map");
+    statusEl.textContent = editMode ? "Move regions" : (regions.find((region) => region.id === activeId)?.label || mapData?.title || "Mazdyasnian Cosmology");
   });
 
   copyJsonEl.addEventListener("click", async () => {

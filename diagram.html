@@ -85,10 +85,41 @@
           </label>
 
           <div class="controls" role="group" aria-label="Diagram options">
-            <label class="control">
-              <input id="diagram-multiple" type="checkbox" checked>
-              <span>Multiple words</span>
-            </label>
+            <div class="control-stack">
+              <label class="control">
+                <input id="diagram-multiple" type="checkbox" checked>
+                <span>Multiple words</span>
+              </label>
+              <details class="text-selection">
+                <summary>Select texts</summary>
+                <fieldset aria-label="Texts to compare">
+                  <label class="control">
+                    <input class="diagram-text-toggle" type="checkbox" value="dd" checked>
+                    <span>DD</span>
+                  </label>
+                  <label class="control">
+                    <input class="diagram-text-toggle" type="checkbox" value="gbd" checked>
+                    <span>GBd</span>
+                  </label>
+                  <label class="control">
+                    <input class="diagram-text-toggle" type="checkbox" value="prdd" checked>
+                    <span>PRDd</span>
+                  </label>
+                  <label class="control">
+                    <input class="diagram-text-toggle" type="checkbox" value="py" checked>
+                    <span>PY</span>
+                  </label>
+                  <label class="control">
+                    <input class="diagram-text-toggle" type="checkbox" value="wz" checked>
+                    <span>WZ</span>
+                  </label>
+                  <label class="control">
+                    <input class="diagram-text-toggle" type="checkbox" value="nm" checked>
+                    <span>NM</span>
+                  </label>
+                </fieldset>
+              </details>
+            </div>
             <label class="control">
               <input id="diagram-phrase" type="checkbox">
               <span>Phrase search</span>
@@ -102,36 +133,6 @@
               <span>Case sensitive</span>
             </label>
           </div>
-
-          <details class="text-selection">
-            <summary>Select texts</summary>
-            <fieldset aria-label="Texts to compare">
-              <label class="control">
-                <input class="diagram-text-toggle" type="checkbox" value="dd" checked>
-                <span>DD</span>
-              </label>
-              <label class="control">
-                <input class="diagram-text-toggle" type="checkbox" value="gbd" checked>
-                <span>GBd</span>
-              </label>
-              <label class="control">
-                <input class="diagram-text-toggle" type="checkbox" value="prdd" checked>
-                <span>PRDd</span>
-              </label>
-              <label class="control">
-                <input class="diagram-text-toggle" type="checkbox" value="py" checked>
-                <span>PY</span>
-              </label>
-              <label class="control">
-                <input class="diagram-text-toggle" type="checkbox" value="wz" checked>
-                <span>WZ</span>
-              </label>
-              <label class="control">
-                <input class="diagram-text-toggle" type="checkbox" value="nm" checked>
-                <span>NM</span>
-              </label>
-            </fieldset>
-          </details>
         </section>
 
         <section class="diagram-tool" id="diagram-tool" aria-live="polite"></section>

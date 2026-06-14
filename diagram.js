@@ -542,14 +542,17 @@ function sameDisplayTerm(a, b) {
 }
 
 function getLexicalVariants(term) {
-  const lexicalVariantGroups = [
+  return getVariantGroup(term, getLexicalVariantGroups());
+}
+
+function getLexicalVariantGroups() {
+  return [
     ["ahreman", "ahrimen", "ahriman", "aharman", "ahremn", "ahremanag"],
     ["druz", "druj", "drux", "drug", "draoga"],
     ["ohrmazd", "ormazd", "ahura mazda", "ahuramazda"],
     ["zadspram", "zadsparam", "zatspram", "zad-spram"],
     ["manuchihr", "manushchihr", "manuschihr", "manuscihr", "manushcihr"]
   ];
-  return getVariantGroup(term, lexicalVariantGroups);
 }
 
 function getPhraseVariants(term) {
@@ -602,7 +605,7 @@ function getSearchTerms(query) {
   const terms = diagramState.phraseSearch
     ? query.split(/[,;]+/)
     : diagramState.multipleWords
-      ? parseTermsWithQuotedPhrases(query)
+      ? mergeKnownPhraseTerms(parseTermsWithQuotedPhrases(query))
       : [query];
   return [...new Set(terms.map((term) => term.trim()).filter(Boolean))];
 }
@@ -615,6 +618,41 @@ function parseTermsWithQuotedPhrases(query) {
     terms.push(match[1] || match[2] || match[0]);
   }
   return terms;
+}
+
+function mergeKnownPhraseTerms(terms) {
+  const knownPhrases = getKnownSearchPhrases();
+  const merged = [];
+  let index = 0;
+
+  while (index < terms.length) {
+    const twoPart = terms.slice(index, index + 2).join(" ");
+    const foldedTwoPart = foldText(twoPart, diagramState.caseSensitive).text;
+    if (knownPhrases.has(foldedTwoPart)) {
+      merged.push(twoPart);
+      index += 2;
+      continue;
+    }
+
+    merged.push(terms[index]);
+    index += 1;
+  }
+
+  return merged;
+}
+
+function getKnownSearchPhrases() {
+  const phrases = new Set();
+  getLexicalVariantGroups()
+    .flat()
+    .filter(isPhraseTerm)
+    .forEach((phrase) => phrases.add(foldText(phrase, diagramState.caseSensitive).text));
+
+  getPhraseVariants("gannag menog").forEach((phrase) => {
+    phrases.add(foldText(phrase, diagramState.caseSensitive).text);
+  });
+
+  return phrases;
 }
 
 function buildPattern(terms) {

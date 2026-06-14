@@ -665,13 +665,28 @@ h1 {
   background: #ffffff;
 }
 
-.linear-occurrence-card header {
+.linear-occurrence-card summary {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 12px;
   padding: 10px 12px;
   border-bottom: 1px solid var(--line);
   background: #fbfcfd;
+  cursor: pointer;
+  list-style: none;
+}
+
+.linear-occurrence-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.linear-occurrence-card:not([open]) summary {
+  border-bottom: 0;
+}
+
+.linear-occurrence-card[open] summary {
+  border-bottom-color: var(--line);
 }
 
 .linear-occurrence-card h2 {

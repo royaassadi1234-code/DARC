@@ -260,14 +260,14 @@ function shortenTerm(term) {
 
 function renderLinearOccurrences(summary, terms) {
   return `
-    <section class="linear-occurrence-card">
-      <header>
+    <details class="linear-occurrence-card">
+      <summary>
         <div>
           <div class="siglum">${escapeHtml(summary.text.siglum)}</div>
           <h2>${escapeHtml(summary.text.title)}</h2>
         </div>
         <span class="count-pill ${summary.total ? "hit" : "miss"}">${summary.total}</span>
-      </header>
+      </summary>
       <div class="linear-lines">
         ${terms.map((term, termIndex) => {
           const locations = summary.occurrences
@@ -282,7 +282,7 @@ function renderLinearOccurrences(summary, terms) {
           `;
         }).join("")}
       </div>
-    </section>
+    </details>
   `;
 }
 
@@ -343,6 +343,7 @@ function getSearchVariants(term) {
   }
 
   const variants = new Set([folded]);
+  getLexicalVariants(folded).forEach((variant) => variants.add(variant));
   [
     folded.replace(/^=+/, ""),
     folded.replace(/^u-/, ""),
@@ -365,6 +366,26 @@ function getSearchVariants(term) {
   });
 
   return [...variants].filter(Boolean);
+}
+
+function getLexicalVariants(term) {
+  const lexicalVariantMap = new Map([
+    ["ahreman", ["ahreman", "ahrimen", "ahriman", "aharman", "ahremn", "ahremanag"]],
+    ["ahrimen", ["ahrimen", "ahreman", "ahriman", "aharman"]],
+    ["ahriman", ["ahriman", "ahreman", "ahrimen", "aharman"]],
+    ["aharman", ["aharman", "ahreman", "ahrimen", "ahriman"]],
+    ["druz", ["druz", "druj", "drux", "drug", "draoga"]],
+    ["druj", ["druj", "druz", "drux", "drug", "draoga"]],
+    ["drug", ["drug", "druz", "druj", "drux", "draoga"]],
+    ["drux", ["drux", "druz", "druj", "drug", "draoga"]],
+    ["ohrmazd", ["ohrmazd", "ormazd", "ahura mazda", "ahuramazda"]],
+    ["ormazd", ["ormazd", "ohrmazd", "ahura mazda", "ahuramazda"]],
+    ["zadspram", ["zadspram", "zadsparam", "zatspram", "zad-spram"]],
+    ["zadsparam", ["zadsparam", "zadspram", "zatspram", "zad-spram"]],
+    ["manuchihr", ["manuchihr", "manushchihr", "manuschihr", "manuscihr", "manushcihr"]],
+    ["manushchihr", ["manushchihr", "manuchihr", "manuschihr", "manuscihr", "manushcihr"]]
+  ]);
+  return lexicalVariantMap.get(term) || [];
 }
 
 function getPhraseVariants(term) {

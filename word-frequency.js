@@ -38,6 +38,7 @@ const frequencyState = {
   hideStopwords: true,
   selected: null,
   pages: {},
+  sharedWordKeys: new Set(),
   personalCommonWords: loadPersonalCommonWords()
 };
 
@@ -58,6 +59,7 @@ async function initFrequency() {
 
   try {
     frequencyState.texts = await Promise.all(FREQUENCY_TEXTS.map(loadFrequencyText));
+    frequencyState.sharedWordKeys = getSharedWordKeys();
     frequencyStatusEl.textContent = "DD and WZ ready";
     renderFrequency();
   } catch (error) {
@@ -316,6 +318,15 @@ function getRankedWords(text) {
     .sort((a, b) => b.total - a.total || a.label.localeCompare(b.label));
 }
 
+function getSharedWordKeys() {
+  if (frequencyState.texts.length < 2) {
+    return new Set();
+  }
+
+  const [first, ...rest] = frequencyState.texts.map((text) => new Set(text.wordStats.keys()));
+  return new Set([...first].filter((key) => rest.every((wordSet) => wordSet.has(key))));
+}
+
 function renderPersonalCommonWords() {
   const words = [...frequencyState.personalCommonWords].sort((a, b) => a.localeCompare(b));
   personalCommonListEl.innerHTML = words.length
@@ -372,9 +383,10 @@ function renderFrequencyList(text, ranked) {
 
 function renderFrequencyItem(text, item, index, max) {
   const selected = frequencyState.selected?.textId === text.id && frequencyState.selected?.wordKey === item.key;
+  const shared = frequencyState.sharedWordKeys.has(item.key);
   const percent = (item.total / max) * 100;
   return `
-    <div class="frequency-item ${selected ? "active" : ""}">
+    <div class="frequency-item ${selected ? "active" : ""} ${shared ? "shared" : ""}">
       <button class="frequency-row" type="button" data-text-id="${escapeHtml(text.id)}" data-word-key="${escapeHtml(item.key)}">
         <span class="frequency-rank">${index + 1}</span>
         <span class="frequency-word">${escapeHtml(item.label)}</span>

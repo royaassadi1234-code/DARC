@@ -632,6 +632,21 @@ h1 {
   background: #eef4f7;
 }
 
+.frequency-item.shared .frequency-row {
+  border-color: rgba(38, 112, 82, 0.42);
+  background: #eaf5ef;
+}
+
+.frequency-item.shared .frequency-row:hover,
+.frequency-item.shared .frequency-row:focus-visible {
+  border-color: var(--green);
+  background: #dcede4;
+}
+
+.frequency-item.shared .frequency-mini-bar span {
+  background: var(--green);
+}
+
 .frequency-rank {
   color: var(--muted);
   font-size: 0.78rem;

@@ -474,12 +474,22 @@ h1 {
   padding: 16px;
 }
 
+.diagram-row-charts {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(160px, 1fr);
+  gap: 12px;
+  align-items: stretch;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.diagram-occurrence-grid,
 .diagram-result-row {
   display: grid;
   gap: 10px;
 }
 
-.diagram-row-charts,
 .diagram-row-occurrences {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2831,9 +2841,12 @@ mark.term-6 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .diagram-row-charts,
   .diagram-row-occurrences {
     grid-template-columns: 1fr;
+  }
+
+  .diagram-row-charts {
+    grid-auto-columns: minmax(180px, 82vw);
   }
 
   .network-panel {

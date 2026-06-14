@@ -206,7 +206,12 @@ function renderDiagram() {
       </div>
 
       <section class="diagram-result-grid" aria-label="Diagram and occurrence locations">
-        ${chunkItems(summaries, 2).map((pair) => renderDiagramResultRow(pair, search.terms, maxCount)).join("")}
+        <div class="diagram-row-charts" aria-label="All selected text diagrams">
+          ${summaries.map((summary) => renderVerticalBar(summary, maxCount)).join("")}
+        </div>
+        <div class="diagram-occurrence-grid" aria-label="Occurrence results">
+          ${chunkItems(summaries, 2).map((pair) => renderOccurrenceResultRow(pair, search.terms)).join("")}
+        </div>
       </section>
     </article>
   `;
@@ -224,12 +229,9 @@ function chunkItems(items, size) {
   return chunks;
 }
 
-function renderDiagramResultRow(summaries, terms, maxCount) {
+function renderOccurrenceResultRow(summaries, terms) {
   return `
     <div class="diagram-result-row">
-      <div class="diagram-row-charts" aria-label="Paired diagrams">
-        ${summaries.map((summary) => renderVerticalBar(summary, maxCount)).join("")}
-      </div>
       <div class="diagram-row-occurrences" aria-label="Paired occurrence results">
         ${summaries.map((summary) => renderLinearOccurrences(summary, terms)).join("")}
       </div>

@@ -260,9 +260,7 @@ function buildWordStats(records) {
 
       const item = stats.get(key);
       item.total += 1;
-      if (!item.locations.includes(record.location)) {
-        item.locations.push(record.location);
-      }
+      item.locations.push(record.location);
     }
   });
 
@@ -375,7 +373,7 @@ function renderFrequencyItem(text, item, index, max) {
 }
 
 function renderLocationPopover(text, word) {
-  const locations = word.locations.slice(0, 120);
+  const locationText = `${word.label}: ${word.locations.join(", ")}`;
   return `
     <aside class="frequency-location-popover">
       <header>
@@ -385,14 +383,7 @@ function renderLocationPopover(text, word) {
         </div>
         <button class="clear-button" type="button" data-close-locations>Close</button>
       </header>
-      <div class="frequency-location-list">
-        ${locations.map((location) => `
-          <span class="frequency-location-chip">${escapeHtml(location)}</span>
-        `).join("")}
-        ${word.locations.length > locations.length ? `
-          <p class="meta frequency-more">Showing first ${locations.length.toLocaleString()} of ${word.locations.length.toLocaleString()} locations.</p>
-        ` : ""}
-      </div>
+      <p class="frequency-location-text">${escapeHtml(locationText)}</p>
     </aside>
   `;
 }

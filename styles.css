@@ -440,16 +440,18 @@ h1 {
 }
 
 .diagram-controls {
-  grid-template-columns: minmax(300px, 1fr) auto;
+  grid-template-columns: minmax(260px, 1fr) auto minmax(240px, auto);
+  align-items: end;
 }
 
 .text-selection {
-  grid-column: 1 / -1;
   display: flex;
   align-items: end;
+  justify-content: flex-end;
   gap: 10px;
   flex-wrap: wrap;
   min-width: 0;
+  max-width: 360px;
   margin: 0;
   border: 0;
   padding: 0;
@@ -2779,6 +2781,11 @@ mark.term-6 {
   .concept-controls,
   .trans-controls {
     grid-template-columns: 1fr;
+  }
+
+  .text-selection {
+    justify-content: flex-start;
+    max-width: none;
   }
 
   .overview,

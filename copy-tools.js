@@ -56,6 +56,10 @@
     }
 
     container.querySelectorAll(CARD_SELECTORS.join(",")).forEach((card) => {
+      if (card.tagName === "BUTTON") {
+        return;
+      }
+
       if (hasNestedCard(card)) {
         return;
       }

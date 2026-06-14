@@ -15,7 +15,9 @@ const diagramState = {
   phraseSearch: false,
   wholeWord: true,
   caseSensitive: false,
-  selectedTextIds: new Set(DIAGRAM_TEXTS.map((text) => text.id))
+  selectedTextIds: new Set(DIAGRAM_TEXTS.map((text) => text.id)),
+  latestSummaries: [],
+  latestTerms: []
 };
 
 const queryEl = document.querySelector("#diagram-query");
@@ -119,6 +121,18 @@ function bindDiagramEvents() {
     renderDiagram();
   });
 
+  toolEl.addEventListener("click", (event) => {
+    const openButton = event.target.closest("[data-attestation-id]");
+    if (openButton) {
+      openAttestationDialog(openButton.dataset.attestationId);
+      return;
+    }
+
+    if (event.target.closest("[data-close-attestation]")) {
+      closeAttestationDialog();
+    }
+  });
+
   textToggleEls.forEach((toggle) => {
     toggle.addEventListener("change", () => {
       const nextSelection = new Set(
@@ -182,6 +196,8 @@ function renderDiagram() {
   }
 
   const summaries = selectedTexts.map((text) => getOccurrenceSummary(text, search));
+  diagramState.latestSummaries = summaries;
+  diagramState.latestTerms = search.terms;
   const maxCount = Math.max(1, ...summaries.flatMap((summary) => summary.termCounts));
   const total = summaries.reduce((sum, summary) => sum + summary.total, 0);
   const textsWithHits = summaries.filter((summary) => summary.total > 0).length;
@@ -208,6 +224,7 @@ function renderDiagram() {
       <section class="diagram-result-grid" aria-label="Diagram and occurrence locations">
         ${summaries.map((summary) => renderDiagramResultColumn(summary, search.terms, maxCount)).join("")}
       </section>
+      <div class="attestation-dialog" id="attestation-dialog" role="dialog" aria-modal="true" aria-labelledby="attestation-dialog-title" hidden></div>
     </article>
   `;
 }
@@ -260,16 +277,35 @@ function shortenTerm(term) {
 
 function renderLinearOccurrences(summary, terms) {
   return `
-    <details class="linear-occurrence-card">
-      <summary>
+    <button class="linear-occurrence-card" type="button" data-attestation-id="${escapeHtml(summary.text.id)}">
+      <span class="linear-occurrence-siglum">${escapeHtml(summary.text.siglum)}</span>
+      <span class="linear-occurrence-meta">
+        <span class="count-pill ${summary.total ? "hit" : "miss"}">${summary.total}</span>
+        <span>${summary.total === 1 ? "hit" : "hits"}</span>
+      </span>
+    </button>
+  `;
+}
+
+function openAttestationDialog(textId) {
+  const dialog = document.querySelector("#attestation-dialog");
+  const summary = diagramState.latestSummaries.find((item) => item.text.id === textId);
+  if (!dialog || !summary) {
+    return;
+  }
+
+  dialog.innerHTML = `
+    <div class="attestation-dialog-backdrop" data-close-attestation></div>
+    <section class="attestation-dialog-panel">
+      <header>
         <div>
           <div class="siglum">${escapeHtml(summary.text.siglum)}</div>
-          <h2>${escapeHtml(summary.text.title)}</h2>
+          <h2 id="attestation-dialog-title">${escapeHtml(summary.text.title)}</h2>
         </div>
-        <span class="count-pill ${summary.total ? "hit" : "miss"}">${summary.total}</span>
-      </summary>
+        <button class="copy-tool-button" type="button" data-close-attestation>Close</button>
+      </header>
       <div class="linear-lines">
-        ${terms.map((term, termIndex) => {
+        ${diagramState.latestTerms.map((term, termIndex) => {
           const locations = summary.occurrences
             .filter((occurrence) => occurrence.termIndex === termIndex)
             .map((occurrence) => occurrence.location);
@@ -282,8 +318,17 @@ function renderLinearOccurrences(summary, terms) {
           `;
         }).join("")}
       </div>
-    </details>
+    </section>
   `;
+  dialog.hidden = false;
+}
+
+function closeAttestationDialog() {
+  const dialog = document.querySelector("#attestation-dialog");
+  if (dialog) {
+    dialog.hidden = true;
+    dialog.innerHTML = "";
+  }
 }
 
 function getOccurrenceSummary(text, search) {

@@ -445,23 +445,55 @@ h1 {
 }
 
 .text-selection {
+  position: relative;
+  justify-self: end;
+  min-width: 0;
+  width: max-content;
+  margin: 0;
+}
+
+.text-selection summary {
+  display: grid;
+  align-items: center;
+  min-height: 50px;
+  border: 1px solid #c8d0d9;
+  border-radius: 7px;
+  padding: 0 14px;
+  color: var(--accent-strong);
+  background: #fbfcfd;
+  cursor: pointer;
+  list-style: none;
+  font-size: 0.94rem;
+  font-weight: 800;
+}
+
+.text-selection summary::-webkit-details-marker {
+  display: none;
+}
+
+.text-selection[open] summary {
+  border-color: var(--accent);
+  background: #eef4f7;
+}
+
+.text-selection fieldset {
   display: flex;
   align-items: end;
   justify-content: flex-end;
   gap: 10px;
   flex-wrap: wrap;
-  min-width: 0;
-  max-width: 360px;
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 25;
+  min-width: 360px;
+  max-width: min(520px, calc(100vw - 32px));
   margin: 0;
-  border: 0;
-  padding: 0;
-}
-
-.text-selection legend {
-  margin-right: 2px;
-  color: var(--muted);
-  font-size: 0.82rem;
-  font-weight: 800;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px;
+  background: #ffffff;
+  box-shadow: 0 12px 26px rgba(29, 43, 57, 0.12);
 }
 
 .diagram-tool {
@@ -2828,8 +2860,13 @@ mark.term-6 {
   }
 
   .text-selection {
-    justify-content: flex-start;
-    max-width: none;
+    justify-self: start;
+  }
+
+  .text-selection fieldset {
+    right: auto;
+    left: 0;
+    min-width: min(360px, calc(100vw - 32px));
   }
 
   .overview,

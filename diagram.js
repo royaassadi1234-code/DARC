@@ -10,14 +10,18 @@ const diagramState = {
   dictionary: new Map(),
   query: "",
   multipleWords: true,
+  phraseSearch: false,
   wholeWord: true,
-  caseSensitive: false
+  caseSensitive: false,
+  selectedTextIds: new Set(DIAGRAM_TEXTS.map((text) => text.id))
 };
 
 const queryEl = document.querySelector("#diagram-query");
 const multipleEl = document.querySelector("#diagram-multiple");
+const phraseEl = document.querySelector("#diagram-phrase");
 const wholeWordEl = document.querySelector("#diagram-whole-word");
 const caseEl = document.querySelector("#diagram-case-sensitive");
+const textToggleEls = [...document.querySelectorAll(".diagram-text-toggle")];
 const statusEl = document.querySelector("#diagram-status");
 const toolEl = document.querySelector("#diagram-tool");
 
@@ -93,6 +97,13 @@ function bindDiagramEvents() {
 
   multipleEl.addEventListener("change", () => {
     diagramState.multipleWords = multipleEl.checked;
+    updateSearchModeControls();
+    renderDiagram();
+  });
+
+  phraseEl.addEventListener("change", () => {
+    diagramState.phraseSearch = phraseEl.checked;
+    updateSearchModeControls();
     renderDiagram();
   });
 
@@ -105,6 +116,31 @@ function bindDiagramEvents() {
     diagramState.caseSensitive = caseEl.checked;
     renderDiagram();
   });
+
+  textToggleEls.forEach((toggle) => {
+    toggle.addEventListener("change", () => {
+      const nextSelection = new Set(
+        textToggleEls.filter((input) => input.checked).map((input) => input.value)
+      );
+      if (!nextSelection.size) {
+        toggle.checked = true;
+        return;
+      }
+      diagramState.selectedTextIds = nextSelection;
+      renderDiagram();
+    });
+  });
+
+  updateSearchModeControls();
+}
+
+function updateSearchModeControls() {
+  if (diagramState.phraseSearch && diagramState.multipleWords) {
+    diagramState.multipleWords = false;
+    multipleEl.checked = false;
+  }
+
+  multipleEl.disabled = diagramState.phraseSearch;
 }
 
 async function loadText(config) {
@@ -123,8 +159,9 @@ async function loadText(config) {
 
 function renderDiagram() {
   const search = createSearch(diagramState.query);
+  const selectedTexts = getSelectedTexts();
   if (!search) {
-    statusEl.textContent = `${diagramState.texts.length} texts ready`;
+    statusEl.textContent = `${selectedTexts.length} texts selected`;
     toolEl.innerHTML = `
       <article class="diagram-card">
         <header>
@@ -135,19 +172,20 @@ function renderDiagram() {
           <span class="count-pill">0</span>
         </header>
         <div class="empty-state">
-          Search a word or several words to compare their attestations across all four texts.
+          Search a word, several words, or a phrase to compare attestations across selected texts.
         </div>
       </article>
     `;
     return;
   }
 
-  const summaries = diagramState.texts.map((text) => getOccurrenceSummary(text, search));
+  const summaries = selectedTexts.map((text) => getOccurrenceSummary(text, search));
   const maxCount = Math.max(1, ...summaries.flatMap((summary) => summary.termCounts));
   const total = summaries.reduce((sum, summary) => sum + summary.total, 0);
   const textsWithHits = summaries.filter((summary) => summary.total > 0).length;
   const variantLabel = search.terms.length > 1 ? ` | ${search.terms.length} words` : "";
-  statusEl.textContent = `${textsWithHits} of ${summaries.length} texts | ${total} occurrences${variantLabel}`;
+  const modeLabel = search.phraseSearch ? " | phrase" : "";
+  statusEl.textContent = `${textsWithHits} of ${summaries.length} selected texts | ${total} occurrences${variantLabel}${modeLabel}`;
 
   toolEl.innerHTML = `
     <article class="diagram-card diagram-standalone-card">
@@ -175,6 +213,10 @@ function renderDiagram() {
       </section>
     </article>
   `;
+}
+
+function getSelectedTexts() {
+  return diagramState.texts.filter((text) => diagramState.selectedTextIds.has(text.id));
 }
 
 function renderVerticalBar(summary, maxCount) {
@@ -290,6 +332,10 @@ function getSearchVariants(term) {
     return [];
   }
 
+  if (isPhraseTerm(folded)) {
+    return getPhraseVariants(folded);
+  }
+
   const variants = new Set([folded]);
   [
     folded.replace(/^=+/, ""),
@@ -315,6 +361,43 @@ function getSearchVariants(term) {
   return [...variants].filter(Boolean);
 }
 
+function getPhraseVariants(term) {
+  const parts = term
+    .split(/[\s-]+/)
+    .map((part) => part.trim())
+    .filter(Boolean);
+  if (parts.length < 2) {
+    return [term];
+  }
+
+  const phraseVariantMap = new Map([
+    ["gannag", ["gannag", "ganag", "gannak", "ganak", "gandag"]],
+    ["ganag", ["ganag", "gannag", "ganak", "gannak", "gandag"]],
+    ["gannak", ["gannak", "gannag", "ganak", "ganag"]],
+    ["ganak", ["ganak", "ganag", "gannak", "gannag"]],
+    ["menog", ["menog", "menoy", "menok", "minog", "mainyog"]],
+    ["menoy", ["menoy", "menog", "menok", "minog", "mainyog"]],
+    ["menok", ["menok", "menog", "menoy", "minog", "mainyog"]],
+    ["minog", ["minog", "menog", "menoy", "menok", "mainyog"]],
+    ["mainyog", ["mainyog", "menog", "menoy", "menok", "minog"]]
+  ]);
+
+  const partVariants = parts.map((part) => phraseVariantMap.get(part) || [part]);
+  const phrases = new Set();
+
+  function combine(index, current) {
+    if (index === partVariants.length) {
+      phrases.add(current.join(" "));
+      return;
+    }
+
+    partVariants[index].forEach((variant) => combine(index + 1, [...current, variant]));
+  }
+
+  combine(0, []);
+  return [...phrases];
+}
+
 function createSearch(query) {
   if (!query) {
     return null;
@@ -325,22 +408,44 @@ function createSearch(query) {
     return null;
   }
 
-  return { terms };
+  return { terms, phraseSearch: diagramState.phraseSearch };
 }
 
 function getSearchTerms(query) {
-  const terms = diagramState.multipleWords ? query.split(/[,\s;]+/) : [query];
+  const terms = diagramState.phraseSearch
+    ? query.split(/[,;]+/)
+    : diagramState.multipleWords
+      ? parseTermsWithQuotedPhrases(query)
+      : [query];
   return [...new Set(terms.map((term) => term.trim()).filter(Boolean))];
+}
+
+function parseTermsWithQuotedPhrases(query) {
+  const terms = [];
+  const pattern = /"([^"]+)"|'([^']+)'|[^,\s;]+/g;
+  let match;
+  while ((match = pattern.exec(query)) !== null) {
+    terms.push(match[1] || match[2] || match[0]);
+  }
+  return terms;
 }
 
 function buildPattern(terms) {
   const escaped = terms
     .slice()
     .sort((a, b) => b.length - a.length)
-    .map(escapeRegExp)
+    .map(termToSearchPattern)
     .join("|");
   const boundary = "[\\p{L}\\p{M}\\p{N}_-]";
   return diagramState.wholeWord ? `(?<!${boundary})(?:${escaped})(?!${boundary})` : `(?:${escaped})`;
+}
+
+function termToSearchPattern(term) {
+  return escapeRegExp(term).replace(/(?:\s+|\\-|-)+/g, "[\\s-]+");
+}
+
+function isPhraseTerm(term) {
+  return /[\s-]/.test(term.trim());
 }
 
 function parseRecords(raw) {

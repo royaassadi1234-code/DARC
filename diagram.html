@@ -80,13 +80,17 @@
         <section class="search-panel diagram-controls" aria-label="Diagram search controls">
           <label class="search-box" for="diagram-query">
             <span>Search word or words</span>
-            <input id="diagram-query" type="search" placeholder="Type plain letters or several words: druz ohrmazd" autocomplete="off" autofocus>
+            <input id="diagram-query" type="search" placeholder="Type words or phrases: druz, gannag menog" autocomplete="off" autofocus>
           </label>
 
           <div class="controls" role="group" aria-label="Diagram options">
             <label class="control">
               <input id="diagram-multiple" type="checkbox" checked>
               <span>Multiple words</span>
+            </label>
+            <label class="control">
+              <input id="diagram-phrase" type="checkbox">
+              <span>Phrase search</span>
             </label>
             <label class="control">
               <input id="diagram-whole-word" type="checkbox" checked>
@@ -97,6 +101,26 @@
               <span>Case sensitive</span>
             </label>
           </div>
+
+          <fieldset class="text-selection" aria-label="Texts to compare">
+            <legend>Texts</legend>
+            <label class="control">
+              <input class="diagram-text-toggle" type="checkbox" value="dd" checked>
+              <span>DD</span>
+            </label>
+            <label class="control">
+              <input class="diagram-text-toggle" type="checkbox" value="py" checked>
+              <span>PY</span>
+            </label>
+            <label class="control">
+              <input class="diagram-text-toggle" type="checkbox" value="wz" checked>
+              <span>WZ</span>
+            </label>
+            <label class="control">
+              <input class="diagram-text-toggle" type="checkbox" value="nm" checked>
+              <span>NM</span>
+            </label>
+          </fieldset>
         </section>
 
         <section class="diagram-tool" id="diagram-tool" aria-live="polite"></section>

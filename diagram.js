@@ -1,10 +1,10 @@
 const DIAGRAM_TEXTS = [
   { id: "dd", siglum: "DD", title: "Dadestan i Denig", file: "Dd.txt" },
-  { id: "gbd", siglum: "GBd", title: "Greater Bundahishn", file: "GBd.txt", parseMode: "section" },
-  { id: "prdd", siglum: "PRDd", title: "Pahlavi Rivayat Accompanying the Dadestan i Denig", file: "PRDd.txt", parseMode: "section" },
-  { id: "py", siglum: "PY", title: "Pahlavi Yasna", file: "PY-Pt4.txt" },
   { id: "wz", siglum: "WZ", title: "Wizidagiha i Zadspram", file: "WZ.txt" },
-  { id: "nm", siglum: "NM", title: "Namagiha i Manuscihr", file: "NM.txt" }
+  { id: "py", siglum: "PY", title: "Pahlavi Yasna", file: "PY-Pt4.txt" },
+  { id: "nm", siglum: "NM", title: "Namagiha i Manuscihr", file: "NM.txt" },
+  { id: "gbd", siglum: "GBd", title: "Greater Bundahishn", file: "GBd.txt", parseMode: "section" },
+  { id: "prdd", siglum: "PRDd", title: "Pahlavi Rivayat Accompanying the Dadestan i Denig", file: "PRDd.txt", parseMode: "section" }
 ];
 
 const diagramState = {

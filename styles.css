@@ -509,31 +509,18 @@ h1 {
 
 .diagram-result-grid {
   display: grid;
-  gap: 16px;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(180px, 1fr);
+  gap: 12px;
+  align-items: start;
+  overflow-x: auto;
   padding: 16px;
 }
 
-.diagram-row-charts {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(160px, 1fr);
-  gap: 12px;
-  align-items: stretch;
-  overflow-x: auto;
-  padding-bottom: 4px;
-}
-
-.diagram-occurrence-grid,
-.diagram-result-row {
+.diagram-result-column {
   display: grid;
   gap: 10px;
-}
-
-.diagram-row-occurrences {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-  align-items: stretch;
+  min-width: 0;
 }
 
 .vertical-chart {
@@ -2885,12 +2872,8 @@ mark.term-6 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .diagram-row-occurrences {
-    grid-template-columns: 1fr;
-  }
-
-  .diagram-row-charts {
-    grid-auto-columns: minmax(180px, 82vw);
+  .diagram-result-grid {
+    grid-auto-columns: minmax(190px, 82vw);
   }
 
   .network-panel {

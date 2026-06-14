@@ -206,12 +206,7 @@ function renderDiagram() {
       </div>
 
       <section class="diagram-result-grid" aria-label="Diagram and occurrence locations">
-        <div class="diagram-row-charts" aria-label="All selected text diagrams">
-          ${summaries.map((summary) => renderVerticalBar(summary, maxCount)).join("")}
-        </div>
-        <div class="diagram-occurrence-grid" aria-label="Occurrence results">
-          ${chunkItems(summaries, 2).map((pair) => renderOccurrenceResultRow(pair, search.terms)).join("")}
-        </div>
+        ${summaries.map((summary) => renderDiagramResultColumn(summary, search.terms, maxCount)).join("")}
       </section>
     </article>
   `;
@@ -221,20 +216,11 @@ function getSelectedTexts() {
   return diagramState.texts.filter((text) => diagramState.selectedTextIds.has(text.id));
 }
 
-function chunkItems(items, size) {
-  const chunks = [];
-  for (let index = 0; index < items.length; index += size) {
-    chunks.push(items.slice(index, index + size));
-  }
-  return chunks;
-}
-
-function renderOccurrenceResultRow(summaries, terms) {
+function renderDiagramResultColumn(summary, terms, maxCount) {
   return `
-    <div class="diagram-result-row">
-      <div class="diagram-row-occurrences" aria-label="Paired occurrence results">
-        ${summaries.map((summary) => renderLinearOccurrences(summary, terms)).join("")}
-      </div>
+    <div class="diagram-result-column">
+      ${renderVerticalBar(summary, maxCount)}
+      ${renderLinearOccurrences(summary, terms)}
     </div>
   `;
 }

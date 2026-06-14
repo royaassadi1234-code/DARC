@@ -1078,6 +1078,40 @@ h1 {
   font-size: 0.82rem;
 }
 
+.copy-tools-bar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.copy-tool-button {
+  min-height: 32px;
+  border: 1px solid #c8d0d9;
+  border-radius: 6px;
+  padding: 0 10px;
+  color: var(--accent-strong);
+  background: #fbfcfd;
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.copy-tool-button:hover,
+.copy-tool-button:focus-visible {
+  border-color: var(--accent);
+  outline: none;
+  background: #eef4f7;
+}
+
+.copy-tools-card-button {
+  float: right;
+  margin: 8px 8px 0 8px;
+  position: relative;
+  z-index: 2;
+}
+
 .trans-reader {
   display: grid;
   gap: 12px;

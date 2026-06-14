@@ -31,6 +31,36 @@ const BASE_COMMON_WORDS = new Set([
   "o", "pad", "pas", "ra", "s", "u", "ud"
 ]);
 
+const COMPOUND_WORDS = [
+  {
+    label: "gannag menog",
+    variants: [
+      ["gannag", "menog"],
+      ["gannag", "menoy"],
+      ["gannagmenog"],
+      ["gannagmenoy"]
+    ]
+  },
+  {
+    label: "Ahura Mazda",
+    variants: [["ahura", "mazda"]]
+  },
+  {
+    label: "dadar i Ohrmazd",
+    variants: [
+      ["dadar", "i", "ohrmazd"],
+      ["dadar", "ohrmazd"]
+    ]
+  }
+].map((compound) => ({
+  ...compound,
+  key: normalizeWord(compound.label)
+}));
+
+const COMPOUND_VARIANTS = COMPOUND_WORDS
+  .flatMap((compound) => compound.variants.map((tokens) => ({ ...compound, tokens })))
+  .sort((a, b) => b.tokens.length - a.tokens.length);
+
 const frequencyState = {
   texts: [],
   pageSize: 25,
@@ -255,24 +285,22 @@ function buildWordStats(records) {
   const stats = new Map();
 
   records.forEach((record) => {
-    for (const token of getTokens(record.text)) {
-      const key = normalizeWord(token);
-      if (!isCountableWord(key)) {
+    const tokens = getTokenMatches(record.text);
+
+    for (let index = 0; index < tokens.length; index += 1) {
+      const compound = getCompoundAt(tokens, index);
+      if (compound) {
+        addWordStat(stats, compound.key, compound.label, record.location);
+        index += compound.tokens.length - 1;
         continue;
       }
 
-      if (!stats.has(key)) {
-        stats.set(key, {
-          key,
-          label: token,
-          total: 0,
-          locations: []
-        });
+      const token = tokens[index];
+      if (!isCountableWord(token.key)) {
+        continue;
       }
 
-      const item = stats.get(key);
-      item.total += 1;
-      item.locations.push(record.location);
+      addWordStat(stats, token.key, token.label, record.location);
     }
   });
 
@@ -281,6 +309,34 @@ function buildWordStats(records) {
 
 function getTokens(text) {
   return String(text).match(/[\p{L}\p{M}\p{N}=_.:-]+/gu) || [];
+}
+
+function getTokenMatches(text) {
+  return getTokens(text).map((token) => ({
+    label: token,
+    key: normalizeWord(token)
+  }));
+}
+
+function getCompoundAt(tokens, index) {
+  return COMPOUND_VARIANTS.find((compound) =>
+    compound.tokens.every((token, offset) => tokens[index + offset]?.key === token)
+  ) || null;
+}
+
+function addWordStat(stats, key, label, location) {
+  if (!stats.has(key)) {
+    stats.set(key, {
+      key,
+      label,
+      total: 0,
+      locations: []
+    });
+  }
+
+  const item = stats.get(key);
+  item.total += 1;
+  item.locations.push(location);
 }
 
 function normalizeWord(word) {

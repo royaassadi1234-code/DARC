@@ -466,12 +466,24 @@ h1 {
   display: grid;
 }
 
-.diagram-split {
+.diagram-result-grid {
   display: grid;
-  grid-template-columns: minmax(420px, 0.48fr) minmax(0, 0.52fr);
   gap: 16px;
   padding: 16px;
-  align-items: start;
+}
+
+.diagram-result-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+
+.diagram-result-panel {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 10px;
+  min-width: 0;
 }
 
 .vertical-chart {
@@ -515,7 +527,7 @@ h1 {
   grid-template-rows: 280px 34px;
   align-items: end;
   gap: 6px;
-  height: 314px;
+  min-height: 314px;
   z-index: 1;
 }
 
@@ -523,7 +535,7 @@ h1 {
   display: flex;
   align-items: end;
   justify-content: center;
-  gap: 7px;
+  gap: 0;
   height: 280px;
   min-width: 0;
 }
@@ -537,7 +549,7 @@ h1 {
   height: 280px;
   min-width: 0;
   flex: 1 1 20px;
-  max-width: 42px;
+  max-width: 34px;
 }
 
 .vertical-bar-shell {
@@ -552,11 +564,11 @@ h1 {
 
 .vertical-single-bar {
   display: block;
-  width: min(100%, 28px);
+  width: 100%;
   min-height: 0;
   border: 1px solid rgba(23, 33, 43, 0.18);
   border-bottom: 0;
-  border-radius: 4px 4px 0 0;
+  border-radius: 3px 3px 0 0;
   background: var(--red);
   box-shadow: none;
 }
@@ -609,7 +621,7 @@ h1 {
   display: grid;
   gap: 10px;
   align-content: start;
-  max-height: 560px;
+  max-height: none;
   overflow: auto;
   padding-right: 4px;
 }
@@ -2779,7 +2791,7 @@ mark.term-6 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .diagram-split {
+  .diagram-result-row {
     grid-template-columns: 1fr;
   }
 
@@ -2856,6 +2868,16 @@ mark.term-6 {
   .site-nav {
     width: 100%;
     flex-wrap: wrap;
+  }
+
+  .diagram-result-grid {
+    padding: 12px;
+  }
+
+  .vertical-chart {
+    height: 320px;
+    padding-right: 12px;
+    padding-left: 38px;
   }
 
   .nav-menu:nth-last-of-type(-n + 2) .nav-menu-list {

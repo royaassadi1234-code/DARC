@@ -1,5 +1,7 @@
 const DIAGRAM_TEXTS = [
   { id: "dd", siglum: "DD", title: "Dadestan i Denig", file: "Dd.txt" },
+  { id: "gbd", siglum: "GBd", title: "Greater Bundahishn", file: "GBd.txt", parseMode: "section" },
+  { id: "prdd", siglum: "PRDd", title: "Pahlavi Rivayat Accompanying the Dadestan i Denig", file: "PRDd.txt", parseMode: "section" },
   { id: "py", siglum: "PY", title: "Pahlavi Yasna", file: "PY-Pt4.txt" },
   { id: "wz", siglum: "WZ", title: "Wizidagiha i Zadspram", file: "WZ.txt" },
   { id: "nm", siglum: "NM", title: "Namagiha i Manuscihr", file: "NM.txt" }
@@ -153,7 +155,7 @@ async function loadText(config) {
   return {
     ...config,
     raw,
-    records: parseRecords(raw)
+    records: parseRecords(raw, config.parseMode)
   };
 }
 
@@ -203,13 +205,8 @@ function renderDiagram() {
         `).join("")}
       </div>
 
-      <section class="diagram-split" aria-label="Diagram and occurrence locations">
-        <div class="vertical-chart" aria-label="Occurrence frequency bars">
-          ${summaries.map((summary) => renderVerticalBar(summary, maxCount)).join("")}
-        </div>
-        <div class="linear-occurrences" aria-label="Linear occurrence lists">
-          ${summaries.map((summary) => renderLinearOccurrences(summary, search.terms)).join("")}
-        </div>
+      <section class="diagram-result-grid" aria-label="Diagram and occurrence locations">
+        ${chunkItems(summaries, 2).map((pair) => renderDiagramResultRow(pair, search.terms, maxCount)).join("")}
       </section>
     </article>
   `;
@@ -217,6 +214,27 @@ function renderDiagram() {
 
 function getSelectedTexts() {
   return diagramState.texts.filter((text) => diagramState.selectedTextIds.has(text.id));
+}
+
+function chunkItems(items, size) {
+  const chunks = [];
+  for (let index = 0; index < items.length; index += size) {
+    chunks.push(items.slice(index, index + size));
+  }
+  return chunks;
+}
+
+function renderDiagramResultRow(summaries, terms, maxCount) {
+  return `
+    <div class="diagram-result-row">
+      ${summaries.map((summary) => `
+        <section class="diagram-result-panel">
+          ${renderVerticalBar(summary, maxCount)}
+          ${renderLinearOccurrences(summary, terms)}
+        </section>
+      `).join("")}
+    </div>
+  `;
 }
 
 function renderVerticalBar(summary, maxCount) {
@@ -448,8 +466,12 @@ function isPhraseTerm(term) {
   return /[\s-]/.test(term.trim());
 }
 
-function parseRecords(raw) {
-  const lines = raw.split(/\r?\n/);
+function parseRecords(raw, mode = "auto") {
+  const lines = raw.split(/\r\n|\n|\r/);
+  if (mode === "section") {
+    return parseSectionRecords(lines);
+  }
+
   const hasTsvRecords = lines.some((line) => {
     const trimmed = line.trim();
     return trimmed && !trimmed.startsWith("#") && isTsvRecord(trimmed);

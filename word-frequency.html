@@ -32,8 +32,13 @@
                 </div>
               </details>
               <a href="search.html">Parallel Text Search</a>
-              <a href="diagram.html">Diagram</a>
-              <a class="active" href="word-frequency.html">Word Frequency</a>
+              <details class="nav-menu" open>
+                <summary>Diagram</summary>
+                <div class="nav-menu-list">
+                  <a href="diagram.html">Attestation Diagram</a>
+                  <a class="active" href="word-frequency.html">Word Frequency</a>
+                </div>
+              </details>
               <details class="nav-menu">
                 <summary>Pattern</summary>
                 <div class="nav-menu-list pattern-menu-list">
@@ -86,21 +91,13 @@
           </label>
 
           <div class="controls" role="group" aria-label="Frequency options">
-            <label class="select-control" for="frequency-text">
-              <span>Text</span>
-              <select id="frequency-text">
-                <option value="combined" selected>DD + WZ</option>
-                <option value="dd">DD</option>
-                <option value="wz">WZ</option>
-              </select>
-            </label>
             <label class="select-control" for="frequency-limit">
               <span>Rows</span>
               <select id="frequency-limit">
-                <option value="25" selected>25</option>
+                <option value="10" selected>10</option>
+                <option value="25">25</option>
                 <option value="50">50</option>
                 <option value="100">100</option>
-                <option value="250">250</option>
               </select>
             </label>
             <label class="control">

@@ -651,13 +651,28 @@ function mergeKnownPhraseTerms(terms) {
   const knownPhrases = getKnownSearchPhrases();
   const merged = [];
   let index = 0;
+  const maxPhraseLength = Math.max(
+    2,
+    ...[...knownPhrases].map((phrase) => phrase.split(/\s+/).filter(Boolean).length)
+  );
 
   while (index < terms.length) {
-    const twoPart = terms.slice(index, index + 2).join(" ");
-    const foldedTwoPart = foldText(twoPart, diagramState.caseSensitive).text;
-    if (knownPhrases.has(foldedTwoPart)) {
-      merged.push(twoPart);
-      index += 2;
+    let matchedPhrase = "";
+    let matchedLength = 0;
+
+    for (let length = Math.min(maxPhraseLength, terms.length - index); length >= 2; length -= 1) {
+      const phrase = terms.slice(index, index + length).join(" ");
+      const foldedPhrase = foldText(phrase, diagramState.caseSensitive).text;
+      if (knownPhrases.has(foldedPhrase)) {
+        matchedPhrase = phrase;
+        matchedLength = length;
+        break;
+      }
+    }
+
+    if (matchedPhrase) {
+      merged.push(matchedPhrase);
+      index += matchedLength;
       continue;
     }
 
@@ -676,6 +691,13 @@ function getKnownSearchPhrases() {
     .forEach((phrase) => phrases.add(foldText(phrase, diagramState.caseSensitive).text));
 
   getPhraseVariants("gannag menog").forEach((phrase) => {
+    phrases.add(foldText(phrase, diagramState.caseSensitive).text);
+  });
+
+  [
+    "dadar i ohrmazd",
+    "dadar ohrmazd"
+  ].forEach((phrase) => {
     phrases.add(foldText(phrase, diagramState.caseSensitive).text);
   });
 

@@ -195,9 +195,11 @@ function renderDiagram() {
     return;
   }
 
-  const summaries = selectedTexts.map((text) => getOccurrenceSummary(text, search));
+  const rawSummaries = selectedTexts.map((text) => getOccurrenceSummary(text, search));
+  const displayTerms = getDisplayTerms(rawSummaries, search.terms);
+  const summaries = rawSummaries.map((summary) => normalizeSummaryTerms(summary, displayTerms));
   diagramState.latestSummaries = summaries;
-  diagramState.latestTerms = search.terms;
+  diagramState.latestTerms = displayTerms;
   const maxCount = Math.max(1, ...summaries.flatMap((summary) => summary.termCounts));
   const total = summaries.reduce((sum, summary) => sum + summary.total, 0);
   const textsWithHits = summaries.filter((summary) => summary.total > 0).length;
@@ -216,13 +218,13 @@ function renderDiagram() {
       </header>
 
       <div class="term-legend" aria-label="Searched word legend">
-        ${search.terms.map((term, index) => `
+        ${diagramState.latestTerms.map((term, index) => `
           <span><i class="legend-swatch term-${(index % HIGHLIGHT_CLASS_COUNT) + 1}"></i>${renderDictionaryWord(term)}</span>
         `).join("")}
       </div>
 
       <section class="diagram-result-grid" aria-label="Diagram and occurrence locations">
-        ${summaries.map((summary) => renderDiagramResultColumn(summary, search.terms, maxCount)).join("")}
+        ${summaries.map((summary) => renderDiagramResultColumn(summary, diagramState.latestTerms, maxCount)).join("")}
       </section>
       <div class="attestation-dialog" id="attestation-dialog" role="dialog" aria-modal="true" aria-labelledby="attestation-dialog-title" hidden></div>
     </article>
@@ -231,6 +233,32 @@ function renderDiagram() {
 
 function getSelectedTexts() {
   return diagramState.texts.filter((text) => diagramState.selectedTextIds.has(text.id));
+}
+
+function getDisplayTerms(summaries, fallbackTerms) {
+  const actualTerms = [];
+  const seen = new Set();
+  summaries.forEach((summary) => {
+    summary.occurrences.forEach((occurrence) => {
+      const label = occurrence.matchedText || fallbackTerms[occurrence.termIndex];
+      const key = foldText(label, diagramState.caseSensitive).text;
+      if (key && !seen.has(key)) {
+        seen.add(key);
+        actualTerms.push(label);
+      }
+    });
+  });
+  return actualTerms.length ? actualTerms : fallbackTerms;
+}
+
+function normalizeSummaryTerms(summary, displayTerms) {
+  return {
+    ...summary,
+    terms: displayTerms,
+    termCounts: displayTerms.map((term) =>
+      summary.occurrences.filter((occurrence) => sameDisplayTerm(occurrence.matchedText, term)).length
+    )
+  };
 }
 
 function renderDiagramResultColumn(summary, terms, maxCount) {
@@ -307,7 +335,7 @@ function openAttestationDialog(textId) {
       <div class="linear-lines">
         ${diagramState.latestTerms.map((term, termIndex) => {
           const locations = summary.occurrences
-            .filter((occurrence) => occurrence.termIndex === termIndex)
+            .filter((occurrence) => sameDisplayTerm(occurrence.matchedText, term))
             .map((occurrence) => occurrence.location);
           return `
             <p>
@@ -332,23 +360,29 @@ function closeAttestationDialog() {
 }
 
 function getOccurrenceSummary(text, search) {
-  const termCounts = search.terms.map(() => 0);
+  const occurrenceMap = new Map();
   const occurrences = [];
 
-  text.records.forEach((record) => {
+  text.records.forEach((record, recordIndex) => {
     findTermOccurrences(record.text, search.terms).forEach((occurrence) => {
-      termCounts[occurrence.termIndex] += 1;
+      const key = `${recordIndex}:${occurrence.start}:${occurrence.end}`;
+      if (occurrenceMap.has(key)) {
+        return;
+      }
+      occurrenceMap.set(key, true);
       occurrences.push({
         location: record.location,
-        termIndex: occurrence.termIndex
+        termIndex: occurrence.termIndex,
+        matchedText: occurrence.matchedText
       });
     });
   });
-
   return {
     text,
     terms: search.terms,
-    termCounts,
+    termCounts: search.terms.map((term, termIndex) =>
+      occurrences.filter((occurrence) => occurrence.termIndex === termIndex).length
+    ),
     occurrences,
     total: occurrences.length
   };
@@ -367,9 +401,14 @@ function findTermOccurrences(text, terms) {
     const regex = new RegExp(buildPattern(variants), "gu");
     let match;
     while ((match = regex.exec(folded.text)) !== null) {
+      const start = folded.map[match.index];
+      const endMapIndex = Math.max(match.index, match.index + match[0].length - 1);
+      const end = (folded.map[endMapIndex] ?? start) + 1;
       occurrences.push({
-        start: folded.map[match.index],
-        termIndex
+        start,
+        end,
+        termIndex,
+        matchedText: text.slice(start, end)
       });
     }
   });
@@ -411,6 +450,10 @@ function getSearchVariants(term) {
   });
 
   return [...variants].filter(Boolean);
+}
+
+function sameDisplayTerm(a, b) {
+  return foldText(a || "", diagramState.caseSensitive).text === foldText(b || "", diagramState.caseSensitive).text;
 }
 
 function getLexicalVariants(term) {

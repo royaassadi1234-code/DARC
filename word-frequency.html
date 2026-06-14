@@ -106,14 +106,17 @@
           </div>
         </section>
 
-        <section class="frequency-common-panel" aria-label="Personal common words">
-          <label class="search-box" for="frequency-common-input">
-            <span>Mark a personal common word</span>
-            <input id="frequency-common-input" type="search" placeholder="Type a word to hide, e.g. ham, est, abar" autocomplete="off">
-          </label>
-          <button class="action-button" id="frequency-common-add" type="button">Add common word</button>
-          <div class="frequency-common-list" id="frequency-common-list" aria-live="polite"></div>
-        </section>
+        <details class="frequency-common-panel">
+          <summary>Personal common words</summary>
+          <div class="frequency-common-body" aria-label="Personal common words">
+            <label class="search-box" for="frequency-common-input">
+              <span>Mark a personal common word</span>
+              <input id="frequency-common-input" type="search" placeholder="Type a word to hide, e.g. ham, est, abar" autocomplete="off">
+            </label>
+            <button class="action-button" id="frequency-common-add" type="button">Add common word</button>
+            <div class="frequency-common-list" id="frequency-common-list" aria-live="polite"></div>
+          </div>
+        </details>
 
         <section class="frequency-summary" id="frequency-summary" aria-label="Frequency summary"></section>
         <section class="frequency-workspace" aria-live="polite">

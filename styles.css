@@ -508,13 +508,31 @@ h1 {
 
 .frequency-common-panel {
   display: grid;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.frequency-common-panel summary {
+  min-height: 48px;
+  padding: 13px 14px;
+  color: var(--accent-strong);
+  cursor: pointer;
+  font-size: 0.92rem;
+  font-weight: 900;
+}
+
+.frequency-common-panel[open] summary {
+  border-bottom: 1px solid var(--line);
+  background: #fbfcfd;
+}
+
+.frequency-common-body {
+  display: grid;
   grid-template-columns: minmax(260px, 1fr) auto;
   gap: 10px;
   align-items: end;
-  border: 1px solid var(--line);
-  border-radius: 8px;
   padding: 14px;
-  background: rgba(255, 255, 255, 0.94);
 }
 
 .frequency-common-list {
@@ -3270,7 +3288,7 @@ mark.term-6 {
     grid-template-columns: 1fr;
   }
 
-  .frequency-common-panel {
+  .frequency-common-body {
     grid-template-columns: 1fr;
   }
 

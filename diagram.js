@@ -94,6 +94,8 @@ async function loadDictionary() {
 }
 
 function bindDiagramEvents() {
+  syncSelectedTextsFromControls();
+
   queryEl.addEventListener("input", () => {
     diagramState.query = queryEl.value.trim();
     renderDiagram();
@@ -122,6 +124,12 @@ function bindDiagramEvents() {
   });
 
   toolEl.addEventListener("click", (event) => {
+    const copyDiagramButton = event.target.closest("[data-copy-diagrams]");
+    if (copyDiagramButton) {
+      copyDiagrams(copyDiagramButton);
+      return;
+    }
+
     const openButton = event.target.closest("[data-attestation-id]");
     if (openButton) {
       openAttestationDialog(openButton.dataset.attestationId);
@@ -148,6 +156,13 @@ function bindDiagramEvents() {
   });
 
   updateSearchModeControls();
+}
+
+function syncSelectedTextsFromControls() {
+  const checkedIds = textToggleEls.filter((input) => input.checked).map((input) => input.value);
+  if (checkedIds.length) {
+    diagramState.selectedTextIds = new Set(checkedIds);
+  }
 }
 
 function updateSearchModeControls() {
@@ -214,7 +229,10 @@ function renderDiagram() {
           <div class="siglum">Diagram</div>
           <h2>Attestation Frequency by Text</h2>
         </div>
-        <span class="count-pill ${total ? "hit" : "miss"}">${total}</span>
+        <div class="diagram-actions">
+          <button class="copy-tool-button" type="button" data-copy-diagrams>Copy diagrams</button>
+          <span class="count-pill ${total ? "hit" : "miss"}">${total}</span>
+        </div>
       </header>
 
       <div class="term-legend" aria-label="Searched word legend">
@@ -309,10 +327,98 @@ function renderLinearOccurrences(summary, terms) {
       <span class="linear-occurrence-siglum">${escapeHtml(summary.text.siglum)}</span>
       <span class="linear-occurrence-meta">
         <span class="count-pill ${summary.total ? "hit" : "miss"}">${summary.total}</span>
-        <span>${summary.total === 1 ? "hit" : "hits"}</span>
+        <span>See locations of occurrences</span>
       </span>
     </button>
   `;
+}
+
+async function copyDiagrams(button) {
+  const original = button.textContent;
+  const svg = buildDiagramSvg();
+  const fallbackText = buildDiagramCopyText();
+  if (!svg) {
+    return;
+  }
+
+  try {
+    if (navigator.clipboard?.write && window.ClipboardItem) {
+      const blob = new Blob([svg], { type: "image/svg+xml" });
+      await navigator.clipboard.write([new ClipboardItem({ "image/svg+xml": blob })]);
+    } else {
+      await writeClipboardText(fallbackText);
+    }
+    button.textContent = "Copied";
+  } catch (error) {
+    try {
+      await writeClipboardText(fallbackText);
+      button.textContent = "Copied data";
+    } catch (fallbackError) {
+      console.error("Diagram copy failed", error, fallbackError);
+      button.textContent = "Copy failed";
+    }
+  }
+
+  window.setTimeout(() => {
+    button.textContent = original;
+  }, 1500);
+}
+
+function buildDiagramCopyText() {
+  const lines = [["Text", ...diagramState.latestTerms, "Total"].join("\t")];
+  diagramState.latestSummaries.forEach((summary) => {
+    lines.push([
+      summary.text.siglum,
+      ...summary.termCounts.map((count) => String(count)),
+      String(summary.total)
+    ].join("\t"));
+  });
+  return lines.join("\n");
+}
+
+function buildDiagramSvg() {
+  const summaries = diagramState.latestSummaries;
+  const terms = diagramState.latestTerms;
+  if (!summaries.length || !terms.length) {
+    return "";
+  }
+
+  const columnWidth = 150;
+  const chartHeight = 260;
+  const labelHeight = 62;
+  const padding = 28;
+  const width = padding * 2 + summaries.length * columnWidth;
+  const height = padding * 2 + chartHeight + labelHeight;
+  const maxCount = Math.max(1, ...summaries.flatMap((summary) => summary.termCounts));
+  const colors = ["#b64336", "#2563a7", "#267052", "#7a3ea3", "#9a5a15", "#2d6870"];
+
+  const bars = summaries.map((summary, summaryIndex) => {
+    const x = padding + summaryIndex * columnWidth;
+    const barWidth = Math.min(28, (columnWidth - 44) / Math.max(1, terms.length));
+    const groupWidth = barWidth * terms.length;
+    const startX = x + (columnWidth - groupWidth) / 2;
+    const barNodes = summary.termCounts.map((count, termIndex) => {
+      const barHeight = count ? Math.max(6, (count / maxCount) * chartHeight) : 0;
+      const barX = startX + termIndex * barWidth;
+      const barY = padding + chartHeight - barHeight;
+      return `<rect x="${barX.toFixed(2)}" y="${barY.toFixed(2)}" width="${barWidth.toFixed(2)}" height="${barHeight.toFixed(2)}" fill="${colors[termIndex % colors.length]}" />`;
+    }).join("");
+    return `
+      <g>
+        ${barNodes}
+        <text x="${x + columnWidth / 2}" y="${padding + chartHeight + 24}" text-anchor="middle" font-family="Arial" font-size="16" font-weight="700" fill="#213547">${escapeSvg(summary.text.siglum)}</text>
+        <text x="${x + columnWidth / 2}" y="${padding + chartHeight + 44}" text-anchor="middle" font-family="Arial" font-size="13" fill="#5d6b78">${summary.total}</text>
+      </g>
+    `;
+  }).join("");
+
+  return `
+    <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
+      <rect width="100%" height="100%" fill="#ffffff"/>
+      <line x1="${padding}" y1="${padding + chartHeight}" x2="${width - padding}" y2="${padding + chartHeight}" stroke="#8ea1b0" stroke-width="1"/>
+      ${bars}
+    </svg>
+  `.trim();
 }
 
 function openAttestationDialog(textId) {
@@ -428,29 +534,7 @@ function getSearchVariants(term) {
     return getPhraseVariants(folded);
   }
 
-  const variants = new Set(lexicalVariants);
-  [
-    folded.replace(/^=+/, ""),
-    folded.replace(/^u-/, ""),
-    folded.replace(/^i-/, ""),
-    folded.replace(/^pad-/, ""),
-    folded.replace(/^az-/, ""),
-    folded.replace(/^o-/, ""),
-    folded.replace(/^ud-/, ""),
-    folded.replace(/-(iz|is|im|it|san|man|tan)$/, "")
-  ].forEach((variant) => {
-    const clean = variant.replace(/^[=_.:-]+|[=_.:-]+$/g, "");
-    if (clean) {
-      variants.add(clean);
-    }
-  });
-
-  [...variants].forEach((variant) => {
-    ["u", "i", "pad", "az", "o", "ud"].forEach((prefix) => variants.add(`${prefix}-${variant}`));
-    ["iz", "is", "im", "it", "san", "man", "tan"].forEach((suffix) => variants.add(`${variant}-${suffix}`));
-  });
-
-  return [...variants].filter(Boolean);
+  return [...new Set(lexicalVariants)].filter(Boolean);
 }
 
 function sameDisplayTerm(a, b) {
@@ -716,4 +800,32 @@ function escapeHtml(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
+}
+
+function escapeSvg(value) {
+  return escapeHtml(value);
+}
+
+async function writeClipboardText(text) {
+  if (navigator.clipboard?.writeText && window.isSecureContext) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  textarea.setAttribute("readonly", "");
+  textarea.style.position = "fixed";
+  textarea.style.left = "-9999px";
+  document.body.appendChild(textarea);
+  textarea.select();
+
+  try {
+    const copied = document.execCommand("copy");
+    if (!copied) {
+      throw new Error("Clipboard command was not accepted");
+    }
+  } finally {
+    textarea.remove();
+  }
 }

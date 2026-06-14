@@ -518,6 +518,14 @@ h1 {
   min-width: 0;
 }
 
+.diagram-actions {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
 .vertical-chart {
   position: relative;
   display: grid;
@@ -663,7 +671,7 @@ h1 {
   align-content: center;
   justify-items: center;
   gap: 6px;
-  min-height: 86px;
+  min-height: 92px;
   width: 100%;
   border: 1px solid var(--line);
   border-radius: 6px;
@@ -687,13 +695,16 @@ h1 {
 }
 
 .linear-occurrence-meta {
-  display: inline-flex;
+  display: grid;
   align-items: center;
   justify-content: center;
   gap: 6px;
   color: var(--muted);
   font-size: 0.82rem;
   font-weight: 800;
+  line-height: 1.25;
+  max-width: 100%;
+  padding: 0 8px;
 }
 
 .linear-occurrence-card h2 {

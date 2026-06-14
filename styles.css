@@ -757,6 +757,17 @@ h1 {
   overflow-wrap: anywhere;
 }
 
+.frequency-pagination {
+  justify-content: center;
+  padding: 0 14px 14px;
+}
+
+.frequency-page-range {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
 .diagram-result-grid {
   display: grid;
   grid-auto-flow: column;

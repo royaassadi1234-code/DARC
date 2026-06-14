@@ -33,10 +33,11 @@ const BASE_COMMON_WORDS = new Set([
 
 const frequencyState = {
   texts: [],
-  limit: 10,
+  pageSize: 25,
   filter: "",
   hideStopwords: true,
   selected: null,
+  pages: {},
   personalCommonWords: loadPersonalCommonWords()
 };
 
@@ -69,18 +70,21 @@ async function initFrequency() {
 function bindFrequencyEvents() {
   frequencyFilterEl.addEventListener("input", () => {
     frequencyState.filter = frequencyFilterEl.value.trim();
+    resetFrequencyPages();
     clearSelectedWord();
     renderFrequency();
   });
 
   frequencyLimitEl.addEventListener("change", () => {
-    frequencyState.limit = Number(frequencyLimitEl.value);
+    frequencyState.pageSize = Number(frequencyLimitEl.value);
+    resetFrequencyPages();
     clearSelectedWord();
     renderFrequency();
   });
 
   frequencyStopwordsEl.addEventListener("change", () => {
     frequencyState.hideStopwords = frequencyStopwordsEl.checked;
+    resetFrequencyPages();
     clearSelectedWord();
     renderFrequency();
   });
@@ -108,6 +112,14 @@ function bindFrequencyEvents() {
     const commonButton = event.target.closest("[data-common-key]");
     if (commonButton) {
       addPersonalCommonWord(commonButton.dataset.commonKey);
+      return;
+    }
+
+    const pageButton = event.target.closest("[data-frequency-page]");
+    if (pageButton) {
+      frequencyState.pages[pageButton.dataset.textId] = Number(pageButton.dataset.frequencyPage);
+      clearSelectedWord();
+      renderFrequency();
       return;
     }
 
@@ -301,8 +313,7 @@ function getRankedWords(text) {
       }
       return !filter || item.key.includes(filter) || foldText(item.label).toLowerCase().includes(filter);
     })
-    .sort((a, b) => b.total - a.total || a.label.localeCompare(b.label))
-    .slice(0, frequencyState.limit);
+    .sort((a, b) => b.total - a.total || a.label.localeCompare(b.label));
 }
 
 function renderPersonalCommonWords() {
@@ -319,14 +330,12 @@ function renderPersonalCommonWords() {
 
 function renderFrequencySummary(rankedByText) {
   frequencySummaryEl.innerHTML = rankedByText.map(({ text, ranked }) => {
-    const uniqueWords = [...text.wordStats.keys()]
-      .filter((key) => !frequencyState.hideStopwords || !isCommonWord(key)).length;
-    const topTotal = ranked.reduce((sum, item) => sum + item.total, 0);
+    const listedTotal = ranked.reduce((sum, item) => sum + item.total, 0);
     return `
       <article class="text-card frequency-stat-card">
         <div class="siglum">${escapeHtml(text.siglum)}</div>
-        <h2>${topTotal.toLocaleString()}</h2>
-        <p class="meta">tokens in the displayed list from ${uniqueWords.toLocaleString()} counted word types</p>
+        <h2>${ranked.length.toLocaleString()}</h2>
+        <p class="meta">word types across ${listedTotal.toLocaleString()} listed tokens</p>
       </article>
     `;
   }).join("");
@@ -347,11 +356,17 @@ function renderFrequencyChart(rankedByText) {
 }
 
 function renderFrequencyList(text, ranked) {
+  const pageCount = Math.max(1, Math.ceil(ranked.length / frequencyState.pageSize));
+  const currentPage = clampPage(frequencyState.pages[text.id] || 1, pageCount);
+  frequencyState.pages[text.id] = currentPage;
+  const start = (currentPage - 1) * frequencyState.pageSize;
+  const visible = ranked.slice(start, start + frequencyState.pageSize);
   const max = Math.max(...ranked.map((item) => item.total), 1);
   return `
     <div class="frequency-list">
-      ${ranked.map((item, index) => renderFrequencyItem(text, item, index, max)).join("")}
+      ${visible.map((item, index) => renderFrequencyItem(text, item, start + index, max)).join("")}
     </div>
+    ${pageCount > 1 ? renderFrequencyPagination(text, currentPage, pageCount, ranked.length) : ""}
   `;
 }
 
@@ -397,6 +412,7 @@ function addPersonalCommonWord(value) {
   frequencyState.personalCommonWords.add(key);
   savePersonalCommonWords();
   personalCommonInputEl.value = "";
+  resetFrequencyPages();
   if (frequencyState.selected?.wordKey === key) {
     clearSelectedWord();
   }
@@ -406,6 +422,7 @@ function addPersonalCommonWord(value) {
 function removePersonalCommonWord(key) {
   frequencyState.personalCommonWords.delete(key);
   savePersonalCommonWords();
+  resetFrequencyPages();
   renderFrequency();
 }
 
@@ -415,6 +432,54 @@ function isCommonWord(key) {
 
 function clearSelectedWord() {
   frequencyState.selected = null;
+}
+
+function resetFrequencyPages() {
+  frequencyState.pages = {};
+}
+
+function renderFrequencyPagination(text, currentPage, pageCount, totalRows) {
+  const start = (currentPage - 1) * frequencyState.pageSize + 1;
+  const end = Math.min(currentPage * frequencyState.pageSize, totalRows);
+  return `
+    <nav class="rank-pagination frequency-pagination" aria-label="${escapeHtml(text.siglum)} word frequency pages">
+      <span class="frequency-page-range">${start.toLocaleString()}-${end.toLocaleString()} of ${totalRows.toLocaleString()}</span>
+      ${getVisiblePages(currentPage, pageCount)
+        .map((page) => page === "gap"
+          ? `<span class="page-gap" aria-hidden="true">...</span>`
+          : `<button
+              class="page-dot ${page === currentPage ? "active" : ""}"
+              type="button"
+              data-text-id="${escapeHtml(text.id)}"
+              data-frequency-page="${page}"
+              aria-label="Show ${escapeHtml(text.siglum)} frequency page ${page}"
+              ${page === currentPage ? `aria-current="page"` : ""}
+            >${page}</button>`)
+        .join("")}
+    </nav>
+  `;
+}
+
+function getVisiblePages(currentPage, pageCount) {
+  if (pageCount <= 7) {
+    return Array.from({ length: pageCount }, (_, index) => index + 1);
+  }
+
+  const pages = new Set([1, pageCount, currentPage - 1, currentPage, currentPage + 1]);
+  const ordered = [...pages]
+    .filter((page) => page >= 1 && page <= pageCount)
+    .sort((a, b) => a - b);
+
+  return ordered.flatMap((page, index) => {
+    if (index === 0 || page === ordered[index - 1] + 1) {
+      return [page];
+    }
+    return ["gap", page];
+  });
+}
+
+function clampPage(page, pageCount) {
+  return Math.min(Math.max(page, 1), pageCount);
 }
 
 function loadPersonalCommonWords() {

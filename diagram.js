@@ -422,12 +422,13 @@ function getSearchVariants(term) {
     return [];
   }
 
-  if (isPhraseTerm(folded)) {
+  const lexicalVariants = getLexicalVariants(folded);
+  const hasLexicalVariantGroup = lexicalVariants.length > 1 || lexicalVariants[0] !== folded;
+  if (isPhraseTerm(folded) && !hasLexicalVariantGroup) {
     return getPhraseVariants(folded);
   }
 
-  const variants = new Set([folded]);
-  getLexicalVariants(folded).forEach((variant) => variants.add(variant));
+  const variants = new Set(lexicalVariants);
   [
     folded.replace(/^=+/, ""),
     folded.replace(/^u-/, ""),
@@ -457,23 +458,14 @@ function sameDisplayTerm(a, b) {
 }
 
 function getLexicalVariants(term) {
-  const lexicalVariantMap = new Map([
-    ["ahreman", ["ahreman", "ahrimen", "ahriman", "aharman", "ahremn", "ahremanag"]],
-    ["ahrimen", ["ahrimen", "ahreman", "ahriman", "aharman"]],
-    ["ahriman", ["ahriman", "ahreman", "ahrimen", "aharman"]],
-    ["aharman", ["aharman", "ahreman", "ahrimen", "ahriman"]],
-    ["druz", ["druz", "druj", "drux", "drug", "draoga"]],
-    ["druj", ["druj", "druz", "drux", "drug", "draoga"]],
-    ["drug", ["drug", "druz", "druj", "drux", "draoga"]],
-    ["drux", ["drux", "druz", "druj", "drug", "draoga"]],
-    ["ohrmazd", ["ohrmazd", "ormazd", "ahura mazda", "ahuramazda"]],
-    ["ormazd", ["ormazd", "ohrmazd", "ahura mazda", "ahuramazda"]],
-    ["zadspram", ["zadspram", "zadsparam", "zatspram", "zad-spram"]],
-    ["zadsparam", ["zadsparam", "zadspram", "zatspram", "zad-spram"]],
-    ["manuchihr", ["manuchihr", "manushchihr", "manuschihr", "manuscihr", "manushcihr"]],
-    ["manushchihr", ["manushchihr", "manuchihr", "manuschihr", "manuscihr", "manushcihr"]]
-  ]);
-  return lexicalVariantMap.get(term) || [];
+  const lexicalVariantGroups = [
+    ["ahreman", "ahrimen", "ahriman", "aharman", "ahremn", "ahremanag"],
+    ["druz", "druj", "drux", "drug", "draoga"],
+    ["ohrmazd", "ormazd", "ahura mazda", "ahuramazda"],
+    ["zadspram", "zadsparam", "zatspram", "zad-spram"],
+    ["manuchihr", "manushchihr", "manuschihr", "manuscihr", "manushcihr"]
+  ];
+  return getVariantGroup(term, lexicalVariantGroups);
 }
 
 function getPhraseVariants(term) {
@@ -485,19 +477,11 @@ function getPhraseVariants(term) {
     return [term];
   }
 
-  const phraseVariantMap = new Map([
-    ["gannag", ["gannag", "ganag", "gannak", "ganak", "gandag"]],
-    ["ganag", ["ganag", "gannag", "ganak", "gannak", "gandag"]],
-    ["gannak", ["gannak", "gannag", "ganak", "ganag"]],
-    ["ganak", ["ganak", "ganag", "gannak", "gannag"]],
-    ["menog", ["menog", "menoy", "menok", "minog", "mainyog"]],
-    ["menoy", ["menoy", "menog", "menok", "minog", "mainyog"]],
-    ["menok", ["menok", "menog", "menoy", "minog", "mainyog"]],
-    ["minog", ["minog", "menog", "menoy", "menok", "mainyog"]],
-    ["mainyog", ["mainyog", "menog", "menoy", "menok", "minog"]]
-  ]);
-
-  const partVariants = parts.map((part) => phraseVariantMap.get(part) || [part]);
+  const phraseVariantGroups = [
+    ["gannag", "ganag", "gannak", "ganak", "gandag"],
+    ["menog", "menoy", "menok", "minog", "mainyog"]
+  ];
+  const partVariants = parts.map((part) => getVariantGroup(part, phraseVariantGroups));
   const phrases = new Set();
 
   function combine(index, current) {
@@ -511,6 +495,10 @@ function getPhraseVariants(term) {
 
   combine(0, []);
   return [...phrases];
+}
+
+function getVariantGroup(term, groups) {
+  return groups.find((group) => group.includes(term)) || [term];
 }
 
 function createSearch(query) {

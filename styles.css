@@ -634,6 +634,59 @@ h1 {
   padding: 8px 2px 0;
 }
 
+.frequency-dialog[hidden] {
+  display: none;
+}
+
+.frequency-dialog {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.frequency-dialog-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(23, 33, 43, 0.42);
+}
+
+.frequency-dialog-panel {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0;
+  width: min(720px, 100%);
+  max-height: min(760px, calc(100vh - 48px));
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.frequency-dialog-panel > header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px;
+  border-bottom: 1px solid var(--line);
+  background: #fbfcfd;
+}
+
+.frequency-dialog-panel h2 {
+  margin: 0;
+  color: var(--accent-strong);
+  font-size: 1.08rem;
+}
+
+.frequency-dialog-panel .frequency-location-list {
+  max-height: min(620px, calc(100vh - 150px));
+}
+
 .diagram-result-grid {
   display: grid;
   grid-auto-flow: column;

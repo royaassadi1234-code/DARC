@@ -1,15 +1,13 @@
 const FREQUENCY_TEXTS = [
-  { id: "dd", siglum: "DD", title: "Dadestan i Denig", file: "Dd.txt" },
-  { id: "wz", siglum: "WZ", title: "Wizidagiha i Zadspram", file: "WZ.txt" }
+  { id: "dd", siglum: "DD", title: "Dādestān ī Dēnīg", file: "Dd.txt" },
+  { id: "wz", siglum: "WZ", title: "Wizīdagīhā ī Zādspram", file: "WZ.txt" }
 ];
 
 const frequencyState = {
   texts: [],
   limit: 10,
   filter: "",
-  hideStopwords: true,
-  selectedTextId: "dd",
-  selectedKey: ""
+  hideStopwords: true
 };
 
 const frequencyStatusEl = document.querySelector("#frequency-status");
@@ -18,7 +16,7 @@ const frequencyLimitEl = document.querySelector("#frequency-limit");
 const frequencyStopwordsEl = document.querySelector("#frequency-stopwords");
 const frequencySummaryEl = document.querySelector("#frequency-summary");
 const frequencyChartEl = document.querySelector("#frequency-chart");
-const frequencyLocationsEl = document.querySelector("#frequency-locations");
+const frequencyDialogEl = document.querySelector("#frequency-dialog");
 
 const TRANSLITERATION_MAP = {
   "\u0100": "A",
@@ -78,19 +76,16 @@ async function initFrequency() {
 function bindFrequencyEvents() {
   frequencyFilterEl.addEventListener("input", () => {
     frequencyState.filter = frequencyFilterEl.value.trim();
-    clearSelection();
     renderFrequency();
   });
 
   frequencyLimitEl.addEventListener("change", () => {
     frequencyState.limit = Number(frequencyLimitEl.value);
-    clearSelection();
     renderFrequency();
   });
 
   frequencyStopwordsEl.addEventListener("change", () => {
     frequencyState.hideStopwords = frequencyStopwordsEl.checked;
-    clearSelection();
     renderFrequency();
   });
 
@@ -100,15 +95,20 @@ function bindFrequencyEvents() {
       return;
     }
 
-    frequencyState.selectedTextId = button.dataset.textId;
-    frequencyState.selectedKey = button.dataset.wordKey;
-    renderFrequency();
+    openFrequencyDialog(button.dataset.textId, button.dataset.wordKey);
   });
-}
 
-function clearSelection() {
-  frequencyState.selectedTextId = "";
-  frequencyState.selectedKey = "";
+  frequencyDialogEl.addEventListener("click", (event) => {
+    if (event.target.closest("[data-close-frequency]")) {
+      closeFrequencyDialog();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !frequencyDialogEl.hidden) {
+      closeFrequencyDialog();
+    }
+  });
 }
 
 async function loadFrequencyText(config) {
@@ -260,11 +260,9 @@ function renderFrequency() {
     text,
     ranked: getRankedWords(text)
   }));
-  const selected = getSelectedWord(rankedByText);
 
   renderFrequencySummary(rankedByText);
   renderFrequencyChart(rankedByText);
-  renderFrequencyLocations(selected || getDefaultSelection(rankedByText));
 }
 
 function getRankedWords(text) {
@@ -279,21 +277,6 @@ function getRankedWords(text) {
     })
     .sort((a, b) => b.total - a.total || a.label.localeCompare(b.label))
     .slice(0, frequencyState.limit);
-}
-
-function getSelectedWord(rankedByText) {
-  if (!frequencyState.selectedTextId || !frequencyState.selectedKey) {
-    return null;
-  }
-
-  const group = rankedByText.find((item) => item.text.id === frequencyState.selectedTextId);
-  const word = group?.ranked.find((item) => item.key === frequencyState.selectedKey);
-  return word ? { text: group.text, word } : null;
-}
-
-function getDefaultSelection(rankedByText) {
-  const firstGroup = rankedByText.find((item) => item.ranked.length);
-  return firstGroup ? { text: firstGroup.text, word: firstGroup.ranked[0] } : null;
 }
 
 function renderFrequencySummary(rankedByText) {
@@ -349,9 +332,8 @@ function buildPieStyle(ranked) {
 }
 
 function renderFrequencyRow(text, item, index) {
-  const active = item.key === frequencyState.selectedKey && text.id === frequencyState.selectedTextId;
   return `
-    <button class="frequency-row ${active ? "active" : ""}" type="button" data-text-id="${escapeHtml(text.id)}" data-word-key="${escapeHtml(item.key)}">
+    <button class="frequency-row" type="button" data-text-id="${escapeHtml(text.id)}" data-word-key="${escapeHtml(item.key)}">
       <span class="frequency-swatch" style="background: ${PIE_COLORS[index % PIE_COLORS.length]}"></span>
       <span class="frequency-word">${escapeHtml(item.label)}</span>
       <span class="frequency-count">${item.total.toLocaleString()}</span>
@@ -359,21 +341,23 @@ function renderFrequencyRow(text, item, index) {
   `;
 }
 
-function renderFrequencyLocations(selection) {
-  if (!selection) {
-    frequencyLocationsEl.innerHTML = `<div class="empty-state">Select a word to see its locations.</div>`;
+function openFrequencyDialog(textId, wordKey) {
+  const text = frequencyState.texts.find((item) => item.id === textId);
+  const word = text?.wordStats.get(wordKey);
+  if (!text || !word) {
     return;
   }
 
-  const { text, word } = selection;
   const locations = word.locations.slice(0, 120);
-  frequencyLocationsEl.innerHTML = `
-    <article class="diagram-card frequency-panel">
+  frequencyDialogEl.innerHTML = `
+    <div class="frequency-dialog-backdrop" data-close-frequency></div>
+    <section class="frequency-dialog-panel">
       <header>
         <div>
           <p class="eyebrow">${escapeHtml(text.siglum)} locations</p>
-          <h2>${escapeHtml(word.label)} (${word.total.toLocaleString()})</h2>
+          <h2 id="frequency-dialog-title">${escapeHtml(word.label)} (${word.total.toLocaleString()})</h2>
         </div>
+        <button class="copy-tool-button" type="button" data-close-frequency>Close</button>
       </header>
       <div class="frequency-location-list">
         ${locations.map((location) => `
@@ -383,8 +367,14 @@ function renderFrequencyLocations(selection) {
           <p class="meta frequency-more">Showing first ${locations.length.toLocaleString()} of ${word.locations.length.toLocaleString()} locations.</p>
         ` : ""}
       </div>
-    </article>
+    </section>
   `;
+  frequencyDialogEl.hidden = false;
+}
+
+function closeFrequencyDialog() {
+  frequencyDialogEl.hidden = true;
+  frequencyDialogEl.innerHTML = "";
 }
 
 function foldText(value) {

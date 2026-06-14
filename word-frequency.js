@@ -38,7 +38,6 @@ const frequencyState = {
   hideStopwords: true,
   selected: null,
   pages: {},
-  sharedWordKeys: new Set(),
   personalCommonWords: loadPersonalCommonWords()
 };
 
@@ -59,7 +58,6 @@ async function initFrequency() {
 
   try {
     frequencyState.texts = await Promise.all(FREQUENCY_TEXTS.map(loadFrequencyText));
-    frequencyState.sharedWordKeys = getSharedWordKeys();
     frequencyStatusEl.textContent = "DD and WZ ready";
     renderFrequency();
   } catch (error) {
@@ -299,10 +297,12 @@ function renderFrequency() {
     text,
     ranked: getRankedWords(text)
   }));
+  const pageDataByText = getFrequencyPageData(rankedByText);
+  const visibleSharedWordKeys = getVisibleSharedWordKeys(pageDataByText);
 
   renderPersonalCommonWords();
   renderFrequencySummary(rankedByText);
-  renderFrequencyChart(rankedByText);
+  renderFrequencyChart(rankedByText, pageDataByText, visibleSharedWordKeys);
 }
 
 function getRankedWords(text) {
@@ -316,15 +316,6 @@ function getRankedWords(text) {
       return !filter || item.key.includes(filter) || foldText(item.label).toLowerCase().includes(filter);
     })
     .sort((a, b) => b.total - a.total || a.label.localeCompare(b.label));
-}
-
-function getSharedWordKeys() {
-  if (frequencyState.texts.length < 2) {
-    return new Set();
-  }
-
-  const [first, ...rest] = frequencyState.texts.map((text) => new Set(text.wordStats.keys()));
-  return new Set([...first].filter((key) => rest.every((wordSet) => wordSet.has(key))));
 }
 
 function renderPersonalCommonWords() {
@@ -352,7 +343,7 @@ function renderFrequencySummary(rankedByText) {
   }).join("");
 }
 
-function renderFrequencyChart(rankedByText) {
+function renderFrequencyChart(rankedByText, pageDataByText, visibleSharedWordKeys) {
   frequencyChartEl.innerHTML = rankedByText.map(({ text, ranked }) => `
     <article class="diagram-card frequency-panel">
       <header>
@@ -361,29 +352,24 @@ function renderFrequencyChart(rankedByText) {
           <h2>${escapeHtml(text.siglum)} Word Frequency</h2>
         </div>
       </header>
-      ${ranked.length ? renderFrequencyList(text, ranked) : `<div class="empty-state">No words match the current filter.</div>`}
+      ${ranked.length ? renderFrequencyList(text, ranked, pageDataByText.get(text.id), visibleSharedWordKeys) : `<div class="empty-state">No words match the current filter.</div>`}
     </article>
   `).join("");
 }
 
-function renderFrequencyList(text, ranked) {
-  const pageCount = Math.max(1, Math.ceil(ranked.length / frequencyState.pageSize));
-  const currentPage = clampPage(frequencyState.pages[text.id] || 1, pageCount);
-  frequencyState.pages[text.id] = currentPage;
-  const start = (currentPage - 1) * frequencyState.pageSize;
-  const visible = ranked.slice(start, start + frequencyState.pageSize);
+function renderFrequencyList(text, ranked, pageData, visibleSharedWordKeys) {
   const max = Math.max(...ranked.map((item) => item.total), 1);
   return `
     <div class="frequency-list">
-      ${visible.map((item, index) => renderFrequencyItem(text, item, start + index, max)).join("")}
+      ${pageData.visible.map((item, index) => renderFrequencyItem(text, item, pageData.start + index, max, visibleSharedWordKeys)).join("")}
     </div>
-    ${pageCount > 1 ? renderFrequencyPagination(text, currentPage, pageCount, ranked.length) : ""}
+    ${pageData.pageCount > 1 ? renderFrequencyPagination(text, pageData.currentPage, pageData.pageCount, ranked.length) : ""}
   `;
 }
 
-function renderFrequencyItem(text, item, index, max) {
+function renderFrequencyItem(text, item, index, max, visibleSharedWordKeys) {
   const selected = frequencyState.selected?.textId === text.id && frequencyState.selected?.wordKey === item.key;
-  const shared = frequencyState.sharedWordKeys.has(item.key);
+  const shared = visibleSharedWordKeys.has(item.key);
   const percent = (item.total / max) * 100;
   return `
     <div class="frequency-item ${selected ? "active" : ""} ${shared ? "shared" : ""}">
@@ -424,7 +410,6 @@ function addPersonalCommonWord(value) {
   frequencyState.personalCommonWords.add(key);
   savePersonalCommonWords();
   personalCommonInputEl.value = "";
-  resetFrequencyPages();
   if (frequencyState.selected?.wordKey === key) {
     clearSelectedWord();
   }
@@ -434,7 +419,6 @@ function addPersonalCommonWord(value) {
 function removePersonalCommonWord(key) {
   frequencyState.personalCommonWords.delete(key);
   savePersonalCommonWords();
-  resetFrequencyPages();
   renderFrequency();
 }
 
@@ -448,6 +432,35 @@ function clearSelectedWord() {
 
 function resetFrequencyPages() {
   frequencyState.pages = {};
+}
+
+function getFrequencyPageData(rankedByText) {
+  const pageDataByText = new Map();
+  rankedByText.forEach(({ text, ranked }) => {
+    const pageCount = Math.max(1, Math.ceil(ranked.length / frequencyState.pageSize));
+    const currentPage = clampPage(frequencyState.pages[text.id] || 1, pageCount);
+    frequencyState.pages[text.id] = currentPage;
+    const start = (currentPage - 1) * frequencyState.pageSize;
+    pageDataByText.set(text.id, {
+      currentPage,
+      pageCount,
+      start,
+      visible: ranked.slice(start, start + frequencyState.pageSize)
+    });
+  });
+  return pageDataByText;
+}
+
+function getVisibleSharedWordKeys(pageDataByText) {
+  const visibleWordSets = [...pageDataByText.values()].map((pageData) =>
+    new Set(pageData.visible.map((item) => item.key))
+  );
+  if (visibleWordSets.length < 2) {
+    return new Set();
+  }
+
+  const [first, ...rest] = visibleWordSets;
+  return new Set([...first].filter((key) => rest.every((wordSet) => wordSet.has(key))));
 }
 
 function renderFrequencyPagination(text, currentPage, pageCount, totalRows) {

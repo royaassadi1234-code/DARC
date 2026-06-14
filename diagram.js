@@ -324,10 +324,16 @@ function shortenTerm(term) {
 function renderLinearOccurrences(summary, terms) {
   return `
     <button class="linear-occurrence-card" type="button" data-attestation-id="${escapeHtml(summary.text.id)}">
-      <span class="linear-occurrence-siglum">${escapeHtml(summary.text.siglum)}</span>
+      <span class="linear-occurrence-counts">
+        ${terms.map((term, index) => `
+          <span class="linear-occurrence-term">
+            <span>${escapeHtml(shortenTerm(term))}</span>
+            <strong>${summary.termCounts[index].toLocaleString()}</strong>
+          </span>
+        `).join("")}
+      </span>
       <span class="linear-occurrence-meta">
-        <span class="count-pill ${summary.total ? "hit" : "miss"}">${summary.total}</span>
-        <span>See locations of occurrences</span>
+        <span>See occurrences</span>
       </span>
     </button>
   `;

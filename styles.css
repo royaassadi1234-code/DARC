@@ -502,6 +502,128 @@ h1 {
   display: grid;
 }
 
+.frequency-controls {
+  align-items: end;
+}
+
+.frequency-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.frequency-stat-card h2 {
+  margin: 4px 0;
+  color: var(--accent-strong);
+  font-size: 1.45rem;
+}
+
+.frequency-workspace {
+  display: grid;
+  grid-template-columns: minmax(420px, 1.15fr) minmax(340px, 0.85fr);
+  gap: 14px;
+  align-items: start;
+}
+
+.frequency-panel {
+  min-width: 0;
+}
+
+.frequency-bars {
+  display: grid;
+  gap: 7px;
+  padding: 14px;
+}
+
+.frequency-row {
+  display: grid;
+  grid-template-columns: 34px minmax(90px, 0.7fr) minmax(110px, 1fr) 72px minmax(112px, auto);
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid #dbe1e7;
+  border-radius: 6px;
+  padding: 7px 9px;
+  background: #ffffff;
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+}
+
+.frequency-row:hover,
+.frequency-row:focus-visible,
+.frequency-row.active {
+  border-color: var(--accent);
+  outline: none;
+  background: #eef4f7;
+}
+
+.frequency-rank {
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.frequency-word {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--accent-strong);
+  font-size: 0.94rem;
+  font-weight: 900;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.frequency-bar-track {
+  display: block;
+  height: 12px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e1e7ed;
+}
+
+.frequency-bar-fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--green);
+}
+
+.frequency-count {
+  justify-self: end;
+  color: var(--ink);
+  font-size: 0.88rem;
+  font-weight: 900;
+}
+
+.frequency-split {
+  display: inline-flex;
+  justify-content: flex-end;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.frequency-location-list {
+  display: grid;
+  gap: 10px;
+  max-height: 720px;
+  overflow: auto;
+  padding: 14px;
+}
+
+.frequency-location {
+  margin: 0;
+}
+
+.frequency-more {
+  margin: 0;
+  padding: 8px 2px 0;
+}
+
 .diagram-result-grid {
   display: grid;
   grid-auto-flow: column;
@@ -692,6 +814,36 @@ h1 {
   color: var(--accent-strong);
   font-size: 1.08rem;
   font-weight: 900;
+}
+
+.linear-occurrence-counts {
+  display: grid;
+  gap: 4px;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.linear-occurrence-term {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.linear-occurrence-term span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.linear-occurrence-term strong {
+  color: var(--accent-strong);
+  font-size: 0.95rem;
 }
 
 .linear-occurrence-meta {
@@ -2923,6 +3075,7 @@ mark.term-6 {
   .search-panel,
   .pseudo-controls,
   .diagram-controls,
+  .frequency-controls,
   .network-controls,
   .theme-controls,
   .concept-controls,
@@ -2944,9 +3097,14 @@ mark.term-6 {
   .resources-grid,
   .expertise-grid,
   .start-grid,
+  .frequency-summary,
   .pseudo-summary,
   .about-detail-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .frequency-workspace {
+    grid-template-columns: 1fr;
   }
 
   .diagram-result-grid {
@@ -3047,10 +3205,25 @@ mark.term-6 {
   .resources-grid,
   .expertise-grid,
   .start-grid,
+  .frequency-summary,
   .pseudo-summary,
   .about-detail-grid,
   .annotation-grid {
     grid-template-columns: 1fr;
+  }
+
+  .frequency-row {
+    grid-template-columns: 28px minmax(88px, 1fr) 64px;
+  }
+
+  .frequency-bar-track,
+  .frequency-split {
+    grid-column: 2 / -1;
+  }
+
+  .frequency-count {
+    grid-column: 3;
+    grid-row: 1;
   }
 
   .annotation-editor-header {

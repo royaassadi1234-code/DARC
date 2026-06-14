@@ -1,9 +1,9 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DARC (Drūz-Ahreman Research Corpus) | Mazdyasnian Cosmology</title>
+    <title>DARC (Dr&umacr;z-Ahreman Research Corpus) | Word Frequency</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/svg+xml" href="logos/druz-logo-fire-altar-resisting-smoke-seal-no-branches-black-white-vector.svg">
   </head>
@@ -16,7 +16,7 @@
           </a>
           <div class="masthead-title">
             <p class="eyebrow">DARC</p>
-            <h1 id="page-title"><span class="title-line">Drūz-Ahreman Research Corpus</span></h1>
+            <h1 id="page-title"><span class="title-line">Dr&umacr;z-Ahreman Research Corpus</span></h1>
             <p class="masthead-subtitle">A Digital Tool for Reconfiguring Evil Principles in Selected Middle Persian Texts from Ninth-Century Iran</p>
           </div>
           <div class="header-actions">
@@ -33,7 +33,7 @@
               </details>
               <a href="search.html">Parallel Text Search</a>
               <a href="diagram.html">Diagram</a>
-              <a href="word-frequency.html">Word Frequency</a>
+              <a class="active" href="word-frequency.html">Word Frequency</a>
               <details class="nav-menu">
                 <summary>Pattern</summary>
                 <div class="nav-menu-list pattern-menu-list">
@@ -75,35 +75,49 @@
                 </div>
               </details>
             </nav>
-            <div class="status" id="seal-status">Mazdyasnian Cosmology</div>
+            <div class="status" id="frequency-status">Loading DD and WZ...</div>
           </div>
         </header>
 
-        <section class="seal-toolbar" id="seal-toolbar" aria-label="Mazdyasnian Cosmology editing" hidden>
-          <button class="clear-button" type="button" id="seal-edit-toggle" aria-pressed="false">Move/Edit regions</button>
-          <button class="clear-button" type="button" id="seal-add-region" aria-pressed="false" disabled>Add number</button>
-          <button class="clear-button" type="button" id="seal-delete-region" disabled>Delete selected</button>
+        <section class="search-panel frequency-controls" aria-label="Word frequency controls">
+          <label class="search-box" for="frequency-filter">
+            <span>Filter words</span>
+            <input id="frequency-filter" type="search" placeholder="Type a word, e.g. druz, menog, tan" autocomplete="off">
+          </label>
+
+          <div class="controls" role="group" aria-label="Frequency options">
+            <label class="select-control" for="frequency-text">
+              <span>Text</span>
+              <select id="frequency-text">
+                <option value="combined" selected>DD + WZ</option>
+                <option value="dd">DD</option>
+                <option value="wz">WZ</option>
+              </select>
+            </label>
+            <label class="select-control" for="frequency-limit">
+              <span>Rows</span>
+              <select id="frequency-limit">
+                <option value="25" selected>25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+                <option value="250">250</option>
+              </select>
+            </label>
+            <label class="control">
+              <input id="frequency-stopwords" type="checkbox" checked>
+              <span>Hide common words</span>
+            </label>
+          </div>
         </section>
 
-        <section class="seal-workspace" aria-label="Interactive Mazdyasnian Cosmology map">
-          <article class="seal-image-panel">
-            <div class="seal-canvas">
-              <img id="seal-image" src="logos/druz-logo-fire-altar-resisting-smoke-seal.png" alt="Mazdyasnian Cosmology diagram with annotated regions">
-              <div class="seal-hotspots" id="seal-hotspots" aria-label="Seal regions"></div>
-              <div class="seal-popover" id="seal-popover" aria-live="polite" hidden></div>
-            </div>
-          </article>
-
-          <aside class="seal-detail-panel" id="seal-region-detail" aria-live="polite" hidden></aside>
-        </section>
-
-        <section class="seal-region-panel" aria-label="Seal region index">
-          <div class="siglum">Regions</div>
-          <div class="seal-region-list" id="seal-region-list"></div>
+        <section class="frequency-summary" id="frequency-summary" aria-label="Frequency summary"></section>
+        <section class="frequency-workspace" aria-live="polite">
+          <section class="frequency-chart" id="frequency-chart" aria-label="Most frequent words"></section>
+          <aside class="frequency-locations" id="frequency-locations" aria-label="Word locations"></aside>
         </section>
       </section>
     </main>
-    <script src="seal-discussion.js"></script>
-    <script src="copy-tools.js"></script>
+
+    <script src="word-frequency.js"></script>
   </body>
 </html>

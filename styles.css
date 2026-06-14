@@ -87,6 +87,15 @@ select {
   line-height: 1.28;
 }
 
+.masthead-subtitle {
+  max-width: 680px;
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: clamp(0.78rem, 0.82vw, 0.92rem);
+  font-weight: 650;
+  line-height: 1.35;
+}
+
 .title-line {
   display: block;
   overflow-wrap: normal;
@@ -2830,6 +2839,12 @@ mark.term-6 {
 
   .masthead-title h1 {
     font-size: clamp(0.62rem, 2.3vw, 0.9rem);
+  }
+
+  .masthead-subtitle {
+    max-width: 100%;
+    font-size: 0.74rem;
+    line-height: 1.28;
   }
 
   .header-actions {

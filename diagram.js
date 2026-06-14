@@ -227,12 +227,12 @@ function chunkItems(items, size) {
 function renderDiagramResultRow(summaries, terms, maxCount) {
   return `
     <div class="diagram-result-row">
-      ${summaries.map((summary) => `
-        <section class="diagram-result-panel">
-          ${renderVerticalBar(summary, maxCount)}
-          ${renderLinearOccurrences(summary, terms)}
-        </section>
-      `).join("")}
+      <div class="diagram-row-charts" aria-label="Paired diagrams">
+        ${summaries.map((summary) => renderVerticalBar(summary, maxCount)).join("")}
+      </div>
+      <div class="diagram-row-occurrences" aria-label="Paired occurrence results">
+        ${summaries.map((summary) => renderLinearOccurrences(summary, terms)).join("")}
+      </div>
     </div>
   `;
 }

@@ -474,16 +474,15 @@ h1 {
 
 .diagram-result-row {
   display: grid;
+  gap: 10px;
+}
+
+.diagram-row-charts,
+.diagram-row-occurrences {
+  display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
   align-items: stretch;
-}
-
-.diagram-result-panel {
-  display: grid;
-  grid-template-rows: auto minmax(0, 1fr);
-  gap: 10px;
-  min-width: 0;
 }
 
 .vertical-chart {
@@ -2791,7 +2790,8 @@ mark.term-6 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .diagram-result-row {
+  .diagram-row-charts,
+  .diagram-row-occurrences {
     grid-template-columns: 1fr;
   }
 

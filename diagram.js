@@ -211,7 +211,7 @@ function renderDiagram() {
   }
 
   const rawSummaries = selectedTexts.map((text) => getOccurrenceSummary(text, search));
-  const displayTerms = getDisplayTerms(rawSummaries, search.terms);
+  const displayTerms = search.terms;
   const summaries = rawSummaries.map((summary) => normalizeSummaryTerms(summary, displayTerms));
   diagramState.latestSummaries = summaries;
   diagramState.latestTerms = displayTerms;
@@ -273,8 +273,8 @@ function normalizeSummaryTerms(summary, displayTerms) {
   return {
     ...summary,
     terms: displayTerms,
-    termCounts: displayTerms.map((term) =>
-      summary.occurrences.filter((occurrence) => sameDisplayTerm(occurrence.matchedText, term)).length
+    termCounts: displayTerms.map((term, termIndex) =>
+      summary.occurrences.filter((occurrence) => occurrence.termIndex === termIndex).length
     )
   };
 }
@@ -441,7 +441,7 @@ function openAttestationDialog(textId) {
       <div class="linear-lines">
         ${diagramState.latestTerms.map((term, termIndex) => {
           const locations = summary.occurrences
-            .filter((occurrence) => sameDisplayTerm(occurrence.matchedText, term))
+            .filter((occurrence) => occurrence.termIndex === termIndex)
             .map((occurrence) => occurrence.location);
           return `
             <p>
@@ -549,7 +549,7 @@ function getLexicalVariantGroups() {
   return [
     ["ahreman", "ahrimen", "ahriman", "aharman", "ahremn", "ahremanag"],
     ["druz", "druj", "drux", "drug", "draoga"],
-    ["ohrmazd", "ormazd", "ahura mazda", "ahuramazda"],
+    ["ohrmazd", "ormazd", "ahura mazda", "ahuramazda", "dadar"],
     ["zadspram", "zadsparam", "zatspram", "zad-spram"],
     ["manuchihr", "manushchihr", "manuschihr", "manuscihr", "manushcihr"]
   ];
@@ -607,7 +607,28 @@ function getSearchTerms(query) {
     : diagramState.multipleWords
       ? mergeKnownPhraseTerms(parseTermsWithQuotedPhrases(query))
       : [query];
-  return [...new Set(terms.map((term) => term.trim()).filter(Boolean))];
+  return dedupeEquivalentTerms(terms.map((term) => term.trim()).filter(Boolean));
+}
+
+function dedupeEquivalentTerms(terms) {
+  const seen = new Set();
+  const uniqueTerms = [];
+
+  terms.forEach((term) => {
+    const key = getVariantKey(term);
+    if (seen.has(key)) {
+      return;
+    }
+    seen.add(key);
+    uniqueTerms.push(term);
+  });
+
+  return uniqueTerms;
+}
+
+function getVariantKey(term) {
+  const variants = getSearchVariants(term).map((variant) => foldText(variant, diagramState.caseSensitive).text);
+  return variants.length ? variants.sort().join("|") : foldText(term, diagramState.caseSensitive).text;
 }
 
 function parseTermsWithQuotedPhrases(query) {

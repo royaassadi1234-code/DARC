@@ -1,22 +1,9 @@
 const FREQUENCY_TEXTS = [
-  { id: "dd", siglum: "DD", title: "Dādestān ī Dēnīg", file: "Dd.txt" },
-  { id: "wz", siglum: "WZ", title: "Wizīdagīhā ī Zādspram", file: "WZ.txt" }
+  { id: "dd", siglum: "DD", title: "D\u0101dest\u0101n \u012b D\u0113n\u012bg", file: "Dd.txt" },
+  { id: "wz", siglum: "WZ", title: "Wiz\u012bdag\u012bh\u0101 \u012b Z\u0101dspram", file: "WZ.txt" }
 ];
 
-const frequencyState = {
-  texts: [],
-  limit: 10,
-  filter: "",
-  hideStopwords: true
-};
-
-const frequencyStatusEl = document.querySelector("#frequency-status");
-const frequencyFilterEl = document.querySelector("#frequency-filter");
-const frequencyLimitEl = document.querySelector("#frequency-limit");
-const frequencyStopwordsEl = document.querySelector("#frequency-stopwords");
-const frequencySummaryEl = document.querySelector("#frequency-summary");
-const frequencyChartEl = document.querySelector("#frequency-chart");
-const frequencyDialogEl = document.querySelector("#frequency-dialog");
+const PERSONAL_COMMON_STORAGE_KEY = "darcPersonalCommonWords";
 
 const TRANSLITERATION_MAP = {
   "\u0100": "A",
@@ -38,24 +25,30 @@ const TRANSLITERATION_MAP = {
   "\u01E7": "g"
 };
 
-const COMMON_WORDS = new Set([
+const BASE_COMMON_WORDS = new Set([
   "a", "abar", "an", "andar", "az", "be", "bud", "ce", "ceg", "cegon", "ciyon",
   "dar", "ed", "eg", "est", "ham", "han", "hast", "i", "ka", "ke", "ku", "ne",
   "o", "pad", "pas", "ra", "s", "u", "ud"
 ]);
 
-const PIE_COLORS = [
-  "#245c73",
-  "#267052",
-  "#a83b3b",
-  "#7a3ea3",
-  "#9a5a15",
-  "#2d6870",
-  "#526476",
-  "#5d7f3f",
-  "#9b4b5c",
-  "#4d5ca3"
-];
+const frequencyState = {
+  texts: [],
+  limit: 10,
+  filter: "",
+  hideStopwords: true,
+  selected: null,
+  personalCommonWords: loadPersonalCommonWords()
+};
+
+const frequencyStatusEl = document.querySelector("#frequency-status");
+const frequencyFilterEl = document.querySelector("#frequency-filter");
+const frequencyLimitEl = document.querySelector("#frequency-limit");
+const frequencyStopwordsEl = document.querySelector("#frequency-stopwords");
+const personalCommonInputEl = document.querySelector("#frequency-common-input");
+const personalCommonAddEl = document.querySelector("#frequency-common-add");
+const personalCommonListEl = document.querySelector("#frequency-common-list");
+const frequencySummaryEl = document.querySelector("#frequency-summary");
+const frequencyChartEl = document.querySelector("#frequency-chart");
 
 initFrequency();
 
@@ -76,37 +69,71 @@ async function initFrequency() {
 function bindFrequencyEvents() {
   frequencyFilterEl.addEventListener("input", () => {
     frequencyState.filter = frequencyFilterEl.value.trim();
+    clearSelectedWord();
     renderFrequency();
   });
 
   frequencyLimitEl.addEventListener("change", () => {
     frequencyState.limit = Number(frequencyLimitEl.value);
+    clearSelectedWord();
     renderFrequency();
   });
 
   frequencyStopwordsEl.addEventListener("change", () => {
     frequencyState.hideStopwords = frequencyStopwordsEl.checked;
+    clearSelectedWord();
     renderFrequency();
   });
 
+  personalCommonAddEl.addEventListener("click", () => {
+    addPersonalCommonWord(personalCommonInputEl.value);
+  });
+
+  personalCommonInputEl.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      addPersonalCommonWord(personalCommonInputEl.value);
+    }
+  });
+
+  personalCommonListEl.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-remove-common-key]");
+    if (!button) {
+      return;
+    }
+    removePersonalCommonWord(button.dataset.removeCommonKey);
+  });
+
   frequencyChartEl.addEventListener("click", (event) => {
+    const commonButton = event.target.closest("[data-common-key]");
+    if (commonButton) {
+      addPersonalCommonWord(commonButton.dataset.commonKey);
+      return;
+    }
+
+    const closeButton = event.target.closest("[data-close-locations]");
+    if (closeButton) {
+      clearSelectedWord();
+      renderFrequency();
+      return;
+    }
+
     const button = event.target.closest("[data-word-key]");
     if (!button) {
       return;
     }
 
-    openFrequencyDialog(button.dataset.textId, button.dataset.wordKey);
-  });
-
-  frequencyDialogEl.addEventListener("click", (event) => {
-    if (event.target.closest("[data-close-frequency]")) {
-      closeFrequencyDialog();
-    }
+    frequencyState.selected = {
+      textId: button.dataset.textId,
+      wordKey: button.dataset.wordKey
+    };
+    renderFrequency();
   });
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && !frequencyDialogEl.hidden) {
-      closeFrequencyDialog();
+    if (event.key === "Escape" && frequencyState.selected) {
+      clearSelectedWord();
+      renderFrequency();
     }
   });
 }
@@ -261,6 +288,7 @@ function renderFrequency() {
     ranked: getRankedWords(text)
   }));
 
+  renderPersonalCommonWords();
   renderFrequencySummary(rankedByText);
   renderFrequencyChart(rankedByText);
 }
@@ -270,7 +298,7 @@ function getRankedWords(text) {
 
   return [...text.wordStats.values()]
     .filter((item) => {
-      if (frequencyState.hideStopwords && COMMON_WORDS.has(item.key)) {
+      if (frequencyState.hideStopwords && isCommonWord(item.key)) {
         return false;
       }
       return !filter || item.key.includes(filter) || foldText(item.label).toLowerCase().includes(filter);
@@ -279,16 +307,28 @@ function getRankedWords(text) {
     .slice(0, frequencyState.limit);
 }
 
+function renderPersonalCommonWords() {
+  const words = [...frequencyState.personalCommonWords].sort((a, b) => a.localeCompare(b));
+  personalCommonListEl.innerHTML = words.length
+    ? words.map((word) => `
+      <button class="frequency-common-chip" type="button" data-remove-common-key="${escapeHtml(word)}" title="Remove from personal common words">
+        <span>${escapeHtml(word)}</span>
+        <strong aria-hidden="true">x</strong>
+      </button>
+    `).join("")
+    : `<span class="frequency-common-empty">No personal common words marked yet.</span>`;
+}
+
 function renderFrequencySummary(rankedByText) {
   frequencySummaryEl.innerHTML = rankedByText.map(({ text, ranked }) => {
     const uniqueWords = [...text.wordStats.keys()]
-      .filter((key) => !frequencyState.hideStopwords || !COMMON_WORDS.has(key)).length;
+      .filter((key) => !frequencyState.hideStopwords || !isCommonWord(key)).length;
     const topTotal = ranked.reduce((sum, item) => sum + item.total, 0);
     return `
       <article class="text-card frequency-stat-card">
         <div class="siglum">${escapeHtml(text.siglum)}</div>
         <h2>${topTotal.toLocaleString()}</h2>
-        <p class="meta">tokens in the displayed frequency chart from ${uniqueWords.toLocaleString()} counted word types</p>
+        <p class="meta">tokens in the displayed list from ${uniqueWords.toLocaleString()} counted word types</p>
       </article>
     `;
   }).join("");
@@ -303,61 +343,47 @@ function renderFrequencyChart(rankedByText) {
           <h2>${escapeHtml(text.siglum)} Word Frequency</h2>
         </div>
       </header>
-      ${ranked.length ? renderPiePanel(text, ranked) : `<div class="empty-state">No words match the current filter.</div>`}
+      ${ranked.length ? renderFrequencyList(text, ranked) : `<div class="empty-state">No words match the current filter.</div>`}
     </article>
   `).join("");
 }
 
-function renderPiePanel(text, ranked) {
+function renderFrequencyList(text, ranked) {
+  const max = Math.max(...ranked.map((item) => item.total), 1);
   return `
-    <div class="frequency-pie-layout">
-      <div class="frequency-pie" style="${buildPieStyle(ranked)}" aria-label="${escapeHtml(text.siglum)} word frequency pie chart"></div>
-      <div class="frequency-bars">
-        ${ranked.map((item, index) => renderFrequencyRow(text, item, index)).join("")}
-      </div>
+    <div class="frequency-list">
+      ${ranked.map((item, index) => renderFrequencyItem(text, item, index, max)).join("")}
     </div>
   `;
 }
 
-function buildPieStyle(ranked) {
-  const total = ranked.reduce((sum, item) => sum + item.total, 0);
-  let cursor = 0;
-  const stops = ranked.map((item, index) => {
-    const start = cursor;
-    cursor += total ? (item.total / total) * 100 : 0;
-    const color = PIE_COLORS[index % PIE_COLORS.length];
-    return `${color} ${start.toFixed(2)}% ${cursor.toFixed(2)}%`;
-  });
-  return `background: conic-gradient(${stops.join(", ")});`;
-}
-
-function renderFrequencyRow(text, item, index) {
+function renderFrequencyItem(text, item, index, max) {
+  const selected = frequencyState.selected?.textId === text.id && frequencyState.selected?.wordKey === item.key;
+  const percent = (item.total / max) * 100;
   return `
-    <button class="frequency-row" type="button" data-text-id="${escapeHtml(text.id)}" data-word-key="${escapeHtml(item.key)}">
-      <span class="frequency-swatch" style="background: ${PIE_COLORS[index % PIE_COLORS.length]}"></span>
-      <span class="frequency-word">${escapeHtml(item.label)}</span>
-      <span class="frequency-count">${item.total.toLocaleString()}</span>
-    </button>
+    <div class="frequency-item ${selected ? "active" : ""}">
+      <button class="frequency-row" type="button" data-text-id="${escapeHtml(text.id)}" data-word-key="${escapeHtml(item.key)}">
+        <span class="frequency-rank">${index + 1}</span>
+        <span class="frequency-word">${escapeHtml(item.label)}</span>
+        <span class="frequency-count">${item.total.toLocaleString()}</span>
+        <span class="frequency-mini-bar" aria-hidden="true"><span style="width: ${percent.toFixed(2)}%"></span></span>
+      </button>
+      <button class="frequency-common-button" type="button" data-common-key="${escapeHtml(item.key)}">Mark common</button>
+      ${selected ? renderLocationPopover(text, item) : ""}
+    </div>
   `;
 }
 
-function openFrequencyDialog(textId, wordKey) {
-  const text = frequencyState.texts.find((item) => item.id === textId);
-  const word = text?.wordStats.get(wordKey);
-  if (!text || !word) {
-    return;
-  }
-
+function renderLocationPopover(text, word) {
   const locations = word.locations.slice(0, 120);
-  frequencyDialogEl.innerHTML = `
-    <div class="frequency-dialog-backdrop" data-close-frequency></div>
-    <section class="frequency-dialog-panel">
+  return `
+    <aside class="frequency-location-popover">
       <header>
         <div>
           <p class="eyebrow">${escapeHtml(text.siglum)} locations</p>
-          <h2 id="frequency-dialog-title">${escapeHtml(word.label)} (${word.total.toLocaleString()})</h2>
+          <h3>${escapeHtml(word.label)} (${word.total.toLocaleString()})</h3>
         </div>
-        <button class="copy-tool-button" type="button" data-close-frequency>Close</button>
+        <button class="clear-button" type="button" data-close-locations>Close</button>
       </header>
       <div class="frequency-location-list">
         ${locations.map((location) => `
@@ -367,14 +393,58 @@ function openFrequencyDialog(textId, wordKey) {
           <p class="meta frequency-more">Showing first ${locations.length.toLocaleString()} of ${word.locations.length.toLocaleString()} locations.</p>
         ` : ""}
       </div>
-    </section>
+    </aside>
   `;
-  frequencyDialogEl.hidden = false;
 }
 
-function closeFrequencyDialog() {
-  frequencyDialogEl.hidden = true;
-  frequencyDialogEl.innerHTML = "";
+function addPersonalCommonWord(value) {
+  const key = normalizeWord(value);
+  if (!key) {
+    return;
+  }
+
+  frequencyState.personalCommonWords.add(key);
+  savePersonalCommonWords();
+  personalCommonInputEl.value = "";
+  if (frequencyState.selected?.wordKey === key) {
+    clearSelectedWord();
+  }
+  renderFrequency();
+}
+
+function removePersonalCommonWord(key) {
+  frequencyState.personalCommonWords.delete(key);
+  savePersonalCommonWords();
+  renderFrequency();
+}
+
+function isCommonWord(key) {
+  return BASE_COMMON_WORDS.has(key) || frequencyState.personalCommonWords.has(key);
+}
+
+function clearSelectedWord() {
+  frequencyState.selected = null;
+}
+
+function loadPersonalCommonWords() {
+  try {
+    const value = window.localStorage?.getItem(PERSONAL_COMMON_STORAGE_KEY);
+    const words = value ? JSON.parse(value) : [];
+    return new Set(Array.isArray(words) ? words.map(normalizeWord).filter(Boolean) : []);
+  } catch {
+    return new Set();
+  }
+}
+
+function savePersonalCommonWords() {
+  try {
+    window.localStorage?.setItem(
+      PERSONAL_COMMON_STORAGE_KEY,
+      JSON.stringify([...frequencyState.personalCommonWords].sort((a, b) => a.localeCompare(b)))
+    );
+  } catch {
+    // Ignore storage failures; the in-memory set still works for this page session.
+  }
 }
 
 function foldText(value) {

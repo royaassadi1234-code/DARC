@@ -506,6 +506,59 @@ h1 {
   align-items: end;
 }
 
+.frequency-common-panel {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) auto;
+  gap: 10px;
+  align-items: end;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.frequency-common-list {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  min-height: 34px;
+}
+
+.frequency-common-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 32px;
+  border: 1px solid #c8d0d9;
+  border-radius: 999px;
+  padding: 4px 10px;
+  color: var(--accent-strong);
+  background: #fbfcfd;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.frequency-common-chip:hover,
+.frequency-common-chip:focus-visible {
+  border-color: var(--accent);
+  outline: none;
+  background: #eef4f7;
+}
+
+.frequency-common-chip strong {
+  color: var(--red);
+  font-size: 0.9rem;
+}
+
+.frequency-common-empty {
+  color: var(--muted);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
 .frequency-summary {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -527,6 +580,7 @@ h1 {
 
 .frequency-panel {
   min-width: 0;
+  overflow: visible;
 }
 
 .frequency-chart {
@@ -536,38 +590,34 @@ h1 {
   align-items: start;
 }
 
-.frequency-pie-layout {
+.frequency-list {
   display: grid;
-  grid-template-columns: minmax(160px, 240px) minmax(0, 1fr);
-  gap: 18px;
-  align-items: center;
-  padding: 16px;
+  gap: 8px;
+  padding: 14px;
 }
 
-.frequency-pie {
-  width: min(100%, 220px);
-  aspect-ratio: 1;
-  justify-self: center;
-  border: 1px solid rgba(23, 33, 43, 0.18);
-  border-radius: 50%;
-  box-shadow: inset 0 0 0 18px rgba(255, 255, 255, 0.28);
+.frequency-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: stretch;
 }
 
-.frequency-bars {
-  display: grid;
-  gap: 7px;
+.frequency-item.active {
+  z-index: 4;
 }
 
 .frequency-row {
   display: grid;
-  grid-template-columns: 14px minmax(0, 1fr) 72px;
+  grid-template-columns: 32px minmax(0, 1fr) 72px;
   align-items: center;
-  gap: 9px;
+  gap: 10px;
   width: 100%;
-  min-height: 38px;
+  min-height: 48px;
   border: 1px solid #dbe1e7;
   border-radius: 6px;
-  padding: 7px 9px;
+  padding: 8px 10px;
   background: #ffffff;
   color: var(--ink);
   cursor: pointer;
@@ -582,10 +632,10 @@ h1 {
   background: #eef4f7;
 }
 
-.frequency-swatch {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
+.frequency-rank {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 900;
 }
 
 .frequency-word {
@@ -603,6 +653,96 @@ h1 {
   color: var(--ink);
   font-size: 0.88rem;
   font-weight: 900;
+}
+
+.frequency-mini-bar {
+  grid-column: 2 / -1;
+  display: block;
+  height: 5px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e1e7ed;
+}
+
+.frequency-mini-bar span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--green);
+}
+
+.frequency-common-button {
+  min-width: 96px;
+  border: 1px solid #c8d0d9;
+  border-radius: 6px;
+  padding: 0 9px;
+  color: var(--accent-strong);
+  background: #fbfcfd;
+  cursor: pointer;
+  font-size: 0.76rem;
+  font-weight: 850;
+}
+
+.frequency-common-button:hover,
+.frequency-common-button:focus-visible {
+  border-color: var(--accent);
+  outline: none;
+  background: #eef4f7;
+}
+
+.frequency-location-popover {
+  position: absolute;
+  top: 0;
+  left: calc(100% + 10px);
+  z-index: 5;
+  display: grid;
+  width: min(340px, 42vw);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.frequency-location-popover::before {
+  position: absolute;
+  top: 18px;
+  left: -7px;
+  width: 12px;
+  height: 12px;
+  border-left: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: #fbfcfd;
+  content: "";
+  transform: rotate(45deg);
+}
+
+.frequency-chart .frequency-panel:nth-child(2) .frequency-location-popover {
+  right: calc(100% + 10px);
+  left: auto;
+}
+
+.frequency-chart .frequency-panel:nth-child(2) .frequency-location-popover::before {
+  right: -7px;
+  left: auto;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  border-left: 0;
+}
+
+.frequency-location-popover > header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px;
+  border-bottom: 1px solid var(--line);
+  background: #fbfcfd;
+}
+
+.frequency-location-popover h3 {
+  margin: 0;
+  color: var(--accent-strong);
+  font-size: 0.98rem;
 }
 
 .frequency-location-list {
@@ -632,59 +772,6 @@ h1 {
 .frequency-more {
   margin: 0;
   padding: 8px 2px 0;
-}
-
-.frequency-dialog[hidden] {
-  display: none;
-}
-
-.frequency-dialog {
-  position: fixed;
-  inset: 0;
-  z-index: 30;
-  display: grid;
-  place-items: center;
-  padding: 24px;
-}
-
-.frequency-dialog-backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(23, 33, 43, 0.42);
-}
-
-.frequency-dialog-panel {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  gap: 0;
-  width: min(720px, 100%);
-  max-height: min(760px, calc(100vh - 48px));
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: #ffffff;
-  box-shadow: var(--shadow);
-}
-
-.frequency-dialog-panel > header {
-  display: flex;
-  align-items: start;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 16px;
-  border-bottom: 1px solid var(--line);
-  background: #fbfcfd;
-}
-
-.frequency-dialog-panel h2 {
-  margin: 0;
-  color: var(--accent-strong);
-  font-size: 1.08rem;
-}
-
-.frequency-dialog-panel .frequency-location-list {
-  max-height: min(620px, calc(100vh - 150px));
 }
 
 .diagram-result-grid {
@@ -3174,6 +3261,10 @@ mark.term-6 {
     grid-template-columns: 1fr;
   }
 
+  .frequency-common-panel {
+    grid-template-columns: 1fr;
+  }
+
   .diagram-result-grid {
     grid-auto-columns: minmax(190px, 82vw);
   }
@@ -3280,11 +3371,29 @@ mark.term-6 {
   }
 
   .frequency-row {
-    grid-template-columns: 14px minmax(0, 1fr) 64px;
+    grid-template-columns: 28px minmax(0, 1fr) 64px;
   }
 
-  .frequency-pie-layout {
-    grid-template-columns: 1fr;
+  .frequency-item {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .frequency-common-button {
+    min-height: 36px;
+  }
+
+  .frequency-location-popover,
+  .frequency-chart .frequency-panel:nth-child(2) .frequency-location-popover {
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    width: 100%;
+  }
+
+  .frequency-location-popover::before,
+  .frequency-chart .frequency-panel:nth-child(2) .frequency-location-popover::before {
+    display: none;
   }
 
   .annotation-editor-header {

@@ -77,6 +77,7 @@ const annotationResetButton = document.querySelector("#reset-draft");
 const annotationPrevButton = document.querySelector("#annotation-prev");
 const annotationNextButton = document.querySelector("#annotation-next");
 const annotationPositionEl = document.querySelector("#annotation-position");
+const optionOtherToggles = document.querySelectorAll(".option-other-toggle");
 
 const annotationFields = {
   sourceParagraph: document.querySelector("#field-sourceParagraph"),
@@ -137,6 +138,19 @@ function bindTextEditorEvents() {
     tab.addEventListener("click", () => {
       switchEditorTool(tab.dataset.editorTool);
     });
+  });
+
+  optionOtherToggles.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.stopPropagation();
+      toggleOptionPopover(button);
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest(".option-choice-group")) {
+      closeOptionPopovers();
+    }
   });
 
   window.addEventListener("hashchange", openToolFromHash);
@@ -247,6 +261,27 @@ function openToolFromHash() {
   } else {
     switchEditorTool("annotations");
   }
+}
+
+function toggleOptionPopover(button) {
+  const panel = document.querySelector(`#${button.getAttribute("aria-controls")}`);
+  if (!panel) {
+    return;
+  }
+  const willOpen = panel.classList.contains("hidden");
+  closeOptionPopovers();
+  panel.classList.toggle("hidden", !willOpen);
+  button.setAttribute("aria-expanded", willOpen ? "true" : "false");
+}
+
+function closeOptionPopovers() {
+  optionOtherToggles.forEach((button) => {
+    const panel = document.querySelector(`#${button.getAttribute("aria-controls")}`);
+    if (panel) {
+      panel.classList.add("hidden");
+    }
+    button.setAttribute("aria-expanded", "false");
+  });
 }
 
 async function loadWorkspaceTexts() {

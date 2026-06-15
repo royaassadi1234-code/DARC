@@ -271,10 +271,13 @@
                     <input type="checkbox" name="oppositions" value="Manuščihr">
                     <span>Manuščihr</span>
                   </label>
-                  <label class="option-custom-field" for="field-oppositions-custom">
-                    <span>Other</span>
-                    <textarea id="field-oppositions-custom" rows="3" placeholder="Add one or more values"></textarea>
-                  </label>
+                  <button class="option-other-toggle" type="button" aria-expanded="false" aria-controls="oppositions-other-panel">Other</button>
+                  <div class="option-custom-popover hidden" id="oppositions-other-panel">
+                    <label class="option-custom-field" for="field-oppositions-custom">
+                      <span>Other oppositions</span>
+                      <textarea id="field-oppositions-custom" rows="3" placeholder="Add one or more values"></textarea>
+                    </label>
+                  </div>
                 </fieldset>
                 <fieldset class="annotation-field option-choice-group" id="field-meaning">
                   <legend>Referent</legend>
@@ -294,10 +297,13 @@
                     <input type="checkbox" name="referent" value="Wickedness">
                     <span>Wickedness</span>
                   </label>
-                  <label class="option-custom-field" for="field-meaning-custom">
-                    <span>Other</span>
-                    <textarea id="field-meaning-custom" rows="3" placeholder="Add one or more values"></textarea>
-                  </label>
+                  <button class="option-other-toggle" type="button" aria-expanded="false" aria-controls="referent-other-panel">Other</button>
+                  <div class="option-custom-popover hidden" id="referent-other-panel">
+                    <label class="option-custom-field" for="field-meaning-custom">
+                      <span>Other referents</span>
+                      <textarea id="field-meaning-custom" rows="3" placeholder="Add one or more values"></textarea>
+                    </label>
+                  </div>
                 </fieldset>
                 <label class="annotation-field" for="field-actionsUsedWithIt">
                   <span>Action</span>

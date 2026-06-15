@@ -1968,6 +1968,7 @@ h1 {
 
 .realm-choice-group,
 .option-choice-group {
+  position: relative;
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
@@ -2002,7 +2003,8 @@ h1 {
 }
 
 .realm-choice-group label span,
-.option-choice-group label span {
+.option-choice-group label span,
+.option-other-toggle {
   display: inline-flex;
   align-items: center;
   min-height: 34px;
@@ -2017,16 +2019,34 @@ h1 {
   text-transform: none;
 }
 
+.option-other-toggle {
+  cursor: pointer;
+  font: inherit;
+}
+
 .realm-choice-group input:checked + span,
-.option-choice-group input:checked + span {
+.option-choice-group input:checked + span,
+.option-other-toggle[aria-expanded="true"] {
   border-color: var(--accent);
   color: #ffffff;
   background: var(--accent);
 }
 
+.option-custom-popover {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 8px);
+  left: 0;
+  width: min(360px, 100%);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: #ffffff;
+  box-shadow: var(--shadow);
+}
+
 .option-choice-group .option-custom-field {
   display: grid;
-  flex: 0 0 100%;
   gap: 6px;
   cursor: default;
 }

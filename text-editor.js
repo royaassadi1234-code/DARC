@@ -46,6 +46,7 @@ const annotationToolPanel = document.querySelector("#annotation-tool-panel");
 const searchInput = document.querySelector("#text-editor-search");
 const summaryEl = document.querySelector("#text-editor-summary");
 const listEl = document.querySelector("#text-editor-list");
+const fileToggleButton = document.querySelector("#text-file-toggle");
 const titleEl = document.querySelector("#text-editor-title");
 const metaEl = document.querySelector("#text-editor-meta");
 const sourceContentEl = document.querySelector("#text-source-content");
@@ -123,6 +124,11 @@ function bindTextEditorEvents() {
   searchInput.addEventListener("input", () => {
     editorState.query = searchInput.value.trim().toLowerCase();
     renderTextEditorList();
+  });
+
+  fileToggleButton.addEventListener("click", () => {
+    const hidden = listEl.classList.toggle("hidden");
+    fileToggleButton.setAttribute("aria-expanded", hidden ? "false" : "true");
   });
 
   toolTabs.forEach((tab) => {
@@ -300,12 +306,10 @@ function renderTextEditorList() {
   listEl.innerHTML = files.map((file) => {
     const active = file.id === editorState.selectedId ? " active" : "";
     const draft = hasDraft(file) ? `<small>Draft saved</small>` : `<small>${escapeHtml(file.kind)}</small>`;
-    const translation = file.translationFile ? ` / ${file.translationFile}` : "";
     return `
       <button class="annotation-list-item text-editor-list-item${active}" type="button" data-text-id="${escapeHtml(file.id)}">
         <strong>${escapeHtml(file.siglum)}</strong>
         <span>${escapeHtml(file.title)}</span>
-        <small>${escapeHtml(file.file + translation)}</small>
         ${draft}
       </button>
     `;

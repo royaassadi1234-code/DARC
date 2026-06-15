@@ -1857,6 +1857,68 @@ h1 {
   overflow: auto;
 }
 
+.passage-pager {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px;
+  background: #f7fafb;
+}
+
+.passage-pager span {
+  min-width: 140px;
+  color: var(--accent-strong);
+  font-size: 0.86rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.passage-editor-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px;
+}
+
+.passage-edit-card {
+  display: grid;
+  gap: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: #ffffff;
+}
+
+.passage-edit-card textarea {
+  min-height: clamp(280px, 42vh, 560px);
+  resize: vertical;
+  line-height: 1.55;
+}
+
+.passage-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.annotation-passage-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(240px, 0.75fr);
+  gap: 12px;
+  align-items: start;
+}
+
+.annotation-side-fields {
+  display: grid;
+  gap: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: #ffffff;
+}
+
 .annotation-field input:focus,
 .annotation-field select:focus,
 .annotation-field textarea:focus {
@@ -3402,8 +3464,15 @@ mark.term-6 {
   .concept-info-card,
   .concept-comment-list,
   .concept-next-grid,
-  .annotation-workspace {
+  .annotation-workspace,
+  .passage-editor-grid,
+  .passage-detail-grid,
+  .annotation-passage-layout {
     grid-template-columns: 1fr;
+  }
+
+  .editor-tabs #text-editor-logout {
+    margin-left: 0;
   }
 
   .annotation-sidebar {

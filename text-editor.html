@@ -144,10 +144,35 @@
               </div>
 
               <div class="text-editor-meta" id="text-editor-meta"></div>
-              <label class="annotation-field wide text-editor-field" for="text-editor-content">
-                <span>Text content</span>
-                <textarea id="text-editor-content" spellcheck="false"></textarea>
-              </label>
+              <div class="passage-pager" aria-label="Text passage navigation">
+                <button class="copy-button" id="text-passage-prev" type="button">Previous</button>
+                <span id="text-passage-position">Passage 0 of 0</span>
+                <button class="copy-button" id="text-passage-next" type="button">Next</button>
+              </div>
+              <div class="passage-editor-grid">
+                <article class="passage-edit-card">
+                  <label class="annotation-field wide" for="text-source-content">
+                    <span id="text-source-label">Source passage</span>
+                    <textarea id="text-source-content" spellcheck="false"></textarea>
+                  </label>
+                </article>
+                <article class="passage-edit-card">
+                  <label class="annotation-field wide" for="text-translation-content">
+                    <span id="text-translation-label">Translation</span>
+                    <textarea id="text-translation-content" spellcheck="false"></textarea>
+                  </label>
+                </article>
+              </div>
+              <div class="passage-detail-grid">
+                <label class="annotation-field" for="text-passage-location">
+                  <span>Location</span>
+                  <input id="text-passage-location" type="text">
+                </label>
+                <label class="annotation-field" for="text-translation-location">
+                  <span>Translation location</span>
+                  <input id="text-translation-location" type="text">
+                </label>
+              </div>
             </section>
           </div>
 
@@ -189,15 +214,26 @@
                 </div>
               </div>
 
-              <div class="annotation-grid">
-                <label class="annotation-field wide" for="field-sourceParagraph">
-                  <span>Source paragraph</span>
-                  <textarea id="field-sourceParagraph" rows="7"></textarea>
-                </label>
-                <label class="annotation-field wide" for="field-translation">
-                  <span>Translation</span>
-                  <textarea id="field-translation" rows="6"></textarea>
-                </label>
+              <div class="passage-pager" aria-label="Annotation passage navigation">
+                <button class="copy-button" id="annotation-prev" type="button">Previous</button>
+                <span id="annotation-position">Annotation 0 of 0</span>
+                <button class="copy-button" id="annotation-next" type="button">Next</button>
+              </div>
+
+              <div class="annotation-passage-layout">
+                <article class="passage-edit-card">
+                  <label class="annotation-field wide" for="field-sourceParagraph">
+                    <span>Source paragraph</span>
+                    <textarea id="field-sourceParagraph" rows="7"></textarea>
+                  </label>
+                </article>
+                <article class="passage-edit-card">
+                  <label class="annotation-field wide" for="field-translation">
+                    <span>Translation</span>
+                    <textarea id="field-translation" rows="6"></textarea>
+                  </label>
+                </article>
+                <div class="annotation-side-fields">
                 <label class="annotation-field" for="field-location">
                   <span>Location</span>
                   <input id="field-location" type="text">
@@ -264,6 +300,7 @@
                   <span>Review note</span>
                   <textarea id="field-reviewNote" rows="5"></textarea>
                 </label>
+                </div>
               </div>
             </form>
           </div>

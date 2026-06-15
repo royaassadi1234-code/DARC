@@ -8,11 +8,9 @@ const ANNOTATION_FILE = "druz-concept-annotations.json";
 const ANNOTATION_DRAFT_KEY = "druzAnnotationReviewDraft";
 
 const TEXT_EDITOR_FILES = [
-  { id: "dd", siglum: "DD", title: "Dādestān ī Dēnīg", file: "Dd.txt", kind: "Middle Persian" },
-  { id: "dd-en", siglum: "DD EN", title: "Dādestān ī Dēnīg English", file: "DD-en.txt", kind: "English" },
+  { id: "dd", siglum: "DD", title: "Dādestān ī Dēnīg", file: "Dd.txt", translationFile: "DD-en.txt", kind: "Middle Persian" },
   { id: "py", siglum: "PY", title: "Pahlavi Yasna", file: "PY-Pt4.txt", kind: "Middle Persian" },
-  { id: "wz", siglum: "WZ", title: "Wizīdagīhā ī Zādspram", file: "WZ.txt", kind: "Middle Persian" },
-  { id: "wz-en", siglum: "WZ EN", title: "Wizīdagīhā ī Zādspram English", file: "WZ-en.txt", kind: "English" },
+  { id: "wz", siglum: "WZ", title: "Wizīdagīhā ī Zādspram", file: "WZ.txt", translationFile: "WZ-en.txt", kind: "Middle Persian" },
   { id: "nm", siglum: "NM", title: "Nāmagīhā ī Manuščīhr", file: "NM.txt", kind: "Middle Persian" },
   { id: "gbd", siglum: "GBd", title: "Greater Bundahišn", file: "GBd.txt", kind: "Middle Persian" },
   { id: "prdd", siglum: "PRDd", title: "Pursišn-Rēd Dēnīg", file: "PRDd.txt", kind: "Middle Persian" }
@@ -22,7 +20,8 @@ const editorState = {
   files: [],
   drafts: {},
   selectedId: "dd",
-  query: ""
+  query: "",
+  passageIndex: 0
 };
 
 const annotationState = {
@@ -49,7 +48,15 @@ const summaryEl = document.querySelector("#text-editor-summary");
 const listEl = document.querySelector("#text-editor-list");
 const titleEl = document.querySelector("#text-editor-title");
 const metaEl = document.querySelector("#text-editor-meta");
-const contentEl = document.querySelector("#text-editor-content");
+const sourceContentEl = document.querySelector("#text-source-content");
+const translationContentEl = document.querySelector("#text-translation-content");
+const sourceLabelEl = document.querySelector("#text-source-label");
+const translationLabelEl = document.querySelector("#text-translation-label");
+const sourceLocationEl = document.querySelector("#text-passage-location");
+const translationLocationEl = document.querySelector("#text-translation-location");
+const passagePositionEl = document.querySelector("#text-passage-position");
+const passagePrevButton = document.querySelector("#text-passage-prev");
+const passageNextButton = document.querySelector("#text-passage-next");
 const saveButton = document.querySelector("#text-editor-save");
 const exportButton = document.querySelector("#text-editor-export");
 const exportAllButton = document.querySelector("#text-editor-export-all");
@@ -66,6 +73,9 @@ const annotationTitleEl = document.querySelector("#annotation-title");
 const annotationExportButton = document.querySelector("#export-json");
 const annotationImportInput = document.querySelector("#import-json");
 const annotationResetButton = document.querySelector("#reset-draft");
+const annotationPrevButton = document.querySelector("#annotation-prev");
+const annotationNextButton = document.querySelector("#annotation-next");
+const annotationPositionEl = document.querySelector("#annotation-position");
 
 const annotationFields = {
   sourceParagraph: document.querySelector("#field-sourceParagraph"),
@@ -130,15 +140,38 @@ function bindTextEditorEvents() {
     }
     saveDraft({ quiet: true });
     editorState.selectedId = button.dataset.textId;
+    editorState.passageIndex = 0;
     renderTextEditorList();
     renderCurrentFile();
   });
 
-  contentEl.addEventListener("input", () => {
+  [sourceContentEl, translationContentEl, sourceLocationEl, translationLocationEl].forEach((control) => {
+    control.addEventListener("input", () => {
+      const file = getSelectedFile();
+      if (file) {
+        statusEl.textContent = `${file.siglum} passage has unsaved changes`;
+      }
+    });
+  });
+
+  passagePrevButton.addEventListener("click", () => {
     const file = getSelectedFile();
-    if (file) {
-      statusEl.textContent = `${file.siglum} has unsaved changes`;
+    if (!file) {
+      return;
     }
+    saveCurrentPassageToDraft();
+    editorState.passageIndex = Math.max(0, editorState.passageIndex - 1);
+    renderCurrentFile();
+  });
+
+  passageNextButton.addEventListener("click", () => {
+    const file = getSelectedFile();
+    if (!file) {
+      return;
+    }
+    saveCurrentPassageToDraft();
+    editorState.passageIndex = Math.min(getSourceRecords(file).length - 1, editorState.passageIndex + 1);
+    renderCurrentFile();
   });
 
   saveButton.addEventListener("click", () => saveDraft());
@@ -167,6 +200,12 @@ function bindTextEditorEvents() {
   annotationExportButton.addEventListener("click", exportAnnotationsJson);
   annotationImportInput.addEventListener("change", importAnnotationsJson);
   annotationResetButton.addEventListener("click", resetAnnotationDraft);
+  annotationPrevButton.addEventListener("click", () => {
+    moveAnnotationPage(-1);
+  });
+  annotationNextButton.addEventListener("click", () => {
+    moveAnnotationPage(1);
+  });
 }
 
 async function unlockTextEditor() {
@@ -213,18 +252,34 @@ async function loadWorkspaceTexts() {
 
 async function loadWorkspaceText(config) {
   try {
-    const response = await fetch(config.file);
-    if (!response.ok) {
-      throw new Error(`Could not load ${config.file}`);
-    }
+    const [sourceRaw, translationRaw] = await Promise.all([
+      fetchTextFile(config.file),
+      config.translationFile ? fetchTextFile(config.translationFile, true) : Promise.resolve("")
+    ]);
+    const sourceRecords = parseEditableRecords(sourceRaw);
+    const translationRecords = translationRaw ? parseEditableRecords(translationRaw) : [];
     return {
       ...config,
-      original: await response.text()
+      original: sourceRaw,
+      translationOriginal: translationRaw,
+      sourceRecords,
+      translationRecords
     };
   } catch (error) {
     console.error(error);
     return null;
   }
+}
+
+async function fetchTextFile(file, optional = false) {
+  const response = await fetch(file);
+  if (!response.ok) {
+    if (optional) {
+      return "";
+    }
+    throw new Error(`Could not load ${file}`);
+  }
+  return response.text();
 }
 
 function renderTextEditorList() {
@@ -245,10 +300,12 @@ function renderTextEditorList() {
   listEl.innerHTML = files.map((file) => {
     const active = file.id === editorState.selectedId ? " active" : "";
     const draft = hasDraft(file) ? `<small>Draft saved</small>` : `<small>${escapeHtml(file.kind)}</small>`;
+    const translation = file.translationFile ? ` / ${file.translationFile}` : "";
     return `
       <button class="annotation-list-item text-editor-list-item${active}" type="button" data-text-id="${escapeHtml(file.id)}">
         <strong>${escapeHtml(file.siglum)}</strong>
         <span>${escapeHtml(file.title)}</span>
+        <small>${escapeHtml(file.file + translation)}</small>
         ${draft}
       </button>
     `;
@@ -260,23 +317,45 @@ function renderCurrentFile() {
   if (!file) {
     titleEl.textContent = "No text selected";
     metaEl.innerHTML = "";
-    contentEl.value = "";
-    contentEl.disabled = true;
+    sourceContentEl.value = "";
+    translationContentEl.value = "";
+    setPassageControlsDisabled(true);
     return;
   }
 
-  const content = getCurrentContent(file);
+  const sourceRecords = getSourceRecords(file);
+  const translationRecords = getTranslationRecords(file);
+  editorState.passageIndex = Math.min(Math.max(0, editorState.passageIndex), Math.max(0, sourceRecords.length - 1));
+  const sourceRecord = sourceRecords[editorState.passageIndex];
+  const translationRecord = findTranslationRecord(file, sourceRecord, translationRecords);
   titleEl.textContent = file.title;
-  contentEl.disabled = false;
-  contentEl.value = content;
+  setPassageControlsDisabled(false);
+  sourceContentEl.value = sourceRecord?.text || "";
+  sourceLocationEl.value = sourceRecord?.location || "";
+  translationContentEl.value = translationRecord?.text || "";
+  translationLocationEl.value = translationRecord?.location || sourceRecord?.location || "";
+  sourceLabelEl.textContent = `${file.siglum} passage`;
+  translationLabelEl.textContent = file.translationFile ? `${file.siglum} translation` : "Translation";
+  translationContentEl.disabled = !file.translationFile;
+  translationLocationEl.disabled = !file.translationFile;
+  passagePositionEl.textContent = `${sourceRecord?.location || "No passage"} | ${(editorState.passageIndex + 1).toLocaleString()} of ${sourceRecords.length.toLocaleString()}`;
+  passagePrevButton.disabled = editorState.passageIndex <= 0;
+  passageNextButton.disabled = editorState.passageIndex >= sourceRecords.length - 1;
   metaEl.innerHTML = `
     <span>${escapeHtml(file.file)}</span>
+    ${file.translationFile ? `<span>${escapeHtml(file.translationFile)}</span>` : ""}
     <span>${escapeHtml(file.kind)}</span>
-    <span>${countLines(content).toLocaleString()} lines</span>
-    <span>${content.length.toLocaleString()} characters</span>
+    <span>${sourceRecords.length.toLocaleString()} passages</span>
+    ${translationRecords.length ? `<span>${translationRecords.length.toLocaleString()} translations</span>` : ""}
     ${hasDraft(file) ? "<span>Draft active</span>" : "<span>Original file</span>"}
   `;
   statusEl.textContent = `${file.siglum} loaded`;
+}
+
+function setPassageControlsDisabled(disabled) {
+  [sourceContentEl, translationContentEl, sourceLocationEl, translationLocationEl, passagePrevButton, passageNextButton].forEach((control) => {
+    control.disabled = disabled;
+  });
 }
 
 function getFilteredFiles() {
@@ -294,9 +373,7 @@ function getSelectedFile() {
 }
 
 function getCurrentContent(file) {
-  return Object.prototype.hasOwnProperty.call(editorState.drafts, file.id)
-    ? editorState.drafts[file.id]
-    : file.original;
+  return serializeEditableRecords(getSourceRecords(file), file.sourceRecords);
 }
 
 function hasDraft(file) {
@@ -305,13 +382,17 @@ function hasDraft(file) {
 
 function saveDraft(options = {}) {
   const file = getSelectedFile();
-  if (!file || contentEl.disabled) {
+  if (!file || sourceContentEl.disabled) {
     return;
   }
-  if (contentEl.value === file.original) {
+  saveCurrentPassageToDraft();
+  const draft = editorState.drafts[file.id];
+  const sourceContent = serializeEditableRecords(draft?.sourceRecords || file.sourceRecords, file.sourceRecords);
+  const translationContent = file.translationFile
+    ? serializeEditableRecords(draft?.translationRecords || file.translationRecords, file.translationRecords)
+    : "";
+  if (sourceContent === file.original && translationContent === (file.translationOriginal || "")) {
     delete editorState.drafts[file.id];
-  } else {
-    editorState.drafts[file.id] = contentEl.value;
   }
   persistDrafts();
   renderTextEditorList();
@@ -326,12 +407,14 @@ function renderCurrentMeta() {
   if (!file) {
     return;
   }
-  const content = contentEl.value;
+  const sourceRecords = getSourceRecords(file);
+  const translationRecords = getTranslationRecords(file);
   metaEl.innerHTML = `
     <span>${escapeHtml(file.file)}</span>
+    ${file.translationFile ? `<span>${escapeHtml(file.translationFile)}</span>` : ""}
     <span>${escapeHtml(file.kind)}</span>
-    <span>${countLines(content).toLocaleString()} lines</span>
-    <span>${content.length.toLocaleString()} characters</span>
+    <span>${sourceRecords.length.toLocaleString()} passages</span>
+    ${translationRecords.length ? `<span>${translationRecords.length.toLocaleString()} translations</span>` : ""}
     ${hasDraft(file) ? "<span>Draft active</span>" : "<span>Original file</span>"}
   `;
 }
@@ -343,9 +426,9 @@ function resetCurrentDraft() {
   }
   delete editorState.drafts[file.id];
   persistDrafts();
-  contentEl.value = file.original;
+  editorState.passageIndex = 0;
   renderTextEditorList();
-  renderCurrentMeta();
+  renderCurrentFile();
   statusEl.textContent = `Draft reset for ${file.siglum}`;
 }
 
@@ -371,7 +454,10 @@ function exportCurrentFile() {
     return;
   }
   saveDraft({ quiet: true });
-  downloadText(file.file, contentEl.value);
+  downloadText(file.file, getCurrentContent(file));
+  if (file.translationFile) {
+    downloadText(file.translationFile, serializeEditableRecords(getTranslationRecords(file), file.translationRecords));
+  }
   statusEl.textContent = `Exported ${file.file}`;
 }
 
@@ -384,8 +470,12 @@ function exportAllFiles() {
       siglum: file.siglum,
       title: file.title,
       file: file.file,
+      translationFile: file.translationFile || "",
       kind: file.kind,
-      content: getCurrentContent(file)
+      content: getCurrentContent(file),
+      translationContent: file.translationFile ? serializeEditableRecords(getTranslationRecords(file), file.translationRecords) : "",
+      sourceRecords: getSourceRecords(file),
+      translationRecords: getTranslationRecords(file)
     }))
   };
   downloadText("druz-workspace-texts-edited.json", JSON.stringify(payload, null, 2) + "\n", "application/json");
@@ -406,8 +496,21 @@ function importDrafts(event) {
       const nextDrafts = { ...editorState.drafts };
       files.forEach((item) => {
         const match = editorState.files.find((workspaceFile) => workspaceFile.id === item.id || workspaceFile.file === item.file);
-        if (match && typeof item.content === "string") {
-          nextDrafts[match.id] = item.content;
+        if (!match) {
+          return;
+        }
+        if (Array.isArray(item.sourceRecords)) {
+          nextDrafts[match.id] = {
+            sourceRecords: item.sourceRecords,
+            translationRecords: Array.isArray(item.translationRecords) ? item.translationRecords : getTranslationRecords(match)
+          };
+          return;
+        }
+        if (typeof item.content === "string") {
+          nextDrafts[match.id] = {
+            sourceRecords: parseEditableRecords(item.content),
+            translationRecords: typeof item.translationContent === "string" ? parseEditableRecords(item.translationContent) : getTranslationRecords(match)
+          };
         }
       });
       editorState.drafts = nextDrafts;
@@ -423,6 +526,193 @@ function importDrafts(event) {
     }
   });
   reader.readAsText(file);
+}
+
+function getSourceRecords(file) {
+  const draft = editorState.drafts[file.id];
+  if (draft && Array.isArray(draft.sourceRecords)) {
+    return draft.sourceRecords;
+  }
+  if (typeof draft === "string") {
+    return parseEditableRecords(draft);
+  }
+  return file.sourceRecords || [];
+}
+
+function getTranslationRecords(file) {
+  const draft = editorState.drafts[file.id];
+  if (draft && Array.isArray(draft.translationRecords)) {
+    return draft.translationRecords;
+  }
+  return file.translationRecords || [];
+}
+
+function ensureStructuredDraft(file) {
+  const draft = editorState.drafts[file.id];
+  if (draft && Array.isArray(draft.sourceRecords)) {
+    return draft;
+  }
+  const next = {
+    sourceRecords: typeof draft === "string" ? parseEditableRecords(draft) : cloneRecords(file.sourceRecords || []),
+    translationRecords: cloneRecords(file.translationRecords || [])
+  };
+  editorState.drafts[file.id] = next;
+  return next;
+}
+
+function saveCurrentPassageToDraft() {
+  const file = getSelectedFile();
+  if (!file || sourceContentEl.disabled) {
+    return;
+  }
+  const draft = ensureStructuredDraft(file);
+  const sourceRecord = draft.sourceRecords[editorState.passageIndex];
+  if (sourceRecord) {
+    sourceRecord.location = sourceLocationEl.value.trim() || sourceRecord.location;
+    sourceRecord.text = sourceContentEl.value;
+  }
+  if (file.translationFile) {
+    let translationRecord = findTranslationRecord(file, sourceRecord, draft.translationRecords);
+    if (!translationRecord) {
+      translationRecord = {
+        location: translationLocationEl.value.trim() || sourceRecord?.location || "",
+        text: "",
+        format: sourceRecord?.format || "section"
+      };
+      draft.translationRecords.splice(editorState.passageIndex, 0, translationRecord);
+    }
+    translationRecord.location = translationLocationEl.value.trim() || sourceRecord?.location || translationRecord.location;
+    translationRecord.text = translationContentEl.value;
+  }
+}
+
+function findTranslationRecord(file, sourceRecord, translationRecords) {
+  if (!sourceRecord || !translationRecords.length) {
+    return null;
+  }
+  const normalizedLocation = normalizeLocation(sourceRecord.location);
+  return translationRecords.find((record) => normalizeLocation(record.location) === normalizedLocation) || null;
+}
+
+function normalizeLocation(location) {
+  return String(location || "").toLowerCase().replace(/^[a-z]+\s*/i, "").trim();
+}
+
+function cloneRecords(records) {
+  return records.map((record) => ({ ...record }));
+}
+
+function parseEditableRecords(raw) {
+  const lines = String(raw || "").split(/\r\n|\n|\r/);
+  const hasTsvRecords = lines.some((line) => {
+    const trimmed = line.trim();
+    return trimmed && !trimmed.startsWith("#") && isTsvRecord(trimmed);
+  });
+  return hasTsvRecords ? parseEditableTsvRecords(lines) : parseEditableSectionRecords(lines);
+}
+
+function parseEditableTsvRecords(lines) {
+  const records = [];
+  const byLocation = new Map();
+
+  lines.forEach((line, index) => {
+    const trimmed = line.trim();
+    const columns = trimmed.split("\t");
+    const hasTsvShape = isTsvRecord(trimmed) && !trimmed.startsWith("#");
+    if (!hasTsvShape) {
+      return;
+    }
+    const location = formatTsvLocation(columns);
+    const existing = byLocation.get(normalizeLocation(location));
+    if (existing) {
+      existing.text += ` ${columns.slice(2).join(" ")}`;
+      return;
+    }
+    const record = {
+      index,
+      location,
+      text: columns.slice(2).join(" "),
+      prefix: columns.slice(0, 2).join("\t"),
+      format: "tsv"
+    };
+    byLocation.set(normalizeLocation(location), record);
+    records.push(record);
+  });
+
+  return records;
+}
+
+function parseEditableSectionRecords(lines) {
+  const records = [];
+  let current = null;
+
+  lines.forEach((line, index) => {
+    const trimmed = line.trim();
+    if (!trimmed) {
+      return;
+    }
+
+    const section = trimmed.match(/^([0-9]+(?:\.[0-9]+[a-z]?)?)\s+(.*)$/);
+    if (section) {
+      current = {
+        index,
+        location: section[1],
+        text: section[2],
+        format: "section"
+      };
+      records.push(current);
+      return;
+    }
+
+    if (current) {
+      current.text += ` ${trimmed}`;
+      return;
+    }
+
+    current = {
+      index,
+      location: `line ${index + 1}`,
+      text: trimmed,
+      format: "section"
+    };
+    records.push(current);
+  });
+
+  return records;
+}
+
+function serializeEditableRecords(records, originalRecords = []) {
+  const format = records.find((record) => record.format)?.format
+    || originalRecords.find((record) => record.format)?.format
+    || "section";
+  const lines = records.map((record, index) => {
+    const original = originalRecords[index] || {};
+    const location = record.location || original.location || `line ${index + 1}`;
+    const text = record.text || "";
+    if (format === "tsv") {
+      const prefix = record.prefix || original.prefix || `${index + 1}\t${location}`;
+      return `${prefix}\t${text}`;
+    }
+    return `${location}\t${text}`;
+  });
+  return `${lines.join("\n")}\n`;
+}
+
+function isTsvRecord(line) {
+  const columns = line.split("\t");
+  return columns.length >= 3 &&
+    columns[0].trim().length > 0 &&
+    columns[1].trim().length > 0 &&
+    columns.slice(2).join(" ").trim().length > 0;
+}
+
+function formatTsvLocation(columns) {
+  const first = columns[0].trim();
+  const second = columns[1].trim();
+  if (/outdated|K35/i.test(first)) {
+    return second.replace(/^[A-Za-z]+\s+/, "");
+  }
+  return [first, second].filter(Boolean).join(" | ");
 }
 
 async function loadAnnotations() {
@@ -520,6 +810,9 @@ function renderAnnotationForm() {
   const annotation = annotationState.annotations[annotationState.selectedIndex];
   if (!annotation) {
     annotationTitleEl.textContent = "No annotation selected";
+    annotationPositionEl.textContent = "Annotation 0 of 0";
+    annotationPrevButton.disabled = true;
+    annotationNextButton.disabled = true;
     annotationFormEl.querySelectorAll("input, textarea, select, button").forEach((control) => {
       if (control.id !== "export-json" && control.id !== "reset-draft") {
         control.disabled = true;
@@ -532,6 +825,10 @@ function renderAnnotationForm() {
     control.disabled = false;
   });
 
+  const filteredIndex = annotationState.filtered.findIndex((item) => item.index === annotationState.selectedIndex);
+  annotationPositionEl.textContent = `${annotation.location || annotation.id || "Annotation"} | ${(filteredIndex + 1).toLocaleString()} of ${annotationState.filtered.length.toLocaleString()}`;
+  annotationPrevButton.disabled = filteredIndex <= 0;
+  annotationNextButton.disabled = filteredIndex >= annotationState.filtered.length - 1;
   annotationTitleEl.textContent = annotation.location || annotation.id || `Entry ${annotationState.selectedIndex + 1}`;
   annotationFields.sourceParagraph.value = annotation.sourceParagraph || "";
   annotationFields.translation.value = annotation.translation || "";
@@ -550,6 +847,21 @@ function renderAnnotationForm() {
   annotationFields.theme.value = valueToEditable(annotation.theme);
   annotationFields.relatedTheme.value = valueToEditable(annotation.relatedTheme);
   annotationFields.reviewNote.value = valueToEditable(annotation.reviewNote);
+}
+
+function moveAnnotationPage(direction) {
+  if (!annotationState.filtered.length) {
+    return;
+  }
+  saveCurrentAnnotation({ quiet: true });
+  const currentFilteredIndex = annotationState.filtered.findIndex((item) => item.index === annotationState.selectedIndex);
+  const nextFilteredIndex = Math.min(
+    Math.max(0, currentFilteredIndex + direction),
+    annotationState.filtered.length - 1
+  );
+  annotationState.selectedIndex = annotationState.filtered[nextFilteredIndex].index;
+  renderAnnotationList();
+  renderAnnotationForm();
 }
 
 function saveCurrentAnnotation(options = {}) {

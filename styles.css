@@ -1966,35 +1966,32 @@ h1 {
   background: #ffffff;
 }
 
-.annotation-more-fields {
-  display: grid;
-  gap: 10px;
+.annotation-field-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfcfd;
 }
 
-.annotation-more-fields summary {
-  width: max-content;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 8px 13px;
+.annotation-field-card summary {
+  padding: 10px 12px;
   color: var(--accent-strong);
-  background: #fbfcfd;
   cursor: pointer;
   font-weight: 800;
   list-style: none;
 }
 
-.annotation-more-fields summary::-webkit-details-marker {
+.annotation-field-card summary::-webkit-details-marker {
   display: none;
 }
 
-.annotation-more-fields[open] summary {
-  border-color: var(--accent);
+.annotation-field-card[open] summary {
   color: #ffffff;
   background: var(--accent);
 }
 
-.annotation-more-fields .annotation-list-fields {
-  margin-top: 10px;
+.annotation-field-card .annotation-field {
+  padding: 12px;
+  border-top: 1px solid var(--line);
 }
 
 .realm-choice-group,

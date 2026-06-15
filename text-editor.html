@@ -114,18 +114,15 @@
             <button class="copy-button" id="text-editor-logout" type="button">Logout</button>
           </div>
 
-          <div class="annotation-workspace text-editor-workspace" id="text-tool-panel" role="tabpanel" aria-labelledby="text-tool-tab">
-            <aside class="annotation-sidebar">
-              <div class="annotation-toolbar">
-                <label class="annotation-field" for="text-editor-search">
-                  <span>Search files</span>
-                  <input id="text-editor-search" type="search" placeholder="DD, WZ, English">
-                </label>
-              </div>
+          <div class="text-editor-tool" id="text-tool-panel" role="tabpanel" aria-labelledby="text-tool-tab">
+            <div class="text-editor-menu-bar" aria-label="Text file menu">
+              <label class="annotation-field text-editor-search-field" for="text-editor-search">
+                <span>Search files</span>
+                <input id="text-editor-search" type="search" placeholder="DD, WZ, English">
+              </label>
               <div class="annotation-summary" id="text-editor-summary"></div>
-              <div class="annotation-list" id="text-editor-list"></div>
-            </aside>
-
+              <div class="text-editor-horizontal-list" id="text-editor-list"></div>
+            </div>
             <section class="annotation-editor text-editor-panel" aria-label="Current text file">
               <div class="annotation-editor-header">
                 <div>

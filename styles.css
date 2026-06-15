@@ -1821,12 +1821,43 @@ h1 {
   line-height: 1.5;
 }
 
-.text-editor-workspace {
-  grid-template-columns: minmax(240px, 300px) minmax(0, 1fr);
+.text-editor-tool {
+  display: grid;
+  gap: 14px;
+}
+
+.text-editor-menu-bar {
+  display: grid;
+  grid-template-columns: minmax(180px, 260px) auto minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.text-editor-search-field {
+  min-width: 0;
+}
+
+.text-editor-horizontal-list {
+  display: flex;
+  gap: 8px;
+  min-width: 0;
+  overflow-x: auto;
+  padding: 2px 2px 8px;
+  scrollbar-width: thin;
 }
 
 .text-editor-panel {
   min-height: 70vh;
+}
+
+.text-editor-horizontal-list .annotation-list-item {
+  flex: 0 0 clamp(180px, 22vw, 260px);
+  min-height: 82px;
 }
 
 .text-editor-list-item small {
@@ -3465,10 +3496,15 @@ mark.term-6 {
   .concept-comment-list,
   .concept-next-grid,
   .annotation-workspace,
+  .text-editor-menu-bar,
   .passage-editor-grid,
   .passage-detail-grid,
   .annotation-passage-layout {
     grid-template-columns: 1fr;
+  }
+
+  .text-editor-horizontal-list .annotation-list-item {
+    flex-basis: min(260px, 78vw);
   }
 
   .editor-tabs #text-editor-logout {

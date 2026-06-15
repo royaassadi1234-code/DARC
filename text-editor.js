@@ -86,7 +86,8 @@ const annotationFields = {
   concept: document.querySelector("#field-concept"),
   mainWord: document.querySelector("#field-mainWord"),
   matchedWords: document.querySelector("#field-matchedWords"),
-  meaning: document.querySelector("#field-meaning"),
+  meaning: Array.from(document.querySelectorAll("input[name='referent']")),
+  meaningCustom: document.querySelector("#field-meaning-custom"),
   actionsUsedWithIt: document.querySelector("#field-actionsUsedWithIt"),
   adjectivesDescriptions: document.querySelector("#field-adjectivesDescriptions"),
   metaphors: document.querySelector("#field-metaphors"),
@@ -842,7 +843,7 @@ function renderAnnotationForm() {
   annotationFields.concept.value = annotation.concept || "";
   annotationFields.mainWord.value = valueToEditable(annotation.mainWord);
   annotationFields.matchedWords.value = valueToEditable(annotation.matchedWords);
-  annotationFields.meaning.value = valueToEditable(annotation.meaning);
+  setChoiceSelection(annotationFields.meaning, annotationFields.meaningCustom, annotation.meaning);
   annotationFields.actionsUsedWithIt.value = valueToEditable(annotation.actionsUsedWithIt);
   annotationFields.adjectivesDescriptions.value = valueToEditable(annotation.adjectivesDescriptions);
   annotationFields.metaphors.value = valueToEditable(annotation.metaphors);
@@ -882,7 +883,7 @@ function saveCurrentAnnotation(options = {}) {
   annotation.concept = annotationFields.concept.value.trim();
   annotation.mainWord = parseSingleOrList(annotationFields.mainWord.value);
   annotation.matchedWords = parseList(annotationFields.matchedWords.value);
-  annotation.meaning = parseSingleOrList(annotationFields.meaning.value);
+  annotation.meaning = getChoiceSelection(annotationFields.meaning, annotationFields.meaningCustom);
   annotation.actionsUsedWithIt = parseList(annotationFields.actionsUsedWithIt.value);
   annotation.adjectivesDescriptions = parseList(annotationFields.adjectivesDescriptions.value);
   annotation.metaphors = parseList(annotationFields.metaphors.value);

@@ -91,7 +91,7 @@ const annotationFields = {
   adjectivesDescriptions: document.querySelector("#field-adjectivesDescriptions"),
   metaphors: document.querySelector("#field-metaphors"),
   oppositions: document.querySelector("#field-oppositions"),
-  realm: document.querySelector("#field-realm"),
+  realm: Array.from(document.querySelectorAll("input[name='realm']")),
   reviewStatus: document.querySelector("#field-reviewStatus"),
   theme: document.querySelector("#field-theme"),
   relatedTheme: document.querySelector("#field-relatedTheme"),
@@ -846,7 +846,7 @@ function renderAnnotationForm() {
   annotationFields.adjectivesDescriptions.value = valueToEditable(annotation.adjectivesDescriptions);
   annotationFields.metaphors.value = valueToEditable(annotation.metaphors);
   annotationFields.oppositions.value = valueToEditable(annotation.oppositions);
-  annotationFields.realm.value = annotation.realm || "";
+  setRealmSelection(annotation.realm);
   annotationFields.reviewStatus.value = annotation.reviewStatus || "machine draft";
   annotationFields.theme.value = valueToEditable(annotation.theme);
   annotationFields.relatedTheme.value = valueToEditable(annotation.relatedTheme);
@@ -886,7 +886,7 @@ function saveCurrentAnnotation(options = {}) {
   annotation.adjectivesDescriptions = parseList(annotationFields.adjectivesDescriptions.value);
   annotation.metaphors = parseList(annotationFields.metaphors.value);
   annotation.oppositions = parseList(annotationFields.oppositions.value);
-  annotation.realm = annotationFields.realm.value.trim() || null;
+  annotation.realm = getRealmSelection();
   annotation.reviewStatus = annotationFields.reviewStatus.value;
   annotation.theme = parseList(annotationFields.theme.value);
   annotation.relatedTheme = parseList(annotationFields.relatedTheme.value);
@@ -964,6 +964,28 @@ function valueToLines(value) {
     return [];
   }
   return [String(value)];
+}
+
+function setRealmSelection(value) {
+  const selected = new Set(valueToLines(value).flatMap((item) => {
+    return String(item)
+      .split(/[,;]/)
+      .map((part) => part.trim())
+      .filter(Boolean);
+  }));
+  annotationFields.realm.forEach((input) => {
+    input.checked = selected.has(input.value);
+  });
+}
+
+function getRealmSelection() {
+  const selected = annotationFields.realm
+    .filter((input) => input.checked)
+    .map((input) => input.value);
+  if (!selected.length) {
+    return null;
+  }
+  return selected.length === 1 ? selected[0] : selected;
 }
 
 function valueToEditable(value) {

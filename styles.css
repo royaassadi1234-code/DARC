@@ -1961,6 +1961,57 @@ h1 {
   background: #ffffff;
 }
 
+.realm-choice-group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.realm-choice-group legend {
+  flex: 0 0 100%;
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.realm-choice-group label {
+  cursor: pointer;
+}
+
+.realm-choice-group input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.realm-choice-group label span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 7px 12px;
+  color: var(--accent-strong);
+  background: #fbfcfd;
+  font-size: 0.84rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.realm-choice-group input:checked + span {
+  border-color: var(--accent);
+  color: #ffffff;
+  background: var(--accent);
+}
+
 .annotation-field input:focus,
 .annotation-field select:focus,
 .annotation-field textarea:focus {

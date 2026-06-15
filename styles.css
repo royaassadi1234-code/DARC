@@ -2026,7 +2026,7 @@ h1 {
 
 .option-choice-group .option-custom-field {
   display: grid;
-  flex: 1 1 220px;
+  flex: 0 0 100%;
   gap: 6px;
   cursor: default;
 }

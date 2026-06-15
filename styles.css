@@ -1980,6 +1980,22 @@ h1 {
   list-style: none;
 }
 
+.field-complete {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  color: var(--accent-strong);
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.field-complete input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
 .annotation-field-card summary::-webkit-details-marker {
   display: none;
 }
@@ -2030,6 +2046,15 @@ h1 {
   pointer-events: none;
 }
 
+.realm-choice-group .field-complete input,
+.option-choice-group .field-complete input {
+  position: static;
+  width: 16px;
+  height: 16px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .realm-choice-group label span,
 .option-choice-group label span,
 .option-other-toggle {
@@ -2045,6 +2070,19 @@ h1 {
   font-weight: 800;
   letter-spacing: 0;
   text-transform: none;
+}
+
+.realm-choice-group .field-complete span,
+.option-choice-group .field-complete span {
+  min-height: 0;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  color: var(--accent);
+  background: transparent;
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .option-other-toggle {

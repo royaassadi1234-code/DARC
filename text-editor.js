@@ -6,6 +6,7 @@ const TEXT_EDITOR_SESSION_KEY = "druzTextEditorLoggedIn";
 const TEXT_EDITOR_DRAFT_KEY = "druzTextEditorDrafts";
 const ANNOTATION_FILE = "druz-concept-annotations.json";
 const ANNOTATION_DRAFT_KEY = "druzAnnotationReviewDraft";
+const ANNOTATION_COMPLETION_KEY = "druzAnnotationFieldCompletion";
 
 const TEXT_EDITOR_FILES = [
   { id: "dd", siglum: "DD", title: "Dādestān ī Dēnīg", file: "Dd.txt", translationFile: "DD-en.txt", kind: "Middle Persian" },
@@ -30,7 +31,8 @@ const annotationState = {
   selectedIndex: 0,
   query: "",
   filter: "all",
-  loaded: false
+  loaded: false,
+  completion: {}
 };
 
 const loginPanel = document.querySelector("#text-editor-login-panel");
@@ -78,6 +80,7 @@ const annotationPrevButton = document.querySelector("#annotation-prev");
 const annotationNextButton = document.querySelector("#annotation-next");
 const annotationPositionEl = document.querySelector("#annotation-position");
 const optionOtherToggles = document.querySelectorAll(".option-other-toggle");
+const fieldCompletionInputs = document.querySelectorAll("[data-complete-field]");
 
 const annotationFields = {
   sourceParagraph: document.querySelector("#field-sourceParagraph"),
@@ -144,6 +147,15 @@ function bindTextEditorEvents() {
     button.addEventListener("click", (event) => {
       event.stopPropagation();
       toggleOptionPopover(button);
+    });
+  });
+
+  fieldCompletionInputs.forEach((input) => {
+    input.addEventListener("click", (event) => {
+      event.stopPropagation();
+    });
+    input.addEventListener("change", () => {
+      setFieldCompletion(input.dataset.completeField, input.checked);
     });
   });
 
@@ -235,6 +247,7 @@ async function unlockTextEditor() {
   workspaceEl.classList.remove("hidden");
   statusEl.textContent = "Loading texts...";
   editorState.drafts = loadDrafts();
+  annotationState.completion = loadAnnotationCompletion();
   await Promise.all([loadWorkspaceTexts(), loadAnnotations()]);
   renderTextEditorList();
   renderCurrentFile();
@@ -888,6 +901,7 @@ function renderAnnotationForm() {
   annotationFields.theme.value = valueToEditable(annotation.theme);
   annotationFields.relatedTheme.value = valueToEditable(annotation.relatedTheme);
   annotationFields.reviewNote.value = valueToEditable(annotation.reviewNote);
+  renderFieldCompletion();
 }
 
 function moveAnnotationPage(direction) {
@@ -938,6 +952,46 @@ function saveCurrentAnnotation(options = {}) {
 
 function persistAnnotationDraft() {
   localStorage.setItem(ANNOTATION_DRAFT_KEY, JSON.stringify(annotationState.annotations));
+}
+
+function getAnnotationCompletionKey() {
+  const annotation = annotationState.annotations[annotationState.selectedIndex];
+  if (!annotation) {
+    return "";
+  }
+  return annotation.id || annotation.location || `entry-${annotationState.selectedIndex}`;
+}
+
+function renderFieldCompletion() {
+  const key = getAnnotationCompletionKey();
+  const completion = annotationState.completion[key] || {};
+  fieldCompletionInputs.forEach((input) => {
+    input.checked = Boolean(completion[input.dataset.completeField]);
+  });
+}
+
+function setFieldCompletion(field, complete) {
+  const key = getAnnotationCompletionKey();
+  if (!key || !field) {
+    return;
+  }
+  annotationState.completion[key] = {
+    ...(annotationState.completion[key] || {}),
+    [field]: complete
+  };
+  persistAnnotationCompletion();
+}
+
+function loadAnnotationCompletion() {
+  try {
+    return JSON.parse(localStorage.getItem(ANNOTATION_COMPLETION_KEY)) || {};
+  } catch {
+    return {};
+  }
+}
+
+function persistAnnotationCompletion() {
+  localStorage.setItem(ANNOTATION_COMPLETION_KEY, JSON.stringify(annotationState.completion));
 }
 
 function exportAnnotationsJson() {

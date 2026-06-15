@@ -1,7 +1,11 @@
 const TEXT_EDITOR_LOGIN = "editor";
 const TEXT_EDITOR_PASSWORD = "druz-edit";
+const REVIEW_LOGIN = "reviewer";
+const REVIEW_PASSWORD = "druz-review";
 const TEXT_EDITOR_SESSION_KEY = "druzTextEditorLoggedIn";
 const TEXT_EDITOR_DRAFT_KEY = "druzTextEditorDrafts";
+const ANNOTATION_FILE = "druz-concept-annotations.json";
+const ANNOTATION_DRAFT_KEY = "druzAnnotationReviewDraft";
 
 const TEXT_EDITOR_FILES = [
   { id: "dd", siglum: "DD", title: "Dādestān ī Dēnīg", file: "Dd.txt", kind: "Middle Persian" },
@@ -21,6 +25,15 @@ const editorState = {
   query: ""
 };
 
+const annotationState = {
+  annotations: [],
+  filtered: [],
+  selectedIndex: 0,
+  query: "",
+  filter: "all",
+  loaded: false
+};
+
 const loginPanel = document.querySelector("#text-editor-login-panel");
 const loginForm = document.querySelector("#text-editor-login-form");
 const loginInput = document.querySelector("#text-editor-login");
@@ -28,6 +41,9 @@ const passwordInput = document.querySelector("#text-editor-password");
 const loginMessage = document.querySelector("#text-editor-login-message");
 const workspaceEl = document.querySelector("#text-editor-workspace");
 const statusEl = document.querySelector("#text-editor-status");
+const toolTabs = document.querySelectorAll("[data-editor-tool]");
+const textToolPanel = document.querySelector("#text-tool-panel");
+const annotationToolPanel = document.querySelector("#annotation-tool-panel");
 const searchInput = document.querySelector("#text-editor-search");
 const summaryEl = document.querySelector("#text-editor-summary");
 const listEl = document.querySelector("#text-editor-list");
@@ -41,6 +57,35 @@ const importInput = document.querySelector("#text-editor-import");
 const resetButton = document.querySelector("#text-editor-reset");
 const resetAllButton = document.querySelector("#text-editor-reset-all");
 const logoutButton = document.querySelector("#text-editor-logout");
+const annotationSearchInput = document.querySelector("#annotation-search");
+const annotationFilterSelect = document.querySelector("#annotation-filter");
+const annotationSummaryEl = document.querySelector("#annotation-summary");
+const annotationListEl = document.querySelector("#annotation-list");
+const annotationFormEl = document.querySelector("#annotation-form");
+const annotationTitleEl = document.querySelector("#annotation-title");
+const annotationExportButton = document.querySelector("#export-json");
+const annotationImportInput = document.querySelector("#import-json");
+const annotationResetButton = document.querySelector("#reset-draft");
+
+const annotationFields = {
+  sourceParagraph: document.querySelector("#field-sourceParagraph"),
+  translation: document.querySelector("#field-translation"),
+  location: document.querySelector("#field-location"),
+  id: document.querySelector("#field-id"),
+  concept: document.querySelector("#field-concept"),
+  mainWord: document.querySelector("#field-mainWord"),
+  matchedWords: document.querySelector("#field-matchedWords"),
+  meaning: document.querySelector("#field-meaning"),
+  actionsUsedWithIt: document.querySelector("#field-actionsUsedWithIt"),
+  adjectivesDescriptions: document.querySelector("#field-adjectivesDescriptions"),
+  metaphors: document.querySelector("#field-metaphors"),
+  oppositions: document.querySelector("#field-oppositions"),
+  realm: document.querySelector("#field-realm"),
+  reviewStatus: document.querySelector("#field-reviewStatus"),
+  theme: document.querySelector("#field-theme"),
+  relatedTheme: document.querySelector("#field-relatedTheme"),
+  reviewNote: document.querySelector("#field-reviewNote")
+};
 
 initTextEditor();
 
@@ -55,7 +100,9 @@ function bindTextEditorEvents() {
   loginForm.addEventListener("submit", (event) => {
     event.preventDefault();
     const login = loginInput.value.trim().toLowerCase();
-    if (login === TEXT_EDITOR_LOGIN && passwordInput.value === TEXT_EDITOR_PASSWORD) {
+    const textEditorAccess = login === TEXT_EDITOR_LOGIN && passwordInput.value === TEXT_EDITOR_PASSWORD;
+    const reviewerAccess = login === REVIEW_LOGIN && passwordInput.value === REVIEW_PASSWORD;
+    if (textEditorAccess || reviewerAccess) {
       sessionStorage.setItem(TEXT_EDITOR_SESSION_KEY, "true");
       unlockTextEditor();
       return;
@@ -67,6 +114,14 @@ function bindTextEditorEvents() {
     editorState.query = searchInput.value.trim().toLowerCase();
     renderTextEditorList();
   });
+
+  toolTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      switchEditorTool(tab.dataset.editorTool);
+    });
+  });
+
+  window.addEventListener("hashchange", openToolFromHash);
 
   listEl.addEventListener("click", (event) => {
     const button = event.target.closest("[data-text-id]");
@@ -93,6 +148,25 @@ function bindTextEditorEvents() {
   resetButton.addEventListener("click", resetCurrentDraft);
   resetAllButton.addEventListener("click", resetAllDrafts);
   logoutButton.addEventListener("click", logoutTextEditor);
+
+  annotationSearchInput.addEventListener("input", () => {
+    annotationState.query = annotationSearchInput.value.trim().toLowerCase();
+    applyAnnotationFilters();
+  });
+
+  annotationFilterSelect.addEventListener("change", () => {
+    annotationState.filter = annotationFilterSelect.value;
+    applyAnnotationFilters();
+  });
+
+  annotationFormEl.addEventListener("submit", (event) => {
+    event.preventDefault();
+    saveCurrentAnnotation();
+  });
+
+  annotationExportButton.addEventListener("click", exportAnnotationsJson);
+  annotationImportInput.addEventListener("change", importAnnotationsJson);
+  annotationResetButton.addEventListener("click", resetAnnotationDraft);
 }
 
 async function unlockTextEditor() {
@@ -100,9 +174,32 @@ async function unlockTextEditor() {
   workspaceEl.classList.remove("hidden");
   statusEl.textContent = "Loading texts...";
   editorState.drafts = loadDrafts();
-  await loadWorkspaceTexts();
+  await Promise.all([loadWorkspaceTexts(), loadAnnotations()]);
   renderTextEditorList();
   renderCurrentFile();
+  openToolFromHash();
+}
+
+function switchEditorTool(tool) {
+  saveDraft({ quiet: true });
+  saveCurrentAnnotation({ quiet: true });
+  const showAnnotations = tool === "annotations";
+  textToolPanel.classList.toggle("hidden", showAnnotations);
+  annotationToolPanel.classList.toggle("hidden", !showAnnotations);
+  toolTabs.forEach((tab) => {
+    const active = tab.dataset.editorTool === tool;
+    tab.classList.toggle("active", active);
+    tab.setAttribute("aria-selected", active ? "true" : "false");
+  });
+  statusEl.textContent = showAnnotations ? "Annotation review" : "Text editor";
+}
+
+function openToolFromHash() {
+  if (window.location.hash === "#annotations") {
+    switchEditorTool("annotations");
+  } else {
+    switchEditorTool("texts");
+  }
 }
 
 async function loadWorkspaceTexts() {
@@ -328,13 +425,248 @@ function importDrafts(event) {
   reader.readAsText(file);
 }
 
+async function loadAnnotations() {
+  try {
+    const draft = localStorage.getItem(ANNOTATION_DRAFT_KEY);
+    if (draft) {
+      annotationState.annotations = JSON.parse(draft);
+    } else {
+      const response = await fetch(ANNOTATION_FILE);
+      if (!response.ok) {
+        throw new Error(`Could not load ${ANNOTATION_FILE}`);
+      }
+      annotationState.annotations = await response.json();
+      persistAnnotationDraft();
+    }
+    annotationState.loaded = true;
+    annotationState.selectedIndex = 0;
+    applyAnnotationFilters();
+  } catch (error) {
+    annotationState.loaded = false;
+    annotationListEl.innerHTML = `<div class="empty-state">The annotation file could not be loaded.</div>`;
+    console.error(error);
+  }
+}
+
+function applyAnnotationFilters() {
+  const query = annotationState.query;
+  const status = annotationState.filter;
+  annotationState.filtered = annotationState.annotations
+    .map((annotation, index) => ({ annotation, index }))
+    .filter(({ annotation }) => {
+      const reviewStatus = String(annotation.reviewStatus || "").toLowerCase();
+      const matchesStatus = status === "all" || reviewStatus === status;
+      const haystack = [
+        annotation.location,
+        annotation.mainWord,
+        annotation.matchedWords,
+        annotation.meaning,
+        annotation.reviewStatus,
+        annotation.reviewNote,
+        annotation.sourceParagraph,
+        annotation.translation
+      ].flat().join(" ").toLowerCase();
+      return matchesStatus && (!query || haystack.includes(query));
+    });
+
+  if (!annotationState.filtered.some((item) => item.index === annotationState.selectedIndex)) {
+    annotationState.selectedIndex = annotationState.filtered[0]?.index ?? 0;
+  }
+
+  renderAnnotationList();
+  renderAnnotationSummary();
+  renderAnnotationForm();
+}
+
+function renderAnnotationSummary() {
+  const total = annotationState.annotations.length;
+  const reviewed = annotationState.annotations.filter((item) => ["reviewed", "approved"].includes(String(item.reviewStatus || "").toLowerCase())).length;
+  annotationSummaryEl.innerHTML = `
+    <span>${annotationState.filtered.length} shown</span>
+    <span>${reviewed} reviewed</span>
+    <span>${total} total</span>
+  `;
+}
+
+function renderAnnotationList() {
+  if (!annotationState.filtered.length) {
+    annotationListEl.innerHTML = `<div class="empty-state">No annotations match the current filters.</div>`;
+    return;
+  }
+
+  annotationListEl.innerHTML = annotationState.filtered.map(({ annotation, index }) => {
+    const active = index === annotationState.selectedIndex ? " active" : "";
+    const words = valueToLines(annotation.matchedWords).slice(0, 2).join(", ");
+    return `
+      <button class="annotation-list-item${active}" type="button" data-annotation-index="${index}">
+        <strong>${escapeHtml(annotation.location || annotation.id || `Entry ${index + 1}`)}</strong>
+        <span>${escapeHtml(annotation.mainWord || words || "No main word")}</span>
+        <small>${escapeHtml(annotation.reviewStatus || "machine draft")}</small>
+      </button>
+    `;
+  }).join("");
+
+  annotationListEl.querySelectorAll("[data-annotation-index]").forEach((button) => {
+    button.addEventListener("click", () => {
+      saveCurrentAnnotation({ quiet: true });
+      annotationState.selectedIndex = Number(button.dataset.annotationIndex);
+      renderAnnotationList();
+      renderAnnotationForm();
+    });
+  });
+}
+
+function renderAnnotationForm() {
+  const annotation = annotationState.annotations[annotationState.selectedIndex];
+  if (!annotation) {
+    annotationTitleEl.textContent = "No annotation selected";
+    annotationFormEl.querySelectorAll("input, textarea, select, button").forEach((control) => {
+      if (control.id !== "export-json" && control.id !== "reset-draft") {
+        control.disabled = true;
+      }
+    });
+    return;
+  }
+
+  annotationFormEl.querySelectorAll("input, textarea, select, button").forEach((control) => {
+    control.disabled = false;
+  });
+
+  annotationTitleEl.textContent = annotation.location || annotation.id || `Entry ${annotationState.selectedIndex + 1}`;
+  annotationFields.sourceParagraph.value = annotation.sourceParagraph || "";
+  annotationFields.translation.value = annotation.translation || "";
+  annotationFields.location.value = annotation.location || "";
+  annotationFields.id.value = annotation.id || "";
+  annotationFields.concept.value = annotation.concept || "";
+  annotationFields.mainWord.value = valueToEditable(annotation.mainWord);
+  annotationFields.matchedWords.value = valueToEditable(annotation.matchedWords);
+  annotationFields.meaning.value = valueToEditable(annotation.meaning);
+  annotationFields.actionsUsedWithIt.value = valueToEditable(annotation.actionsUsedWithIt);
+  annotationFields.adjectivesDescriptions.value = valueToEditable(annotation.adjectivesDescriptions);
+  annotationFields.metaphors.value = valueToEditable(annotation.metaphors);
+  annotationFields.oppositions.value = valueToEditable(annotation.oppositions);
+  annotationFields.realm.value = annotation.realm || "";
+  annotationFields.reviewStatus.value = annotation.reviewStatus || "machine draft";
+  annotationFields.theme.value = valueToEditable(annotation.theme);
+  annotationFields.relatedTheme.value = valueToEditable(annotation.relatedTheme);
+  annotationFields.reviewNote.value = valueToEditable(annotation.reviewNote);
+}
+
+function saveCurrentAnnotation(options = {}) {
+  const annotation = annotationState.annotations[annotationState.selectedIndex];
+  if (!annotation || !annotationState.loaded) {
+    return;
+  }
+
+  annotation.sourceParagraph = annotationFields.sourceParagraph.value.trim();
+  annotation.translation = annotationFields.translation.value.trim();
+  annotation.location = annotationFields.location.value.trim();
+  annotation.id = annotationFields.id.value.trim();
+  annotation.concept = annotationFields.concept.value.trim();
+  annotation.mainWord = parseSingleOrList(annotationFields.mainWord.value);
+  annotation.matchedWords = parseList(annotationFields.matchedWords.value);
+  annotation.meaning = parseSingleOrList(annotationFields.meaning.value);
+  annotation.actionsUsedWithIt = parseList(annotationFields.actionsUsedWithIt.value);
+  annotation.adjectivesDescriptions = parseList(annotationFields.adjectivesDescriptions.value);
+  annotation.metaphors = parseList(annotationFields.metaphors.value);
+  annotation.oppositions = parseList(annotationFields.oppositions.value);
+  annotation.realm = annotationFields.realm.value.trim() || null;
+  annotation.reviewStatus = annotationFields.reviewStatus.value;
+  annotation.theme = parseList(annotationFields.theme.value);
+  annotation.relatedTheme = parseList(annotationFields.relatedTheme.value);
+  annotation.reviewNote = parseSingleOrList(annotationFields.reviewNote.value);
+
+  persistAnnotationDraft();
+  applyAnnotationFilters();
+  if (!options.quiet) {
+    statusEl.textContent = `Saved ${annotation.location || annotation.id}`;
+  }
+}
+
+function persistAnnotationDraft() {
+  localStorage.setItem(ANNOTATION_DRAFT_KEY, JSON.stringify(annotationState.annotations));
+}
+
+function exportAnnotationsJson() {
+  saveCurrentAnnotation({ quiet: true });
+  downloadText("druz-concept-annotations-reviewed.json", JSON.stringify(annotationState.annotations, null, 2) + "\n", "application/json");
+  statusEl.textContent = "Annotation JSON exported";
+}
+
+function importAnnotationsJson(event) {
+  const file = event.target.files?.[0];
+  if (!file) {
+    return;
+  }
+
+  const reader = new FileReader();
+  reader.addEventListener("load", () => {
+    try {
+      const imported = JSON.parse(String(reader.result || "[]"));
+      if (!Array.isArray(imported)) {
+        throw new Error("Imported JSON must be an array.");
+      }
+      annotationState.annotations = imported;
+      annotationState.selectedIndex = 0;
+      annotationState.loaded = true;
+      persistAnnotationDraft();
+      applyAnnotationFilters();
+      statusEl.textContent = "Annotation JSON imported";
+    } catch (error) {
+      statusEl.textContent = "Annotation import failed";
+      console.error(error);
+    } finally {
+      annotationImportInput.value = "";
+    }
+  });
+  reader.readAsText(file);
+}
+
+function resetAnnotationDraft() {
+  localStorage.removeItem(ANNOTATION_DRAFT_KEY);
+  annotationState.annotations = [];
+  annotationState.filtered = [];
+  annotationState.loaded = false;
+  loadAnnotations();
+}
+
 function logoutTextEditor() {
   saveDraft({ quiet: true });
+  saveCurrentAnnotation({ quiet: true });
   sessionStorage.removeItem(TEXT_EDITOR_SESSION_KEY);
   workspaceEl.classList.add("hidden");
   loginPanel.classList.remove("hidden");
   passwordInput.value = "";
   statusEl.textContent = "Logged out";
+}
+
+function valueToLines(value) {
+  if (Array.isArray(value)) {
+    return value.map((item) => String(item));
+  }
+  if (value === null || value === undefined || value === "") {
+    return [];
+  }
+  return [String(value)];
+}
+
+function valueToEditable(value) {
+  return valueToLines(value).join("\n");
+}
+
+function parseList(value) {
+  return value
+    .split(/\n|;/)
+    .map((item) => item.trim())
+    .filter(Boolean);
+}
+
+function parseSingleOrList(value) {
+  const items = parseList(value);
+  if (!items.length) {
+    return "";
+  }
+  return items.length === 1 ? items[0] : items;
 }
 
 function loadDrafts() {

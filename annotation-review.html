@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DARC (Drūz-Ahreman Research Corpus) | How to Collaborate</title>
+    <meta http-equiv="refresh" content="0; url=text-editor.html#annotations">
+    <title>DARC (Drūz-Ahreman Research Corpus) | Annotation Review</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/svg+xml" href="logos/druz-logo-fire-altar-resisting-smoke-seal-no-branches-black-white-vector.svg">
   </head>
@@ -16,220 +17,28 @@
           </a>
           <div class="masthead-title">
             <p class="eyebrow">DARC</p>
-            <h1 id="page-title"><span class="title-line">Drūz-Ahreman Research Corpus</span></h1>
-            <p class="masthead-subtitle">A Digital Tool for Reconfiguring Evil Principles in Selected Middle Persian Texts from Ninth-Century Iran</p>
+            <h1 id="page-title"><span class="title-line">Annotation Review</span></h1>
+            <p class="masthead-subtitle">Annotation review has moved into the combined workspace editor.</p>
           </div>
           <div class="header-actions">
-            <nav class="site-nav" aria-label="Research pages">
-              <a href="index.html">Start</a>
-              <details class="nav-menu">
-                <summary>Transc. &amp; Transl.</summary>
-                <div class="nav-menu-list">
-                  <a href="trans.html?text=dd">DD</a>
-                  <a href="trans.html?text=py">PY</a>
-                  <a href="trans.html?text=wz">WZ</a>
-                  <a href="trans.html?text=nm">NM</a>
-                  <a href="text-editor.html">Edit texts</a>
-                </div>
-              </details>
-              <a href="search.html">Parallel Text Search</a>
-              <details class="nav-menu">
-                <summary>Diagram</summary>
-                <div class="nav-menu-list">
-                  <a href="diagram.html">Attestation Diagram</a>
-                  <a href="word-frequency.html">Word Frequency</a>
-                </div>
-              </details>
-              <details class="nav-menu">
-                <summary>Pattern</summary>
-                <div class="nav-menu-list pattern-menu-list">
-                  <details class="pattern-submenu">
-                  <summary>Lexeme</summary>
-                  <div class="pattern-submenu-list">
-                    <a href="pseudo.html">DD vs PY</a>
-                    <a href="dd-wz.html">DD vs WZ</a>
-                    <a href="py-wz.html">PY vs WZ</a>
-                    <a href="dd-py-wz.html">DD vs PY vs WZ</a>
-                  </div>
-                </details>
-                  <details class="pattern-submenu">
-                  <summary>Collocation</summary>
-                  <div class="pattern-submenu-list">
-                    <a href="dd-py-phrases.html">DD vs PY</a>
-                    <a href="dd-wz-phrases.html">DD vs WZ</a>
-                    <a href="py-wz-phrases.html">PY vs WZ</a>
-                    <a href="dd-py-wz-phrases.html">DD vs PY vs WZ</a>
-                  </div>
-                </details>
-                  <details class="pattern-submenu">
-                  <summary>Semantic Motif</summary>
-                  <div class="pattern-submenu-list">
-                    <a href="themes.html">Semantic Motif</a>
-                  </div>
-                </details>
-                </div>
-              </details>
-              <details class="nav-menu active">
-                <summary>About</summary>
-                <div class="nav-menu-list">
-                  <a href="how-to-use.html">How to use</a>
-                  <a class="active" href="annotation-review.html">How to collaborate</a>
-                  <a href="project-description.html">Project description</a>
-                  <a href="about.html">Team</a>
-                  <a href="methodology.html">Methodology</a>
-                  <a href="resources.html">Bib.</a>
-                </div>
-              </details>
-            </nav>
-            <div class="status" id="review-status">Collaboration</div>
+            <div class="status">Redirecting</div>
           </div>
         </header>
 
-        <section class="login-panel" id="login-panel" aria-label="Review login">
-          <form class="login-card" id="login-form">
-            <p class="eyebrow">How to collaborate</p>
-            <label class="annotation-field" for="review-login">
-              <span>Login</span>
-              <input id="review-login" type="text" autocomplete="username" placeholder="reviewer">
-            </label>
-            <label class="annotation-field" for="review-password">
-              <span>Password</span>
-              <input id="review-password" type="password" autocomplete="current-password">
-            </label>
+        <section class="login-panel" aria-label="Annotation review moved">
+          <div class="login-card">
+            <p class="eyebrow">Workspace editor</p>
+            <h2>Annotation review has moved</h2>
+            <p class="access-note">Open the combined editor and choose the Annotations tab.</p>
             <div class="login-actions">
-              <button class="action-button" type="submit">Login</button>
-              <a class="action-button secondary" href="mailto:roya.assadollahi@fu-berlin.de?subject=Sign%20up%20for%20Between%20Druz%20and%20Ahreman">Sign up</a>
-              <a class="action-button secondary" href="mailto:roya.assadollahi@fu-berlin.de?subject=Request%20access%20to%20annotation%20review">Request access per email</a>
+              <a class="action-button" href="text-editor.html#annotations">Open combined editor</a>
             </div>
-            <p class="access-note">
-              Use the reviewer login and shared password. Sign-up and access requests are handled by email:
-              <a href="mailto:roya.assadollahi@fu-berlin.de">roya.assadollahi@fu-berlin.de</a>.
-            </p>
-            <p class="meta" id="login-message"></p>
-          </form>
-        </section>
-
-        <section class="annotation-workspace hidden" id="annotation-workspace" aria-label="Annotation editor">
-          <aside class="annotation-sidebar">
-            <div class="annotation-toolbar">
-              <label class="annotation-field" for="annotation-search">
-                <span>Search</span>
-                <input id="annotation-search" type="search" placeholder="Location, word, meaning">
-              </label>
-              <label class="annotation-field" for="annotation-filter">
-                <span>Status</span>
-                <select id="annotation-filter">
-                  <option value="all">All</option>
-                  <option value="machine draft">Machine draft</option>
-                  <option value="user seed">User seed</option>
-                  <option value="needs review">Needs review</option>
-                  <option value="reviewed">Reviewed</option>
-                  <option value="approved">Approved</option>
-                </select>
-              </label>
-            </div>
-            <div class="annotation-summary" id="annotation-summary"></div>
-            <div class="annotation-list" id="annotation-list"></div>
-          </aside>
-
-          <form class="annotation-editor" id="annotation-form">
-            <div class="annotation-editor-header">
-              <div>
-                <p class="eyebrow">Current annotation</p>
-                <h2 id="annotation-title">No annotation selected</h2>
-              </div>
-              <div class="annotation-actions">
-                <button class="copy-button" id="save-entry" type="submit">Save entry</button>
-                <button class="copy-button" id="export-json" type="button">Export JSON</button>
-                <label class="copy-button file-button" for="import-json">Import JSON</label>
-                <input id="import-json" type="file" accept="application/json,.json">
-                <button class="copy-button" id="reset-draft" type="button">Reset draft</button>
-                <button class="copy-button" id="logout-review" type="button">Logout</button>
-              </div>
-            </div>
-
-            <div class="annotation-grid">
-              <label class="annotation-field wide" for="field-sourceParagraph">
-                <span>Source paragraph</span>
-                <textarea id="field-sourceParagraph" rows="7"></textarea>
-              </label>
-              <label class="annotation-field wide" for="field-translation">
-                <span>Translation</span>
-                <textarea id="field-translation" rows="6"></textarea>
-              </label>
-              <label class="annotation-field" for="field-location">
-                <span>Location</span>
-                <input id="field-location" type="text">
-              </label>
-              <label class="annotation-field" for="field-id">
-                <span>ID</span>
-                <input id="field-id" type="text">
-              </label>
-              <label class="annotation-field" for="field-concept">
-                <span>Concept</span>
-                <input id="field-concept" type="text">
-              </label>
-              <label class="annotation-field" for="field-mainWord">
-                <span>Main word</span>
-                <textarea id="field-mainWord" rows="2"></textarea>
-              </label>
-              <label class="annotation-field" for="field-matchedWords">
-                <span>Matched words</span>
-                <textarea id="field-matchedWords" rows="3"></textarea>
-              </label>
-              <label class="annotation-field" for="field-meaning">
-                <span>Meaning</span>
-                <textarea id="field-meaning" rows="3"></textarea>
-              </label>
-              <label class="annotation-field" for="field-actionsUsedWithIt">
-                <span>Actions used with it</span>
-                <textarea id="field-actionsUsedWithIt" rows="4"></textarea>
-              </label>
-              <label class="annotation-field" for="field-adjectivesDescriptions">
-                <span>Adjectives / descriptions</span>
-                <textarea id="field-adjectivesDescriptions" rows="4"></textarea>
-              </label>
-              <label class="annotation-field" for="field-metaphors">
-                <span>Metaphors</span>
-                <textarea id="field-metaphors" rows="4"></textarea>
-              </label>
-              <label class="annotation-field" for="field-oppositions">
-                <span>Oppositions</span>
-                <textarea id="field-oppositions" rows="4"></textarea>
-              </label>
-              <label class="annotation-field" for="field-realm">
-                <span>Realm</span>
-                <input id="field-realm" type="text">
-              </label>
-              <label class="annotation-field" for="field-reviewStatus">
-                <span>Review status</span>
-                <select id="field-reviewStatus">
-                  <option value="machine draft">Machine draft</option>
-                  <option value="user seed">User seed</option>
-                  <option value="needs review">Needs review</option>
-                  <option value="reviewed">Reviewed</option>
-                  <option value="approved">Approved</option>
-                </select>
-              </label>
-              <label class="annotation-field" for="field-theme">
-                <span>Theme</span>
-                <textarea id="field-theme" rows="4"></textarea>
-              </label>
-              <label class="annotation-field" for="field-relatedTheme">
-                <span>Related theme</span>
-                <textarea id="field-relatedTheme" rows="4"></textarea>
-              </label>
-              <label class="annotation-field wide" for="field-reviewNote">
-                <span>Review note</span>
-                <textarea id="field-reviewNote" rows="5"></textarea>
-              </label>
-            </div>
-          </form>
+          </div>
         </section>
       </section>
     </main>
-
-    <script src="annotation-review.js"></script>
-    <script src="copy-tools.js"></script>
+    <script>
+      window.location.replace("text-editor.html#annotations");
+    </script>
   </body>
 </html>

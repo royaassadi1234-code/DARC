@@ -73,7 +73,7 @@
                 <summary>About</summary>
                 <div class="nav-menu-list">
                   <a href="how-to-use.html">How to use</a>
-                  <a href="annotation-review.html">How to collaborate</a>
+                  <a href="text-editor.html#annotations">How to collaborate</a>
                   <a href="project-description.html">Project description</a>
                   <a href="about.html">Team</a>
                   <a href="methodology.html">Methodology</a>
@@ -81,13 +81,13 @@
                 </div>
               </details>
             </nav>
-            <div class="status" id="text-editor-status">Text editor</div>
+            <div class="status" id="text-editor-status">Workspace editor</div>
           </div>
         </header>
 
         <section class="login-panel" id="text-editor-login-panel" aria-label="Text editor login">
           <form class="login-card" id="text-editor-login-form">
-            <p class="eyebrow">Text editing</p>
+            <p class="eyebrow">Workspace editing</p>
             <label class="annotation-field" for="text-editor-login">
               <span>Login</span>
               <input id="text-editor-login" type="text" autocomplete="username" placeholder="editor">
@@ -101,48 +101,172 @@
               <a class="action-button secondary" href="mailto:roya.assadollahi@fu-berlin.de?subject=Request%20text%20editor%20access">Request access per email</a>
             </div>
             <p class="access-note">
-              Edited files are kept as browser drafts until they are exported and committed to the workspace.
+              Text edits and annotation reviews are kept as browser drafts until they are exported and committed to the workspace.
             </p>
             <p class="meta" id="text-editor-login-message"></p>
           </form>
         </section>
 
-        <section class="annotation-workspace text-editor-workspace hidden" id="text-editor-workspace" aria-label="Workspace text editor">
-          <aside class="annotation-sidebar">
-            <div class="annotation-toolbar">
-              <label class="annotation-field" for="text-editor-search">
-                <span>Search files</span>
-                <input id="text-editor-search" type="search" placeholder="DD, WZ, English">
+        <section class="text-editor-shell hidden" id="text-editor-workspace" aria-label="Workspace editor">
+          <div class="editor-tabs" role="tablist" aria-label="Editor tools">
+            <button class="editor-tab active" id="text-tool-tab" type="button" role="tab" aria-selected="true" aria-controls="text-tool-panel" data-editor-tool="texts">Texts</button>
+            <button class="editor-tab" id="annotation-tool-tab" type="button" role="tab" aria-selected="false" aria-controls="annotation-tool-panel" data-editor-tool="annotations">Annotations</button>
+            <button class="copy-button" id="text-editor-logout" type="button">Logout</button>
+          </div>
+
+          <div class="annotation-workspace text-editor-workspace" id="text-tool-panel" role="tabpanel" aria-labelledby="text-tool-tab">
+            <aside class="annotation-sidebar">
+              <div class="annotation-toolbar">
+                <label class="annotation-field" for="text-editor-search">
+                  <span>Search files</span>
+                  <input id="text-editor-search" type="search" placeholder="DD, WZ, English">
+                </label>
+              </div>
+              <div class="annotation-summary" id="text-editor-summary"></div>
+              <div class="annotation-list" id="text-editor-list"></div>
+            </aside>
+
+            <section class="annotation-editor text-editor-panel" aria-label="Current text file">
+              <div class="annotation-editor-header">
+                <div>
+                  <p class="eyebrow">Current file</p>
+                  <h2 id="text-editor-title">No text selected</h2>
+                </div>
+                <div class="annotation-actions">
+                  <button class="copy-button" id="text-editor-save" type="button">Save draft</button>
+                  <button class="copy-button" id="text-editor-export" type="button">Export file</button>
+                  <button class="copy-button" id="text-editor-export-all" type="button">Export all</button>
+                  <label class="copy-button file-button" for="text-editor-import">Import drafts</label>
+                  <input id="text-editor-import" type="file" accept="application/json,.json">
+                  <button class="copy-button" id="text-editor-reset" type="button">Reset file</button>
+                  <button class="copy-button" id="text-editor-reset-all" type="button">Reset all</button>
+                </div>
+              </div>
+
+              <div class="text-editor-meta" id="text-editor-meta"></div>
+              <label class="annotation-field wide text-editor-field" for="text-editor-content">
+                <span>Text content</span>
+                <textarea id="text-editor-content" spellcheck="false"></textarea>
               </label>
-            </div>
-            <div class="annotation-summary" id="text-editor-summary"></div>
-            <div class="annotation-list" id="text-editor-list"></div>
-          </aside>
+            </section>
+          </div>
 
-          <section class="annotation-editor text-editor-panel" aria-label="Current text file">
-            <div class="annotation-editor-header">
-              <div>
-                <p class="eyebrow">Current file</p>
-                <h2 id="text-editor-title">No text selected</h2>
+          <div class="annotation-workspace hidden" id="annotation-tool-panel" role="tabpanel" aria-labelledby="annotation-tool-tab">
+            <aside class="annotation-sidebar">
+              <div class="annotation-toolbar">
+                <label class="annotation-field" for="annotation-search">
+                  <span>Search</span>
+                  <input id="annotation-search" type="search" placeholder="Location, word, meaning">
+                </label>
+                <label class="annotation-field" for="annotation-filter">
+                  <span>Status</span>
+                  <select id="annotation-filter">
+                    <option value="all">All</option>
+                    <option value="machine draft">Machine draft</option>
+                    <option value="user seed">User seed</option>
+                    <option value="needs review">Needs review</option>
+                    <option value="reviewed">Reviewed</option>
+                    <option value="approved">Approved</option>
+                  </select>
+                </label>
               </div>
-              <div class="annotation-actions">
-                <button class="copy-button" id="text-editor-save" type="button">Save draft</button>
-                <button class="copy-button" id="text-editor-export" type="button">Export file</button>
-                <button class="copy-button" id="text-editor-export-all" type="button">Export all</button>
-                <label class="copy-button file-button" for="text-editor-import">Import drafts</label>
-                <input id="text-editor-import" type="file" accept="application/json,.json">
-                <button class="copy-button" id="text-editor-reset" type="button">Reset file</button>
-                <button class="copy-button" id="text-editor-reset-all" type="button">Reset all</button>
-                <button class="copy-button" id="text-editor-logout" type="button">Logout</button>
-              </div>
-            </div>
+              <div class="annotation-summary" id="annotation-summary"></div>
+              <div class="annotation-list" id="annotation-list"></div>
+            </aside>
 
-            <div class="text-editor-meta" id="text-editor-meta"></div>
-            <label class="annotation-field wide text-editor-field" for="text-editor-content">
-              <span>Text content</span>
-              <textarea id="text-editor-content" spellcheck="false"></textarea>
-            </label>
-          </section>
+            <form class="annotation-editor" id="annotation-form">
+              <div class="annotation-editor-header">
+                <div>
+                  <p class="eyebrow">Current annotation</p>
+                  <h2 id="annotation-title">No annotation selected</h2>
+                </div>
+                <div class="annotation-actions">
+                  <button class="copy-button" id="save-entry" type="submit">Save entry</button>
+                  <button class="copy-button" id="export-json" type="button">Export JSON</button>
+                  <label class="copy-button file-button" for="import-json">Import JSON</label>
+                  <input id="import-json" type="file" accept="application/json,.json">
+                  <button class="copy-button" id="reset-draft" type="button">Reset draft</button>
+                </div>
+              </div>
+
+              <div class="annotation-grid">
+                <label class="annotation-field wide" for="field-sourceParagraph">
+                  <span>Source paragraph</span>
+                  <textarea id="field-sourceParagraph" rows="7"></textarea>
+                </label>
+                <label class="annotation-field wide" for="field-translation">
+                  <span>Translation</span>
+                  <textarea id="field-translation" rows="6"></textarea>
+                </label>
+                <label class="annotation-field" for="field-location">
+                  <span>Location</span>
+                  <input id="field-location" type="text">
+                </label>
+                <label class="annotation-field" for="field-id">
+                  <span>ID</span>
+                  <input id="field-id" type="text">
+                </label>
+                <label class="annotation-field" for="field-concept">
+                  <span>Concept</span>
+                  <input id="field-concept" type="text">
+                </label>
+                <label class="annotation-field" for="field-mainWord">
+                  <span>Main word</span>
+                  <textarea id="field-mainWord" rows="2"></textarea>
+                </label>
+                <label class="annotation-field" for="field-matchedWords">
+                  <span>Matched words</span>
+                  <textarea id="field-matchedWords" rows="3"></textarea>
+                </label>
+                <label class="annotation-field" for="field-meaning">
+                  <span>Meaning</span>
+                  <textarea id="field-meaning" rows="3"></textarea>
+                </label>
+                <label class="annotation-field" for="field-actionsUsedWithIt">
+                  <span>Actions used with it</span>
+                  <textarea id="field-actionsUsedWithIt" rows="4"></textarea>
+                </label>
+                <label class="annotation-field" for="field-adjectivesDescriptions">
+                  <span>Adjectives / descriptions</span>
+                  <textarea id="field-adjectivesDescriptions" rows="4"></textarea>
+                </label>
+                <label class="annotation-field" for="field-metaphors">
+                  <span>Metaphors</span>
+                  <textarea id="field-metaphors" rows="4"></textarea>
+                </label>
+                <label class="annotation-field" for="field-oppositions">
+                  <span>Oppositions</span>
+                  <textarea id="field-oppositions" rows="4"></textarea>
+                </label>
+                <label class="annotation-field" for="field-realm">
+                  <span>Realm</span>
+                  <input id="field-realm" type="text">
+                </label>
+                <label class="annotation-field" for="field-reviewStatus">
+                  <span>Review status</span>
+                  <select id="field-reviewStatus">
+                    <option value="machine draft">Machine draft</option>
+                    <option value="user seed">User seed</option>
+                    <option value="needs review">Needs review</option>
+                    <option value="reviewed">Reviewed</option>
+                    <option value="approved">Approved</option>
+                  </select>
+                </label>
+                <label class="annotation-field" for="field-theme">
+                  <span>Theme</span>
+                  <textarea id="field-theme" rows="4"></textarea>
+                </label>
+                <label class="annotation-field" for="field-relatedTheme">
+                  <span>Related theme</span>
+                  <textarea id="field-relatedTheme" rows="4"></textarea>
+                </label>
+                <label class="annotation-field wide" for="field-reviewNote">
+                  <span>Review note</span>
+                  <textarea id="field-reviewNote" rows="5"></textarea>
+                </label>
+              </div>
+            </form>
+          </div>
         </section>
       </section>
     </main>

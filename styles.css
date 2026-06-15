@@ -1736,6 +1736,45 @@ h1 {
   pointer-events: none;
 }
 
+.text-editor-shell {
+  display: grid;
+  gap: 14px;
+}
+
+.editor-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.editor-tab {
+  min-height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 8px 12px;
+  color: var(--accent-strong);
+  background: #fbfcfd;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+}
+
+.editor-tab.active {
+  border-color: var(--accent);
+  color: #ffffff;
+  background: var(--accent);
+}
+
+.editor-tabs #text-editor-logout {
+  margin-left: auto;
+}
+
 .annotation-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

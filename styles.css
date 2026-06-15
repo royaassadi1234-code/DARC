@@ -1728,6 +1728,14 @@ h1 {
   pointer-events: none;
 }
 
+#text-editor-import {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .annotation-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1772,6 +1780,42 @@ h1 {
   min-height: 96px;
   resize: vertical;
   line-height: 1.5;
+}
+
+.text-editor-workspace {
+  grid-template-columns: minmax(240px, 300px) minmax(0, 1fr);
+}
+
+.text-editor-panel {
+  min-height: 70vh;
+}
+
+.text-editor-list-item small {
+  font-weight: 800;
+}
+
+.text-editor-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.text-editor-meta span {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 5px 9px;
+  color: var(--accent-strong);
+  background: #f7fafb;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.text-editor-field textarea {
+  min-height: clamp(420px, 62vh, 760px);
+  font-family: "Cascadia Mono", "Consolas", monospace;
+  font-size: 0.92rem;
+  white-space: pre;
+  overflow: auto;
 }
 
 .annotation-field input:focus,

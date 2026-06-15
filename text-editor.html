@@ -1,9 +1,9 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DARC (Drūz-Ahreman Research Corpus) | Project Description</title>
+    <title>DARC (Drūz-Ahreman Research Corpus) | Text Editor</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/svg+xml" href="logos/druz-logo-fire-altar-resisting-smoke-seal-no-branches-black-white-vector.svg">
   </head>
@@ -22,14 +22,14 @@
           <div class="header-actions">
             <nav class="site-nav" aria-label="Research pages">
               <a href="index.html">Start</a>
-              <details class="nav-menu">
+              <details class="nav-menu active">
                 <summary>Transc. &amp; Transl.</summary>
                 <div class="nav-menu-list">
                   <a href="trans.html?text=dd">DD</a>
                   <a href="trans.html?text=py">PY</a>
                   <a href="trans.html?text=wz">WZ</a>
                   <a href="trans.html?text=nm">NM</a>
-                  <a href="text-editor.html">Edit texts</a>
+                  <a class="active" href="text-editor.html">Edit texts</a>
                 </div>
               </details>
               <a href="search.html">Parallel Text Search</a>
@@ -69,40 +69,85 @@
                 </details>
                 </div>
               </details>
-              <details class="nav-menu active">
+              <details class="nav-menu">
                 <summary>About</summary>
                 <div class="nav-menu-list">
                   <a href="how-to-use.html">How to use</a>
                   <a href="annotation-review.html">How to collaborate</a>
-                  <a class="active" href="project-description.html">Project description</a>
+                  <a href="project-description.html">Project description</a>
                   <a href="about.html">Team</a>
                   <a href="methodology.html">Methodology</a>
                   <a href="resources.html">Bib.</a>
                 </div>
               </details>
             </nav>
-            <div class="status">Project</div>
+            <div class="status" id="text-editor-status">Text editor</div>
           </div>
         </header>
 
-        <section class="about-panel about-hero" aria-label="Project description">
-          <div class="about-copy">
-            <p class="eyebrow">Project description</p>
-            <h2>Tracing the semantic ambiguity of evil in Middle Persian textual traditions.</h2>
-            <p>
-              In the Avesta, Druz and Angra Mainyu appear as distinct principles of evil. In ninth-century
-              Pahlavi literature, however, their semantic boundaries often become less stable and at times
-              appear to overlap.
+        <section class="login-panel" id="text-editor-login-panel" aria-label="Text editor login">
+          <form class="login-card" id="text-editor-login-form">
+            <p class="eyebrow">Text editing</p>
+            <label class="annotation-field" for="text-editor-login">
+              <span>Login</span>
+              <input id="text-editor-login" type="text" autocomplete="username" placeholder="editor">
+            </label>
+            <label class="annotation-field" for="text-editor-password">
+              <span>Password</span>
+              <input id="text-editor-password" type="password" autocomplete="current-password">
+            </label>
+            <div class="login-actions">
+              <button class="action-button" type="submit">Login</button>
+              <a class="action-button secondary" href="mailto:roya.assadollahi@fu-berlin.de?subject=Request%20text%20editor%20access">Request access per email</a>
+            </div>
+            <p class="access-note">
+              Edited files are kept as browser drafts until they are exported and committed to the workspace.
             </p>
-            <p>
-              This project investigates that ambiguity through a comparative study of the
-              <em>Dādestān ī Dēnīg</em> and the <em>Wizīdagīhā ī Zādspram</em>, combining close linguistic
-              analysis with digital humanities methods for searching, comparison, and annotation.
-            </p>
-          </div>
+            <p class="meta" id="text-editor-login-message"></p>
+          </form>
+        </section>
+
+        <section class="annotation-workspace text-editor-workspace hidden" id="text-editor-workspace" aria-label="Workspace text editor">
+          <aside class="annotation-sidebar">
+            <div class="annotation-toolbar">
+              <label class="annotation-field" for="text-editor-search">
+                <span>Search files</span>
+                <input id="text-editor-search" type="search" placeholder="DD, WZ, English">
+              </label>
+            </div>
+            <div class="annotation-summary" id="text-editor-summary"></div>
+            <div class="annotation-list" id="text-editor-list"></div>
+          </aside>
+
+          <section class="annotation-editor text-editor-panel" aria-label="Current text file">
+            <div class="annotation-editor-header">
+              <div>
+                <p class="eyebrow">Current file</p>
+                <h2 id="text-editor-title">No text selected</h2>
+              </div>
+              <div class="annotation-actions">
+                <button class="copy-button" id="text-editor-save" type="button">Save draft</button>
+                <button class="copy-button" id="text-editor-export" type="button">Export file</button>
+                <button class="copy-button" id="text-editor-export-all" type="button">Export all</button>
+                <label class="copy-button file-button" for="text-editor-import">Import drafts</label>
+                <input id="text-editor-import" type="file" accept="application/json,.json">
+                <button class="copy-button" id="text-editor-reset" type="button">Reset file</button>
+                <button class="copy-button" id="text-editor-reset-all" type="button">Reset all</button>
+                <button class="copy-button" id="text-editor-logout" type="button">Logout</button>
+              </div>
+            </div>
+
+            <div class="text-editor-meta" id="text-editor-meta"></div>
+            <label class="annotation-field wide text-editor-field" for="text-editor-content">
+              <span>Text content</span>
+              <textarea id="text-editor-content" spellcheck="false"></textarea>
+            </label>
+          </section>
         </section>
       </section>
     </main>
+
+    <script src="text-editor.js"></script>
     <script src="copy-tools.js"></script>
   </body>
 </html>

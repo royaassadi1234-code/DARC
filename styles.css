@@ -1966,17 +1966,20 @@ h1 {
   background: #ffffff;
 }
 
-.realm-choice-group {
+.realm-choice-group,
+.option-choice-group {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
+  align-items: center;
   border: 0;
   padding: 0;
   margin: 0;
 }
 
-.realm-choice-group legend {
-  flex: 0 0 100%;
+.realm-choice-group legend,
+.option-choice-group legend {
+  flex: 0 0 auto;
   color: var(--accent);
   font-size: 0.76rem;
   font-weight: 800;
@@ -1984,11 +1987,13 @@ h1 {
   text-transform: uppercase;
 }
 
-.realm-choice-group label {
+.realm-choice-group label,
+.option-choice-group label {
   cursor: pointer;
 }
 
-.realm-choice-group input {
+.realm-choice-group input,
+.option-choice-group input {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -1996,7 +2001,8 @@ h1 {
   pointer-events: none;
 }
 
-.realm-choice-group label span {
+.realm-choice-group label span,
+.option-choice-group label span {
   display: inline-flex;
   align-items: center;
   min-height: 34px;
@@ -2011,10 +2017,31 @@ h1 {
   text-transform: none;
 }
 
-.realm-choice-group input:checked + span {
+.realm-choice-group input:checked + span,
+.option-choice-group input:checked + span {
   border-color: var(--accent);
   color: #ffffff;
   background: var(--accent);
+}
+
+.option-choice-group .option-custom-field {
+  display: grid;
+  flex: 1 1 220px;
+  gap: 6px;
+  cursor: default;
+}
+
+.option-choice-group .option-custom-field span {
+  align-self: start;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  min-height: 0;
+  color: var(--accent);
+  background: transparent;
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .annotation-field input:focus,

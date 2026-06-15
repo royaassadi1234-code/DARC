@@ -90,7 +90,8 @@ const annotationFields = {
   actionsUsedWithIt: document.querySelector("#field-actionsUsedWithIt"),
   adjectivesDescriptions: document.querySelector("#field-adjectivesDescriptions"),
   metaphors: document.querySelector("#field-metaphors"),
-  oppositions: document.querySelector("#field-oppositions"),
+  oppositions: Array.from(document.querySelectorAll("input[name='oppositions']")),
+  oppositionsCustom: document.querySelector("#field-oppositions-custom"),
   realm: Array.from(document.querySelectorAll("input[name='realm']")),
   reviewStatus: document.querySelector("#field-reviewStatus"),
   theme: document.querySelector("#field-theme"),
@@ -845,7 +846,7 @@ function renderAnnotationForm() {
   annotationFields.actionsUsedWithIt.value = valueToEditable(annotation.actionsUsedWithIt);
   annotationFields.adjectivesDescriptions.value = valueToEditable(annotation.adjectivesDescriptions);
   annotationFields.metaphors.value = valueToEditable(annotation.metaphors);
-  annotationFields.oppositions.value = valueToEditable(annotation.oppositions);
+  setChoiceSelection(annotationFields.oppositions, annotationFields.oppositionsCustom, annotation.oppositions);
   setRealmSelection(annotation.realm);
   annotationFields.reviewStatus.value = annotation.reviewStatus || "machine draft";
   annotationFields.theme.value = valueToEditable(annotation.theme);
@@ -885,7 +886,7 @@ function saveCurrentAnnotation(options = {}) {
   annotation.actionsUsedWithIt = parseList(annotationFields.actionsUsedWithIt.value);
   annotation.adjectivesDescriptions = parseList(annotationFields.adjectivesDescriptions.value);
   annotation.metaphors = parseList(annotationFields.metaphors.value);
-  annotation.oppositions = parseList(annotationFields.oppositions.value);
+  annotation.oppositions = getChoiceSelection(annotationFields.oppositions, annotationFields.oppositionsCustom);
   annotation.realm = getRealmSelection();
   annotation.reviewStatus = annotationFields.reviewStatus.value;
   annotation.theme = parseList(annotationFields.theme.value);
@@ -967,25 +968,51 @@ function valueToLines(value) {
 }
 
 function setRealmSelection(value) {
-  const selected = new Set(valueToLines(value).flatMap((item) => {
-    return String(item)
-      .split(/[,;]/)
-      .map((part) => part.trim())
-      .filter(Boolean);
-  }));
-  annotationFields.realm.forEach((input) => {
-    input.checked = selected.has(input.value);
-  });
+  setChoiceSelection(annotationFields.realm, null, value);
 }
 
 function getRealmSelection() {
-  const selected = annotationFields.realm
+  return singleOrList(getCheckedValues(annotationFields.realm));
+}
+
+function setChoiceSelection(inputs, customField, value) {
+  const values = splitChoiceValues(value);
+  const standardValues = new Set(inputs.map((input) => input.value));
+  inputs.forEach((input) => {
+    input.checked = values.includes(input.value);
+  });
+  if (customField) {
+    customField.value = values.filter((item) => !standardValues.has(item)).join("\n");
+  }
+}
+
+function getChoiceSelection(inputs, customField) {
+  return singleOrList([
+    ...getCheckedValues(inputs),
+    ...parseList(customField?.value || "")
+  ]);
+}
+
+function getCheckedValues(inputs) {
+  return inputs
     .filter((input) => input.checked)
     .map((input) => input.value);
-  if (!selected.length) {
+}
+
+function splitChoiceValues(value) {
+  return valueToLines(value).flatMap((item) => {
+    return String(item)
+      .split(/\n|;|,/)
+      .map((part) => part.trim())
+      .filter(Boolean);
+  });
+}
+
+function singleOrList(items) {
+  if (!items.length) {
     return null;
   }
-  return selected.length === 1 ? selected[0] : selected;
+  return items.length === 1 ? items[0] : items;
 }
 
 function valueToEditable(value) {

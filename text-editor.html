@@ -109,12 +109,12 @@
 
         <section class="text-editor-shell hidden" id="text-editor-workspace" aria-label="Workspace editor">
           <div class="editor-tabs" role="tablist" aria-label="Editor tools">
-            <button class="editor-tab active" id="text-tool-tab" type="button" role="tab" aria-selected="true" aria-controls="text-tool-panel" data-editor-tool="texts">Texts</button>
-            <button class="editor-tab" id="annotation-tool-tab" type="button" role="tab" aria-selected="false" aria-controls="annotation-tool-panel" data-editor-tool="annotations">Annotations</button>
+            <button class="editor-tab active" id="annotation-tool-tab" type="button" role="tab" aria-selected="true" aria-controls="annotation-tool-panel" data-editor-tool="annotations">Annotations</button>
+            <button class="editor-tab" id="text-tool-tab" type="button" role="tab" aria-selected="false" aria-controls="text-tool-panel" data-editor-tool="texts">Texts</button>
             <button class="copy-button" id="text-editor-logout" type="button">Logout</button>
           </div>
 
-          <div class="text-editor-tool" id="text-tool-panel" role="tabpanel" aria-labelledby="text-tool-tab">
+          <div class="text-editor-tool hidden" id="text-tool-panel" role="tabpanel" aria-labelledby="text-tool-tab">
             <div class="text-editor-menu-bar" aria-label="Text file menu">
               <label class="annotation-field text-editor-search-field" for="text-editor-search">
                 <span>Search files</span>
@@ -174,7 +174,7 @@
             </section>
           </div>
 
-          <div class="annotation-workspace hidden" id="annotation-tool-panel" role="tabpanel" aria-labelledby="annotation-tool-tab">
+          <div class="annotation-workspace" id="annotation-tool-panel" role="tabpanel" aria-labelledby="annotation-tool-tab">
             <aside class="annotation-sidebar">
               <div class="annotation-toolbar">
                 <label class="annotation-field" for="annotation-search">

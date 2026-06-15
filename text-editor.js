@@ -240,10 +240,10 @@ function switchEditorTool(tool) {
 }
 
 function openToolFromHash() {
-  if (window.location.hash === "#annotations") {
-    switchEditorTool("annotations");
-  } else {
+  if (window.location.hash === "#texts") {
     switchEditorTool("texts");
+  } else {
+    switchEditorTool("annotations");
   }
 }
 

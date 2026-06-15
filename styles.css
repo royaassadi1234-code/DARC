@@ -1953,7 +1953,7 @@ h1 {
 }
 
 .annotation-focus-fields {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   align-items: start;
 }
 

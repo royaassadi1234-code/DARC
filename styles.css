@@ -54,10 +54,10 @@ select {
 
 .site-logo {
   display: block;
-  width: clamp(112px, 12vw, 164px);
-  height: clamp(112px, 12vw, 164px);
-  max-width: 164px;
-  max-height: 164px;
+  width: clamp(96px, 10vw, 140px);
+  height: clamp(96px, 10vw, 140px);
+  max-width: 140px;
+  max-height: 140px;
   flex: 0 0 auto;
   aspect-ratio: 1 / 1;
   border-radius: 50%;

@@ -1567,6 +1567,19 @@ h1 {
   display: none !important;
 }
 
+.editor-hidden-control {
+  display: none !important;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
 .login-panel {
   display: grid;
   place-items: center;
@@ -1772,7 +1785,16 @@ h1 {
 }
 
 .editor-tabs #text-editor-logout {
+  order: 3;
   margin-left: auto;
+}
+
+.editor-tabs #text-tool-tab {
+  order: 1;
+}
+
+.editor-tabs #annotation-tool-tab {
+  order: 2;
 }
 
 .annotation-grid {
@@ -1828,7 +1850,7 @@ h1 {
 
 .text-editor-menu-bar {
   display: grid;
-  grid-template-columns: minmax(180px, 320px) auto minmax(0, 1fr);
+  grid-template-columns: minmax(180px, 320px) minmax(0, 1fr);
   gap: 10px;
   align-items: center;
   border: 1px solid var(--line);
@@ -1854,6 +1876,18 @@ h1 {
 
 .text-editor-panel {
   min-height: 70vh;
+}
+
+.text-editor-simple-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+
+.text-editor-simple-header h2 {
+  margin: 0;
+  font-size: 1.14rem;
 }
 
 .text-editor-horizontal-list .annotation-list-item {
@@ -1911,8 +1945,25 @@ h1 {
 
 .passage-editor-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: 12px;
+}
+
+.text-passage-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 380px);
+  gap: 14px;
+  align-items: start;
+}
+
+.text-annotation-column {
+  position: sticky;
+  top: 14px;
+  display: grid;
+  gap: 12px;
+  max-height: calc(100vh - 28px);
+  overflow: auto;
+  padding-right: 2px;
 }
 
 .passage-edit-card {
@@ -1924,16 +1975,39 @@ h1 {
   background: #ffffff;
 }
 
+.passage-edit-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(88px, 150px);
+  gap: 10px;
+  align-items: center;
+}
+
+.passage-title-field {
+  align-self: center;
+}
+
+.passage-location-field {
+  gap: 4px;
+}
+
+.passage-location-field input {
+  min-height: 36px;
+  padding: 7px 9px;
+  font-size: 0.88rem;
+  text-align: right;
+}
+
 .passage-edit-card textarea {
+  width: 100%;
+  border: 1px solid #c8d0d9;
+  border-radius: 7px;
+  padding: 10px 11px;
+  color: var(--ink);
+  background: #fbfcfd;
+  font: inherit;
   min-height: clamp(280px, 42vh, 560px);
   resize: vertical;
   line-height: 1.55;
-}
-
-.passage-detail-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
 }
 
 .annotation-passage-layout {
@@ -3677,11 +3751,18 @@ mark.term-6 {
   .concept-next-grid,
   .annotation-workspace,
   .text-editor-menu-bar,
+  .text-passage-workspace,
   .passage-editor-grid,
-  .passage-detail-grid,
   .annotation-passage-layout,
   .annotation-focus-fields {
     grid-template-columns: 1fr;
+  }
+
+  .text-annotation-column {
+    position: static;
+    max-height: none;
+    overflow: visible;
+    padding-right: 0;
   }
 
   .text-editor-horizontal-list .annotation-list-item {

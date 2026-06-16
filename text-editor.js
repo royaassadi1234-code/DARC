@@ -149,6 +149,8 @@ function bindTextEditorEvents() {
 
   searchInput.addEventListener("input", () => {
     editorState.query = searchInput.value.trim().toLowerCase();
+    listEl.classList.remove("hidden");
+    fileToggleButton.setAttribute("aria-expanded", "true");
     renderTextEditorList();
   });
 
@@ -291,7 +293,11 @@ async function unlockTextEditor() {
   editorState.drafts = loadDrafts();
   annotationState.completion = loadAnnotationCompletion();
   await Promise.all([loadWorkspaceTexts(), loadAnnotations()]);
+  fillAllTextPassageIdsFromLocations();
+  persistDrafts();
   renderTextEditorList();
+  listEl.classList.remove("hidden");
+  fileToggleButton.setAttribute("aria-expanded", "true");
   renderCurrentFile();
   openToolFromHash();
 }
@@ -299,23 +305,19 @@ async function unlockTextEditor() {
 function switchEditorTool(tool) {
   saveDraft({ quiet: true });
   saveCurrentAnnotation({ quiet: true });
-  const showAnnotations = tool === "annotations";
-  textToolPanel.classList.toggle("hidden", showAnnotations);
-  annotationToolPanel.classList.toggle("hidden", !showAnnotations);
+  const activeTool = "texts";
+  textToolPanel.classList.remove("hidden");
+  annotationToolPanel.classList.add("hidden");
   toolTabs.forEach((tab) => {
-    const active = tab.dataset.editorTool === tool;
+    const active = tab.dataset.editorTool === activeTool;
     tab.classList.toggle("active", active);
     tab.setAttribute("aria-selected", active ? "true" : "false");
   });
-  statusEl.textContent = showAnnotations ? "Annotation review" : "Text editor";
+  statusEl.textContent = "Text editor";
 }
 
 function openToolFromHash() {
-  if (window.location.hash === "#texts") {
-    switchEditorTool("texts");
-  } else {
-    switchEditorTool("annotations");
-  }
+  switchEditorTool("texts");
 }
 
 function toggleOptionPopover(button) {
@@ -431,7 +433,7 @@ function renderCurrentFile() {
   sourceLocationEl.value = sourceRecord?.location || "";
   translationContentEl.value = translationRecord?.text || "";
   translationLocationEl.value = translationRecord?.location || sourceRecord?.location || "";
-  sourceLabelEl.textContent = `${file.siglum} passage`;
+  sourceLabelEl.textContent = `${file.siglum} correspondence text`;
   translationLabelEl.textContent = file.translationFile ? `${file.siglum} translation` : "Translation";
   translationContentEl.disabled = !file.translationFile;
   translationLocationEl.disabled = !file.translationFile;
@@ -464,7 +466,7 @@ function getFilteredFiles() {
     return editorState.files;
   }
   return editorState.files.filter((file) => {
-    const haystack = [file.siglum, file.title, file.file, file.kind].join(" ").toLowerCase();
+    const haystack = [file.siglum, file.title, file.file, file.translationFile, file.kind].filter(Boolean).join(" ").toLowerCase();
     return haystack.includes(editorState.query);
   });
 }
@@ -564,6 +566,8 @@ function exportCurrentFile() {
 
 function exportAllFiles() {
   saveDraft({ quiet: true });
+  fillAllTextPassageIdsFromLocations();
+  persistDrafts();
   const payload = {
     exportedAt: new Date().toISOString(),
     files: editorState.files.map((file) => ({
@@ -618,6 +622,7 @@ function importDrafts(event) {
         }
       });
       editorState.drafts = nextDrafts;
+      fillAllTextPassageIdsFromLocations();
       persistDrafts();
       renderTextEditorList();
       renderCurrentFile();
@@ -676,6 +681,24 @@ function ensureStructuredDraft(file) {
   return next;
 }
 
+function fillAllTextPassageIdsFromLocations() {
+  editorState.files.forEach((file) => {
+    const draft = ensureStructuredDraft(file);
+    draft.sourceRecords.forEach((sourceRecord, index) => {
+      const location = getCorrespondenceLocation(sourceRecord, index);
+      if (!location) {
+        return;
+      }
+      const key = getTextPassageMetadataKey(sourceRecord, index);
+      draft.passageAnnotations[key] = {
+        ...(draft.passageAnnotations[key] || {}),
+        location,
+        id: location
+      };
+    });
+  });
+}
+
 function saveCurrentPassageToDraft() {
   const file = getSelectedFile();
   if (!file || sourceContentEl.disabled) {
@@ -706,11 +729,12 @@ function saveCurrentPassageToDraft() {
 
 function renderTextPassageMetadata(file, sourceRecord) {
   const metadata = getPassageAnnotations(file)[getTextPassageMetadataKey(sourceRecord, editorState.passageIndex)] || {};
+  const correspondenceLocation = getCorrespondenceLocation(sourceRecord, editorState.passageIndex);
   setChoiceSelection(textPassageFields.realm, null, metadata.realm);
   setChoiceSelection(textPassageFields.oppositions, textPassageFields.oppositionsCustom, metadata.oppositions);
   setChoiceSelection(textPassageFields.referent, textPassageFields.referentCustom, metadata.meaning);
   textPassageFields.actionsUsedWithIt.value = valueToEditable(metadata.actionsUsedWithIt);
-  textPassageFields.id.value = metadata.id || "";
+  textPassageFields.id.value = correspondenceLocation || metadata.id || "";
   textPassageFields.concept.value = metadata.concept || "";
   textPassageFields.mainWord.value = valueToEditable(metadata.mainWord);
   textPassageFields.matchedWords.value = valueToEditable(metadata.matchedWords);
@@ -729,10 +753,11 @@ function saveTextPassageMetadata(draft, sourceRecord, previousKey) {
   }
   const nextKey = getTextPassageMetadataKey(sourceRecord, editorState.passageIndex);
   const existing = draft.passageAnnotations[previousKey] || draft.passageAnnotations[nextKey] || {};
+  const correspondenceLocation = getCorrespondenceLocation(sourceRecord, editorState.passageIndex);
   const metadata = {
     ...existing,
-    location: sourceRecord?.location || sourceLocationEl.value.trim(),
-    id: textPassageFields.id.value.trim(),
+    location: correspondenceLocation,
+    id: correspondenceLocation,
     concept: textPassageFields.concept.value.trim(),
     mainWord: parseSingleOrList(textPassageFields.mainWord.value),
     matchedWords: parseList(textPassageFields.matchedWords.value),
@@ -760,6 +785,10 @@ function saveTextPassageMetadata(draft, sourceRecord, previousKey) {
 
 function getTextPassageMetadataKey(sourceRecord, index) {
   return normalizeLocation(sourceRecord?.location || sourceLocationEl.value || `passage-${index + 1}`) || `passage-${index + 1}`;
+}
+
+function getCorrespondenceLocation(sourceRecord, index) {
+  return String(sourceRecord?.location || sourceLocationEl.value || `passage-${index + 1}`).trim();
 }
 
 function clearTextPassageMetadata() {

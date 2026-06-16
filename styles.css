@@ -1900,6 +1900,10 @@ h1 {
   font-weight: 800;
 }
 
+.text-editor-horizontal-list .text-location-result {
+  flex-basis: clamp(220px, 30vw, 380px);
+}
+
 .text-editor-meta {
   display: flex;
   gap: 8px;

@@ -202,6 +202,15 @@ function bindTextEditorEvents() {
   window.addEventListener("hashchange", openToolFromHash);
 
   listEl.addEventListener("click", (event) => {
+    const passageButton = event.target.closest("[data-passage-index]");
+    if (passageButton) {
+      saveDraft({ quiet: true });
+      editorState.passageIndex = Number(passageButton.dataset.passageIndex) || 0;
+      renderTextEditorList();
+      renderCurrentFile();
+      return;
+    }
+
     const button = event.target.closest("[data-text-id]");
     if (!button) {
       return;
@@ -383,7 +392,13 @@ async function fetchTextFile(file, optional = false) {
 }
 
 function renderTextEditorList() {
-  const files = getFilteredFiles();
+  const query = editorState.query;
+  if (query) {
+    renderTextSearchLocations(query);
+    return;
+  }
+
+  const files = editorState.files;
   const draftCount = editorState.files.filter(hasDraft).length;
 
   summaryEl.innerHTML = `
@@ -405,6 +420,37 @@ function renderTextEditorList() {
         <strong>${escapeHtml(file.siglum)}</strong>
         <span>${escapeHtml(file.title)}</span>
         ${draft}
+      </button>
+    `;
+  }).join("");
+}
+
+function renderTextSearchLocations(query) {
+  const file = getSelectedFile();
+  if (!file) {
+    summaryEl.innerHTML = "<span>No text selected</span>";
+    listEl.innerHTML = `<div class="empty-state">Select a text before searching.</div>`;
+    return;
+  }
+
+  const matches = getTextSearchMatches(file, query);
+  summaryEl.innerHTML = `
+    <span>${matches.length.toLocaleString()} locations</span>
+    <span>${escapeHtml(file.siglum)}</span>
+    <span>${escapeHtml(query)}</span>
+  `;
+
+  if (!matches.length) {
+    listEl.innerHTML = `<div class="empty-state">No locations contain this word in ${escapeHtml(file.siglum)}.</div>`;
+    return;
+  }
+
+  listEl.innerHTML = matches.map((match) => {
+    const active = match.index === editorState.passageIndex ? " active" : "";
+    return `
+      <button class="annotation-list-item text-editor-list-item text-location-result${active}" type="button" data-passage-index="${match.index}">
+        <strong>${escapeHtml(match.location)}</strong>
+        <span>${escapeHtml(match.snippet)}</span>
       </button>
     `;
   }).join("");
@@ -461,18 +507,43 @@ function setPassageControlsDisabled(disabled) {
   });
 }
 
-function getFilteredFiles() {
-  if (!editorState.query) {
-    return editorState.files;
-  }
-  return editorState.files.filter((file) => {
-    const haystack = [file.siglum, file.title, file.file, file.translationFile, file.kind].filter(Boolean).join(" ").toLowerCase();
-    return haystack.includes(editorState.query);
-  });
-}
-
 function getSelectedFile() {
   return editorState.files.find((file) => file.id === editorState.selectedId) || null;
+}
+
+function getTextSearchMatches(file, query) {
+  const normalizedQuery = query.trim().toLowerCase();
+  if (!normalizedQuery) {
+    return [];
+  }
+
+  const translationRecords = getTranslationRecords(file);
+  return getSourceRecords(file).reduce((matches, record, index) => {
+    const translationRecord = findTranslationRecord(file, record, translationRecords);
+    const searchable = [record.text, translationRecord?.text].filter(Boolean).join(" ").toLowerCase();
+    if (searchable.includes(normalizedQuery)) {
+      matches.push({
+        index,
+        location: record.location || `passage ${index + 1}`,
+        snippet: getTextSearchSnippet(record.text, translationRecord?.text, normalizedQuery)
+      });
+    }
+    return matches;
+  }, []);
+}
+
+function getTextSearchSnippet(sourceText, translationText, query) {
+  const text = [sourceText, translationText].filter(Boolean).join(" ");
+  const normalizedText = text.toLowerCase();
+  const index = normalizedText.indexOf(query);
+  if (index < 0) {
+    return text.slice(0, 120).trim();
+  }
+  const start = Math.max(0, index - 44);
+  const end = Math.min(text.length, index + query.length + 76);
+  const prefix = start > 0 ? "... " : "";
+  const suffix = end < text.length ? " ..." : "";
+  return `${prefix}${text.slice(start, end).trim()}${suffix}`;
 }
 
 function getCurrentContent(file) {

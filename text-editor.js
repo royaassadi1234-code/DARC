@@ -81,6 +81,26 @@ const annotationNextButton = document.querySelector("#annotation-next");
 const annotationPositionEl = document.querySelector("#annotation-position");
 const optionOtherToggles = document.querySelectorAll(".option-other-toggle");
 const fieldCompletionInputs = document.querySelectorAll("[data-complete-field]");
+const textFieldCompletionInputs = document.querySelectorAll("[data-text-complete-field]");
+
+const textPassageFields = {
+  realm: Array.from(document.querySelectorAll("input[name='text-realm']")),
+  oppositions: Array.from(document.querySelectorAll("input[name='text-oppositions']")),
+  oppositionsCustom: document.querySelector("#text-field-oppositions-custom"),
+  referent: Array.from(document.querySelectorAll("input[name='text-referent']")),
+  referentCustom: document.querySelector("#text-field-referent-custom"),
+  actionsUsedWithIt: document.querySelector("#text-field-actionsUsedWithIt"),
+  id: document.querySelector("#text-field-id"),
+  concept: document.querySelector("#text-field-concept"),
+  mainWord: document.querySelector("#text-field-mainWord"),
+  matchedWords: document.querySelector("#text-field-matchedWords"),
+  reviewStatus: document.querySelector("#text-field-reviewStatus"),
+  adjectivesDescriptions: document.querySelector("#text-field-adjectivesDescriptions"),
+  metaphors: document.querySelector("#text-field-metaphors"),
+  theme: document.querySelector("#text-field-theme"),
+  relatedTheme: document.querySelector("#text-field-relatedTheme"),
+  reviewNote: document.querySelector("#text-field-reviewNote")
+};
 
 const annotationFields = {
   sourceParagraph: document.querySelector("#field-sourceParagraph"),
@@ -159,6 +179,18 @@ function bindTextEditorEvents() {
     });
   });
 
+  textFieldCompletionInputs.forEach((input) => {
+    input.addEventListener("click", (event) => {
+      event.stopPropagation();
+    });
+    input.addEventListener("change", () => {
+      const file = getSelectedFile();
+      if (file) {
+        statusEl.textContent = `${file.siglum} passage has unsaved metadata`;
+      }
+    });
+  });
+
   document.addEventListener("click", (event) => {
     if (!event.target.closest(".option-choice-group")) {
       closeOptionPopovers();
@@ -184,6 +216,16 @@ function bindTextEditorEvents() {
       const file = getSelectedFile();
       if (file) {
         statusEl.textContent = `${file.siglum} passage has unsaved changes`;
+      }
+    });
+  });
+
+  getTextPassageControls().forEach((control) => {
+    const eventName = control.type === "checkbox" || control.tagName === "SELECT" ? "change" : "input";
+    control.addEventListener(eventName, () => {
+      const file = getSelectedFile();
+      if (file) {
+        statusEl.textContent = `${file.siglum} passage has unsaved metadata`;
       }
     });
   });
@@ -373,6 +415,7 @@ function renderCurrentFile() {
     metaEl.innerHTML = "";
     sourceContentEl.value = "";
     translationContentEl.value = "";
+    clearTextPassageMetadata();
     setPassageControlsDisabled(true);
     return;
   }
@@ -392,6 +435,7 @@ function renderCurrentFile() {
   translationLabelEl.textContent = file.translationFile ? `${file.siglum} translation` : "Translation";
   translationContentEl.disabled = !file.translationFile;
   translationLocationEl.disabled = !file.translationFile;
+  renderTextPassageMetadata(file, sourceRecord);
   passagePositionEl.textContent = `${sourceRecord?.location || "No passage"} | ${(editorState.passageIndex + 1).toLocaleString()} of ${sourceRecords.length.toLocaleString()}`;
   passagePrevButton.disabled = editorState.passageIndex <= 0;
   passageNextButton.disabled = editorState.passageIndex >= sourceRecords.length - 1;
@@ -408,6 +452,9 @@ function renderCurrentFile() {
 
 function setPassageControlsDisabled(disabled) {
   [sourceContentEl, translationContentEl, sourceLocationEl, translationLocationEl, passagePrevButton, passageNextButton].forEach((control) => {
+    control.disabled = disabled;
+  });
+  getTextPassageControls().forEach((control) => {
     control.disabled = disabled;
   });
 }
@@ -445,7 +492,7 @@ function saveDraft(options = {}) {
   const translationContent = file.translationFile
     ? serializeEditableRecords(draft?.translationRecords || file.translationRecords, file.translationRecords)
     : "";
-  if (sourceContent === file.original && translationContent === (file.translationOriginal || "")) {
+  if (sourceContent === file.original && translationContent === (file.translationOriginal || "") && !hasTextPassageMetadata(draft)) {
     delete editorState.drafts[file.id];
   }
   persistDrafts();
@@ -529,7 +576,8 @@ function exportAllFiles() {
       content: getCurrentContent(file),
       translationContent: file.translationFile ? serializeEditableRecords(getTranslationRecords(file), file.translationRecords) : "",
       sourceRecords: getSourceRecords(file),
-      translationRecords: getTranslationRecords(file)
+      translationRecords: getTranslationRecords(file),
+      passageAnnotations: getPassageAnnotations(file)
     }))
   };
   downloadText("druz-workspace-texts-edited.json", JSON.stringify(payload, null, 2) + "\n", "application/json");
@@ -556,14 +604,16 @@ function importDrafts(event) {
         if (Array.isArray(item.sourceRecords)) {
           nextDrafts[match.id] = {
             sourceRecords: item.sourceRecords,
-            translationRecords: Array.isArray(item.translationRecords) ? item.translationRecords : getTranslationRecords(match)
+            translationRecords: Array.isArray(item.translationRecords) ? item.translationRecords : getTranslationRecords(match),
+            passageAnnotations: isPlainObject(item.passageAnnotations) ? item.passageAnnotations : {}
           };
           return;
         }
         if (typeof item.content === "string") {
           nextDrafts[match.id] = {
             sourceRecords: parseEditableRecords(item.content),
-            translationRecords: typeof item.translationContent === "string" ? parseEditableRecords(item.translationContent) : getTranslationRecords(match)
+            translationRecords: typeof item.translationContent === "string" ? parseEditableRecords(item.translationContent) : getTranslationRecords(match),
+            passageAnnotations: isPlainObject(item.passageAnnotations) ? item.passageAnnotations : {}
           };
         }
       });
@@ -601,14 +651,26 @@ function getTranslationRecords(file) {
   return file.translationRecords || [];
 }
 
+function getPassageAnnotations(file) {
+  const draft = editorState.drafts[file.id];
+  if (draft && isPlainObject(draft.passageAnnotations)) {
+    return draft.passageAnnotations;
+  }
+  return {};
+}
+
 function ensureStructuredDraft(file) {
   const draft = editorState.drafts[file.id];
   if (draft && Array.isArray(draft.sourceRecords)) {
+    if (!isPlainObject(draft.passageAnnotations)) {
+      draft.passageAnnotations = {};
+    }
     return draft;
   }
   const next = {
     sourceRecords: typeof draft === "string" ? parseEditableRecords(draft) : cloneRecords(file.sourceRecords || []),
-    translationRecords: cloneRecords(file.translationRecords || [])
+    translationRecords: cloneRecords(file.translationRecords || []),
+    passageAnnotations: isPlainObject(draft?.passageAnnotations) ? draft.passageAnnotations : {}
   };
   editorState.drafts[file.id] = next;
   return next;
@@ -621,10 +683,12 @@ function saveCurrentPassageToDraft() {
   }
   const draft = ensureStructuredDraft(file);
   const sourceRecord = draft.sourceRecords[editorState.passageIndex];
+  const previousMetadataKey = getTextPassageMetadataKey(sourceRecord, editorState.passageIndex);
   if (sourceRecord) {
     sourceRecord.location = sourceLocationEl.value.trim() || sourceRecord.location;
     sourceRecord.text = sourceContentEl.value;
   }
+  saveTextPassageMetadata(draft, sourceRecord, previousMetadataKey);
   if (file.translationFile) {
     let translationRecord = findTranslationRecord(file, sourceRecord, draft.translationRecords);
     if (!translationRecord) {
@@ -638,6 +702,140 @@ function saveCurrentPassageToDraft() {
     translationRecord.location = translationLocationEl.value.trim() || sourceRecord?.location || translationRecord.location;
     translationRecord.text = translationContentEl.value;
   }
+}
+
+function renderTextPassageMetadata(file, sourceRecord) {
+  const metadata = getPassageAnnotations(file)[getTextPassageMetadataKey(sourceRecord, editorState.passageIndex)] || {};
+  setChoiceSelection(textPassageFields.realm, null, metadata.realm);
+  setChoiceSelection(textPassageFields.oppositions, textPassageFields.oppositionsCustom, metadata.oppositions);
+  setChoiceSelection(textPassageFields.referent, textPassageFields.referentCustom, metadata.meaning);
+  textPassageFields.actionsUsedWithIt.value = valueToEditable(metadata.actionsUsedWithIt);
+  textPassageFields.id.value = metadata.id || "";
+  textPassageFields.concept.value = metadata.concept || "";
+  textPassageFields.mainWord.value = valueToEditable(metadata.mainWord);
+  textPassageFields.matchedWords.value = valueToEditable(metadata.matchedWords);
+  textPassageFields.reviewStatus.value = metadata.reviewStatus || "machine draft";
+  textPassageFields.adjectivesDescriptions.value = valueToEditable(metadata.adjectivesDescriptions);
+  textPassageFields.metaphors.value = valueToEditable(metadata.metaphors);
+  textPassageFields.theme.value = valueToEditable(metadata.theme);
+  textPassageFields.relatedTheme.value = valueToEditable(metadata.relatedTheme);
+  textPassageFields.reviewNote.value = valueToEditable(metadata.reviewNote);
+  renderTextFieldCompletion(metadata.completion || {});
+}
+
+function saveTextPassageMetadata(draft, sourceRecord, previousKey) {
+  if (!draft || !isPlainObject(draft.passageAnnotations)) {
+    return;
+  }
+  const nextKey = getTextPassageMetadataKey(sourceRecord, editorState.passageIndex);
+  const existing = draft.passageAnnotations[previousKey] || draft.passageAnnotations[nextKey] || {};
+  const metadata = {
+    ...existing,
+    location: sourceRecord?.location || sourceLocationEl.value.trim(),
+    id: textPassageFields.id.value.trim(),
+    concept: textPassageFields.concept.value.trim(),
+    mainWord: parseSingleOrList(textPassageFields.mainWord.value),
+    matchedWords: parseList(textPassageFields.matchedWords.value),
+    meaning: getChoiceSelection(textPassageFields.referent, textPassageFields.referentCustom),
+    actionsUsedWithIt: parseList(textPassageFields.actionsUsedWithIt.value),
+    adjectivesDescriptions: parseList(textPassageFields.adjectivesDescriptions.value),
+    metaphors: parseList(textPassageFields.metaphors.value),
+    oppositions: getChoiceSelection(textPassageFields.oppositions, textPassageFields.oppositionsCustom),
+    realm: singleOrList(getCheckedValues(textPassageFields.realm)),
+    reviewStatus: textPassageFields.reviewStatus.value,
+    theme: parseList(textPassageFields.theme.value),
+    relatedTheme: parseList(textPassageFields.relatedTheme.value),
+    reviewNote: parseSingleOrList(textPassageFields.reviewNote.value),
+    completion: getTextFieldCompletion()
+  };
+  if (previousKey && previousKey !== nextKey) {
+    delete draft.passageAnnotations[previousKey];
+  }
+  if (hasMeaningfulTextPassageMetadata(metadata)) {
+    draft.passageAnnotations[nextKey] = metadata;
+  } else {
+    delete draft.passageAnnotations[nextKey];
+  }
+}
+
+function getTextPassageMetadataKey(sourceRecord, index) {
+  return normalizeLocation(sourceRecord?.location || sourceLocationEl.value || `passage-${index + 1}`) || `passage-${index + 1}`;
+}
+
+function clearTextPassageMetadata() {
+  setChoiceSelection(textPassageFields.realm, null, []);
+  setChoiceSelection(textPassageFields.oppositions, textPassageFields.oppositionsCustom, []);
+  setChoiceSelection(textPassageFields.referent, textPassageFields.referentCustom, []);
+  Object.values(textPassageFields).forEach((field) => {
+    if (field instanceof HTMLInputElement || field instanceof HTMLTextAreaElement) {
+      field.value = "";
+    }
+    if (field instanceof HTMLSelectElement) {
+      field.value = "machine draft";
+    }
+  });
+  renderTextFieldCompletion({});
+}
+
+function getTextPassageControls() {
+  return [
+    ...textPassageFields.realm,
+    ...textPassageFields.oppositions,
+    textPassageFields.oppositionsCustom,
+    ...textPassageFields.referent,
+    textPassageFields.referentCustom,
+    textPassageFields.actionsUsedWithIt,
+    textPassageFields.id,
+    textPassageFields.concept,
+    textPassageFields.mainWord,
+    textPassageFields.matchedWords,
+    textPassageFields.reviewStatus,
+    textPassageFields.adjectivesDescriptions,
+    textPassageFields.metaphors,
+    textPassageFields.theme,
+    textPassageFields.relatedTheme,
+    textPassageFields.reviewNote,
+    ...textFieldCompletionInputs
+  ].filter(Boolean);
+}
+
+function renderTextFieldCompletion(completion) {
+  textFieldCompletionInputs.forEach((input) => {
+    input.checked = Boolean(completion[input.dataset.textCompleteField]);
+  });
+}
+
+function getTextFieldCompletion() {
+  return Array.from(textFieldCompletionInputs).reduce((completion, input) => {
+    if (input.checked) {
+      completion[input.dataset.textCompleteField] = true;
+    }
+    return completion;
+  }, {});
+}
+
+function hasTextPassageMetadata(draft) {
+  return Boolean(draft && isPlainObject(draft.passageAnnotations) && Object.keys(draft.passageAnnotations).length);
+}
+
+function hasMeaningfulTextPassageMetadata(metadata) {
+  return Boolean(
+    valueToLines(metadata.realm).length ||
+    valueToLines(metadata.oppositions).length ||
+    valueToLines(metadata.meaning).length ||
+    valueToLines(metadata.actionsUsedWithIt).length ||
+    metadata.id ||
+    metadata.concept ||
+    valueToLines(metadata.mainWord).length ||
+    valueToLines(metadata.matchedWords).length ||
+    metadata.reviewStatus !== "machine draft" ||
+    valueToLines(metadata.adjectivesDescriptions).length ||
+    valueToLines(metadata.metaphors).length ||
+    valueToLines(metadata.theme).length ||
+    valueToLines(metadata.relatedTheme).length ||
+    valueToLines(metadata.reviewNote).length ||
+    Object.keys(metadata.completion || {}).length
+  );
 }
 
 function findTranslationRecord(file, sourceRecord, translationRecords) {
@@ -654,6 +852,10 @@ function normalizeLocation(location) {
 
 function cloneRecords(records) {
   return records.map((record) => ({ ...record }));
+}
+
+function isPlainObject(value) {
+  return Boolean(value && typeof value === "object" && !Array.isArray(value));
 }
 
 function parseEditableRecords(raw) {

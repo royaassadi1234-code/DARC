@@ -171,6 +171,231 @@
                   <input id="text-translation-location" type="text">
                 </label>
               </div>
+              <div class="annotation-side-fields annotation-focus-fields">
+                <fieldset class="annotation-field realm-choice-group" id="text-field-realm">
+                  <legend>Realm</legend>
+                  <label class="field-complete">
+                    <input type="checkbox" data-text-complete-field="realm">
+                    <span>Realm</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="text-realm" value="gētīy">
+                    <span>gētīy</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="text-realm" value="mēnōy">
+                    <span>mēnōy</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="text-realm" value="both">
+                    <span>both</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="text-realm" value="NA">
+                    <span>NA</span>
+                  </label>
+                </fieldset>
+                <fieldset class="annotation-field option-choice-group" id="text-field-oppositions">
+                  <legend>Oppositions</legend>
+                  <label class="field-complete">
+                    <input type="checkbox" data-text-complete-field="oppositions">
+                    <span>Oppositions</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="text-oppositions" value="Ohrmazd">
+                    <span>Ohrmazd</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="text-oppositions" value="yazdān">
+                    <span>yazdān</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="text-oppositions" value="Mazdēsnān">
+                    <span>Mazdēsnān</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="text-oppositions" value="Manuščihr">
+                    <span>Manuščihr</span>
+                  </label>
+                  <button class="option-other-toggle" type="button" aria-expanded="false" aria-controls="text-oppositions-other-panel">Other</button>
+                  <div class="option-custom-popover hidden" id="text-oppositions-other-panel">
+                    <label class="option-custom-field" for="text-field-oppositions-custom">
+                      <span>Other oppositions</span>
+                      <textarea id="text-field-oppositions-custom" rows="3" placeholder="Add one or more values"></textarea>
+                    </label>
+                  </div>
+                </fieldset>
+                <fieldset class="annotation-field option-choice-group" id="text-field-referent">
+                  <legend>Referent</legend>
+                  <label class="field-complete">
+                    <input type="checkbox" data-text-complete-field="referent">
+                    <span>Referent</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="text-referent" value="Ahreman">
+                    <span>Ahreman</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="text-referent" value="dēw">
+                    <span>dēw</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="text-referent" value="Muslims">
+                    <span>Muslims</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="text-referent" value="Wickedness">
+                    <span>Wickedness</span>
+                  </label>
+                  <button class="option-other-toggle" type="button" aria-expanded="false" aria-controls="text-referent-other-panel">Other</button>
+                  <div class="option-custom-popover hidden" id="text-referent-other-panel">
+                    <label class="option-custom-field" for="text-field-referent-custom">
+                      <span>Other referents</span>
+                      <textarea id="text-field-referent-custom" rows="3" placeholder="Add one or more values"></textarea>
+                    </label>
+                  </div>
+                </fieldset>
+              </div>
+              <div class="annotation-list-fields">
+                <details class="annotation-field-card">
+                  <summary>
+                    <label class="field-complete">
+                      <input type="checkbox" data-text-complete-field="action">
+                      <span>Action</span>
+                    </label>
+                  </summary>
+                  <label class="annotation-field" for="text-field-actionsUsedWithIt">
+                    <span>Action</span>
+                    <textarea id="text-field-actionsUsedWithIt" rows="4"></textarea>
+                  </label>
+                </details>
+                <details class="annotation-field-card">
+                  <summary>
+                    <label class="field-complete">
+                      <input type="checkbox" data-text-complete-field="id">
+                      <span>ID</span>
+                    </label>
+                  </summary>
+                  <label class="annotation-field" for="text-field-id">
+                    <span>ID</span>
+                    <input id="text-field-id" type="text">
+                  </label>
+                </details>
+                <details class="annotation-field-card">
+                  <summary>
+                    <label class="field-complete">
+                      <input type="checkbox" data-text-complete-field="concept">
+                      <span>Concept</span>
+                    </label>
+                  </summary>
+                  <label class="annotation-field" for="text-field-concept">
+                    <span>Concept</span>
+                    <input id="text-field-concept" type="text">
+                  </label>
+                </details>
+                <details class="annotation-field-card">
+                  <summary>
+                    <label class="field-complete">
+                      <input type="checkbox" data-text-complete-field="mainWord">
+                      <span>Main word</span>
+                    </label>
+                  </summary>
+                  <label class="annotation-field" for="text-field-mainWord">
+                    <span>Main word</span>
+                    <textarea id="text-field-mainWord" rows="2"></textarea>
+                  </label>
+                </details>
+                <details class="annotation-field-card">
+                  <summary>
+                    <label class="field-complete">
+                      <input type="checkbox" data-text-complete-field="matchedWords">
+                      <span>Matched words</span>
+                    </label>
+                  </summary>
+                  <label class="annotation-field" for="text-field-matchedWords">
+                    <span>Matched words</span>
+                    <textarea id="text-field-matchedWords" rows="3"></textarea>
+                  </label>
+                </details>
+                <details class="annotation-field-card">
+                  <summary>
+                    <label class="field-complete">
+                      <input type="checkbox" data-text-complete-field="reviewStatus">
+                      <span>Review status</span>
+                    </label>
+                  </summary>
+                  <label class="annotation-field" for="text-field-reviewStatus">
+                    <span>Review status</span>
+                    <select id="text-field-reviewStatus">
+                      <option value="machine draft">Machine draft</option>
+                      <option value="user seed">User seed</option>
+                      <option value="needs review">Needs review</option>
+                      <option value="reviewed">Reviewed</option>
+                      <option value="approved">Approved</option>
+                    </select>
+                  </label>
+                </details>
+                <details class="annotation-field-card">
+                  <summary>
+                    <label class="field-complete">
+                      <input type="checkbox" data-text-complete-field="adjectivesDescriptions">
+                      <span>Adjectives / descriptions</span>
+                    </label>
+                  </summary>
+                  <label class="annotation-field" for="text-field-adjectivesDescriptions">
+                    <span>Adjectives / descriptions</span>
+                    <textarea id="text-field-adjectivesDescriptions" rows="4"></textarea>
+                  </label>
+                </details>
+                <details class="annotation-field-card">
+                  <summary>
+                    <label class="field-complete">
+                      <input type="checkbox" data-text-complete-field="metaphors">
+                      <span>Metaphors</span>
+                    </label>
+                  </summary>
+                  <label class="annotation-field" for="text-field-metaphors">
+                    <span>Metaphors</span>
+                    <textarea id="text-field-metaphors" rows="4"></textarea>
+                  </label>
+                </details>
+                <details class="annotation-field-card">
+                  <summary>
+                    <label class="field-complete">
+                      <input type="checkbox" data-text-complete-field="theme">
+                      <span>Theme</span>
+                    </label>
+                  </summary>
+                  <label class="annotation-field" for="text-field-theme">
+                    <span>Theme</span>
+                    <textarea id="text-field-theme" rows="4"></textarea>
+                  </label>
+                </details>
+                <details class="annotation-field-card">
+                  <summary>
+                    <label class="field-complete">
+                      <input type="checkbox" data-text-complete-field="relatedTheme">
+                      <span>Related theme</span>
+                    </label>
+                  </summary>
+                  <label class="annotation-field" for="text-field-relatedTheme">
+                    <span>Related theme</span>
+                    <textarea id="text-field-relatedTheme" rows="4"></textarea>
+                  </label>
+                </details>
+                <details class="annotation-field-card">
+                  <summary>
+                    <label class="field-complete">
+                      <input type="checkbox" data-text-complete-field="reviewNote">
+                      <span>Review note</span>
+                    </label>
+                  </summary>
+                  <label class="annotation-field wide" for="text-field-reviewNote">
+                    <span>Review note</span>
+                    <textarea id="text-field-reviewNote" rows="5"></textarea>
+                  </label>
+                </details>
+              </div>
             </section>
           </div>
 

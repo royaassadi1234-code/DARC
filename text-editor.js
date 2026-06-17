@@ -200,6 +200,17 @@ function bindTextEditorEvents() {
     });
   });
 
+  document.querySelectorAll(".text-annotation-realm, .text-annotation-oppositions, .text-annotation-referent").forEach((group) => {
+    group.classList.add("text-annotation-choice-collapsed");
+    group.addEventListener("click", (event) => {
+      const isCollapsed = group.classList.contains("text-annotation-choice-collapsed");
+      const toggleTarget = event.target.closest("legend, .field-complete");
+      if (isCollapsed || toggleTarget) {
+        group.classList.toggle("text-annotation-choice-collapsed", !isCollapsed);
+      }
+    });
+  });
+
   document.addEventListener("click", (event) => {
     if (!event.target.closest(".option-choice-group")) {
       closeOptionPopovers();

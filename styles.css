@@ -2058,6 +2058,21 @@ h1 {
   border-radius: 8px;
   padding: 12px;
   background: #ffffff;
+  cursor: pointer;
+}
+
+.text-annotation-choice-collapsed label:not(.field-complete),
+.text-annotation-choice-collapsed .option-other-toggle,
+.text-annotation-choice-collapsed .option-custom-popover {
+  display: none;
+}
+
+.text-annotation-choice-collapsed {
+  gap: 0;
+}
+
+.text-annotation-choice-collapsed legend {
+  margin-right: auto;
 }
 
 .passage-edit-card {

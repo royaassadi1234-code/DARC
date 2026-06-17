@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DARC (Drūz-Ahreman Research Corpus) | Text Editor</title>
-    <link rel="stylesheet" href="styles.css?v=20260617-edit-controls">
+    <link rel="stylesheet" href="styles.css?v=20260617-drop-text">
     <link rel="icon" type="image/png" href="logos/druz-logo-fire-altar-resisting-smoke-seal-no-branches.png">
   </head>
   <body>
@@ -125,24 +125,12 @@
               <a class="copy-button secondary" id="text-editor-cab" href="https://cab.geschkult.fu-berlin.de/" target="_blank" rel="noopener">CAB3.0</a>
               <button class="copy-button" id="text-editor-logout" type="button">Logout</button>
               <div class="text-editor-horizontal-list hidden" id="text-editor-list"></div>
-            </div>
-            <section class="annotation-editor text-editor-panel" aria-label="Current text file">
-              <div class="text-editor-simple-header">
-                <h2 id="text-editor-title">No text selected</h2>
-                <div class="annotation-actions">
-                  <button class="copy-button" id="text-editor-save" type="button">Save</button>
-                  <button class="copy-button" id="text-editor-add-text-toggle" type="button" aria-expanded="false" aria-controls="text-editor-add-text-panel">Add text</button>
-                  <button class="copy-button" id="text-editor-annotation-options-toggle" type="button" aria-expanded="false" aria-controls="text-editor-annotation-options-panel">Annotation options</button>
-                  <button class="copy-button editor-hidden-control" id="text-editor-export" type="button">Export file</button>
-                  <button class="copy-button editor-hidden-control" id="text-editor-export-all" type="button">Export all</button>
-                  <label class="copy-button file-button editor-hidden-control" for="text-editor-import">Import drafts</label>
-                  <input id="text-editor-import" type="file" accept="application/json,.json">
-                  <button class="copy-button editor-hidden-control" id="text-editor-reset" type="button">Reset file</button>
-                  <button class="copy-button editor-hidden-control" id="text-editor-reset-all" type="button">Reset all</button>
-                </div>
-              </div>
-
+              <button class="copy-button text-editor-list-add" id="text-editor-add-text-toggle" type="button" aria-expanded="false" aria-controls="text-editor-add-text-panel">Add text</button>
               <div class="text-editor-add-text-panel hidden" id="text-editor-add-text-panel">
+                <div class="text-editor-dropbox" id="text-editor-dropbox">
+                  <strong>Drop text file here</strong>
+                  <span>Drop one file for text, or two files for text and translation.</span>
+                </div>
                 <label class="annotation-field" for="text-editor-new-title">
                   <span>Text title</span>
                   <input id="text-editor-new-title" type="text" placeholder="New text title">
@@ -160,6 +148,21 @@
                   <textarea id="text-editor-new-translation" rows="8" placeholder="1.1 Translation"></textarea>
                 </label>
                 <button class="copy-button" id="text-editor-create-text" type="button">Create text</button>
+              </div>
+            </div>
+            <section class="annotation-editor text-editor-panel" aria-label="Current text file">
+              <div class="text-editor-simple-header">
+                <h2 id="text-editor-title">No text selected</h2>
+                <div class="annotation-actions">
+                  <button class="copy-button" id="text-editor-save" type="button">Save</button>
+                  <button class="copy-button" id="text-editor-annotation-options-toggle" type="button" aria-expanded="false" aria-controls="text-editor-annotation-options-panel">Annotation options</button>
+                  <button class="copy-button editor-hidden-control" id="text-editor-export" type="button">Export file</button>
+                  <button class="copy-button editor-hidden-control" id="text-editor-export-all" type="button">Export all</button>
+                  <label class="copy-button file-button editor-hidden-control" for="text-editor-import">Import drafts</label>
+                  <input id="text-editor-import" type="file" accept="application/json,.json">
+                  <button class="copy-button editor-hidden-control" id="text-editor-reset" type="button">Reset file</button>
+                  <button class="copy-button editor-hidden-control" id="text-editor-reset-all" type="button">Reset all</button>
+                </div>
               </div>
 
               <div class="text-editor-meta editor-hidden-control" id="text-editor-meta"></div>
@@ -777,7 +780,7 @@
       </section>
     </main>
 
-    <script src="text-editor.js?v=20260617-edit-controls"></script>
+    <script src="text-editor.js?v=20260617-drop-text"></script>
     <script src="copy-tools.js"></script>
   </body>
 </html>

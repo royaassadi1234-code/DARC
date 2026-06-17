@@ -73,6 +73,7 @@ const saveButton = document.querySelector("#text-editor-save");
 const addTextToggleButton = document.querySelector("#text-editor-add-text-toggle");
 const annotationOptionsToggleButton = document.querySelector("#text-editor-annotation-options-toggle");
 const addTextPanelEl = document.querySelector("#text-editor-add-text-panel");
+const addTextDropboxEl = document.querySelector("#text-editor-dropbox");
 const newTextTitleEl = document.querySelector("#text-editor-new-title");
 const newTextSiglumEl = document.querySelector("#text-editor-new-siglum");
 const newTextSourceEl = document.querySelector("#text-editor-new-source");
@@ -362,6 +363,18 @@ function bindTextEditorEvents() {
     annotationOptionsToggleButton.setAttribute("aria-expanded", hidden ? "false" : "true");
   });
   createTextButton.addEventListener("click", createCustomText);
+  ["dragenter", "dragover"].forEach((eventName) => {
+    addTextDropboxEl.addEventListener(eventName, (event) => {
+      event.preventDefault();
+      addTextDropboxEl.classList.add("drag-over");
+    });
+  });
+  ["dragleave", "drop"].forEach((eventName) => {
+    addTextDropboxEl.addEventListener(eventName, () => {
+      addTextDropboxEl.classList.remove("drag-over");
+    });
+  });
+  addTextDropboxEl.addEventListener("drop", handleTextDrop);
   customAnnotationAddButton.addEventListener("click", addCustomAnnotationOption);
   annotationOptionsListEl.addEventListener("click", handleAnnotationOptionListClick);
   customAnnotationFieldsEl.addEventListener("input", () => {
@@ -723,6 +736,48 @@ function createCustomText() {
   renderTextEditorList();
   renderCurrentFile();
   statusEl.textContent = `Created ${siglum}`;
+}
+
+async function handleTextDrop(event) {
+  event.preventDefault();
+  const files = Array.from(event.dataTransfer?.files || []).filter((file) => file.type.startsWith("text/") || /\.(txt|tsv|csv)$/i.test(file.name));
+  if (!files.length) {
+    statusEl.textContent = "Drop a text file to add a text";
+    return;
+  }
+
+  try {
+    const [sourceFile, translationFile] = files;
+    newTextSourceEl.value = await sourceFile.text();
+    if (translationFile) {
+      newTextTranslationEl.value = await translationFile.text();
+    }
+    if (!newTextTitleEl.value.trim()) {
+      newTextTitleEl.value = getDroppedTextTitle(sourceFile.name);
+    }
+    if (!newTextSiglumEl.value.trim()) {
+      newTextSiglumEl.value = getDroppedTextSiglum(sourceFile.name);
+    }
+    statusEl.textContent = translationFile
+      ? `Loaded ${sourceFile.name} and ${translationFile.name}`
+      : `Loaded ${sourceFile.name}`;
+  } catch (error) {
+    statusEl.textContent = "Dropped text could not be read";
+    console.error(error);
+  }
+}
+
+function getDroppedTextTitle(filename) {
+  return String(filename || "New text")
+    .replace(/\.[^.]+$/, "")
+    .replace(/[-_]+/g, " ")
+    .trim() || "New text";
+}
+
+function getDroppedTextSiglum(filename) {
+  const base = String(filename || "TXT").replace(/\.[^.]+$/, "").trim();
+  const firstPart = base.split(/[-_\s]+/)[0] || base;
+  return firstPart.replace(/[^A-Za-z0-9]/g, "").slice(0, 12) || "TXT";
 }
 
 function makeCustomTextId(siglum, title) {

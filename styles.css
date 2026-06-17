@@ -1891,11 +1891,16 @@ h1 {
 .text-editor-horizontal-list {
   display: flex;
   gap: 8px;
-  grid-column: 1 / -1;
+  grid-column: 1 / -2;
   min-width: 0;
   overflow-x: auto;
   padding: 2px 2px 6px;
   scrollbar-width: thin;
+}
+
+.text-editor-list-add {
+  grid-column: -2 / -1;
+  align-self: start;
 }
 
 .text-editor-panel {
@@ -1917,6 +1922,7 @@ h1 {
 .text-editor-add-text-panel {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(120px, 180px) auto;
+  grid-column: 1 / -1;
   gap: 10px;
   align-items: end;
   border: 1px solid var(--line);
@@ -1935,6 +1941,31 @@ h1 {
 
 .text-editor-add-text-panel textarea {
   min-height: 130px;
+}
+
+.text-editor-dropbox {
+  display: grid;
+  grid-column: 1 / -1;
+  gap: 4px;
+  min-height: 92px;
+  place-items: center;
+  border: 2px dashed #c8d0d9;
+  border-radius: 8px;
+  padding: 16px;
+  color: var(--accent-strong);
+  background: #f7fafb;
+  text-align: center;
+}
+
+.text-editor-dropbox span {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.text-editor-dropbox.drag-over {
+  border-color: var(--accent);
+  background: #eef4f7;
 }
 
 .text-editor-horizontal-list .annotation-list-item {

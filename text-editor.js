@@ -155,8 +155,8 @@ function bindTextEditorEvents() {
   searchInput.addEventListener("input", () => {
     editorState.query = searchInput.value.trim().toLowerCase();
     moveToFirstTextSearchMatch();
-    listEl.classList.remove("hidden");
-    fileToggleButton.setAttribute("aria-expanded", "true");
+    listEl.classList.toggle("hidden", !editorState.query);
+    fileToggleButton.setAttribute("aria-expanded", editorState.query ? "true" : "false");
     renderTextEditorList();
     renderCurrentFile();
   });
@@ -263,6 +263,10 @@ function bindTextEditorEvents() {
     saveDraft({ quiet: true });
     editorState.selectedId = button.dataset.textId;
     editorState.passageIndex = 0;
+    if (!editorState.query) {
+      listEl.classList.add("hidden");
+      fileToggleButton.setAttribute("aria-expanded", "false");
+    }
     renderTextEditorList();
     renderCurrentFile();
   });
@@ -352,8 +356,8 @@ async function unlockTextEditor() {
   fillAllTextPassageIdsFromLocations();
   persistDrafts();
   renderTextEditorList();
-  listEl.classList.remove("hidden");
-  fileToggleButton.setAttribute("aria-expanded", "true");
+  listEl.classList.add("hidden");
+  fileToggleButton.setAttribute("aria-expanded", "false");
   renderCurrentFile();
   openToolFromHash();
 }

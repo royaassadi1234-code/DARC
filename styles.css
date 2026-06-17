@@ -1850,7 +1850,7 @@ h1 {
 
 .text-editor-menu-bar {
   display: grid;
-  grid-template-columns: auto minmax(260px, 380px) minmax(0, 1fr) auto auto;
+  grid-template-columns: auto minmax(260px, 380px) minmax(0, 1fr) auto auto auto;
   gap: 10px;
   align-items: center;
   border: 1px solid var(--line);
@@ -1871,11 +1871,16 @@ h1 {
 }
 
 .text-editor-menu-bar #text-editor-logout {
-  grid-column: 5;
+  grid-column: 6;
 }
 
 .text-editor-menu-bar #text-editor-mpcd-dictionary {
   grid-column: 4;
+  width: max-content;
+}
+
+.text-editor-menu-bar #text-editor-cab {
+  grid-column: 5;
   width: max-content;
 }
 

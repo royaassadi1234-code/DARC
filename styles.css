@@ -2075,6 +2075,12 @@ h1 {
   margin-right: auto;
 }
 
+.text-annotation-realm > legend,
+.text-annotation-oppositions > legend,
+.text-annotation-referent > legend {
+  display: none;
+}
+
 .passage-edit-card {
   display: grid;
   gap: 10px;

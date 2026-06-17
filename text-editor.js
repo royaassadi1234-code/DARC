@@ -4,6 +4,8 @@ const REVIEW_LOGIN = "reviewer";
 const REVIEW_PASSWORD = "druz-review";
 const TEXT_EDITOR_SESSION_KEY = "druzTextEditorLoggedIn";
 const TEXT_EDITOR_DRAFT_KEY = "druzTextEditorDrafts";
+const TEXT_EDITOR_CUSTOM_TEXTS_KEY = "druzTextEditorCustomTexts";
+const TEXT_EDITOR_ANNOTATION_OPTIONS_KEY = "druzTextEditorAnnotationOptions";
 const ANNOTATION_FILE = "druz-concept-annotations.json";
 const ANNOTATION_DRAFT_KEY = "druzAnnotationReviewDraft";
 const ANNOTATION_COMPLETION_KEY = "druzAnnotationFieldCompletion";
@@ -20,6 +22,11 @@ const TEXT_EDITOR_FILES = [
 const editorState = {
   files: [],
   drafts: {},
+  customTexts: [],
+  annotationOptions: {
+    hidden: [],
+    custom: []
+  },
   selectedId: "dd",
   query: "",
   passageIndex: 0
@@ -63,6 +70,19 @@ const passagePositionEl = document.querySelector("#text-passage-position");
 const passagePrevButton = document.querySelector("#text-passage-prev");
 const passageNextButton = document.querySelector("#text-passage-next");
 const saveButton = document.querySelector("#text-editor-save");
+const addTextToggleButton = document.querySelector("#text-editor-add-text-toggle");
+const annotationOptionsToggleButton = document.querySelector("#text-editor-annotation-options-toggle");
+const addTextPanelEl = document.querySelector("#text-editor-add-text-panel");
+const newTextTitleEl = document.querySelector("#text-editor-new-title");
+const newTextSiglumEl = document.querySelector("#text-editor-new-siglum");
+const newTextSourceEl = document.querySelector("#text-editor-new-source");
+const newTextTranslationEl = document.querySelector("#text-editor-new-translation");
+const createTextButton = document.querySelector("#text-editor-create-text");
+const annotationOptionsPanelEl = document.querySelector("#text-editor-annotation-options-panel");
+const customAnnotationNameEl = document.querySelector("#text-custom-annotation-name");
+const customAnnotationAddButton = document.querySelector("#text-custom-annotation-add");
+const annotationOptionsListEl = document.querySelector("#text-annotation-options-list");
+const customAnnotationFieldsEl = document.querySelector("#text-custom-annotation-fields");
 const exportButton = document.querySelector("#text-editor-export");
 const exportAllButton = document.querySelector("#text-editor-export-all");
 const importInput = document.querySelector("#text-editor-import");
@@ -106,6 +126,25 @@ const textPassageFields = {
   relatedTheme: document.querySelector("#text-field-relatedTheme"),
   reviewNote: document.querySelector("#text-field-reviewNote")
 };
+
+const TEXT_ANNOTATION_OPTION_CARDS = [
+  { key: "reviewNote", label: "Review note", selector: ".text-annotation-review-note" },
+  { key: "theme", label: "Theme", selector: ".text-annotation-theme" },
+  { key: "relatedTheme", label: "Related theme", selector: ".text-annotation-related-theme" },
+  { key: "concept", label: "Concept", selector: ".text-annotation-concept" },
+  { key: "mainWord", label: "Main word", selector: ".text-annotation-main-word" },
+  { key: "matchedWords", label: "Matched words", selector: ".text-annotation-matched-words" },
+  { key: "realm", label: "Realm", selector: ".text-annotation-realm" },
+  { key: "oppositions", label: "Opposition", selector: ".text-annotation-oppositions" },
+  { key: "actionsUsedWithIt", label: "Action", selector: ".text-annotation-action" },
+  { key: "referent", label: "Referent", selector: ".text-annotation-referent" },
+  { key: "relationship", label: "Relationship", selector: ".text-annotation-relationship" },
+  { key: "similarity", label: "Similarity", selector: ".text-annotation-similarity" },
+  { key: "difference", label: "Difference", selector: ".text-annotation-difference" },
+  { key: "adjectivesDescriptions", label: "Adjectives / descriptions", selector: ".text-annotation-adjectives" },
+  { key: "metaphors", label: "Metaphors", selector: ".text-annotation-metaphors" },
+  { key: "id", label: "ID", selector: ".text-annotation-id" }
+];
 
 const annotationFields = {
   sourceParagraph: document.querySelector("#field-sourceParagraph"),
@@ -314,6 +353,29 @@ function bindTextEditorEvents() {
   });
 
   saveButton.addEventListener("click", () => saveDraft());
+  addTextToggleButton.addEventListener("click", () => {
+    const hidden = addTextPanelEl.classList.toggle("hidden");
+    addTextToggleButton.setAttribute("aria-expanded", hidden ? "false" : "true");
+  });
+  annotationOptionsToggleButton.addEventListener("click", () => {
+    const hidden = annotationOptionsPanelEl.classList.toggle("hidden");
+    annotationOptionsToggleButton.setAttribute("aria-expanded", hidden ? "false" : "true");
+  });
+  createTextButton.addEventListener("click", createCustomText);
+  customAnnotationAddButton.addEventListener("click", addCustomAnnotationOption);
+  annotationOptionsListEl.addEventListener("click", handleAnnotationOptionListClick);
+  customAnnotationFieldsEl.addEventListener("input", () => {
+    const file = getSelectedFile();
+    if (file) {
+      statusEl.textContent = `${file.siglum} passage has unsaved metadata`;
+    }
+  });
+  customAnnotationFieldsEl.addEventListener("change", () => {
+    const file = getSelectedFile();
+    if (file) {
+      statusEl.textContent = `${file.siglum} passage has unsaved metadata`;
+    }
+  });
   exportButton.addEventListener("click", exportCurrentFile);
   exportAllButton.addEventListener("click", exportAllFiles);
   importInput.addEventListener("change", importDrafts);
@@ -352,11 +414,14 @@ async function unlockTextEditor() {
   workspaceEl.classList.remove("hidden");
   statusEl.textContent = "Loading texts...";
   editorState.drafts = loadDrafts();
+  editorState.customTexts = loadCustomTexts();
+  editorState.annotationOptions = loadTextAnnotationOptions();
   annotationState.completion = loadAnnotationCompletion();
   await Promise.all([loadWorkspaceTexts(), loadAnnotations()]);
   fillAllTextPassageIdsFromLocations();
   persistDrafts();
   renderTextEditorList();
+  renderTextAnnotationOptions();
   listEl.classList.add("hidden");
   fileToggleButton.setAttribute("aria-expanded", "false");
   renderCurrentFile();
@@ -402,9 +467,154 @@ function closeOptionPopovers() {
   });
 }
 
+function renderTextAnnotationOptions() {
+  const hidden = new Set(editorState.annotationOptions.hidden || []);
+  TEXT_ANNOTATION_OPTION_CARDS.forEach((option) => {
+    const card = document.querySelector(option.selector);
+    if (card) {
+      card.classList.toggle("hidden", hidden.has(option.key));
+    }
+  });
+
+  customAnnotationFieldsEl.innerHTML = (editorState.annotationOptions.custom || []).map((option) => `
+    <details class="annotation-field-card text-annotation-item text-custom-annotation-item" data-custom-annotation-key="${escapeHtml(option.key)}">
+      <summary>
+        <label class="field-complete">
+          <input type="checkbox" data-text-custom-complete-field="${escapeHtml(option.key)}">
+          <span>${escapeHtml(option.label)}</span>
+        </label>
+      </summary>
+      <label class="annotation-field" for="text-custom-field-${escapeHtml(option.key)}">
+        <span>${escapeHtml(option.label)}</span>
+        <textarea id="text-custom-field-${escapeHtml(option.key)}" data-text-custom-field="${escapeHtml(option.key)}" rows="4"></textarea>
+      </label>
+    </details>
+  `).join("");
+
+  annotationOptionsListEl.innerHTML = [
+    ...TEXT_ANNOTATION_OPTION_CARDS.map((option) => {
+      const isHidden = hidden.has(option.key);
+      return `
+        <div class="text-annotation-option-row">
+          <span>${escapeHtml(option.label)}</span>
+          <button class="copy-button secondary" type="button" data-annotation-option-key="${escapeHtml(option.key)}" data-annotation-option-action="${isHidden ? "restore" : "hide"}">${isHidden ? "Restore" : "Delete"}</button>
+        </div>
+      `;
+    }),
+    ...(editorState.annotationOptions.custom || []).map((option) => `
+      <div class="text-annotation-option-row">
+        <span>${escapeHtml(option.label)}</span>
+        <button class="copy-button secondary" type="button" data-custom-annotation-key="${escapeHtml(option.key)}" data-annotation-option-action="delete-custom">Delete</button>
+      </div>
+    `)
+  ].join("");
+}
+
+function addCustomAnnotationOption() {
+  const label = customAnnotationNameEl.value.trim();
+  if (!label) {
+    statusEl.textContent = "Add an annotation option name first";
+    return;
+  }
+  const key = makeCustomAnnotationKey(label);
+  editorState.annotationOptions.custom.push({ key, label });
+  customAnnotationNameEl.value = "";
+  persistTextAnnotationOptions();
+  renderTextAnnotationOptions();
+  const file = getSelectedFile();
+  if (file) {
+    renderTextPassageMetadata(file, getSourceRecords(file)[editorState.passageIndex]);
+  }
+  statusEl.textContent = `Added annotation option ${label}`;
+}
+
+function handleAnnotationOptionListClick(event) {
+  const button = event.target.closest("[data-annotation-option-action]");
+  if (!button) {
+    return;
+  }
+  const action = button.dataset.annotationOptionAction;
+  if (action === "hide" || action === "restore") {
+    const key = button.dataset.annotationOptionKey;
+    const hidden = new Set(editorState.annotationOptions.hidden || []);
+    if (action === "hide") {
+      hidden.add(key);
+      removeBuiltInAnnotationValue(key);
+    } else {
+      hidden.delete(key);
+    }
+    editorState.annotationOptions.hidden = Array.from(hidden);
+  }
+  if (action === "delete-custom") {
+    const key = button.dataset.customAnnotationKey;
+    editorState.annotationOptions.custom = (editorState.annotationOptions.custom || []).filter((option) => option.key !== key);
+    removeCustomAnnotationValue(key);
+  }
+  persistTextAnnotationOptions();
+  renderTextAnnotationOptions();
+  renderCurrentFile();
+}
+
+function makeCustomAnnotationKey(label) {
+  const base = label.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || `option-${Date.now()}`;
+  let key = `custom-${base}`;
+  let suffix = 2;
+  const existing = new Set([
+    ...TEXT_ANNOTATION_OPTION_CARDS.map((option) => option.key),
+    ...(editorState.annotationOptions.custom || []).map((option) => option.key)
+  ]);
+  while (existing.has(key)) {
+    key = `custom-${base}-${suffix}`;
+    suffix += 1;
+  }
+  return key;
+}
+
+function removeCustomAnnotationValue(key) {
+  editorState.files.forEach((file) => {
+    const draft = editorState.drafts[file.id];
+    if (!isPlainObject(draft?.passageAnnotations)) {
+      return;
+    }
+    Object.values(draft.passageAnnotations).forEach((metadata) => {
+      if (isPlainObject(metadata.customFields)) {
+        delete metadata.customFields[key];
+      }
+      if (isPlainObject(metadata.completion)) {
+        delete metadata.completion[key];
+      }
+    });
+  });
+  persistDrafts();
+}
+
+function removeBuiltInAnnotationValue(key) {
+  editorState.files.forEach((file) => {
+    const draft = editorState.drafts[file.id];
+    if (!isPlainObject(draft?.passageAnnotations)) {
+      return;
+    }
+    Object.values(draft.passageAnnotations).forEach((metadata) => {
+      removeTextAnnotationValueFromMetadata(metadata, key);
+    });
+  });
+  persistDrafts();
+}
+
+function removeTextAnnotationValueFromMetadata(metadata, key) {
+  const property = key === "referent" ? "meaning" : key;
+  delete metadata[property];
+  if (isPlainObject(metadata.completion)) {
+    delete metadata.completion[key];
+  }
+}
+
 async function loadWorkspaceTexts() {
   const loaded = await Promise.all(TEXT_EDITOR_FILES.map(loadWorkspaceText));
-  editorState.files = loaded.filter(Boolean);
+  editorState.files = [
+    ...loaded.filter(Boolean),
+    ...editorState.customTexts.map(buildCustomTextFile)
+  ];
   const selectedStillAvailable = editorState.files.some((file) => file.id === editorState.selectedId);
   if (!selectedStillAvailable) {
     editorState.selectedId = editorState.files[0]?.id || "";
@@ -441,6 +651,89 @@ async function fetchTextFile(file, optional = false) {
     throw new Error(`Could not load ${file}`);
   }
   return response.text();
+}
+
+function buildCustomTextFile(config) {
+  const sourceRecords = cloneRecords(config.sourceRecords || []);
+  const translationRecords = cloneRecords(config.translationRecords || []);
+  return {
+    id: config.id,
+    siglum: config.siglum,
+    title: config.title,
+    file: config.file || `${config.siglum}.txt`,
+    translationFile: config.translationFile || `${config.siglum}-en.txt`,
+    kind: config.kind || "Custom text",
+    original: serializeEditableRecords(sourceRecords),
+    translationOriginal: serializeEditableRecords(translationRecords),
+    sourceRecords,
+    translationRecords,
+    custom: true
+  };
+}
+
+function createCustomText() {
+  const title = newTextTitleEl.value.trim();
+  const siglum = newTextSiglumEl.value.trim();
+  const sourceRaw = newTextSourceEl.value.trim();
+  const translationRaw = newTextTranslationEl.value.trim();
+  if (!title || !siglum || !sourceRaw) {
+    statusEl.textContent = "Add a title, short title, and text before creating a text";
+    return;
+  }
+
+  saveDraft({ quiet: true });
+  const id = makeCustomTextId(siglum, title);
+  if (editorState.files.some((file) => file.id === id)) {
+    statusEl.textContent = "A text with this short title already exists";
+    return;
+  }
+
+  const sourceRecords = parseEditableRecords(sourceRaw);
+  const translationRecords = translationRaw ? parseEditableRecords(translationRaw) : sourceRecords.map((record) => ({
+    location: record.location,
+    text: "",
+    format: record.format || "section"
+  }));
+  const config = {
+    id,
+    siglum,
+    title,
+    file: `${siglum}.txt`,
+    translationFile: `${siglum}-en.txt`,
+    kind: "Custom text",
+    sourceRecords,
+    translationRecords
+  };
+  editorState.customTexts.push(config);
+  persistCustomTexts();
+  const file = buildCustomTextFile(config);
+  editorState.files.push(file);
+  editorState.selectedId = id;
+  editorState.passageIndex = 0;
+  editorState.query = "";
+  searchInput.value = "";
+  addTextPanelEl.classList.add("hidden");
+  addTextToggleButton.setAttribute("aria-expanded", "false");
+  newTextTitleEl.value = "";
+  newTextSiglumEl.value = "";
+  newTextSourceEl.value = "";
+  newTextTranslationEl.value = "";
+  ensureStructuredDraft(file);
+  persistDrafts();
+  renderTextEditorList();
+  renderCurrentFile();
+  statusEl.textContent = `Created ${siglum}`;
+}
+
+function makeCustomTextId(siglum, title) {
+  const base = `${siglum}-${title}`.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || `custom-${Date.now()}`;
+  let id = `custom-${base}`;
+  let suffix = 2;
+  while (editorState.files.some((file) => file.id === id) || editorState.customTexts.some((file) => file.id === id)) {
+    id = `custom-${base}-${suffix}`;
+    suffix += 1;
+  }
+  return id;
 }
 
 function renderTextEditorList() {
@@ -783,6 +1076,8 @@ function exportAllFiles() {
   persistDrafts();
   const payload = {
     exportedAt: new Date().toISOString(),
+    customTexts: editorState.customTexts,
+    annotationOptions: editorState.annotationOptions,
     files: editorState.files.map((file) => ({
       id: file.id,
       siglum: file.siglum,
@@ -790,6 +1085,7 @@ function exportAllFiles() {
       file: file.file,
       translationFile: file.translationFile || "",
       kind: file.kind,
+      custom: Boolean(file.custom),
       content: getCurrentContent(file),
       translationContent: file.translationFile ? serializeEditableRecords(getTranslationRecords(file), file.translationRecords) : "",
       sourceRecords: getSourceRecords(file),
@@ -813,8 +1109,26 @@ function importDrafts(event) {
       const imported = JSON.parse(reader.result);
       const files = Array.isArray(imported.files) ? imported.files : [];
       const nextDrafts = { ...editorState.drafts };
+      const nextCustomTexts = [...editorState.customTexts];
       files.forEach((item) => {
-        const match = editorState.files.find((workspaceFile) => workspaceFile.id === item.id || workspaceFile.file === item.file);
+        let match = editorState.files.find((workspaceFile) => workspaceFile.id === item.id || workspaceFile.file === item.file);
+        if (!match && item.custom) {
+          const config = {
+            id: item.id || makeCustomTextId(item.siglum || "Custom", item.title || "Custom text"),
+            siglum: item.siglum || "Custom",
+            title: item.title || "Custom text",
+            file: item.file || `${item.siglum || "Custom"}.txt`,
+            translationFile: item.translationFile || `${item.siglum || "Custom"}-en.txt`,
+            kind: item.kind || "Custom text",
+            sourceRecords: Array.isArray(item.sourceRecords) ? item.sourceRecords : parseEditableRecords(item.content || ""),
+            translationRecords: Array.isArray(item.translationRecords) ? item.translationRecords : parseEditableRecords(item.translationContent || "")
+          };
+          if (!nextCustomTexts.some((text) => text.id === config.id)) {
+            nextCustomTexts.push(config);
+            match = buildCustomTextFile(config);
+            editorState.files.push(match);
+          }
+        }
         if (!match) {
           return;
         }
@@ -835,8 +1149,18 @@ function importDrafts(event) {
         }
       });
       editorState.drafts = nextDrafts;
+      editorState.customTexts = nextCustomTexts;
+      if (isPlainObject(imported.annotationOptions)) {
+        editorState.annotationOptions = {
+          hidden: Array.isArray(imported.annotationOptions.hidden) ? imported.annotationOptions.hidden : editorState.annotationOptions.hidden,
+          custom: Array.isArray(imported.annotationOptions.custom) ? imported.annotationOptions.custom : editorState.annotationOptions.custom
+        };
+      }
       fillAllTextPassageIdsFromLocations();
+      persistCustomTexts();
+      persistTextAnnotationOptions();
       persistDrafts();
+      renderTextAnnotationOptions();
       renderTextEditorList();
       renderCurrentFile();
       statusEl.textContent = `Imported ${files.length.toLocaleString()} text drafts`;
@@ -962,6 +1286,7 @@ function renderTextPassageMetadata(file, sourceRecord) {
   textPassageFields.relatedTheme.value = valueToEditable(metadata.relatedTheme);
   textPassageFields.reviewNote.value = valueToEditable(metadata.reviewNote);
   renderTextFieldCompletion(metadata.completion || {});
+  renderCustomTextPassageMetadata(metadata.customFields || {}, metadata.completion || {});
 }
 
 function saveTextPassageMetadata(draft, sourceRecord, previousKey) {
@@ -992,8 +1317,15 @@ function saveTextPassageMetadata(draft, sourceRecord, previousKey) {
     theme: parseList(textPassageFields.theme.value),
     relatedTheme: parseList(textPassageFields.relatedTheme.value),
     reviewNote: parseSingleOrList(textPassageFields.reviewNote.value),
-    completion: getTextFieldCompletion()
+    customFields: getCustomTextPassageMetadata(),
+    completion: {
+      ...getTextFieldCompletion(),
+      ...getCustomTextFieldCompletion()
+    }
   };
+  (editorState.annotationOptions.hidden || []).forEach((key) => {
+    removeTextAnnotationValueFromMetadata(metadata, key);
+  });
   if (previousKey && previousKey !== nextKey) {
     delete draft.passageAnnotations[previousKey];
   }
@@ -1049,6 +1381,7 @@ function clearTextPassageMetadata() {
     }
   });
   renderTextFieldCompletion({});
+  renderCustomTextPassageMetadata({}, {});
 }
 
 function getTextPassageControls() {
@@ -1072,8 +1405,41 @@ function getTextPassageControls() {
     textPassageFields.theme,
     textPassageFields.relatedTheme,
     textPassageFields.reviewNote,
-    ...textFieldCompletionInputs
+    ...textFieldCompletionInputs,
+    ...getCustomTextPassageControls()
   ].filter(Boolean);
+}
+
+function getCustomTextPassageControls() {
+  return Array.from(customAnnotationFieldsEl.querySelectorAll("[data-text-custom-field], [data-text-custom-complete-field]"));
+}
+
+function renderCustomTextPassageMetadata(customFields, completion) {
+  customAnnotationFieldsEl.querySelectorAll("[data-text-custom-field]").forEach((field) => {
+    field.value = valueToEditable(customFields[field.dataset.textCustomField]);
+  });
+  customAnnotationFieldsEl.querySelectorAll("[data-text-custom-complete-field]").forEach((input) => {
+    input.checked = Boolean(completion[input.dataset.textCustomCompleteField]);
+  });
+}
+
+function getCustomTextPassageMetadata() {
+  return Array.from(customAnnotationFieldsEl.querySelectorAll("[data-text-custom-field]")).reduce((customFields, field) => {
+    const value = parseSingleOrList(field.value);
+    if (valueToLines(value).length) {
+      customFields[field.dataset.textCustomField] = value;
+    }
+    return customFields;
+  }, {});
+}
+
+function getCustomTextFieldCompletion() {
+  return Array.from(customAnnotationFieldsEl.querySelectorAll("[data-text-custom-complete-field]")).reduce((completion, input) => {
+    if (input.checked) {
+      completion[input.dataset.textCustomCompleteField] = true;
+    }
+    return completion;
+  }, {});
 }
 
 function renderTextFieldCompletion(completion) {
@@ -1114,6 +1480,7 @@ function hasMeaningfulTextPassageMetadata(metadata) {
     valueToLines(metadata.theme).length ||
     valueToLines(metadata.relatedTheme).length ||
     valueToLines(metadata.reviewNote).length ||
+    Object.values(metadata.customFields || {}).some((value) => valueToLines(value).length) ||
     Object.keys(metadata.completion || {}).length
   );
 }
@@ -1612,6 +1979,35 @@ function loadDrafts() {
   } catch {
     return {};
   }
+}
+
+function loadCustomTexts() {
+  try {
+    const stored = JSON.parse(localStorage.getItem(TEXT_EDITOR_CUSTOM_TEXTS_KEY)) || [];
+    return Array.isArray(stored) ? stored.filter((item) => item?.id && item?.siglum && item?.title) : [];
+  } catch {
+    return [];
+  }
+}
+
+function persistCustomTexts() {
+  localStorage.setItem(TEXT_EDITOR_CUSTOM_TEXTS_KEY, JSON.stringify(editorState.customTexts));
+}
+
+function loadTextAnnotationOptions() {
+  try {
+    const stored = JSON.parse(localStorage.getItem(TEXT_EDITOR_ANNOTATION_OPTIONS_KEY)) || {};
+    return {
+      hidden: Array.isArray(stored.hidden) ? stored.hidden : [],
+      custom: Array.isArray(stored.custom) ? stored.custom.filter((item) => item?.key && item?.label) : []
+    };
+  } catch {
+    return { hidden: [], custom: [] };
+  }
+}
+
+function persistTextAnnotationOptions() {
+  localStorage.setItem(TEXT_EDITOR_ANNOTATION_OPTIONS_KEY, JSON.stringify(editorState.annotationOptions));
 }
 
 function persistDrafts() {

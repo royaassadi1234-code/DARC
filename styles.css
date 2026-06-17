@@ -1914,6 +1914,29 @@ h1 {
   font-size: 1.14rem;
 }
 
+.text-editor-add-text-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(120px, 180px) auto;
+  gap: 10px;
+  align-items: end;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: #ffffff;
+}
+
+.text-editor-add-text-panel.hidden {
+  display: none;
+}
+
+.text-editor-add-text-panel .wide {
+  grid-column: 1 / -1;
+}
+
+.text-editor-add-text-panel textarea {
+  min-height: 130px;
+}
+
 .text-editor-horizontal-list .annotation-list-item {
   flex: 0 0 clamp(120px, 15vw, 170px);
   min-height: 58px;
@@ -2004,6 +2027,45 @@ h1 {
 
 .text-annotation-column > .annotation-side-fields,
 .text-annotation-column > .annotation-list-fields {
+  display: contents;
+}
+
+.text-annotation-manager {
+  display: grid;
+  gap: 10px;
+  order: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: #ffffff;
+}
+
+.text-annotation-manager.hidden {
+  display: none;
+}
+
+.text-annotation-options-list {
+  display: grid;
+  gap: 8px;
+}
+
+.text-annotation-option-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 8px;
+  background: #f7fafb;
+}
+
+.text-annotation-option-row span {
+  color: var(--accent-strong);
+  font-weight: 800;
+}
+
+#text-custom-annotation-fields {
   display: contents;
 }
 
@@ -3901,11 +3963,16 @@ mark.term-6 {
   .concept-next-grid,
   .annotation-workspace,
   .text-editor-menu-bar,
+  .text-editor-add-text-panel,
   .text-passage-workspace,
   .passage-editor-grid,
   .annotation-passage-layout,
   .annotation-focus-fields {
     grid-template-columns: 1fr;
+  }
+
+  .text-editor-menu-bar > * {
+    grid-column: 1;
   }
 
   .text-annotation-column {

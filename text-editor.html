@@ -131,6 +131,8 @@
                 <h2 id="text-editor-title">No text selected</h2>
                 <div class="annotation-actions">
                   <button class="copy-button" id="text-editor-save" type="button">Save</button>
+                  <button class="copy-button" id="text-editor-add-text-toggle" type="button" aria-expanded="false" aria-controls="text-editor-add-text-panel">Add text</button>
+                  <button class="copy-button" id="text-editor-annotation-options-toggle" type="button" aria-expanded="false" aria-controls="text-editor-annotation-options-panel">Annotation options</button>
                   <button class="copy-button editor-hidden-control" id="text-editor-export" type="button">Export file</button>
                   <button class="copy-button editor-hidden-control" id="text-editor-export-all" type="button">Export all</button>
                   <label class="copy-button file-button editor-hidden-control" for="text-editor-import">Import drafts</label>
@@ -138,6 +140,26 @@
                   <button class="copy-button editor-hidden-control" id="text-editor-reset" type="button">Reset file</button>
                   <button class="copy-button editor-hidden-control" id="text-editor-reset-all" type="button">Reset all</button>
                 </div>
+              </div>
+
+              <div class="text-editor-add-text-panel hidden" id="text-editor-add-text-panel">
+                <label class="annotation-field" for="text-editor-new-title">
+                  <span>Text title</span>
+                  <input id="text-editor-new-title" type="text" placeholder="New text title">
+                </label>
+                <label class="annotation-field" for="text-editor-new-siglum">
+                  <span>Short title</span>
+                  <input id="text-editor-new-siglum" type="text" placeholder="WZ">
+                </label>
+                <label class="annotation-field wide" for="text-editor-new-source">
+                  <span>Text</span>
+                  <textarea id="text-editor-new-source" rows="8" placeholder="1.1 Correspondence text"></textarea>
+                </label>
+                <label class="annotation-field wide" for="text-editor-new-translation">
+                  <span>Translation</span>
+                  <textarea id="text-editor-new-translation" rows="8" placeholder="1.1 Translation"></textarea>
+                </label>
+                <button class="copy-button" id="text-editor-create-text" type="button">Create text</button>
               </div>
 
               <div class="text-editor-meta editor-hidden-control" id="text-editor-meta"></div>
@@ -171,6 +193,14 @@
                   </article>
                 </div>
                 <aside class="text-annotation-column" aria-label="Text annotation options">
+                  <div class="text-annotation-manager hidden" id="text-editor-annotation-options-panel">
+                    <label class="annotation-field" for="text-custom-annotation-name">
+                      <span>New annotation option</span>
+                      <input id="text-custom-annotation-name" type="text" placeholder="Option name">
+                    </label>
+                    <button class="copy-button" id="text-custom-annotation-add" type="button">Add option</button>
+                    <div class="text-annotation-options-list" id="text-annotation-options-list"></div>
+                  </div>
                   <div class="annotation-side-fields annotation-focus-fields">
                     <fieldset class="annotation-field realm-choice-group text-annotation-item text-annotation-realm" id="text-field-realm">
                       <legend>Realm</legend>
@@ -431,6 +461,7 @@
                         <textarea id="text-field-reviewNote" rows="5"></textarea>
                       </label>
                     </details>
+                    <div id="text-custom-annotation-fields"></div>
                   </div>
                 </aside>
               </div>

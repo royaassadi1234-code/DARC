@@ -200,12 +200,39 @@ function bindTextEditorEvents() {
     });
   });
 
-  document.querySelectorAll(".text-annotation-realm, .text-annotation-oppositions, .text-annotation-referent").forEach((group) => {
+  const textChoiceGroups = Array.from(document.querySelectorAll(".text-annotation-realm, .text-annotation-oppositions, .text-annotation-referent"));
+  const textAnnotationDetails = Array.from(document.querySelectorAll(".text-annotation-column details.text-annotation-item"));
+  const closeOtherTextAnnotationCards = (currentCard) => {
+    textAnnotationDetails.forEach((details) => {
+      if (details !== currentCard) {
+        details.open = false;
+      }
+    });
+    textChoiceGroups.forEach((group) => {
+      if (group !== currentCard) {
+        group.classList.add("text-annotation-choice-collapsed");
+      }
+    });
+  };
+
+  textAnnotationDetails.forEach((details) => {
+    const summary = details.querySelector("summary");
+    if (summary) {
+      summary.addEventListener("click", () => {
+        closeOtherTextAnnotationCards(details);
+      });
+    }
+  });
+
+  textChoiceGroups.forEach((group) => {
     group.classList.add("text-annotation-choice-collapsed");
     group.addEventListener("click", (event) => {
       const isCollapsed = group.classList.contains("text-annotation-choice-collapsed");
       const toggleTarget = event.target.closest("legend, .field-complete");
       if (isCollapsed || toggleTarget) {
+        if (isCollapsed) {
+          closeOtherTextAnnotationCards(group);
+        }
         group.classList.toggle("text-annotation-choice-collapsed", !isCollapsed);
       }
     });

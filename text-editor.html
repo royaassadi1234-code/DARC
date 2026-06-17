@@ -167,6 +167,20 @@
                     <div class="passage-section-location" id="text-translation-location-display"></div>
                     <textarea id="text-translation-content" spellcheck="false"></textarea>
                   </article>
+                  <article class="passage-edit-card dictionary-lookup-card">
+                    <div class="passage-edit-header">
+                      <label class="annotation-field passage-title-field" for="mpcd-dictionary-query">
+                        <span>MPCD dictionary</span>
+                      </label>
+                    </div>
+                    <div class="dictionary-lookup-controls">
+                      <input id="mpcd-dictionary-query" type="search" placeholder="Select or type a word">
+                      <button class="copy-button" id="mpcd-dictionary-selected" type="button">Use selected word</button>
+                      <button class="copy-button" id="mpcd-dictionary-search" type="button">Look up</button>
+                      <a class="copy-button secondary" id="mpcd-dictionary-open" href="https://www.mpcorpus.org/dict/" target="_blank" rel="noopener">Open MPCD</a>
+                    </div>
+                    <div class="dictionary-lookup-results" id="mpcd-dictionary-results">No dictionary word selected.</div>
+                  </article>
                 </div>
                 <aside class="text-annotation-column" aria-label="Text annotation options">
                   <div class="annotation-side-fields annotation-focus-fields">

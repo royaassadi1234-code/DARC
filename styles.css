@@ -2001,6 +2001,17 @@ h1 {
   text-align: right;
 }
 
+.passage-section-location {
+  width: fit-content;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 9px;
+  color: var(--accent-strong);
+  background: #f7fafb;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
 .passage-edit-card textarea {
   width: 100%;
   border: 1px solid #c8d0d9;

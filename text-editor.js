@@ -57,6 +57,8 @@ const sourceLabelEl = document.querySelector("#text-source-label");
 const translationLabelEl = document.querySelector("#text-translation-label");
 const sourceLocationEl = document.querySelector("#text-passage-location");
 const translationLocationEl = document.querySelector("#text-translation-location");
+const sourceLocationDisplayEl = document.querySelector("#text-source-location-display");
+const translationLocationDisplayEl = document.querySelector("#text-translation-location-display");
 const passagePositionEl = document.querySelector("#text-passage-position");
 const passagePrevButton = document.querySelector("#text-passage-prev");
 const passageNextButton = document.querySelector("#text-passage-next");
@@ -149,9 +151,11 @@ function bindTextEditorEvents() {
 
   searchInput.addEventListener("input", () => {
     editorState.query = searchInput.value.trim().toLowerCase();
+    moveToFirstTextSearchMatch();
     listEl.classList.remove("hidden");
     fileToggleButton.setAttribute("aria-expanded", "true");
     renderTextEditorList();
+    renderCurrentFile();
   });
 
   fileToggleButton.addEventListener("click", () => {
@@ -247,7 +251,8 @@ function bindTextEditorEvents() {
       return;
     }
     saveCurrentPassageToDraft();
-    editorState.passageIndex = Math.max(0, editorState.passageIndex - 1);
+    editorState.passageIndex = getPreviousPassageIndex(file);
+    renderTextEditorList();
     renderCurrentFile();
   });
 
@@ -257,7 +262,8 @@ function bindTextEditorEvents() {
       return;
     }
     saveCurrentPassageToDraft();
-    editorState.passageIndex = Math.min(getSourceRecords(file).length - 1, editorState.passageIndex + 1);
+    editorState.passageIndex = getNextPassageIndex(file);
+    renderTextEditorList();
     renderCurrentFile();
   });
 
@@ -447,9 +453,10 @@ function renderTextSearchLocations(query) {
 
   listEl.innerHTML = matches.map((match) => {
     const active = match.index === editorState.passageIndex ? " active" : "";
+    const displayLocation = formatTextLocationId(file, match.location);
     return `
       <button class="annotation-list-item text-editor-list-item text-location-result${active}" type="button" data-passage-index="${match.index}">
-        <strong>${escapeHtml(match.location)}</strong>
+        <strong>${escapeHtml(displayLocation)}</strong>
         <span>${escapeHtml(match.snippet)}</span>
       </button>
     `;
@@ -463,6 +470,8 @@ function renderCurrentFile() {
     metaEl.innerHTML = "";
     sourceContentEl.value = "";
     translationContentEl.value = "";
+    sourceLocationDisplayEl.textContent = "";
+    translationLocationDisplayEl.textContent = "";
     clearTextPassageMetadata();
     setPassageControlsDisabled(true);
     return;
@@ -470,23 +479,41 @@ function renderCurrentFile() {
 
   const sourceRecords = getSourceRecords(file);
   const translationRecords = getTranslationRecords(file);
+  const searchMatches = editorState.query ? getTextSearchMatches(file, editorState.query) : [];
+  const searchMatchIndexes = searchMatches.map((match) => match.index);
+  if (searchMatchIndexes.length && !searchMatchIndexes.includes(editorState.passageIndex)) {
+    editorState.passageIndex = searchMatchIndexes[0];
+  }
   editorState.passageIndex = Math.min(Math.max(0, editorState.passageIndex), Math.max(0, sourceRecords.length - 1));
   const sourceRecord = sourceRecords[editorState.passageIndex];
   const translationRecord = findTranslationRecord(file, sourceRecord, translationRecords);
+  const sourceDisplayLocation = formatTextLocationId(file, sourceRecord?.location || "");
+  const translationDisplayLocation = formatTextLocationId(file, translationRecord?.location || sourceRecord?.location || "");
   titleEl.textContent = file.title;
   setPassageControlsDisabled(false);
   sourceContentEl.value = sourceRecord?.text || "";
-  sourceLocationEl.value = sourceRecord?.location || "";
+  sourceLocationEl.value = sourceDisplayLocation;
   translationContentEl.value = translationRecord?.text || "";
-  translationLocationEl.value = translationRecord?.location || sourceRecord?.location || "";
+  translationLocationEl.value = translationDisplayLocation;
+  sourceLocationDisplayEl.textContent = sourceDisplayLocation;
+  translationLocationDisplayEl.textContent = translationDisplayLocation;
   sourceLabelEl.textContent = `${file.siglum} correspondence text`;
   translationLabelEl.textContent = file.translationFile ? `${file.siglum} translation` : "Translation";
   translationContentEl.disabled = !file.translationFile;
   translationLocationEl.disabled = !file.translationFile;
   renderTextPassageMetadata(file, sourceRecord);
-  passagePositionEl.textContent = `${sourceRecord?.location || "No passage"} | ${(editorState.passageIndex + 1).toLocaleString()} of ${sourceRecords.length.toLocaleString()}`;
-  passagePrevButton.disabled = editorState.passageIndex <= 0;
-  passageNextButton.disabled = editorState.passageIndex >= sourceRecords.length - 1;
+  if (editorState.query) {
+    const matchPosition = searchMatchIndexes.indexOf(editorState.passageIndex);
+    passagePositionEl.textContent = searchMatches.length
+      ? `${sourceDisplayLocation || "No passage"} | ${(matchPosition + 1).toLocaleString()} of ${searchMatches.length.toLocaleString()} matches`
+      : `No matches for "${editorState.query}"`;
+    passagePrevButton.disabled = matchPosition <= 0;
+    passageNextButton.disabled = matchPosition < 0 || matchPosition >= searchMatches.length - 1;
+  } else {
+    passagePositionEl.textContent = `${sourceDisplayLocation || "No passage"} | ${(editorState.passageIndex + 1).toLocaleString()} of ${sourceRecords.length.toLocaleString()}`;
+    passagePrevButton.disabled = editorState.passageIndex <= 0;
+    passageNextButton.disabled = editorState.passageIndex >= sourceRecords.length - 1;
+  }
   metaEl.innerHTML = `
     <span>${escapeHtml(file.file)}</span>
     ${file.translationFile ? `<span>${escapeHtml(file.translationFile)}</span>` : ""}
@@ -509,6 +536,51 @@ function setPassageControlsDisabled(disabled) {
 
 function getSelectedFile() {
   return editorState.files.find((file) => file.id === editorState.selectedId) || null;
+}
+
+function moveToFirstTextSearchMatch() {
+  const file = getSelectedFile();
+  if (!file || !editorState.query) {
+    return;
+  }
+  const matches = getTextSearchMatches(file, editorState.query);
+  if (matches.length && !matches.some((match) => match.index === editorState.passageIndex)) {
+    editorState.passageIndex = matches[0].index;
+  }
+}
+
+function getPreviousPassageIndex(file) {
+  const matchIndexes = getCurrentTextSearchMatchIndexes(file);
+  if (!matchIndexes.length) {
+    return Math.max(0, editorState.passageIndex - 1);
+  }
+  const currentMatchPosition = matchIndexes.indexOf(editorState.passageIndex);
+  if (currentMatchPosition <= 0) {
+    return matchIndexes[0];
+  }
+  return matchIndexes[currentMatchPosition - 1];
+}
+
+function getNextPassageIndex(file) {
+  const matchIndexes = getCurrentTextSearchMatchIndexes(file);
+  if (!matchIndexes.length) {
+    return Math.min(getSourceRecords(file).length - 1, editorState.passageIndex + 1);
+  }
+  const currentMatchPosition = matchIndexes.indexOf(editorState.passageIndex);
+  if (currentMatchPosition < 0) {
+    return matchIndexes[0];
+  }
+  if (currentMatchPosition >= matchIndexes.length - 1) {
+    return matchIndexes[matchIndexes.length - 1];
+  }
+  return matchIndexes[currentMatchPosition + 1];
+}
+
+function getCurrentTextSearchMatchIndexes(file) {
+  if (!editorState.query) {
+    return [];
+  }
+  return getTextSearchMatches(file, editorState.query).map((match) => match.index);
 }
 
 function getTextSearchMatches(file, query) {
@@ -764,7 +836,7 @@ function fillAllTextPassageIdsFromLocations() {
       draft.passageAnnotations[key] = {
         ...(draft.passageAnnotations[key] || {}),
         location,
-        id: location
+        id: formatTextLocationId(file, location)
       };
     });
   });
@@ -779,7 +851,7 @@ function saveCurrentPassageToDraft() {
   const sourceRecord = draft.sourceRecords[editorState.passageIndex];
   const previousMetadataKey = getTextPassageMetadataKey(sourceRecord, editorState.passageIndex);
   if (sourceRecord) {
-    sourceRecord.location = sourceLocationEl.value.trim() || sourceRecord.location;
+    sourceRecord.location = parseTextLocationInput(file, sourceLocationEl.value) || sourceRecord.location;
     sourceRecord.text = sourceContentEl.value;
   }
   saveTextPassageMetadata(draft, sourceRecord, previousMetadataKey);
@@ -787,13 +859,13 @@ function saveCurrentPassageToDraft() {
     let translationRecord = findTranslationRecord(file, sourceRecord, draft.translationRecords);
     if (!translationRecord) {
       translationRecord = {
-        location: translationLocationEl.value.trim() || sourceRecord?.location || "",
+        location: parseTextLocationInput(file, translationLocationEl.value) || sourceRecord?.location || "",
         text: "",
         format: sourceRecord?.format || "section"
       };
       draft.translationRecords.splice(editorState.passageIndex, 0, translationRecord);
     }
-    translationRecord.location = translationLocationEl.value.trim() || sourceRecord?.location || translationRecord.location;
+    translationRecord.location = parseTextLocationInput(file, translationLocationEl.value) || sourceRecord?.location || translationRecord.location;
     translationRecord.text = translationContentEl.value;
   }
 }
@@ -801,11 +873,12 @@ function saveCurrentPassageToDraft() {
 function renderTextPassageMetadata(file, sourceRecord) {
   const metadata = getPassageAnnotations(file)[getTextPassageMetadataKey(sourceRecord, editorState.passageIndex)] || {};
   const correspondenceLocation = getCorrespondenceLocation(sourceRecord, editorState.passageIndex);
+  const correspondenceId = formatTextLocationId(file, correspondenceLocation);
   setChoiceSelection(textPassageFields.realm, null, metadata.realm);
   setChoiceSelection(textPassageFields.oppositions, textPassageFields.oppositionsCustom, metadata.oppositions);
   setChoiceSelection(textPassageFields.referent, textPassageFields.referentCustom, metadata.meaning);
   textPassageFields.actionsUsedWithIt.value = valueToEditable(metadata.actionsUsedWithIt);
-  textPassageFields.id.value = correspondenceLocation || metadata.id || "";
+  textPassageFields.id.value = correspondenceId || metadata.id || "";
   textPassageFields.concept.value = metadata.concept || "";
   textPassageFields.mainWord.value = valueToEditable(metadata.mainWord);
   textPassageFields.matchedWords.value = valueToEditable(metadata.matchedWords);
@@ -825,10 +898,11 @@ function saveTextPassageMetadata(draft, sourceRecord, previousKey) {
   const nextKey = getTextPassageMetadataKey(sourceRecord, editorState.passageIndex);
   const existing = draft.passageAnnotations[previousKey] || draft.passageAnnotations[nextKey] || {};
   const correspondenceLocation = getCorrespondenceLocation(sourceRecord, editorState.passageIndex);
+  const correspondenceId = formatTextLocationId(getSelectedFile(), correspondenceLocation);
   const metadata = {
     ...existing,
     location: correspondenceLocation,
-    id: correspondenceLocation,
+    id: correspondenceId,
     concept: textPassageFields.concept.value.trim(),
     mainWord: parseSingleOrList(textPassageFields.mainWord.value),
     matchedWords: parseList(textPassageFields.matchedWords.value),
@@ -860,6 +934,30 @@ function getTextPassageMetadataKey(sourceRecord, index) {
 
 function getCorrespondenceLocation(sourceRecord, index) {
   return String(sourceRecord?.location || sourceLocationEl.value || `passage-${index + 1}`).trim();
+}
+
+function formatTextLocationId(file, location) {
+  const siglum = String(file?.siglum || "").trim();
+  const cleanedLocation = String(location || "").trim();
+  if (!siglum || !cleanedLocation) {
+    return cleanedLocation;
+  }
+  const compactLocation = cleanedLocation.replace(/\s+/g, "");
+  const escapedSiglum = siglum.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  if (new RegExp(`^${escapedSiglum}`, "i").test(compactLocation)) {
+    return compactLocation;
+  }
+  return `${siglum}${compactLocation}`;
+}
+
+function parseTextLocationInput(file, location) {
+  const siglum = String(file?.siglum || "").trim();
+  const cleanedLocation = String(location || "").trim();
+  if (!siglum || !cleanedLocation) {
+    return cleanedLocation;
+  }
+  const escapedSiglum = siglum.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return cleanedLocation.replace(new RegExp(`^${escapedSiglum}\\s*`, "i"), "").trim();
 }
 
 function clearTextPassageMetadata() {

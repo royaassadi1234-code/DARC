@@ -146,7 +146,7 @@
               </div>
               <div class="text-passage-workspace">
                 <div class="passage-editor-grid">
-                  <article class="passage-edit-card">
+                  <article class="passage-edit-card passage-source-card">
                     <div class="passage-edit-header">
                       <label class="annotation-field passage-title-field" for="text-source-content">
                         <span id="text-source-label">Correspondence text</span>
@@ -159,7 +159,7 @@
                     <div class="passage-section-location" id="text-source-location-display"></div>
                     <textarea id="text-source-content" spellcheck="false"></textarea>
                   </article>
-                  <article class="passage-edit-card">
+                  <article class="passage-edit-card passage-translation-card">
                     <div class="passage-edit-header">
                       <label class="annotation-field passage-title-field" for="text-translation-content">
                         <span id="text-translation-label">Translation</span>
@@ -175,7 +175,7 @@
                 </div>
                 <aside class="text-annotation-column" aria-label="Text annotation options">
                   <div class="annotation-side-fields annotation-focus-fields">
-                    <fieldset class="annotation-field realm-choice-group" id="text-field-realm">
+                    <fieldset class="annotation-field realm-choice-group text-annotation-item text-annotation-realm" id="text-field-realm">
                       <legend>Realm</legend>
                       <label class="field-complete">
                         <input type="checkbox" data-text-complete-field="realm">
@@ -198,11 +198,11 @@
                         <span>NA</span>
                       </label>
                     </fieldset>
-                    <fieldset class="annotation-field option-choice-group" id="text-field-oppositions">
+                    <fieldset class="annotation-field option-choice-group text-annotation-item text-annotation-oppositions" id="text-field-oppositions">
                       <legend>Oppositions</legend>
                       <label class="field-complete">
                         <input type="checkbox" data-text-complete-field="oppositions">
-                        <span>Oppositions</span>
+                          <span>Opposition</span>
                       </label>
                       <label>
                         <input type="checkbox" name="text-oppositions" value="Ohrmazd">
@@ -228,7 +228,7 @@
                         </label>
                       </div>
                     </fieldset>
-                    <fieldset class="annotation-field option-choice-group" id="text-field-referent">
+                    <fieldset class="annotation-field option-choice-group text-annotation-item text-annotation-referent" id="text-field-referent">
                       <legend>Referent</legend>
                       <label class="field-complete">
                         <input type="checkbox" data-text-complete-field="referent">
@@ -260,7 +260,7 @@
                     </fieldset>
                   </div>
                   <div class="annotation-list-fields">
-                    <details class="annotation-field-card">
+                    <details class="annotation-field-card text-annotation-item text-annotation-action">
                       <summary>
                         <label class="field-complete">
                           <input type="checkbox" data-text-complete-field="action">
@@ -272,7 +272,7 @@
                         <textarea id="text-field-actionsUsedWithIt" rows="4"></textarea>
                       </label>
                     </details>
-                    <details class="annotation-field-card">
+                    <details class="annotation-field-card text-annotation-item text-annotation-id">
                       <summary>
                         <label class="field-complete">
                           <input type="checkbox" data-text-complete-field="id">
@@ -284,7 +284,7 @@
                         <input id="text-field-id" type="text">
                       </label>
                     </details>
-                    <details class="annotation-field-card">
+                    <details class="annotation-field-card text-annotation-item text-annotation-concept">
                       <summary>
                         <label class="field-complete">
                           <input type="checkbox" data-text-complete-field="concept">
@@ -296,7 +296,7 @@
                         <input id="text-field-concept" type="text">
                       </label>
                     </details>
-                    <details class="annotation-field-card">
+                    <details class="annotation-field-card text-annotation-item text-annotation-main-word">
                       <summary>
                         <label class="field-complete">
                           <input type="checkbox" data-text-complete-field="mainWord">
@@ -308,7 +308,7 @@
                         <textarea id="text-field-mainWord" rows="2"></textarea>
                       </label>
                     </details>
-                    <details class="annotation-field-card">
+                    <details class="annotation-field-card text-annotation-item text-annotation-matched-words">
                       <summary>
                         <label class="field-complete">
                           <input type="checkbox" data-text-complete-field="matchedWords">
@@ -320,7 +320,7 @@
                         <textarea id="text-field-matchedWords" rows="3"></textarea>
                       </label>
                     </details>
-                    <details class="annotation-field-card">
+                    <details class="annotation-field-card text-annotation-item text-annotation-review-status editor-hidden-control">
                       <summary>
                         <label class="field-complete">
                           <input type="checkbox" data-text-complete-field="reviewStatus">
@@ -338,7 +338,7 @@
                         </select>
                       </label>
                     </details>
-                    <details class="annotation-field-card">
+                    <details class="annotation-field-card text-annotation-item text-annotation-adjectives">
                       <summary>
                         <label class="field-complete">
                           <input type="checkbox" data-text-complete-field="adjectivesDescriptions">
@@ -350,7 +350,43 @@
                         <textarea id="text-field-adjectivesDescriptions" rows="4"></textarea>
                       </label>
                     </details>
-                    <details class="annotation-field-card">
+                    <details class="annotation-field-card text-annotation-item text-annotation-relationship">
+                      <summary>
+                        <label class="field-complete">
+                          <input type="checkbox" data-text-complete-field="relationship">
+                          <span>Relationship</span>
+                        </label>
+                      </summary>
+                      <label class="annotation-field" for="text-field-relationship">
+                        <span>Relationship</span>
+                        <textarea id="text-field-relationship" rows="4"></textarea>
+                      </label>
+                    </details>
+                    <details class="annotation-field-card text-annotation-item text-annotation-similarity">
+                      <summary>
+                        <label class="field-complete">
+                          <input type="checkbox" data-text-complete-field="similarity">
+                          <span>Similarity</span>
+                        </label>
+                      </summary>
+                      <label class="annotation-field" for="text-field-similarity">
+                        <span>Similarity</span>
+                        <textarea id="text-field-similarity" rows="4"></textarea>
+                      </label>
+                    </details>
+                    <details class="annotation-field-card text-annotation-item text-annotation-difference">
+                      <summary>
+                        <label class="field-complete">
+                          <input type="checkbox" data-text-complete-field="difference">
+                          <span>Difference</span>
+                        </label>
+                      </summary>
+                      <label class="annotation-field" for="text-field-difference">
+                        <span>Difference</span>
+                        <textarea id="text-field-difference" rows="4"></textarea>
+                      </label>
+                    </details>
+                    <details class="annotation-field-card text-annotation-item text-annotation-metaphors">
                       <summary>
                         <label class="field-complete">
                           <input type="checkbox" data-text-complete-field="metaphors">
@@ -362,7 +398,7 @@
                         <textarea id="text-field-metaphors" rows="4"></textarea>
                       </label>
                     </details>
-                    <details class="annotation-field-card">
+                    <details class="annotation-field-card text-annotation-item text-annotation-theme">
                       <summary>
                         <label class="field-complete">
                           <input type="checkbox" data-text-complete-field="theme">
@@ -374,7 +410,7 @@
                         <textarea id="text-field-theme" rows="4"></textarea>
                       </label>
                     </details>
-                    <details class="annotation-field-card">
+                    <details class="annotation-field-card text-annotation-item text-annotation-related-theme">
                       <summary>
                         <label class="field-complete">
                           <input type="checkbox" data-text-complete-field="relatedTheme">
@@ -386,7 +422,7 @@
                         <textarea id="text-field-relatedTheme" rows="4"></textarea>
                       </label>
                     </details>
-                    <details class="annotation-field-card">
+                    <details class="annotation-field-card text-annotation-item text-annotation-review-note">
                       <summary>
                         <label class="field-complete">
                           <input type="checkbox" data-text-complete-field="reviewNote">
@@ -489,7 +525,7 @@
                   </label>
                 </fieldset>
                 <fieldset class="annotation-field option-choice-group" id="field-oppositions">
-                  <legend>Oppositions</legend>
+                      <legend>Opposition</legend>
                   <label class="field-complete">
                     <input type="checkbox" data-complete-field="oppositions">
                     <span>Oppositions</span>
@@ -645,11 +681,11 @@
                   <summary>
                     <label class="field-complete">
                       <input type="checkbox" data-complete-field="adjectivesDescriptions">
-                      <span>Adjectives / descriptions</span>
+                          <span>Adjectives/desctiptions</span>
                     </label>
                   </summary>
                   <label class="annotation-field" for="field-adjectivesDescriptions">
-                    <span>Adjectives / descriptions</span>
+                        <span>Adjectives/desctiptions</span>
                     <textarea id="field-adjectivesDescriptions" rows="4"></textarea>
                   </label>
                 </details>
@@ -657,11 +693,11 @@
                   <summary>
                     <label class="field-complete">
                       <input type="checkbox" data-complete-field="metaphors">
-                      <span>Metaphors</span>
+                          <span>Metaphore</span>
                     </label>
                   </summary>
                   <label class="annotation-field" for="field-metaphors">
-                    <span>Metaphors</span>
+                        <span>Metaphore</span>
                     <textarea id="field-metaphors" rows="4"></textarea>
                   </label>
                 </details>
@@ -669,11 +705,11 @@
                   <summary>
                     <label class="field-complete">
                       <input type="checkbox" data-complete-field="theme">
-                      <span>Theme</span>
+                          <span>Thema</span>
                     </label>
                   </summary>
                   <label class="annotation-field" for="field-theme">
-                    <span>Theme</span>
+                        <span>Thema</span>
                     <textarea id="field-theme" rows="4"></textarea>
                   </label>
                 </details>
@@ -681,11 +717,11 @@
                   <summary>
                     <label class="field-complete">
                       <input type="checkbox" data-complete-field="relatedTheme">
-                      <span>Related theme</span>
+                          <span>Related themes</span>
                     </label>
                   </summary>
                   <label class="annotation-field" for="field-relatedTheme">
-                    <span>Related theme</span>
+                        <span>Related themes</span>
                     <textarea id="field-relatedTheme" rows="4"></textarea>
                   </label>
                 </details>

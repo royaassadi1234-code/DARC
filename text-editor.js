@@ -92,6 +92,9 @@ const textPassageFields = {
   referent: Array.from(document.querySelectorAll("input[name='text-referent']")),
   referentCustom: document.querySelector("#text-field-referent-custom"),
   actionsUsedWithIt: document.querySelector("#text-field-actionsUsedWithIt"),
+  relationship: document.querySelector("#text-field-relationship"),
+  similarity: document.querySelector("#text-field-similarity"),
+  difference: document.querySelector("#text-field-difference"),
   id: document.querySelector("#text-field-id"),
   concept: document.querySelector("#text-field-concept"),
   mainWord: document.querySelector("#text-field-mainWord"),
@@ -878,6 +881,9 @@ function renderTextPassageMetadata(file, sourceRecord) {
   setChoiceSelection(textPassageFields.oppositions, textPassageFields.oppositionsCustom, metadata.oppositions);
   setChoiceSelection(textPassageFields.referent, textPassageFields.referentCustom, metadata.meaning);
   textPassageFields.actionsUsedWithIt.value = valueToEditable(metadata.actionsUsedWithIt);
+  textPassageFields.relationship.value = valueToEditable(metadata.relationship);
+  textPassageFields.similarity.value = valueToEditable(metadata.similarity);
+  textPassageFields.difference.value = valueToEditable(metadata.difference);
   textPassageFields.id.value = correspondenceId || metadata.id || "";
   textPassageFields.concept.value = metadata.concept || "";
   textPassageFields.mainWord.value = valueToEditable(metadata.mainWord);
@@ -908,6 +914,9 @@ function saveTextPassageMetadata(draft, sourceRecord, previousKey) {
     matchedWords: parseList(textPassageFields.matchedWords.value),
     meaning: getChoiceSelection(textPassageFields.referent, textPassageFields.referentCustom),
     actionsUsedWithIt: parseList(textPassageFields.actionsUsedWithIt.value),
+    relationship: parseList(textPassageFields.relationship.value),
+    similarity: parseList(textPassageFields.similarity.value),
+    difference: parseList(textPassageFields.difference.value),
     adjectivesDescriptions: parseList(textPassageFields.adjectivesDescriptions.value),
     metaphors: parseList(textPassageFields.metaphors.value),
     oppositions: getChoiceSelection(textPassageFields.oppositions, textPassageFields.oppositionsCustom),
@@ -983,6 +992,9 @@ function getTextPassageControls() {
     ...textPassageFields.referent,
     textPassageFields.referentCustom,
     textPassageFields.actionsUsedWithIt,
+    textPassageFields.relationship,
+    textPassageFields.similarity,
+    textPassageFields.difference,
     textPassageFields.id,
     textPassageFields.concept,
     textPassageFields.mainWord,
@@ -1022,6 +1034,9 @@ function hasMeaningfulTextPassageMetadata(metadata) {
     valueToLines(metadata.oppositions).length ||
     valueToLines(metadata.meaning).length ||
     valueToLines(metadata.actionsUsedWithIt).length ||
+    valueToLines(metadata.relationship).length ||
+    valueToLines(metadata.similarity).length ||
+    valueToLines(metadata.difference).length ||
     metadata.id ||
     metadata.concept ||
     valueToLines(metadata.mainWord).length ||

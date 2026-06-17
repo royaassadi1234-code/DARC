@@ -195,6 +195,8 @@ function bindTextEditorEvents() {
   searchInput.addEventListener("input", () => {
     saveCurrentPassageToDraft();
     editorState.query = searchInput.value.trim();
+    listEl.classList.toggle("hidden", !editorState.query);
+    fileToggleButton.setAttribute("aria-expanded", editorState.query ? "true" : "false");
     renderTextEditorList();
     renderCurrentFile();
   });
@@ -285,6 +287,15 @@ function bindTextEditorEvents() {
   window.addEventListener("hashchange", openToolFromHash);
 
   listEl.addEventListener("click", (event) => {
+    const passageButton = event.target.closest("[data-passage-index]");
+    if (passageButton) {
+      saveDraft({ quiet: true });
+      editorState.passageIndex = Number(passageButton.dataset.passageIndex) || 0;
+      renderTextEditorList();
+      renderCurrentFile();
+      return;
+    }
+
     const button = event.target.closest("[data-text-id]");
     if (!button) {
       return;
@@ -780,22 +791,19 @@ function makeCustomTextId(siglum, title) {
 }
 
 function renderTextEditorList() {
+  if (editorState.query) {
+    renderTextSearchLocations(editorState.query);
+    return;
+  }
+
   const files = editorState.files;
   const draftCount = editorState.files.filter(hasDraft).length;
-  const file = getSelectedFile();
-  const matches = file && editorState.query ? getTextSearchMatches(file, editorState.query) : [];
 
-  summaryEl.innerHTML = editorState.query && file
-    ? `
-      <span>${matches.length.toLocaleString()} matching locations</span>
-      <span>${escapeHtml(file.siglum)}</span>
-      <span>${escapeHtml(editorState.query)}</span>
-    `
-    : `
-      <span>${files.length} shown</span>
-      <span>${draftCount} drafts</span>
-      <span>${editorState.files.length} files</span>
-    `;
+  summaryEl.innerHTML = `
+    <span>${files.length} shown</span>
+    <span>${draftCount} drafts</span>
+    <span>${editorState.files.length} files</span>
+  `;
 
   if (!files.length) {
     listEl.innerHTML = `<div class="empty-state">No text files match this search.</div>`;
@@ -810,6 +818,38 @@ function renderTextEditorList() {
         <strong>${escapeHtml(file.siglum)}</strong>
         <span>${escapeHtml(file.title)}</span>
         ${draft}
+      </button>
+    `;
+  }).join("");
+}
+
+function renderTextSearchLocations(query) {
+  const file = getSelectedFile();
+  if (!file) {
+    summaryEl.innerHTML = "<span>No text selected</span>";
+    listEl.innerHTML = `<div class="empty-state">Select a text before searching.</div>`;
+    return;
+  }
+
+  const matches = getTextSearchMatches(file, query);
+  summaryEl.innerHTML = `
+    <span>${matches.length.toLocaleString()} visible passages</span>
+    <span>${escapeHtml(file.siglum)}</span>
+    <span>${escapeHtml(query)}</span>
+  `;
+
+  if (!matches.length) {
+    listEl.innerHTML = `<div class="empty-state">No passages contain this word in ${escapeHtml(file.siglum)}.</div>`;
+    return;
+  }
+
+  listEl.innerHTML = matches.map((match) => {
+    const active = match.index === editorState.passageIndex ? " active" : "";
+    const displayLocation = formatTextLocationId(file, match.location);
+    return `
+      <button class="annotation-list-item text-editor-list-item text-location-result${active}" type="button" data-passage-index="${match.index}">
+        <strong>${escapeHtml(displayLocation)}</strong>
+        <span>${escapeHtml(match.snippet)}</span>
       </button>
     `;
   }).join("");

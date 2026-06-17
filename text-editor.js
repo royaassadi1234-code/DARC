@@ -195,9 +195,6 @@ function bindTextEditorEvents() {
   searchInput.addEventListener("input", () => {
     saveCurrentPassageToDraft();
     editorState.query = searchInput.value.trim();
-    moveToFirstTextSearchMatch();
-    listEl.classList.toggle("hidden", !editorState.query);
-    fileToggleButton.setAttribute("aria-expanded", editorState.query ? "true" : "false");
     renderTextEditorList();
     renderCurrentFile();
   });
@@ -288,15 +285,6 @@ function bindTextEditorEvents() {
   window.addEventListener("hashchange", openToolFromHash);
 
   listEl.addEventListener("click", (event) => {
-    const passageButton = event.target.closest("[data-passage-index]");
-    if (passageButton) {
-      saveDraft({ quiet: true });
-      editorState.passageIndex = Number(passageButton.dataset.passageIndex) || 0;
-      renderTextEditorList();
-      renderCurrentFile();
-      return;
-    }
-
     const button = event.target.closest("[data-text-id]");
     if (!button) {
       return;
@@ -792,20 +780,22 @@ function makeCustomTextId(siglum, title) {
 }
 
 function renderTextEditorList() {
-  const query = editorState.query;
-  if (query) {
-    renderTextSearchLocations(query);
-    return;
-  }
-
   const files = editorState.files;
   const draftCount = editorState.files.filter(hasDraft).length;
+  const file = getSelectedFile();
+  const matches = file && editorState.query ? getTextSearchMatches(file, editorState.query) : [];
 
-  summaryEl.innerHTML = `
-    <span>${files.length} shown</span>
-    <span>${draftCount} drafts</span>
-    <span>${editorState.files.length} files</span>
-  `;
+  summaryEl.innerHTML = editorState.query && file
+    ? `
+      <span>${matches.length.toLocaleString()} matching locations</span>
+      <span>${escapeHtml(file.siglum)}</span>
+      <span>${escapeHtml(editorState.query)}</span>
+    `
+    : `
+      <span>${files.length} shown</span>
+      <span>${draftCount} drafts</span>
+      <span>${editorState.files.length} files</span>
+    `;
 
   if (!files.length) {
     listEl.innerHTML = `<div class="empty-state">No text files match this search.</div>`;
@@ -820,38 +810,6 @@ function renderTextEditorList() {
         <strong>${escapeHtml(file.siglum)}</strong>
         <span>${escapeHtml(file.title)}</span>
         ${draft}
-      </button>
-    `;
-  }).join("");
-}
-
-function renderTextSearchLocations(query) {
-  const file = getSelectedFile();
-  if (!file) {
-    summaryEl.innerHTML = "<span>No text selected</span>";
-    listEl.innerHTML = `<div class="empty-state">Select a text before searching.</div>`;
-    return;
-  }
-
-  const matches = getTextSearchMatches(file, query);
-  summaryEl.innerHTML = `
-    <span>${matches.length.toLocaleString()} locations</span>
-    <span>${escapeHtml(file.siglum)}</span>
-    <span>${escapeHtml(query)}</span>
-  `;
-
-  if (!matches.length) {
-    listEl.innerHTML = `<div class="empty-state">No locations contain this word in ${escapeHtml(file.siglum)}.</div>`;
-    return;
-  }
-
-  listEl.innerHTML = matches.map((match) => {
-    const active = match.index === editorState.passageIndex ? " active" : "";
-    const displayLocation = formatTextLocationId(file, match.location);
-    return `
-      <button class="annotation-list-item text-editor-list-item text-location-result${active}" type="button" data-passage-index="${match.index}">
-        <strong>${escapeHtml(displayLocation)}</strong>
-        <span>${escapeHtml(match.snippet)}</span>
       </button>
     `;
   }).join("");
@@ -873,27 +831,6 @@ function renderCurrentFile() {
 
   const sourceRecords = getSourceRecords(file);
   const translationRecords = getTranslationRecords(file);
-  const searchMatches = editorState.query ? getTextSearchMatches(file, editorState.query) : [];
-  const searchMatchIndexes = searchMatches.map((match) => match.index);
-  if (editorState.query && !searchMatches.length) {
-    titleEl.textContent = file.title;
-    setPassageControlsDisabled(true);
-    sourceContentEl.value = "";
-    sourceLocationEl.value = "";
-    translationContentEl.value = "";
-    translationLocationEl.value = "";
-    sourceLocationDisplayEl.textContent = "";
-    translationLocationDisplayEl.textContent = "";
-    clearTextPassageMetadata();
-    passagePositionEl.textContent = `No matches for "${editorState.query}"`;
-    passagePrevButton.disabled = true;
-    passageNextButton.disabled = true;
-    statusEl.textContent = `No ${file.siglum} passages match "${editorState.query}"`;
-    return;
-  }
-  if (searchMatchIndexes.length && !searchMatchIndexes.includes(editorState.passageIndex)) {
-    editorState.passageIndex = searchMatchIndexes[0];
-  }
   editorState.passageIndex = Math.min(Math.max(0, editorState.passageIndex), Math.max(0, sourceRecords.length - 1));
   const sourceRecord = sourceRecords[editorState.passageIndex];
   const translationRecord = findTranslationRecord(file, sourceRecord, translationRecords);
@@ -912,18 +849,9 @@ function renderCurrentFile() {
   translationContentEl.disabled = !file.translationFile;
   translationLocationEl.disabled = !file.translationFile;
   renderTextPassageMetadata(file, sourceRecord);
-  if (editorState.query) {
-    const matchPosition = searchMatchIndexes.indexOf(editorState.passageIndex);
-    passagePositionEl.textContent = searchMatches.length
-      ? `${sourceDisplayLocation || "No passage"} | ${(matchPosition + 1).toLocaleString()} of ${searchMatches.length.toLocaleString()} matches`
-      : `No matches for "${editorState.query}"`;
-    passagePrevButton.disabled = matchPosition <= 0;
-    passageNextButton.disabled = matchPosition < 0 || matchPosition >= searchMatches.length - 1;
-  } else {
-    passagePositionEl.textContent = `${sourceDisplayLocation || "No passage"} | ${(editorState.passageIndex + 1).toLocaleString()} of ${sourceRecords.length.toLocaleString()}`;
-    passagePrevButton.disabled = editorState.passageIndex <= 0;
-    passageNextButton.disabled = editorState.passageIndex >= sourceRecords.length - 1;
-  }
+  passagePositionEl.textContent = `${sourceDisplayLocation || "No passage"} | ${(editorState.passageIndex + 1).toLocaleString()} of ${sourceRecords.length.toLocaleString()}`;
+  passagePrevButton.disabled = editorState.passageIndex <= 0;
+  passageNextButton.disabled = editorState.passageIndex >= sourceRecords.length - 1;
   metaEl.innerHTML = `
     <span>${escapeHtml(file.file)}</span>
     ${file.translationFile ? `<span>${escapeHtml(file.translationFile)}</span>` : ""}
@@ -948,49 +876,12 @@ function getSelectedFile() {
   return editorState.files.find((file) => file.id === editorState.selectedId) || null;
 }
 
-function moveToFirstTextSearchMatch() {
-  const file = getSelectedFile();
-  if (!file || !editorState.query) {
-    return;
-  }
-  const matches = getTextSearchMatches(file, editorState.query);
-  if (matches.length && !matches.some((match) => match.index === editorState.passageIndex)) {
-    editorState.passageIndex = matches[0].index;
-  }
-}
-
 function getPreviousPassageIndex(file) {
-  const matchIndexes = getCurrentTextSearchMatchIndexes(file);
-  if (!matchIndexes.length) {
-    return Math.max(0, editorState.passageIndex - 1);
-  }
-  const currentMatchPosition = matchIndexes.indexOf(editorState.passageIndex);
-  if (currentMatchPosition <= 0) {
-    return matchIndexes[0];
-  }
-  return matchIndexes[currentMatchPosition - 1];
+  return Math.max(0, editorState.passageIndex - 1);
 }
 
 function getNextPassageIndex(file) {
-  const matchIndexes = getCurrentTextSearchMatchIndexes(file);
-  if (!matchIndexes.length) {
-    return Math.min(getSourceRecords(file).length - 1, editorState.passageIndex + 1);
-  }
-  const currentMatchPosition = matchIndexes.indexOf(editorState.passageIndex);
-  if (currentMatchPosition < 0) {
-    return matchIndexes[0];
-  }
-  if (currentMatchPosition >= matchIndexes.length - 1) {
-    return matchIndexes[matchIndexes.length - 1];
-  }
-  return matchIndexes[currentMatchPosition + 1];
-}
-
-function getCurrentTextSearchMatchIndexes(file) {
-  if (!editorState.query) {
-    return [];
-  }
-  return getTextSearchMatches(file, editorState.query).map((match) => match.index);
+  return Math.min(getSourceRecords(file).length - 1, editorState.passageIndex + 1);
 }
 
 function getTextSearchMatches(file, query) {

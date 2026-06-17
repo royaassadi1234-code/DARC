@@ -1850,7 +1850,7 @@ h1 {
 
 .text-editor-menu-bar {
   display: grid;
-  grid-template-columns: auto minmax(260px, 380px) minmax(0, 1fr) auto;
+  grid-template-columns: auto minmax(260px, 380px) minmax(0, 1fr) auto auto;
   gap: 10px;
   align-items: center;
   border: 1px solid var(--line);
@@ -1871,7 +1871,12 @@ h1 {
 }
 
 .text-editor-menu-bar #text-editor-logout {
+  grid-column: 5;
+}
+
+.text-editor-menu-bar #text-editor-mpcd-dictionary {
   grid-column: 4;
+  width: max-content;
 }
 
 .text-editor-menu-bar .annotation-summary {
@@ -1973,10 +1978,6 @@ h1 {
 
 .passage-source-card {
   order: 2;
-}
-
-.dictionary-lookup-card {
-  order: 3;
 }
 
 .text-passage-workspace {
@@ -2139,47 +2140,6 @@ h1 {
   background: #f7fafb;
   font-size: 0.82rem;
   font-weight: 800;
-}
-
-.dictionary-lookup-controls {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto auto auto;
-  gap: 8px;
-  align-items: center;
-}
-
-.dictionary-lookup-controls input {
-  width: 100%;
-  min-height: 38px;
-  border: 1px solid #c8d0d9;
-  border-radius: 7px;
-  padding: 8px 10px;
-  color: var(--ink);
-  background: #fbfcfd;
-  font: inherit;
-}
-
-.dictionary-lookup-results {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  min-height: 38px;
-  border: 1px solid var(--line);
-  border-radius: 7px;
-  padding: 8px;
-  color: var(--muted);
-  background: #f7fafb;
-  font-size: 0.9rem;
-}
-
-.dictionary-lookup-results a {
-  border: 1px solid #c8d0d9;
-  border-radius: 999px;
-  padding: 4px 9px;
-  color: var(--accent-strong);
-  background: #ffffff;
-  font-weight: 800;
-  text-decoration: none;
 }
 
 .passage-edit-card textarea {
@@ -3948,10 +3908,6 @@ mark.term-6 {
     max-height: none;
     overflow: visible;
     padding-right: 0;
-  }
-
-  .dictionary-lookup-controls {
-    grid-template-columns: 1fr;
   }
 
   .text-editor-horizontal-list .annotation-list-item {

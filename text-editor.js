@@ -7,8 +7,6 @@ const TEXT_EDITOR_DRAFT_KEY = "druzTextEditorDrafts";
 const ANNOTATION_FILE = "druz-concept-annotations.json";
 const ANNOTATION_DRAFT_KEY = "druzAnnotationReviewDraft";
 const ANNOTATION_COMPLETION_KEY = "druzAnnotationFieldCompletion";
-const MPCD_DICTIONARY_URL = "https://www.mpcorpus.org/dict/";
-const MPCD_DICTIONARY_FILTER_URL = "https://www.mpcorpus.org/dict/filter_lemmas/";
 
 const TEXT_EDITOR_FILES = [
   { id: "dd", siglum: "DD", title: "Dādestān ī Dēnīg", file: "Dd.txt", translationFile: "DD-en.txt", kind: "Middle Persian" },
@@ -55,11 +53,6 @@ const titleEl = document.querySelector("#text-editor-title");
 const metaEl = document.querySelector("#text-editor-meta");
 const sourceContentEl = document.querySelector("#text-source-content");
 const translationContentEl = document.querySelector("#text-translation-content");
-const dictionaryQueryEl = document.querySelector("#mpcd-dictionary-query");
-const dictionarySelectedButton = document.querySelector("#mpcd-dictionary-selected");
-const dictionarySearchButton = document.querySelector("#mpcd-dictionary-search");
-const dictionaryOpenLink = document.querySelector("#mpcd-dictionary-open");
-const dictionaryResultsEl = document.querySelector("#mpcd-dictionary-results");
 const sourceLabelEl = document.querySelector("#text-source-label");
 const translationLabelEl = document.querySelector("#text-translation-label");
 const sourceLocationEl = document.querySelector("#text-passage-location");
@@ -286,25 +279,6 @@ function bindTextEditorEvents() {
         statusEl.textContent = `${file.siglum} passage has unsaved changes`;
       }
     });
-  });
-
-  [sourceContentEl, translationContentEl].forEach((control) => {
-    control.addEventListener("select", syncDictionaryQueryFromSelection);
-    control.addEventListener("mouseup", syncDictionaryQueryFromSelection);
-    control.addEventListener("keyup", syncDictionaryQueryFromSelection);
-  });
-
-  dictionarySelectedButton.addEventListener("click", () => {
-    syncDictionaryQueryFromSelection({ force: true });
-  });
-
-  dictionarySearchButton.addEventListener("click", lookupMpcdDictionary);
-
-  dictionaryQueryEl.addEventListener("keydown", (event) => {
-    if (event.key === "Enter") {
-      event.preventDefault();
-      lookupMpcdDictionary();
-    }
   });
 
   getTextPassageControls().forEach((control) => {
@@ -712,99 +686,6 @@ function getTextSearchSnippet(sourceText, translationText, query) {
   const prefix = start > 0 ? "... " : "";
   const suffix = end < text.length ? " ..." : "";
   return `${prefix}${text.slice(start, end).trim()}${suffix}`;
-}
-
-function syncDictionaryQueryFromSelection(options = {}) {
-  const selectedWord = getSelectedEditorWord();
-  if (selectedWord || options.force) {
-    dictionaryQueryEl.value = selectedWord;
-    updateMpcdOpenLink(selectedWord);
-  }
-}
-
-function getSelectedEditorWord() {
-  const activeControl = document.activeElement;
-  if (![sourceContentEl, translationContentEl].includes(activeControl)) {
-    return "";
-  }
-  const selected = activeControl.value.slice(activeControl.selectionStart, activeControl.selectionEnd).trim();
-  return cleanDictionaryQuery(selected);
-}
-
-function cleanDictionaryQuery(value) {
-  return String(value || "")
-    .replace(/^[^\p{L}\p{M}\p{N}=_.-]+|[^\p{L}\p{M}\p{N}=_.-]+$/gu, "")
-    .split(/\s+/)
-    .slice(0, 1)
-    .join("")
-    .trim();
-}
-
-async function lookupMpcdDictionary() {
-  const query = cleanDictionaryQuery(dictionaryQueryEl.value || getSelectedEditorWord());
-  dictionaryQueryEl.value = query;
-  updateMpcdOpenLink(query);
-  if (!query) {
-    dictionaryResultsEl.textContent = "Select or type a word first.";
-    return;
-  }
-
-  dictionaryResultsEl.textContent = `Looking up "${query}" in MPCD...`;
-  try {
-    const response = await fetch(getMpcdFilterUrl(query), { credentials: "omit" });
-    if (!response.ok) {
-      throw new Error(`MPCD lookup returned ${response.status}`);
-    }
-    const html = await response.text();
-    const entries = parseMpcdLemmaResults(html);
-    renderMpcdDictionaryResults(query, entries);
-  } catch (error) {
-    dictionaryResultsEl.innerHTML = `
-      <p>MPCD lookup could not be loaded inside this page.</p>
-      <a href="${escapeHtml(getMpcdFilterUrl(query))}" target="_blank" rel="noopener">Open MPCD results for ${escapeHtml(query)}</a>
-    `;
-    console.warn(error);
-  }
-}
-
-function getMpcdFilterUrl(query) {
-  const params = new URLSearchParams({
-    filter_word: query,
-    search_mode: "icontains",
-    search_scope: "word"
-  });
-  return `${MPCD_DICTIONARY_FILTER_URL}?${params.toString()}`;
-}
-
-function updateMpcdOpenLink(query) {
-  dictionaryOpenLink.href = query ? getMpcdFilterUrl(query) : MPCD_DICTIONARY_URL;
-}
-
-function parseMpcdLemmaResults(html) {
-  const documentFragment = new DOMParser().parseFromString(html, "text/html");
-  return Array.from(documentFragment.querySelectorAll("div[id]")).slice(0, 12).map((item) => {
-    const id = item.id;
-    const word = item.textContent.trim();
-    const path = item.getAttribute("hx-replace-url") || `/dict/${id}/`;
-    return {
-      id,
-      word,
-      url: new URL(path, MPCD_DICTIONARY_URL).href
-    };
-  }).filter((entry) => entry.id && entry.word);
-}
-
-function renderMpcdDictionaryResults(query, entries) {
-  if (!entries.length) {
-    dictionaryResultsEl.innerHTML = `
-      <p>No MPCD lemmata found for ${escapeHtml(query)}.</p>
-      <a href="${escapeHtml(getMpcdFilterUrl(query))}" target="_blank" rel="noopener">Open MPCD search</a>
-    `;
-    return;
-  }
-  dictionaryResultsEl.innerHTML = entries.map((entry) => `
-    <a href="${escapeHtml(entry.url)}" target="_blank" rel="noopener">${escapeHtml(entry.word)}</a>
-  `).join("");
 }
 
 function getCurrentContent(file) {

@@ -153,7 +153,8 @@ function bindTextEditorEvents() {
   });
 
   searchInput.addEventListener("input", () => {
-    editorState.query = searchInput.value.trim().toLowerCase();
+    saveCurrentPassageToDraft();
+    editorState.query = searchInput.value.trim();
     moveToFirstTextSearchMatch();
     listEl.classList.toggle("hidden", !editorState.query);
     fileToggleButton.setAttribute("aria-expanded", editorState.query ? "true" : "false");
@@ -526,6 +527,22 @@ function renderCurrentFile() {
   const translationRecords = getTranslationRecords(file);
   const searchMatches = editorState.query ? getTextSearchMatches(file, editorState.query) : [];
   const searchMatchIndexes = searchMatches.map((match) => match.index);
+  if (editorState.query && !searchMatches.length) {
+    titleEl.textContent = file.title;
+    setPassageControlsDisabled(true);
+    sourceContentEl.value = "";
+    sourceLocationEl.value = "";
+    translationContentEl.value = "";
+    translationLocationEl.value = "";
+    sourceLocationDisplayEl.textContent = "";
+    translationLocationDisplayEl.textContent = "";
+    clearTextPassageMetadata();
+    passagePositionEl.textContent = `No matches for "${editorState.query}"`;
+    passagePrevButton.disabled = true;
+    passageNextButton.disabled = true;
+    statusEl.textContent = `No ${file.siglum} passages match "${editorState.query}"`;
+    return;
+  }
   if (searchMatchIndexes.length && !searchMatchIndexes.includes(editorState.passageIndex)) {
     editorState.passageIndex = searchMatchIndexes[0];
   }
@@ -629,7 +646,7 @@ function getCurrentTextSearchMatchIndexes(file) {
 }
 
 function getTextSearchMatches(file, query) {
-  const normalizedQuery = query.trim().toLowerCase();
+  const normalizedQuery = normalizeSearchText(query);
   if (!normalizedQuery) {
     return [];
   }
@@ -637,7 +654,7 @@ function getTextSearchMatches(file, query) {
   const translationRecords = getTranslationRecords(file);
   return getSourceRecords(file).reduce((matches, record, index) => {
     const translationRecord = findTranslationRecord(file, record, translationRecords);
-    const searchable = [record.text, translationRecord?.text].filter(Boolean).join(" ").toLowerCase();
+    const searchable = normalizeSearchText([record.text, translationRecord?.text].filter(Boolean).join(" "));
     if (searchable.includes(normalizedQuery)) {
       matches.push({
         index,
@@ -649,10 +666,18 @@ function getTextSearchMatches(file, query) {
   }, []);
 }
 
+function normalizeSearchText(value) {
+  return String(value || "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim();
+}
+
 function getTextSearchSnippet(sourceText, translationText, query) {
   const text = [sourceText, translationText].filter(Boolean).join(" ");
-  const normalizedText = text.toLowerCase();
-  const index = normalizedText.indexOf(query);
+  const normalizedText = normalizeSearchText(text);
+  const index = normalizedText.indexOf(normalizeSearchText(query));
   if (index < 0) {
     return text.slice(0, 120).trim();
   }

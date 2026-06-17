@@ -108,20 +108,20 @@
         </section>
 
         <section class="text-editor-shell hidden" id="text-editor-workspace" aria-label="Workspace editor">
-          <div class="editor-tabs" role="tablist" aria-label="Editor tools">
+          <div class="editor-tabs editor-hidden-control" role="tablist" aria-label="Editor tools">
             <button class="editor-tab active" id="text-tool-tab" type="button" role="tab" aria-selected="true" aria-controls="text-tool-panel" data-editor-tool="texts">Texts</button>
             <button class="editor-tab editor-hidden-control" id="annotation-tool-tab" type="button" role="tab" aria-selected="false" aria-controls="annotation-tool-panel" data-editor-tool="annotations" disabled>Annotations</button>
-            <button class="copy-button" id="text-editor-logout" type="button">Logout</button>
           </div>
 
           <div class="text-editor-tool" id="text-tool-panel" role="tabpanel" aria-labelledby="text-tool-tab">
             <div class="text-editor-menu-bar" aria-label="Text file menu">
+              <button class="copy-button" id="text-file-toggle" type="button" aria-expanded="false" aria-controls="text-editor-list">Choose the text</button>
               <label class="annotation-field text-editor-search-field" for="text-editor-search">
                 <span>Search word</span>
                 <input id="text-editor-search" type="search" placeholder="Type a word to show matching locations">
               </label>
-              <button class="copy-button" id="text-file-toggle" type="button" aria-expanded="false" aria-controls="text-editor-list">Choose the text</button>
               <div class="annotation-summary" id="text-editor-summary"></div>
+              <button class="copy-button" id="text-editor-logout" type="button">Logout</button>
               <div class="text-editor-horizontal-list hidden" id="text-editor-list"></div>
             </div>
             <section class="annotation-editor text-editor-panel" aria-label="Current text file">

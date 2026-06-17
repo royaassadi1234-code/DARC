@@ -1850,7 +1850,7 @@ h1 {
 
 .text-editor-menu-bar {
   display: grid;
-  grid-template-columns: auto minmax(220px, 360px) minmax(0, 1fr);
+  grid-template-columns: auto minmax(260px, 380px) minmax(0, 1fr) auto;
   gap: 10px;
   align-items: center;
   border: 1px solid var(--line);
@@ -1868,6 +1868,14 @@ h1 {
 #text-file-toggle {
   grid-column: 1;
   width: max-content;
+}
+
+.text-editor-menu-bar #text-editor-logout {
+  grid-column: 4;
+}
+
+.text-editor-menu-bar .annotation-summary {
+  grid-column: 3;
 }
 
 .text-editor-horizontal-list {

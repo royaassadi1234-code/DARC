@@ -80,6 +80,7 @@ const personalCommonInputEl = document.querySelector("#frequency-common-input");
 const personalCommonAddEl = document.querySelector("#frequency-common-add");
 const personalCommonListEl = document.querySelector("#frequency-common-list");
 const frequencySummaryEl = document.querySelector("#frequency-summary");
+const frequencyRankComparisonEl = document.querySelector("#frequency-rank-comparison");
 const frequencyChartEl = document.querySelector("#frequency-chart");
 
 initFrequency();
@@ -359,6 +360,7 @@ function renderFrequency() {
 
   renderPersonalCommonWords();
   renderFrequencySummary(rankedByText);
+  renderRankComparison(rankedByText);
   renderFrequencyChart(rankedByText, pageDataByText, visibleSharedWordKeys);
 }
 
@@ -398,6 +400,98 @@ function renderFrequencySummary(rankedByText) {
       </article>
     `;
   }).join("");
+}
+
+function renderRankComparison(rankedByText) {
+  const comparisonKey = getRankComparisonKey();
+  if (!comparisonKey) {
+    frequencyRankComparisonEl.innerHTML = `
+      <article class="diagram-card frequency-rank-card">
+        <header>
+          <div>
+            <p class="eyebrow">Rank comparison</p>
+            <h2>Compare a Word Across DD, PY, and WZ</h2>
+          </div>
+        </header>
+        <div class="empty-state">Type an exact word in the filter or click any word in the lists below.</div>
+      </article>
+    `;
+    return;
+  }
+
+  const comparisonRows = getRankComparisonRows(comparisonKey);
+  const foundRows = comparisonRows.filter((row) => row.item);
+  const label = foundRows[0]?.item.label || comparisonKey;
+  const maxRank = Math.max(1, ...comparisonRows.map((row) => row.rank || row.totalTypes || 1));
+
+  frequencyRankComparisonEl.innerHTML = `
+    <article class="diagram-card frequency-rank-card">
+      <header>
+        <div>
+          <p class="eyebrow">Rank comparison</p>
+          <h2>${escapeHtml(label)}</h2>
+        </div>
+        <span class="count-pill ${foundRows.length ? "hit" : "miss"}">${foundRows.length}/3</span>
+      </header>
+      <div class="frequency-rank-plot" aria-label="${escapeHtml(label)} rank comparison">
+        <div class="frequency-rank-axis" aria-hidden="true">
+          <span>Rank 1</span>
+          <span>Lower rank is stronger</span>
+          <span>${maxRank.toLocaleString()}+</span>
+        </div>
+        ${comparisonRows.map((row) => renderRankComparisonRow(row, maxRank)).join("")}
+      </div>
+    </article>
+  `;
+}
+
+function getRankComparisonKey() {
+  if (frequencyState.selected?.wordKey) {
+    return frequencyState.selected.wordKey;
+  }
+  const key = normalizeWord(frequencyState.filter);
+  return key || "";
+}
+
+function getRankComparisonRows(wordKey) {
+  return frequencyState.texts.map((text) => {
+    const ranked = getOverallRankedWords(text);
+    const itemIndex = ranked.findIndex((entry) => entry.key === wordKey);
+    const item = itemIndex >= 0 ? ranked[itemIndex] : null;
+    return {
+      text,
+      item,
+      rank: item ? itemIndex + 1 : null,
+      totalTypes: ranked.length,
+      perThousand: item && text.wordCount ? (item.total / text.wordCount) * 1000 : 0
+    };
+  });
+}
+
+function getOverallRankedWords(text) {
+  return [...text.wordStats.values()]
+    .sort((a, b) => b.total - a.total || a.label.localeCompare(b.label));
+}
+
+function renderRankComparisonRow(row, maxRank) {
+  const rankPosition = row.rank ? ((row.rank - 1) / Math.max(1, maxRank - 1)) * 100 : 100;
+  const rankLabel = row.rank ? `#${row.rank.toLocaleString()}` : "not found";
+  const countLabel = row.item ? row.item.total.toLocaleString() : "0";
+  return `
+    <div class="frequency-rank-compare-row ${row.item ? "" : "missing"}">
+      <div class="frequency-rank-compare-meta">
+        <strong>${escapeHtml(row.text.siglum)}</strong>
+        <span>${rankLabel}</span>
+      </div>
+      <div class="frequency-rank-line" aria-hidden="true">
+        <span class="frequency-rank-dot" style="left: ${rankPosition.toFixed(2)}%"></span>
+      </div>
+      <div class="frequency-rank-compare-counts">
+        <strong>${countLabel}</strong>
+        <span>${row.perThousand.toFixed(2)} / 1,000</span>
+      </div>
+    </div>
+  `;
 }
 
 function renderFrequencyChart(rankedByText, pageDataByText, visibleSharedWordKeys) {

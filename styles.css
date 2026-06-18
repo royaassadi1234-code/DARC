@@ -660,6 +660,96 @@ h1 {
   font-size: 1.45rem;
 }
 
+.frequency-rank-card {
+  overflow: hidden;
+}
+
+.frequency-rank-plot {
+  display: grid;
+  gap: 12px;
+  padding: 14px 16px 16px;
+}
+
+.frequency-rank-axis {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 850;
+}
+
+.frequency-rank-axis span:nth-child(2) {
+  justify-self: center;
+}
+
+.frequency-rank-axis span:last-child {
+  justify-self: end;
+}
+
+.frequency-rank-compare-row {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr) 128px;
+  gap: 12px;
+  align-items: center;
+  border: 1px solid #dbe1e7;
+  border-radius: 8px;
+  padding: 10px;
+  background: #ffffff;
+}
+
+.frequency-rank-compare-row.missing {
+  opacity: 0.72;
+}
+
+.frequency-rank-compare-meta,
+.frequency-rank-compare-counts {
+  display: grid;
+  gap: 2px;
+}
+
+.frequency-rank-compare-meta strong,
+.frequency-rank-compare-counts strong {
+  color: var(--accent-strong);
+  font-size: 0.92rem;
+}
+
+.frequency-rank-compare-meta span,
+.frequency-rank-compare-counts span {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.frequency-rank-compare-counts {
+  justify-items: end;
+  text-align: right;
+}
+
+.frequency-rank-line {
+  position: relative;
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(38, 112, 82, 0.25), rgba(36, 92, 115, 0.12));
+}
+
+.frequency-rank-dot {
+  position: absolute;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 1px rgba(38, 112, 82, 0.45);
+  transform: translate(-50%, -50%);
+}
+
+.frequency-rank-compare-row.missing .frequency-rank-dot {
+  background: var(--red);
+  box-shadow: 0 0 0 1px rgba(168, 59, 59, 0.45);
+}
+
 .frequency-workspace {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -4247,6 +4337,23 @@ mark.term-6 {
 
   .frequency-row {
     grid-template-columns: 28px minmax(0, 1fr) 64px;
+  }
+
+  .frequency-rank-axis,
+  .frequency-rank-compare-row {
+    grid-template-columns: 1fr;
+  }
+
+  .frequency-rank-axis span,
+  .frequency-rank-axis span:nth-child(2),
+  .frequency-rank-axis span:last-child,
+  .frequency-rank-compare-counts {
+    justify-self: stretch;
+    text-align: left;
+  }
+
+  .frequency-rank-line {
+    margin: 5px 0;
   }
 
   .frequency-item {

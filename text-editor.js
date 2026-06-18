@@ -11,7 +11,7 @@ const ANNOTATION_DRAFT_KEY = "druzAnnotationReviewDraft";
 const ANNOTATION_COMPLETION_KEY = "druzAnnotationFieldCompletion";
 
 const TEXT_EDITOR_FILES = [
-  { id: "dd", siglum: "DD", title: "Dādestān ī Dēnīg", file: "Dd.txt", translationFile: "DD-en.txt", kind: "Middle Persian" },
+  { id: "dd", siglum: "DD", title: "Dādestān ī Dēnīg", file: "Dd.txt", translationFile: "DD-mahshid-aligned.txt", kind: "Middle Persian" },
   { id: "py", siglum: "PY", title: "Pahlavi Yasna", file: "PY-Pt4.txt", kind: "Middle Persian" },
   { id: "wz", siglum: "WZ", title: "Wizīdagīhā ī Zādspram", file: "WZ.txt", translationFile: "WZ-en.txt", kind: "Middle Persian" },
   { id: "nm", siglum: "NM", title: "Nāmagīhā ī Manuščīhr", file: "NM.txt", kind: "Middle Persian" },

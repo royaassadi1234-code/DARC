@@ -29,6 +29,7 @@ const editorState = {
   },
   selectedId: "dd",
   query: "",
+  locationQuery: "",
   passageIndex: 0
 };
 
@@ -53,6 +54,7 @@ const toolTabs = document.querySelectorAll("[data-editor-tool]");
 const textToolPanel = document.querySelector("#text-tool-panel");
 const annotationToolPanel = document.querySelector("#annotation-tool-panel");
 const searchInput = document.querySelector("#text-editor-search");
+const locationSearchInput = document.querySelector("#text-editor-location-search");
 const summaryEl = document.querySelector("#text-editor-summary");
 const listEl = document.querySelector("#text-editor-list");
 const fileToggleButton = document.querySelector("#text-file-toggle");
@@ -195,8 +197,15 @@ function bindTextEditorEvents() {
   searchInput.addEventListener("input", () => {
     saveCurrentPassageToDraft();
     editorState.query = searchInput.value.trim();
-    listEl.classList.toggle("hidden", !editorState.query);
-    fileToggleButton.setAttribute("aria-expanded", editorState.query ? "true" : "false");
+    updateTextEditorListVisibilityFromSearch();
+    renderTextEditorList();
+    renderCurrentFile();
+  });
+
+  locationSearchInput.addEventListener("input", () => {
+    saveCurrentPassageToDraft();
+    editorState.locationQuery = locationSearchInput.value.trim();
+    updateTextEditorListVisibilityFromSearch();
     renderTextEditorList();
     renderCurrentFile();
   });
@@ -303,7 +312,7 @@ function bindTextEditorEvents() {
     saveDraft({ quiet: true });
     editorState.selectedId = button.dataset.textId;
     editorState.passageIndex = 0;
-    if (!editorState.query) {
+    if (!editorState.query && !editorState.locationQuery) {
       listEl.classList.add("hidden");
       fileToggleButton.setAttribute("aria-expanded", "false");
     }
@@ -723,7 +732,9 @@ function createCustomText() {
   editorState.selectedId = id;
   editorState.passageIndex = 0;
   editorState.query = "";
+  editorState.locationQuery = "";
   searchInput.value = "";
+  locationSearchInput.value = "";
   addTextPanelEl.classList.add("hidden");
   addTextToggleButton.setAttribute("aria-expanded", "false");
   newTextTitleEl.value = "";
@@ -791,6 +802,11 @@ function makeCustomTextId(siglum, title) {
 }
 
 function renderTextEditorList() {
+  if (editorState.locationQuery) {
+    renderTextLocationSearch(editorState.locationQuery);
+    return;
+  }
+
   if (editorState.query) {
     renderTextSearchLocations(editorState.query);
     return;
@@ -818,6 +834,38 @@ function renderTextEditorList() {
         <strong>${escapeHtml(file.siglum)}</strong>
         <span>${escapeHtml(file.title)}</span>
         ${draft}
+      </button>
+    `;
+  }).join("");
+}
+
+function renderTextLocationSearch(query) {
+  const file = getSelectedFile();
+  if (!file) {
+    summaryEl.innerHTML = "<span>No text selected</span>";
+    listEl.innerHTML = `<div class="empty-state">Select a text before searching by location.</div>`;
+    return;
+  }
+
+  const matches = getTextLocationMatches(file, query);
+  summaryEl.innerHTML = `
+    <span>${matches.length.toLocaleString()} visible passages</span>
+    <span>${escapeHtml(file.siglum)}</span>
+    <span>${escapeHtml(query)}</span>
+  `;
+
+  if (!matches.length) {
+    listEl.innerHTML = `<div class="empty-state">No locations match this search in ${escapeHtml(file.siglum)}.</div>`;
+    return;
+  }
+
+  listEl.innerHTML = matches.map((match) => {
+    const active = match.index === editorState.passageIndex ? " active" : "";
+    const displayLocation = formatTextLocationId(file, match.location);
+    return `
+      <button class="annotation-list-item text-editor-list-item text-location-result${active}" type="button" data-passage-index="${match.index}">
+        <strong>${escapeHtml(displayLocation)}</strong>
+        <span>${escapeHtml(match.snippet)}</span>
       </button>
     `;
   }).join("");
@@ -853,6 +901,12 @@ function renderTextSearchLocations(query) {
       </button>
     `;
   }).join("");
+}
+
+function updateTextEditorListVisibilityFromSearch() {
+  const hasSearch = Boolean(editorState.query || editorState.locationQuery);
+  listEl.classList.toggle("hidden", !hasSearch);
+  fileToggleButton.setAttribute("aria-expanded", hasSearch ? "true" : "false");
 }
 
 function renderCurrentFile() {
@@ -945,12 +999,50 @@ function getTextSearchMatches(file, query) {
   }, []);
 }
 
+function getTextLocationMatches(file, query) {
+  const normalizedQuery = normalizeLocationSearch(query);
+  if (!normalizedQuery) {
+    return [];
+  }
+
+  const translationRecords = getTranslationRecords(file);
+  return getSourceRecords(file).reduce((matches, record, index) => {
+    const translationRecord = findTranslationRecord(file, record, translationRecords);
+    const displayLocation = formatTextLocationId(file, record.location || `passage ${index + 1}`);
+    const translationDisplayLocation = formatTextLocationId(file, translationRecord?.location || "");
+    const searchable = [
+      record.location,
+      displayLocation,
+      translationRecord?.location,
+      translationDisplayLocation
+    ].map(normalizeLocationSearch).join(" ");
+
+    if (searchable.includes(normalizedQuery)) {
+      matches.push({
+        index,
+        location: record.location || `passage ${index + 1}`,
+        snippet: getTextLocationSnippet(record.text, translationRecord?.text)
+      });
+    }
+    return matches;
+  }, []);
+}
+
 function normalizeSearchText(value) {
   return String(value || "")
     .toLowerCase()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .trim();
+}
+
+function normalizeLocationSearch(value) {
+  return String(value || "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\s+/g, "")
+    .replace(/[^a-z0-9.]/g, "");
 }
 
 function getTextSearchSnippet(sourceText, translationText, query) {
@@ -965,6 +1057,10 @@ function getTextSearchSnippet(sourceText, translationText, query) {
   const prefix = start > 0 ? "... " : "";
   const suffix = end < text.length ? " ..." : "";
   return `${prefix}${text.slice(start, end).trim()}${suffix}`;
+}
+
+function getTextLocationSnippet(sourceText, translationText) {
+  return [sourceText, translationText].filter(Boolean).join(" ").slice(0, 140).trim();
 }
 
 function getCurrentContent(file) {

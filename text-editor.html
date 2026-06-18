@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DARC (Drūz-Ahreman Research Corpus) | Text Editor</title>
-    <link rel="stylesheet" href="styles.css?v=20260618-dd-mahshid-aligned">
+    <link rel="stylesheet" href="styles.css?v=20260618-location-search">
     <link rel="icon" type="image/svg+xml" href="logos/druz-logo-fire-altar-resisting-smoke-seal-no-branches-black-white-vector.svg">
   </head>
   <body>
@@ -119,6 +119,10 @@
               <label class="annotation-field text-editor-search-field" for="text-editor-search">
                 <span>Search word</span>
                 <input id="text-editor-search" type="search" placeholder="Type a word to show matching locations">
+              </label>
+              <label class="annotation-field text-editor-location-field" for="text-editor-location-search">
+                <span>Search location</span>
+                <input id="text-editor-location-search" type="search" placeholder="Type DD42.1 or 42.1">
               </label>
               <div class="annotation-summary" id="text-editor-summary"></div>
               <a class="copy-button secondary" id="text-editor-mpcd-dictionary" href="https://www.mpcorpus.org/dict/" target="_blank" rel="noopener">MPCD dictionary</a>
@@ -780,7 +784,7 @@
       </section>
     </main>
 
-    <script src="text-editor.js?v=20260618-dd-mahshid-aligned"></script>
+    <script src="text-editor.js?v=20260618-location-search"></script>
     <script src="copy-tools.js"></script>
   </body>
 </html>

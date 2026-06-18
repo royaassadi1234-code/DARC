@@ -4,6 +4,101 @@ const CHAPTER_DIAGRAM_TEXTS = [
   { id: "wz", siglum: "WZ", title: "Wizidagiha i Zadspram", file: "WZ.txt" }
 ];
 
+const DD_CHAPTER_TITLES = {
+  "1": "The Superiority of the Righteous",
+  "2": "Human Purpose in Creation",
+  "3": "The Cause of Human Exaltation",
+  "4": "Suffering, Evil, and Divine Justice",
+  "5": "Why the Good Suffer More",
+  "6": "Human Duty in the Material World",
+  "7": "Posthumous Merit and Judgment",
+  "8": "Merit from Personal and Others' Offerings",
+  "9": "The Growth of Merit During Life",
+  "10": "Postmortem Increase of Merit",
+  "11": "Merit and the Removal of Sin",
+  "12": "Reward and Punishment After Death",
+  "13": "The Reckoning of Sins and Merits",
+  "14": "Death Agony and Expiation of Sin",
+  "15": "The Soul and the Fate of the Corpse",
+  "16": "The Purpose of Exposure Burial",
+  "17": "The Value of Exposure to Birds",
+  "18": "Vision of Ohrmazd and Ahriman",
+  "19": "The Destination of Souls",
+  "20": "The Chinwad Bridge and the Afterlife Path",
+  "21": "Cosmic Mourning for the Righteous",
+  "22": "The Departure of the Vital Spirit",
+  "23": "The Righteous Soul During Three Nights",
+  "24": "The Wicked Soul During Three Nights",
+  "25": "The Nature of Heaven",
+  "26": "The Nature of Hell",
+  "27": "The Purpose of the Three-Night Ceremony",
+  "28": "Restrictions on Sros Rituals",
+  "29": "The Three Sacred Bread Consecrations",
+  "30": "The Righteous Soul's Journey to Heaven",
+  "31": "The Wicked Soul's Journey to Hell",
+  "32": "The Location of Hell",
+  "33": "The Paths to Heaven and Hell",
+  "34": "Depopulation and Resurrection",
+  "35": "Agents of the Renovation",
+  "36": "Resurrection and the Renewed World",
+  "37": "The Measure of Saving Merit",
+  "38": "The Purpose of the Sacred Girdle",
+  "39": "Merit of the Sacred Garments",
+  "40": "Apostasy and Religious Fidelity",
+  "41": "Saving Others from Apostasy",
+  "42": "Viewing the Fire During Consecration",
+  "43": "Payment of Non-local Priests",
+  "44": "Duties of Teacher and Pupil",
+  "45": "Priests and Secular Occupations",
+  "46": "Priestly Authority and Learning",
+  "47": "The Proper Performance of Worship",
+  "48": "Hoarding Grain for Profit",
+  "49": "Selling Wine to Non-Believers",
+  "50": "Wine Consumption and Religious Law",
+  "51": "Contracts and Market Fluctuations",
+  "52": "Trade with Non-Zoroastrians",
+  "53": "Inheritance and Testamentary Rights",
+  "54": "Responsibility for Sidos Ceremonies",
+  "55": "Sturih and Family Guardianship",
+  "56": "Eligibility for Sturih",
+  "57": "Types of Sturih and Guardianship",
+  "58": "Property Requirements for Sturih",
+  "59": "The Sin of Failing to Appoint a Stur",
+  "60": "Merit and Demerit of Guardianship",
+  "61": "Laws of Inheritance",
+  "62": "Property Rights over Non-Believers",
+  "63": "The Origin of Humankind",
+  "64": "The Primordial Seed of Humanity",
+  "65": "Priestly Fees and Competition",
+  "66": "The Nature of the Rainbow",
+  "67": "The Phases of the Moon",
+  "68": "The Cause of Eclipses",
+  "69": "The Cause of Earthquakes",
+  "70": "Fate, Action, and Lunar Influence",
+  "71": "The Sin of Sodomy",
+  "72": "The Stench of Sodomy",
+  "73": "The Holy Immortals and Ritual Pollution",
+  "74": "Resurrection of the Sodomite",
+  "75": "Killing a Sodomite: Merit or Crime",
+  "76": "The Gravity of Sodomy",
+  "77": "Adultery and Its Punishment",
+  "78": "Omitting the Grace Before Drinking",
+  "79": "Neglecting Religious Ceremonies",
+  "80": "The Purpose of the Zindag Ruwan Ceremony",
+  "81": "Unperformed Religious Services",
+  "82": "Priestly Obligations in Ritual Service",
+  "83": "Proper Gifts for Religious Ceremonies",
+  "84": "Benefits of Increasing Ritual Gifts",
+  "85": "Harm of Reducing Ritual Gifts",
+  "86": "Merit of Ritual Donations",
+  "87": "Reduced-Cost Ritual Performance",
+  "88": "Delegating Religious Donations",
+  "89": "The Immortals Before Mazdaism",
+  "90": "The Nature of the Sky",
+  "91": "The Greatest Waters and Rivers",
+  "92": "Tistar, Clouds, and Rainfall"
+};
+
 const chapterDiagramState = {
   texts: [],
   query: "",
@@ -189,20 +284,27 @@ function renderChapterTextPanel(summary, maxCount) {
       </header>
       <div class="chapter-bar-list">
         ${summary.chapters.length
-          ? summary.chapters.map((chapter) => renderChapterBar(chapter, maxCount)).join("")
+          ? summary.chapters.map((chapter) => renderChapterBar(summary.text, chapter, maxCount)).join("")
           : `<div class="empty-state">No chapter occurrences.</div>`}
       </div>
     </section>
   `;
 }
 
-function renderChapterBar(chapter, maxCount) {
+function renderChapterBar(text, chapter, maxCount) {
   const percent = maxCount ? (chapter.total / maxCount) * 100 : 0;
+  const chapterTitle = getChapterTitle(text, chapter.chapter);
   const locations = [...chapter.locations.entries()]
     .map(([location, count]) => `${location} (${count})`)
     .join(", ");
+  const hoverTitle = [
+    `${text.siglum} Chapter ${chapter.chapter}`,
+    chapterTitle,
+    `${chapter.total.toLocaleString()} occurrences`,
+    locations
+  ].filter(Boolean).join(" | ");
   return `
-    <article class="chapter-bar-row" title="${escapeChapterHtml(locations)}">
+    <article class="chapter-bar-row" title="${escapeChapterHtml(hoverTitle)}">
       <span class="chapter-label">Chapter ${escapeChapterHtml(chapter.chapter)}</span>
       <span class="chapter-bar-track" aria-hidden="true">
         <span class="chapter-bar-fill" style="width: ${percent.toFixed(2)}%"></span>
@@ -210,6 +312,13 @@ function renderChapterBar(chapter, maxCount) {
       <strong>${chapter.total.toLocaleString()}</strong>
     </article>
   `;
+}
+
+function getChapterTitle(text, chapter) {
+  if (text.id !== "dd") {
+    return "";
+  }
+  return DD_CHAPTER_TITLES[String(chapter)] || "";
 }
 
 function createChapterSearch(query) {

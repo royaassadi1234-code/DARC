@@ -233,6 +233,61 @@ select {
   font-size: 0.84rem;
 }
 
+.start-page .shell {
+  width: min(1500px, calc(100% - 28px));
+}
+
+.start-page .masthead {
+  grid-template-columns: auto minmax(190px, 300px) minmax(0, 1fr);
+  column-gap: 12px;
+  align-items: center;
+}
+
+.start-page .site-logo {
+  width: clamp(58px, 5.2vw, 82px);
+  height: clamp(58px, 5.2vw, 82px);
+}
+
+.start-page .masthead-title {
+  padding-top: 0;
+}
+
+.start-page .masthead-title h1 {
+  max-width: 300px;
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.15;
+}
+
+.start-page .masthead-subtitle {
+  display: none;
+}
+
+.start-page .header-actions {
+  justify-items: stretch;
+  padding-top: 0;
+}
+
+.start-page .site-nav {
+  max-width: none;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  gap: 4px;
+}
+
+.start-page .site-nav a,
+.start-page .site-nav summary {
+  padding-right: 8px;
+  padding-left: 8px;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+.start-page .site-nav > a[href="search.html"] {
+  max-width: none;
+  line-height: 1;
+}
+
 .sub-nav {
   display: flex;
   gap: 8px;

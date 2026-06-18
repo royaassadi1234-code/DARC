@@ -62,6 +62,14 @@ const COMPOUND_VARIANTS = COMPOUND_WORDS
   .flatMap((compound) => compound.variants.map((tokens) => ({ ...compound, tokens })))
   .sort((a, b) => b.tokens.length - a.tokens.length);
 
+const FREQUENCY_VARIANT_GROUPS = [
+  ["ahreman", "ahrimen", "ahriman", "aharman", "ahremn", "ahremanag"],
+  ["druz", "druj", "drux", "drug", "draoga"],
+  ["ohrmazd", "ormazd", "ahura mazda", "ahuramazda", "dadar"],
+  ["zadspram", "zadsparam", "zatspram", "zad-spram"],
+  ["manuchihr", "manushchihr", "manuschihr", "manuscihr", "manushcihr"]
+].map((group) => group.map(normalizeWord));
+
 const frequencyState = {
   texts: [],
   pageSize: 25,
@@ -365,16 +373,47 @@ function renderFrequency() {
 }
 
 function getRankedWords(text) {
-  const filter = normalizeWord(frequencyState.filter);
+  const searchTerms = getFrequencySearchTerms(frequencyState.filter);
 
   return [...text.wordStats.values()]
     .filter((item) => {
       if (frequencyState.hideStopwords && isCommonWord(item.key)) {
         return false;
       }
-      return !filter || item.key.includes(filter) || foldText(item.label).toLowerCase().includes(filter);
+      return itemMatchesFrequencySearch(item, searchTerms);
     })
     .sort((a, b) => b.total - a.total || a.label.localeCompare(b.label));
+}
+
+function getFrequencySearchTerms(query) {
+  const terms = [];
+  const pattern = /"([^"]+)"|'([^']+)'|[^,\s;]+/g;
+  let match;
+  while ((match = pattern.exec(query || "")) !== null) {
+    const term = normalizeWord(match[1] || match[2] || match[0]);
+    if (term) {
+      terms.push(term);
+    }
+  }
+  return [...new Set(terms)];
+}
+
+function itemMatchesFrequencySearch(item, searchTerms) {
+  if (!searchTerms.length) {
+    return true;
+  }
+
+  const label = foldText(item.label).toLowerCase();
+  return searchTerms.some((term) =>
+    getFrequencySearchVariants(term).some((variant) =>
+      item.key.includes(variant) || label.includes(variant)
+    )
+  );
+}
+
+function getFrequencySearchVariants(term) {
+  const group = FREQUENCY_VARIANT_GROUPS.find((variants) => variants.includes(term));
+  return group || [term];
 }
 
 function renderPersonalCommonWords() {
@@ -413,7 +452,7 @@ function renderRankComparison(rankedByText) {
             <h2>Compare a Word Across DD, PY, and WZ</h2>
           </div>
         </header>
-        <div class="empty-state">Type an exact word in the filter or click any word in the lists below.</div>
+        <div class="empty-state">Type one word or variant for rank comparison, or click any word in the lists below.</div>
       </article>
     `;
     return;
@@ -449,8 +488,17 @@ function getRankComparisonKey() {
   if (frequencyState.selected?.wordKey) {
     return frequencyState.selected.wordKey;
   }
-  const key = normalizeWord(frequencyState.filter);
-  return key || "";
+  const searchTerms = getFrequencySearchTerms(frequencyState.filter);
+  if (searchTerms.length !== 1) {
+    return "";
+  }
+  return findFirstRankComparisonKey(searchTerms[0]);
+}
+
+function findFirstRankComparisonKey(term) {
+  const variants = getFrequencySearchVariants(term);
+  const allKeys = new Set(frequencyState.texts.flatMap((text) => [...text.wordStats.keys()]));
+  return variants.find((variant) => allKeys.has(variant)) || variants[0] || "";
 }
 
 function getRankComparisonRows(wordKey) {

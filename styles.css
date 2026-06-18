@@ -674,7 +674,7 @@ h1 {
 
 .frequency-chart {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
   align-items: start;
 }
@@ -820,12 +820,12 @@ h1 {
   transform: rotate(45deg);
 }
 
-.frequency-chart .frequency-panel:nth-child(2) .frequency-location-popover {
+.frequency-chart .frequency-panel:nth-child(n + 2) .frequency-location-popover {
   right: calc(100% + 10px);
   left: auto;
 }
 
-.frequency-chart .frequency-panel:nth-child(2) .frequency-location-popover::before {
+.frequency-chart .frequency-panel:nth-child(n + 2) .frequency-location-popover::before {
   right: -7px;
   left: auto;
   border-right: 1px solid var(--line);

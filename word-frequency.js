@@ -1,5 +1,6 @@
 const FREQUENCY_TEXTS = [
   { id: "dd", siglum: "DD", title: "D\u0101dest\u0101n \u012b D\u0113n\u012bg", file: "Dd.txt" },
+  { id: "py", siglum: "PY", title: "Pahlavi Yasna", file: "PY-Pt4.txt" },
   { id: "wz", siglum: "WZ", title: "Wiz\u012bdag\u012bh\u0101 \u012b Z\u0101dspram", file: "WZ.txt" }
 ];
 
@@ -88,11 +89,11 @@ async function initFrequency() {
 
   try {
     frequencyState.texts = await Promise.all(FREQUENCY_TEXTS.map(loadFrequencyText));
-    frequencyStatusEl.textContent = "DD and WZ ready";
+    frequencyStatusEl.textContent = "DD, PY, and WZ ready";
     renderFrequency();
   } catch (error) {
     frequencyStatusEl.textContent = "Text loading failed";
-    frequencyChartEl.innerHTML = `<div class="empty-state">DD and WZ could not be loaded.</div>`;
+    frequencyChartEl.innerHTML = `<div class="empty-state">DD, PY, and WZ could not be loaded.</div>`;
     console.error(error);
   }
 }

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DARC (Drūz-Ahreman Research Corpus) | Text Editor</title>
-    <link rel="stylesheet" href="styles.css?v=20260618-location-search">
+    <link rel="stylesheet" href="styles.css?v=20260618-merged-text-search">
     <link rel="icon" type="image/svg+xml" href="logos/druz-logo-fire-altar-resisting-smoke-seal-no-branches-black-white-vector.svg">
   </head>
   <body>
@@ -117,19 +117,14 @@
             <div class="text-editor-menu-bar" aria-label="Text file menu">
               <button class="copy-button" id="text-file-toggle" type="button" aria-expanded="false" aria-controls="text-editor-list">Choose the text</button>
               <label class="annotation-field text-editor-search-field" for="text-editor-search">
-                <span>Search word</span>
-                <input id="text-editor-search" type="search" placeholder="Type a word to show matching locations">
-              </label>
-              <label class="annotation-field text-editor-location-field" for="text-editor-location-search">
-                <span>Search location</span>
-                <input id="text-editor-location-search" type="search" placeholder="Type DD42.1 or 42.1">
+                <span>Search word or location</span>
+                <input id="text-editor-search" type="search" placeholder="Type a word, DD42.1, or 42.1">
               </label>
               <div class="annotation-summary" id="text-editor-summary"></div>
               <a class="copy-button secondary" id="text-editor-mpcd-dictionary" href="https://www.mpcorpus.org/dict/" target="_blank" rel="noopener">MPCD dictionary</a>
               <a class="copy-button secondary" id="text-editor-cab" href="https://cab.geschkult.fu-berlin.de/" target="_blank" rel="noopener">CAB3.0</a>
               <button class="copy-button" id="text-editor-logout" type="button">Logout</button>
               <div class="text-editor-horizontal-list hidden" id="text-editor-list"></div>
-              <button class="copy-button text-editor-list-add" id="text-editor-add-text-toggle" type="button" aria-expanded="false" aria-controls="text-editor-add-text-panel">Add text</button>
               <div class="text-editor-add-text-panel hidden" id="text-editor-add-text-panel">
                 <div class="text-editor-dropbox" id="text-editor-dropbox">
                   <strong>Drop text file here</strong>
@@ -784,7 +779,7 @@
       </section>
     </main>
 
-    <script src="text-editor.js?v=20260618-location-search"></script>
+    <script src="text-editor.js?v=20260618-merged-text-search"></script>
     <script src="copy-tools.js"></script>
   </body>
 </html>

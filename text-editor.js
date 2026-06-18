@@ -29,7 +29,6 @@ const editorState = {
   },
   selectedId: "dd",
   query: "",
-  locationQuery: "",
   passageIndex: 0
 };
 
@@ -54,7 +53,6 @@ const toolTabs = document.querySelectorAll("[data-editor-tool]");
 const textToolPanel = document.querySelector("#text-tool-panel");
 const annotationToolPanel = document.querySelector("#annotation-tool-panel");
 const searchInput = document.querySelector("#text-editor-search");
-const locationSearchInput = document.querySelector("#text-editor-location-search");
 const summaryEl = document.querySelector("#text-editor-summary");
 const listEl = document.querySelector("#text-editor-list");
 const fileToggleButton = document.querySelector("#text-file-toggle");
@@ -72,7 +70,6 @@ const passagePositionEl = document.querySelector("#text-passage-position");
 const passagePrevButton = document.querySelector("#text-passage-prev");
 const passageNextButton = document.querySelector("#text-passage-next");
 const saveButton = document.querySelector("#text-editor-save");
-const addTextToggleButton = document.querySelector("#text-editor-add-text-toggle");
 const annotationOptionsToggleButton = document.querySelector("#text-editor-annotation-options-toggle");
 const addTextPanelEl = document.querySelector("#text-editor-add-text-panel");
 const addTextDropboxEl = document.querySelector("#text-editor-dropbox");
@@ -202,17 +199,13 @@ function bindTextEditorEvents() {
     renderCurrentFile();
   });
 
-  locationSearchInput.addEventListener("input", () => {
-    saveCurrentPassageToDraft();
-    editorState.locationQuery = locationSearchInput.value.trim();
-    updateTextEditorListVisibilityFromSearch();
-    renderTextEditorList();
-    renderCurrentFile();
-  });
-
   fileToggleButton.addEventListener("click", () => {
     const hidden = listEl.classList.toggle("hidden");
     fileToggleButton.setAttribute("aria-expanded", hidden ? "false" : "true");
+    if (hidden) {
+      addTextPanelEl.classList.add("hidden");
+      setAddTextToggleExpanded(false);
+    }
   });
 
   toolTabs.forEach((tab) => {
@@ -296,6 +289,13 @@ function bindTextEditorEvents() {
   window.addEventListener("hashchange", openToolFromHash);
 
   listEl.addEventListener("click", (event) => {
+    const addTextButton = event.target.closest("#text-editor-add-text-toggle");
+    if (addTextButton) {
+      const hidden = addTextPanelEl.classList.toggle("hidden");
+      addTextButton.setAttribute("aria-expanded", hidden ? "false" : "true");
+      return;
+    }
+
     const passageButton = event.target.closest("[data-passage-index]");
     if (passageButton) {
       saveDraft({ quiet: true });
@@ -312,9 +312,11 @@ function bindTextEditorEvents() {
     saveDraft({ quiet: true });
     editorState.selectedId = button.dataset.textId;
     editorState.passageIndex = 0;
-    if (!editorState.query && !editorState.locationQuery) {
+    if (!editorState.query) {
       listEl.classList.add("hidden");
       fileToggleButton.setAttribute("aria-expanded", "false");
+      addTextPanelEl.classList.add("hidden");
+      setAddTextToggleExpanded(false);
     }
     renderTextEditorList();
     renderCurrentFile();
@@ -362,10 +364,6 @@ function bindTextEditorEvents() {
   });
 
   saveButton.addEventListener("click", () => saveDraft());
-  addTextToggleButton.addEventListener("click", () => {
-    const hidden = addTextPanelEl.classList.toggle("hidden");
-    addTextToggleButton.setAttribute("aria-expanded", hidden ? "false" : "true");
-  });
   annotationOptionsToggleButton.addEventListener("click", () => {
     const hidden = annotationOptionsPanelEl.classList.toggle("hidden");
     annotationOptionsToggleButton.setAttribute("aria-expanded", hidden ? "false" : "true");
@@ -732,11 +730,9 @@ function createCustomText() {
   editorState.selectedId = id;
   editorState.passageIndex = 0;
   editorState.query = "";
-  editorState.locationQuery = "";
   searchInput.value = "";
-  locationSearchInput.value = "";
   addTextPanelEl.classList.add("hidden");
-  addTextToggleButton.setAttribute("aria-expanded", "false");
+  setAddTextToggleExpanded(false);
   newTextTitleEl.value = "";
   newTextSiglumEl.value = "";
   newTextSourceEl.value = "";
@@ -802,11 +798,6 @@ function makeCustomTextId(siglum, title) {
 }
 
 function renderTextEditorList() {
-  if (editorState.locationQuery) {
-    renderTextLocationSearch(editorState.locationQuery);
-    return;
-  }
-
   if (editorState.query) {
     renderTextSearchLocations(editorState.query);
     return;
@@ -821,12 +812,7 @@ function renderTextEditorList() {
     <span>${editorState.files.length} files</span>
   `;
 
-  if (!files.length) {
-    listEl.innerHTML = `<div class="empty-state">No text files match this search.</div>`;
-    return;
-  }
-
-  listEl.innerHTML = files.map((file) => {
+  const fileButtons = files.map((file) => {
     const active = file.id === editorState.selectedId ? " active" : "";
     const draft = hasDraft(file) ? `<small>Draft saved</small>` : `<small>${escapeHtml(file.kind)}</small>`;
     return `
@@ -837,38 +823,15 @@ function renderTextEditorList() {
       </button>
     `;
   }).join("");
-}
 
-function renderTextLocationSearch(query) {
-  const file = getSelectedFile();
-  if (!file) {
-    summaryEl.innerHTML = "<span>No text selected</span>";
-    listEl.innerHTML = `<div class="empty-state">Select a text before searching by location.</div>`;
-    return;
-  }
-
-  const matches = getTextLocationMatches(file, query);
-  summaryEl.innerHTML = `
-    <span>${matches.length.toLocaleString()} visible passages</span>
-    <span>${escapeHtml(file.siglum)}</span>
-    <span>${escapeHtml(query)}</span>
+  listEl.innerHTML = `
+    ${fileButtons || `<div class="empty-state">No text files are available.</div>`}
+    <button class="annotation-list-item text-editor-list-item text-editor-list-add" id="text-editor-add-text-toggle" type="button" aria-expanded="${addTextPanelEl.classList.contains("hidden") ? "false" : "true"}" aria-controls="text-editor-add-text-panel">
+      <strong>Add text</strong>
+      <span>Create text and translation</span>
+      <small>New file</small>
+    </button>
   `;
-
-  if (!matches.length) {
-    listEl.innerHTML = `<div class="empty-state">No locations match this search in ${escapeHtml(file.siglum)}.</div>`;
-    return;
-  }
-
-  listEl.innerHTML = matches.map((match) => {
-    const active = match.index === editorState.passageIndex ? " active" : "";
-    const displayLocation = formatTextLocationId(file, match.location);
-    return `
-      <button class="annotation-list-item text-editor-list-item text-location-result${active}" type="button" data-passage-index="${match.index}">
-        <strong>${escapeHtml(displayLocation)}</strong>
-        <span>${escapeHtml(match.snippet)}</span>
-      </button>
-    `;
-  }).join("");
 }
 
 function renderTextSearchLocations(query) {
@@ -887,7 +850,7 @@ function renderTextSearchLocations(query) {
   `;
 
   if (!matches.length) {
-    listEl.innerHTML = `<div class="empty-state">No passages contain this word in ${escapeHtml(file.siglum)}.</div>`;
+    listEl.innerHTML = `<div class="empty-state">No passages match this word or location in ${escapeHtml(file.siglum)}.</div>`;
     return;
   }
 
@@ -904,9 +867,16 @@ function renderTextSearchLocations(query) {
 }
 
 function updateTextEditorListVisibilityFromSearch() {
-  const hasSearch = Boolean(editorState.query || editorState.locationQuery);
+  const hasSearch = Boolean(editorState.query);
   listEl.classList.toggle("hidden", !hasSearch);
   fileToggleButton.setAttribute("aria-expanded", hasSearch ? "true" : "false");
+}
+
+function setAddTextToggleExpanded(expanded) {
+  const addTextButton = document.querySelector("#text-editor-add-text-toggle");
+  if (addTextButton) {
+    addTextButton.setAttribute("aria-expanded", expanded ? "true" : "false");
+  }
 }
 
 function renderCurrentFile() {
@@ -980,7 +950,8 @@ function getNextPassageIndex(file) {
 
 function getTextSearchMatches(file, query) {
   const normalizedQuery = normalizeSearchText(query);
-  if (!normalizedQuery) {
+  const normalizedLocationQuery = normalizeLocationSearch(query);
+  if (!normalizedQuery && !normalizedLocationQuery) {
     return [];
   }
 
@@ -988,40 +959,24 @@ function getTextSearchMatches(file, query) {
   return getSourceRecords(file).reduce((matches, record, index) => {
     const translationRecord = findTranslationRecord(file, record, translationRecords);
     const searchable = normalizeSearchText([record.text, translationRecord?.text].filter(Boolean).join(" "));
-    if (searchable.includes(normalizedQuery)) {
-      matches.push({
-        index,
-        location: record.location || `passage ${index + 1}`,
-        snippet: getTextSearchSnippet(record.text, translationRecord?.text, normalizedQuery)
-      });
-    }
-    return matches;
-  }, []);
-}
-
-function getTextLocationMatches(file, query) {
-  const normalizedQuery = normalizeLocationSearch(query);
-  if (!normalizedQuery) {
-    return [];
-  }
-
-  const translationRecords = getTranslationRecords(file);
-  return getSourceRecords(file).reduce((matches, record, index) => {
-    const translationRecord = findTranslationRecord(file, record, translationRecords);
     const displayLocation = formatTextLocationId(file, record.location || `passage ${index + 1}`);
     const translationDisplayLocation = formatTextLocationId(file, translationRecord?.location || "");
-    const searchable = [
+    const searchableLocation = [
       record.location,
       displayLocation,
       translationRecord?.location,
       translationDisplayLocation
     ].map(normalizeLocationSearch).join(" ");
+    const wordMatches = normalizedQuery && searchable.includes(normalizedQuery);
+    const locationMatches = normalizedLocationQuery && searchableLocation.includes(normalizedLocationQuery);
 
-    if (searchable.includes(normalizedQuery)) {
+    if (wordMatches || locationMatches) {
       matches.push({
         index,
         location: record.location || `passage ${index + 1}`,
-        snippet: getTextLocationSnippet(record.text, translationRecord?.text)
+        snippet: wordMatches
+          ? getTextSearchSnippet(record.text, translationRecord?.text, normalizedQuery)
+          : getTextLocationSnippet(record.text, translationRecord?.text)
       });
     }
     return matches;

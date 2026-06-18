@@ -888,6 +888,82 @@ h1 {
   min-width: 0;
 }
 
+.chapter-diagram-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  align-items: start;
+  padding: 16px;
+}
+
+.chapter-diagram-panel {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.chapter-diagram-panel > header {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 13px;
+  border-bottom: 1px solid var(--line);
+  background: #fbfcfd;
+}
+
+.chapter-diagram-panel h3 {
+  margin: 4px 0 0;
+  font-size: 0.98rem;
+  line-height: 1.22;
+}
+
+.chapter-bar-list {
+  display: grid;
+  gap: 8px;
+  max-height: 620px;
+  overflow: auto;
+  padding: 12px;
+}
+
+.chapter-bar-row {
+  display: grid;
+  grid-template-columns: minmax(74px, auto) minmax(0, 1fr) minmax(42px, auto);
+  gap: 9px;
+  align-items: center;
+  border: 1px solid #dbe1e7;
+  border-radius: 6px;
+  padding: 8px;
+  background: #ffffff;
+}
+
+.chapter-label {
+  color: var(--accent-strong);
+  font-size: 0.78rem;
+  font-weight: 850;
+}
+
+.chapter-bar-track {
+  display: block;
+  height: 9px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e1e7ed;
+}
+
+.chapter-bar-fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--green);
+}
+
+.chapter-bar-row strong {
+  justify-self: end;
+  color: var(--ink);
+  font-size: 0.84rem;
+}
+
 .diagram-actions {
   display: inline-flex;
   align-items: center;
@@ -4031,6 +4107,10 @@ mark.term-6 {
     grid-template-columns: 1fr;
   }
 
+  .chapter-diagram-grid {
+    grid-template-columns: 1fr;
+  }
+
   .frequency-common-body {
     grid-template-columns: 1fr;
   }
@@ -4178,7 +4258,7 @@ mark.term-6 {
   }
 
   .frequency-location-popover,
-  .frequency-chart .frequency-panel:nth-child(2) .frequency-location-popover {
+  .frequency-chart .frequency-panel:nth-child(n + 2) .frequency-location-popover {
     position: relative;
     top: auto;
     right: auto;
@@ -4187,7 +4267,7 @@ mark.term-6 {
   }
 
   .frequency-location-popover::before,
-  .frequency-chart .frequency-panel:nth-child(2) .frequency-location-popover::before {
+  .frequency-chart .frequency-panel:nth-child(n + 2) .frequency-location-popover::before {
     display: none;
   }
 

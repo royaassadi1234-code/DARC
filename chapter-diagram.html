@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DARC (Drūz-Ahreman Research Corpus) | DD-PY Phrase Matches</title>
+    <title>DARC (Drūz-Ahreman Research Corpus) | Chapter Attestation Diagram</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/svg+xml" href="logos/druz-logo-fire-altar-resisting-smoke-seal-no-branches-black-white-vector.svg">
   </head>
-  <body data-data-url="dd-py-phrases-data.json" data-source-key="Dd" data-target-key="PY" data-source-label="DD" data-target-label="PY">
+  <body>
     <main class="shell">
       <section class="workspace" aria-labelledby="page-title">
         <header class="masthead">
@@ -37,46 +37,46 @@
                 </div>
               </details>
               <a href="search.html">Parallel Text Search</a>
-              <details class="nav-menu">
+              <details class="nav-menu active" open>
                 <summary>Visualized Statistics</summary>
                 <div class="nav-menu-list">
-                  <details class="pattern-submenu statistics-submenu">
+                  <details class="pattern-submenu statistics-submenu" open>
                     <summary>Attestation Diagram</summary>
                     <div class="pattern-submenu-list">
                       <a href="diagram.html">1. Text based</a>
-                      <a href="chapter-diagram.html">2. Chapter based</a>
+                      <a class="active" href="chapter-diagram.html">2. Chapter based</a>
                     </div>
                   </details>
                   <a href="word-frequency.html">Word Frequency</a>
                 </div>
               </details>
-              <details class="nav-menu active">
+              <details class="nav-menu">
                 <summary>Pattern</summary>
                 <div class="nav-menu-list pattern-menu-list">
                   <details class="pattern-submenu">
-                  <summary>Lexeme</summary>
-                  <div class="pattern-submenu-list">
-                    <a href="pseudo.html">DD vs PY</a>
-                    <a href="dd-wz.html">DD vs WZ</a>
-                    <a href="py-wz.html">PY vs WZ</a>
-                    <a href="dd-py-wz.html">DD vs PY vs WZ</a>
-                  </div>
-                </details>
-                  <details class="pattern-submenu active">
-                  <summary>Collocation</summary>
-                  <div class="pattern-submenu-list">
-                    <a class="active" href="dd-py-phrases.html">DD vs PY</a>
-                    <a href="dd-wz-phrases.html">DD vs WZ</a>
-                    <a href="py-wz-phrases.html">PY vs WZ</a>
-                    <a href="dd-py-wz-phrases.html">DD vs PY vs WZ</a>
-                  </div>
-                </details>
+                    <summary>Lexeme</summary>
+                    <div class="pattern-submenu-list">
+                      <a href="pseudo.html">DD vs PY</a>
+                      <a href="dd-wz.html">DD vs WZ</a>
+                      <a href="py-wz.html">PY vs WZ</a>
+                      <a href="dd-py-wz.html">DD vs PY vs WZ</a>
+                    </div>
+                  </details>
                   <details class="pattern-submenu">
-                  <summary>Semantic Motif</summary>
-                  <div class="pattern-submenu-list">
-                    <a href="themes.html">Semantic Motif</a>
-                  </div>
-                </details>
+                    <summary>Collocation</summary>
+                    <div class="pattern-submenu-list">
+                      <a href="dd-py-phrases.html">DD vs PY</a>
+                      <a href="dd-wz-phrases.html">DD vs WZ</a>
+                      <a href="py-wz-phrases.html">PY vs WZ</a>
+                      <a href="dd-py-wz-phrases.html">DD vs PY vs WZ</a>
+                    </div>
+                  </details>
+                  <details class="pattern-submenu">
+                    <summary>Semantic Motif</summary>
+                    <div class="pattern-submenu-list">
+                      <a href="themes.html">Semantic Motif</a>
+                    </div>
+                  </details>
                 </div>
               </details>
               <details class="nav-menu">
@@ -91,47 +91,37 @@
                 </div>
               </details>
             </nav>
-            <div class="status" id="pseudo-status">Loading phrases...</div>
+            <div class="status" id="chapter-diagram-status">Loading DD, PY, and WZ...</div>
           </div>
         </header>
 
-        <nav class="sub-nav" aria-label="DD vs PY sections">
-          <a href="pseudo.html">Lexeme</a>
-          <a class="active" href="dd-py-phrases.html">Collocation</a>
-        </nav>
-
-        <section class="search-panel pseudo-controls" aria-label="Phrase controls">
-          <label class="search-box" for="pseudo-query">
-            <span>Search phrases or previews</span>
-            <input id="pseudo-query" type="search" placeholder="Type plain letters or several words: humat huxt" autocomplete="off" autofocus>
+        <section class="search-panel diagram-controls chapter-diagram-controls" aria-label="Chapter diagram search controls">
+          <label class="search-box" for="chapter-diagram-query">
+            <span>Search word or phrase</span>
+            <input id="chapter-diagram-query" type="search" placeholder="Type a word or phrase: druz, gannag menog" autocomplete="off" autofocus>
           </label>
 
-          <div class="controls" role="group" aria-label="Phrase filters">
-            <label class="select-control" for="tier-filter">
-              <span>Length</span>
-              <select id="tier-filter">
-                <option value="">All</option>
-              </select>
+          <div class="controls" role="group" aria-label="Chapter diagram options">
+            <label class="control">
+              <input id="chapter-diagram-phrase" type="checkbox">
+              <span>Phrase search</span>
             </label>
-            <label class="select-control" for="sort-mode">
-              <span>Sort</span>
-              <select id="sort-mode">
-                <option value="rank">Rank</option>
-                <option value="score">Phrase length</option>
-                <option value="shared">Shared words</option>
-              </select>
+            <label class="control">
+              <input id="chapter-diagram-whole-word" type="checkbox" checked>
+              <span>Whole word</span>
             </label>
-            <button class="action-button" id="expand-all" type="button">Expand</button>
-            <button class="action-button secondary" id="collapse-all" type="button">Collapse</button>
+            <label class="control">
+              <input id="chapter-diagram-case-sensitive" type="checkbox">
+              <span>Case sensitive</span>
+            </label>
           </div>
         </section>
 
-        <section class="pseudo-summary" id="pseudo-summary" aria-label="Phrase summary"></section>
-        <section class="pseudo-gallery" id="pseudo-gallery" aria-live="polite"></section>
+        <section class="diagram-tool" id="chapter-diagram-tool" aria-live="polite"></section>
       </section>
     </main>
 
-    <script src="pseudo.js"></script>
+    <script src="chapter-diagram.js"></script>
     <script src="copy-tools.js"></script>
   </body>
 </html>

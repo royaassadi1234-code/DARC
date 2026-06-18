@@ -227,7 +227,7 @@ function renderDiagram() {
       <header>
         <div>
           <div class="siglum">Diagram</div>
-          <h2>Attestation Frequency by Text</h2>
+          <h2>Text-Based Attestation Frequency</h2>
         </div>
         <div class="diagram-actions">
           <button class="copy-tool-button" type="button" data-copy-diagrams>Copy diagrams</button>

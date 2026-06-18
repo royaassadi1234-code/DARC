@@ -9,6 +9,7 @@ OCR_SOURCE = Path("dd2mahshid-ocr-all.json")
 TARGET = Path("dd2mahshid-persian-translations.json")
 
 QUESTION_RE = re.compile(r"\u067e\u0631\u0633\u0634\s*([\u06f0-\u06f9\u0660-\u06690-9]+)")
+STANDALONE_NUMBER_RE = re.compile(r"(?<![\w.])(\d+)(?!\w)")
 
 
 def normalize_digits(value: str) -> str:
@@ -20,7 +21,22 @@ def normalize_digits(value: str) -> str:
             digits.append(str(ord(char) - ord("\u06f0")))
         elif "\u0660" <= char <= "\u0669":
             digits.append(str(ord(char) - ord("\u0660")))
+        else:
+            digits.append(char)
     return "".join(digits)
+
+
+def prefix_question_numbers(chapter: str, text: str) -> str:
+    text = normalize_digits(text)
+
+    def replace(match: re.Match[str]) -> str:
+        number = str(int(match.group(1)))
+        before = text[: match.start()]
+        if re.search(r"\u067e\u0631\u0633\u0634\s*$", before):
+            return number
+        return f"{chapter}.{number}"
+
+    return STANDALONE_NUMBER_RE.sub(replace, text)
 
 
 def find_page_markers(text: str) -> list[dict]:
@@ -105,7 +121,7 @@ def main() -> None:
             "sourcePdf": entry["sourcePdf"],
             "ocrNote": entry["ocrNote"],
             "pdfPages": entry["pdfPages"],
-            "text": "\n\n".join(entry["textParts"]),
+            "text": prefix_question_numbers(chapter, "\n\n".join(entry["textParts"])),
         }
 
     TARGET.write_text(

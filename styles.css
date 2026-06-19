@@ -1498,6 +1498,60 @@ h1 {
   grid-template-columns: minmax(190px, 0.34fr) minmax(280px, 1fr) auto;
 }
 
+.theme-search-wrap {
+  position: relative;
+  min-width: 0;
+}
+
+.theme-title-menu {
+  position: absolute;
+  z-index: 30;
+  top: calc(100% + 6px);
+  right: 0;
+  left: 0;
+  display: grid;
+  gap: 6px;
+  max-height: 360px;
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px;
+  background: #ffffff;
+  box-shadow: 0 18px 42px rgba(22, 34, 46, 0.16);
+}
+
+.theme-title-option {
+  display: grid;
+  gap: 4px;
+  width: 100%;
+  border: 1px solid #e6ebef;
+  border-radius: 7px;
+  padding: 10px 12px;
+  background: #fbfcfd;
+  color: #22313f;
+  text-align: left;
+  cursor: pointer;
+}
+
+.theme-title-option:hover,
+.theme-title-option.active {
+  border-color: #b9d5c0;
+  background: #eef7f0;
+}
+
+.theme-title-option strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  line-height: 1.22;
+}
+
+.theme-title-option small {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
 .concept-controls {
   grid-template-columns: minmax(160px, 0.8fr) minmax(160px, 0.8fr) minmax(190px, 1fr) minmax(140px, 0.7fr);
 }

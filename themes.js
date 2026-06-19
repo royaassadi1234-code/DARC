@@ -10,6 +10,8 @@ const themeState = {
   themes: [],
   dictionary: new Map(),
   selectedThemeId: "",
+  themeSearch: "",
+  themeMenuOpen: false,
   keywords: "",
   wholeWord: true,
   caseSensitive: false,
@@ -17,7 +19,8 @@ const themeState = {
   pages: {}
 };
 
-const themeSelectEl = document.querySelector("#theme-select");
+const themeSearchEl = document.querySelector("#theme-search");
+const themeTitleMenuEl = document.querySelector("#theme-title-menu");
 const keywordEl = document.querySelector("#theme-keywords");
 const wholeWordEl = document.querySelector("#theme-whole-word");
 const caseSensitiveEl = document.querySelector("#theme-case-sensitive");
@@ -96,11 +99,33 @@ async function loadDictionary() {
 }
 
 function bindThemeEvents() {
-  themeSelectEl.addEventListener("change", () => {
-    themeState.selectedThemeId = themeSelectEl.value;
-    syncKeywordInput();
-    resetPages();
-    renderThemes();
+  themeSearchEl.addEventListener("pointerdown", (event) => {
+    if (themeState.themeMenuOpen && document.activeElement === themeSearchEl) {
+      event.preventDefault();
+      themeState.themeMenuOpen = false;
+      themeSearchEl.blur();
+      renderThemeTitleMenu();
+    }
+  });
+
+  themeSearchEl.addEventListener("focus", () => {
+    themeState.themeSearch = "";
+    themeSearchEl.value = "";
+    themeState.themeMenuOpen = true;
+    renderThemeTitleMenu();
+  });
+
+  themeSearchEl.addEventListener("input", () => {
+    themeState.themeSearch = themeSearchEl.value;
+    themeState.themeMenuOpen = true;
+    renderThemeTitleMenu();
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest(".theme-search-wrap")) {
+      themeState.themeMenuOpen = false;
+      renderThemeTitleMenu();
+    }
   });
 
   keywordEl.addEventListener("input", () => {
@@ -175,10 +200,61 @@ async function fetchOptionalText(file) {
 }
 
 function populateThemeSelect() {
-  themeSelectEl.innerHTML = themeState.themes
-    .map((theme) => `<option value="${escapeHtml(theme.id)}">${escapeHtml(theme.label)}</option>`)
-    .join("");
-  themeSelectEl.value = themeState.selectedThemeId;
+  syncThemeSearchInput();
+  renderThemeTitleMenu();
+}
+
+function syncThemeSearchInput() {
+  const theme = getSelectedTheme();
+  themeState.themeSearch = "";
+  themeSearchEl.value = theme?.label || "";
+}
+
+function renderThemeTitleMenu() {
+  if (!themeTitleMenuEl || !themeSearchEl) {
+    return;
+  }
+  if (!themeState.themeMenuOpen) {
+    themeTitleMenuEl.hidden = true;
+    return;
+  }
+
+  const terms = tokenizeSearch(themeState.themeSearch);
+  const rows = themeState.themes.filter((theme) => {
+    if (!terms.length) {
+      return true;
+    }
+    const haystack = normalizeQueryText(`${theme.label} ${theme.description || ""} ${(theme.keywords || []).join(" ")}`);
+    return terms.every((term) => haystack.includes(term));
+  });
+
+  themeTitleMenuEl.hidden = false;
+  themeTitleMenuEl.innerHTML = rows.length ? rows.map((theme) => `
+    <button class="theme-title-option${theme.id === themeState.selectedThemeId ? " active" : ""}" type="button" data-theme-id="${escapeHtml(theme.id)}">
+      <strong>${escapeHtml(theme.label)}</strong>
+      <small>${escapeHtml((theme.keywords || []).join(", "))}</small>
+    </button>
+  `).join("") : `<div class="empty-state">No theme titles match this search.</div>`;
+
+  themeTitleMenuEl.querySelectorAll("[data-theme-id]").forEach((button) => {
+    button.addEventListener("click", () => {
+      themeState.selectedThemeId = button.dataset.themeId;
+      themeState.themeMenuOpen = false;
+      syncThemeSearchInput();
+      syncKeywordInput();
+      resetPages();
+      renderThemeTitleMenu();
+      renderThemes();
+    });
+  });
+}
+
+function tokenizeSearch(value) {
+  return normalizeQueryText(value).split(/\s+/).filter(Boolean);
+}
+
+function normalizeQueryText(value) {
+  return String(value).toLocaleLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g, "");
 }
 
 function syncKeywordInput() {

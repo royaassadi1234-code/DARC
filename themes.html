@@ -97,10 +97,13 @@
         </header>
 
         <section class="search-panel theme-controls" aria-label="Theme controls">
-          <label class="select-control" for="theme-select">
-            <span>Theme</span>
-            <select id="theme-select"></select>
-          </label>
+          <div class="theme-search-wrap">
+            <label class="search-box" for="theme-search">
+              <span>Search theme</span>
+              <input id="theme-search" type="search" autocomplete="off" placeholder="Click to choose a theme">
+            </label>
+            <div class="theme-title-menu" id="theme-title-menu" hidden></div>
+          </div>
 
           <label class="search-box" for="theme-keywords">
             <span>Theme keywords</span>

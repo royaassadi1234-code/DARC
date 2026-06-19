@@ -3085,6 +3085,105 @@ h1 {
   color: #84445a;
 }
 
+.thematic-reader-controls {
+  grid-template-columns: minmax(240px, 0.75fr) minmax(280px, 1fr) auto;
+}
+
+.thematic-reader-overview {
+  display: grid;
+}
+
+.thematic-reader-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: start;
+}
+
+.thematic-reader-counts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: end;
+}
+
+.thematic-reader-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  align-items: start;
+}
+
+.thematic-reader-column {
+  min-width: 0;
+}
+
+.thematic-reader-column header {
+  align-items: flex-start;
+}
+
+.thematic-reader-column .meta {
+  margin: 4px 0 0;
+}
+
+.thematic-reader-warning {
+  margin: 12px 12px 0;
+  border: 1px solid #d9c9a4;
+  border-radius: 7px;
+  padding: 10px 12px;
+  background: #fff8e8;
+  color: #73551a;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.thematic-reader-passages {
+  display: grid;
+  gap: 10px;
+  max-height: 72vh;
+  overflow: auto;
+  padding: 12px;
+}
+
+.thematic-reader-passage {
+  display: grid;
+  gap: 8px;
+  border: 1px solid #edf0f3;
+  border-radius: 7px;
+  padding: 12px;
+  background: #ffffff;
+}
+
+.thematic-reader-passage p {
+  margin: 0;
+  color: #24313e;
+  font-size: 0.92rem;
+  line-height: 1.56;
+  overflow-wrap: anywhere;
+}
+
+.thematic-reader-translation {
+  border-top: 1px solid #eef2f5;
+  padding-top: 8px;
+}
+
+.thematic-reader-translation summary {
+  cursor: pointer;
+  color: var(--accent-strong);
+  font-size: 0.78rem;
+  font-weight: 900;
+  list-style: none;
+}
+
+.thematic-reader-translation summary::-webkit-details-marker {
+  display: none;
+}
+
+.thematic-reader-translation p {
+  margin-top: 8px;
+  color: #526171;
+}
+
 .network-controls {
   grid-template-columns: minmax(190px, 0.3fr) minmax(0, 1fr);
 }
@@ -4537,6 +4636,8 @@ mark.term-6 {
   .frequency-summary,
   .matched-theme-intro,
   .matched-theme-grid,
+  .thematic-reader-controls,
+  .thematic-reader-grid,
   .pseudo-summary,
   .about-detail-grid,
   .annotation-grid {
@@ -4667,5 +4768,18 @@ mark.term-6 {
 
   .matched-theme-card header {
     display: grid;
+  }
+
+  .thematic-reader-heading,
+  .thematic-reader-column header {
+    display: grid;
+  }
+
+  .thematic-reader-counts {
+    justify-content: start;
+  }
+
+  .thematic-reader-passages {
+    max-height: none;
   }
 }

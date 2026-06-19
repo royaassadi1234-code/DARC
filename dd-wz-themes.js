@@ -3,6 +3,13 @@ const THEMATIC_TEXTS = {
   wz: { siglum: "WZ", title: "Wizidagiha i Zadspram", file: "WZ.txt", englishFile: "WZ-en.txt" }
 };
 
+const PHRASE_STOP_WORDS = new Set([
+  "i", "u", "ud", "az", "pad", "o", "andar", "abag", "abaz", "an", "ke", "ku",
+  "ce", "ka", "be", "ne", "ham", "iz", "ra", "ray", "xwes", "en", "ed", "to",
+  "ta", "om", "im", "is", "es", "us", "s",
+  "a", "the", "of", "and", "in", "to"
+]);
+
 const THEMATIC_TABLE = [
   { theme: "Human Purpose and Exaltation", dd: "1-6", wz: "29-30" },
   { theme: "The Nature of Good and Evil", dd: "4-5", wz: "1-3" },
@@ -146,12 +153,14 @@ function buildThemeCard(theme, index) {
   const wzRecords = recordsForTheme("wz", theme.wz);
   const ddPassages = titleMatch ? ddRecords : filterThemeRecords(ddRecords);
   const wzPassages = titleMatch ? wzRecords : filterThemeRecords(wzRecords);
+  const phraseMatches = findSharedPhrases(ddPassages, wzPassages);
 
   return {
     index,
     theme,
     ddPassages,
     wzPassages,
+    phraseMatches,
     ddMissing: missingChapters("dd", theme.dd),
     wzMissing: missingChapters("wz", theme.wz)
   };
@@ -228,7 +237,7 @@ function missingChapters(textId, rangeSpec) {
 }
 
 function renderThemeCard(card) {
-  const { theme, index, ddPassages, wzPassages, ddMissing, wzMissing } = card;
+  const { theme, index, ddPassages, wzPassages, phraseMatches, ddMissing, wzMissing } = card;
   return `
     <article class="thematic-reader-card">
       <header class="thematic-reader-card-header">
@@ -240,19 +249,20 @@ function renderThemeCard(card) {
         <div class="thematic-reader-counts">
           <span class="count-pill hit">DD ${ddPassages.length.toLocaleString()}</span>
           <span class="count-pill hit">WZ ${wzPassages.length.toLocaleString()}</span>
+          <span class="count-pill hit">Matches ${phraseMatches.phrases.size.toLocaleString()}</span>
         </div>
       </header>
       <div class="thematic-reader-pair">
-        ${renderThematicColumn("DD", THEMATIC_TEXTS.dd.title, theme.dd, ddPassages, ddMissing)}
-        ${renderThematicColumn("WZ", THEMATIC_TEXTS.wz.title, theme.wz, wzPassages, wzMissing)}
+        ${renderThematicColumn("DD", THEMATIC_TEXTS.dd.title, theme.dd, ddPassages, ddMissing, phraseMatches)}
+        ${renderThematicColumn("WZ", THEMATIC_TEXTS.wz.title, theme.wz, wzPassages, wzMissing, phraseMatches)}
       </div>
     </article>
   `;
 }
 
-function renderThematicColumn(siglum, title, rangeSpec, passages, missing) {
+function renderThematicColumn(siglum, title, rangeSpec, passages, missing, phraseMatches) {
   const textId = siglum.toLowerCase();
-  const body = passages.length ? passages.map((record) => renderPassage(textId, record)).join("") : "";
+  const body = passages.length ? passages.map((record) => renderPassage(textId, record, phraseMatches)).join("") : "";
   const empty = thematicState.showEmpty ? `<div class="empty-state">No passages found for ${escapeHtml(siglum)} chapters ${escapeHtml(rangeSpec)}.</div>` : "";
   const missingNote = missing.length ? `<p class="thematic-reader-warning">Requested chapter(s) not present in the loaded ${escapeHtml(siglum)} text: ${escapeHtml(missing.join(", "))}</p>` : "";
 
@@ -274,13 +284,13 @@ function renderThematicColumn(siglum, title, rangeSpec, passages, missing) {
   `;
 }
 
-function renderPassage(textId, record) {
+function renderPassage(textId, record, phraseMatches) {
   const text = thematicState.texts[textId];
   const english = text.englishByLocation.get(baseLocation(record.location)) || "";
   return `
     <article class="thematic-reader-passage">
       <div class="theme-hit-meta"><span>${escapeHtml(record.location)}</span></div>
-      <p>${highlight(record.text)}</p>
+      <p>${highlightText(record.text, phraseMatches)}</p>
       ${thematicState.showTranslation ? `
         <details class="thematic-reader-translation" ${thematicState.filter ? "open" : ""}>
           <summary>English translation</summary>
@@ -412,6 +422,109 @@ function tokenizeQuery(query) {
 
 function normalizeSearchText(value) {
   return String(value).toLocaleLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g, "");
+}
+
+function findSharedPhrases(ddPassages, wzPassages) {
+  const ddPhrases = collectPhrases(ddPassages);
+  const wzPhrases = collectPhrases(wzPassages);
+  const shared = [...ddPhrases.keys()]
+    .filter((phrase) => wzPhrases.has(phrase))
+    .sort((a, b) => b.split(" ").length - a.split(" ").length || b.length - a.length)
+    .slice(0, 140);
+
+  const phrases = new Set(shared);
+  const lengths = [...new Set(shared.map((phrase) => phrase.split(" ").length))].sort((a, b) => b - a);
+  return { phrases, lengths };
+}
+
+function collectPhrases(passages) {
+  const phrases = new Map();
+  passages.forEach((record) => {
+    const tokens = tokenizeWords(record.text).map((token) => token.normalized).filter(Boolean);
+    for (let size = 5; size >= 2; size -= 1) {
+      for (let index = 0; index <= tokens.length - size; index += 1) {
+        const slice = tokens.slice(index, index + size);
+        if (!isUsefulPhrase(slice)) {
+          continue;
+        }
+        const phrase = slice.join(" ");
+        phrases.set(phrase, (phrases.get(phrase) || 0) + 1);
+      }
+    }
+  });
+  return phrases;
+}
+
+function isUsefulPhrase(tokens) {
+  const contentTokens = tokens.filter((token) => !PHRASE_STOP_WORDS.has(token) && token.length > 1);
+  if (contentTokens.length < Math.min(2, tokens.length)) {
+    return false;
+  }
+  return contentTokens.some((token) => token.length > 3 || /[āēīōūšč]/i.test(token));
+}
+
+function tokenizeWords(value) {
+  const matches = String(value).matchAll(/[\p{L}\p{M}\p{N}=._-]+/gu);
+  return [...matches].map((match) => ({
+    index: match.index,
+    text: match[0],
+    end: match.index + match[0].length,
+    normalized: normalizeToken(match[0])
+  }));
+}
+
+function normalizeToken(value) {
+  return normalizeSearchText(value)
+    .replace(/^[=._-]+|[=._-]+$/g, "")
+    .replace(/[^a-z0-9āēīōūščγδθǰ]+/gi, "");
+}
+
+function highlightText(value, phraseMatches) {
+  const tokens = tokenizeWords(value);
+  if (!tokens.length) {
+    return highlight(value);
+  }
+
+  const ranges = [];
+  const usedTokenIndexes = new Set();
+  const lengths = phraseMatches?.lengths || [];
+  const phrases = phraseMatches?.phrases || new Set();
+
+  for (let index = 0; index < tokens.length; index += 1) {
+    if (usedTokenIndexes.has(index)) {
+      continue;
+    }
+    for (const size of lengths) {
+      if (index + size > tokens.length) {
+        continue;
+      }
+      const tokenIndexes = Array.from({ length: size }, (_, offset) => index + offset);
+      if (tokenIndexes.some((tokenIndex) => usedTokenIndexes.has(tokenIndex))) {
+        continue;
+      }
+      const phrase = tokenIndexes.map((tokenIndex) => tokens[tokenIndex].normalized).join(" ");
+      if (!phrases.has(phrase)) {
+        continue;
+      }
+      tokenIndexes.forEach((tokenIndex) => usedTokenIndexes.add(tokenIndex));
+      ranges.push({ start: tokens[index].index, end: tokens[index + size - 1].end });
+      break;
+    }
+  }
+
+  if (!ranges.length) {
+    return highlight(value);
+  }
+
+  let output = "";
+  let cursor = 0;
+  ranges.sort((a, b) => a.start - b.start).forEach((range) => {
+    output += highlight(value.slice(cursor, range.start));
+    output += `<mark class="phrase-match">${highlight(value.slice(range.start, range.end))}</mark>`;
+    cursor = range.end;
+  });
+  output += highlight(value.slice(cursor));
+  return output;
 }
 
 function highlight(value) {

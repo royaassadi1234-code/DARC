@@ -3256,6 +3256,21 @@ h1 {
   overflow-wrap: anywhere;
 }
 
+.thematic-reader-passage mark.phrase-match {
+  border-radius: 4px;
+  padding: 1px 3px;
+  background: #d9f0dc;
+  color: #1f5631;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.thematic-reader-passage mark.phrase-match mark {
+  background: transparent;
+  color: inherit;
+  font-weight: 900;
+}
+
 .thematic-reader-translation {
   border-top: 1px solid #eef2f5;
   padding-top: 8px;

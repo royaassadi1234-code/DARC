@@ -140,6 +140,7 @@ const WZ_CHAPTER_TITLES = {
 const chapterDiagramState = {
   texts: [],
   query: "",
+  multipleWords: true,
   phraseSearch: false,
   wholeWord: true,
   caseSensitive: false,
@@ -147,6 +148,7 @@ const chapterDiagramState = {
 };
 
 const chapterQueryEl = document.querySelector("#chapter-diagram-query");
+const chapterMultipleEl = document.querySelector("#chapter-diagram-multiple");
 const chapterPhraseEl = document.querySelector("#chapter-diagram-phrase");
 const chapterWholeWordEl = document.querySelector("#chapter-diagram-whole-word");
 const chapterCaseEl = document.querySelector("#chapter-diagram-case-sensitive");
@@ -195,8 +197,15 @@ function bindChapterDiagramEvents() {
     renderChapterDiagram();
   });
 
+  chapterMultipleEl.addEventListener("change", () => {
+    chapterDiagramState.multipleWords = chapterMultipleEl.checked;
+    updateChapterSearchModeControls();
+    renderChapterDiagram();
+  });
+
   chapterPhraseEl.addEventListener("change", () => {
     chapterDiagramState.phraseSearch = chapterPhraseEl.checked;
+    updateChapterSearchModeControls();
     renderChapterDiagram();
   });
 
@@ -216,6 +225,16 @@ function bindChapterDiagramEvents() {
       copyChapterDiagram(copyButton);
     }
   });
+
+  updateChapterSearchModeControls();
+}
+
+function updateChapterSearchModeControls() {
+  if (chapterDiagramState.phraseSearch && chapterDiagramState.multipleWords) {
+    chapterDiagramState.multipleWords = false;
+    chapterMultipleEl.checked = false;
+  }
+  chapterMultipleEl.disabled = chapterDiagramState.phraseSearch;
 }
 
 async function loadChapterDiagramText(config) {
@@ -369,7 +388,9 @@ function createChapterSearch(query) {
 
   const terms = chapterDiagramState.phraseSearch
     ? [query]
-    : query.split(/[,;]+/).map((term) => term.trim()).filter(Boolean);
+    : chapterDiagramState.multipleWords
+      ? parseChapterSearchTerms(query)
+      : [query];
   if (!terms.length) {
     return null;
   }
@@ -378,6 +399,19 @@ function createChapterSearch(query) {
     label: terms.join(", "),
     terms
   };
+}
+
+function parseChapterSearchTerms(query) {
+  const terms = [];
+  const pattern = /"([^"]+)"|'([^']+)'|[^,\s;]+/g;
+  let match;
+  while ((match = pattern.exec(query || "")) !== null) {
+    const term = (match[1] || match[2] || match[0]).trim();
+    if (term) {
+      terms.push(term);
+    }
+  }
+  return terms;
 }
 
 function findChapterOccurrences(text, terms) {

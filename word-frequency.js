@@ -74,6 +74,7 @@ const frequencyState = {
   texts: [],
   pageSize: 25,
   filter: "",
+  multipleWords: true,
   hideStopwords: true,
   selected: null,
   pages: {},
@@ -83,6 +84,7 @@ const frequencyState = {
 const frequencyStatusEl = document.querySelector("#frequency-status");
 const frequencyFilterEl = document.querySelector("#frequency-filter");
 const frequencyLimitEl = document.querySelector("#frequency-limit");
+const frequencyMultipleEl = document.querySelector("#frequency-multiple");
 const frequencyStopwordsEl = document.querySelector("#frequency-stopwords");
 const personalCommonInputEl = document.querySelector("#frequency-common-input");
 const personalCommonAddEl = document.querySelector("#frequency-common-add");
@@ -117,6 +119,13 @@ function bindFrequencyEvents() {
 
   frequencyLimitEl.addEventListener("change", () => {
     frequencyState.pageSize = Number(frequencyLimitEl.value);
+    resetFrequencyPages();
+    clearSelectedWord();
+    renderFrequency();
+  });
+
+  frequencyMultipleEl.addEventListener("change", () => {
+    frequencyState.multipleWords = frequencyMultipleEl.checked;
     resetFrequencyPages();
     clearSelectedWord();
     renderFrequency();
@@ -386,6 +395,11 @@ function getRankedWords(text) {
 }
 
 function getFrequencySearchTerms(query) {
+  if (!frequencyState.multipleWords) {
+    const term = normalizeWord(query || "");
+    return term ? [term] : [];
+  }
+
   const terms = [];
   const pattern = /"([^"]+)"|'([^']+)'|[^,\s;]+/g;
   let match;

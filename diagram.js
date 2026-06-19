@@ -452,7 +452,7 @@ function openAttestationDialog(textId) {
           return `
             <p>
               <mark class="term-${(termIndex % HIGHLIGHT_CLASS_COUNT) + 1}">${renderDictionaryWord(term)}</mark>:
-              ${locations.length ? locations.map(escapeHtml).join(", ") : "none"}
+              ${locations.length ? renderLocationLinks(summary.text, locations) : "none"}
               <span class="term-gloss">${escapeHtml(getTermGloss(term))}</span>
             </p>
           `;
@@ -461,6 +461,27 @@ function openAttestationDialog(textId) {
     </section>
   `;
   dialog.hidden = false;
+}
+
+function renderLocationLinks(text, locations) {
+  return locations.map((location) => renderLocationLink(text, location)).join(", ");
+}
+
+function renderLocationLink(text, location) {
+  const href = getTransLocationHref(text, location);
+  if (!href) {
+    return escapeHtml(location);
+  }
+
+  return `<a class="diagram-location-link" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(location)}</a>`;
+}
+
+function getTransLocationHref(text, location) {
+  if (!["dd", "py", "wz", "nm"].includes(text.id)) {
+    return "";
+  }
+
+  return `trans.html?text=${encodeURIComponent(text.id)}&location=${encodeURIComponent(location)}`;
 }
 
 function closeAttestationDialog() {

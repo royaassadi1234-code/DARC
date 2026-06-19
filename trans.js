@@ -10,7 +10,8 @@ const transState = {
   selectedTextId: "dd",
   searchByText: {},
   currentPage: 1,
-  pageSize: 24
+  pageSize: 24,
+  targetLocation: ""
 };
 
 const queryEl = document.querySelector("#trans-query");
@@ -25,6 +26,7 @@ initTrans();
 async function initTrans() {
   try {
     transState.selectedTextId = getTextIdFromUrl();
+    transState.targetLocation = getLocationFromUrl();
     transState.texts = await Promise.all(TRANS_TEXTS.map(loadTextBundle));
     bindTransEvents();
     syncQueryInput();
@@ -38,12 +40,14 @@ async function initTrans() {
 
 function bindTransEvents() {
   queryEl.addEventListener("input", () => {
+    clearTargetLocation();
     transState.searchByText[transState.selectedTextId] = queryEl.value;
     transState.currentPage = 1;
     renderReader();
   });
 
   clearEl.addEventListener("click", () => {
+    clearTargetLocation();
     queryEl.value = "";
     transState.searchByText[transState.selectedTextId] = "";
     transState.currentPage = 1;
@@ -53,6 +57,7 @@ function bindTransEvents() {
 
   window.addEventListener("popstate", () => {
     transState.selectedTextId = getTextIdFromUrl();
+    transState.targetLocation = getLocationFromUrl();
     transState.currentPage = 1;
     syncQueryInput();
     renderReader();
@@ -62,6 +67,14 @@ function bindTransEvents() {
 function getTextIdFromUrl() {
   const requested = new URLSearchParams(window.location.search).get("text");
   return TRANS_TEXTS.some((text) => text.id === requested) ? requested : "dd";
+}
+
+function getLocationFromUrl() {
+  return new URLSearchParams(window.location.search).get("location") || "";
+}
+
+function clearTargetLocation() {
+  transState.targetLocation = "";
 }
 
 function syncQueryInput() {
@@ -130,6 +143,14 @@ function renderReader() {
   const query = transState.searchByText[text.id] || "";
   const filteredRecords = filterRecords(text, query);
   const pageCount = Math.max(1, Math.ceil(filteredRecords.length / transState.pageSize));
+
+  if (transState.targetLocation) {
+    const targetIndex = filteredRecords.findIndex((record) => isSameLocation(record.location, transState.targetLocation));
+    if (targetIndex >= 0) {
+      transState.currentPage = Math.floor(targetIndex / transState.pageSize) + 1;
+    }
+  }
+
   transState.currentPage = Math.min(Math.max(1, transState.currentPage), pageCount);
   const pageStart = (transState.currentPage - 1) * transState.pageSize;
   const pageRecords = filteredRecords.slice(pageStart, pageStart + transState.pageSize);
@@ -152,13 +173,15 @@ function renderReader() {
           record,
           text.englishByLocation.get(record.location),
           getPersianTranslation(text, record.location),
-          query
+          query,
+          transState.targetLocation
         )).join("")}
       </div>
     ` : `<div class="empty-state">No paragraphs found in ${escapeHtml(text.siglum)}.</div>`}
   `;
   renderPagination(pageCount);
   updateActiveTransLinks(text.id);
+  scrollToTargetLocation();
 }
 
 function filterRecords(text, query) {
@@ -279,6 +302,7 @@ function renderPagination(pageCount) {
   [paginationTopEl, paginationBottomEl].forEach((container) => {
     container.querySelectorAll("button").forEach((button) => {
       button.addEventListener("click", () => {
+        clearTargetLocation();
         transState.currentPage = Number(button.dataset.page);
         renderReader();
         readerEl.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -337,9 +361,29 @@ function baseLocation(location) {
   return String(location).trim().replace(/[a-z]+$/i, "");
 }
 
-function renderTransParagraph(record, englishText = "", persianTranslation = null, query = "") {
+function isSameLocation(a, b) {
+  return String(a || "").trim() === String(b || "").trim();
+}
+
+function scrollToTargetLocation() {
+  if (!transState.targetLocation) {
+    return;
+  }
+
+  window.requestAnimationFrame(() => {
+    const target = [...readerEl.querySelectorAll("[data-trans-location]")]
+      .find((card) => isSameLocation(card.dataset.transLocation, transState.targetLocation));
+    if (!target) {
+      return;
+    }
+    target.scrollIntoView({ behavior: "smooth", block: "center" });
+  });
+}
+
+function renderTransParagraph(record, englishText = "", persianTranslation = null, query = "", targetLocation = "") {
+  const isTarget = targetLocation && isSameLocation(record.location, targetLocation);
   return `
-    <article class="trans-card">
+    <article class="trans-card${isTarget ? " trans-card-target" : ""}" data-trans-location="${escapeHtml(record.location)}">
       <div class="theme-hit-meta">
         <span>${escapeHtml(record.location)}</span>
       </div>

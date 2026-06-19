@@ -239,6 +239,11 @@ function bindChapterDiagramEvents() {
       return;
     }
 
+    if (event.target.closest(".diagram-location-link")) {
+      event.stopPropagation();
+      return;
+    }
+
     const chapterRow = event.target.closest("[data-chapter-text-id][data-chapter-key]");
     if (chapterRow) {
       toggleChapterDetails(chapterRow.dataset.chapterTextId, chapterRow.dataset.chapterKey);
@@ -247,6 +252,10 @@ function bindChapterDiagramEvents() {
 
   chapterToolEl.addEventListener("keydown", (event) => {
     if (event.key !== "Enter" && event.key !== " ") {
+      return;
+    }
+
+    if (event.target.closest(".diagram-location-link")) {
       return;
     }
 
@@ -396,8 +405,7 @@ function renderChapterBar(text, chapter, maxCount) {
   const chapterTitle = getChapterTitle(text, chapter.chapter);
   const selected = chapterDiagramState.selectedChapter?.textId === text.id &&
     chapterDiagramState.selectedChapter?.chapter === String(chapter.chapter);
-  const locations = [...chapter.locations.entries()].map(([location, count]) => `${location} (${count})`);
-  const locationsLabel = locations.join(", ");
+  const locations = [...chapter.locations.entries()].map(([location, count]) => ({ location, count }));
   return `
     <article class="chapter-bar-row ${selected ? "active" : ""}" tabindex="0" role="button" aria-expanded="${selected ? "true" : "false"}" data-chapter-text-id="${escapeChapterHtml(text.id)}" data-chapter-key="${escapeChapterHtml(chapter.chapter)}">
       <div class="chapter-bar-main">
@@ -409,11 +417,31 @@ function renderChapterBar(text, chapter, maxCount) {
       </div>
       <div class="chapter-row-meta">
         ${chapterTitle ? `<h4>${escapeChapterHtml(chapterTitle)}</h4>` : `<h4>Chapter ${escapeChapterHtml(chapter.chapter)}</h4>`}
-        <p class="chapter-location-line ${selected ? "expanded" : ""}">${escapeChapterHtml(locationsLabel || "No locations listed")}</p>
+        <p class="chapter-location-line ${selected ? "expanded" : ""}">${locations.length ? renderChapterLocationLinks(text, locations) : "No locations listed"}</p>
         ${locations.length > 1 ? `<span class="chapter-location-toggle">${selected ? "Show fewer locations" : "Show all locations"}</span>` : ""}
       </div>
     </article>
   `;
+}
+
+function renderChapterLocationLinks(text, locations) {
+  return locations.map(({ location, count }) => {
+    const label = `${location} (${count})`;
+    const href = getChapterTransLocationHref(text, location);
+    if (!href) {
+      return escapeChapterHtml(label);
+    }
+
+    return `<a class="diagram-location-link" href="${escapeChapterHtml(href)}" target="_blank" rel="noopener noreferrer">${escapeChapterHtml(label)}</a>`;
+  }).join(", ");
+}
+
+function getChapterTransLocationHref(text, location) {
+  if (!["dd", "py", "wz", "nm"].includes(text.id)) {
+    return "";
+  }
+
+  return `trans.html?text=${encodeURIComponent(text.id)}&location=${encodeURIComponent(location)}`;
 }
 
 function toggleChapterDetails(textId, chapter) {

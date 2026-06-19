@@ -599,7 +599,6 @@ function renderFrequencyItem(text, item, index, max, visibleSharedWordKeys) {
 }
 
 function renderLocationPopover(text, word) {
-  const locationText = `${word.label}: ${word.locations.join(", ")}`;
   return `
     <aside class="frequency-location-popover">
       <header>
@@ -609,9 +608,31 @@ function renderLocationPopover(text, word) {
         </div>
         <button class="clear-button" type="button" data-close-locations>Close</button>
       </header>
-      <p class="frequency-location-text">${escapeHtml(locationText)}</p>
+      <p class="frequency-location-text">
+        <strong>${escapeHtml(word.label)}:</strong>
+        ${renderFrequencyLocationLinks(text, word.locations)}
+      </p>
     </aside>
   `;
+}
+
+function renderFrequencyLocationLinks(text, locations) {
+  return locations.map((location) => {
+    const href = getFrequencyTransLocationHref(text, location);
+    if (!href) {
+      return escapeHtml(location);
+    }
+
+    return `<a class="diagram-location-link" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(location)}</a>`;
+  }).join(", ");
+}
+
+function getFrequencyTransLocationHref(text, location) {
+  if (!["dd", "py", "wz", "nm"].includes(text.id)) {
+    return "";
+  }
+
+  return `trans.html?text=${encodeURIComponent(text.id)}&location=${encodeURIComponent(location)}`;
 }
 
 function addPersonalCommonWord(value) {

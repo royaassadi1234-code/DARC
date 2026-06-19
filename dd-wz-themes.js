@@ -293,7 +293,7 @@ function renderPassage(textId, record, phraseMatches) {
   const english = text.englishByLocation.get(baseLocation(record.location)) || "";
   return `
     <article class="thematic-reader-passage">
-      <div class="theme-hit-meta"><span>${escapeHtml(record.location)}</span></div>
+      <div class="theme-hit-meta"><span>${renderThematicLocationLink(textId, record.location)}</span></div>
       <p>${highlightText(record.text, phraseMatches)}</p>
       ${thematicState.showTranslation ? `
         <details class="thematic-reader-translation" ${thematicState.filter ? "open" : ""}>
@@ -303,6 +303,23 @@ function renderPassage(textId, record, phraseMatches) {
       ` : ""}
     </article>
   `;
+}
+
+function renderThematicLocationLink(textId, location) {
+  const href = getThematicTransLocationHref(textId, location);
+  if (!href) {
+    return escapeHtml(location);
+  }
+
+  return `<a class="diagram-location-link" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(location)}</a>`;
+}
+
+function getThematicTransLocationHref(textId, location) {
+  if (!["dd", "py", "wz", "nm"].includes(textId)) {
+    return "";
+  }
+
+  return `trans.html?text=${encodeURIComponent(textId)}&location=${encodeURIComponent(location)}`;
 }
 
 async function fetchText(file) {

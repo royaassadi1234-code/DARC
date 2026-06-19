@@ -380,7 +380,7 @@ function renderMatchList(textId, matches, total) {
       ${visible
         .map((match) => `
           <section class="match">
-            <div class="location">${escapeHtml(match.location)}</div>
+            <div class="location">${renderLocationLink(textId, match.location)}</div>
             <div>
               <p class="snippet">${highlight(match.snippet, { annotate: true })}</p>
               ${renderTranslationActions(match.snippet, getEnglishText(textId, match.location))}
@@ -391,6 +391,23 @@ function renderMatchList(textId, matches, total) {
     </div>
     ${pageCount > 1 ? renderResultPagination(textId, currentPage, pageCount) : ""}
   `;
+}
+
+function renderLocationLink(textId, location) {
+  const href = getTransLocationHref(textId, location);
+  if (!href) {
+    return escapeHtml(location);
+  }
+
+  return `<a class="diagram-location-link" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(location)}</a>`;
+}
+
+function getTransLocationHref(textId, location) {
+  if (!["dd", "py", "wz", "nm"].includes(textId)) {
+    return "";
+  }
+
+  return `trans.html?text=${encodeURIComponent(textId)}&location=${encodeURIComponent(location)}`;
 }
 
 function renderResultPagination(textId, currentPage, pageCount) {

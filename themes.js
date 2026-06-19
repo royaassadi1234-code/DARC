@@ -332,7 +332,7 @@ function renderThemeHit(match, terms, text) {
   return `
     <section class="theme-hit">
       <div class="theme-hit-meta">
-        <span>${escapeHtml(match.location)}</span>
+        <span>${renderThemeLocationLink(text, match.location)}</span>
         <span>${match.score} keyword${match.score === 1 ? "" : "s"}</span>
       </div>
       <div class="theme-hit-content">
@@ -343,6 +343,23 @@ function renderThemeHit(match, terms, text) {
       </div>
     </section>
   `;
+}
+
+function renderThemeLocationLink(text, location) {
+  const href = getThemeTransLocationHref(text, location);
+  if (!href) {
+    return escapeHtml(location);
+  }
+
+  return `<a class="diagram-location-link" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(location)}</a>`;
+}
+
+function getThemeTransLocationHref(text, location) {
+  if (!["dd", "py", "wz", "nm"].includes(text.id)) {
+    return "";
+  }
+
+  return `trans.html?text=${encodeURIComponent(text.id)}&location=${encodeURIComponent(location)}`;
 }
 
 function renderThemePagination(textId, currentPage, pageCount) {

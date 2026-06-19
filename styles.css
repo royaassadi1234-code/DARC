@@ -1114,6 +1114,19 @@ h1 {
   font-weight: 850;
 }
 
+.diagram-location-link {
+  color: var(--accent-strong);
+  font-weight: 850;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.diagram-location-link:hover,
+.diagram-location-link:focus {
+  color: var(--green);
+}
+
 .diagram-actions {
   display: inline-flex;
   align-items: center;
@@ -2840,6 +2853,12 @@ h1 {
   border-radius: 8px;
   padding: 14px;
   background: rgba(255, 255, 255, 0.94);
+}
+
+.trans-card-target {
+  border-color: var(--accent);
+  background: #eef4f7;
+  box-shadow: 0 0 0 3px rgba(36, 92, 115, 0.14);
 }
 
 .trans-entry-list {

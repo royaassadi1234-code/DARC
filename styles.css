@@ -2437,35 +2437,35 @@ h1 {
   text-align: center;
 }
 
-.passage-editor-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 12px;
-}
-
-.passage-translation-card {
-  order: 1;
-}
-
-.passage-source-card {
-  order: 2;
-}
-
 .text-passage-workspace {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 380px);
-  gap: 14px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
   align-items: start;
 }
 
-.text-annotation-column {
-  position: sticky;
-  top: 14px;
-  display: grid;
+.text-occurrence-viewer {
   gap: 12px;
-  max-height: calc(100vh - 28px);
-  overflow: auto;
-  padding-right: 2px;
+}
+
+.text-occurrence-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+
+.text-occurrence-section {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+
+.text-annotation-column {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  align-items: start;
 }
 
 .text-annotation-column > .annotation-side-fields,
@@ -2475,6 +2475,7 @@ h1 {
 
 .text-annotation-manager {
   display: grid;
+  grid-column: 1 / -1;
   gap: 10px;
   order: 0;
   border: 1px solid var(--line);
@@ -2660,7 +2661,7 @@ h1 {
   color: var(--ink);
   background: #fbfcfd;
   font: inherit;
-  min-height: clamp(280px, 42vh, 560px);
+  min-height: clamp(180px, 26vh, 360px);
   resize: vertical;
   line-height: 1.55;
 }
@@ -4805,7 +4806,8 @@ mark.term-6 {
   .text-editor-menu-bar,
   .text-editor-add-text-panel,
   .text-passage-workspace,
-  .passage-editor-grid,
+  .text-occurrence-grid,
+  .text-annotation-column,
   .annotation-passage-layout,
   .annotation-focus-fields {
     grid-template-columns: 1fr;
@@ -4813,13 +4815,6 @@ mark.term-6 {
 
   .text-editor-menu-bar > * {
     grid-column: 1;
-  }
-
-  .text-annotation-column {
-    position: static;
-    max-height: none;
-    overflow: visible;
-    padding-right: 0;
   }
 
   .text-editor-horizontal-list .annotation-list-item {

@@ -838,38 +838,26 @@ function renderTextSearchLocations(query) {
   const file = getSelectedFile();
   if (!file) {
     summaryEl.innerHTML = "<span>No text selected</span>";
-    listEl.innerHTML = `<div class="empty-state">Select a text before searching.</div>`;
+    listEl.innerHTML = "";
+    listEl.classList.add("hidden");
     return;
   }
 
   const matches = getTextSearchMatches(file, query);
+  const currentMatchIndex = matches.findIndex((match) => match.index === editorState.passageIndex);
   summaryEl.innerHTML = `
     <span>${matches.length.toLocaleString()} visible passages</span>
+    ${matches.length ? `<span>Match ${(Math.max(0, currentMatchIndex) + 1).toLocaleString()} of ${matches.length.toLocaleString()}</span>` : ""}
     <span>${escapeHtml(file.siglum)}</span>
     <span>${escapeHtml(query)}</span>
   `;
-
-  if (!matches.length) {
-    listEl.innerHTML = `<div class="empty-state">No passages match this word or location in ${escapeHtml(file.siglum)}.</div>`;
-    return;
-  }
-
-  listEl.innerHTML = matches.map((match) => {
-    const active = match.index === editorState.passageIndex ? " active" : "";
-    const displayLocation = formatTextLocationId(file, match.location);
-    return `
-      <button class="annotation-list-item text-editor-list-item text-location-result${active}" type="button" data-passage-index="${match.index}">
-        <strong>${escapeHtml(displayLocation)}</strong>
-        <span>${escapeHtml(match.snippet)}</span>
-      </button>
-    `;
-  }).join("");
+  listEl.innerHTML = "";
+  listEl.classList.add("hidden");
 }
 
 function updateTextEditorListVisibilityFromSearch() {
-  const hasSearch = Boolean(editorState.query);
-  listEl.classList.toggle("hidden", !hasSearch);
-  fileToggleButton.setAttribute("aria-expanded", hasSearch ? "true" : "false");
+  listEl.classList.add("hidden");
+  fileToggleButton.setAttribute("aria-expanded", "false");
 }
 
 function setAddTextToggleExpanded(expanded) {
@@ -896,6 +884,10 @@ function renderCurrentFile() {
   const sourceRecords = getSourceRecords(file);
   const translationRecords = getTranslationRecords(file);
   editorState.passageIndex = Math.min(Math.max(0, editorState.passageIndex), Math.max(0, sourceRecords.length - 1));
+  syncPassageIndexToSearch(file);
+  if (editorState.query) {
+    renderTextSearchLocations(editorState.query);
+  }
   const sourceRecord = sourceRecords[editorState.passageIndex];
   const translationRecord = findTranslationRecord(file, sourceRecord, translationRecords);
   const sourceDisplayLocation = formatTextLocationId(file, sourceRecord?.location || "");
@@ -913,9 +905,7 @@ function renderCurrentFile() {
   translationContentEl.disabled = !file.translationFile;
   translationLocationEl.disabled = !file.translationFile;
   renderTextPassageMetadata(file, sourceRecord);
-  passagePositionEl.textContent = `${sourceDisplayLocation || "No passage"} | ${(editorState.passageIndex + 1).toLocaleString()} of ${sourceRecords.length.toLocaleString()}`;
-  passagePrevButton.disabled = editorState.passageIndex <= 0;
-  passageNextButton.disabled = editorState.passageIndex >= sourceRecords.length - 1;
+  renderTextPassagePosition(file, sourceDisplayLocation, sourceRecords.length);
   metaEl.innerHTML = `
     <span>${escapeHtml(file.file)}</span>
     ${file.translationFile ? `<span>${escapeHtml(file.translationFile)}</span>` : ""}
@@ -941,11 +931,57 @@ function getSelectedFile() {
 }
 
 function getPreviousPassageIndex(file) {
+  const matches = getActiveTextSearchMatches(file);
+  if (matches.length) {
+    const current = matches.findIndex((match) => match.index === editorState.passageIndex);
+    return matches[Math.max(0, current - 1)]?.index ?? editorState.passageIndex;
+  }
   return Math.max(0, editorState.passageIndex - 1);
 }
 
 function getNextPassageIndex(file) {
+  const matches = getActiveTextSearchMatches(file);
+  if (matches.length) {
+    const current = matches.findIndex((match) => match.index === editorState.passageIndex);
+    return matches[Math.min(matches.length - 1, current + 1)]?.index ?? editorState.passageIndex;
+  }
   return Math.min(getSourceRecords(file).length - 1, editorState.passageIndex + 1);
+}
+
+function syncPassageIndexToSearch(file) {
+  const matches = getActiveTextSearchMatches(file);
+  if (!matches.length) {
+    return;
+  }
+  if (!matches.some((match) => match.index === editorState.passageIndex)) {
+    editorState.passageIndex = matches[0].index;
+  }
+}
+
+function renderTextPassagePosition(file, sourceDisplayLocation, sourceCount) {
+  const matches = getActiveTextSearchMatches(file);
+  if (matches.length) {
+    const current = Math.max(0, matches.findIndex((match) => match.index === editorState.passageIndex));
+    passagePositionEl.textContent = `${sourceDisplayLocation || "No passage"} | match ${(current + 1).toLocaleString()} of ${matches.length.toLocaleString()}`;
+    passagePrevButton.disabled = current <= 0;
+    passageNextButton.disabled = current >= matches.length - 1;
+    return;
+  }
+
+  if (editorState.query) {
+    passagePositionEl.textContent = "No matching passage";
+    passagePrevButton.disabled = true;
+    passageNextButton.disabled = true;
+    return;
+  }
+
+  passagePositionEl.textContent = `${sourceDisplayLocation || "No passage"} | ${(editorState.passageIndex + 1).toLocaleString()} of ${sourceCount.toLocaleString()}`;
+  passagePrevButton.disabled = editorState.passageIndex <= 0;
+  passageNextButton.disabled = editorState.passageIndex >= sourceCount - 1;
+}
+
+function getActiveTextSearchMatches(file) {
+  return editorState.query ? getTextSearchMatches(file, editorState.query) : [];
 }
 
 function getTextSearchMatches(file, query) {

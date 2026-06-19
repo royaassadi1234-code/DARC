@@ -177,8 +177,9 @@
 
               <div class="text-editor-meta editor-hidden-control" id="text-editor-meta"></div>
               <div class="text-passage-workspace">
-                <div class="passage-editor-grid">
-                  <article class="passage-edit-card passage-source-card">
+                <article class="text-occurrence-viewer passage-edit-card">
+                  <div class="text-occurrence-grid">
+                    <section class="text-occurrence-section passage-source-card">
                     <div class="passage-edit-header">
                       <label class="annotation-field passage-title-field" for="text-source-content">
                         <span id="text-source-label">Correspondence text</span>
@@ -190,8 +191,8 @@
                     </div>
                     <div class="passage-section-location" id="text-source-location-display"></div>
                     <textarea id="text-source-content" spellcheck="false"></textarea>
-                  </article>
-                  <article class="passage-edit-card passage-translation-card">
+                    </section>
+                    <section class="text-occurrence-section passage-translation-card">
                     <div class="passage-edit-header">
                       <label class="annotation-field passage-title-field" for="text-translation-content">
                         <span id="text-translation-label">Translation</span>
@@ -203,8 +204,14 @@
                     </div>
                     <div class="passage-section-location" id="text-translation-location-display"></div>
                     <textarea id="text-translation-content" spellcheck="false"></textarea>
-                  </article>
-                </div>
+                    </section>
+                  </div>
+                  <div class="passage-pager" aria-label="Text passage navigation">
+                    <button class="copy-button" id="text-passage-prev" type="button">Previous</button>
+                    <span id="text-passage-position">Passage 0 of 0</span>
+                    <button class="copy-button" id="text-passage-next" type="button">Next</button>
+                  </div>
+                </article>
                 <aside class="text-annotation-column" aria-label="Text annotation options">
                   <div class="text-annotation-manager hidden" id="text-editor-annotation-options-panel">
                     <label class="annotation-field" for="text-custom-annotation-name">
@@ -478,12 +485,6 @@
                   </div>
                 </aside>
               </div>
-              <div class="passage-pager" aria-label="Text passage navigation">
-                <button class="copy-button" id="text-passage-prev" type="button">Previous</button>
-                <span id="text-passage-position">Passage 0 of 0</span>
-                <button class="copy-button" id="text-passage-next" type="button">Next</button>
-              </div>
-
             </section>
           </div>
 
@@ -790,7 +791,7 @@
       </section>
     </main>
 
-    <script src="text-editor.js?v=20260618-merged-text-search"></script>
+    <script src="text-editor.js?v=20260619-paged-occurrence-editor"></script>
     <script src="copy-tools.js"></script>
   </body>
 </html>

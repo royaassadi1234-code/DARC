@@ -238,6 +238,20 @@ function bindChapterDiagramEvents() {
     }
   });
 
+  chapterToolEl.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") {
+      return;
+    }
+
+    const chapterRow = event.target.closest("[data-chapter-text-id][data-chapter-key]");
+    if (!chapterRow) {
+      return;
+    }
+
+    event.preventDefault();
+    toggleChapterDetails(chapterRow.dataset.chapterTextId, chapterRow.dataset.chapterKey);
+  });
+
   updateChapterSearchModeControls();
 }
 
@@ -365,28 +379,23 @@ function renderChapterBar(text, chapter, maxCount) {
   const chapterTitle = getChapterTitle(text, chapter.chapter);
   const selected = chapterDiagramState.selectedChapter?.textId === text.id &&
     chapterDiagramState.selectedChapter?.chapter === String(chapter.chapter);
-  const locations = [...chapter.locations.entries()]
-    .map(([location, count]) => `${location} (${count})`)
-    .join(", ");
+  const locations = [...chapter.locations.entries()].map(([location, count]) => `${location} (${count})`);
+  const locationsLabel = locations.join(", ");
   return `
-    <article class="chapter-bar-row ${selected ? "active" : ""}" tabindex="0" data-chapter-text-id="${escapeChapterHtml(text.id)}" data-chapter-key="${escapeChapterHtml(chapter.chapter)}">
-      <span class="chapter-label">Chapter ${escapeChapterHtml(chapter.chapter)}</span>
-      <span class="chapter-bar-track" aria-hidden="true">
-        <span class="chapter-bar-fill" style="width: ${percent.toFixed(2)}%"></span>
-      </span>
-      <strong>${chapter.total.toLocaleString()}</strong>
-      ${chapterTitle ? `<span class="chapter-hover-title">${escapeChapterHtml(chapterTitle)}</span>` : ""}
-      ${selected ? renderChapterDetails(chapter.total, locations) : ""}
+    <article class="chapter-bar-row ${selected ? "active" : ""}" tabindex="0" role="button" aria-expanded="${selected ? "true" : "false"}" data-chapter-text-id="${escapeChapterHtml(text.id)}" data-chapter-key="${escapeChapterHtml(chapter.chapter)}">
+      <div class="chapter-bar-main">
+        <span class="chapter-label">Chapter ${escapeChapterHtml(chapter.chapter)}</span>
+        <span class="chapter-bar-track" aria-hidden="true">
+          <span class="chapter-bar-fill" style="width: ${percent.toFixed(2)}%"></span>
+        </span>
+        <strong>${chapter.total.toLocaleString()}</strong>
+      </div>
+      <div class="chapter-row-meta">
+        ${chapterTitle ? `<h4>${escapeChapterHtml(chapterTitle)}</h4>` : `<h4>Chapter ${escapeChapterHtml(chapter.chapter)}</h4>`}
+        <p class="chapter-location-line ${selected ? "expanded" : ""}">${escapeChapterHtml(locationsLabel || "No locations listed")}</p>
+        ${locations.length > 1 ? `<span class="chapter-location-toggle">${selected ? "Show fewer locations" : "Show all locations"}</span>` : ""}
+      </div>
     </article>
-  `;
-}
-
-function renderChapterDetails(total, locations) {
-  return `
-    <div class="chapter-detail-panel">
-      <h4>${total.toLocaleString()} occurrence${total === 1 ? "" : "s"}</h4>
-      <p>${escapeChapterHtml(locations || "No locations listed")}</p>
-    </div>
   `;
 }
 

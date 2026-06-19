@@ -1,0 +1,4488 @@
+{
+  "source": "Dd.txt",
+  "range": "41-end",
+  "passageCount": 461,
+  "passages": [
+    {
+      "passageId": "41.1",
+      "chapter": 41,
+      "locations": [
+        "A72",
+        "D7_238",
+        "T60_72v",
+        "TD4a_289"
+      ],
+      "sourceText": "41om [A72] pursišn ud pāsox ∵ ān ī pursēd [D7_238] kū ōy kē pad weh Dēn ī Mazdēsnān estēd [T60_72v] mardōmān Weh-dēnīh pānagīh ud ayārōmandīh kunēd\n\tmardōmān az an-ērīh ud ag-dēnīh bē bōzēnēd [TD4a_289]\n\tud az awēšān kē menišn dārēnd kū bē ō an-ērīh ud ag-dēnīh šawēnd ēg-išān aziš abāz dārēd\n\tbē ō an-ērīh nē šawēnd pad dādestān ī Mazdēsnān āstawān bawēnd ayāb-išān dādestān čē ēwēnag bawēd u-šān kerbag wināh čē ēwēnag bawēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "41.2",
+      "chapter": 41,
+      "locations": [
+        "K35_157v"
+      ],
+      "sourceText": "pāsox ēd kū abēr stāyīdag ud farrox burzīšnīg ud wazurg kerbag was pāddāšn\n\tu-š ahlawīh frārāst ud widarg ō ān ī pāšom axwān frāx ud ān ī ruwān rāmišn purr bawēd [K35_157v] wazurg ēmēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "41.3",
+      "chapter": 41,
+      "locations": [
+        "A73",
+        "D7_239",
+        "T60_73r"
+      ],
+      "sourceText": "harw [A73] kerbag ī pad awēšān kē-š az an-ērīh ud ag-dēnīh pād ud pad dēn ī weh pattāyēnīd ud pas az ān kunēnd\n\t\tka kerd [D7_239] tuxšišn ud spās ī ōy rāy ī pad dēn pād ag-dēnīh bōxt estēnd\n\t\tōy ēdōn bawēd čiyōn ka-š [T60_73r] xwad rawāgēnīd hē\n\tud abāg awēšān ham-spās ud ham-kerbag",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "41.4",
+      "chapter": 41,
+      "locations": [
+        "TD4a_290"
+      ],
+      "sourceText": "ud sāmān ud čandīh ī ōwōn kerbag gōkān nibištan nē bē āgāhīh ī az purr-ōšmār kerbag and az mar rawāgīhēd [TD4a_290] bē ka ham-rāh warzišnōmand ud ōstīgān pad wināh nē abespārīhēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "41.5",
+      "chapter": 41,
+      "locations": [],
+      "sourceText": "ēg-iš gāh ī andar ahlawīh abēr wazurg u-š andar gētīy wazurg burzišn stāyišn abrang xwad",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "41.6",
+      "chapter": 41,
+      "locations": [
+        "D7_240"
+      ],
+      "sourceText": "ud čand ōy ī abārōn dād ī marg-arzān dād ruwān pādifrāhōmandīh ud nāf ud paywand winastagīh\n\taz-iz wurrōyišn ī mad Druz ōwōn ī-š andar sāmān dēn kerd garān bēš bīm <’ywy>īhā\n\tān ī frārōn dād ī čiyōn dastwarān pad mēnōy wazurg stāyišnīh ud nāf paywand weh mēnōy rasišn [D7_240] čand pāddāšn ī nēkīh purr-ummēd bawēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "41.7",
+      "chapter": 41,
+      "locations": [
+        "A75",
+        "T60_73a"
+      ],
+      "sourceText": "čiyōn ān-iz ī guft estēd kū mardān ī huwaršt warzīdārān ēg-išān paydāgīh bawēd [T60_73a] pad frazendān ∵ [A75]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "42.1",
+      "chapter": 42,
+      "locations": [
+        "K158r"
+      ],
+      "sourceText": "42om pursišn ud pāsox ∵ ān ī pursēd kū mard-ēw [K158r] kē drōn-ēw hamē yazēd u-š ātaxš az dūr handēmān ud ka pad čand gām wēnēd ā šāyēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "42.2",
+      "chapter": 42,
+      "locations": [],
+      "sourceText": "čē rāy ka drōn pad čarāy yazēnd tauua āθrō . nē gōwēnd čiyōn abārīg ātaxš",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "42.3",
+      "chapter": 42,
+      "locations": [
+        "BA286"
+      ],
+      "sourceText": "ud šnūmanīhā ī yazišn drōn gāh rōz ud māhīgān kadām ān ī ka pēš pas ēg-iz [BA286] nē šāyēd\n\tkadām ān ī šāyēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "42.4",
+      "chapter": 42,
+      "locations": [
+        "A76",
+        "D7_241"
+      ],
+      "sourceText": "māhīgān 30 rōz andar sāl wēštar ud šnūman-ēw ī drōn yazišn ka bē kunēnd čiyōn šāyēd kerdan kū pēš andar nē bawēd\n\tud kadām ān ī ka kunēnd\n\twēštar šnūman-ēw šāyēd\n\tud kadām ān ī nē šāyēd\n\tud ān ī pēš ud pas kadām [D7_241] bawēd ∵ [A76]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "42.5",
+      "chapter": 42,
+      "locations": [
+        "T60_73b"
+      ],
+      "sourceText": "pāsox ēd kū az barsom tā ātaxš 48 pāy ast čiyōn 9 nāy ī mard-ēw ī mayānag\n\tud ka-iz ātaxš wēnēd [T60_73b] tauua āθrō . nē gōwēd šāyēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "42.6",
+      "chapter": 42,
+      "locations": [],
+      "sourceText": "ud čirāy-iz ham-brāh ī ātaxš ast\n\tud pad čāštag ī amāh čirāγ kē-š ēsm-sōzišnīh abar nēst drōn nē yazēnd\n\tud ān ī-š drōn padiš yazēnd ēsm-sōzišnīh abar kunēnd tauua āθrō . gōwēnd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "42.7",
+      "chapter": 42,
+      "locations": [
+        "A77",
+        "K158v"
+      ],
+      "sourceText": "ud šnūman ī yazišn drōn ǰud ǰud pas az ān ī pēš ō [K158v] pas nē\n\tud ān ī pēš ō pēš ī Ohrmazd rōz nazdistar [A77] čiyōn ādur ud ābān ud abārīg rōz pad padisār\n\tud abdom anagrān rōz čiyōn pad ham padisār anagrān roz dūrtar",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "42.8",
+      "chapter": 42,
+      "locations": [
+        "BA287",
+        "D7_242"
+      ],
+      "sourceText": "ud ka 7 amahrspand andar šnūman fradom [BA287] 7 amahrspand pad xwēš padisār pas gāh ud pas rōz ud pas māhīgān ī yazišnīg [D7_242] ud pas abārīg šnūman ī pad padisār ēdōn čiyōn nibišt kerdan abāyēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "42.9",
+      "chapter": 42,
+      "locations": [
+        "A78",
+        "T60_74a"
+      ],
+      "sourceText": "ud ān ī pēš pas kunēnd ēk ka šnūman-ēw pēš az 7 [T60_74a] amahrspand kunēd ēk ān ī ka rōz pēš az gāh kunēd ud ēk ka māhīgān pēš az rōz kunēnd ud ēk ān ī ka ǰud az 7 amahrspand ud gāh ud rōz [A78] māhīgān šnūman ī pēš az amahrspand ayāb pēš az gāh ayāb pēš az rōz ayāb pēš az māhīgān rāy šnūman abārōn ēdōn handāzīhēd čiyōn im rōz ud dīg frayar",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "42.10",
+      "chapter": 42,
+      "locations": [],
+      "sourceText": "čiyōn ka māh ābān ī yazišnīg rōz xwar šnūman ī rōz ud māhīgān ēdōn ī-š padisār ud ādur ud ābān u-šān padisārīg abāz ō pas-rawišnīh aziš padisārīhēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "42.11",
+      "chapter": 42,
+      "locations": [
+        "A79",
+        "BA288&D7_243",
+        "K159r"
+      ],
+      "sourceText": "ēnyā ka-iz andar ham māh ud rōz māhīgān šnūman rōz ud māhīgān bawēd az māh ī ābān gōwīhēd az ān čiyōn nē [BA288&D7_243] ham-paywand [K159r] ud an-andarg abāz šawēnd ēg-išān pad xūb dāštan [A79]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "43.1",
+      "chapter": 43,
+      "locations": [
+        "T60_74b"
+      ],
+      "sourceText": "43om pursišn pāsox ān ī pursēd kū mard-ēw ī abarmāndīg ī abzārōmand [T60_74b] kē-š andar dēn abzār ī wazurg kerd estēd u-š dastwarīh ud mowbedīh kerd estēd ayāb-iš nē kerd estēd bē-š abzār-ēw wazurg andar dēn kerd estēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "43.2",
+      "chapter": 43,
+      "locations": [
+        "A80"
+      ],
+      "sourceText": "andar šahr ud gyāg kas nēst kē zand šāyist nē šāyist weh dānēd kū ōy ud pad gyāg-ēw ī čiyōn spahān frāz rasēd\n\tmardōmān ī šahr hamāg dēn ī was ud yazišn ī (was) hamē framāyēnd ō kas kas az anīy šahrīhā\n\tdriyōš-ēw kē-šān abzār ud abarmānd ī ōy nēst bē ō šahr hamē āyēnd ud hamāg dēn ī was ud yazišn ī was hamē padīrēnd ∵ [A80]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "43.3",
+      "chapter": 43,
+      "locations": [
+        "BA289",
+        "D7_244",
+        "T60_75a"
+      ],
+      "sourceText": "ān mard ī abarmāndīg ud abzārōmand gāh ī abarmānd xwēš gāh ī dēn [D7_244] ud gāh ī abzār ī-š ast rāy hu-škōyīhā ud šarmgenīhā rawēd andar šahr kār-ēw ud dādestān-ēw az šahr nē xwāhēd ud kār-ēw ud dādestān-ēw ī didīgar nē dānēd [BA289] kerdan kē-š sazāgīh padiš [T60_75a] ast",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "43.4",
+      "chapter": 43,
+      "locations": [
+        "K159v"
+      ],
+      "sourceText": "mardōmān ī šahr abzār ud kerdārīh ī ān mard pad dēn kerd estēd [K159v] rāy az hamāg dēn yazišn kār ī hamē framāyēnd *ēg-išān ān mard bahr kerdan\n\tu-šān bahr abāyēd dād ō ān mard ayāb čiyōn abāyēd kerdan\n\tu-šān awiš abāyēd handāxt ayāb nē",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "43.5",
+      "chapter": 43,
+      "locations": [
+        "A81"
+      ],
+      "sourceText": "ud hamāg dēn ud kār sūd ī [A81] was abāyēd guftan kū tā ān kū tō mad estē ēg-imān bē ō ōy ī azēr ī tō nē abāyēd framūdan ayāb čiyōn kunišn",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "43.6",
+      "chapter": 43,
+      "locations": [
+        "D7_245"
+      ],
+      "sourceText": "bahr ī sūd ud nīrmad ī az abārīg dar ī-šān ān abzār rāy awiš abāyēd handāxtan ayāb čiyōn [D7_245]\n\tbahr ī abzār ud gāh ud dēn a-framān ī amāh mardōmān čiyōn abāyēd handāxtan ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "43.7",
+      "chapter": 43,
+      "locations": [
+        "A82",
+        "T60_75b"
+      ],
+      "sourceText": "pāsox ēd kū mard-ēw ī pad ān ēwēnag ī čiyōn nibišt abarmānd abzār kerdārīh ud hunar passazag pad bahr ud xūbīh\n\t\tabēr arzānīg ud pad-iz xūb rāyēnīdārīh ī [T60_75b] hamāg dēn ī yazišn ī [A82] yazdān\n\t\tabēr ēmēdīg andar warōmandīh-ēw",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "43.8",
+      "chapter": 43,
+      "locations": [
+        "BA290"
+      ],
+      "sourceText": "pad ān abāyēd dāštan kū paydāgtar ud xūbtar rāyēnēd az awēšān kē-šān abzār ud hunar [BA290] ī ōy nēst\n\tud abar-iz bahr ud nīrmad ī az yazišn ī yazdān arzānīgīh ōy wēš kē abzār ud hunar ud kerdārīh ī pad dēn meh",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "43.9",
+      "chapter": 43,
+      "locations": [
+        "K160r",
+        "MR_246"
+      ],
+      "sourceText": "ud mard ī čiyōn nibišt ka-š [K160r] ān hamāg dēn ud yazišn xūb rāyēnēd u-š abāz framāyišnīh ud xūb-rawāgīh ī kār ī frārōn nīrmad ī xwēš handāxtan tuwān ud wazurg niyābagīhā awiš framūd u-š padiš bahrwar ud frāx-nīrmad padēx windišn dāštan [MR_246]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "43.10",
+      "chapter": 43,
+      "locations": [
+        "A83"
+      ],
+      "sourceText": "ud ān-iz ī [A83] kam-abzārtar ī kam-gāhtar az ōy pad čand nā-arzānīg ast niyābag ī xwēš u-š abāz kerdan/griftan rāy ēwēnag",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "43.11",
+      "chapter": 43,
+      "locations": [
+        "T60_76a"
+      ],
+      "sourceText": "bē ōy ī wēš abzār meh bahrīhā\n\tud ān ī mayānag hunar mayānagīhā\n\tōy ī kam-abzār nēkīh arzānīgīhā passazagīhā niyābagīhā [T60_76a]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "43.12",
+      "chapter": 43,
+      "locations": [],
+      "sourceText": "ud arzanīgīh ast čiyōn pad dēn gōwīhēd kū *** bahr ō ōy ī dēn-burdār ē niwēyēnd\n\t2 bahr ō ōy ī mayānag\n\tud ēk ō ōy ī nidom",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "43.13",
+      "chapter": 43,
+      "locations": [],
+      "sourceText": "ud agar ān mard rad dastwar ī dānāg ayāb pad hunar ud wehīh ud abzār Dēn ī Mazdēsnān pāšom ī dēn burdārān ī dānāg",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "43.14",
+      "chapter": 43,
+      "locations": [
+        "A84",
+        "BA291"
+      ],
+      "sourceText": "u-š dēnīg-xēmīh hammis [A84] dēnīg [BA291] bahrōmand kār ī andar dānāg bē ō ōy framāyēnd\n\tud ōy abārīg arzānīgān niyābagōmandān ud andar gyāg ud niyābag ō gyāg rasišnīg\n\tud čand sazēd niyābag ī xwēš bawēd hamāgīhā bē ō ōy handāxtan xūb",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "43.15",
+      "chapter": 43,
+      "locations": [
+        "K160v",
+        "MR_247"
+      ],
+      "sourceText": "ud agar pad ān [MR_247] niyābag *baxšēnīdārīh nē spurrīg ud ōy pad frāzīg hunarīh [K160v] ud frāzīg weh-dilīh wēš-abzārīh passazag meh gāh wēš bahr arzānīgīh pad xwēš niyābag pāyagīhā bahrōmand kerdan čimīg",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "43.16",
+      "chapter": 43,
+      "locations": [
+        "A85",
+        "T60_76b"
+      ],
+      "sourceText": "čē paymān [T60_76b] nigerišnīh hamkōs niyābag-dahišnīh ud wazurg-dahišnīh ∵ wizīdārīhā\n\tud guft estēd kū nē a-paymānīg dastwar Jāmāsp ī hwōwān pad ān ēwēnag ōy ī weh [A85] abarmānd wēš abzār ā bahr dāšt\n\tud abēr paymān ristagīhā bē hamāgān",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "43.17",
+      "chapter": 43,
+      "locations": [],
+      "sourceText": "bē ō ēk abzārōmand handāxtan ud abārīg-iz niyābagōmandān ā bahr kerdan nē drīst-wimandīhā ud paymānīhā\n\tčē ēk-iz ēk pad xwēš niyābag bahrēnīd ud paymān-bōzišnīhā ǰud-iz az yazišn",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "43.18",
+      "chapter": 43,
+      "locations": [
+        "TD4_297/BA292&MR_248"
+      ],
+      "sourceText": "bē ō ōwōn mard ī dēnīg weh-dilīhā ud pad ēwēn ud abarmānd nīrmad handāxtan wazurg-kerbagtar [TD4_297/BA292&MR_248] kū ōy-iz abarmāndīg ud pad padīriftan wēš-dastwarīhātar",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "43.19",
+      "chapter": 43,
+      "locations": [
+        "A86",
+        "T60_77a"
+      ],
+      "sourceText": "ud ān ī xwad xwāstan abdom ī harw windišn čē bē [A86] ān ka pad ēč ēwēnag frārōn-kerdār ud zīyišn xwāstan nē tuwānīg tā-š [T60_77a] tis-iz pad ǰāmag pad ahlaw-dād xwāst\n\tpad aǰgahānīh zīyistan nē bōzišnīg-rāhīh\n\tus ān ī nē xwad xwāhēd dānāg rādān a-xwāst dahēnd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "43.20",
+      "chapter": 43,
+      "locations": [
+        "A87",
+        "K161r"
+      ],
+      "sourceText": "ō dahišngar wēš-spās [K161r] ud ō dōst dāštār bazišn wēš ud dēnīg dōstān gāh ī dēn-burdārān ēdōn abāyēd dādan ud dāštan čiyōn passazag ō [A87] wazurg mādag ī dēn meh ēmēd ī-šān abar dēn paywastan\n\tčiyōn guft estēd kū dādestānōmandān dastwar ān ī abzōnīg dēn čiyōn-išān rāh ī ruwān bōxtārīh",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "43.21",
+      "chapter": 43,
+      "locations": [
+        "MR_249"
+      ],
+      "sourceText": "abar dēn-burdārān abērtar ēwēn čiyōn dādīg šāhān (šāh?) bē ō [MR_249] stāyišnīg mowbedān mowbed guft kū pad ērīh pid ī amāh hē ud amāh tō pad tan pānag hēm ud tō amāh pad ruwān pānag bāš",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "43.22",
+      "chapter": 43,
+      "locations": [
+        "A88",
+        "A89",
+        "BA293 (298)",
+        "T60_77b"
+      ],
+      "sourceText": "ud ham handāzag dēn-dōstān az [A88] dēn-burdārān rāh ī ō ruwān [T60_77b] bōzišnīh [BA293 (298)] xwāst ō dēn-burdārān wazurg-abrangīhā ud purr-āzarmīhā gāh ud sūd ud rāmišn handāxtan ōwōn čiyōn ō ruwān-buziškān handāzēnd xūbīhā nē pad šud bē pad meh windišn handāxtan ēwēn ∵ [A89]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "44.1",
+      "chapter": 44,
+      "locations": [],
+      "sourceText": "44om pursišn ud pāsox ān ī pursēd kū hērbedīh ayāb hāwištīh\n\tud kadām hērbed bawēd kadām hāwišt\n\tkadām ān ī pad hērbedīh ud kadām ān ī pad hāwištīh abāyēd dāštan ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "44.2",
+      "chapter": 44,
+      "locations": [
+        "K161v",
+        "MR_250"
+      ],
+      "sourceText": "pāsox ēd kū hērbedīh ud hāwištīh ham-band\n\tmādayānīhā [K161v] hērbedān hammōzēnd ud hāwištān *hammōxtēnd ud dānišn ī dēn ī ast Abestāg ud zand [MR_250]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "44.3",
+      "chapter": 44,
+      "locations": [],
+      "sourceText": "ud hērbedān hāwišt būd hēnd pad hammōxtan ī az xwēš hērbed\n\thāwišt-iz hammōxt dānišn hērbed bawēnd abāg hammōxtār\n\tandar ēk tan bawēd hērbedīh ud hāwištīh",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "44.4",
+      "chapter": 44,
+      "locations": [
+        "BA294/299",
+        "T60_78a"
+      ],
+      "sourceText": "ud pad ān ī hāwištagīhā hammōxtēd [T60_78a] az hērbed dānāgtar\n\tud kē xwēš tan hērbedīh hammōzēd ō hāwišt ī hammōxtār kāmag kē-š hammōzišn niyāz\n\taz-iz ōy ka andar xwēš hērbed [BA294/299]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "44.5",
+      "chapter": 44,
+      "locations": [
+        "A90"
+      ],
+      "sourceText": "hāwišt abar xwēš hērbed ud hāwišt abar xwēš hāwišt ∵ hērbed\n\tēdōn čiyōn ka gōwīhēd-iz kū pārs āsrōnān pēšāg framādār ud abar awestān mowbedān ī pārs [A90] sālār pēšōbāy ī dēn waxš kerd\n\t*ēdōn bē wizīd pēšagīhā ī andar dēn hērbed abar zand-āgāhān ud hāwišt abar Abestāg *warm ud *yazdān āšnāgtar ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "44.6",
+      "chapter": 44,
+      "locations": [
+        "MR_251"
+      ],
+      "sourceText": "ud hērbed frāz az yaštan wispred ud hād nīrang abzār ud abzār ī pad zand\n\tud hāwištān [MR_251] frāz az nīrang ī yazišn ud pādyābīh ud a-pādyābīh ud *pākīh ud rēmanīh wināh ī pad društag bē šnāxtan abzār ī pad Abestāg",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "44.7",
+      "chapter": 44,
+      "locations": [
+        "A91",
+        "K162r",
+        "T60_78b"
+      ],
+      "sourceText": "ud harw 2 pēšag az harw astīh hamēyīg-astīh hamāg-wehīh ud frazām [T60_78b] pērōzīh ī yazdān nēst [K162r] wattarīh hamāg-wehīh abesīhēnišn ī dēwān bē šnāxtan\n\tud yazdān dōstīhā ān ī āsrōnīg xēm hammōxtan ud griftan dāštan frēzwānīg ud meh-dādestānīhātar [A91]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "45.1",
+      "chapter": 45,
+      "locations": [
+        "BA295/300"
+      ],
+      "sourceText": "45om pursišn ud pāsox ∵ ān ī pursēd kū ān ī hērbed ka-š az zīyišn ī hērbedīh zīyišn ī rōzgārīg nēst hērbedīh bē pādixšā hišt ud anīy [BA295/300] kār kerd/grift ayāb nē ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "45.2",
+      "chapter": 45,
+      "locations": [
+        "MR_252"
+      ],
+      "sourceText": "pāsox ēd kū hērbedān az hērbedīh kē xwad ast hammōxt dānišn āsrōnīg xēm ud ruwānīg pahrēz ud xwāst kerbag handōxt šēd hu-srawīh ēč ziyān [MR_252] nēst",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "45.3",
+      "chapter": 45,
+      "locations": [
+        "T60_79a"
+      ],
+      "sourceText": "ud ēn sūd ast kū āgāhīh ī az dēn yazdān ud abē-gumānīh ī pad mēnōy-mizdīh rāy pad tangīh hunsandtar ud andar saxtīh ud wīdwarīh abar-estānag ī čārag-šnāstar ud ō bōxtišn [T60_79a] wišmedīg-menišntar bawānd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "45.4",
+      "chapter": 45,
+      "locations": [],
+      "sourceText": "tā anīz ∵ a-ziyān ī sūd-iz kār hērbedīh (ī) was ranǰ xwāst ud hammōxtan bē hišt nē sazāg",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "45.5",
+      "chapter": 45,
+      "locations": [
+        "K162v"
+      ],
+      "sourceText": "bē ka az hērbedīh zīyišn ī rōzgārīg nē *ayābēnd u-šān wehān *a-xwāst ahlawdād awiš nē dahēnd ud az nabānazdištān ī druwandān pad-iz xwāyišn nē windēnd ud az mizdīg yazišngarīh ud hamāg dēn rāyēnīdārīh ud abārīg āsrōnīh ud hāwištīh padiš [K162v] zīyišn-ēw xwāst",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "45.6",
+      "chapter": 45,
+      "locations": [
+        "A92",
+        "BA296&D7_253/301"
+      ],
+      "sourceText": "ka pad-iz ān nē *ayābēnd pad warzīgarīh ud [A92] gōspand-warzīh ud dibīrīh ud abārīg frārōn kār ī andar āsrōnīhā\n\tud ka-šān pad-iz ān zīyistan nē tuwan pad zēnwarīh ud naxčīrgarīh [BA296&D7_253/301] ud abārīg frārōn kār ī andar pēšag ī frārōn artēštārīh zīyišn xwāst",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "45.7",
+      "chapter": 45,
+      "locations": [
+        "A93",
+        "T60_79b"
+      ],
+      "sourceText": "ud-ka-iz-išān pad ān ī niyābag gugārd xwēš tan kē andar frēzwānīg sālārīh dāštan nē tuwān [T60_79b] ahlawdād xwāstan dastwarīhā pad čār ud tuwān\n\taz aǰgahānīhā zīyistan ayāb a-tuxšišnīhā xwēš tan kē andar sālārīh abē-zīyišn bē hišt nē dastwarīhā [A93]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "46.1",
+      "chapter": 46,
+      "locations": [],
+      "sourceText": "46om pursišn ud pāsox ān ī pursēd kū andar myazd ī Weh-dēnān kē-š mard 50 ayāb 100 wēš ayāb kam čiyōn ka bawēd andar hēnd ud mard 7 kē-šān pad dēn-kerdārīh kerd estēd abāg awēšān ham-myazd hēnd\n\tud az ān 7 mard ast kē 5 nask ast kē-šān 6 *baxšišn ī Abestāg warm ud tuwān hēnd yašt u-šān zand ēč pargard nē warm",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "46.2",
+      "chapter": 46,
+      "locations": [
+        "D7_254",
+        "K163r",
+        "T60_80v",
+        "TD4a_302"
+      ],
+      "sourceText": "u-šān harw 7 pad rāh ī pēš-gāhīh pahikār ud ōy kē-š 30 pargard pad zand warm ōy gōwēd kū \n\tpēš-gāhīh [D7_254] ān ī man ud gāh ī [K163r] man meh abāyēd dāštan\n\tud bawēd čē zand ud šāyist nē šāyist man weh [T60_80v] dānam ud gāh ī man weh abāyēd būd čē ēn gāh ī dēn hamē ka bē ō mardōmān nē nimāyēm andar dēn [TD4a_302] nē bōzišn ham\n\tud ašmāh pad gāh ī man ma pahikārēd čē nē sazāg pahikārd\n\tčē ēn sabukīh ud an-ērīh ī ō dēn hamē āwarēd nē ō man",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "46.3",
+      "chapter": 46,
+      "locations": [
+        "A94"
+      ],
+      "sourceText": "ud awēšān-iz 7 mard bē ō ōy hamē gōwēnd kū gāh ān ī amāh meh ud hamē abāyēd būd čē amāh pad zōdīh ī xwēš harw mard-ēw čand nask tuwān yašt hamē kē mizd pad bahr bahrōmandtar abāyēd dāštan [A94]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "46.4",
+      "chapter": 46,
+      "locations": [
+        "D7_255",
+        "T60_81r"
+      ],
+      "sourceText": "ud awēšān kē-šān Abestāg wēš warm ayāb ōy kē zand šāyist nē šāyist weh dānēd ud kehīh ud mehīh ī pad ēn dar čiyōn-imān pursīd [D7_255] ēg-imān andar rōšn framāyēd kerdan čē ka pad ēn dar ī kehīh ud mehīh nimāyēd ēg-iš mehīh [T60_81r] sūdīh bowandagīhā ast ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "46.5",
+      "chapter": 46,
+      "locations": [],
+      "sourceText": "pāsox ēd kū az ān ī nibišt kū 30 pargard pad zand warm ud abārīg-iz ast kē 5 ast 7 nask ud Abestāg warm ud az ān kadām-pargardīh ud kadām-naskīh nē wizīd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "46.6",
+      "chapter": 46,
+      "locations": [
+        "K163v",
+        "TD4a_303"
+      ],
+      "sourceText": "ud wizīn ī abar wēš-abzārīh ud [K163v] kam-abzārīh nē paydāg kē nask ast ī az čand nask meh ud pargard ast ī čand pargard meh\n\tbē ān [TD4a_303] kē-š 5 nask Abestāg warm ud ān-iz kē 30 pargard pad zand warm ǰud ǰud brēh ud mar dānistan harw ēk brēh ī pad zand pad 7 brēh ī ǰud az zand ō mar grift hangōšēnīd abāyēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "46.7",
+      "chapter": 46,
+      "locations": [
+        "A95",
+        "D7_256",
+        "T60_81a"
+      ],
+      "sourceText": "u-š aziš paydāgīhēd kū kē abzār ud kē kam ka-š tis andar nēst ī ān rāy ǰuttar\n\tbē ka abarmānd ud framān ī xwadāyān gāh ī kār ī padiš [D7_256] gumārdag ayāb nōg-zōdīh ayāb gāhānbār radīh ayāb griftag pēš-gāhīhā ayāb ham-čim [T60_81a] rāy ǰuttar bawēd ud tā hamē ān ī wēš-abzārtar gāh meh bahr wēš handāxtan sazāg [A95]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "46.8",
+      "chapter": 46,
+      "locations": [],
+      "sourceText": "ka anīy wēš sazāg hēnd ud abzārōmand ayāb wēšīh ud kamīh ī-šān abzār nāmčištīg nē paydāg\n\tud ān kē-š zand wēš warm ud wēš yašt ud pad padišwar pad xwarišn padišwar dāštan čimīg saham",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "46.9",
+      "chapter": 46,
+      "locations": [
+        "K164r",
+        "TD4a_304"
+      ],
+      "sourceText": "u-šān harw 2 rāh ī arzānīgīh wazurg ud frāx āzarm ud sūd purrīhā niyābag\n\tud abzār ī pad zand ud ān ī pad Abestāg āgenēn ham-ayār [TD4a_304] čē Abestāg-yaštārān-iz niyāz ō āgāhīh ī az zand abar nīrang ud šāyist nē šāyist [K164r] ī yazišn ud ān ī az zand āgāhīh pad-kārtar sūdīhēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "46.10",
+      "chapter": 46,
+      "locations": [
+        "D7_257",
+        "T60_81b"
+      ],
+      "sourceText": "ud ka-šān yazišnīh rawāgīhēd awēšān [D7_257] harw 2 ēwēn abzārōmandān ēk ō did dōst ud payrāstār ud stāyīdār ud abrangēnīdār ud dēn dōstān ō-šān harw 2ān dōst hu-čāšm ud [T60_81b] payrāstār",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "46.11",
+      "chapter": 46,
+      "locations": [
+        "A96"
+      ],
+      "sourceText": "ud ka-iz ēk abar did hamēmāl-gōwišn paydāg bawēnd az niyāz ayāb az stahmagīh ī petyārag rāy bawēd abar-išān aboxšīdār\n\tu-šān bahr nē kāstār ud ō ham-zōrīh ud husāzīh ī *hāxtār būdan čimīg ∵ [A96]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.1",
+      "chapter": 47,
+      "locations": [],
+      "sourceText": "47om pursišn ud pāsox ān ī pursēd kū Ohrmazd ud amahrspandān ud frawahr ī ašō’ān az yazišn-xwāyišnīgīh ud urwāhmenīh ud rāmišn-kāmag čiyōn",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.2",
+      "chapter": 47,
+      "locations": [
+        "A96",
+        "D7_258",
+        "TD4a_305"
+      ],
+      "sourceText": "ayārīh ud frayādišn ī ōy kē-š yazišn framūd ud šahr mardōmān ēg-išān frayādišn pad čē ēwēnag bawēd\n\tud ganāy mēnōy ud dēwān ud druzān bēšišn zanišn ud dard ud duš-xwārīh čiyōn pad čē ēwēnag bawēd\n\tčim ī [TD4a_305] yazišn čiyōn [D7_258] ast\n\tčē ast yazišn kū wehīh ka kunēnd\n\tkē weh ka kunēnd\n\tčiyōn weh ka kunēnd [A96]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.3",
+      "chapter": 47,
+      "locations": [
+        "K164v",
+        "T60_82a"
+      ],
+      "sourceText": "pāsox ēd kū Ohrmazd ud amahrspandān az yazišn wazurg šnāyišn padiš abēzagīhā nīrang [T60_82a] ud pad-iz ēn kū-š xwēš āfrīdag framān [K164v] bowandag rāyēnāg čiyōn-iš framūd ōy ī wisp-wehīh bē ō ān ī bandagān ēkānagīh ud pāddāšn ī purr-baxt ēwar dēn-burdār ī rāstīhā ōšmārdārān",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.4",
+      "chapter": 47,
+      "locations": [],
+      "sourceText": "az kerd ī yazišn ī yazdān ud šnāyišn ī weh mēnōyān\n\t\tnizōrīh ī druzān\n\t\tabzūdan ī nēk-wārānīh ud waxšišn ī urwarān\n\t\tud ābādānīh ī gēhān ud drīst-rawišnīh-iz ī zīndagān\n\t\tud tā-iz ān ī Fraškerd rawāgīh dāmān a-margīh aziš būd guft estēd čimīgīha.",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.5",
+      "chapter": 47,
+      "locations": [
+        "MR_259"
+      ],
+      "sourceText": "čē yazdān ī meh aziš ham-padīragīhā dēwān čimīg agāmāy u-šān aziš zanišn\n\tud bēšišn ī garān [MR_259] aziš būd tāštīg ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.6",
+      "chapter": 47,
+      "locations": [
+        "A97",
+        "T60_82b&BA301/306"
+      ],
+      "sourceText": "yazišn čim dēn bōzišnīh\n\tu-š xwāst čim ēn kū dēn ō dām frēstīhist ō šnāsagān rōšnīhā kū nē ān ī dānišn ī andar gētīyān xrad *baxt\n\tbē [A97] ān-iz ī pad gētīyīg xrad [T60_82b&BA301/306] *baxt nē dānīhēd ān-iz ī mēnōyān dām ān-iz ī mēnōyīg nīrang ō gētīyān nimūdan āgāhēnīdan rāy",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.7",
+      "chapter": 47,
+      "locations": [
+        "K35_165r"
+      ],
+      "sourceText": "ud ān dēn kē gētīy dānišnīg nigēz abāg ān ī gētīyān pad gētīyīg xrad bē tuwān dānistan rāst hamband u-š danišn abar gugāh ud pad ān ī mēnōyīg zōrīg\n\tud bē az gētīyīg gugāhīh wābarīgān [K35_165r] dāštan rāh ī šnāsišn ī drīst",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.8",
+      "chapter": 47,
+      "locations": [
+        "MR_260"
+      ],
+      "sourceText": "*gōkān čim ī yazišn andar čē-m zamānīg ayādīh ō nibištan ∵ pardazišn ast gōkānīg\n\tēn ēk nimāyišn ī abēzagīh andar abēzag stāyišnīh ī mēnōyān yazdān ast čiyōn framūd estēd čiyōn yazišn ī gāhānbār pēš az [MR_260] gāhānbār nimāyīhēd ī *yaštār ud 2 ud 3 ǰār tan az ān ī nasušīg rēmanīh ud az-iz ālūdagīh ī bērōnīg",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.9",
+      "chapter": 47,
+      "locations": [
+        "BA302/307",
+        "T60_83a"
+      ],
+      "sourceText": "tan-iz čand sazēd az čim ī pāk kerdan ān-iz ī <wYstk'> xwēy pad ān ī dādīhā tōzišn az [T60_83a] handāman bērōnīhist ud pad pāk nam ī az pākān gōspandān ud urwarān\n\tud pas pad-iz ān ī frāz-tazāg āb ī yōǰdahr hamāgīhā tan šustan\n\tpad ān ī [BA302/307] pāk bōy ud ān ī dādīhā <wywwd> tan wastarg hu-bōy kerdan\n\tpad spēd ud drīst Wahumanīg wastarg aibyāst\n\tud nizōrīh ī <’cby>šāyēd' ōgārdan ī frāybūd ud aibībūd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.10",
+      "chapter": 47,
+      "locations": [],
+      "sourceText": "ān-iz rāy kū tā andar yazišn az suy tišn xwēy ud az *frāyīh ud <sw(w)yk>īh az-iz kamīh ud tuhīgīh nē aweštābīhēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.11",
+      "chapter": 47,
+      "locations": [
+        "A98",
+        "K165v",
+        "MR_261"
+      ],
+      "sourceText": "ud pēš az yazišn pad xwēš hangām ud ān-iz ī sāzišnīg ud paymānīg <wwY>īh xwarišn xwardan ud ān ī ēwēnīg xwēy kerdan ud andar a-yaštanīh ud a-yašt-menišnīh [MR_261] ud paymānīg-čihrīh andar ān ī ātaxšān mān kē bāstān [K165v] rōšnīh ud hu-bōyīh ud frārōnīh kerbagīgīh andar [A98] mehmān",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.12",
+      "chapter": 47,
+      "locations": [
+        "T60_83b"
+      ],
+      "sourceText": "u-š dēwān u-š sezd xwad *niwand-kadag ast ī tārīkān ī weh kē pad [T60_83b] stāyišn frahaxt bē ō gēhān rasēnd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.13",
+      "chapter": 47,
+      "locations": [],
+      "sourceText": "ud ān ī yaštārān gāh čiyōn xwad ast gāh ī zōd ud hamkārān gyāg urwis ud ādišt andarg-gāh pāk kerdan\n\tud āb ī yōǰdahr abar paššixtan",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.14",
+      "chapter": 47,
+      "locations": [
+        "BA303/308"
+      ],
+      "sourceText": "ān ī yazišn abzār abāg xwēš mardōm ī yaštār ud az ān 6 dām ī gētīy hēnd ud ātaxš ud ayōšust ud āb ud urwar čiyōn passazagīhā ō [BA303/308] ham burdan.\n\tān ī sagēn urwis ud ān *āhenēn hāwan ud abar-hāwan ud tašt ud māhrōb pāyagīhā kerd/grift pad yōǰdahr āb pādyābēnīdan",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.15",
+      "chapter": 47,
+      "locations": [
+        "MR_262"
+      ],
+      "sourceText": "ān ī rōšn ātaxš abar ān ī pāk ādišt pad [MR_262] ān ī hušk ī nigerīd ud yōǰdahr ēsm waxšēnīd\n\t\tud ān ī bēšaz bōy az urwarān <’yw'> xwēš hangāmīhā abar burdan.\n\tud ān ī yōǰdahr āb ī pad ān ī dēn gōwišn nīrang āšixtan pad ān ī pāk ayōšustēn ǰāmag",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.16",
+      "chapter": 47,
+      "locations": [
+        "K166r",
+        "T60_84a"
+      ],
+      "sourceText": "ud ān ī hurust hōm [T60_84a] ī-š gēhān xwarrahōmand ēn kē-š dahišn ī Zarduxšt abar būd daxšag ī ān ī spēd gōgaren hōm kē-š] a-margīh ī Fraškerd aziš paydāg rāy aziš ēnyā [K166r] ud sam ī dēwān aziš\n\tud abāg ān ī hadanbāy urwar ī urwarām <y’wšwy’k> pad xwēš gāh nihādan",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.17",
+      "chapter": 47,
+      "locations": [
+        "BA304/309"
+      ],
+      "sourceText": "ān ī urwarīg barsam pad ān ī urwarīg parwand ud kustīg gāh grih aibyāst\n\tud ān ī Šahrīwarīg māhrōb ī pad gāh ī ān ī dahībedān dēdēm ī mādayān bīm [BA304/309] wizārīhēd wirāst estēd stard",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.18",
+      "chapter": 47,
+      "locations": [
+        "A99",
+        "MR_263"
+      ],
+      "sourceText": "pad hambarišnīh ī pākān gētīy dahišnān čand [MR_263] abēzagīhātar šāyēd rasišn ī abēzagān hamāg daxšag ōstīgānēnīd [A99]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.19",
+      "chapter": 47,
+      "locations": [
+        "T60_84b"
+      ],
+      "sourceText": "ud awēšān yaštārān kē-šān ān ī xwēš tan bērōn yōǰdahrēnīd ∵\n\t\tud pad pāk wastarg ēw-mōxt\n\t\tpad ān ī paymān-xwarišn suy ud pad ān ī [T60_84b] dādīhā xwārišn tišn\n\t\tpad ēwēnag xwēy būšasp ud pad ān ī xrad zōr waran\n\t\tpad ān ī āsrōnīhā xēm xešm ud tan-drōw ud wad-menišnīh\n\taz-iz andarrōntom dil ud menišn ōgārdan pādixšāy\n\tabaxšīh ud pašēmānīh petītīgīh ud tōxt-wināhīh ud wazurg yōǰdahr-menišnīh xwāstan",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.20",
+      "chapter": 47,
+      "locations": [
+        "BA305/310",
+        "K166v",
+        "MR_264"
+      ],
+      "sourceText": "ud ayāft čašm ī frāz-wēnāg dast ī pad-pādyāb ud abārīg hamāg handām ud tan nāmčišt ānōh kū-š nam ud hixr u-š/aziš xūb kunišnīg ud ān ī pāk wastarg nihuftan\n\tud uzwān <az> drōw guftan ud ∵ dast az wināh pahrēxtan pādan\n\tmenišn xūb-dārišnīhā ō yazdān šnāsagīh wirāst [BA305/310] estādan\n\tnōgīhā-iz [K166v] gōwišnīg [K166v] petītīg [MR_264] radīhā ōšmurdan",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.21",
+      "chapter": 47,
+      "locations": [
+        "T60_85a"
+      ],
+      "sourceText": "ud ōy ī zōd abāg gōwišn ī mānsrīg ātaxš gāh pērāmōn yōǰdahrēnīd ud yazdān stāyišnīhā bē ō ān ī zōdān gāh šudan\n\traft xwarrah [T60_85a] ōy rōšnān šahr yazdān ud frawahrān azbāyišnīg menīdan",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.22",
+      "chapter": 47,
+      "locations": [],
+      "sourceText": "awēšān-iz hamkārān hōyagīhā ud dašnīhā ud <’mlyš> ǰud ǰud pad xwēš gāh estādan yazdān menīd\n\tpad šnāyišn ī Ohrmazd ud tar-dahišnīh ī gannāy mēnōy ud āškāragīhā frāz ō yazišn estēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.23",
+      "chapter": 47,
+      "locations": [
+        "A100",
+        "MR_265"
+      ],
+      "sourceText": "ud ōy zōd ī weh pēšōbāyīh ud abārīg hamkārīhā\n\tast kē pad <’p̄ystwš> ast kē pad ātaxš ān <’yw>īdārīh\n\tud ast kē frāz-burdārīhā ast kē bē burdārīhā\n\tud ast kē [A100] āsnadārīhā ud ast kē gumēzakkarīhā\n\tud ast kē kār-framūdārīhā ud xwēš niyābag ī andar yazdān rāyēnēd ∵ andar yazišn [MR_265] rāyēnēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.24",
+      "chapter": 47,
+      "locations": [
+        "T60_85b&BA306/311"
+      ],
+      "sourceText": "pad pākīh ud abēzagīh ud rāstīh ī čand andar gumēzag gētīy baxt\n\tyazdān stāyišnīg yazišn sarēnēd\n\tud ka ān ī ahlaw ī wirāst-xēm abāg ōy abzār ī yōǰdahr kē was [T60_85b&BA306/311] mēnōy ī nīrangīg daxšag ayādēnišn ī yazdān kām ud Druz a-kām āfrīn estēd ud sazāgīhā bē ō ham mad",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.25",
+      "chapter": 47,
+      "locations": [
+        "K167r"
+      ],
+      "sourceText": "ud pas ān ī wazurg nask ī xwānīhēd [K167r] hādōxt ī xwad ast naskān radān pad šnūman ī ān ī buland rad∵ dwāzdah-hōmāst pad ān ēwāz ī a-drōw kē-š haguriz ēč drōw ∵ abar nē gōwīhēd ud ast bun ī ∵ harw rāstīh",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.26",
+      "chapter": 47,
+      "locations": [
+        "BA307/312",
+        "MR_266",
+        "T60_86a"
+      ],
+      "sourceText": "ud xwānīhēd Abestāg ī wizārīhēd abēzag-stāyišnīh ī yazdān ī andar ī rōšn rōz pad ān ī frayar gāh ud tā-iz šab dēn nīrangīg rāst ōšmurišnīg ud <’wlt>išnīg ud tār nā-waxr ud nā-zēfān\n\tēd čē pad āfrīn ī yazdān ēd čē pad [MR_266] wizāyišn ī druzān\n\tēd čē pad spās ī xwarrahōmandān ī wazurg-kerdārān\n\tēd čē pad handarz ī ō dāmān ī framān bandagān\n\tēd čē abar rāst sraw ī pēšēnīgān ī bē widurdān\n\t ēd čē pad sazāg *niwēyag ī ō ahlawān ∵ ēd ī weh-kunišnān\n\tēd čē abāyišnīg ayāftan [T60_86a] padistāg\n\tud ēd čē a-wizīrišnīg āmurzišn ī dādār\n\tud ēd čē pad hāwan [BA307/312] rāh ī weh-yāb-kār ōšmarīhēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.28",
+      "chapter": 47,
+      "locations": [
+        "A101",
+        "K167v",
+        "MR_267"
+      ],
+      "sourceText": "ud ka pas az parāhōm az bāmdād tā-iz ō šab andar abēzag-stāyīšnīh ud abēzag-gōwišnīh nē xward rāy xwārēd\n\tud nē-iz kār wizārd ud nē-iz saxwan gōwīhēd ud nē xwēy kunēd/gīrēd\n\tud nē ēč rēmanīh bē ō tan hilēd\n\tud nē-iz [A101] padisār ī ān ī dēnīg gōwišn az ān ī framūdag wardēnīd\n\tud nē-iz menišn az ān rāstīh pākīh ǰudāgēnīdan\n\tud hamēšag gōwišn [MR_267] rāst-padisārīhā ud *a-wisānišnīhā ān Abestāg gōwīhēd\n\tu-š hamkārān čē [K167v] pāsox ēwēn <’m pt’y’k> ēwēnīgīhā ēwāz nask gōwēnd\n\tčē niyōxšišn niyābag yōǰdahr niyōxšēnd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.29",
+      "chapter": 47,
+      "locations": [],
+      "sourceText": "ud andar yazišn was gōwišn nīrang ud daxšag nišān ī mēnōy zōrīg paydāgīhēd\n\t\tī ō dēwān tarsēnāg ud bēšēnāg ō yazdān azbāyāg ud urwāhmenāg",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.30",
+      "chapter": 47,
+      "locations": [
+        "T60_86b"
+      ],
+      "sourceText": "čiyōn ān-iz pāk hōm ī pad 4 [T60_86b] zōhr dēnīg nīrangīhā hūnīhēd kē hangōšīdag-iz daxšagīhēd bawišn ud zāyišn ī 4 hu-dēnwar frēstagān ī būd yašt-frawahr Zarduxšt ud hēnd Ōšīdar ud Ōšīdarmāh ud Sōšāns",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.31",
+      "chapter": 47,
+      "locations": [
+        "BA308/313",
+        "MR_268"
+      ],
+      "sourceText": "ud čiyōn ān-iz ayōšust hāwan ī andar ān hōm [BA308/313] hūnišnīh škāfīhēd\n\t\tu-š wāng abāg Abestāg-gōwišnīh xwānīhēd kē ayādgar bawēd ī menišn ud gōwišn ud kunišn\n\t\tud pad awēšān rāst-paygāmbarīh bē ō gēhān-rasišnīh [MR_268]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.32",
+      "chapter": 47,
+      "locations": [],
+      "sourceText": "ud čiyōn ān frārōn nīrang ī andar āb ī pad 3 zamān kunēd kē gēhān-nimāy bawēd ī xwarrahōmand āb-stānišnīh ud wārān-kerdārīh ud ān ī az wārāngarīh bēšazišnīh.",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.33",
+      "chapter": 47,
+      "locations": [
+        "A102",
+        "K168r",
+        "T60_87a"
+      ],
+      "sourceText": "čiyōn ān šīr ī yōǰdahr ī pad ān xwarrahōmand nīrang az yōǰdahr gōspand kerd pad 2 baxt estēd kē daxšag nimūdār ān wazurg xwarrahōmand šīr\n\tēk ī ō duxt ī <p’wlw’yylyy> ī Mazdēsn [A102] kē ō Ōšnar ī purr-xrad\n\tēk Frānag ī [K168r] vaδraġā ud az ōy bē ō Kay-Kawād mad [T60_87a]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.34",
+      "chapter": 47,
+      "locations": [
+        "BA309/314",
+        "MR_269"
+      ],
+      "sourceText": "ud abar xwarrahōmandān dēn-dastwarān was-paywandīhā āyaft guft estēd\n\tčiyōn ān was-wizīnišn <’yyk'zwl> ī frēzwānīg darmān rāy bēšazēnīdārīhā ī andar ō yazišn ō Warahrān ātaxš dahīhēd kē dēwān zanēd ō abartom zōr\n\t\tī pad gēhān frazām az haδayąš gāw bē ō weh [MR_269] franaftār [BA309/314] dahīhēd\n\t\tud ō ātaxš ī mardōmān tan gumēzīhēd u-š padiš bawēnd spurr-<yyyl> ud a-marg",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.35",
+      "chapter": 47,
+      "locations": [],
+      "sourceText": "ud anīz ast andar yazišn was daxšag ud nišān ī mēnōy rāzēnīdārīhā ud xwarrah-kārīhā ud warz-kerdīhā ī-šān gōkān abēr drāz ast",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.36",
+      "chapter": 47,
+      "locations": [
+        "T60_87b"
+      ],
+      "sourceText": "ud agar ēwāz ēn hē kū pad ēk yazišn ī rōz-drahnāy and mard ī ahlaw andar yōǰdahrīh ī andarrōn ud bērōn tan\n\taz hamāg <’wyy’yy’n'> ud warzišn ī gētīyīg kār ud kēnīgīhā ud āz-warzišnīhā abāz estē\n\taz hamāg drōw ud zūr <’wyšyšn'> ǰudāg gōwišn [T60_87b]\n\tud hamāg ān ī yazdān-kārīhā ud stāyīdārīhā ud āyaft-xwāstārīhā būd\n\tēg-iz mēnōy-rāhīh ud yazdān ēkānagīh aziš paydāg",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.37",
+      "chapter": 47,
+      "locations": [
+        "A103",
+        "MR_270"
+      ],
+      "sourceText": "ud ān ī and abzār ī az hammist weh-dahišnān čand abēzagīhātar šāyēd\n\tbē ō burdan rāy nērōgēnāg ud ō abēzagīh ēmēdēnāg [MR_270]\n\tud ō gumēzagān sahmēnāg ō druzān tarsēnāg\n\tō yazdān-iz šnāyēnāg ∵ [A103]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.38",
+      "chapter": 47,
+      "locations": [
+        "BA310/315",
+        "K168v"
+      ],
+      "sourceText": "yazišn ān weh ī ka ōy kunēd ī abēzag-xēm ud āsnūdag-xrad ud dēn wāspuhragān yazdān-mēnīdār ud menišn-wēnišn ud pākīh-menišn ud [K168v] rāst-gōwišn ud xradīg-kunišn ud yōǰdahr-tan ud šēbāg-uzwān ud warm-nask ud rāst-Abestāg ud pādyāb [BA310/315] sāzišn xūb-nīrang nā-waxr nā-zēfān",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.39",
+      "chapter": 47,
+      "locations": [
+        "T60_88a"
+      ],
+      "sourceText": "kē-š homānāg nazdīk pad ham-hunarān a-maragīhā\n\tandar mān ī ātaxš ī hamēšag-waxš ud pas andar mān ī abārīg ātaxšān ī warahrān\n\tud pas [T60_88a] andar mān ī Mazdēsnān abārīg wehān\n\tud pas abārīg gyāg ī pāk ī purr-pāktar yazīhēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.40",
+      "chapter": 47,
+      "locations": [],
+      "sourceText": "ud ān ī sidōš andar mān ī ātaxš-gāh ī ō ān ī widurdag nazdīktar\n\tud yazišn ī ašō’ān frawahr andar pākīh ānōh kū ān māništ ī ān widurdag kē-š ruwān yazīhēd nazdīktar",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "47.41",
+      "chapter": 47,
+      "locations": [
+        "MR_271"
+      ],
+      "sourceText": "ud ān ī pērōzīhā ī andar kārēzār rāy ēg-iš [MR_271] handēmān razm\n\tud ān ī sahm ud abārīg wināhišn az warz abāz dāštan rāy\n\tud warz ud ān ī ǰōrdā’ān pāyag rāy handēmān <y’k'>\n\tud ān ī <’šls’n'/’š’lšn> ī mehmān wāng ēnyā andar ān mān\n\tabārīg az ham-nimūnag ud handāzag hangōšīdag kerdan dāštan čimīgīhā ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "48.1",
+      "chapter": 48,
+      "locations": [
+        "ud pāsox"
+      ],
+      "sourceText": "48om pursišn [ud pāsox] ∵\n\tān ī pursēd kū kē ǰōrdāy xrīnēd ud pad hambār āwarēd kū tā garān bē bawēd ēg-iš pad <ylwš> frōšēd dādestān čē ēwēnag bawēd ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "48.2",
+      "chapter": 48,
+      "locations": [
+        "BA311/316",
+        "K169r",
+        "MR_272",
+        "T60_88b"
+      ],
+      "sourceText": "pāsox ēd kū ka-š [K169r] tis andar nēst ī [T60_88b] ān rāy ǰuttar [BA311/316] ōwōn saham kū az āwurdārīh/xwurd- xwarišn abāyišn ī xwad ud ān kē-š sālārīh ud nē frayādišn ī arzānīgān wehān frayād tā andar hangām ī niyāz frayād dast ī andar ān hangām rāy bē ēwāzīg gētīyīg sūd ud wāzāragānīh ud ∵ abar mardōm ī did kerdan ud garāntar abāz frōxt rāy [MR_272] xrīnēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "48.3",
+      "chapter": 48,
+      "locations": [],
+      "sourceText": "ud pad hambār dārēd abar-iz wehān ēdōn bast dārēd čiyōn abar wattarān ka weh ∵ arzānīg mardōm andar abāyēd ud az xwarišn rāy xwāhēnd ud pad arz ī andar ān hangām arzēd nē frōšēd ud garāntar būdan rāy andar hambār dārēd a-dastwarīhā ud garān-wināhīhā ud harw wizend ī awēšān wehān barēnd kē-š pad wahāg xwāhēnd nē frōšēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "48.4",
+      "chapter": 48,
+      "locations": [
+        "T60_89a"
+      ],
+      "sourceText": "ān an-ayāftagīh ī ǰōrdāy ayāb ān ī ayāftīhā garān-waxšīh rāy ud garān-wahāgīh rāy abar xwad ayāb awēšān ī andar sālārīh ayāb driyōšān kē-š [T60_89a] awiš dād hē ud ān <’ws>-šnīh rāy dād nē šāyēd ud rēšišn rasēd ēg-iš padiš tōzišn hēnd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "48.5",
+      "chapter": 48,
+      "locations": [
+        "MR_273&K169v",
+        "TD4a_317/BA312"
+      ],
+      "sourceText": "ud agar ān ǰōrdā frāy-zamānīhā andar hambār dāštan rāy [TD4a_317/BA312] <twc’h>īhēd ud az xwarišn ī a-čārīhēd/appār- pad-iz ān bōdyōzedīh ī ǰōrdāy āstārōmand [MR_273&K169v]\n\tud agar ān a-dādīhā-dārišnīh rāy andar ān ǰōrdāy xrafstar hambūsīhēd pad ān-iz garān wināh āstārīhēd pad sūd ī ān ī abārōn appāragānīh/ačār- anarzānīg",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "48.6",
+      "chapter": 48,
+      "locations": [],
+      "sourceText": "ud bē agar andar abāyēd ī xwēš ud mardōm kē-š andar sālārīh bīm ī niyāz-hangām rāy andar hangām ī arzānīh xrīnēd ud <p’wyh> kunēd/girēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "48.7",
+      "chapter": 48,
+      "locations": [
+        "T60_89b"
+      ],
+      "sourceText": "ayāb frayādišn ī wehān ud arzānīgān rāy az gyāg kū ǰōrdāy wēš az pāyišn ī xwurdārān arzān-wahāgīh rāy ǰōrdāy xrīnēd bē ō [T60_89b] ānōh kū ǰōrdāy kam\n\tud agar wehān ǰōrdāy-abāyišnān <yy’w>ōmand barēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "48.8",
+      "chapter": 48,
+      "locations": [
+        "MR_274"
+      ],
+      "sourceText": "kū tā awēšān ∵ ǰōrdāy niyāzān frayādišnīgīh aziš xwad-iz kē-š wahāgīh sūd bawād ayāb ham frayādišnīh wehān ud xwābarīh kū tā abr wehān frāxtar bawēd kū abar wattarān\n\tandar-iz hangām ī niyāz pad wahāg abērtar ayābīhēd andar frāy-ǰōrdāyīh [MR_274] arzān-wahāgīh ǰōrdāy xrīnēd kū tā hangām ī niyāz gāh dārēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "48.9",
+      "chapter": 48,
+      "locations": [
+        "BA313/318",
+        "K170r"
+      ],
+      "sourceText": "ka wehān awiš niyāz bawēd pad wahāg ī čiyōn-iš xrīnēd andar ān hangām arz ī šahrīg ast frōšēd [BA313/318] ān rāy andar niyāz-hangāmīh pad wahāg abērtar ayābīhēd ud abar wehān frāytar bawēd ēg-iš spās ī [K170r] padēxwēnīdār stāyišnīg",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "48.10",
+      "chapter": 48,
+      "locations": [
+        "T60_90a"
+      ],
+      "sourceText": "pad-iz ān ī sūd arzānīg ud ǰud-iz [T60_90a] az ǰōrdāy-xwarišnīh xwarišnīg tis ī pad gyān-dārišnīh ud dārō ud darmān ī pad gyān bēšazišnīh\n\tud ēd čē pad gyān-bōzišnīgīh xrīdan ud garān frōxtan pādixšā ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "49.1",
+      "chapter": 49,
+      "locations": [],
+      "sourceText": "49om pursišn ud pāsox ān ī pursēd kū kē may frōšēd bē ō an-Ērān ag-dēnān frōšēd ēg-iš dādestān čē ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "49.2",
+      "chapter": 49,
+      "locations": [],
+      "sourceText": "pāsox ēd kū abēr sāxtan garān wināh bīm ud wad pēšagīhā",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "49.3",
+      "chapter": 49,
+      "locations": [
+        "D7_275",
+        "K170v",
+        "T60_90b&BA314/319"
+      ],
+      "sourceText": "bē agar kerdan ī-š ān [D7_275] may frōšīh rāy may az awēšān kē may a-paymān xwarēnd ud may xward rāy wattar bawēnd\n\tud wēš abāz dārīhēd ō awēšān kē may pad paymān ī xwarēnd ud may xward rāy weh bawānd\n\twēš rasēd kū ān ī ka ōy ān may-frōšīh nē kunēd ēg-iš ān may-frōšīh rāy tuwān ī pad [T60_90b&BA314/319] xwāstag kē-šān abāz dāšt ud mardōm pad Weh-dēnīh <ptsnyt'> ud az šud ī ō ag-dēnīh wardēnēd ud rawāgīh ī wināh bastag kerbag rawāgēnēd ān bawēd wehān ayarīh ud dēn pānagīh ud wināh hamēmālīh ud kerbag ayārīh ī ka nē kunēd ān may-frōšīh nē bawēd ī wēš ud frāy az [K170v] wināh wināh ud zamān ī a-dādīhā-xwarišnīh ī may rawāgīhēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "49.4",
+      "chapter": 49,
+      "locations": [
+        "MR_276"
+      ],
+      "sourceText": "ud ayāb-iš anīy meh-dādestānīh ud meh-kerbag ī ēwarīg andar ēdōn [MR_276] ōy kē may ō an-Ērān ag-dēnān abārīg-iz mastīh rāy a-dādīh aziš bawēd frōšēnd was-wināhīhā nē dastwarīhā ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "50.1",
+      "chapter": 50,
+      "locations": [],
+      "sourceText": "50om pursišn ∵ ān ī pursēd kū Weh-dēn kē may a-paymān xwarēd u-š az a-payman xwarišnīh ziyān wizend rasēd\n\t\tēg-iš dādestān čē",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "50.2",
+      "chapter": 50,
+      "locations": [],
+      "sourceText": "paymān ī may xwardan čand\n\tud čiyōn ka xward dādestān ēg-išān dastwarīhā ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "50.3",
+      "chapter": 50,
+      "locations": [
+        "BA316/321",
+        "T60_91a"
+      ],
+      "sourceText": "pāsox ēd [T60_91a] kū kē pad čār ud tuwān may a-paymān xwarēd purnāy [BA316/321] ud ōšyār ēg-iš pad harw ziyān wizend ī-š az ān a-paymān-xwarišnīh rasēd ayāb abar kas tis kunēd ēg-iš ān rēmanīh ō dām kerd ud andar xwēš rāmišn dardēnēd\n\tud ēwēn kū az ān šarm az ān appār-ǰastagīh",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "50.4",
+      "chapter": 50,
+      "locations": [
+        "MR_277"
+      ],
+      "sourceText": "ud kē-iz a-dastwarīhā bē ō kas may dahēd u-š padiš māstīhēd harw [MR_277] wināh ī ōy mast az ān mastīh kunēd ham-wināh",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "50.5",
+      "chapter": 50,
+      "locations": [
+        "K171r"
+      ],
+      "sourceText": "ud ān mastīh rāy dēn gōwēd kū ōy xwarišn kē ka xwarēd weh menēd ud weh gōwēd ud weh kunēd\n\tud and xwarišn-iz ī [K171r] may xward rāy pad menišn ud gōwišn kunišn frārōntar bawēd ayāb abārōntar nē bawēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "50.6",
+      "chapter": 50,
+      "locations": [],
+      "sourceText": "ka-š uzmūd čand weh uzmūdag kū-š pad ān paymānag xward weh bawēd ayāb wattar nē bawēd ēg pādixšā xwardan",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "50.7",
+      "chapter": 50,
+      "locations": [
+        "T60_91b",
+        "TD4a_322/BA317"
+      ],
+      "sourceText": "an-uzmūdag [T60_91b] uzmūd rāy fradom ēw <’p̄yymk'> ud didīgar 2 <’p̄yymk'> ud sidigar 3 <’p̄yymk'> ī gumēzag-baxš xward ka xward rāy pad menišn gōwišn kunišn frārōntar bawēd ayāb abārōntar nē bawēd <’p̄yymk'> abzūdan ud uzmūd pādixšā [TD4a_322/BA317]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "50.8",
+      "chapter": 50,
+      "locations": [
+        "MR_278"
+      ],
+      "sourceText": "bē ō uzmūdagān tā bē ō ān paymānag kū weh bawēd ayāb [MR_278] wattar nē bawēd ud ō uzmūdagān tā bē ō ān-ōwōn paymānag ī-š padiš uzmūdišnīh ī guft estēd būdan dastwarīhā\n\tud ō kē uzmūd kū may xwardan rāy wattar bē bawēd pad ān paymānag ī andar uzmāyišn dīd kū xwardan rāy wattar būd dād nē dastwarīhā",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "50.9",
+      "chapter": 50,
+      "locations": [],
+      "sourceText": "ud andar warōmandīh-ēw hu-dēn ī srud-gāhān ī hu-sraw kē-š mastōgīh nē paydāg pad ēd dāštan kū may xwarēd ud čand-iš uzmūd kū xwardan rāy wattar nē būd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "50.10",
+      "chapter": 50,
+      "locations": [
+        "K171v",
+        "T60_93a!"
+      ],
+      "sourceText": "ud dēwāst ī abārōn-dēn ud ān ī [T60_93a!] ud ān dēwāstān čarātīg ud abornāyīg pad ēd abāyēd dāštan kū may xward rāy wattar bawēd [K171v]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "50.11",
+      "chapter": 50,
+      "locations": [
+        "MR_279"
+      ],
+      "sourceText": "ud ka az dādestānīh čim ī bōzišnīg andar nēst may bē awēšān dād nē dastwarīhā\n\tkē xwad may xward pad wināh dārēd [MR_279] pad dād dastwarīhātar ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "51.1",
+      "chapter": 51,
+      "locations": [
+        "BA318/323"
+      ],
+      "sourceText": "51om pursišn ∵ ān ī pursēd kū mard-ēw kē drahm ī [BA318/323] pad gandum 5 kabīz frāz dāhēd kū māh ō sar ēn 5 kabīz gandum pad ēw ō tō daham\n\tud pad māh ō sar ān gandum 5 kabīz ∵ 5 wahāg bawēd pad ān ēw ī-š frāz dād u-š pašt kerd gandum 5 kabīz stānēd dastwarīhā ayāb nē ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "51.2",
+      "chapter": 51,
+      "locations": [],
+      "sourceText": "pāsox ēd kū ka ān kē-š drahm stānēd abē-bīmīhā pad xwēš kām gandum 5 kabīz abespārdan pašt kerd ōwōn čiyōn-iš āgāhīhā ud abē-bīmīhā pašt kunēd ∵ ōwōn čiyōn pašt kunēd dād dastwarīhā wizīr",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "51.3",
+      "chapter": 51,
+      "locations": [
+        "MR_280",
+        "T60_93b"
+      ],
+      "sourceText": "bē ka-š ān pašt kerd [T60_93b] abēr garān niyāzīhā ī ō xwāstag rāy ōy ī xwāstag dādār ī gandum xrīdār az ōy ī [MR_280] appār sūd ī frāybūd nē xwāhēd ō ruwān sāzišnīgtar",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "51.4",
+      "chapter": 51,
+      "locations": [],
+      "sourceText": "čē pēšēnīgān sūd ī pad xwāstag andar gyāg andar sāl wēš az hāwand bun xwāst nē pad <y’twwk>barišn dāšt ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "52.1",
+      "chapter": 52,
+      "locations": [
+        "K172r"
+      ],
+      "sourceText": "52om pursišn ān ī pursēd kū andar šahr bē [K172r] šahr mardōm ī Weh-dēn xrīnēnd ud frōšēnd pad gōspand abāg ǰud-dēnān ud wanīgarān kunēd ud ō awēšān frōšēnd ēg-iš dādestān čē",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "52.2",
+      "chapter": 52,
+      "locations": [
+        "BA319/324"
+      ],
+      "sourceText": "ka Weh-dēn ka nē mad estēnd pad arz nē xrīnēnd bē ō wanīgarān ǰud-dēnān [BA319/324] frōšēd ēg-iš dādestān čē",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "52.3",
+      "chapter": 52,
+      "locations": [],
+      "sourceText": "ud ān kē-š xrīnēd zīyišn az ēn ēg-iš dādestān čē ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "52.4",
+      "chapter": 52,
+      "locations": [],
+      "sourceText": "pāsox ēd kū abēr garān wināh ud was ∵ wināhīhā ud wad pēš-gāh ud pad čār ud tuwān ōwōn kār kerdan pad ōwōn sūd xwāstan nē dastwarīhā",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "52.5",
+      "chapter": 52,
+      "locations": [
+        "MR_281",
+        "T60_94a"
+      ],
+      "sourceText": "bē agar ān weh [MR_281] dēn kē nibišt [T60_94a] kū zīyišn tis kār ud pad anīz ēč kār ī frārōn-pēšag ī tis kam-wināhtar zīyišn xwāst nē tuwān purr xrīdār ī Weh-dēn ayāft bē ō Weh-dēnān frōšēd čiyōn-iš kam-wināhtar tuwān az ham-kār zīyišn xwāst pādixšā\n\tčē ēk-iz mard ī ahlaw abāg ahlawān ī-š andar sālārīh zīyistan",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "52.6",
+      "chapter": 52,
+      "locations": [],
+      "sourceText": "ēdōn tuwān ka gōspandān bē ō ōzanišn an-Ērān xwarišnīh frōšēd ud was gōspand bē ō kuštan ud Ērān dārišn mad xwārtar kū mard ī ahlaw pad an-ayābišnīh ī zīyišn ud marg bīm ōzad ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "53.1",
+      "chapter": 53,
+      "locations": [
+        "BA320/325",
+        "K172v",
+        "MR_282"
+      ],
+      "sourceText": "53om pursišn ān ī pursēd kū mard-ēw ī kē-š zan ud duxtar ud xwahar xwēšāwand čand u-š [BA320/325] xwāstag ī [K172v] was ast\n\tmērag dardōmand būd andar dardōmandīh [MR_282] xwāstag ēwkard bē ō duxt-ēw dād",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "53.2",
+      "chapter": 53,
+      "locations": [
+        "T60_94b"
+      ],
+      "sourceText": "u-š az [T60_94b] xwaharān duxtarān ī abārīg padiš nē ham-dādestān hēnd gōwēnd kū ēn xwāstag andar tan-drīstīh ud ōšyarīh abāyist dād nē andar dardōmandīh\n\t\tud nūn nē pādixšā hēnd-iš andar dardōmandīh tis-iz bē ō kas dād\n\t\tčē agar tis-ēw bawēd xwāstag hamāg abāz ō mayān baxšišn āyēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "53.3",
+      "chapter": 53,
+      "locations": [],
+      "sourceText": "ud ān xwāstag andar dardōmandīh tis-iz ō kas dād pādixšā ayāb nē\n\tud zan duxtar ud xwahar harw ēk čand rasēd az ān xwāstag",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "53.4",
+      "chapter": 53,
+      "locations": [],
+      "sourceText": "ud ān mard rāy stūr abāyēd gumārdan ayāb nē",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "53.5",
+      "chapter": 53,
+      "locations": [
+        "MR_283"
+      ],
+      "sourceText": "ud zan ud duxtar ud xwahar kē-šān xwāstag bahr stānēnd hāmōyēn dēnīgīhā andar gardan ast u-šān ān mard rāy pad rōzag sālag yazišn ī sālwār [MR_283] abāyēd framūdan ayāb nē ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "53.6",
+      "chapter": 53,
+      "locations": [
+        "BA321/326",
+        "K173r",
+        "T60_95v"
+      ],
+      "sourceText": "pāsox [T60_95v] ēd kū ka-š tis andar nēst ī ān rāy ǰuttar ōwōn saham kū mard ī andar dardōmandīh [BA321/326] tā bē-widerišnīh bē ka-š abām padiš ayāb-iš zan ud aburnāyīg ayāb zarmān ayāb pid ī andar sālarīh kē frēzwān abāyēd dāštan čiyōn and čand pad tōzišn ī abām ayāb [K173r] xwarišn dārišn pānagīh ī awēšān čiyōn-im nibišt a-wizīrišnīg andar abāyēd bē dād nē pādixšā ēnyā az ān ī nibišt bērōn čand-iš xwēš andar ōšyārīh bē dād pādixšā",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "53.7",
+      "chapter": 53,
+      "locations": [],
+      "sourceText": "ud andar abārīg dardōmandīh ī nē pad bē-widerišnīh harw čē-š xwad bē dād andar ōšyārīh pādixšā ud ka nē ōšyār nē pādixšā",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "53.8",
+      "chapter": 53,
+      "locations": [
+        "MR_284",
+        "T60_96r"
+      ],
+      "sourceText": "ud ān ī nē andar ōšyārīh gōwēd padiš nē awestwār [MR_284] ud nē wābar\n\tud ān ī andar ōšyārīh ud ān-iz ī ham mard bē ō duxt dād agar-iš ōšyārīhā [T60_96r] dād ka wēmār būd ēg-iz rawāg dahišn\n\tud agar-iš nē andar ōšyārīh dād ēdōn bawēd čiyōn ka an-handarz murd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "53.9",
+      "chapter": 53,
+      "locations": [
+        "BA322/327"
+      ],
+      "sourceText": "xwāstag abē-handarz mānd ud harw duxt-ēw kēš šōy nē kardag ēk bahr ud ō zan ī pādixšāyīha 2 bahr niyābag tā ka zan zīndag\n\tud čiyōn dūdag kadag-bānūg ast bē ō stūr gumārdan [BA322/327] nē niyāz čē stūrīh abar ōy estēd\n\tud az xwēšāwandān mard-ēw ī nazdīk-paywandtar pad dūdag sālārīh xwāst rāyēnīd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "53.10",
+      "chapter": 53,
+      "locations": [
+        "K173v",
+        "MR_285"
+      ],
+      "sourceText": "ud az bar ī xwāstag xwarišn ud dārišn ī zan duxtarān tā šōy kunēnd\n\tān-iz frēzwānīgīh andar sālārīh ud parwarišn ī ān mard būd\n\tud yazišn kerbag ī pad dūdag <’’tk'> padiš [MR_285] frēzwānīg būd rawāg dāštan ud <’wt(')>sēnōg-masāy ud bāzāy-masāy [K173v] az bar stad",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "53.11",
+      "chapter": 53,
+      "locations": [
+        "T60_96v"
+      ],
+      "sourceText": "xwaharān ān mard bē agar ān [T60_96v] mard handarzēnīd ayāb-išān šōy nē kerd ud nēst ērīh rāy andar sālārīh ī ān mard būd hēnd ayāb anīy tis ī ān rāy ǰuttar tā-šān az xīr ōy mard tis-iz nē niyābag\n\tagar frēzwānīg ud pad-iz parwarišn andar sālārīh ī ōy būd hēnd u-šān az anīy rāh xīr nēst az bar ī xwāstag xwarišn-iz ud dārišn ī awēšān būd niyābag",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "53.12",
+      "chapter": 53,
+      "locations": [
+        "BA323/328"
+      ],
+      "sourceText": "ud ān ī duxtarān šōy pad dastwarīh ī dūdāg sālār ud ham-dādestānīh ī dūdag kadag-bānūg ēdōn ka kunišn ī nē kunēd az-iš pus nē zāyēd ud widerān [BA323/328] bawēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "53.13",
+      "chapter": 53,
+      "locations": [
+        "MR_286",
+        "T60_96b"
+      ],
+      "sourceText": "ud duxt šōy nē kerd ud ān ēk kē-š šōy nē kerd aēuuōkaē : ī ān mard ud ēr-iz dūdag kadag-bānūg dāštan ōy padiš ∵ [MR_286] stūrīhā niyābag ∵\n\tka andar stūrīh šōy [T60_96b] kunēd ēg-iš xwāstag pad xwēšīh abar rasēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "53.14",
+      "chapter": 53,
+      "locations": [],
+      "sourceText": "ud ka dūdag kadag-bānūg widerēd duxtarān šōy kerd stūrīh gumārišn ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "54.1",
+      "chapter": 54,
+      "locations": [],
+      "sourceText": "54om pursišn ān ī pursēd kū awēšān kē-šān pad sidōš dāštan ī kas xwēškārīh ud griftārīh kē ast kē bawēd ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "54.1",
+      "chapter": 54,
+      "locations": [
+        "K35_174r"
+      ],
+      "sourceText": "pāsox ēd kū mard pad sidōš ī zan pādixšāyīhā ud pid ān ī frazend ud xwadāy ān bandag dāštan [K35_174r] frēzwānīg guft estēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "55.1",
+      "chapter": 55,
+      "locations": [],
+      "sourceText": "55om pursišn ān ī pursēd kū ēn stūrīh ud dūdag-sālārīh čē ast ud čē bawēd\n\tud čē ēwēnag abāyēd gumārdan\n\tu-š xwarišn ud wastarg az kū abāyēd kerdan\n\tu-š čiyōn abāyēd būd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "55.2",
+      "chapter": 55,
+      "locations": [
+        "BA324/329",
+        "MR_287",
+        "T60_96\"a"
+      ],
+      "sourceText": "pāsox ēd kū stūrīh ēdōn bawēd ī ka kū mard ī Weh-dēn ī abāyēd [MR_287] šāhān šāh [T60_96\"a] bandag kē-š zan [BA324/329] ud frazend ī pādixšāyīhā ud padīriftag ud brād ī ham-bāy ud stūr ī kardag nēst u-š xwāstag 60 stēr ast ī barōmand ud widerān bawēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "55.3",
+      "chapter": 55,
+      "locations": [],
+      "sourceText": "ud ān xwāstag ōdāyēnd ān widurdag guharīg paydāg kunišn xwānīhēd stūr\n\tu-š padiš gumārišn ān ī nazdīktar az ham-nāfān kē pad ān ī ōy nāmagānīh rāyēnēd paywand dārēd xwāstag",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "55.4",
+      "chapter": 55,
+      "locations": [],
+      "sourceText": "dūdag-sālārīh ān bawēd ka mard ī pad ān ēwēnag kē-š zan ayāb duxt ayāb pus ī aburnāyīg pad xwēš-sālārīh nē šāyēnd abar dūdag sālār gumārišn",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "55.5",
+      "chapter": 55,
+      "locations": [
+        "K174v",
+        "MR_288",
+        "T60_96\"b"
+      ],
+      "sourceText": "ēdōn abāyēd gumārdān ud stūr ī dūdag sālārīh čiyōn-išān ast sazāgīh ud pad hangām abāyēd gumārdan\n\tud ka widerēd mard ī čiyōn nibišt ud pad ān gāh ī čiyōn nibišt abāyēd gumārdan ud zamānīg [MR_288] nē [K174v] dastwarīhā spōxtan az sāl [T60_96\"b] drahnāy",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "55.6",
+      "chapter": 55,
+      "locations": [],
+      "sourceText": "ud pad stūrīh xwah ī purnāy kē pad anīy dūdag nē stūr\n\tud pas duxt ī brād ud pas pus ī brād ud pas abārīg paywand ī nazdīktar",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "55.7",
+      "chapter": 55,
+      "locations": [
+        "BA325/330"
+      ],
+      "sourceText": "ud pad dūdag sālārīh fradom pid ī čēr ud pas brād ud pas duxt ud pas abārīg [BA325/330] paywand ī nazdīktar\n\tandar brādaran andar ān ī meh sazāgtar",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "55.8",
+      "chapter": 55,
+      "locations": [],
+      "sourceText": "ud zan ī pādixšāyīhā kē dūdag kadag-bānūg ayōgēn stūr ast zīndag pus ī aburnāy tā purnāy bawēd ud duxt ī dūdag tā pad-sālār bawēd\n\tdūdag sālārīh tā andar kār bawēd xwarišn wastarg az xīr ī dūdag",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "55.9",
+      "chapter": 55,
+      "locations": [
+        "MR_289"
+      ],
+      "sourceText": "ēwēnag būd dūdag sālār sēnag-masāy ud bāzāy-masāy harw māh-ēw 4 stēr ī ast 16 ī purr\n\tud zan ka šāyēd ēdōn čiyōn kadag-bānūg hammis ēdōn čiyōn adwadād brahnagīhā [MR_289] ud a-dādīhā abar nē rasēd az bar ayāb az bun ī xwāstag ī pad dūdag estēd ud xwarišn ud wastarg ud darmān ud pānagīh handāzišn ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "56.1",
+      "chapter": 56,
+      "locations": [
+        "T60_97a"
+      ],
+      "sourceText": "56om pursišn [T60_97a] ān ī pursēd kū kē pad stūrīh šāyēd ud kē nē šāyēd ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "56.2",
+      "chapter": 56,
+      "locations": [
+        "K175r"
+      ],
+      "sourceText": "pāsox ēd kū mard ī purnāy ī hu-dēn xwēškār ī ōšyārag ī šāhān šāh bandag ī frazend-ēmēd nē margarzān pad stūrīh šāyēd ayāb ka-iz [K175r] stūrīh-ēw ayāb was stūrīh padīrift estēd pas-iz pad anīy stūrīh šāyēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "56.3",
+      "chapter": 56,
+      "locations": [
+        "BA326/TD4_331"
+      ],
+      "sourceText": "ud zan ī purnāy ud aburnāyīg-iz pad [BA326/TD4_331] ēk stūrīh šāyēd\n\t\tka pad dūdag-ēw stūr-ēw pad anīy stūrīh nē šāyēd mard šāyēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "56.4",
+      "chapter": 56,
+      "locations": [
+        "MR_290"
+      ],
+      "sourceText": "zan ka bandag paristār ayāb nā-anēr ayāb ag-dēn ayāb margarzān hēnd pad stūrīh a-sazāg\n\tud ēdōn-iz ān ī šābestān [MR_290] ud ān ī šusr ud zan ī rōspīg ān daštān sazāg",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "57.1",
+      "chapter": 57,
+      "locations": [
+        "K174v"
+      ],
+      "sourceText": "57om [K174v] pursišn ān ī pursēd kū čand ēwēnag bawēd dūdag-sālārīh ud stūrīh ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "57.2",
+      "chapter": 57,
+      "locations": [],
+      "sourceText": "pāsox ēd kū 3 ēwēnag bawēd guft estēd ī ast būdag ud kardag ud gumārdag",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "57.3",
+      "chapter": 57,
+      "locations": [
+        "T60_97b"
+      ],
+      "sourceText": "ud stūr būdag [T60_97b] ēdōn čiyōn zan ī pādixšāyīhā duxt ī ayōgēn\n\tkē pad xwad-estišnīh stūr čiyōn\n\tān bawēd ka zan nēst ud duxt kē-š šōy nēst ud nē kerd estēd\n\tud ān ēk mānd estēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "57.4",
+      "chapter": 57,
+      "locations": [],
+      "sourceText": "ud stūr ī kardag ēdōn pus ī padīriftag kē-š xwad padīrift ud az gumārd abē-niyāz",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "57.5",
+      "chapter": 57,
+      "locations": [
+        "BA327/332",
+        "MR_291"
+      ],
+      "sourceText": "ud stūr ī gumārdag ān ī andar paywandān ī pad stūrīh šāyēd ud ō ān kē stūr gumārišn nazdīktar *naftīyān ī dēn gumārišn\n\tdūdag sālār ī būdag pus\n\tān ī kardag ān kē-š xwad pad sālārīh kār kunēd [MR_291]\n\tud ān ī gumārdag ān ī az mardān nabānazdištān nazdīktarīh rāy [BA327/332] gumārīhēd ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "58.1",
+      "chapter": 58,
+      "locations": [
+        "K175v"
+      ],
+      "sourceText": "58om [K175v] pursišn ∵\n\tān ī pursēd kū pad čand xwāstag ēg-iš stūr ēw padiš abāyēd gumārdan ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "58.2",
+      "chapter": 58,
+      "locations": [
+        "T60_98v"
+      ],
+      "sourceText": "pāsox ēd kū ka xwāstag kē ōy mānd kē-š stūr abāyēd gumārdan čand 60 stēr ī barōmand [T60_98v] ast ēg-iš stūr padiš gumārdan frēzwānīg",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "58.3",
+      "chapter": 58,
+      "locations": [],
+      "sourceText": "ud ka-iz kem ast ōy kē-š stūrīh niyābag ast stūrīh rāyēnīd padīriftan ud ham-gōnag stūrīh padiš gumārišn\n\tka nē pad xwēšīh bē ō ōy rasēd kē pad stūrīh sazāgtar ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "59.1",
+      "chapter": 59,
+      "locations": [],
+      "sourceText": "59om pursišn ∵\n\tān ī pursēd kū az nē gumārdan wināh čē ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "59.2",
+      "chapter": 59,
+      "locations": [
+        "MR_292"
+      ],
+      "sourceText": "pāsox ēd kū xwad pādixšā ka xwāstag hamāg pad ahlawdād [MR_292] bē dahēd\n\tud ka-š xīr nēst stūrīh awiš nē kunēd ōy-iš paywandān padiš a-wināh hēnd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "59.3",
+      "chapter": 59,
+      "locations": [
+        "BA328/333",
+        "K35_176r",
+        "T60_98b"
+      ],
+      "sourceText": "bē ōy kē-š stūrīh ī widurdag padīrēd/padīrift ayāb-iš <y’y> ī stūrīh pad stūrīh padīrift estēd\n\t\tud xwāstag ī pad stūrīh stad estēd ud stūrgar gumārd ud [BA328/333] stūrīh nē rāyēnēd\n\t\tw bun-kadag ī bē wišōb ud nāmagānīh bē abganēd\n\t\tud xwāstag bē abesīhēnēd ud stūr bē [T60_98b] škennēd\n\t\tka-š a-bōyīh rāy guft estēd\n\tmargarzān ī [K35_176r] abar drahm wināh\n\tbē ōzad nē guft estēd ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "60.1",
+      "chapter": 60,
+      "locations": [],
+      "sourceText": "60om pursišn ∵\n\tān ī pursēd kū šāyist nē šāyist xūbīh ud nē xūbīh\n\tud dūdag sālār čē bawēd ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "60.2",
+      "chapter": 60,
+      "locations": [
+        "D7_293"
+      ],
+      "sourceText": "pāsox ēd kū xūbīh gumārišn ud padīrišn ān kē sazāgtar\n\tud xūbtarīh frazāmēnīd\n\tud nē xūbīh ān ī a-sazāg ayāb ān kē-š sazāgīh [D7_293] nē gumārēd\n\tud nē xūbtarīh spōxtan ud škastan ī sazāg stūrīh",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "60.3",
+      "chapter": 60,
+      "locations": [],
+      "sourceText": "ud dūdag sālārīh kē pad stūrīh šāyēd\n\tkē nē šāyēd aburnāy ī Weh-dēn xwēškār ī andar paywand ī pidarān\n\tō kē dūdag sālār gumārišn nazdīktar\n\t*xwurdag ōšmārišn 5 pargard ī <’wsp’lwm>\n\tud griftagīha ī andar nask nask\n\tuskār andar was dādestān hamag ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "61.1",
+      "chapter": 61,
+      "locations": [
+        "T60_99a",
+        "TD4a_334"
+      ],
+      "sourceText": "61om pursišn ∵\n\tān ī pursēd kū baxšišn ī mayān [T60_99a] Weh-dēnān pad xwāstag mīrād čiyōn estēd\n\tu-šān [TD4a_334] čiyōn padiš abāyēd estād ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "61.2",
+      "chapter": 61,
+      "locations": [],
+      "sourceText": "pāsox ēd kū xwāstag pad xwāstag-dārīh azabar azēr ēdōn rasēd čiyōn āb ka pad ǰōy pad šēb šawēd\n\tbē ka ō frōd widarg bē bandīhēd pad <pwd’c'> abāz šawēd ēg-iš ō pas nē šawēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "61.3",
+      "chapter": 61,
+      "locations": [
+        "K35_176v",
+        "MR_294"
+      ],
+      "sourceText": "ka handarz anīy tis [K35_176v] andar [MR_294] nēst xwāstag bē ō zan duxt ī pādixšāyīhā rasēd\n\tharw duxt-ēw kē zīndag ī pid šōy kunēd \n\tbē agar-iš pad handarz tis-ēw dahēd ēnyā-š awiš nē ayābēd\n\tud ān kē-š nē kerd bahr ēw",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "61.4",
+      "chapter": 61,
+      "locations": [
+        "T60_99b"
+      ],
+      "sourceText": "ud pus rāy harw ēk hāwand ud zan ī pādixšāyīhā 2 hāwand\n\tud pusarān ud zan-iz ī pus-ēw ān kē pad harw 2 čašm kōr ayāb pad harw 2 pāy armēšt [T60_99b]\n\tud ayāb-iš harw 2 dast abē-kār 2 and čand ān ī drīst bahr",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "61.5",
+      "chapter": 61,
+      "locations": [
+        "BA330/335",
+        "MR_295"
+      ],
+      "sourceText": "ud niyābag ān kē pid ī sālārīh andar sālārīh bawēd čiyōn ka pid ayāb mād zarmān čēr ayāb a-parwarišn ī\n\tǰud az ōy a-sālār ayāb-iš brād ayāb xwah ī aburnāy ayāb pid ayāb a-parwarišn\n\tud ǰud az ōy a-sālār mard tuwān [BA330/335] passazag sālārīh ud pānagīh ud parwarišn frēzwānīg bawēd frāz az ōy xwāstag-dārān ī ōy kē [MR_295] xwāstag kerd\n\tēdōn frēzwānīg čiyōn frēzwānīg būd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "61.6",
+      "chapter": 61,
+      "locations": [],
+      "sourceText": "ud agar ān mard pus nē bē-š duxt ayāb zan ast\n\tud agar az ān mard čiyōn zan pad sālārīh nē šāyēnd dūdag-sālār abāyēd gumārdan\n\tud agar-iš zan-iz duxtar nēst stūr abāyēd gumārdan",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "61.7",
+      "chapter": 61,
+      "locations": [
+        "K177r",
+        "T60_100a"
+      ],
+      "sourceText": "ud ēd kū ka dūdag-sālār abāyēd gumārdan kē sazāgtar\n\tka stūr abāyēd [T60_100a] gumārdan ud čē [K177r] sazāgtar pad dar ī pursišn nibišt ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "62.1",
+      "chapter": 62,
+      "locations": [],
+      "sourceText": "62om pursišn ∵\n\tān ī pursēd kū az an-Ērān ud ag-dēnān tis-iz xwāstag dastwarīhā barēnd ayāb nē ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "62.2",
+      "chapter": 62,
+      "locations": [
+        "MR_296"
+      ],
+      "sourceText": "pāsox ēd kū xwāstag ud xīr ud tis ī an-Ērān dārēnd u-šān az wehān pad stahm burd estēd ud dādestānōmandīhā abāz nē dahēnd\n\t\tka šāyēd pad ān ēwēnag weh šāyēd stānēnd az [MR_296] an-Ērān",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "62.3",
+      "chapter": 62,
+      "locations": [
+        "BA331/336"
+      ],
+      "sourceText": "tā ān ī ka-š ōdāyēnd ayābīhēd xīr/ēr framān ī dādīg pādixšāy ud rāst wizīrgar frārōnīhā dāštan xwēš rāy sūd frēstišn padiš xwāst dastwarīhā [BA331/336]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "62.4",
+      "chapter": 62,
+      "locations": [],
+      "sourceText": "bē pad ān ī awēšān dādestānōmandīh rawēnd abāg awēšān pad dādestānōmandīh āmad mihr abāg-išān nē druxtan",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "62.5",
+      "chapter": 62,
+      "locations": [
+        "T60_100b"
+      ],
+      "sourceText": "ag-dēn ī [T60_100b] nē an-ēr margīh-iz-išān rištagīh az dēn ī wad-išān sarmāg ud garmāg aziš abāz dārišnīh rāy\n\tka-š *niyāz mad estēd ud xwarišn wastarg ud darmān dād ēwēn bē xīr ud asp-zēn abzār ud may ud zamīg bē ō an-Ērān dēwēsnān dād nē dastwarīhā guft estēd ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "63.1",
+      "chapter": 63,
+      "locations": [],
+      "sourceText": "63om pursišn ∵\n\tān ī pursēd kū fradom dahišn ī mardōmīh az čē kerd\n\tbun-tōhmag ī mardōmān čiyōn-iz būd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "63.2",
+      "chapter": 63,
+      "locations": [
+        "K177v",
+        "MR_297"
+      ],
+      "sourceText": "az Gayōmard kē bē [MR_297] āmad ud čē bē būd\n\tMašīy [K177v] ud Mašyānīy az kē bē būd hēnd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "63.3",
+      "chapter": 63,
+      "locations": [],
+      "sourceText": "pāsox ēd kū Ohrmazd ī wisp-xwadāy az ān ī asar rōšnīh brēhēnīd āsrō-kerb\n\t\tkē-š dām ān ī Ohrmazd ud rōšnīh ān ī ātaxš\n\tud a-sōzišnīh būd čiyōn *xwarg ī rōšn\n\tabzōnīgīh čiyōn zamīg ī hubar",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "63.4",
+      "chapter": 63,
+      "locations": [
+        "BA332/337",
+        "T60_101v"
+      ],
+      "sourceText": "u-š andar ān ī ∵ [T60_101v] āsrō-kerb dād mardōm ī [BA332/337] xwānīhēd gētīy\n\tud 3000 sāl ka nē raft u-š nē xward nē xuft u-š nē guft\n\tbē-š ahlāyīh menīd ī pahlom ud dēn ī rāst ī abēzag-stāyišn kām ī dādār",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "63.5",
+      "chapter": 63,
+      "locations": [],
+      "sourceText": "ud pas mad <’w> Druz ī kōxšišngar u-š wināhīd\n\tzīndagīh kerd garān margōmandīh ī xwānīhēd Gayōmard\n\t\tī wizārīhēd zīndag ī mīrāg",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "63.6",
+      "chapter": 63,
+      "locations": [
+        "MR_298"
+      ],
+      "sourceText": "az Gayōmard pad bē-widerišnīh frāz tazīd šusr ī zīndagīh gōhr\n\tud mad bē ō ∵ [MR_298] zamīg ī Spenāg-dād\n\tpāyīhīd andar zamīg pad ān ī yazdān pādārīh\n\taz-iš hambūsīhīd pus ud duxt mardōm\n\tud rust hēnd abar būm\n\tud wašt ō ǰumbišn ud rawišn mad hēnd\n\t\tbē ō-iz hamgumēzišn ud zāyēnīdārīh",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "63.7",
+      "chapter": 63,
+      "locations": [
+        "K35_178r",
+        "T60_102r"
+      ],
+      "sourceText": "ud az ān zamīg kū Gayōmard gyān bē šud zarr\n\t\tud az [T60_102r] abārīg būm kū handām handām ōš mad čand ēwēnag āyōšustān ī brāziyāg frāz tazīd guft estēd [K35_178r]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "64.1",
+      "chapter": 64,
+      "locations": [
+        "BA333/338"
+      ],
+      "sourceText": "64om pursišn ∵\n\tān ī pursēd kū bun-tōhmag ī xwēdōdah gōwēnd kū az čē bē būd [BA333/338] ud az čē gyāg bē būd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "64.2",
+      "chapter": 64,
+      "locations": [],
+      "sourceText": "pāsox ēd kū fradom warzišn ī xwēdōdahīh az ān būd Mašīy ud Mašyānīy kerd kē āgenēn brād ud xwah būd hēnd\n\tu-šān pus-warzišnīh ud ham-gumēzišnīh kerd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "64.3",
+      "chapter": 64,
+      "locations": [
+        "MR_299"
+      ],
+      "sourceText": "čiyōn fradom xwēdōdah-warzišnīh ∵ ud fradom ham-gumēzišnīh ī mard abāg zan awēšān kerd [MR_299]\n\t\tpaywand ī mardōmān hāmōyēn purr-rawišnīh ī tōhmagān az ān bē būd\n\tud hamāg mardōmān ī gēhān az ān tōhmag",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "64.4",
+      "chapter": 64,
+      "locations": [
+        "T60_102a"
+      ],
+      "sourceText": "rāstīhā guft estēd kū xwadāy dādār pas az dāmān dahišnīh urwāhmenīh būd az-iš\n\taz ān warzišn kē-š purr-warzišnīh [T60_102a] dāmān aziš būd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "64.5",
+      "chapter": 64,
+      "locations": [],
+      "sourceText": "u-š bawišn-iz abar gugāh kū dādār ī āfurrāg kāmag ēdōn hāwand zāyišn\n\tud purr-rawišnīh ī pāšom dām ī xwēš kē-š andar andar wād zāyišn",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "64.6",
+      "chapter": 64,
+      "locations": [
+        "BA334/339"
+      ],
+      "sourceText": "čand Hōšang kē-š 2 srišwadag dēw zad\n\tud tahmōred kē pad nērōg yazdān Ahrimen nigūnēnīd\n\tud Jam kē-š paymān winnārd u-š margīh ōgārd\n\tud Frēdōn kē-š až ī dahāg bast u-š <wylwšk> az gēhān wišāyist\n\tud wasān Kayān ud yalān mēnōy dastwarān ī [BA334/339] būd hēnd ud bawēnd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "65.1",
+      "chapter": 65,
+      "locations": [
+        "K178v",
+        "K187r",
+        "MR_300"
+      ],
+      "sourceText": "65om [K187r] pursišn ∵\n\tān ī pursēd [MR_300] kū [K178v] mard ī ēr ī hu-dēn kē-š hamāg dēn-ēw bē wurrōyēd framūd u-š hērbed-ēw kē-š <ywyyty’t'> nīrangestān 5 pargard Abestāg pad zand warm ast ud pad mowmardīh hamē rawēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "65.2",
+      "chapter": 65,
+      "locations": [
+        "T60_102b"
+      ],
+      "sourceText": "u-š bē awiš šawēd\n\tgōwēd kū hamag dēn pad 350 čiyōn-išān pēš-dāšn hamē dād bē ō man framāy tā man [T60_102b] bē *rāyēnam",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "65.3",
+      "chapter": 65,
+      "locations": [],
+      "sourceText": "ud az ∵ hāwištān mard-ēw kē-š Abestāg 5 nask warm u-š zand tis-iz nē warm ēg-iš bē awiš gōwēd bē ō ān mard kē ∵ hamāg-dēn kāmēd framūd kū man pad ēn dāšn 2 hamāg-dēn ī pad zōhr pad bun pārs tō rāy bē rāyēnēm bē ō man framāy",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "65.4",
+      "chapter": 65,
+      "locations": [
+        "MR_301"
+      ],
+      "sourceText": "čē man pad dast ī xwad čand nask bē tuwān ast yašt\n\tud ōy rāy abāz abāyēd framūd čē pad zōdag ī xwad ēč nask yaštan nē tuwān xwad nē yazēd\n\tud ōy ō [MR_301] parīwār ī hamāg-dēn nē abāyēd šud\n\tka-š bahr-ēw ud nīrmad-ēw andar ast ka man abāz stānam",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "65.5",
+      "chapter": 65,
+      "locations": [
+        "BA335/340",
+        "K179r",
+        "T60_103a"
+      ],
+      "sourceText": "kē xwad hamē yazam weh kū ōy kē frāz padīrēd [BA335/340] ud abāz framāyēd u-š xwad nē tuwān yašt\n\tud ka-š dagr āwurd-ēw andar ast ka amāh stānam xwad hamē yazam weh [K179r] kū ōy kē frāz padīrēd abāz framāyēd u-m tis pad <t’D> bē āwarēd [T60_103a]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "65.6",
+      "chapter": 65,
+      "locations": [],
+      "sourceText": "ōy ī mowmard gōwēd kū amāh (az?) abārīg mardōm bahr ud nīrmad wēš abāyēd būdan az gāh ī dēn rāy ud hamāg-dēn abārīg-išān kunam abēr dastwarīhā padīriftan rāyenīdan\n\tud ka frāz padīram ud abāz abespārom ud bē framāyēm tā bē yazēnd u-š tis ī wēš pad <t’D> bē āwaram u-š abar ∵ stānam ēg-iz-im dastwarīhā\n\tčē ēn bahr ī dēn ast",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "65.7",
+      "chapter": 65,
+      "locations": [
+        "MR_302"
+      ],
+      "sourceText": "ud ēn kū-š dastwarīhā stad [MR_302] ayāb nē\n\tud mard kē hamāg-dēn hamē framāyēd ēg-iš dāšn ī yazišn abāz kāstan ēwēn ayāb nē",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "65.8",
+      "chapter": 65,
+      "locations": [],
+      "sourceText": "čiyōn ast-imān rōšnīhā wizīrenīd ud framāyēd ka dāšn ī yazišn abāz nē kāhēnd ayāb kāhēnd ∵ ēg-iš meh sūdīh ziyānōmandīh pad was rāh ud was dar andar ast\n\tka dāšn ī yazišn anespurrīg dahēnd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "65.9",
+      "chapter": 65,
+      "locations": [
+        "BA336/341"
+      ],
+      "sourceText": "ud xwāstag ī pad dāšn ī yazišn bē dād tā ēdōn bawēd [BA336/341] mizd ī ō mizdwar ī dahēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "65.10",
+      "chapter": 65,
+      "locations": [
+        "T60_103b"
+      ],
+      "sourceText": "ōy xwāstag stānēd ud [T60_103b] kār ī kerd abespārēd u-š meh-sūdīh was aziš kunēd\n\tud ka pad wad-wāzāragānīh dāšn ī yazišn kāhēnd ēg-iš ziyān pad čand ēwēnag aziš rawēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "65.11",
+      "chapter": 65,
+      "locations": [
+        "K179v"
+      ],
+      "sourceText": "ud hamē [K179v] hamāg-dēn ō kē dastwarīhātar framūd bē ō ōy mowmard ayāb bē ō ōy hāwišt",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "65.12",
+      "chapter": 65,
+      "locations": [
+        "MR_303"
+      ],
+      "sourceText": "ōy ī ∵ mowmard hamāg-dēn dāšn čim čē\n\tabāyēd kāstan [MR_303] ayāb pad abzōn dād",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "65.13",
+      "chapter": 65,
+      "locations": [],
+      "sourceText": "ka dāšn ī yazišn nē kāhēnd ud pad abzōn dahend ēg-iš meh-sūdīh pad čē ēwēnag aziš bawēd\n\tčē rāy ud pad čē dar sūd aziš šāyēd būd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "65.14",
+      "chapter": 65,
+      "locations": [],
+      "sourceText": "ka dāšn kāhēnd ēg-iš ziyān čē aziš šāyēd būd\n\tčiyōn weh ka dahēnd dāšn ī yazišn",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "65.15",
+      "chapter": 65,
+      "locations": [
+        "T60_104a"
+      ],
+      "sourceText": "čē az xānag-dān dūdag ī amāh Ērān ud Weh-dēnān pēš harw ēk hamāg-dēn-ēw pad zōhr pad būm ī Pārs bē yašt hēnd ēg-išān dāšn 400 drahm abēr\n\taz ēn [T60_104a] 350 drahm awiš dād ham",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "65.16",
+      "chapter": 65,
+      "locations": [
+        "BA337/342"
+      ],
+      "sourceText": "ud nūn ast grōh ī ka-šān dāšn az 400 drahm ayāb [BA337/342] az 350 drahm tis-ēw kāhēnd ēg-imān aziš nē padīrēnd ud gōwēnd kū pad 400 drahm ayāb kamtar pad 350 drahm kamtar tis nē padīram",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "65.17",
+      "chapter": 65,
+      "locations": [
+        "MR_304"
+      ],
+      "sourceText": "ast grōh kē-mān awiš hamē āyēnd [MR_304] hamē gōwēnd kū pad 300 drahm 2 hamāg-dēn ī pad zōhr čiyōn-imān pēš pad 400 drahm hamē framūd hēd bē rāyēnēm bē ō amāh framāyēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "65.18",
+      "chapter": 65,
+      "locations": [
+        "K180r"
+      ],
+      "sourceText": "ud grōh-ēw az mowmardān hamē gōwēnd kū awēšān kāstārīh ī dēn yazišn ī yazdān hamē kunēnd kū nē dastwarīhā [K180r] hamāg-dēn bē ō awēšān framūd\n\tka hērbed ī xwadāy yazišn bawēd gōkānīg wizīdārīhā ēn pursišnīhā čiyōn-imān pursīd ēg-imān rōšnīhā awiš framāyēd nimūdan",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "65.19",
+      "chapter": 65,
+      "locations": [
+        "T60_104b"
+      ],
+      "sourceText": "pāsox ēd kū [T60_104b]\n\tān ī Weh-dēn kē hamāg-dēn wurrōyist framūd ud ān ī kāmag wehīh ud padiš pursišnīhā wizīdārīha",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "65.20",
+      "chapter": 65,
+      "locations": [
+        "BA338",
+        "MR_305/343"
+      ],
+      "sourceText": "ān hērbed kē-š guft kū pad 350 drahm čiyōn-itān pēš az ēn hamē dād hēd bē ō man framāy [BA338] xwēš\n\tud nē dēnīg ud kār bahr bawēd dastwarīhā ud dāšn čiyōn raft [MR_305/343] bawēd guft\n\tšahrīg-barišnīhā ud mayānǰīg-kārīhā ud hamāg-dēn-ēw ī pad zōhr čiyōn pad dūr ∵ yazēnd kē-š was <’mtwl> padiš ud was <’wpyl> andar ast ēg-iš dāšn 350 drahm nē frāy-mizdīh",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "65.21",
+      "chapter": 65,
+      "locations": [
+        "T60_105a"
+      ],
+      "sourceText": "hāwišt kē-š guft kū pad 350 drahm hamāg-dēn pad bun ī pārs bē rāyēnēm ēg-iš ēdōn čiyōn pad dūr rāyēnēnd pad-iz <ywk'> nē was u-š ziyān ī xwāstag ēwar ī ud ātaxš hamāg-dēn pad ān ī kamīh [T60_105a]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "65.22",
+      "chapter": 65,
+      "locations": [],
+      "sourceText": "u-š padīrēnd ud ēd rāy kū pad ahlāyīh dōšāram az xwēš xīr bārestānīh ud abar ān hamāg-dēn uzēnag kunēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "65.23",
+      "chapter": 65,
+      "locations": [
+        "K180v",
+        "MR_306"
+      ],
+      "sourceText": "ud yazišn ī yazdān ō wēš-raft abzāyēnīd handāzēd ī-š pad ān bārestānīh ī az xwēš xīr ud abzāyēnīd ī yazdān yazišn spās ud kerbag bē-š [K180v] ham-iz spās ud kerbag ēdōn xwēšīgtar ud ka ān bārestānīh [MR_306] āškārag kunēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "65.24",
+      "chapter": 65,
+      "locations": [
+        "BA339/344"
+      ],
+      "sourceText": "kū framāyīdār ī kerbag šnāsēd kū ān ī-š kāst ud bārestānīh ī hāwišt kē xwēš xīr pad framūd ī ō awēšān az xwāstag [BA339/344] kē xwēš xīr padiš dād ud nē tuwānīg kam-mizdīh ∵ ō bōzišn nē kunēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "65.25",
+      "chapter": 65,
+      "locations": [
+        "T60_105b"
+      ],
+      "sourceText": "ud agar ān hāwišt pad ān mizd ī kam az ēwēn hamāg-dēn padīrēd ud nē *bārestānīh ī pad xīr ud ān rāy kū xūb-kārīh ud uzēnag ī zōhr rāy [T60_105b] ēdōn čiyōn pad dūr rāyēnēnd bē pad ēwēnag-ēw ī pad <’ycyt'> šāyēd rāyenēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "65.26",
+      "chapter": 65,
+      "locations": [],
+      "sourceText": "ān kāstārīh ī xūb-karīh nē passandišnīg {ud agar-iš ān *padīrišn} ud agar ān padīrišn ī kam-mizdīh hamēmālīh ī-š ō hērbedān ud kēn ud wizāy ud ēd-iz nē kū tā raft abar xwēš kunēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "65.27",
+      "chapter": 65,
+      "locations": [
+        "MR_307"
+      ],
+      "sourceText": "<’’wwp’n> az hamāg-dēn xwāst ud padīrift abāz dārēd frāztar ka padīriftār [MR_307] ī xwāstār ī hamāg-dēn pad ān mizd padīrēd ī-š xwad abāyēd ān nē dēnīg-xēmīhā bē šāyēd-iz būdan kū kas pad ān kam-mizdīh xwāst padīrift az a-čārīh ud an-ayābišnīh ī kār bahr",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "65.28",
+      "chapter": 65,
+      "locations": [
+        "BA340/345"
+      ],
+      "sourceText": "čē-mān andar-iz pārs did kē-š kār pad nēmag mizd ī ān ī pēš pad uzēn andar abāyist [BA340/345] padīrēnd ud mizd ī stānēnd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "65.29",
+      "chapter": 65,
+      "locations": [
+        "K181r",
+        "T60_106v"
+      ],
+      "sourceText": "u-š [T60_106v] čim ēn guft kū az šāhīgān [K181r] abar-estād ī ǰōrdāy anīy nē mad estēd awištāftag ham\n\tud abām pad-iz ēk ud 2 nē hamē ayābēm\n\tud ēn mizd zamānīg ud gyān padiš bōzēm\n\tud ēdōn hangāram kū-m pad abām *ēk ayāb 2 stānēm\n\tka ǰōrdāy frāz rasēd ǰōrdāy xrīnam abar ān kār uzēnag kunam\n\tu-m ān mard was abāyišnīg sahist",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "65.30",
+      "chapter": 65,
+      "locations": [
+        "MR_308"
+      ],
+      "sourceText": "ud agar-iz ān ī hāwišt ān kam-mizdīh padīrēnd hamāg-dēn ān a-čārīh ēd ī-šān nimūd abē-dāšnīhā bahr ud sūd ud nīrmad [MR_308] hangāštan ud hamāg-dēn az xūb-mizdīh nē kāst ud ō ōy ī xūb-kārtar framūd raft nē wardēnēd čimīg ast\n\tagar ahlāyīh-mizdīh nē padīrēd ud ēdōn čiyōn andar dūr yazēnd ud rāyēnēnd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "65.32",
+      "chapter": 65,
+      "locations": [
+        "BA341/346",
+        "T60_107r/106b"
+      ],
+      "sourceText": "čiyōn pad 350 drahm hamāg-dēn-ēw ī pad zōhr rāyēnēnd pad ān ham gyāg ham xūb-kārīh 2 hamāg-dēn pad zōhr [T60_107r/106b] rāyēnēd\n\tud awestwārīhēd ō kē 2 hamāg-dēn padīrēd ud framūd čimīgtar [BA341/346] čē pad hāwand xwāstag hāwand-kārīh kunēš ī xūb-kārīh wēš-yazišnīh weh",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "65.33",
+      "chapter": 65,
+      "locations": [
+        "K181v",
+        "MR_309"
+      ],
+      "sourceText": "ud ān ī hāwišt arzānīgīh ī-š az xwad yaštārīh ud hērbed arzānīgīh ī-š az kerdārīh ī pad dēn guft ēg-išān harw 2ān niyābag ud arzānīgīh wazurg\n\tud ēdōn čimīgtar ka hāwišt [K181v] yaštār ud hērbed framūdār ud xūb-kārīh xwāstār bawēd harw 2 ō [MR_309] weh-rawāgīh tuxšēnd ud pad wēš-bahrīh ēwēnīhā arzānīgīhēnd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "65.34",
+      "chapter": 65,
+      "locations": [],
+      "sourceText": "u-šān harw 2ān az spās ī padiš bahr ud sar-āwurd dastwarīhā stānēnd bē-šān ān arzānīgīh az kār ud spās ī padiš ēd pad sāxtan ud ēd pad āmār ud abar-madīh ud passandišnīgīh-xwāyišnīh ud abārīg weh kerd ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "66.1",
+      "chapter": 66,
+      "locations": [
+        "T60_107a"
+      ],
+      "sourceText": "66om pursišn ∵\n\tān ī pursēd kū [T60_107a]\n\tēn dīdanīh ī pad āsmān parwast čē ast ∵\n\tpāsox ēd kū",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "66.2",
+      "chapter": 66,
+      "locations": [
+        "BA342/347",
+        "MR_310"
+      ],
+      "sourceText": "gumēzišn ī az rōšnīh ī xwaršēd ō nam ud abr ī-š hamwar ud handēmān dahāg\n\tnimāyišnīh-iz ī-š padiš az mēnōyān ō gētīyān abar nišān ī sāl wēnīhēd [BA342/347]\n\tān ī gētīyīg abar āb kē-š rōšnīh awiš payrōgīhēd was rōšn\n\tud gōkān passāzīhēd az ān ī wēš bahrīhā ud kam bahrīhā gumēzišnīh rōšnīh [MR_310] ud āb\n\tud mānāgīhēd bahrīg ō stūnāg",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "67.1",
+      "chapter": 67,
+      "locations": [],
+      "sourceText": "67om pursišn ∵\n\tān ī pursēd kū ēn ī ka xwaršēd ud māh harw 2 ul āmad tis āmad abar āyēd pad nōgīhā\n\tka nōg bawēd mardōmān tis frōd šawēd xwāhēnd ud az ān gyāg paydāg bawēd čē ast",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "67.2",
+      "chapter": 67,
+      "locations": [
+        "T60_107b"
+      ],
+      "sourceText": "ka <wyw> ēw-čand būd pas tis ul āyēd bawēd ∵ čē ast\n\tu-š pad šab ud rōz rawišn čiyōn ast [T60_107b] ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "67.3",
+      "chapter": 67,
+      "locations": [],
+      "sourceText": "pāsox ēd kū xwaršēd ud māh hamē ānōh wēnīhēnd kū estēnd ud ō mardōmān handēmān hēnd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "67.4",
+      "chapter": 67,
+      "locations": [],
+      "sourceText": "ud xwaršēd az māh tēz-rawišntar ud harw rōz andak-ēw ō pēš bawēd\n\tpad nōg māh xwaršēd pēš ud māh az pas\n\tud nirfsišn ud bārīkīh ī māh rāy andar frāy rawišnīh ud rōšnīh ∵ ī xwaršēd rāy nē paydāg",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "67.5",
+      "chapter": 67,
+      "locations": [
+        "BA343/348",
+        "MR_311"
+      ],
+      "sourceText": "ud čiyōn xwaršēd frōd šawēd ud rōšnīh-ēw ī frāy nē paydāg [MR_311] ud māh ast ud frōd nē šud ud māh wēnīhēd\n\tud rōz māh waxšēd az xwaršēd [BA343/348] pastar abar āyēd ud pastar frōd šawēd\n\tud ān rāy wēš wēnīhēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "67.6",
+      "chapter": 67,
+      "locations": [],
+      "sourceText": "ud ka waxšēd ∵ ō purrīh rasišn ī hamwarīh ī xwaršēd\n\tud ēbārag āyēd ud hām-šab wēnīhēd\n\tnōgīhā nirfsēd ud abāz rasēd ō hamwarīh ī xwaršēd\n\tud šawēd ō brāh ī xwaršēd ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "68.1",
+      "chapter": 68,
+      "locations": [
+        "T60_108a"
+      ],
+      "sourceText": "68om pursišn ∵\n\tān ī pursēd kū māh ud xwaršēd ka frāz gīrēd ēg-iš wihān čē ast\n\taz čē bē hamē [T60_108a] gīrēd ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "68.2",
+      "chapter": 68,
+      "locations": [
+        "MR_312"
+      ],
+      "sourceText": "pāsox ∵\n\tēd kū 2ān gōčihrān ī tār az dūr azēr ī xwaršēd ud māh rawēnd ud gardēnd ud hamē ka andar gardišn ī spahr azēr ī xwaršēd ayāb azēr ī māh widerēnd nihumbišn bawēd ī xwaršēd abar tad [MR_312] estēd bawēd\n\tast ī ka nē wēnīhēd xwaršēd ayāb māh",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "68.3",
+      "chapter": 68,
+      "locations": [
+        "BA344/349"
+      ],
+      "sourceText": "ān harw 2ān gōčihrān ī ēk sar ud ēk dumb xwānīhēd u-šān rawišn andar hangārag ī axtarmārān paydāg\n\tbē pad ān rōšnān estādan ∵ ud ān nihumbišn kerdan andar ān nihumbišn nē hāzēnd ō awēšān [BA344/349] rōšnān",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "68.4",
+      "chapter": 68,
+      "locations": [
+        "T60_108b"
+      ],
+      "sourceText": "az ān rōšnān andar abēzagīh ud a-petyāragīh gyāg ān nihuftārān dūr azēr ī awēšān abar awēšān rōšnān ēč ǰuttarīh nē bawēd\n\tbē ēn kū rōšnīh ī ō awēšān gēhān spōzēnd u-šān wāspuhragānīgīhā xwēškārīh ān and zamān rōšnīh madārīh ī ō būm nē spurrīg [T60_108b]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "69.1",
+      "chapter": 69,
+      "locations": [
+        "MR_313"
+      ],
+      "sourceText": "60 nohom pursišn ∵\n\tān ī pursēd kū ēn wizandagīhā čē bawēd u-š wihān čē ast\n\taz čē hamē bawēd čē rāy harw kū harw gyāg kū kōf nē bawēd wizandag [MR_313] nē bawēd ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "69.2",
+      "chapter": 69,
+      "locations": [],
+      "sourceText": "pāsox ∵\n\tēd kū gyāg-iz kū kōf paydāgīg nēst wizandag būdan <’y’k'>\n\tpad-iz dēn rōšn paydāg kū pēš-iz az rōyišn ī kōfān ka būm hamāg hāmōn būd gēhān čandēnīdārīh hām-gēhān wizandag būd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "69.3",
+      "chapter": 69,
+      "locations": [
+        "BA345/350"
+      ],
+      "sourceText": "frāsiyāb-iz ī tūr ānōh kū kōf hēnd <wy’yt’nc> kē-š kōf andar nēst u-š pad <y’t'> čandēnīd\n\tmeh wihān ī čandišn wizandag-kerdārīh mādagwarīhā az bastag kerdan ī widarg ī ōzōmand wād <’lstk> būd ī wād andar škaft ī [BA345/350] kōfān ud drayāb",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "69.4",
+      "chapter": 69,
+      "locations": [
+        "T60_109a"
+      ],
+      "sourceText": "ud anīz tōzišn ∵ ud tōyišn ud <w’’wyy’n> wād <ptwyy’> ī andar zamīg ud stēzišn ī-š pad widarg-xwāyišnīh\n\tud čiyōn ast zamīg ud xānīg ī ābān ēdōn-iz ast andar zamīg kē tazišn damišn ōzōmand ī purr-zōr [T60_109a]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "69.5",
+      "chapter": 69,
+      "locations": [
+        "MR_314"
+      ],
+      "sourceText": "ud ka zamān ī-š ō bērōn ī škaft widarg bastag kerd pad tazišn ī-š andarrōn ud stēzišn [MR_314] ī-š ō bērōn <škyycwt'> čandīhēd būm ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "70.1",
+      "chapter": 70,
+      "locations": [],
+      "sourceText": "70om pursišn ∵\n\tān ī pursēd kū tis ī bē ō mardōmān rasēd pad baxt bawēd ayāb pad kunišn ud tuxšišn brēhēnišn\n\tǰud az brēhēnišn tis bē ō mardōmān rasēd ayāb čē ēwēnag bawēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "70.2",
+      "chapter": 70,
+      "locations": [],
+      "sourceText": "ān ī gōwēnd kū ka mard bē ō wināhgārīh wardēd ēg-iš nōg nōg ōš brēhēnēnd\n\t\tud ān ī gōwēnd kū tis ī ō mardōmān rasēd kār zamān ud ∵ harw nēkīh ō māh bast estēd\n\t\tud māh pad gētīyān baxšēd\n\t\tud māh ēn hamāg nēkīh čē ēwēnag baxšēd\n\tčiyōn čē ēwēnag ast *gōwizārīhā wizīrēnīd framāyēd pad yazdān kām ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "70.3",
+      "chapter": 70,
+      "locations": [
+        "BA346/351",
+        "K35_183v",
+        "T60_109b&MR_315"
+      ],
+      "sourceText": "pāsox ∵\n\tēd [BA346/351] kū dastwarān ēdōn guft estēd kū tis ī ast ī pad brēhēnišn ud ast ī pad kunišn\n\tu-šān [T60_109b&MR_315] ēdōn bē wizīrēnīd kū zīndagīh ud zan frazend ud [K35_183v] xwadāyīh ud xwāstag pad brēh\n\tud āsrōnīh ud artēštārīh ud wāstaryōšīh ud ahlawīh ud druwandīh pad kunišn",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "70.4",
+      "chapter": 70,
+      "locations": [],
+      "sourceText": "u-šān ēn-iz ēdōn guft kū ān ī andar gētīy ō mard nē brēhēnīd estēd nē rasēd ∵\n\tān ī brēhēnīd estēd ast ī tuxšišn rāy pēš bē rasēd\n\t\tud ast ī pad wināhgārīh ud aǰgahānīh aziš appārīhēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "70.5",
+      "chapter": 70,
+      "locations": [],
+      "sourceText": "ud ān ī tuxšišn rāy pēš bē rasēd\n\t\tčiyōn kē ō padīrag ī nēkīh šawēd ayāb wēmārīh\n\t\tud margōmand kē wēmārīh rāy pēš mīrēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "70.6",
+      "chapter": 70,
+      "locations": [
+        "D7_316",
+        "T60_110a"
+      ],
+      "sourceText": "ān ī pad wināhgārīh ud aǰgahānīh aziš appārīhēd\n\t\tčiyōn kē zan nē gīrēd ēwar kū-š frazend nē zāyēd\n\t\tčiyōn kē tan bē ō ōzanīšn dahēd az-iš [T60_110a] zīndagīh appārīhēd ∵ [D7_316]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "71.1",
+      "chapter": 71,
+      "locations": [
+        "TD_352/BA347"
+      ],
+      "sourceText": "71om pursišn ∵\n\tān ī pursēd kū grāy-wināhīh ī kūnmarz kerdan čē ast\n\tud ōy kē kūnmarz kunēd ēzišn abāyēd framūdan ud kerdan\n\tud kē kunēd ayāb-iš padiš kunēnd ēg-iš ham-nišastagīh ud ham-xwarišnīh abāg abāyēd kerdan ayāb nē [TD_352/BA347]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "71.2",
+      "chapter": 71,
+      "locations": [
+        "K35_184r"
+      ],
+      "sourceText": "pāsox\n\tēd kū ham duš-warzišnīh andar grāyān wināhān ī abēr grāy ī andar dēn ī ∵ Mazdēsnān az 7 bazakkar ī grāy-wināh kē-šān Ahrimenīg warzišn nazdīkīh ī ō Ahrimen hāwand\n\tu-š 2 ān [K35_184r] guft estēd kē pad ham wināh ālūd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "71.3",
+      "chapter": 71,
+      "locations": [],
+      "sourceText": "čē ān 7 bazakkar ēk až-dahāg kē-š fradom ǰādūgīh stāyīd\n\t\tu-š ān ī duš-pādixšāyīhā xwadāyīh grift\n\t\tu-š a-mardōmīh kāmist ō gēhān",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "71.4",
+      "chapter": 71,
+      "locations": [
+        "D7_317",
+        "T60_110b"
+      ],
+      "sourceText": "ēk az ī sruwar kē-š [T60_110b] andar gēhān ān ī samgenīhā rāh-dārīh ud rāh-bīmenīdārīh ud asp mard [D7_317] -ōbārīh kerd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "71.5",
+      "chapter": 71,
+      "locations": [],
+      "sourceText": "ud ēk Wadag ī Dahāg mād kē-š fradom rōspīgīh kerd u-š wiyēb-tōhmagīh ud āšuft-abarmāndīh <bwsnyt'> ud abē dastwar ī šōy abāg pus ham-gumēzišn būd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "71.6",
+      "chapter": 71,
+      "locations": [],
+      "sourceText": "ēk wīftag nar kē-š a-zāyišnīh xwāst ī mardōmān\n\t\tu-š fradom narān marzišn rāh ī zahag -marnǰēnišnīh bē ō narān nimūd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "71.7",
+      "chapter": 71,
+      "locations": [
+        "T60_111a",
+        "TD4a_353/BA348"
+      ],
+      "sourceText": "ēk wiyēbēnīdag nar kē-š fradom andar nar andar nar azī ī mādagān kār appurd u-š <yw’t'>\n\t\tud ān ī zahag parwardār [TD4a_353/BA348] ud mādagān-spar ud ān ī zahag marnǰēnāg ud gandišn pad mūhrišn awiš rēzišnīh ō narān abespārdan\n\t\tud pad ī dēwīg warzišnīg kār a-parwarišnīh ī zīndagān tōhm ud āhenǰīd [T60_111a] ud āhōgēnīd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "71.8",
+      "chapter": 71,
+      "locations": [],
+      "sourceText": "ud ēk Tūr ī Brādarōxš ī karb ī duš-dēn ī ǰādūg kē-š ān pāšom az mardōmān margēnīd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "71.9",
+      "chapter": 71,
+      "locations": [
+        "D7_318",
+        "K35_184v"
+      ],
+      "sourceText": "ud ēk ān kē-š ahlomōγ-dēnīhā kāmist ō yazd y [D7_318] stūd\n\t\tēg pad frēftārīh ī wardēnīd ud Abestāg ud zand kē xwēš wimand ud ān agar-iš bowandag čār ayāft hē a-frazāmīh būd [K35_184v] hē ī ayādišn kē bōzīhēnd pad ān ī weh ahlāyīh ī az ān ī abēzag dēn-dānišnān pāšom",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "71.10",
+      "chapter": 71,
+      "locations": [],
+      "sourceText": "ud ān kē ālūdag pad gand-grāyīh ī padiš mehmān hēnd ud dēwān druzānīhā dūr hēnd weh mēnōyān ham passazag\n\t\tud kē awēšān dūrīh niyābag pad ham-nišāstīh ud ham-xwarišnīh bē tā čārag hēnd pad šahr ī az wināhīh pad pahikārišn ud a-frāyēnišn ī abar wardēnīdan ī az ān grāyīh",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "71.11",
+      "chapter": 71,
+      "locations": [
+        "BA349/354",
+        "T60_111b"
+      ],
+      "sourceText": "mīrēd yazišn ī ōy rāy [T60_111b] framāyēd a-frahaxt kerdan a-dastwarīhā\n\t\tbē agar kerd ud petītīhā [BA349/354] mīrēd ēg-iš pas az sidōš yazišn kerdan dastwarīhā\n\t\tčē darmān ast ī wināh-wizārišnīh",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "71.12",
+      "chapter": 71,
+      "locations": [
+        "D7_319"
+      ],
+      "sourceText": "ud tā ka zīndag ud pad bōxtišn ī az wēmārīh ī pad ān ēwēnag [D7_319] ēmēdwār u-š aziš nē bandišn rūrag ī bēšaz\n\tud ēn ōh-iz yazišn kār ud kerbag ī ruwān frahaxtišn ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "72.1",
+      "chapter": 72,
+      "locations": [],
+      "sourceText": "72om pursišn ∵\n\tān ī pursēd kū hamgōnag ān kē kūnmarz kunēd gand bē ō āsmān šawēd ayāb nē\n\tud ān gand agar šawēd tā kū gyāg šawēd ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "72.2",
+      "chapter": 72,
+      "locations": [
+        "T60_112a"
+      ],
+      "sourceText": "pāsox\n\tēd kū gētīyīg gand and šawēd čand paymānag ī rēmanīh\n\tud gandagīh ī andar ān <ywšYt’n'> agar mēnōyīg gand tā ō ānōh šawēd kū gand ayābišnīh sāmān ast\n\tpetyāragōmand gyāg gerdīh ī āsmān rāy harw gyāg kū šawēd ō āsmān [T60_112a] rōn nē ayābēd ō apetyarag axwān",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "72.3",
+      "chapter": 72,
+      "locations": [
+        "BA350/355",
+        "D7_320"
+      ],
+      "sourceText": "ud āgāhīh ī abar gand āškārag andar wisp-āgāh dādār kē-š harwisp-āgāhīh andar rōšnīhā\n\tud ōy xwābar dādār ud hammis yazdān amahrspandān az ān grāyīh [D7_320] āgāhīh ud abar ān frēftagīh ī abar ān duš-huwarzīdār ud abaxšāy-menišnīh [BA350/355] ēwar ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "73.1",
+      "chapter": 73,
+      "locations": [],
+      "sourceText": "73om pursišn ∵\n\tān ī pursēd kū amahrspandān az ān gand wānīdārīh bawēd ayāb nē ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "73.2",
+      "chapter": 73,
+      "locations": [],
+      "sourceText": "pāsox ēd kū amahrspandān hēnd a-marg ud a-bēš u-šān gyāg andar ān ī pāšom axwān ī rōšn ī hamāg-xwārīh ī hamāg-rāmišn ī a-petyārag ud nē ayābēd gand <’p̄š’’yk'> ud zōr bē ō amahrspandān hēnd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "73.3",
+      "chapter": 73,
+      "locations": [
+        "T60_112b"
+      ],
+      "sourceText": "ud amahrspandān hēnd wisp-āgāh ud dām-dōst ud xwābar ud abaxšāwand\n\tdānēnd ān grāy warzišn ī ān ī grāy-warzišn ∵ ī ān mustōmand frēftag kē ālūdag būd pad ān ī zišttom ālōy ī čiyōn ān ī ī-š paymōxt ud pad-iz seǰd pādifrāh ī-š az dēw abar mad payrāst [T60_112b]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "73.4",
+      "chapter": 73,
+      "locations": [
+        "D7_321"
+      ],
+      "sourceText": "ēg-išān dām-dōstīh rāy garān sahēd u-šān padiš [D7_321] aboxšayišn bawēd ī čiyōn kē-š az dardōmandīh dard mālēd ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "74.1",
+      "chapter": 74,
+      "locations": [],
+      "sourceText": "74om pursišn ∵\n\tān ī pursēd\n\tkū-šān rist wirāyēnd ayāb nē ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "74.2",
+      "chapter": 74,
+      "locations": [
+        "BA351/356"
+      ],
+      "sourceText": "pāsox ēd kū az ān čim čiyōn ham-rēman ud purr-gand ud a-sam ud anābēdān wināh ud samgen abzār ī dām abesīhišnīgīh\n\tud ān warzišn ī ka narān pargast uspurrīg andar kār dārēnd ēg-iš [BA351/356] a-mardōmīh aziš šāyēd būd\n\tčiyōn aži dahāg ī was-ōztom dēw kāmist padestīd ud tuxšīd ud nē pattūgīhist ud ham warzišn az was dēwīg-iz <ym>-rāhīh wēnābdāg hēnd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "74.3",
+      "chapter": 74,
+      "locations": [
+        "D7_322",
+        "T60_113a"
+      ],
+      "sourceText": "ud būd dastwar kē-š guft kū-šān rist nē wirāyēnd bē amaragānīhā pōryōtkēšān andar ham xwēškārīh ham-wēnišnīhā ud ham-dādestānīhā ud ham-bōzišnīhā abar ēn bē estād hēnd [T60_113a] kū hamāg mardōmān rist [D7_322] wirāyēnd\n\tčē dādār ī weh ī abuxšāwand ī purr-wehīh ēč dām abar Druz bē nē hilēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "74.4",
+      "chapter": 74,
+      "locations": [
+        "BA352/357"
+      ],
+      "sourceText": "pad dēn guft estēd kū harwist rist ul estēnēd kē ahlaw kē-iz druwand ud nē kē pad Druz bē hilēd\n\tu-šān ēn-iz ēdōn wizīrēnīd kū ōy-iz ī garān-wināhtom ka menišnīg abaxš ud pašēmān az wināh bawēd ud čand-uš tuwān wizārdār ud andar āstawānīh ī pad weh dēn wināh-wizārišnīh tan ud xīr ō tōzišn pādifrāh abespārēd ēg-iš ruwān-iz ō gāh ī ahlawān madan [BA352/357] šāyēd ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "75.1",
+      "chapter": 75,
+      "locations": [
+        "T60_113b"
+      ],
+      "sourceText": "75om pursišn ∵\n\tān ī pursēd kū kē awēšān kē kūnmarz kunēnd ā-šān bē ōzanēd ēg-iš pad kerbag ud bazag āmār čiyōn bawēd ∵ [T60_113b]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "75.2",
+      "chapter": 75,
+      "locations": [
+        "D7_323"
+      ],
+      "sourceText": "pāsox ēd kū dastwarān pad wizīr mādagwar ēdōn guft [D7_323] kū margarzān hamāg pad wizīr ī dādwarān framān ī pādixšān kē-šān xwēškārīh ōzanišn",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "75.3",
+      "chapter": 75,
+      "locations": [],
+      "sourceText": "ud kē ān grāy-wināhān pas az 3 ǰār awiš pahikārišnīhā pad wizīr ī dēn-āgāhān ud framān ī pādixšān andar abē-bīmīh ī xwēš ud xwēšīgān ēdōn ī ka andar ān wināh estād ud nē mardōm-dušmenīhā ud dēn-wizāyīhā bē wināh-dušmenīhā abāz dāštan ī dēw-warzišnīh rāy bē ōzanēd pad wazurg kerbag dāštan",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "75.4",
+      "chapter": 75,
+      "locations": [
+        "T60_114a"
+      ],
+      "sourceText": "ka abar ham dar wizīr kerdan framān nē dād estēd andar gumānīg pahrēz pahrēzīhātar ud dastwarīhātar\n\tčē kerbag ī abē-gumānīhā was was frāxwīhā [T60_114a] ast ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "76.1",
+      "chapter": 76,
+      "locations": [
+        "BA353/358"
+      ],
+      "sourceText": "76om pursišn ∵\n\tān ī pursēd kū grāyīh ī ēn wināh ī kūnmarz ēg-imān andar rōšn [BA353/358] bē framāyēd kerdan ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "76.2",
+      "chapter": 76,
+      "locations": [
+        "D7_324"
+      ],
+      "sourceText": "pāsox [D7_324] ēd kū fradom dām ī gētīy mard ī ahlaw ī Druz-zadār ī ahlaw-šnāyēnīdār\n\tēdōn-iz andar gētīy yazdān-šnāsīgtar ud ō dām-dahišnīh homānāgtar ud ō dām-winnārišnīh ayādtar",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "76.3",
+      "chapter": 76,
+      "locations": [],
+      "sourceText": "ud abāg dānišnīh-paydāgīh pāšom kār ast ān kē andar dādīhā-warzišnīh zāyišn ud purr-rawišnīh mardān ī ašō’ān aziš būdan",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "76.4",
+      "chapter": 76,
+      "locations": [],
+      "sourceText": "pad ham rāh ōy ī wisp-āgāh dādār andar fradom ǰuxtag mardōm ī būd hēnd brād ud xwah Mašīy būd ud Mašyānīy ud brēhēnīd ī harwisp tōhmag ī ox ī astōmand pad pus-warzišnīh ud harwisp-āgāhīhā ud zāyēnīdārīh rāh",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "76.5",
+      "chapter": 76,
+      "locations": [
+        "T60_114b"
+      ],
+      "sourceText": "u-š [T60_114b] nāmēnīd mard ud zan ud pid ud mād ī astōmand mardōmān\n\tu-š čihrēnīd abar hammist mardōm čihrīgīhā ārzōg ī ō ham pus-warzišnīh pad stāyišnīh",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "76.6",
+      "chapter": 76,
+      "locations": [
+        "BA354/359",
+        "D7_325"
+      ],
+      "sourceText": "u-š dastwarēnīd [D7_325] dād ud dēn pad sazāg xwāyišn ī az ān ī xwēš nē az ān ī a-xwēš\n\tud pad ān ī xwēdōdahīhā ud bun-kārīhā ud abārīg pus-xwāyišnīh raft [BA354/359] andar gēhān purr-rawišnīh paywandīhēd tā-iz ō an Fraškerd zamān aziš būd ud bawēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "76.7",
+      "chapter": 76,
+      "locations": [
+        "T60_115a"
+      ],
+      "sourceText": "ud zāyišn ī wasān xwarrah-kārān ud mow-dastwarān ud kišwar-ārāstārān ud šahr-winnārdārān Fraškerd-frazāmēnīdārān-iz ī az ham\n\tud kē ān warzišn dādīhā ud ka bawēd dādīhā abdīh ud gēhān-sūdīh ud yazdān-kāmagīh ud abartom-kerbagīh wēnābdāg\n\tud čiyōn ān purr-rawišnīh ī ahlawān [T60_115a] aziš bawēd wazurg mādagīh paydāgīg",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "76.8",
+      "chapter": 76,
+      "locations": [
+        "D7_326"
+      ],
+      "sourceText": "ōwōn ī ka ham padīrag kē bun-tōhmag zāyišn padiš agārīhēd\n\tud rāh ō ziyān margīh abar grāyīhēd ud grāyīh ēwar\n\tud ōy Druz ī āšōbgar kē-š kām a-mardōmīh ud abesīhīd-dāmīh ī-š pad zōr ī niyāz a-wēnāg [D7_326] wardēnēd ārzōg ī frēftagān mardōm dahišn az ān gyāg ī pus-xwāyišnīh ō handām ī-š padīrag kē-š padiš bawēd hēnd winastagīh ud pūdagīh",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "76.9",
+      "chapter": 76,
+      "locations": [
+        "BA355/360"
+      ],
+      "sourceText": "u-š nēst čihr ud zōr ī-š zahāg-parwarišnīh\n\tnē sazāg pad tōhmag-padīrišnīh\n\tu-š <ylwkynyt'> ham waranīg duš-marzišnīh kū tā <šwyk'> zahāg [BA355/360] pad abesparišn ī ō ān āwām andar ān purr-gand sōzāg gyāg margīhād ud a-zāyišn bawēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "76.10",
+      "chapter": 76,
+      "locations": [
+        "K35_187r&T60_115b"
+      ],
+      "sourceText": "zīndag zahāg wardēnēnd frēftagān waranīgān az gumēzišn ∵ ī ō nāyrīgān xwāhišn ī zāyišnān\n\tčiyōn pad ham abārōnīh ī dēwān ō ārzōg ī [K35_187r&T60_115b] frēftagān paywast\n\tān ī gēhān-sūd pus-xwāyišnīh bē hilēnd tā ān tōhm-wināhāg zahāg-margēnāg warzišn kunēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "76.11",
+      "chapter": 76,
+      "locations": [
+        "D7_327"
+      ],
+      "sourceText": "ka ān ristag ī bowandag rawāgīhēd tōhmag-rawišnīh bastag dām abesīhīdag būd ēwar [D7_327]\n\tān kār ī ka spurr-rawāgīhēd abē-mardōmīh ī gēhān aziš šāyēd būd\n\tud mahist kām ī Ahrimen būd frārāst",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "76.12",
+      "chapter": 76,
+      "locations": [],
+      "sourceText": "ōwōn warzīdār mahist kām ī Ahrimen pad ān warzišn dēw-rāhīh ī gumān az ham-gumēzišnīh ī pad zahāg garān ham rēmantom ud gandagtom\n\tud hannām ī zahāg margēnāg ud dēwīg warzišnīh dīdārīg az-iz ham warzišnīh\n\tud az grāyīh wināhīh ō rist-gādārān rōšn ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "77.1",
+      "chapter": 77,
+      "locations": [
+        "T60_116a",
+        "TD4a_361/BA356"
+      ],
+      "sourceText": "77om pursišn ∵\n\tān ī pursēd kū grāyīh-wināhīh ī rōspīg-bāragīh kerdan čiyōn-iš [TD4a_361/BA356] gētīyīhā tōzišn pad dēn paydāg\n\t\tēg-īmān tōzišn ēk ēk ∵ awiš framāyēd nimūdan [T60_116a]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "77.2",
+      "chapter": 77,
+      "locations": [
+        "D7_328"
+      ],
+      "sourceText": "pāsox ēd kū rōspīg-bāragīh grāy abārōnīh ast ī fradom Dahāg kerd\n\t\tud āšnāg pad abārōn-gumēzišnīh ī-š kāmag abāg Wadag ī mādar andar [D7_328] zīndagīh ī Urwadāsp ī-š pidar abē-dastwar ī Urwadāsp kē-š šōy būd ī Wadag\n\t\tkē-š xwad a-dastwarīhā ud a-dādestānīhā",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "77.3",
+      "chapter": 77,
+      "locations": [
+        "K35_187v"
+      ],
+      "sourceText": "ud wināh-warzišnīh grāyīh abēr was\n\tu-š ēk duzzīh ayāb apparagīh\n\tčiyōn az abārīg duzzīh ud apparagīh and grāytar čand [K35_187v] mardōm ān kē-š mardōm-zāyišnīh aziš bawēd meh az gāh ī xīr",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "77.4",
+      "chapter": 77,
+      "locations": [],
+      "sourceText": "ēk ēn kū ān rōspīgīh-ēw gyān ī wad-xēmīh padiš ēwarīhā ud abē-gumānīhā dāštan čimīg pad awestwārīh wābarēnīd nē dastwarīhā\n\tud andar warzišn daštān-marzīh-iz az mānāg zahag-sōzišnīh ast gast bīmgen",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "77.5",
+      "chapter": 77,
+      "locations": [
+        "T60_116b"
+      ],
+      "sourceText": "ud ēk ēn kū šāyēd būd pad ān marzišn ābustan ud šust [T60_116b] pad hammōzišnīh anīy mard ān ābustanīh ōwōn kerdan padiš aburnāyīg zahag margēnēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "77.6",
+      "chapter": 77,
+      "locations": [
+        "BA357/362",
+        "D7_329"
+      ],
+      "sourceText": "ud ēk [BA357/362] ēn kū [D7_329] šāyēd būd andar ābustanīh ī-š anīy mard ō marzišn madan ud pad ān marzišn zīndag frazend ī-š andar aškamb mīrīhēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "77.7",
+      "chapter": 77,
+      "locations": [],
+      "sourceText": "ēk ēn kū šāyēd būd ∵ kū pad ān marzišn ābustan bawēd šarm ayāb bīm rāy ābustanīh nihānēnēd dārū xwarēd ud čārag xwāhēd ī ān frazend andar aškamb margēnēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "77.8",
+      "chapter": 77,
+      "locations": [],
+      "sourceText": "ud ēk ēn kū šāyēd būd kū zan ī an-ēr ayāb ag-dēn pad ān marzišn ābustan bawēd ud frazend ī zāyēd purnāyīhēd ud pad frazend ī šōy ī zan āšnāgīhēd (ī) pad an-ērīh ayāb ag-dēnīh estēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "77.9",
+      "chapter": 77,
+      "locations": [
+        "D7_330",
+        "T60_117a"
+      ],
+      "sourceText": "ān abārōn-marzišnīh marzīdār ēdōn āstārōmand ud garān-wināh čiyōn kē zan frazend az ērīh ud Weh-dēnīh bē ō an-ērīh ud ag-dēnīh [T60_117a] nīd\n\tud wināh ī ān ∵ aburnāyīg andar aburnāyīgīh kunēd padiš wināhgār\n\t\tud pad ān-iz ī andar purnāyīh kunēd abāg-iš [D7_330] ham-wināh",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "77.10",
+      "chapter": 77,
+      "locations": [
+        "BA358/363"
+      ],
+      "sourceText": "ud agar-iz ān aburnāyīg pad aburnāyīh margēnēd pad āb ud wārān ud ātaxš widārīhēd andar zamīg ī hudahāg nigānīhēd ham ōy ī abārōn margēnīdār [BA358/363] wanīy-kerdārīh rāy padiš ērangīg",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "77.11",
+      "chapter": 77,
+      "locations": [],
+      "sourceText": "ud agar-iz ān kē Weh-dēn mard ud zan pad abārōnīhā marzišnīh warzīd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "77.12",
+      "chapter": 77,
+      "locations": [],
+      "sourceText": "ud rōspīg-bāragīh rāy frazend zāyēd ud purnāyīhēd pas-iz a-xwēškārīhā warzēd ud ān ī a-xwēš kunēd ud paywand ī āšuftag an-āšnāg kerdan ud zāyišn az abārōn-warzišnīh būd rāy garān-wināhīhā ud pad xūbīh spās ud pad drōzišn wināhōmand\n\tguft estēd kū rōspīg-zādag pad abarmāndagīh nē wābar",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "77.13",
+      "chapter": 77,
+      "locations": [
+        "D7_331",
+        "T60_117b"
+      ],
+      "sourceText": "ud agar [T60_117b] ēdōn kunīhēd ī ābustanīh nē bawēd pas-iz harw ēk ǰār šuhr ī xwēš tabāh kerdan rāy Abestāg ī ān kār nē guftan rāy 2 tanābuhl ī bawēd [D7_331] 600 stēr\n\tud ān ī ziyānag rāy 2 tanābuhl",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "77.14",
+      "chapter": 77,
+      "locations": [],
+      "sourceText": "ham-pursagīh rāy hāwand ud ham-ayārīh rāy hāwand ī mard kē zan ud zan kē mard wināh abar šawēd a-tōzišnōmand\n\tud agar-iz tan ī xwēš hixrōmand ayāb ān ī ziyānag ēwēnīhā az hixr šōyēd pas-iz harw ēk ǰār ī hixr ō ∵ tan ī xwēš ziyānag burdan rāy 60 stēr ud tan ī ∵ xwēš hixrōmand kerdan rāy 60 stēr",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "77.15",
+      "chapter": 77,
+      "locations": [
+        "BA359/364"
+      ],
+      "sourceText": "ud agar ān hixrōmandīh ī [BA359/364] xwēš ayāb ān ī ziyānag pad āb šōyēd harw ǰār ī 300 stēr\n\tud agar ast zan an-ēr ayāb ag-dēn ǰud az wināhīh ī nibišt abarwārag ī ān wināhīhā abārōn-rāmišnīh ī zan ī an-ēr rāy 60 stēr wināh",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "77.16",
+      "chapter": 77,
+      "locations": [
+        "T60_118a"
+      ],
+      "sourceText": "ud pas abārīg wināh ud wināh ī az wināh ī [T60_118a] abēr was garān ō an-ābuhlagānīh paywand\n\tu-š padiš bīmgen ud <ptwy’k'>ōmand",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "77.17",
+      "chapter": 77,
+      "locations": [
+        "D7_332"
+      ],
+      "sourceText": "pad tōzišn petīt andar abaxšōmand\n\tud padiš petītīgīh waštan ī az ham-garān asruštīh\n\tharw ēd ǰār ī az ham abārōnīh kerdan pad wināh [D7_332] wizārišnīh čahār dādīhā ud dastwarīhā\n\tud frazend-ēmēdīhā abāg ān ī xwēš zan xwēdōdahīhā warzīd ayāb framūd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "77.18",
+      "chapter": 77,
+      "locations": [],
+      "sourceText": "ud bīm ī az ān garān-wināhīh ī ōšmurd rāy aburnāyīg ī Weh-dēnān kē-š šīr-dādār nēst ud dādīhā dāyagānēnīdan\n\tud aburnāyīg ī a-sālār sālārēnīdan ud ān ī a-parwarišn dādīhā parwarišn dād ō dādīhā-parwarišnīh zāmēnīd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "77.19",
+      "chapter": 77,
+      "locations": [
+        "BA360/365",
+        "T60_118b"
+      ],
+      "sourceText": "ud mard ud zan ī wad-xēm pad āfrāh ud xwāyišn ayāb pad sam ud bīm ud abārīg [BA360/365] čāragīhā az ān wad-xēmīh ud abārōn-dādīh wardēnīdan\n\tud xwēdōdah ud hamāg-dēn ud dwāzdah-hōmāst ud yazišn ī ābān zōhr ī ātaxšān framūdan ud bār gilag ī Weh-dēnān ī a-čār wizārdan\n\tu-šān az ag-dēnīh pattāyēnīdan [T60_118b] ud čārīgtar wizārišn ī ān wināhīhā kerdan abēr frahaxtīgīh/frayādīgīh ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "78.1",
+      "chapter": 78,
+      "locations": [
+        "D7_333"
+      ],
+      "sourceText": "78om pursišn ∵\n\tān ī pursēd [D7_333] kū ēn āb ī pad iθā. xwarēd dādestān čē ast",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "78.2",
+      "chapter": 78,
+      "locations": [],
+      "sourceText": "ud mard ka-š yašt kardag ud wāz nē kunēd ud āb ī pad iθā . xwarēd ēn miswāy kē nēmag-ēw frāz kunēd/gīrēd nēmag-ēw bē hilēd ud dādestān čē ast\n\tud čiyōn ēn abāyēd dāštan ayāb nē u-š wināh čē ast",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "78.3",
+      "chapter": 78,
+      "locations": [],
+      "sourceText": "ud kē miswāy nēmag-ēw ud kamtar kū nēmag-ēw kunēd āb ī pad iθā . xwarēd tōzišn ī ēn wināh rōzgārīg ka kunēd čē ast\n\tud čē weh ka kunēnd kū ēn wināh az bun bē šawēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "78.4",
+      "chapter": 78,
+      "locations": [
+        "BA361/366"
+      ],
+      "sourceText": "kē-š yašt ī nāybar kerd ud āb ī pad iθā . xwarēd ud wāz nē hušk ud yašt [BA361/366] kunēd\n\tud ka yašt-ēw ī gētōxrīd ī xwad rāy bē framāyēd ēg-iš dādestān tis-iz weh ast ayāb nē ∵\n\tud ēn yašt ī gētōxrīd kerbag ham čiyōn yašt ī nāybar bawēd ayāb nē",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "78.5",
+      "chapter": 78,
+      "locations": [
+        "D7_334",
+        "T60_119a"
+      ],
+      "sourceText": "ud kē xwad [D7_334] nē [T60_119a] yašt ī gētōxrīd bē framāyēd ēg-iš kerbag čē ast\n\tu-š arzōmandīh ud mādag čē ast\n\tka nē xwad kunēd bē framāyēd tā ōy rāy bē kunēnd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "78.6",
+      "chapter": 78,
+      "locations": [],
+      "sourceText": "ud ōy kē-š yašt nē kerd estēd 15 sāl ast ēg-iš dādestān čē ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "78.7",
+      "chapter": 78,
+      "locations": [
+        "BA362/367",
+        "D7_335"
+      ],
+      "sourceText": "pāsox ēd kū srūd-gāhān mardōm āb ī pad iθā . xwarēd agar az a-tuwān a-čār bōzišnīg\n\tčē nē ān ī ahlaw pad a-tuwānīgīh āsterēd\n\tud ēdōn guft estēd kū ka-š drōn yašt ud wāz grift nē tuwān u-š adwadād suy ud tišn ayāb wēmārīh ī garān mad estēd ud pānagīh ī tan ī ahlaw rāy ka-š iθā aṣ̌əm vohī . ēk tuwān ayāb-iš ∵ aṣ̌əm . tuwān guftan [BA362/367] ān ī-š tuwān guftan ∵ bē guftan ud āb ud ayāb xwarišn ud ayāb darmān ī-š a-wizīrišnīg xwārīd ud ayāb xward u-š tan ∵ [D7_335] ud gyān bōxtan dastwarīhā",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "78.8",
+      "chapter": 78,
+      "locations": [
+        "T60_119b"
+      ],
+      "sourceText": "bē kē nē az ∵ a-čār āb ī pad iθā . xwarēd ud [T60_119b] wināhōmandīh\n\tbē ēn miswāy ī nibišt kū nēmag-ēw frāz grift ud nēmag-ēw bē hišt wēš-wināh-tar\n\tčē ka andar xwarišn miswāy pad ān ēwēnag dārīhēd ēg drāyān-xwarišnīh ī was-wināh ī garān",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "78.9",
+      "chapter": 78,
+      "locations": [],
+      "sourceText": "harw ēw pihw ī pad ān ēwēnag 300 stēr\n\tud harw ēw ǰār ī andar miswāy ī pad ān ēwēnag 300 stēr\n\tud harw ēw ǰār ī andar miswāy ī pad ān ī ēwēnag ī ka ∵ mizag ō dahan rasēd 3 stēr\n\tud harw ēw ǰār ī andar mizag pad miswāy ī čiyōn ān saxwan gōwīhēd 3 stēr wināh ī pad kemistīh guft estēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "78.10",
+      "chapter": 78,
+      "locations": [],
+      "sourceText": "ud tōzišn ōwōn weh frayādēd ka andar petītīgīh ī az ān wināh ī wirāyēd yašt xūb miswāy ud nōg ān wināh ī warzīdār bawēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "78.11",
+      "chapter": 78,
+      "locations": [
+        "BA363/368",
+        "D7_336",
+        "K35_190r"
+      ],
+      "sourceText": "kē-š pad ēn ēwēnag wirāstan nē tuwān pad xwāstag-dahišnīh 3 mard [BA363/368] yašt xwast ud warm [D7_336] ud nōg nāybar yašt ud harw rōz [K35_190r] pad yazišn-gāh drōn yašt ud xwarišn dādīhā xward ud miswāy xūb dāštan framūdan",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "78.12",
+      "chapter": 78,
+      "locations": [
+        "T60_120a"
+      ],
+      "sourceText": "ud ayārīh ī xūb yaštān kerdan pad nāybar [T60_120a] framāyišnīh ud bahr ī ālag ī <’p̄’t’’wwyh> wizārišnīhā ayār būdan ud ō ham ∵ wināh wizārišnīh sāzišnīg saham pad yazdān kām ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "79.1",
+      "chapter": 79,
+      "locations": [],
+      "sourceText": "70 nohom pursišn ∵\n\tān ī pursēd kū kē rāy kunēd nē framāyēd ēg-iš dādestān čē ast ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "79.2",
+      "chapter": 79,
+      "locations": [],
+      "sourceText": "pāsox ēd kū bē awēšān kē nāmčištīg andar dēn ī wizīd ī ān\n\tud kē yašt nē kerd estēd ī ka-iz wēš kerbag pas bē ō garodmān nē rasēd ī ka-iz wizīrēnīd estēd\n\tēn-iz ēdōn guft kū ōy kē-š *xwēdōdah kerdan nē tuwān ka gētōxrīd framāyēd kunēd Garōdmānīg šāyēd būdan\n\tēd ast wazurg frayādišnīg ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "80.1",
+      "chapter": 80,
+      "locations": [
+        "D7_337",
+        "TD4a 369"
+      ],
+      "sourceText": "80om pursišn ∵\n\tān ī [D7_337] pursīd kū ēn zīndag-ruwān [TD4a 369] čim čē ast\n\tud čē rāy framāyēd abāyēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "80.2",
+      "chapter": 80,
+      "locations": [],
+      "sourceText": "u-š čē framāyēd ēg-iš čiyōn abāyēd framūdan\n\tčiyōn weh bawēd ka yazēnd\n\tu-š kerbag meh-sūdīh čē ast ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "80.3",
+      "chapter": 80,
+      "locations": [
+        "T60_120b"
+      ],
+      "sourceText": "pāsox ēd kū nōg- [T60_120b] -widurdān ān ī 3 rōz andar āmār az yazišn paristišn a-wizīrišnīg\n\t\tčiyōn nōg-zādagān-iz andar ān tarrōgīh az parwarišn pāsbānīh abēr a-wizīrišnīgtar",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "80.4",
+      "chapter": 80,
+      "locations": [
+        "K35_190v"
+      ],
+      "sourceText": "ud ān a-wizīrišnig yazišn ī pad sidōš rāy mard ān ī xwēš [K35_190v] pidar ud ān ī pādixšāyīhā-zan ud ān ī aburnāyīg frazend ud ān ī a-waštīg bandag rāy pad bē-widerišnīh ān 3 rōz sidōš-yazišnīh framūdan frēzwānīg",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "80.5",
+      "chapter": 80,
+      "locations": [],
+      "sourceText": "ēn-iz guft estēd kū sidōš yašt nē šāyēd ayāb nē yazēnd\n\tud pas ka āgāhīh rasēd 3 rōz pad ān <yw’lk'> sidōš yazišn",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "80.6",
+      "chapter": 80,
+      "locations": [
+        "D7_338",
+        "TD4a_370"
+      ],
+      "sourceText": "čē kerbag ī yazišn ī-š xwad framūd ayāb-iš [D7_338] handarzēnīd ayāb-iš pad dād padiš ham-dādestān ast ka-iz šāyēd ēdōn ī pas az ān bē rāyēnīhēd\n\t\thamē [TD4a_370] ka bē ō rawāgīh rasēd ēg-iš andar sidōš pad āmār awiš frayādēd u-š bē ō frayād rasēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "80.7",
+      "chapter": 80,
+      "locations": [
+        "T60_121a"
+      ],
+      "sourceText": "ka ān ī pas az ān rawāgīhēd [T60_121a] pad ān ī āmār ī sidōš bē ō frayādan ayārīh rasēd ān ī pēš az ān ī-š xwad rāyēnīd ud andar ān gāh frayādīhād ēmēdīgtar ud ēwarīgtar",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "80.8",
+      "chapter": 80,
+      "locations": [],
+      "sourceText": "ast wizēhīdārīh ī abar xwēš ruwān ud bīm ī az ān rāy kū agar-išān frazendān sidōš nē framāyēnd ayāb andar ān hangām yaštan nē šāyēd andar xwēš zīndagīh ud čāragōmandīh ī xwēš ud āgāhīhā ud abēgumanīhā ud zīndagīh sidōš dādag xwēš ud zīndag-ruwān framūdan\n\tud ān-iz ī pad frazām rāyēnīdan abāyēd handarzēnīdan",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "80.9",
+      "chapter": 80,
+      "locations": [
+        "D7_339",
+        "K35_191r"
+      ],
+      "sourceText": "ud ka [K35_191r] harw 2 rāyēnīd ud abzōn ī kerbag ud burzišn [D7_339]\n\tud ka ān ī frazām nē šāyēd ayāb nē rawāgīhēd ān ī pēš kerbagīh frayādišnīg u-š padiš bōzišnīg andar-iz <’wt’y’tl> xwarrah/dast būd wazurg ud tuwānīg",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "80.10",
+      "chapter": 80,
+      "locations": [
+        "T60_122r",
+        "TD4a_371"
+      ],
+      "sourceText": "ud frazendān ī mard kē-š xwēš rāy rōz ī frazām yazišn ī sidōš was-iz kerbag [T60_122r] rawāgīh ēwar sahist [TD4a_371] u-š anīz frārāstīhā būd rāh ī ō abē-gumānīh rāy zīndag-ruwān rāyēnīdan\n\tud rōz ī frazām rāy sidōš ud abārīg-iz kerbagīhā bē ō frazendān rāyēnīd handarzēnīd abāg ān ī yazdān pad pērōzgarīh ud dēn ud xwarrah/dast andar <’wt’y’tl> xwarrah/dast šahr yazišngar was hēnd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "80.11",
+      "chapter": 80,
+      "locations": [
+        "D7_340"
+      ],
+      "sourceText": "pas-iz az dēwān kōxšišn ōwōn ast kū rōz ī-š widerišn az a-pādyābīh-ēw ī bē ō paymānag mad ī yazišn yašt kardagīhā ud hamāg yazišngarān ī šahr yaštan gumānīg bē būd\n\tud tā bē ō hāwištān šawēd yašt wirāstan hamāg yazišn kerdan nē šāyēd [D7_340] ud pad ān rāh paydāgīhēd wazurg sūd ī frayādišnīgīh ī-š az zīndag-ruwān yaštan",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "80.12",
+      "chapter": 80,
+      "locations": [
+        "T60_122v"
+      ],
+      "sourceText": "ud ēwēn zīndag-ruwān framūdan hangōšīdag sidōš ēdōn niyābag kū 3 rōz-šabān [T60_122v] paywastagīhā ud xwēšēnišnīhā hamwār yazišn-ēw ī srōš hamē rāyēnīd ud rawēd\n\tud ātaxš-ēw andar yazišn rōšnīhēd hangāmīhā bōy ī pāk bōyīhēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "80.13",
+      "chapter": 80,
+      "locations": [
+        "K35_191v",
+        "TD4a_372"
+      ],
+      "sourceText": "ud pad ēwēn ōwōn dāšt estēd kū andar 3 [K35_191v] rōz 15 yašt ī srōš ud 3 drōn ī andar bām-ēw pad šnūman ī ēwēn yaštan\n\tud ∵ rōz tasom [TD4a_372] wispred-ēw ī ardāy fraward yazēnd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "80.14",
+      "chapter": 80,
+      "locations": [],
+      "sourceText": "ruwānīg-nigerīdārān ī-mān dūdag abārīg wēš čēhīdārān ī kerbag ast kē andar ān 3 rōz hamāg-dēn ēw ī srōš ud harw rōz 3 drōn ī srōš yaštan\n\tud sidīgar šab andar bāmīy drōn 3 ī ēwēn yaštan ud xwāstag pad ruwān ēwēn uzēnag kerdan abāyēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "80.15",
+      "chapter": 80,
+      "locations": [
+        "D7_341"
+      ],
+      "sourceText": "kāmistan kerdan andar drōn ī ardāy fraward [D7_341] nāmčištīg bē kerdan\n\trōz ī 4om dwāzdah-hōmāst ēw ī ardāy fraward abārīg yazišn handāzīhēd framūdan",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "80.16",
+      "chapter": 80,
+      "locations": [
+        "T60_122r"
+      ],
+      "sourceText": "ud kē wēš ∵ -passandīhātar kāmistan yaštārān ān ī stāyišnīgtar ud wizīnīgīhātar [T60_122r] paydāgēnīdan\n\tu-š az yazišn pad baršnūm šust ud abārīg ī pākīh ī ēwēn abar tan ud ǰāmag kerdan",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "80.17",
+      "chapter": 80,
+      "locations": [],
+      "sourceText": "ud tā andar ān yazišngarīh nān az ǰōrdāy ī Weh-dēnān ārdag ud may az ān ī Weh-dēnān kardag ud gōšt az ān ī gōspand ī pad yazišn kušt estēd xwardan\n\tandar mān ī ātaxšān wehān raftan az anīy abārīg gyāg ī warōmand ud xwarišn warōmand pahrēxtan",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "80.18",
+      "chapter": 80,
+      "locations": [
+        "D7_342",
+        "K35_192r",
+        "TD4a_373"
+      ],
+      "sourceText": "pad ān ī xūb pahrēzišnīh [TD4a_373] ān yazišn andar mān ī ātaxš ī hamēšag-waxš ayāb anīy ātaxš warahrān rāyēnīdan [K35_192r] framūdan\n\tud kē-š wēš-kerbagīh u-š tuwān ast rāh ī kerbag was frāx\n\tkē-š kam tuwān pad ān ī-š tuwān [D7_342] bōzišnīg",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "80.19",
+      "chapter": 80,
+      "locations": [],
+      "sourceText": "a-čār rāy ēdōn paydāg kū nē ān ī ahlaw pad a-kām pad a-tuwānīgīh āsterēd ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "81.1",
+      "chapter": 81,
+      "locations": [
+        "T60_123a"
+      ],
+      "sourceText": "81om pursišn ∵\n\tān ī pursēd kū mard-ēw kē yazišn-ēw bē framāyēd dram bē dahēd ud mard kē-š yazišn padīrēd u-š [T60_123a] dram stānēd yazišn nē kerd ēg-iš dādestān čē\n\tud mard kē yazišn framūd ēg-iš dādestān čē ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "81.2",
+      "chapter": 81,
+      "locations": [],
+      "sourceText": "pāsox ēd kū yazišn kerbag ī nē kerd nē rawāgīhēd ud ō ruwān ī padīriftār kē-š xwāstag stānēd ud ān-iz ī framūdār kē-š xwāstag dād nē rasēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "81.3",
+      "chapter": 81,
+      "locations": [
+        "TD4a_374"
+      ],
+      "sourceText": "bē ōy ī framūdār ∵ az ān čiyōn-iš menišnīg-kerbagīh ēdōn ōstīgān ī-š xwāstag dād az ōy ī tuwān nē mānd ī-š kerbag ī menišnīgīhā xwēš\n\taz ān čiyōn-iš xwāstag dastwarīhā pad kerbag dād ēg-iš dādestān ēdōn čiyōn kē-š dēn rāy [TD4a_374] pad kerbag kerdan ziyān rasēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "81.4",
+      "chapter": 81,
+      "locations": [
+        "D7_343"
+      ],
+      "sourceText": "guft estēd kū-š [D7_343] yazdān ēdōn pāddāšnēnēnd ī-š nē pad ziyān abārīg hangārēd\n\tud čand-iš xwāstag pad mizd ī yazišn dād ēg-iš rāmišn bē ō ruwān rasēd čand ∵ gētīyīhā az ān xwāstag nīrmad šāyist hē būdan",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "81.5",
+      "chapter": 81,
+      "locations": [
+        "K35_192v",
+        "T60_123b"
+      ],
+      "sourceText": "ud ōy kē-š xwāstag stānēd u-š yazišn nē kerd ōwōn čiyōn-iš [K35_192v] ka-š and [T60_123b] šnāyišn čand az yazišn šāyist hē būdan az-išān frawahrān appurd škast hē\n\tu-š padiš āsterēd pad rūwān tōzēd ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "82.1",
+      "chapter": 82,
+      "locations": [],
+      "sourceText": "82om pursišn ∵\n\tān ī pursēd kū ōy ī mowmard hamāg-dēn ud abārīg yazišn abāyēd padīrift ayāb čiyōn bawēd ∵\n\tpāsox ēd kū",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "82.2",
+      "chapter": 82,
+      "locations": [
+        "D7_344"
+      ],
+      "sourceText": "mowmard hamāg-dēn ud abārīg yazišnīhā padīrift frēzwānīgīhā čē xūbīh ud nē xūbīh ud ∵ šāyist ud nē šāyist ī yazišn wizīn ud <pswl> ī yazišngarān ham mowmardān [D7_344] wehān šnāsēnd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "82.3",
+      "chapter": 82,
+      "locations": [],
+      "sourceText": "ud ka padīriftār ud rāyēnīdār ī hamāg-dēn ōy ī mowmard bawēd pad xūbīh rawāgīh ēmēdīgtar",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "82.4",
+      "chapter": 82,
+      "locations": [
+        "T60_124a",
+        "TD4a_375"
+      ],
+      "sourceText": "ān mowmard kē hamāg-dēn padīrēd agar-iš az bahr ī mowbedīh ud wisbedīh ∵ ud zandbedīh ud dehbedīh [TD4a_375] padiš ī dēn-burdārīh niyābag ān nīrmad estēd padiš uzēnišn u-š ō bahr ī [T60_124a] hamāg-dēn nē niyāz ēg-iš ān mizd ud pāddāšn ī hamāg-dēn bē ō ∵ yaštārān handāxtan ēwēn",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "82.5",
+      "chapter": 82,
+      "locations": [
+        "K35_193r"
+      ],
+      "sourceText": "agar-iš niyābag ī mowmardīh čiyōn sazēd nē dād estēd u-šān rāyēnišnīh nē mad estēd u-š bē ō nīrmad ī ān hamāg-dēn niyāz ēg-iš pad kār ud dastwarīh- [K35_193r] -kerdārīh ud arzānīgīh ud rāyēnīdārīh spās",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "82.6",
+      "chapter": 82,
+      "locations": [
+        "D7_345"
+      ],
+      "sourceText": "ud ka ēdōn kunēd ī ān hamāg-dēn xūbīhātar rāyēnīhēd ud ǰomāy yaštārān pad pāyag ī mowmardīh az sar āwurd ī hamāg-dēn bahr ī [D7_345] passazagīhā stānēd dastwarīhā u-š padiš arzānīgīh ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "83.1",
+      "chapter": 83,
+      "locations": [],
+      "sourceText": "83om pursišn ∵\n\tān ī pursēd kū dāšn ī yazišn čim nē abāyēd kāstan\n\tpad abzāyišn abāyēd dādan ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "83.2",
+      "chapter": 83,
+      "locations": [
+        "T60_124b"
+      ],
+      "sourceText": "pāsox ēd ıu\n\tdāšn yazišn nē [T60_124b] kāstan sazāg u-š čimīhā was ast",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "83.3",
+      "chapter": 83,
+      "locations": [
+        "TD4a_376"
+      ],
+      "sourceText": "ēk ēn kū dāšn xwāstag ī pad hāwand kerbag bē ō rāyēnīdārān ī kerbag rasēd\n\tahlaw-dād ud kerbag wazurg ast ud kerbag nē kāstan andar šnāyēnīdārān [TD4a_376] sazāgīh ī ēwar",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "83.4",
+      "chapter": 83,
+      "locations": [],
+      "sourceText": "ud ka mizd ud dāšn ī yazišn pad abzōn dahīhēd ud ān-iz abzōn ī dāšn ∵ abzōn ī rādīh ī ō yazišngarān abzōn ī kerbag ī frārāst kū burzišnīg ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "84.1",
+      "chapter": 84,
+      "locations": [
+        "D7_346"
+      ],
+      "sourceText": "84om pursišn ∵\n\tān ī pursēd kū dāšn yazišn nē kāhēnēnd ud pad abzōn dahēnd ēg-iš meh-dādestānīh pad čē ēwēnag ud čē [D7_346] rāy\n\tud pad čand dar šāyēd būd ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "84.2",
+      "chapter": 84,
+      "locations": [],
+      "sourceText": "pāsox ēd kū pad hāwand rawāgīh ī yazišn ī yazdān čand dāšn purrtar dahīhēd kerbag meh-sūdīh wēš\n\tu-š čim was",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "84.3",
+      "chapter": 84,
+      "locations": [
+        "K35_193v",
+        "T60_125a"
+      ],
+      "sourceText": "ud aziš ēn kū [T60_125a] xwāstag ī ō dar ī kerbag mad ud kām ud šnāyišn [K35_193v] ī yazdān uzēnišnīh ān-išān yaštārān ud abzāyēnīd frārōn\n\t\tbē az meh-dādestānīh kāstan abārōn",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "84.4",
+      "chapter": 84,
+      "locations": [],
+      "sourceText": "ka dāšn ī yazišn frāxwīhā dahīhēd yazišngarān kē-šān pad was ranǰ uzēnag ud Abestāg xwahēd ud gāhān srūd\n\t\tu-šān yašt az mizd ī yaštārīh bahr ayābēnd ud uzēnišn ud padēx wābarīgān bawēnd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "84.5",
+      "chapter": 84,
+      "locations": [
+        "D7_347",
+        "TD4a_377"
+      ],
+      "sourceText": "ud hamāg-dēn-iz padīriftārān kē ēmēd ī frārōn sūd rāy pad dūr bīmgen gyāg ud rāh ēwarzēnd ud ahlāyīh [TD4a_377] kāmagān bē ō dēn hāzēnd ud kerbag ayābēnd ud hamāg-dēn yazišn yazdān [D7_347] padīrēnd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "84.6",
+      "chapter": 84,
+      "locations": [
+        "T60_125b"
+      ],
+      "sourceText": "ud az frārōn tuxšāgīh bahr ud nīrmad āšnāg tā abar padīriftārān yaštārān ī hamāg-dēn sūdōmandīh ud wazurg-bahrīh wēš windīhēd [T60_125b] ud wēnīhēd tā bahr ī ∵ abārīg pēšag",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "84.7",
+      "chapter": 84,
+      "locations": [],
+      "sourceText": "frazendān-iz ī hērbedān ud hāwištān ō wāzag <PLHWNt'> tuxšēnd u-šān hāxtan ārzōgtar ud was-iz ō hamāg-dēn padīrēnd ud nixwārišnīgtar bawēnd\n\tud ham frārōn ī pattāyišnīgtar ud abzōnīgtar ud wehān rāh ī ō ruwān-bōzišnīh frāxtar bawēd ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "85.1",
+      "chapter": 85,
+      "locations": [],
+      "sourceText": "85om pursišn ∵\n\tān ī pursēd kū ka dāšn kāhēnd ziyān čē šāyēd būd ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "85.2",
+      "chapter": 85,
+      "locations": [
+        "K35_194r"
+      ],
+      "sourceText": "pāsox ēd kū čiyōn xūb-dāšnīh ī yazišn rāy hamāg-dēn padīriftārān nīrmad hēnd ud yaštārān-iz bahr hēnd ud harw 2ān uzēnišn bawēnd [K35_194r]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "85.3",
+      "chapter": 85,
+      "locations": [
+        "D7_348"
+      ],
+      "sourceText": "frazendān ī hāwištān ō wāz <PLHWNt'> passand xwāst hāwandīgtar [D7_348] bawēnd\n\t\tframāyišn ud padīrišn yazišn hamāg-dēn rawāgtar bawēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "85.4",
+      "chapter": 85,
+      "locations": [
+        "T60_126a",
+        "TD4a_378"
+      ],
+      "sourceText": "ēdōn-iz ka hušk-wāzāragānīhā yazišn mizd [T60_126a] kāstan rāy padīrift šawēnd\n\t\tud az padīriftan [TD4a_378] abāz framūdan pad dūr rāh and bahr nē ayābēnd čiyōn kē karbās xrīnēd abāz frōšēd ī andar xwēš šahr",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "85.5",
+      "chapter": 85,
+      "locations": [],
+      "sourceText": "ud yazišngarān-iz kē pad was ranǰ wāz <PLHWNt'> passand handōxtan ud mizd ī ruwānīg-iz ast ud yazišn andak pad <’wcyt'> ayābēnd ī padiš tang zīyišn\n\tud az burd-ranǰ pašēmān az ham pēšag afsard-menišnīh bawēnd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "85.6",
+      "chapter": 85,
+      "locations": [],
+      "sourceText": "ud frazendān-iz ī hāwištān bē ō mizdwarīh ī karbās frōxt ud abārīg pēšag ī kam-ranǰīhā šāyēd hammōxtan urwāzēnd\n\tnōg-madagān az wāz <PLHWNt'> ud <PLHWNt'>-wāzān az passand xwāst ud passandagān-iz az hamāg-dēn padīrift ēdōn afsard abāz-āhang bawēnd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "85.7",
+      "chapter": 85,
+      "locations": [
+        "D7_349",
+        "T60_126b"
+      ],
+      "sourceText": "ud ān-iz kē xwad pad [D7_349] framūdan taftīg-menišn padīriftār ī hamāg-dēn kam ayābēnd\n\tud ān-iz ī sazāg nē ayāft nē ast-iz ī ka ō dranǰān framāyēnd ud afsard-menišn ī kerbag-framādārān [T60_126b]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "85.8",
+      "chapter": 85,
+      "locations": [
+        "K35_194v"
+      ],
+      "sourceText": "ud dusrawīh ī pēšag ud hāwištān abzōn ī aziš kam-rawāgīh ī yazdān-yazišnīh ud sturdīh bawēd ī wehān ō ruwān-bōzišnīh ī az ān mar ∵ [K35_194v]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "86.1",
+      "chapter": 86,
+      "locations": [
+        "TD4a_379"
+      ],
+      "sourceText": "86om pursišn ∵\n\tān ī pursēd kū čiyōn weh ka dahēnd dāšn ī [TD4a_379] yazišn",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "86.2",
+      "chapter": 86,
+      "locations": [
+        "D7_350"
+      ],
+      "sourceText": "pāsox ēd kū čiyōn šāyēd ēdōn čiyōn yazišn ī yazdān wēš rawāgīhēd ud xwāstag bē ō ān kerbag wēš rasēd padīriftārān ud yaštārān xūb-bahrīhā rāy\n\taz ham frārōnīh an-afsardtar u-š padiš tuxšāgtar bawēnd\n\tčimīg-ēw ī paydāgīg pad ǰud-kunišnīh andar nēst ud pad ān raft ī az pēšēnīgān ī wehān andar āwurd [D7_350] xūbtar saham ud čimīgīhātar ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "87.1",
+      "chapter": 87,
+      "locations": [
+        "T60_127a"
+      ],
+      "sourceText": "87om pursišn ∵\n\tān ī pursēd kū az xānag-dān dūdag ī abāg Ērān Weh-dēnān pēš harw hamāg-dēn-ēw ī pad-zōhr ī pad būm ī pārs bē yašt hēnd ēg-iš [T60_127a] dāšn 400 dram kamist ud 350 dram hamē dād ham",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "87.2",
+      "chapter": 87,
+      "locations": [],
+      "sourceText": "ud nūn ast grōh-ēw ī ka-šān dāšn az 400 ayāb az 350 dram tis-ēw abāz kāhēnēm ēg-imān aziš nē padīrift\n\tud gōwēnd kū kam az 400 ayāb az 300 dram nē nē padīram",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "87.3",
+      "chapter": 87,
+      "locations": [
+        "K35_195r",
+        "TD4a_380"
+      ],
+      "sourceText": "ud ast grōh-ēw kē-mān xwad awiš hamē āyēnd ud hamē gōwēnd kū pad 300 hamē 50 dram 2 hamāg-dēn ī pad-zōhr čiyōn ān kē pēš pad [TD4a_380] 400 hamē framūd [K35_195r] hēd bē rāyēnām bē amāh 400 framāyēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "87.4",
+      "chapter": 87,
+      "locations": [
+        "D7_351"
+      ],
+      "sourceText": "ud grōh-ēw az mowmardān hamē gōwēnd kū awēšān nē dastwarīhā ayāb nē ∵ [D7_351]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "87.5",
+      "chapter": 87,
+      "locations": [],
+      "sourceText": "pāsox ēd kū ān hērbed ī pēšēnīgān abar hamāg-dēn ēw ī pad-zōhr dāšn 400 ayāb 350 dād čimīg frārōn ostīgān dāšt ud sazāg",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "87.6",
+      "chapter": 87,
+      "locations": [
+        "T60_127b"
+      ],
+      "sourceText": "ud ka-š anīy tis nēst ī ān rāy ǰuttar hamāg-dēn-ēw ī pad-zōhr kē-š 4 gōspand ī pāk padiš kunēnd ēdōn čiyōn dastwarān-iz čāštag [T60_127b] harw ēk ātaxš az ēk gōspand ēk zōhr dahēnd ud pardaxt ī zōhr bē ō ātaxš kē-š zōhr aziš āwurd bē ō anīy ātaxš ī az ān zōhr ud zōhr ud pādyābīh pad paymānīh pad 30 gām dārēnd\n\tud pad passand ud awestwār ud abar-mad sālārān yazēnd\n\tud ka andar gyāg padīrift ud rāyēnd\n\tud ka az šahr ī dūr padīrift 350 dram mizd tarāzēnīdārīhā",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "87.7",
+      "chapter": 87,
+      "locations": [
+        "D7_352",
+        "TD4a_381"
+      ],
+      "sourceText": "ud andar ardaxšahr-xwarrah pad ayādagīh ī man ān kē-š kam az 300 dram padīrēnd frahang kerdan [D7_352] pad ayād dāštan ud hamāg-dēn ī sāxtag 150 dram rasim būd az [TD4a_381] dēwān ī ardaxšahr-xwarrah paydāg",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "87.8",
+      "chapter": 87,
+      "locations": [],
+      "sourceText": "ud hu-fraward-iz ādur-farnbay ī farroxzādān ī abartar hu-dēnān pēšōbāy būd hamgōnag wizīrēnīd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "87.9",
+      "chapter": 87,
+      "locations": [
+        "K35_195v",
+        "T60_128a"
+      ],
+      "sourceText": "ud nūn-iz pad 150 dram pad-iz 120 dram ān ī nē pad-zōhr hamē [K35_195v] rāyēnēnd\n\tu-š čim niyāzōmandīh ī hāwištān kē ān niyāz rāy pad ēmēd ī kār wēš ayāftan hamē kāhēnēnd [T60_128a]\n\tud kam-mizdīh rāy niyāzōmandtar ud a-čārtar ud pad kamist-mizdīh wīdwartar hamē bawēnd\n\tud pad rāh abzār-kunišnīh ud hamāg-dēn-xwāhišnīh ud kār ud bār ī hāwištīh hamē ānābīhēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "87.10",
+      "chapter": 87,
+      "locations": [
+        "D7_353"
+      ],
+      "sourceText": "ud ān kē pad 350 dram 2 hamāg-dēn rāyēnīdan padīrēd\n\t\tagar-iš ō hamāg-dēn-yazišnīh hamē dahīhēd 350 dram ast ud ēk hamāg-dēn ēw\n\t\tud ēk-ēw hamāg-dēn [D7_353] hamē padīrēd ud ham-ōwōn xūb-kārīhā ud hu-paywastīhā čiyōn ān kē ēk hamē padīrēd 2 hamāg-dēn rāyēnēd\n\tud awestwārīhēd kerbag ī az rawāg-yazišnīh ī yazdān rāy ō ān kē 2 hamāg-dēn yazēnd framūdan dastwarīhātar",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "87.11",
+      "chapter": 87,
+      "locations": [
+        "T60_128a",
+        "TD4a_382"
+      ],
+      "sourceText": "bē ōy kē pad 350 dram 2 hamāg-dēn padīrēd bē agar-iš as xwēš xwāstag awiš nihēd tā-š ān raftan passand [TD4a_382]\n\tčiyōn andar dūr rāyēnēnd rāyēnīdan nē tuwān ma agar az ān čimīhā padīrēd ī-mān pad anīy dar nibišt ud abērtar ō niyāzōmandīh [T60_128a]",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "87.12",
+      "chapter": 87,
+      "locations": [
+        "K35_196r"
+      ],
+      "sourceText": "ud mānāgtar andar pēšēn zamānag būd az hāwištān kē-šān āgenēn duš-sāzagīh ud hamēmālīh kerd\n\tud čiyōn andar ēwēn-nāmag nibišt az gōwišn ī handarzēnāg ēw bē ō hāwištān areškenīh ud sōrgenīh ud duš-sāzagīh [K35_196r] pad ašmāh kam-brāzišnīgtar ud abar ašmāh kōxšīdārtar",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "87.13",
+      "chapter": 87,
+      "locations": [
+        "D7_354"
+      ],
+      "sourceText": "u-š abāg kōxšīd [D7_354] andar ān zamānag kē wazurg-bahrīh būd kē-šān ān wazurgīh wasīh ī bahr rāy pad arešk ud purdīd ēk ∵ ō did\n\tu-š nūn-iz az kam-bahrīh kē-šān az ān bē niyāz ōwōn ī appurīh rāy rāh ī gyān-bōzišnīh rāy hamē čandēnēnd čiyōn-im andar anīy dar hangōšīdag nimūd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "87.14",
+      "chapter": 87,
+      "locations": [
+        "T60_128a"
+      ],
+      "sourceText": "ud ka awēšān kē niyāz ī kēš ayāb niyuruzdīh ī xrad rāy āgenēn hamēmālīh kunēnd ud dēn-dōstān ō harw 2 kustag abaxšāwandīhā hu-čašmīhā ud raftan ī ∵ pasēnīgān pad ōstīgān- [T60_128a] -kārīh nigerīdan čimīg ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "88.1",
+      "chapter": 88,
+      "locations": [
+        "D7_354 end",
+        "TD4a_383"
+      ],
+      "sourceText": "88om pursišn ∵\n\tān ī pursēd kū mard-ēw ī [TD4a_383] ka andar xwēš tan abar menēd kū wāhmān gāh [D7_354 end] bē ō pārs šawam and xwāstag pad dastwarīh dastwarān ātaxšān rāy abārīg deh čiyōn meh-sūdīhātar bawēd bē daham\n\tka xwad bē ō pārs nē āyēd xwāstag čiyōn-iš menīd pad abzōn az bē dastwarān frēstēd kū čiyōn meh xūb ud abzōn az ān bē ō dastwarān frēstēd kū čiyōn meh-sūdīhātar ast pad hāmōyēn ātaxšān abārīg dar uzēnag kunēd ēg-iš raftārīh ī āmad ī ō pārs ān kār rāy wināh bawēd ayāb nē ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "88.2",
+      "chapter": 88,
+      "locations": [
+        "K35_196v"
+      ],
+      "sourceText": "pāsox ēd [K35_196v] kū agar-iš madārīh frēzwānīg bē pad menišn padīrēd ēg-iš xwēš menišnīg frazāmēnīd frēzwānīg\n\tbē pad a-čāragīh tā nē rāyēnēd nē bōzišnīg\n\tka-iz-iš xwad rasišnīh nē čār kas ī pad gyāg ī ōy ī ō mar abērtar āyēd nē pad padīrišn dārēd weh-menišnīh nē-iz frārāst padīrišnīg bē kerbag-ārzōgīhā ud uskārišnīg ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "88.3",
+      "chapter": 88,
+      "locations": [
+        "TD4a_384"
+      ],
+      "sourceText": "hu-dahišnīh harw gāh abar [TD4a_384] kerbag šāyēd kerd\n\tud ast gumānīg nē šāyēd kerd ud hudahišn uskārišn ārzōgēnīd čimīg frārōn\n\tān ī ka-š tuwān kunēd burzišnīg\n\tka nē a-wizīr padiš bōzišnīg u-š nē frēzwānīg čē kerbag nē paydāgēnīd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "88.4",
+      "chapter": 88,
+      "locations": [],
+      "sourceText": "ka xwad tuwān rāyēnīdan weh\n\tka-š ǰuttar awestwār ī passazag abar gumārd ud wizīdār-kunišnīh frazāmēnīd sazāg ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "89.1",
+      "chapter": 89,
+      "locations": [],
+      "sourceText": "89om pursišn ∵\n\tān ī pursēd kū awēšān kē a-hōš a-dēnīh hēnd a-marg dād estēd kē čand hēnd u-šān a-hōšīh tā čē sāmānag",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "89.2",
+      "chapter": 89,
+      "locations": [],
+      "sourceText": "harw ēk pādixšāyīh kū gyāg dārēnd ud ān gyāg kū pādixšāyīh dārēnd mardōm hāmōyēn Weh-dēn hēnd ayāb čiyōn hēnd\n\tud ātaxš ī warahrān yašt kardag ī būd ayāb čiyōn bawēd\n\tu-šān ēk pādixšāy tā čē sāmānag ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "89.3",
+      "chapter": 89,
+      "locations": [
+        "K35_197r",
+        "TD4a_385"
+      ],
+      "sourceText": "pāsox ēd kū xwadāy ī <’’wyh> xwarrah kišwar ī [K35_197r] xwanīrah 7 guft estēd\n\tēk yōišt ī friyānīyān\n\tēk Abestāgīg xamāiiīš\\γ/at̰ ∵ [TD4a_385] nām ī ham-friyān pus\n\tēk fraδāxšt ∵ humbīgān pus ∵\n\tēk ašauuazaz ∵ nām ī pōrdaxstīh pus ∵\n\tēk wan ī ǰud-bēš\n\tēk gōbed-šāh\n\tud ēk pišyōtan kē az čihrōmēhan xwānīhēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "89.4",
+      "chapter": 89,
+      "locations": [],
+      "sourceText": "gōbed-šāh xwadāy abar gōbed-būm ham-wimand ī ō ōy *Ērān-wēz pad bār ī āb ī dāytīy\n\tabar nigāh dārēd ān ī gāw ī haδaiiąs ∵ kē-š padiš bawēd spurr-sagrīh ī hammis mardōm",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "89.5",
+      "chapter": 89,
+      "locations": [],
+      "sourceText": "pišyōtan xwadāyīh pad kang-diz\n\tānōh mānēd pad kang-diz ī bāmīg ī-š pad xwarrah kerd ābādag siyāwaš ī bāmīg ī kayānīyān xwānīhēd\n\tkang raftār u-š pad mēnōy nērōgīg warz winnārd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "89.6",
+      "chapter": 89,
+      "locations": [],
+      "sourceText": "xwadāyīh Kay-Husrōy pad burz bālist ī kōfān ī andar Ērān ud tūran deh\n\tānōh ast wazurg xwarrah ud ātaxš warahrān ī abēzagīh srāyišn ī mānsr warzišn ī dēn pahrist estēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "89.7",
+      "chapter": 89,
+      "locations": [],
+      "sourceText": "andar-iz ōy <wlsmn> pad hazangrōzimān brīn ud ham-ayār ud ham-bar ī andar-iz abārīg ān kustag wazurg ast rawāgīh ī dēn kerbag",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "89.8",
+      "chapter": 89,
+      "locations": [
+        "TD4a_386"
+      ],
+      "sourceText": "bē kū-š gyāg gōkān ī-šān čiyōnīh [TD4a_386] ast ī-m an-uskārd\n\tud ēd-iz čē-m an-ayād",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "90.1",
+      "chapter": 90,
+      "locations": [
+        "K35_197v"
+      ],
+      "sourceText": "90om pursišn ud pāsox ∵\n\t ān ī pursīd ∵ kū [K35_197v]\n\t āsmān az čē kardag ast pad čē winnārd estēd ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "90.2",
+      "chapter": 90,
+      "locations": [],
+      "sourceText": "pāsox ēd kū āsmān ast gerd ud frāx buland u-š andarrōn hāmōn frāx-xāyagīhā ∵\n\t u-š gētīy-ēw rōšnīh\n\t sag ī hamāg sagān saxttom hu-čihrtom\n\t u-š mēnōy a-parwand amāwand ud <’ylp> čiyōn winnerd ud tagīg artēštārān",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "90.3",
+      "chapter": 90,
+      "locations": [],
+      "sourceText": "ān stī ī āsmān tā mad ān Druz ī čandēnāg mad ī abē-niyāz būd az winnārāg\n\t dānāgān čiyōn-išān guft kū xrad abar gugāh kū kē tan ī xwad nē čandēnāg u-š nē ast čandēnāg\n\t ud a-niyāz az winnārāg",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "90.4",
+      "chapter": 90,
+      "locations": [],
+      "sourceText": "čē rōšn ō dānāgān tisān parwarēnd ud andar-iš ēwēnag ǰumbag-iz ǰumbāgān nē ǰumbāgān čiyōn ǰumbāgīh abar mēnōyān a-ǰumbāgīh abar gētīyān gōwīhēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "90.5",
+      "chapter": 90,
+      "locations": [
+        "TD4a_387"
+      ],
+      "sourceText": "nē ǰumbāgān nē ǰumbīhēnd tā-šān ǰumbīhēnd ǰumbāgān pad ǰumbišn zōr\n\tud ān ǰumbāgān ōwōn ǰumbēnāg ∵ ud anīy ǰumbēnd ī xwad pas ǰumbēnd ī a-ǰumbāg ǰumbišnīg\n\tčē rāy ādūg [TD4a_387] ǰumbēnīd anīy pad ǰumbišn ī xwad",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "90.6",
+      "chapter": 90,
+      "locations": [
+        "K35_198r"
+      ],
+      "sourceText": "čiyōn ǰumbišn kunišn ast kunišn nē bawēd\n\tbē pas az ān paydāgīhēd pad xrad kū ǰumbēnāgān ǰumbēnāgīh pēš az ǰumbišn pad kunišn būd hēnd a-ǰumbenīd\n\tud pasīhā pad kunišn ǰumbēnīd hēnd ǰumbēnāgīh pasīhātar pad-išān ǰumbēnāgān zōr ǰumbēnīd\n\tud [K35_198r] a-ǰumbēnāgīh aziš ēwarīhēd ka ǰumbišn kunišn ast kunišn nē bawēd\n\tpasīhā ān pēš-kunišn <t’šyhkykyh’> winnerdag ud a-ǰumbīd bawēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "90.7",
+      "chapter": 90,
+      "locations": [
+        "T60_128a cont.",
+        "T60_131b_cont.&D7_355_cont."
+      ],
+      "sourceText": "gōhrān bē az niyāz ī az ranǰ ī winnārdār aziš ǰudāgīhēd kū ǰumbišn pad harw kunišn ī bawēd a-ǰumbēnāgīhā winnerdagīh bē-iz az nihān kunišn ī ka pad nihān kunišn [T60_131b_cont.&D7_355_cont.] a-ǰumbīhist xwad ast a-ǰumbišn ud a-čandišn [T60_128a cont.] a-ǰumbistīhā winnerdag",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "90.8",
+      "chapter": 90,
+      "locations": [
+        "T60_132a&D7_356",
+        "TD4a_388"
+      ],
+      "sourceText": "ud ka mad ō āsmān ān ī čandēnāg ud kōxšīdār Druz aziš čandēnīd āsmān ∵\n\tčē andar āsmān paywast ān ī and wisp-čār dādār [T60_132a&D7_356] pad xwēš wisp-tuwānīgīh ud ān hu-dahāg ud tagīg wād čēr abarwēz ašō’ān frawaxš ud wasān mēnōyān ī [TD4a_388] weh-xwarrah-abāgīhā payrāst ō winnārišn ī āsmān",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "90.9",
+      "chapter": 90,
+      "locations": [
+        "K35_198v"
+      ],
+      "sourceText": "čē ān ī xwad nē čandēnāg ka ēdōn čandēnāg niyāzīg ō winnārāg\n\t pad winnārišn ī ōy wisp-dānāg ō gētīy ī āsmān gumēxt\n\tud ān ī abarwēz ōzōmand mēnōy kē-š ast čihrīg-čandišnīh ud kāmag-čandišnīh az ērīh ul-āhang az ulīh ēr-āhang kerd kū pad ān čihrīg čandišnīh ham-āhangīh bawēd ham-winnerd-estādagīhā ud a-čandišnīg pad ān zōr ī kāmag-čandišnīh\n\t ēdōn ēn wād-iz aziš kām [K35_198v] dādār ī wisp-wehīh",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "90.10",
+      "chapter": 90,
+      "locations": [
+        "D7_357",
+        "T60_128b",
+        "T60_132b"
+      ],
+      "sourceText": "hangerdīg gōwīhēd kū āsmān andar petyāragōmandīh čandēnīd Druz\n\t winnerd wād frawahrān pad xwarrah/dast ī dādār\n\tandar a-petyāragīh [T60_128b] ka-š [T60_132b] nēst [D7_357] čandēnāg\n\twinnerdag pad xwad-čihrīh ud xwad-zōrīh winnārāg\n\trōz/ranǰ ī winnārišn nē ǰumbīhēd bē pad nām ī dāmān kām ī āfurrāg ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "91.1",
+      "chapter": 91,
+      "locations": [
+        "TD4a_389"
+      ],
+      "sourceText": "91om pursišn ∵\n\t ān ī pursēd kū ābīhā ud rōdīhā kadām meh ud weh\n\tardīwsūr meh ayāb abārīg āb\n\tayāb Weh meh ud abārīg\n\tardīwsūr [TD4a_389] kū gyāg ast ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "91.2",
+      "chapter": 91,
+      "locations": [],
+      "sourceText": "pāsox ēd kū āb ī ardīwsūr { ǰud az ardīwsūr} and mehīh ast čand hamāg āb ī andar gēhān ǰud az arwand\n\tud andar frāxkerd zrēy pādixšā abar 1000 ābdān 1000 war ī ābān",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "91.3",
+      "chapter": 91,
+      "locations": [],
+      "sourceText": "u-š wāspuhragānīgtar gyāg ānōh tazēd ān ī ardīwsūr āb andar wēšag bun ī harwisp-tōhmag kē-š padiš ēdōn sad-sardagān urwarān ī dārēnd wisp-ēwēnagān bēšazišn",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "91.4",
+      "chapter": 91,
+      "locations": [
+        "D7_358"
+      ],
+      "sourceText": "ud gumēzīhēd ī az bēšaz urwarān was-zōr ī bēšazāyišnīh ō yōǰdahrān [D7_358] ābān čiyōn ast pākān ∵ gōhr kē hāzēd a-dēn ō xwēš\n\tēdōn-iz ast gōhr kē ayābēd āb ō xwēš",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "91.5",
+      "chapter": 91,
+      "locations": [
+        "K35_199r",
+        "T60_133a"
+      ],
+      "sourceText": "ud pad ān [T60_133a] ī <’p̄’’n> ī zōr abar tazēd ān ī ardīwsūr āb pad Harburz\n\tud tā-iz bālāy ī [K35_199r] star-pāyag tazēd\n\tud andar yōǰdahrīh bēšazāyišnīh\n\tud tā-iz ō hugar buland ī harwisp-pēsīd ī bāmīg\n\tud az ānōh nigūnīhēd rēzišnīg pad 1000 wīr-bālāy ō burz kōf usindom ī ast pad mayān ī zrēy ī frāxkerd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "91.6",
+      "chapter": 91,
+      "locations": [
+        "TD4a_390"
+      ],
+      "sourceText": "ud az ān rēzišn ī ābān ān ī wād damišn ud wāyišn ī harw šab andar bām ī ōš bē <lyyt>tom paššinǰišn pad haft kišwar [TD4a_390] bē rasēd\n\tu-š aziš waxšišn ī urwarān ud yōǰdahrīh bēšazāyišnīh bawēd ī hammis dāmān\n\tān nam ud srešk xwānīhēd āb aspō.kerpām ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "92.1",
+      "chapter": 92,
+      "locations": [
+        "D7_359",
+        "T60_133b"
+      ],
+      "sourceText": "92om pursišn ∵\n\t ān ī pursēd kū Tištar āb az kadām [D7_359] gyāg stānēd ud čiyōn abar abr dahēd\n\tud abr čiyōn bē rawēnēd ud čiyōn wārēnēd pad gēhān\n\tkōxšišn abāg dēwān čiyōn kunēd ud abāg kadām dēw kunēd\n\tud ēn ī ka tadarg [T60_133b] ud wafr hamē āyēd čiyōn abāg ōy tadarg ud wafr hamē bawēd\n\tud kē abāz ōy tadarg ud wafr kunēd ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "92.2",
+      "chapter": 92,
+      "locations": [],
+      "sourceText": "pāsox ēd kū dastwarān ēdōn guft estēd kū Tištar bē gyāg ēw <w’lwk> xwānīhēd kū andar ān zrēy abdom gyāg ī pālāyišn ast nē ēwēn ī awestānēnišn ud wārēnišn\n\taz abārīg harw gyāg āb stānēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "92.3",
+      "chapter": 92,
+      "locations": [
+        "D7_360",
+        "K3_199v",
+        "TD4a_391"
+      ],
+      "sourceText": "u-š yazdān ī awestānišnīh mēnōy-kārīh pad gētīy-kārīh abērtar 2 ēwēnag\n\tēk ān nam ī pad ān būm andarwāy padiš bārīkīhā ud dūd-mānāgīhā [TD4a_391] ud māzanīg-gerbīhā ul [K3_199v] hanǰīhēd ud az rōdān <’wpl>\n\tēk ān ī pad nērōg ī hudahāg wād [D7_360] ud damišn ī wazurg xar ud zōr ī čandišnīh mēnōyān az wazurg zrēy <pwl’wzw’yh’> ō abartar damēd padiš abrān damēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "92.4",
+      "chapter": 92,
+      "locations": [
+        "T60_134a"
+      ],
+      "sourceText": "ud pas andar ān abr pad wazurg zōr ī tagīg wād ō kū abāyišn tazēd kū an-abāyišn wardēnēd tā ka ō abāyišn [T60_134a] wāzēnēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "92.5",
+      "chapter": 92,
+      "locations": [],
+      "sourceText": "ud ka abāyišn wārēnēd ud abāyišn-handāzagīhā sūd-abgārīhā abar gyāgān rōdestāgān baxšēd pad drayāb-kārīh ud wārēnēd\n\tud padiš nōg āb-zan ud nōg tazišn ud nōg bēšazāyišnīh ō urwarān nōg waxšišn ud nōg zargōnīh ō zamīgān ud nōg yōǰdahrīh ō gōspandān ud nōg zāyišn ud nōg hu-pēmīh ō abārīg dāmān ud nōg bām ud nōg hu-gōnīh dahēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "92.6",
+      "chapter": 92,
+      "locations": [
+        "D7_361"
+      ],
+      "sourceText": "ud padēxwīh ī gēhān ud sūd ud frayādišn ī weh dahišnān abzāyenēd\n\tud ǰud az wazurg <w’c'> ī xwarrah-kārīh ī mēnōyān pad ān ī warzag-kardīhā ud mēnōy- [D7_361] rāzīhā kār ud <(w)ywpt'>kārīhā ayārīhēd ud bē ō xwarrahōmand",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "92.7",
+      "chapter": 92,
+      "locations": [
+        "K35_200r",
+        "T60_134b",
+        "TD4a_392"
+      ],
+      "sourceText": "tištar pad āb-stanišnīh wazurg zōr ī gardēnāgān wādān kē pōyēnd gardišnīg tazišn ud damišn abar stānēd frāyēd āb ī [TD4a_392] yōǰdahr abar ān ī ulīg ud abar burd ī andarwāy ō abartar\n\tčiyōn ān wēnīhēd kū abāg garrānīh ud [T60_134b] ud <snyykyh> ī gil pas-iz paydāgīhēd [K35_200r] andar dašt ka pad tazišn ī gardišnīg wād abar handāzēd ud stūn homānāg ī az xāk dūr barēd andarwāy\n\tud xwānīhēd wād gardag",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "92.8",
+      "chapter": 92,
+      "locations": [],
+      "sourceText": "čiyōn sabuktar ast āb az xāk ud zōrīg-tazišntar āb ī andar zrēy az ān ī andar dašt ast\n\tēdōn-iz wēš-paymāntar ud dūr-ul-barišntar ān āb ī zrēyīg az xāk ī daštīg",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "92.9",
+      "chapter": 92,
+      "locations": [
+        "D7_362"
+      ],
+      "sourceText": "čiyōn andar mayānag pad mayānag tazišn ī wād\n\tud wād gardag ī mayān andar frāx dašt frāyēd <w’’> kōf [D7_362] purrīh zōrīh tazišn ī wādān\n\twād gardag abēr burz ud wazurg wēnīhēd ud āšnāgīhēd ēdōn-iz āšnāg dīdārīg andar-drayāb-rawišnān",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "92.10",
+      "chapter": 92,
+      "locations": [
+        "T60_135a"
+      ],
+      "sourceText": "ān purr ud ∵ was-rēzišn āb ī pad zōr ud xwarrah ī mēnōyān yazdān ān ī tištar kār sālārīh\n\tud pad-iz ān ī čihrīg <’p̄’’ny> zōr ud pad-iz nerōg <yylt>išnīg ud tazišn ulīg wazišn ī wādān ul [T60_135a] damīhēd ō andarwāy ud aziš wārēd purr wārān\n\tčiyōn awēšān kē dīd <wšmwlt'> ud was purr gugāh",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "92.11",
+      "chapter": 92,
+      "locations": [
+        "TD4a_393"
+      ],
+      "sourceText": "ud ān dēw [TD4a_393] ī tištarīg kōxšēd u-š rāyōmand tištar padīrag ud ān-ōwōn abārōn-kōxšišnīh dādīhā abāz zanēd dēw ast ī Apaoš nām ī wizarīhēd <’p̄’wš>",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "92.12",
+      "chapter": 92,
+      "locations": [
+        "D7_363",
+        "K35_200v"
+      ],
+      "sourceText": "ud pad-iz ān ī abardōm ud nidom āb kōxšēd ud hōšēnēd\n\tud kāmag ān dēw-iz 3 bār kōxšēd\n\tfradom pad wārān nē būdan ud did pad gyāg ī ziyān-kār waštan ud sidīgar pad gyāg ī [K35_200v] abē-sūd waštan\n\tud kōxšišn čiyōn mast [D7_363] asp ō asp",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "92.13",
+      "chapter": 92,
+      "locations": [
+        "T60_135b"
+      ],
+      "sourceText": "u-š spōzēd tištar az zrēy ud tā rawāgīhēd mādīyīg pāk abē-wisinnišnīh ī ān ī hām-gēhān hu-sūd warān-kerdārīh\n\tud ān ī abarwēzīh ud abar-ōzīh ī tištar abar dēw az ān ī ∵ xwēš meh-farroxīh az ān ī-š nērōgēnēd dādār ud ān ī-š ayārēnēnd [T60_135b] amahrspandān ān ī-š yazēnd dēnīgān ān ī-š stāyēnd gētīyān",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "92.14",
+      "chapter": 92,
+      "locations": [
+        "TD4a_394"
+      ],
+      "sourceText": "abēr sazāgīhā šnāyēnd amahrspandān mardōm pad stāyišn azbāyišn ī ān ī weh mēnōy kē-š az stāyišn ud paristišn abzāyēd ōz ud zōr ī abar xwēškārīh rawāgēnīd kē-š padiš bawēd ān nēkīh kē az ān nēkīh kadār-iz-ēw nēkīh ō ēn sūdīg [TD4a_394] xwēškārīh",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "92.15",
+      "chapter": 92,
+      "locations": [
+        "D7_364"
+      ],
+      "sourceText": "ud tištar pad āb paymānīgīhā stadan ud rādīhā baxtan xwēškārīh\n\t\tus hangōšīdag ān ī guft frazānag [D7_364] dahībed ud pad āfrāh ī dānāg dastwar kū čiyōn wād az rōdān xānīgān az zrēyān uzwāyīg āb āhenǰēd\n\tud tištar pad xwēš rādīh hām-gēhān passazag-baxšišnīhā pad sūd ī dāmān kām ī yazdān baxšēd ud wārēnēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "92.16",
+      "chapter": 92,
+      "locations": [
+        "T60_136a"
+      ],
+      "sourceText": "ud pad ān ī čimīg stad ud sazāg baxtan wārēnēd āb\n\tud yōǰdahrēnēd gōspand ud urwar\n\tud huškān [T60_136a] menēd ud ālūdagān baxšēd ud tišnagān xwārēnēd ud rōymānān <wwy> waxšēnēd ud gēhān padēxwēnēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "92.17",
+      "chapter": 92,
+      "locations": [
+        "D7_365",
+        "K35_201r",
+        "TD4a_395"
+      ],
+      "sourceText": "ud ka-š ān frāx rādīh [K35_201r] ud wārān-kerdārīh az ān ī pāk bēšaz āb ī-š ēdōn paymānīgīhā ud rāst-bazišnīhā stad ud ka pad ān āb-stanišnīh <’y’c(')> rōd ud xānīg ud anīy šōyišn ud hambāsišn ud kāhišn-iz kē az rōdīh ud xānīgīh a-rēxtagīh padiš nē bawēd ēdōn-iz ōdāyišn pad-dād paymānīg ud ēwēnīg <’tyn'> az kišwar <’’ytn'> [D7_365]\n\tud tištar hāwand [TD4a_395] dahišnīg pad kišwar ud wehān wārānēnēd pad was pāyag ud abzōn kišwar ud dām purrēnēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "93.1",
+      "chapter": 93,
+      "locations": [
+        "T60_136b"
+      ],
+      "sourceText": "ud pōryōtkēšān ī dēn-āgāhān ī pēšēnīgān ōwōn dāšt\n\tandarg ox menišn-ēw ast yazd ēw ī gāh dārēd ast Druz ī rāh dārēd\n\tud andarg menišn gōwišn-ēw ast yazd ī gāh dārēd ud ast Druz ī rāh dārēd [T60_136b]\n\t ud andarg gōwišn kunišn-ēw ast yazd-ēw gāh dārēd ud ast Druz-ēw rāh dārēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "93.2",
+      "chapter": 93,
+      "locations": [],
+      "sourceText": "ud andarg ox wārom-ēw wahman gāh dārēd ud Akōman rāh dārēd\n\tud andarg wārom kāmag-ēw srōš gāh dārēd ud xešm rāh dārēd\n\tud andarg kāmag menišn-ēw ī spandarmad gāh dārēd ud Druz ī tarōmad rāh dārēd\n\tandarg menišn gōwišn ēw xrad gāh dārēd ud waran rāh dārēd\n\tud andarg gōwišn kunišn-ēw dēn ī weh gāh dārēd ud xwad-dōšagīh rāh dārēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "93.3",
+      "chapter": 93,
+      "locations": [],
+      "sourceText": "ud amāh hāmōyēn mardōmān abēr ōšyār bawišn kū tā\n\t\taz ān rāh bē nē ēstam bē ō rāh ī dēwān druzān nē šawam",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "93.4",
+      "chapter": 93,
+      "locations": [
+        "D7_366",
+        "K35_201v"
+      ],
+      "sourceText": "čē kōxšišn ī mardōmān pad ēn 3 rāh ud widarg\n\tud kē pad ēn [D7_366] 3 rāh ud widarg bōxt az harw gyāg bōxt\n\tud kē ānōh frēft bē ō dast ī dēwān Druz rasēd\n\tud az ān frāz nē xwad pādixšāy bē ka ān [K35_201v] kunēd ī-š Druz framāyēnd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "93.5",
+      "chapter": 93,
+      "locations": [
+        "T60_137a",
+        "TD4a_396"
+      ],
+      "sourceText": "u-šān ēn-iz ōwōn dāšt kū xēm-ēw ān weh ka ān-iz ī pad xwēš nē nēk pad ān ī did nē kunēd\n\tud xrad ēw ān weh ī ka ān nēkīh ī mad estēd bar bē dānēd [TD4a_396] xward\n\t\tud anāgīh ī [T60_137a] nē mad estēd wahāg nē barēd\n\tud wīr-ēw ān weh kē ān ī nē dānēd dānēd kū nē dānam",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "93.6",
+      "chapter": 93,
+      "locations": [],
+      "sourceText": "u-šān ēn-iz ōwōn dāšt guft kū harw kas dōst bāš u-t ēd xēm\n\tu-šān pad wehīh bar u-t ēd xrad\n\tu-šān pad xwēš dār u-t ēd dēn\n\tu-šān nēkīh pad-iš kun u-t ēd ruwān",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "93.7",
+      "chapter": 93,
+      "locations": [
+        "D7_367"
+      ],
+      "sourceText": "u-šān ēn-iz ōwōn dāšt kū ān-iz ī dānēd kū wināh ud kunēd ān tarmenišnīh [D7_367]\n\t\tud tar-menišnīh xēm petyārag\n\tud kē ān-iz ī nē dānēd kū kerbag ayāb wināh ud tā bē ō dānišn rasēd ān kunēd ān xwad-dōšagīh\n\t\tud xwad-dōšagīh dēn petyārag ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "93.8",
+      "chapter": 93,
+      "locations": [
+        "T60_137b"
+      ],
+      "sourceText": "u-šān ēn-iz ōwōn dāšt kū Ahrimen harw tis pad ziyān ī Ohrmazd kunēd\n\tud ka-š kerd bawēd ēg-iš xwad ziyān ud Ohrmazd sūd\n\tud Ohrmazd harw [T60_137b] tis pad sūd ī xwēš kunēd\n\tud ka-š kerd bawēd ēg-iš xwad sūd ud Ahrimen ziyān ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "93.9",
+      "chapter": 93,
+      "locations": [
+        "TD4a_397"
+      ],
+      "sourceText": "u-šān ēn-iz ōwōn dāšt kū kadāmagān-iz mardōm andar harw gāh ud zamān tis ī mēnōy pad ayād dārišn\n\t\tnēkīh ī wahišt ud anāgīh ī dōšox\n\tandar ān gāh ka āsānīh ud nēkīh [TD4a_397] ud rāmišn awiš mad estēd",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "93.10",
+      "chapter": 93,
+      "locations": [
+        "D7_368",
+        "T60_138a"
+      ],
+      "sourceText": "u-šān ēn-iz ōwōn dāšt kū nēk-iz hē ānōh pad wahišt ī rōšn ka ēdar-iz ēdōn nēk\n\tka az was anāgīh ī ∵ Ahrimen ī-š abāg nēkīh ī [D7_368] ānōh nē āmēxt ēdar-iz ēdōn nēk\n\tandar ān hangām ka-š tangīh bēš ud anāgīh awiš mad estēd ēn-iz ēdōn handēšēd kū wad-iz hē ānōh pad dōšox ka ēdar ōwōn anāg\n\tka ēdar-iz ēdar was nēkīh ī Ohrmazd ī-š abāg anāgīh ī [T60_138a] ānōh nē āmēxt ud ēdar ōwōn anāg",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "93.11",
+      "chapter": 93,
+      "locations": [],
+      "sourceText": "u-šān ēn-iz ōwōn dāšt kū mardōm ān farroxtar kē-š andar tan-drustīh ud ǰuwānīh ud rāmišn tis ān grift ud kerd estēd ī-š abdom ka az gēhān bē šawēd ēg-iš kāmag ōwōn kū kāč-um wēš grift kerd\n\tud az ān tis abēr bē pahrēzišn ī-š abdom ka az gēhān bē šawēd ēg-iš kāmag ōwōn\n\t\tkū kāč-um kem grift ud kerd hē u-m pad ruwān āsānīhātar būd hē",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "93.12",
+      "chapter": 93,
+      "locations": [
+        "D7_369",
+        "T60_138b",
+        "TD4a_398"
+      ],
+      "sourceText": "ud ašmāh wehān hu-dēnān ī im ∵ Ērān dehān dād kardag pōryōtkēšān dastwarān [D7_369] andar kār [TD4a_398] dārēd\n\t\tkū-tān tan hu-srawīhātar ud ruwān pāšomīhātar andar ān ī rōšn Garōdmān\n\t\tka nišast ī Ohrmazd ud amahrspandān yazdān hamāg frawahr ī ašō’ān [T60_138b] bawād",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "93.13",
+      "chapter": 93,
+      "locations": [],
+      "sourceText": "ōwōn ēn and pāsoxīhā ī pursišn gōwizārīhā az dēn nigēzišn ∵ ud dastwarān ud pōryōtkēšān gōwišn kerd dāšt ud ēwēn ī čāšišnān\n\t\tMānuščihr ī gušn-ǰamān pārs ud kirmān rad ud āsrōnān pēšag framādār framūd nibištan ud āwišt",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "93.14",
+      "chapter": 93,
+      "locations": [],
+      "sourceText": "andar šnāyišn ud spās ī dādār Ohrmazd xwāyišnān windišnān\n\tahlāyīh pāšom ast Zarduxšt ēk ast\n\t man ī ahlāyīh windīd ān ī anīy ahlāyīh\n\tnamāz ō rad ī buland kē dādār Ohrmazd ud aštag ašōtom spitamān Zarduxšt ∵",
+      "persianTranslation": "",
+      "notes": ""
+    },
+    {
+      "passageId": "93.15",
+      "chapter": 93,
+      "locations": [
+        "D7_370"
+      ],
+      "sourceText": "frazaft pad drōd ud šādīh ud urwāhmen rāmišn\n\tfarrox pad ōy kē xwānād\n\tfarroxtar pad ōy kē pad kār dārād u-š [D7_370] kār aziš kunād\n\t\ttā ǰāwēdān zamān",
+      "persianTranslation": "",
+      "notes": ""
+    }
+  ]
+}

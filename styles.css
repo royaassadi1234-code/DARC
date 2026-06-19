@@ -1019,13 +1019,12 @@ h1 {
 .chapter-bar-row {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(74px, auto) minmax(0, 1fr) minmax(42px, auto);
-  gap: 9px;
-  align-items: center;
+  gap: 7px;
   border: 1px solid #dbe1e7;
   border-radius: 6px;
   padding: 8px;
   background: #ffffff;
+  cursor: pointer;
 }
 
 .chapter-bar-row:focus {
@@ -1038,10 +1037,19 @@ h1 {
   background: #eef4f7;
 }
 
+.chapter-bar-main {
+  display: grid;
+  grid-template-columns: minmax(74px, auto) minmax(0, 1fr) minmax(42px, auto);
+  gap: 9px;
+  align-items: center;
+  min-width: 0;
+}
+
 .chapter-label {
   color: var(--accent-strong);
   font-size: 0.78rem;
   font-weight: 850;
+  white-space: nowrap;
 }
 
 .chapter-bar-track {
@@ -1065,52 +1073,45 @@ h1 {
   font-size: 0.84rem;
 }
 
-.chapter-hover-title {
-  position: absolute;
-  bottom: calc(100% + 6px);
-  left: 8px;
-  z-index: 8;
-  display: none;
-  max-width: min(360px, 82vw);
-  border: 1px solid var(--line);
-  border-radius: 7px;
-  padding: 8px 10px;
+.chapter-row-meta {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+  border-top: 1px solid #edf1f4;
+  padding-top: 7px;
+}
+
+.chapter-row-meta h4 {
+  margin: 0;
   color: var(--accent-strong);
-  background: #ffffff;
-  box-shadow: 0 12px 26px rgba(29, 43, 57, 0.16);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 850;
   line-height: 1.35;
 }
 
-.chapter-bar-row:hover .chapter-hover-title {
-  display: block;
-}
-
-.chapter-detail-panel {
-  display: grid;
-  gap: 5px;
-  grid-column: 1 / -1;
-  border-top: 1px solid #dbe1e7;
-  padding-top: 8px;
-}
-
-.chapter-detail-panel h4,
-.chapter-detail-panel p {
+.chapter-location-line {
   margin: 0;
-}
-
-.chapter-detail-panel h4 {
-  color: var(--accent-strong);
-  font-size: 0.82rem;
-}
-
-.chapter-detail-panel p {
-  color: var(--ink);
-  font-size: 0.82rem;
+  color: var(--muted);
+  font-size: 0.76rem;
   font-weight: 650;
   line-height: 1.45;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chapter-location-line.expanded {
+  color: var(--ink);
+  overflow: visible;
+  text-overflow: clip;
+  white-space: normal;
   overflow-wrap: anywhere;
+}
+
+.chapter-location-toggle {
+  color: var(--accent-strong);
+  font-size: 0.72rem;
+  font-weight: 850;
 }
 
 .diagram-actions {

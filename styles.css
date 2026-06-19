@@ -3086,7 +3086,7 @@ h1 {
 }
 
 .thematic-reader-controls {
-  grid-template-columns: minmax(240px, 0.75fr) minmax(280px, 1fr) auto;
+  grid-template-columns: minmax(280px, 1fr) auto;
 }
 
 .thematic-reader-overview {
@@ -3108,6 +3108,40 @@ h1 {
 }
 
 .thematic-reader-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.thematic-reader-card {
+  display: grid;
+  gap: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.thematic-reader-card-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.thematic-reader-card-header h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  line-height: 1.25;
+}
+
+.thematic-reader-card-header .meta {
+  margin: 5px 0 0;
+}
+
+.thematic-reader-pair {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
@@ -3140,7 +3174,7 @@ h1 {
 .thematic-reader-passages {
   display: grid;
   gap: 10px;
-  max-height: 72vh;
+  max-height: 520px;
   overflow: auto;
   padding: 12px;
 }
@@ -4638,6 +4672,7 @@ mark.term-6 {
   .matched-theme-grid,
   .thematic-reader-controls,
   .thematic-reader-grid,
+  .thematic-reader-pair,
   .pseudo-summary,
   .about-detail-grid,
   .annotation-grid {
@@ -4771,6 +4806,7 @@ mark.term-6 {
   }
 
   .thematic-reader-heading,
+  .thematic-reader-card-header,
   .thematic-reader-column header {
     display: grid;
   }

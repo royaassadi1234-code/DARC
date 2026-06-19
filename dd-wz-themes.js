@@ -37,18 +37,15 @@ const THEMATIC_TABLE = [
 
 const thematicState = {
   texts: {},
-  selectedThemeIndex: 0,
   filter: "",
   showTranslation: true,
   showEmpty: true
 };
 
-const themeSelectEl = document.querySelector("#thematic-theme-select");
 const filterEl = document.querySelector("#thematic-filter");
 const showTranslationEl = document.querySelector("#thematic-show-translation");
 const showEmptyEl = document.querySelector("#thematic-show-empty");
 const statusEl = document.querySelector("#thematic-reader-status");
-const overviewEl = document.querySelector("#thematic-reader-overview");
 const gridEl = document.querySelector("#thematic-reader-grid");
 
 initThematicReader();
@@ -60,7 +57,6 @@ async function initThematicReader() {
       wz: await loadThematicText(THEMATIC_TEXTS.wz)
     };
     bindControls();
-    renderThemeOptions();
     renderThematicReader();
   } catch (error) {
     console.error(error);
@@ -81,10 +77,6 @@ async function loadThematicText(config) {
 }
 
 function bindControls() {
-  themeSelectEl.addEventListener("change", () => {
-    thematicState.selectedThemeIndex = Number(themeSelectEl.value) || 0;
-    renderThematicReader();
-  });
   filterEl.addEventListener("input", () => {
     thematicState.filter = filterEl.value;
     renderThematicReader();
@@ -99,39 +91,16 @@ function bindControls() {
   });
 }
 
-function renderThemeOptions() {
-  themeSelectEl.innerHTML = THEMATIC_TABLE.map((row, index) => `
-    <option value="${index}">${index + 1}. ${escapeHtml(row.theme)}</option>
-  `).join("");
-}
-
 function renderThematicReader() {
-  const theme = THEMATIC_TABLE[thematicState.selectedThemeIndex] || THEMATIC_TABLE[0];
-  const ddPassages = filterThemeRecords(recordsForTheme("dd", theme.dd));
-  const wzPassages = filterThemeRecords(recordsForTheme("wz", theme.wz));
-  const ddMissing = missingChapters("dd", theme.dd);
-  const wzMissing = missingChapters("wz", theme.wz);
-  const totalVisible = ddPassages.length + wzPassages.length;
+  const cards = THEMATIC_TABLE
+    .map((theme, index) => buildThemeCard(theme, index))
+    .filter((card) => card.visible);
+  const totalVisible = cards.reduce((sum, card) => sum + card.ddPassages.length + card.wzPassages.length, 0);
 
-  statusEl.textContent = `${totalVisible.toLocaleString()} passages in selected theme`;
-  overviewEl.innerHTML = `
-    <article class="text-card thematic-reader-heading">
-      <div>
-        <div class="siglum">Theme ${thematicState.selectedThemeIndex + 1}</div>
-        <h2>${escapeHtml(theme.theme)}</h2>
-        <p class="meta">DD chapters ${escapeHtml(theme.dd)} beside WZ chapters ${escapeHtml(theme.wz)}.</p>
-      </div>
-      <div class="thematic-reader-counts">
-        <span class="count-pill hit">DD ${ddPassages.length.toLocaleString()}</span>
-        <span class="count-pill hit">WZ ${wzPassages.length.toLocaleString()}</span>
-      </div>
-    </article>
-  `;
-
-  gridEl.innerHTML = `
-    ${renderThematicColumn("DD", THEMATIC_TEXTS.dd.title, theme.dd, ddPassages, ddMissing)}
-    ${renderThematicColumn("WZ", THEMATIC_TEXTS.wz.title, theme.wz, wzPassages, wzMissing)}
-  `;
+  statusEl.textContent = `${cards.length.toLocaleString()} theme cards | ${totalVisible.toLocaleString()} passages`;
+  gridEl.innerHTML = cards.length
+    ? cards.map(renderThemeCard).join("")
+    : `<div class="empty-state">No theme cards match this search.</div>`;
 }
 
 function recordsForTheme(textId, rangeSpec) {
@@ -141,6 +110,24 @@ function recordsForTheme(textId, rangeSpec) {
   }
   const text = thematicState.texts[textId];
   return text.records.filter((record) => chapters.has(chapterNumber(record.location)));
+}
+
+function buildThemeCard(theme, index) {
+  const titleMatch = matchesQuery(`${theme.theme} ${theme.dd} ${theme.wz}`);
+  const ddRecords = recordsForTheme("dd", theme.dd);
+  const wzRecords = recordsForTheme("wz", theme.wz);
+  const ddPassages = titleMatch ? ddRecords : filterThemeRecords(ddRecords);
+  const wzPassages = titleMatch ? wzRecords : filterThemeRecords(wzRecords);
+
+  return {
+    index,
+    theme,
+    visible: titleMatch || ddPassages.length > 0 || wzPassages.length > 0 || !tokenizeQuery(thematicState.filter).length,
+    ddPassages,
+    wzPassages,
+    ddMissing: missingChapters("dd", theme.dd),
+    wzMissing: missingChapters("wz", theme.wz)
+  };
 }
 
 function filterThemeRecords(records) {
@@ -154,6 +141,15 @@ function filterThemeRecords(records) {
   });
 }
 
+function matchesQuery(value) {
+  const terms = tokenizeQuery(thematicState.filter);
+  if (!terms.length) {
+    return true;
+  }
+  const haystack = normalizeSearchText(value);
+  return terms.every((term) => haystack.includes(term));
+}
+
 function missingChapters(textId, rangeSpec) {
   const requested = parseChapterSpec(rangeSpec);
   if (!requested.size) {
@@ -161,6 +157,29 @@ function missingChapters(textId, rangeSpec) {
   }
   const available = new Set(thematicState.texts[textId].records.map((record) => chapterNumber(record.location)));
   return [...requested].filter((chapter) => !available.has(chapter)).sort((a, b) => a - b);
+}
+
+function renderThemeCard(card) {
+  const { theme, index, ddPassages, wzPassages, ddMissing, wzMissing } = card;
+  return `
+    <article class="thematic-reader-card">
+      <header class="thematic-reader-card-header">
+        <div>
+          <div class="siglum">Theme ${index + 1}</div>
+          <h2>${escapeHtml(theme.theme)}</h2>
+          <p class="meta">DD chapters ${escapeHtml(theme.dd)} beside WZ chapters ${escapeHtml(theme.wz)}</p>
+        </div>
+        <div class="thematic-reader-counts">
+          <span class="count-pill hit">DD ${ddPassages.length.toLocaleString()}</span>
+          <span class="count-pill hit">WZ ${wzPassages.length.toLocaleString()}</span>
+        </div>
+      </header>
+      <div class="thematic-reader-pair">
+        ${renderThematicColumn("DD", THEMATIC_TEXTS.dd.title, theme.dd, ddPassages, ddMissing)}
+        ${renderThematicColumn("WZ", THEMATIC_TEXTS.wz.title, theme.wz, wzPassages, wzMissing)}
+      </div>
+    </article>
+  `;
 }
 
 function renderThematicColumn(siglum, title, rangeSpec, passages, missing) {

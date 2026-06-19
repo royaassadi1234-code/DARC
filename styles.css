@@ -1011,9 +1011,51 @@ h1 {
 .chapter-bar-list {
   display: grid;
   gap: 8px;
-  max-height: 620px;
-  overflow: auto;
   padding: 12px;
+}
+
+.chapter-page-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border-top: 1px solid var(--line);
+  padding: 10px 12px;
+  background: #fbfcfd;
+}
+
+.chapter-page-nav span {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.chapter-page-button {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #c8d0d9;
+  border-radius: 999px;
+  color: var(--accent-strong);
+  background: #ffffff;
+  cursor: pointer;
+  font-size: 1.15rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.chapter-page-button:hover:not(:disabled),
+.chapter-page-button:focus-visible {
+  border-color: var(--accent);
+  outline: none;
+  background: #eef4f7;
+}
+
+.chapter-page-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
 }
 
 .chapter-bar-row {

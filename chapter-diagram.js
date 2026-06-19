@@ -145,6 +145,8 @@ const chapterDiagramState = {
   wholeWord: true,
   caseSensitive: false,
   order: "chapter",
+  pageSize: 5,
+  pages: {},
   selectedChapter: null,
   latestSummaries: []
 };
@@ -197,12 +199,14 @@ async function initChapterDiagram() {
 function bindChapterDiagramEvents() {
   chapterQueryEl.addEventListener("input", () => {
     chapterDiagramState.query = chapterQueryEl.value.trim();
+    resetChapterPages();
     closeChapterDetails();
     renderChapterDiagram();
   });
 
   chapterMultipleEl.addEventListener("change", () => {
     chapterDiagramState.multipleWords = chapterMultipleEl.checked;
+    resetChapterPages();
     closeChapterDetails();
     updateChapterSearchModeControls();
     renderChapterDiagram();
@@ -210,6 +214,7 @@ function bindChapterDiagramEvents() {
 
   chapterPhraseEl.addEventListener("change", () => {
     chapterDiagramState.phraseSearch = chapterPhraseEl.checked;
+    resetChapterPages();
     closeChapterDetails();
     updateChapterSearchModeControls();
     renderChapterDiagram();
@@ -217,18 +222,22 @@ function bindChapterDiagramEvents() {
 
   chapterWholeWordEl.addEventListener("change", () => {
     chapterDiagramState.wholeWord = chapterWholeWordEl.checked;
+    resetChapterPages();
     closeChapterDetails();
     renderChapterDiagram();
   });
 
   chapterCaseEl.addEventListener("change", () => {
     chapterDiagramState.caseSensitive = chapterCaseEl.checked;
+    resetChapterPages();
     closeChapterDetails();
     renderChapterDiagram();
   });
 
   chapterOrderEl.addEventListener("change", () => {
     chapterDiagramState.order = chapterOrderEl.value;
+    resetChapterPages();
+    closeChapterDetails();
     renderChapterDiagram();
   });
 
@@ -241,6 +250,12 @@ function bindChapterDiagramEvents() {
 
     if (event.target.closest(".diagram-location-link")) {
       event.stopPropagation();
+      return;
+    }
+
+    const pageButton = event.target.closest("[data-chapter-page-text][data-chapter-page]");
+    if (pageButton) {
+      setChapterPage(pageButton.dataset.chapterPageText, Number(pageButton.dataset.chapterPage));
       return;
     }
 
@@ -277,6 +292,10 @@ function updateChapterSearchModeControls() {
     chapterMultipleEl.checked = false;
   }
   chapterMultipleEl.disabled = chapterDiagramState.phraseSearch;
+}
+
+function resetChapterPages() {
+  chapterDiagramState.pages = {};
 }
 
 async function loadChapterDiagramText(config) {
@@ -382,6 +401,14 @@ function sortChapterEntries(chapters) {
 }
 
 function renderChapterTextPanel(summary, maxCount) {
+  const pageCount = Math.max(1, Math.ceil(summary.chapters.length / chapterDiagramState.pageSize));
+  const currentPage = clampChapterPage(chapterDiagramState.pages[summary.text.id] || 1, pageCount);
+  chapterDiagramState.pages[summary.text.id] = currentPage;
+  const pageStart = (currentPage - 1) * chapterDiagramState.pageSize;
+  const visibleChapters = summary.chapters.slice(pageStart, pageStart + chapterDiagramState.pageSize);
+  const rangeStart = summary.chapters.length ? pageStart + 1 : 0;
+  const rangeEnd = pageStart + visibleChapters.length;
+
   return `
     <section class="diagram-result-column chapter-diagram-panel">
       <header>
@@ -392,12 +419,40 @@ function renderChapterTextPanel(summary, maxCount) {
         <span class="count-pill">${summary.total.toLocaleString()}</span>
       </header>
       <div class="chapter-bar-list">
-        ${summary.chapters.length
-          ? summary.chapters.map((chapter) => renderChapterBar(summary.text, chapter, maxCount)).join("")
+        ${visibleChapters.length
+          ? visibleChapters.map((chapter) => renderChapterBar(summary.text, chapter, maxCount)).join("")
           : `<div class="empty-state">No chapter occurrences.</div>`}
       </div>
+      ${summary.chapters.length > chapterDiagramState.pageSize ? renderChapterPagination(summary.text.id, currentPage, pageCount, rangeStart, rangeEnd, summary.chapters.length) : ""}
     </section>
   `;
+}
+
+function renderChapterPagination(textId, currentPage, pageCount, rangeStart, rangeEnd, total) {
+  return `
+    <nav class="chapter-page-nav" aria-label="Chapter result pages">
+      <button class="chapter-page-button" type="button" data-chapter-page-text="${escapeChapterHtml(textId)}" data-chapter-page="${currentPage - 1}" aria-label="Previous chapter results" ${currentPage <= 1 ? "disabled" : ""}>‹</button>
+      <span>${rangeStart.toLocaleString()}-${rangeEnd.toLocaleString()} of ${total.toLocaleString()}</span>
+      <button class="chapter-page-button" type="button" data-chapter-page-text="${escapeChapterHtml(textId)}" data-chapter-page="${currentPage + 1}" aria-label="Next chapter results" ${currentPage >= pageCount ? "disabled" : ""}>›</button>
+    </nav>
+  `;
+}
+
+function setChapterPage(textId, page) {
+  const summary = chapterDiagramState.latestSummaries.find((item) => item.text.id === textId);
+  if (!summary) {
+    return;
+  }
+
+  const pageCount = Math.max(1, Math.ceil(summary.chapters.length / chapterDiagramState.pageSize));
+  chapterDiagramState.pages[textId] = clampChapterPage(page, pageCount);
+  closeChapterDetails();
+  renderChapterDiagram();
+}
+
+function clampChapterPage(page, pageCount) {
+  const value = Number.isFinite(page) ? page : 1;
+  return Math.min(Math.max(1, value), pageCount);
 }
 
 function renderChapterBar(text, chapter, maxCount) {

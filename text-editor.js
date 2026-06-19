@@ -242,43 +242,7 @@ function bindTextEditorEvents() {
     });
   });
 
-  const textChoiceGroups = Array.from(document.querySelectorAll(".text-annotation-realm, .text-annotation-oppositions, .text-annotation-referent"));
-  const textAnnotationDetails = Array.from(document.querySelectorAll(".text-annotation-column details.text-annotation-item"));
-  const closeOtherTextAnnotationCards = (currentCard) => {
-    textAnnotationDetails.forEach((details) => {
-      if (details !== currentCard) {
-        details.open = false;
-      }
-    });
-    textChoiceGroups.forEach((group) => {
-      if (group !== currentCard) {
-        group.classList.add("text-annotation-choice-collapsed");
-      }
-    });
-  };
-
-  textAnnotationDetails.forEach((details) => {
-    const summary = details.querySelector("summary");
-    if (summary) {
-      summary.addEventListener("click", () => {
-        closeOtherTextAnnotationCards(details);
-      });
-    }
-  });
-
-  textChoiceGroups.forEach((group) => {
-    group.classList.add("text-annotation-choice-collapsed");
-    group.addEventListener("click", (event) => {
-      const isCollapsed = group.classList.contains("text-annotation-choice-collapsed");
-      const toggleTarget = event.target.closest("legend, .field-complete");
-      if (isCollapsed || toggleTarget) {
-        if (isCollapsed) {
-          closeOtherTextAnnotationCards(group);
-        }
-        group.classList.toggle("text-annotation-choice-collapsed", !isCollapsed);
-      }
-    });
-  });
+  keepTextAnnotationsVisible();
 
   document.addEventListener("click", (event) => {
     if (!event.target.closest(".option-choice-group")) {
@@ -487,16 +451,15 @@ function closeOptionPopovers() {
 }
 
 function renderTextAnnotationOptions() {
-  const hidden = new Set(editorState.annotationOptions.hidden || []);
   TEXT_ANNOTATION_OPTION_CARDS.forEach((option) => {
     const card = document.querySelector(option.selector);
     if (card) {
-      card.classList.toggle("hidden", hidden.has(option.key));
+      card.classList.remove("hidden");
     }
   });
 
   customAnnotationFieldsEl.innerHTML = (editorState.annotationOptions.custom || []).map((option) => `
-    <details class="annotation-field-card text-annotation-item text-custom-annotation-item" data-custom-annotation-key="${escapeHtml(option.key)}">
+    <details class="annotation-field-card text-annotation-item text-custom-annotation-item" data-custom-annotation-key="${escapeHtml(option.key)}" open>
       <summary>
         <label class="field-complete">
           <input type="checkbox" data-text-custom-complete-field="${escapeHtml(option.key)}">
@@ -512,11 +475,10 @@ function renderTextAnnotationOptions() {
 
   annotationOptionsListEl.innerHTML = [
     ...TEXT_ANNOTATION_OPTION_CARDS.map((option) => {
-      const isHidden = hidden.has(option.key);
       return `
         <div class="text-annotation-option-row">
           <span>${escapeHtml(option.label)}</span>
-          <button class="copy-button secondary" type="button" data-annotation-option-key="${escapeHtml(option.key)}" data-annotation-option-action="${isHidden ? "restore" : "hide"}">${isHidden ? "Restore" : "Delete"}</button>
+          <small>Always visible</small>
         </div>
       `;
     }),
@@ -527,6 +489,30 @@ function renderTextAnnotationOptions() {
       </div>
     `)
   ].join("");
+  keepTextAnnotationsVisible();
+}
+
+function keepTextAnnotationsVisible() {
+  document.querySelectorAll(".text-annotation-column details.text-annotation-item").forEach((details) => {
+    details.open = true;
+    if (!details.dataset.permanentOpen) {
+      details.dataset.permanentOpen = "true";
+      details.addEventListener("toggle", () => {
+        if (!details.open) {
+          details.open = true;
+        }
+      });
+    }
+  });
+  document.querySelectorAll(".text-annotation-column .text-annotation-choice-collapsed").forEach((group) => {
+    group.classList.remove("text-annotation-choice-collapsed");
+  });
+  document.querySelectorAll(".text-annotation-column .option-custom-popover").forEach((panel) => {
+    panel.classList.remove("hidden");
+  });
+  document.querySelectorAll(".text-annotation-column .option-other-toggle").forEach((button) => {
+    button.setAttribute("aria-expanded", "true");
+  });
 }
 
 function addCustomAnnotationOption() {
@@ -553,17 +539,6 @@ function handleAnnotationOptionListClick(event) {
     return;
   }
   const action = button.dataset.annotationOptionAction;
-  if (action === "hide" || action === "restore") {
-    const key = button.dataset.annotationOptionKey;
-    const hidden = new Set(editorState.annotationOptions.hidden || []);
-    if (action === "hide") {
-      hidden.add(key);
-      removeBuiltInAnnotationValue(key);
-    } else {
-      hidden.delete(key);
-    }
-    editorState.annotationOptions.hidden = Array.from(hidden);
-  }
   if (action === "delete-custom") {
     const key = button.dataset.customAnnotationKey;
     editorState.annotationOptions.custom = (editorState.annotationOptions.custom || []).filter((option) => option.key !== key);
@@ -1396,9 +1371,6 @@ function saveTextPassageMetadata(draft, sourceRecord, previousKey) {
       ...getCustomTextFieldCompletion()
     }
   };
-  (editorState.annotationOptions.hidden || []).forEach((key) => {
-    removeTextAnnotationValueFromMetadata(metadata, key);
-  });
   if (previousKey && previousKey !== nextKey) {
     delete draft.passageAnnotations[previousKey];
   }
@@ -2071,7 +2043,7 @@ function loadTextAnnotationOptions() {
   try {
     const stored = JSON.parse(localStorage.getItem(TEXT_EDITOR_ANNOTATION_OPTIONS_KEY)) || {};
     return {
-      hidden: Array.isArray(stored.hidden) ? stored.hidden : [],
+      hidden: [],
       custom: Array.isArray(stored.custom) ? stored.custom.filter((item) => item?.key && item?.label) : []
     };
   } catch {
@@ -2080,6 +2052,7 @@ function loadTextAnnotationOptions() {
 }
 
 function persistTextAnnotationOptions() {
+  editorState.annotationOptions.hidden = [];
   localStorage.setItem(TEXT_EDITOR_ANNOTATION_OPTIONS_KEY, JSON.stringify(editorState.annotationOptions));
 }
 

@@ -2591,24 +2591,18 @@ h1 {
   cursor: pointer;
 }
 
-.text-annotation-choice-collapsed label:not(.field-complete),
-.text-annotation-choice-collapsed .option-other-toggle,
-.text-annotation-choice-collapsed .option-custom-popover {
-  display: none;
-}
-
-.text-annotation-choice-collapsed {
-  gap: 0;
-}
-
-.text-annotation-choice-collapsed legend {
-  margin-right: auto;
-}
-
 .text-annotation-realm > legend,
 .text-annotation-oppositions > legend,
 .text-annotation-referent > legend {
   display: none;
+}
+
+.text-annotation-column .option-other-toggle {
+  display: none;
+}
+
+.text-annotation-column .option-custom-popover.hidden {
+  display: block !important;
 }
 
 .passage-edit-card {

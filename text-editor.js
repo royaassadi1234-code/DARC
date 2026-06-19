@@ -146,6 +146,8 @@ const TEXT_ANNOTATION_OPTION_CARDS = [
   { key: "id", label: "ID", selector: ".text-annotation-id" }
 ];
 
+const PERMANENT_TEXT_ANNOTATION_KEYS = new Set(["realm", "oppositions", "referent"]);
+
 const annotationFields = {
   sourceParagraph: document.querySelector("#field-sourceParagraph"),
   translation: document.querySelector("#field-translation"),
@@ -242,7 +244,7 @@ function bindTextEditorEvents() {
     });
   });
 
-  keepTextAnnotationsVisible();
+  keepFixedTextAnnotationsVisible();
 
   document.addEventListener("click", (event) => {
     if (!event.target.closest(".option-choice-group")) {
@@ -451,15 +453,16 @@ function closeOptionPopovers() {
 }
 
 function renderTextAnnotationOptions() {
+  const hidden = new Set(editorState.annotationOptions.hidden || []);
   TEXT_ANNOTATION_OPTION_CARDS.forEach((option) => {
     const card = document.querySelector(option.selector);
     if (card) {
-      card.classList.remove("hidden");
+      card.classList.toggle("hidden", hidden.has(option.key) && !PERMANENT_TEXT_ANNOTATION_KEYS.has(option.key));
     }
   });
 
   customAnnotationFieldsEl.innerHTML = (editorState.annotationOptions.custom || []).map((option) => `
-    <details class="annotation-field-card text-annotation-item text-custom-annotation-item" data-custom-annotation-key="${escapeHtml(option.key)}" open>
+    <details class="annotation-field-card text-annotation-item text-custom-annotation-item" data-custom-annotation-key="${escapeHtml(option.key)}">
       <summary>
         <label class="field-complete">
           <input type="checkbox" data-text-custom-complete-field="${escapeHtml(option.key)}">
@@ -475,10 +478,14 @@ function renderTextAnnotationOptions() {
 
   annotationOptionsListEl.innerHTML = [
     ...TEXT_ANNOTATION_OPTION_CARDS.map((option) => {
+      const isPermanent = PERMANENT_TEXT_ANNOTATION_KEYS.has(option.key);
+      const isHidden = hidden.has(option.key);
       return `
         <div class="text-annotation-option-row">
           <span>${escapeHtml(option.label)}</span>
-          <small>Always visible</small>
+          ${isPermanent
+            ? "<small>Always visible</small>"
+            : `<button class="copy-button secondary" type="button" data-annotation-option-key="${escapeHtml(option.key)}" data-annotation-option-action="${isHidden ? "restore" : "hide"}">${isHidden ? "Restore" : "Delete"}</button>`}
         </div>
       `;
     }),
@@ -489,29 +496,12 @@ function renderTextAnnotationOptions() {
       </div>
     `)
   ].join("");
-  keepTextAnnotationsVisible();
+  keepFixedTextAnnotationsVisible();
 }
 
-function keepTextAnnotationsVisible() {
-  document.querySelectorAll(".text-annotation-column details.text-annotation-item").forEach((details) => {
-    details.open = true;
-    if (!details.dataset.permanentOpen) {
-      details.dataset.permanentOpen = "true";
-      details.addEventListener("toggle", () => {
-        if (!details.open) {
-          details.open = true;
-        }
-      });
-    }
-  });
-  document.querySelectorAll(".text-annotation-column .text-annotation-choice-collapsed").forEach((group) => {
+function keepFixedTextAnnotationsVisible() {
+  document.querySelectorAll(".text-annotation-realm, .text-annotation-oppositions, .text-annotation-referent").forEach((group) => {
     group.classList.remove("text-annotation-choice-collapsed");
-  });
-  document.querySelectorAll(".text-annotation-column .option-custom-popover").forEach((panel) => {
-    panel.classList.remove("hidden");
-  });
-  document.querySelectorAll(".text-annotation-column .option-other-toggle").forEach((button) => {
-    button.setAttribute("aria-expanded", "true");
   });
 }
 
@@ -539,6 +529,19 @@ function handleAnnotationOptionListClick(event) {
     return;
   }
   const action = button.dataset.annotationOptionAction;
+  if (action === "hide" || action === "restore") {
+    const key = button.dataset.annotationOptionKey;
+    if (!PERMANENT_TEXT_ANNOTATION_KEYS.has(key)) {
+      const hidden = new Set(editorState.annotationOptions.hidden || []);
+      if (action === "hide") {
+        hidden.add(key);
+        removeBuiltInAnnotationValue(key);
+      } else {
+        hidden.delete(key);
+      }
+      editorState.annotationOptions.hidden = Array.from(hidden);
+    }
+  }
   if (action === "delete-custom") {
     const key = button.dataset.customAnnotationKey;
     editorState.annotationOptions.custom = (editorState.annotationOptions.custom || []).filter((option) => option.key !== key);
@@ -1371,6 +1374,11 @@ function saveTextPassageMetadata(draft, sourceRecord, previousKey) {
       ...getCustomTextFieldCompletion()
     }
   };
+  (editorState.annotationOptions.hidden || []).forEach((key) => {
+    if (!PERMANENT_TEXT_ANNOTATION_KEYS.has(key)) {
+      removeTextAnnotationValueFromMetadata(metadata, key);
+    }
+  });
   if (previousKey && previousKey !== nextKey) {
     delete draft.passageAnnotations[previousKey];
   }
@@ -2043,7 +2051,7 @@ function loadTextAnnotationOptions() {
   try {
     const stored = JSON.parse(localStorage.getItem(TEXT_EDITOR_ANNOTATION_OPTIONS_KEY)) || {};
     return {
-      hidden: [],
+      hidden: Array.isArray(stored.hidden) ? stored.hidden.filter((key) => !PERMANENT_TEXT_ANNOTATION_KEYS.has(key)) : [],
       custom: Array.isArray(stored.custom) ? stored.custom.filter((item) => item?.key && item?.label) : []
     };
   } catch {
@@ -2052,7 +2060,7 @@ function loadTextAnnotationOptions() {
 }
 
 function persistTextAnnotationOptions() {
-  editorState.annotationOptions.hidden = [];
+  editorState.annotationOptions.hidden = (editorState.annotationOptions.hidden || []).filter((key) => !PERMANENT_TEXT_ANNOTATION_KEYS.has(key));
   localStorage.setItem(TEXT_EDITOR_ANNOTATION_OPTIONS_KEY, JSON.stringify(editorState.annotationOptions));
 }
 

@@ -2597,14 +2597,6 @@ h1 {
   display: none;
 }
 
-.text-annotation-column .option-other-toggle {
-  display: none;
-}
-
-.text-annotation-column .option-custom-popover.hidden {
-  display: block !important;
-}
-
 .passage-edit-card {
   display: grid;
   gap: 10px;

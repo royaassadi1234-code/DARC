@@ -599,6 +599,7 @@ function getChapterLexicalVariantGroups() {
   return [
     ["ahreman", "ahrimen", "ahriman", "aharman", "ahremn", "ahremanag"],
     ["druz", "druj", "drux", "drug", "draoga"],
+    ["gannag", "ganag", "gannak", "ganak", "gandag", "gannay"],
     ["ohrmazd", "ormazd", "ahura mazda", "ahuramazda", "dadar"],
     ["zadspram", "zadsparam", "zatspram", "zad-spram"],
     ["manuchihr", "manushchihr", "manuschihr", "manuscihr", "manushcihr"]
@@ -612,7 +613,7 @@ function getChapterPhraseVariants(term) {
   }
 
   const phraseVariantGroups = [
-    ["gannag", "ganag", "gannak", "ganak", "gandag"],
+    ["gannag", "ganag", "gannak", "ganak", "gandag", "gannay"],
     ["menog", "menoy", "menok", "minog", "mainyog"]
   ];
   const partVariants = parts.map((part) => getChapterVariantGroup(part, phraseVariantGroups));
@@ -621,6 +622,7 @@ function getChapterPhraseVariants(term) {
   function combine(index, current) {
     if (index === partVariants.length) {
       phrases.add(current.join(" "));
+      phrases.add(current.join(""));
       return;
     }
     partVariants[index].forEach((variant) => combine(index + 1, [...current, variant]));
@@ -645,7 +647,24 @@ function buildChapterPattern(terms) {
 }
 
 function termToChapterPattern(term) {
-  return escapeChapterRegExp(term).replace(/(?:\s+|\\-|-)+/g, "[\\s-]+");
+  const compoundPrefixPattern = getChapterJoinedCompoundPrefixPattern(term);
+  if (compoundPrefixPattern) {
+    return compoundPrefixPattern;
+  }
+  return escapeChapterRegExp(term).replace(/(?:\s+|\\-|_|-)+/g, "[\\s_-]*");
+}
+
+function getChapterJoinedCompoundPrefixPattern(term) {
+  const gannagVariants = ["gannag", "ganag", "gannak", "ganak", "gandag", "gannay"];
+  if (!gannagVariants.includes(term)) {
+    return "";
+  }
+
+  const menogVariants = ["menog", "menoy", "menok", "minog", "mainyog"];
+  const prefix = "(?:dus[\\s_-]*)?";
+  const ending = "(?:an|ih)?";
+  const menogTail = `(?:[\\s_-]*(?:${menogVariants.map(escapeChapterRegExp).join("|")}))?`;
+  return `${prefix}${escapeChapterRegExp(term)}${ending}${menogTail}`;
 }
 
 function isChapterPhraseTerm(term) {

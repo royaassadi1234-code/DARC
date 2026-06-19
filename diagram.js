@@ -576,6 +576,7 @@ function getLexicalVariantGroups() {
   return [
     ["ahreman", "ahrimen", "ahriman", "aharman", "ahremn", "ahremanag"],
     ["druz", "druj", "drux", "drug", "draoga"],
+    ["gannag", "ganag", "gannak", "ganak", "gandag", "gannay"],
     ["ohrmazd", "ormazd", "ahura mazda", "ahuramazda", "dadar"],
     ["zadspram", "zadsparam", "zatspram", "zad-spram"],
     ["manuchihr", "manushchihr", "manuschihr", "manuscihr", "manushcihr"]
@@ -592,7 +593,7 @@ function getPhraseVariants(term) {
   }
 
   const phraseVariantGroups = [
-    ["gannag", "ganag", "gannak", "ganak", "gandag"],
+    ["gannag", "ganag", "gannak", "ganak", "gandag", "gannay"],
     ["menog", "menoy", "menok", "minog", "mainyog"]
   ];
   const partVariants = parts.map((part) => getVariantGroup(part, phraseVariantGroups));
@@ -601,6 +602,7 @@ function getPhraseVariants(term) {
   function combine(index, current) {
     if (index === partVariants.length) {
       phrases.add(current.join(" "));
+      phrases.add(current.join(""));
       return;
     }
 
@@ -736,7 +738,24 @@ function buildPattern(terms) {
 }
 
 function termToSearchPattern(term) {
-  return escapeRegExp(term).replace(/(?:\s+|\\-|-)+/g, "[\\s-]+");
+  const compoundPrefixPattern = getJoinedCompoundPrefixPattern(term);
+  if (compoundPrefixPattern) {
+    return compoundPrefixPattern;
+  }
+  return escapeRegExp(term).replace(/(?:\s+|\\-|_|-)+/g, "[\\s_-]*");
+}
+
+function getJoinedCompoundPrefixPattern(term) {
+  const gannagVariants = ["gannag", "ganag", "gannak", "ganak", "gandag", "gannay"];
+  if (!gannagVariants.includes(term)) {
+    return "";
+  }
+
+  const menogVariants = ["menog", "menoy", "menok", "minog", "mainyog"];
+  const prefix = "(?:dus[\\s_-]*)?";
+  const ending = "(?:an|ih)?";
+  const menogTail = `(?:[\\s_-]*(?:${menogVariants.map(escapeRegExp).join("|")}))?`;
+  return `${prefix}${escapeRegExp(term)}${ending}${menogTail}`;
 }
 
 function isPhraseTerm(term) {

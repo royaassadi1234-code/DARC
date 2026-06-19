@@ -97,10 +97,13 @@
         </header>
 
         <section class="search-panel thematic-reader-controls" aria-label="DD-WZ thematic reader controls">
-          <label class="search-box" for="thematic-filter">
-            <span>Search themes and passages</span>
-            <input id="thematic-filter" type="search" autocomplete="off" placeholder="Search theme title, DD, or WZ text">
-          </label>
+          <div class="thematic-search-wrap">
+            <label class="search-box" for="thematic-filter">
+              <span>Search theme</span>
+              <input id="thematic-filter" type="search" autocomplete="off" placeholder="Click to choose a theme">
+            </label>
+            <div class="thematic-title-menu" id="thematic-title-menu" hidden></div>
+          </div>
           <div class="controls" role="group" aria-label="Thematic reader options">
             <label class="control">
               <input id="thematic-show-translation" type="checkbox" checked>
@@ -114,6 +117,11 @@
         </section>
 
         <section class="thematic-reader-grid" id="thematic-reader-grid" aria-label="DD-WZ thematic text replica" aria-live="polite"></section>
+        <nav class="thematic-page-nav" aria-label="Theme page navigation">
+          <button type="button" id="thematic-prev">Previous</button>
+          <span id="thematic-page-status"></span>
+          <button type="button" id="thematic-next">Next</button>
+        </nav>
       </section>
     </main>
 

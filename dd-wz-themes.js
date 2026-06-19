@@ -37,14 +37,20 @@ const THEMATIC_TABLE = [
 
 const thematicState = {
   texts: {},
+  selectedThemeIndex: 0,
   filter: "",
+  titleMenuOpen: false,
   showTranslation: true,
   showEmpty: true
 };
 
 const filterEl = document.querySelector("#thematic-filter");
+const titleMenuEl = document.querySelector("#thematic-title-menu");
 const showTranslationEl = document.querySelector("#thematic-show-translation");
 const showEmptyEl = document.querySelector("#thematic-show-empty");
+const prevEl = document.querySelector("#thematic-prev");
+const nextEl = document.querySelector("#thematic-next");
+const pageStatusEl = document.querySelector("#thematic-page-status");
 const statusEl = document.querySelector("#thematic-reader-status");
 const gridEl = document.querySelector("#thematic-reader-grid");
 
@@ -77,8 +83,18 @@ async function loadThematicText(config) {
 }
 
 function bindControls() {
+  filterEl.addEventListener("focus", () => {
+    thematicState.titleMenuOpen = true;
+    renderThemeTitleMenu();
+  });
+  filterEl.addEventListener("click", () => {
+    thematicState.titleMenuOpen = true;
+    renderThemeTitleMenu();
+  });
   filterEl.addEventListener("input", () => {
     thematicState.filter = filterEl.value;
+    thematicState.titleMenuOpen = true;
+    renderThemeTitleMenu();
     renderThematicReader();
   });
   showTranslationEl.addEventListener("change", () => {
@@ -89,18 +105,30 @@ function bindControls() {
     thematicState.showEmpty = showEmptyEl.checked;
     renderThematicReader();
   });
+  prevEl.addEventListener("click", () => {
+    selectTheme(Math.max(0, thematicState.selectedThemeIndex - 1));
+  });
+  nextEl.addEventListener("click", () => {
+    selectTheme(Math.min(THEMATIC_TABLE.length - 1, thematicState.selectedThemeIndex + 1));
+  });
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest(".thematic-search-wrap")) {
+      thematicState.titleMenuOpen = false;
+      renderThemeTitleMenu();
+    }
+  });
 }
 
 function renderThematicReader() {
-  const cards = THEMATIC_TABLE
-    .map((theme, index) => buildThemeCard(theme, index))
-    .filter((card) => card.visible);
-  const totalVisible = cards.reduce((sum, card) => sum + card.ddPassages.length + card.wzPassages.length, 0);
+  const card = buildThemeCard(THEMATIC_TABLE[thematicState.selectedThemeIndex], thematicState.selectedThemeIndex);
+  const totalVisible = card.ddPassages.length + card.wzPassages.length;
 
-  statusEl.textContent = `${cards.length.toLocaleString()} theme cards | ${totalVisible.toLocaleString()} passages`;
-  gridEl.innerHTML = cards.length
-    ? cards.map(renderThemeCard).join("")
-    : `<div class="empty-state">No theme cards match this search.</div>`;
+  statusEl.textContent = `Theme ${card.index + 1} of ${THEMATIC_TABLE.length} | ${totalVisible.toLocaleString()} passages`;
+  gridEl.innerHTML = renderThemeCard(card);
+  pageStatusEl.textContent = `Theme ${card.index + 1} of ${THEMATIC_TABLE.length}`;
+  prevEl.disabled = card.index === 0;
+  nextEl.disabled = card.index === THEMATIC_TABLE.length - 1;
+  renderThemeTitleMenu();
 }
 
 function recordsForTheme(textId, rangeSpec) {
@@ -122,12 +150,52 @@ function buildThemeCard(theme, index) {
   return {
     index,
     theme,
-    visible: titleMatch || ddPassages.length > 0 || wzPassages.length > 0 || !tokenizeQuery(thematicState.filter).length,
     ddPassages,
     wzPassages,
     ddMissing: missingChapters("dd", theme.dd),
     wzMissing: missingChapters("wz", theme.wz)
   };
+}
+
+function renderThemeTitleMenu() {
+  if (!thematicState.titleMenuOpen) {
+    titleMenuEl.hidden = true;
+    return;
+  }
+
+  const terms = tokenizeQuery(thematicState.filter);
+  const rows = THEMATIC_TABLE
+    .map((theme, index) => ({ theme, index }))
+    .filter(({ theme, index }) => {
+      if (!terms.length) {
+        return true;
+      }
+      return matchesQuery(`${index + 1} ${theme.theme} ${theme.dd} ${theme.wz}`);
+    });
+
+  titleMenuEl.hidden = false;
+  titleMenuEl.innerHTML = rows.length ? rows.map(({ theme, index }) => `
+    <button class="thematic-title-option${index === thematicState.selectedThemeIndex ? " active" : ""}" type="button" data-theme-index="${index}">
+      <span>Theme ${index + 1}</span>
+      <strong>${escapeHtml(theme.theme)}</strong>
+      <small>DD ${escapeHtml(theme.dd)} | WZ ${escapeHtml(theme.wz)}</small>
+    </button>
+  `).join("") : `<div class="empty-state">No theme titles match this search.</div>`;
+
+  titleMenuEl.querySelectorAll("[data-theme-index]").forEach((button) => {
+    button.addEventListener("click", () => {
+      selectTheme(Number(button.dataset.themeIndex));
+      thematicState.titleMenuOpen = false;
+      renderThemeTitleMenu();
+    });
+  });
+}
+
+function selectTheme(index) {
+  thematicState.selectedThemeIndex = Math.min(Math.max(0, index), THEMATIC_TABLE.length - 1);
+  filterEl.value = "";
+  thematicState.filter = "";
+  renderThematicReader();
 }
 
 function filterThemeRecords(records) {

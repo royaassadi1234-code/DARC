@@ -361,24 +361,32 @@ function renderChapterBar(text, chapter, maxCount) {
     locations
   ].filter(Boolean).join(" | ");
   return `
-    <article class="chapter-bar-row" title="${escapeChapterHtml(hoverTitle)}">
+    <article class="chapter-bar-row" title="${escapeChapterHtml(hoverTitle)}" ${chapterTitle ? `tabindex="0"` : ""}>
       <span class="chapter-label">Chapter ${escapeChapterHtml(chapter.chapter)}</span>
       <span class="chapter-bar-track" aria-hidden="true">
         <span class="chapter-bar-fill" style="width: ${percent.toFixed(2)}%"></span>
       </span>
       <strong>${chapter.total.toLocaleString()}</strong>
+      ${chapterTitle ? `<span class="chapter-hover-title">${escapeChapterHtml(chapterTitle)}</span>` : ""}
     </article>
   `;
 }
 
 function getChapterTitle(text, chapter) {
+  const chapterKey = normalizeChapterTitleKey(chapter);
   if (text.id === "dd") {
-    return DD_CHAPTER_TITLES[String(chapter)] || "";
+    return DD_CHAPTER_TITLES[chapterKey] || "";
   }
   if (text.id === "wz") {
-    return WZ_CHAPTER_TITLES[String(chapter)] || "";
+    return WZ_CHAPTER_TITLES[chapterKey] || "";
   }
   return "";
+}
+
+function normalizeChapterTitleKey(chapter) {
+  const value = String(chapter || "").trim();
+  const number = Number(value);
+  return Number.isFinite(number) ? String(number) : value;
 }
 
 function createChapterSearch(query) {

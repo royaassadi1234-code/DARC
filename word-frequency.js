@@ -5,6 +5,8 @@ const FREQUENCY_TEXTS = [
 ];
 
 const PERSONAL_COMMON_STORAGE_KEY = "darcPersonalCommonWords";
+const PERSONAL_COMMON_BACKUP_STORAGE_KEY = "darcPersonalCommonWordsBackup";
+const DEFAULT_PERSONAL_COMMON_WORDS_URL = "personal-common-words.json";
 
 const TRANSLITERATION_MAP = {
   "\u0100": "A",
@@ -88,6 +90,7 @@ const frequencyMultipleEl = document.querySelector("#frequency-multiple");
 const frequencyStopwordsEl = document.querySelector("#frequency-stopwords");
 const personalCommonInputEl = document.querySelector("#frequency-common-input");
 const personalCommonAddEl = document.querySelector("#frequency-common-add");
+const personalCommonExportEl = document.querySelector("#frequency-common-export");
 const personalCommonListEl = document.querySelector("#frequency-common-list");
 const frequencySummaryEl = document.querySelector("#frequency-summary");
 const frequencyRankComparisonEl = document.querySelector("#frequency-rank-comparison");
@@ -99,7 +102,12 @@ async function initFrequency() {
   bindFrequencyEvents();
 
   try {
-    frequencyState.texts = await Promise.all(FREQUENCY_TEXTS.map(loadFrequencyText));
+    const [texts, defaultCommonWords] = await Promise.all([
+      Promise.all(FREQUENCY_TEXTS.map(loadFrequencyText)),
+      loadDefaultPersonalCommonWords()
+    ]);
+    mergePersonalCommonWords(defaultCommonWords);
+    frequencyState.texts = texts;
     frequencyStatusEl.textContent = "DD, PY, and WZ ready";
     renderFrequency();
   } catch (error) {
@@ -140,6 +148,10 @@ function bindFrequencyEvents() {
 
   personalCommonAddEl.addEventListener("click", () => {
     addPersonalCommonWord(personalCommonInputEl.value);
+  });
+
+  personalCommonExportEl.addEventListener("click", () => {
+    copyPersonalCommonWords(personalCommonExportEl);
   });
 
   personalCommonInputEl.addEventListener("keydown", (event) => {
@@ -636,15 +648,15 @@ function getFrequencyTransLocationHref(text, location) {
 }
 
 function addPersonalCommonWord(value) {
-  const key = normalizeWord(value);
-  if (!key) {
+  const keys = parsePersonalCommonWords(value);
+  if (!keys.length) {
     return;
   }
 
-  frequencyState.personalCommonWords.add(key);
+  keys.forEach((key) => frequencyState.personalCommonWords.add(key));
   savePersonalCommonWords();
   personalCommonInputEl.value = "";
-  if (frequencyState.selected?.wordKey === key) {
+  if (frequencyState.selected && keys.includes(frequencyState.selected.wordKey)) {
     clearSelectedWord();
   }
   renderFrequency();
@@ -658,6 +670,33 @@ function removePersonalCommonWord(key) {
 
 function isCommonWord(key) {
   return BASE_COMMON_WORDS.has(key) || frequencyState.personalCommonWords.has(key);
+}
+
+function parsePersonalCommonWords(value) {
+  return [...new Set(
+    String(value || "")
+      .split(/[,;\n]+/)
+      .map((word) => normalizeWord(word.trim()))
+      .filter(Boolean)
+  )];
+}
+
+async function copyPersonalCommonWords(button) {
+  const original = button.textContent;
+  const words = [...frequencyState.personalCommonWords].sort((a, b) => a.localeCompare(b));
+  const text = words.join(", ");
+
+  try {
+    await navigator.clipboard.writeText(text);
+    button.textContent = "Copied";
+  } catch (error) {
+    console.error("Common word copy failed", error);
+    button.textContent = "Copy failed";
+  }
+
+  window.setTimeout(() => {
+    button.textContent = original;
+  }, 1500);
 }
 
 function clearSelectedWord() {
@@ -743,20 +782,63 @@ function clampPage(page, pageCount) {
 
 function loadPersonalCommonWords() {
   try {
-    const value = window.localStorage?.getItem(PERSONAL_COMMON_STORAGE_KEY);
-    const words = value ? JSON.parse(value) : [];
-    return new Set(Array.isArray(words) ? words.map(normalizeWord).filter(Boolean) : []);
+    const words = [
+      ...readStoredPersonalCommonWords(PERSONAL_COMMON_STORAGE_KEY),
+      ...readStoredPersonalCommonWords(PERSONAL_COMMON_BACKUP_STORAGE_KEY)
+    ];
+    return new Set(words);
   } catch {
     return new Set();
   }
 }
 
+function readStoredPersonalCommonWords(key) {
+  const value = window.localStorage?.getItem(key);
+  if (!value) {
+    return [];
+  }
+
+  try {
+    const words = JSON.parse(value);
+    return Array.isArray(words) ? words.map(normalizeWord).filter(Boolean) : [];
+  } catch {
+    return parsePersonalCommonWords(value);
+  }
+}
+
+async function loadDefaultPersonalCommonWords() {
+  try {
+    const response = await fetch(DEFAULT_PERSONAL_COMMON_WORDS_URL);
+    if (!response.ok) {
+      return [];
+    }
+
+    const data = await response.json();
+    const words = Array.isArray(data) ? data : data.words;
+    return Array.isArray(words) ? words.map(normalizeWord).filter(Boolean) : [];
+  } catch {
+    return [];
+  }
+}
+
+function mergePersonalCommonWords(words) {
+  const before = frequencyState.personalCommonWords.size;
+  words.forEach((word) => {
+    const key = normalizeWord(word);
+    if (key) {
+      frequencyState.personalCommonWords.add(key);
+    }
+  });
+  if (frequencyState.personalCommonWords.size !== before) {
+    savePersonalCommonWords();
+  }
+}
+
 function savePersonalCommonWords() {
   try {
-    window.localStorage?.setItem(
-      PERSONAL_COMMON_STORAGE_KEY,
-      JSON.stringify([...frequencyState.personalCommonWords].sort((a, b) => a.localeCompare(b)))
-    );
+    const value = JSON.stringify([...frequencyState.personalCommonWords].sort((a, b) => a.localeCompare(b)));
+    window.localStorage?.setItem(PERSONAL_COMMON_STORAGE_KEY, value);
+    window.localStorage?.setItem(PERSONAL_COMMON_BACKUP_STORAGE_KEY, value);
   } catch {
     // Ignore storage failures; the in-memory set still works for this page session.
   }

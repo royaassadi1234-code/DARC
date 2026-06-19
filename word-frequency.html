@@ -126,10 +126,13 @@
           <summary>Personal common words</summary>
           <div class="frequency-common-body" aria-label="Personal common words">
             <label class="search-box" for="frequency-common-input">
-              <span>Mark a personal common word</span>
-              <input id="frequency-common-input" type="search" placeholder="Type a word to hide, e.g. ham, est, abar" autocomplete="off">
+              <span>Mark personal common word(s)</span>
+              <input id="frequency-common-input" type="search" placeholder="Type words to hide: ham, est, abar" autocomplete="off">
             </label>
-            <button class="action-button" id="frequency-common-add" type="button">Add common word</button>
+            <div class="frequency-common-actions">
+              <button class="action-button" id="frequency-common-add" type="button">Add common</button>
+              <button class="copy-button" id="frequency-common-export" type="button">Copy list</button>
+            </div>
             <div class="frequency-common-list" id="frequency-common-list" aria-live="polite"></div>
           </div>
         </details>

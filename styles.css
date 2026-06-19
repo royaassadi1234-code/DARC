@@ -606,6 +606,17 @@ h1 {
   padding: 14px;
 }
 
+.frequency-common-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.frequency-common-actions .action-button,
+.frequency-common-actions .copy-button {
+  flex: 1 1 120px;
+}
+
 .frequency-common-list {
   grid-column: 1 / -1;
   display: flex;

@@ -99,6 +99,44 @@ const DD_CHAPTER_TITLES = {
   "92": "Tistar, Clouds, and Rainfall"
 };
 
+const WZ_CHAPTER_TITLES = {
+  "1": "The Mixed State of Good and Evil",
+  "2": "Ahriman's Assault on Creation",
+  "3": "The Resistance to Ahriman's Corruption",
+  "4": "The Advent of Religion",
+  "5": "Zoroaster's Pre-Birth Glory",
+  "6": "The Conception of Zoroaster",
+  "7": "Zoroaster's Divine Lineage",
+  "8": "Attempts to Kill Zoroaster",
+  "9": "The Enemies of Zoroaster",
+  "10": "Trials and Signs of Prophecy",
+  "11": "Conflict with His Parents",
+  "12": "Opposition from the Wicked",
+  "13": "The Pursuit of Justice",
+  "14": "Patient Compassion",
+  "15": "Generosity and Virtue",
+  "16": "Renunciation and Justice",
+  "17": "Compassion for All Creatures",
+  "18": "Marriage and Purity of Lineage",
+  "19": "Wisdom Through Humility",
+  "20": "The Age of Thirty",
+  "21": "The Divine Encounter",
+  "22": "Zoroaster's Questions",
+  "23": "The Seven Interviews",
+  "24": "The Completion of Religion",
+  "25": "The Manifestation of Zoroaster's Goodness",
+  "26": "The Three Fundamental Laws",
+  "27": "Priestly Virtues and Religious Counsel",
+  "28": "The Structure of Religion",
+  "29": "Body, Life, and Soul",
+  "30": "The Composition of Humanity",
+  "31": "The Soul's Encounter After Death",
+  "32": "The Four Professions and Bad Government",
+  "33": "Frasostar the Righteous",
+  "34": "The Renovation of the World",
+  "35": "The Sevenfold Renovation"
+};
+
 const chapterDiagramState = {
   texts: [],
   query: "",
@@ -315,10 +353,13 @@ function renderChapterBar(text, chapter, maxCount) {
 }
 
 function getChapterTitle(text, chapter) {
-  if (text.id !== "dd") {
-    return "";
+  if (text.id === "dd") {
+    return DD_CHAPTER_TITLES[String(chapter)] || "";
   }
-  return DD_CHAPTER_TITLES[String(chapter)] || "";
+  if (text.id === "wz") {
+    return WZ_CHAPTER_TITLES[String(chapter)] || "";
+  }
+  return "";
 }
 
 function createChapterSearch(query) {

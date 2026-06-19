@@ -47,7 +47,6 @@ const thematicState = {
   selectedThemeIndex: 0,
   filter: "",
   titleMenuOpen: false,
-  titleMenuOpenedByFocus: false,
   showTranslation: true,
   showEmpty: true
 };
@@ -91,23 +90,21 @@ async function loadThematicText(config) {
 }
 
 function bindControls() {
+  filterEl.addEventListener("pointerdown", (event) => {
+    if (thematicState.titleMenuOpen && document.activeElement === filterEl) {
+      event.preventDefault();
+      thematicState.titleMenuOpen = false;
+      filterEl.blur();
+      renderThemeTitleMenu();
+    }
+  });
   filterEl.addEventListener("focus", () => {
     thematicState.titleMenuOpen = true;
-    thematicState.titleMenuOpenedByFocus = true;
-    renderThemeTitleMenu();
-  });
-  filterEl.addEventListener("click", () => {
-    if (thematicState.titleMenuOpenedByFocus) {
-      thematicState.titleMenuOpenedByFocus = false;
-      return;
-    }
-    thematicState.titleMenuOpen = !thematicState.titleMenuOpen;
     renderThemeTitleMenu();
   });
   filterEl.addEventListener("input", () => {
     thematicState.filter = filterEl.value;
     thematicState.titleMenuOpen = true;
-    thematicState.titleMenuOpenedByFocus = false;
     renderThemeTitleMenu();
     renderThematicReader();
   });
@@ -128,7 +125,6 @@ function bindControls() {
   document.addEventListener("click", (event) => {
     if (!event.target.closest(".thematic-search-wrap")) {
       thematicState.titleMenuOpen = false;
-      thematicState.titleMenuOpenedByFocus = false;
       renderThemeTitleMenu();
     }
   });

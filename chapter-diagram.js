@@ -144,6 +144,7 @@ const chapterDiagramState = {
   phraseSearch: false,
   wholeWord: true,
   caseSensitive: false,
+  selectedChapter: null,
   latestSummaries: []
 };
 
@@ -194,28 +195,33 @@ async function initChapterDiagram() {
 function bindChapterDiagramEvents() {
   chapterQueryEl.addEventListener("input", () => {
     chapterDiagramState.query = chapterQueryEl.value.trim();
+    closeChapterDetails();
     renderChapterDiagram();
   });
 
   chapterMultipleEl.addEventListener("change", () => {
     chapterDiagramState.multipleWords = chapterMultipleEl.checked;
+    closeChapterDetails();
     updateChapterSearchModeControls();
     renderChapterDiagram();
   });
 
   chapterPhraseEl.addEventListener("change", () => {
     chapterDiagramState.phraseSearch = chapterPhraseEl.checked;
+    closeChapterDetails();
     updateChapterSearchModeControls();
     renderChapterDiagram();
   });
 
   chapterWholeWordEl.addEventListener("change", () => {
     chapterDiagramState.wholeWord = chapterWholeWordEl.checked;
+    closeChapterDetails();
     renderChapterDiagram();
   });
 
   chapterCaseEl.addEventListener("change", () => {
     chapterDiagramState.caseSensitive = chapterCaseEl.checked;
+    closeChapterDetails();
     renderChapterDiagram();
   });
 
@@ -223,6 +229,12 @@ function bindChapterDiagramEvents() {
     const copyButton = event.target.closest("[data-copy-chapter-diagram]");
     if (copyButton) {
       copyChapterDiagram(copyButton);
+      return;
+    }
+
+    const chapterRow = event.target.closest("[data-chapter-text-id][data-chapter-key]");
+    if (chapterRow) {
+      toggleChapterDetails(chapterRow.dataset.chapterTextId, chapterRow.dataset.chapterKey);
     }
   });
 
@@ -351,25 +363,43 @@ function renderChapterTextPanel(summary, maxCount) {
 function renderChapterBar(text, chapter, maxCount) {
   const percent = maxCount ? (chapter.total / maxCount) * 100 : 0;
   const chapterTitle = getChapterTitle(text, chapter.chapter);
+  const selected = chapterDiagramState.selectedChapter?.textId === text.id &&
+    chapterDiagramState.selectedChapter?.chapter === String(chapter.chapter);
   const locations = [...chapter.locations.entries()]
     .map(([location, count]) => `${location} (${count})`)
     .join(", ");
-  const hoverTitle = [
-    `${text.siglum} Chapter ${chapter.chapter}`,
-    chapterTitle,
-    `${chapter.total.toLocaleString()} occurrences`,
-    locations
-  ].filter(Boolean).join(" | ");
   return `
-    <article class="chapter-bar-row" title="${escapeChapterHtml(hoverTitle)}" ${chapterTitle ? `tabindex="0"` : ""}>
+    <article class="chapter-bar-row ${selected ? "active" : ""}" tabindex="0" data-chapter-text-id="${escapeChapterHtml(text.id)}" data-chapter-key="${escapeChapterHtml(chapter.chapter)}">
       <span class="chapter-label">Chapter ${escapeChapterHtml(chapter.chapter)}</span>
       <span class="chapter-bar-track" aria-hidden="true">
         <span class="chapter-bar-fill" style="width: ${percent.toFixed(2)}%"></span>
       </span>
       <strong>${chapter.total.toLocaleString()}</strong>
       ${chapterTitle ? `<span class="chapter-hover-title">${escapeChapterHtml(chapterTitle)}</span>` : ""}
+      ${selected ? renderChapterDetails(chapter.total, locations) : ""}
     </article>
   `;
+}
+
+function renderChapterDetails(total, locations) {
+  return `
+    <div class="chapter-detail-panel">
+      <h4>${total.toLocaleString()} occurrence${total === 1 ? "" : "s"}</h4>
+      <p>${escapeChapterHtml(locations || "No locations listed")}</p>
+    </div>
+  `;
+}
+
+function toggleChapterDetails(textId, chapter) {
+  const current = chapterDiagramState.selectedChapter;
+  chapterDiagramState.selectedChapter = current?.textId === textId && current?.chapter === chapter
+    ? null
+    : { textId, chapter };
+  renderChapterDiagram();
+}
+
+function closeChapterDetails() {
+  chapterDiagramState.selectedChapter = null;
 }
 
 function getChapterTitle(text, chapter) {

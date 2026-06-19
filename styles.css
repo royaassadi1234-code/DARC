@@ -1033,6 +1033,11 @@ h1 {
   outline: none;
 }
 
+.chapter-bar-row.active {
+  border-color: var(--accent);
+  background: #eef4f7;
+}
+
 .chapter-label {
   color: var(--accent-strong);
   font-size: 0.78rem;
@@ -1078,9 +1083,34 @@ h1 {
   line-height: 1.35;
 }
 
-.chapter-bar-row:hover .chapter-hover-title,
-.chapter-bar-row:focus .chapter-hover-title {
+.chapter-bar-row:hover .chapter-hover-title {
   display: block;
+}
+
+.chapter-detail-panel {
+  display: grid;
+  gap: 5px;
+  grid-column: 1 / -1;
+  border-top: 1px solid #dbe1e7;
+  padding-top: 8px;
+}
+
+.chapter-detail-panel h4,
+.chapter-detail-panel p {
+  margin: 0;
+}
+
+.chapter-detail-panel h4 {
+  color: var(--accent-strong);
+  font-size: 0.82rem;
+}
+
+.chapter-detail-panel p {
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 650;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
 }
 
 .diagram-actions {

@@ -144,6 +144,7 @@ const chapterDiagramState = {
   phraseSearch: false,
   wholeWord: true,
   caseSensitive: false,
+  order: "chapter",
   selectedChapter: null,
   latestSummaries: []
 };
@@ -153,6 +154,7 @@ const chapterMultipleEl = document.querySelector("#chapter-diagram-multiple");
 const chapterPhraseEl = document.querySelector("#chapter-diagram-phrase");
 const chapterWholeWordEl = document.querySelector("#chapter-diagram-whole-word");
 const chapterCaseEl = document.querySelector("#chapter-diagram-case-sensitive");
+const chapterOrderEl = document.querySelector("#chapter-diagram-order");
 const chapterStatusEl = document.querySelector("#chapter-diagram-status");
 const chapterToolEl = document.querySelector("#chapter-diagram-tool");
 
@@ -222,6 +224,11 @@ function bindChapterDiagramEvents() {
   chapterCaseEl.addEventListener("change", () => {
     chapterDiagramState.caseSensitive = chapterCaseEl.checked;
     closeChapterDetails();
+    renderChapterDiagram();
+  });
+
+  chapterOrderEl.addEventListener("change", () => {
+    chapterDiagramState.order = chapterOrderEl.value;
     renderChapterDiagram();
   });
 
@@ -347,12 +354,22 @@ function getChapterSummary(text, search) {
     chapterMap.set(chapterKey, entry);
   });
 
-  const chapters = [...chapterMap.values()].sort((a, b) => compareChapterKeys(a.chapter, b.chapter));
+  const chapters = sortChapterEntries([...chapterMap.values()]);
   return {
     text,
     chapters,
     total: chapters.reduce((sum, chapter) => sum + chapter.total, 0)
   };
+}
+
+function sortChapterEntries(chapters) {
+  return chapters.sort((a, b) => {
+    if (chapterDiagramState.order === "count") {
+      return b.total - a.total || compareChapterKeys(a.chapter, b.chapter);
+    }
+
+    return compareChapterKeys(a.chapter, b.chapter);
+  });
 }
 
 function renderChapterTextPanel(summary, maxCount) {

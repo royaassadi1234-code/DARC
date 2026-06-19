@@ -548,7 +548,7 @@ function renderFrequencyChart(rankedByText, pageDataByText, visibleSharedWordKey
       <header>
         <div>
           <p class="eyebrow">${escapeHtml(text.title)}</p>
-          <h2>${escapeHtml(text.siglum)} Word Frequency</h2>
+          <h2>${escapeHtml(text.siglum)} Word Based</h2>
         </div>
       </header>
       ${ranked.length ? renderFrequencyList(text, ranked, pageDataByText.get(text.id), visibleSharedWordKeys) : `<div class="empty-state">No words match the current filter.</div>`}

@@ -71,7 +71,6 @@ const passagePrevButton = document.querySelector("#text-passage-prev");
 const passageNextButton = document.querySelector("#text-passage-next");
 const saveButton = document.querySelector("#text-editor-save");
 const annotationOptionsToggleButton = document.querySelector("#text-editor-annotation-options-toggle");
-const noteToggleButton = document.querySelector("#text-editor-note-toggle");
 const addTextPanelEl = document.querySelector("#text-editor-add-text-panel");
 const addTextDropboxEl = document.querySelector("#text-editor-dropbox");
 const newTextTitleEl = document.querySelector("#text-editor-new-title");
@@ -120,8 +119,7 @@ const textPassageFields = {
   adjectivesDescriptions: document.querySelector("#text-field-adjectivesDescriptions"),
   metaphors: document.querySelector("#text-field-metaphors"),
   theme: document.querySelector("#text-field-theme"),
-  relatedTheme: document.querySelector("#text-field-relatedTheme"),
-  reviewNote: document.querySelector("#text-field-reviewNote")
+  relatedTheme: document.querySelector("#text-field-relatedTheme")
 };
 
 const TEXT_ANNOTATION_OPTION_CARDS = [
@@ -136,12 +134,11 @@ const TEXT_ANNOTATION_OPTION_CARDS = [
   { key: "oppositions", label: "opposition", selector: ".text-annotation-oppositions" },
   { key: "actionsUsedWithIt", label: "Action", selector: ".text-annotation-action" },
   { key: "adjectivesDescriptions", label: "Adjective/descriptions", selector: ".text-annotation-adjectives" },
-  { key: "metaphors", label: "Metaphore", selector: ".text-annotation-metaphors" },
-  { key: "reviewNote", label: "Note", selector: ".text-annotation-review-note" }
+  { key: "metaphors", label: "Metaphore", selector: ".text-annotation-metaphors" }
 ];
 
 const PERMANENT_TEXT_ANNOTATION_KEYS = new Set(["realm", "oppositions", "referent"]);
-const REMOVED_TEXT_ANNOTATION_KEYS = ["relationship", "similarity", "difference", "reviewStatus"];
+const REMOVED_TEXT_ANNOTATION_KEYS = ["relationship", "similarity", "difference", "reviewStatus", "reviewNote"];
 
 const annotationFields = {
   sourceParagraph: document.querySelector("#field-sourceParagraph"),
@@ -329,7 +326,6 @@ function bindTextEditorEvents() {
     const hidden = annotationOptionsPanelEl.classList.toggle("hidden");
     annotationOptionsToggleButton.setAttribute("aria-expanded", hidden ? "false" : "true");
   });
-  noteToggleButton.addEventListener("click", openTextNoteField);
   createTextButton.addEventListener("click", createCustomText);
   ["dragenter", "dragover"].forEach((eventName) => {
     addTextDropboxEl.addEventListener(eventName, (event) => {
@@ -499,20 +495,6 @@ function keepFixedTextAnnotationsVisible() {
   document.querySelectorAll(".text-annotation-realm, .text-annotation-oppositions, .text-annotation-referent").forEach((group) => {
     group.classList.remove("text-annotation-choice-collapsed");
   });
-}
-
-function openTextNoteField() {
-  const hidden = new Set(editorState.annotationOptions.hidden || []);
-  if (hidden.delete("reviewNote")) {
-    editorState.annotationOptions.hidden = Array.from(hidden);
-    persistTextAnnotationOptions();
-    renderTextAnnotationOptions();
-  }
-  const noteCard = document.querySelector(".text-annotation-review-note");
-  if (noteCard instanceof HTMLDetailsElement) {
-    noteCard.open = true;
-  }
-  textPassageFields.reviewNote?.focus();
 }
 
 function addCustomAnnotationOption() {
@@ -1341,7 +1323,6 @@ function renderTextPassageMetadata(file, sourceRecord) {
   textPassageFields.metaphors.value = valueToEditable(metadata.metaphors);
   textPassageFields.theme.value = valueToEditable(metadata.theme);
   textPassageFields.relatedTheme.value = valueToEditable(metadata.relatedTheme);
-  textPassageFields.reviewNote.value = valueToEditable(metadata.reviewNote);
   renderTextFieldCompletion(metadata.completion || {});
   renderCustomTextPassageMetadata(metadata.customFields || {}, metadata.completion || {});
 }
@@ -1369,7 +1350,6 @@ function saveTextPassageMetadata(draft, sourceRecord, previousKey) {
     realm: singleOrList(getCheckedValues(textPassageFields.realm)),
     theme: parseList(textPassageFields.theme.value),
     relatedTheme: parseList(textPassageFields.relatedTheme.value),
-    reviewNote: parseSingleOrList(textPassageFields.reviewNote.value),
     customFields: getCustomTextPassageMetadata(),
     completion: {
       ...getTextFieldCompletion(),
@@ -1456,7 +1436,6 @@ function getTextPassageControls() {
     textPassageFields.metaphors,
     textPassageFields.theme,
     textPassageFields.relatedTheme,
-    textPassageFields.reviewNote,
     ...textFieldCompletionInputs,
     ...getCustomTextPassageControls()
   ].filter(Boolean);
@@ -1527,7 +1506,6 @@ function hasMeaningfulTextPassageMetadata(metadata) {
     valueToLines(metadata.metaphors).length ||
     valueToLines(metadata.theme).length ||
     valueToLines(metadata.relatedTheme).length ||
-    valueToLines(metadata.reviewNote).length ||
     Object.values(metadata.customFields || {}).some((value) => valueToLines(value).length) ||
     Object.keys(metadata.completion || {}).length
   );

@@ -73,7 +73,8 @@ async function initPseudo() {
     }
 
     const data = await response.json();
-    pseudoState.all = data.map(normalizeRecord);
+    const records = data.map(normalizeRecord);
+    pseudoState.all = IS_PHRASE_PAGE ? groupPhraseRecords(records) : records;
     pseudoState.dictionary = dictionary;
     pseudoState.englishTranslations = englishTranslations;
     populateTierFilter();
@@ -183,6 +184,7 @@ function normalizeRecord(raw, index) {
     cosine: raw["IDF Cosine"] || "N/A",
     sharedCount: Number(raw["Shared Distinct Words"]) || 0,
     sharedWords: raw["Shared Words"] || "N/A",
+    sharedPhrases: raw["Shared Words"] && raw["Shared Words"] !== "N/A" ? [raw["Shared Words"]] : [],
     sourcePreview: raw[sourcePreviewKey] || "N/A",
     targetPreview: raw[targetPreviewKey] || "N/A",
     thirdPreview: thirdPreviewKey ? raw[thirdPreviewKey] || "" : "",
@@ -192,6 +194,66 @@ function normalizeRecord(raw, index) {
     targetStanza: raw[`${TARGET_KEY} Stanza`] || "",
     targetXmlSection: raw[`${TARGET_KEY} XML Section`] || ""
   };
+}
+
+function groupPhraseRecords(records) {
+  const groups = new Map();
+
+  records.forEach((record) => {
+    const key = getPassageGroupKey(record);
+    const existing = groups.get(key);
+    if (!existing) {
+      groups.set(key, { ...record, sourceRanks: [record.rank] });
+      return;
+    }
+
+    existing.rank = Math.min(existing.rank, record.rank);
+    existing.score = Math.max(existing.score, record.score);
+    existing.sharedPhrases = uniqueValues([...existing.sharedPhrases, ...record.sharedPhrases]);
+    existing.sharedWords = existing.sharedPhrases.join("; ") || existing.sharedWords;
+    existing.sharedCount = Math.max(existing.sharedCount, record.sharedCount, existing.sharedPhrases.length);
+    existing.sourceRanks.push(record.rank);
+    existing.tier = getGroupedTier(existing.tier, record.tier);
+  });
+
+  return [...groups.values()]
+    .sort((a, b) => a.rank - b.rank)
+    .map((record, index) => ({
+      ...record,
+      id: `match-${index + 1}`,
+      groupedCount: record.sourceRanks.length
+    }));
+}
+
+function getPassageGroupKey(record) {
+  return [
+    getPreviewLocation(record.sourcePreview),
+    getPreviewLocation(record.targetPreview),
+    getPreviewLocation(record.thirdPreview)
+  ].join("|");
+}
+
+function getPreviewLocation(value) {
+  return String(value || "").match(/^\s*([^:]{1,80}):/)?.[1]?.trim() || String(value || "").trim();
+}
+
+function uniqueValues(values) {
+  const seen = new Set();
+  return values.filter((value) => {
+    const key = foldText(value).text;
+    if (!key || seen.has(key)) {
+      return false;
+    }
+    seen.add(key);
+    return true;
+  });
+}
+
+function getGroupedTier(a, b) {
+  if (a === b) {
+    return a;
+  }
+  return "grouped";
 }
 
 function findKey(record, preferred, fallback) {
@@ -334,7 +396,7 @@ function renderCard(record) {
           <span class="siglum">Rank ${record.rank}</span>
           <strong>${highlight(record.sharedWords)}</strong>
         </span>
-        <span class="pseudo-card-meta">${titleCase(record.tier)} | ${record.score.toFixed(4)}</span>
+        <span class="pseudo-card-meta">${titleCase(record.tier)} | ${record.score.toFixed(4)}${record.groupedCount > 1 ? ` | ${record.groupedCount} phrases` : ""}</span>
       </button>
       <div class="pseudo-card-body">
         <section>
@@ -625,12 +687,15 @@ function getDictionaryKeys(value) {
 }
 
 function getPhraseTerms(record) {
-  if (!IS_PHRASE_PAGE || !record.sharedWords || record.sharedWords === "N/A") {
+  if (!IS_PHRASE_PAGE) {
     return [];
   }
 
-  const phrase = foldText(record.sharedWords.trim()).text;
-  return phrase ? [{ value: phrase, type: "phrase" }] : [];
+  const phrases = record.sharedPhrases?.length ? record.sharedPhrases : [record.sharedWords];
+  return phrases
+    .map((phrase) => foldText(String(phrase || "").trim()).text)
+    .filter(Boolean)
+    .map((value) => ({ value, type: "phrase" }));
 }
 
 function getSharedPreviewTerms(record) {

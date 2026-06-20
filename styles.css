@@ -2517,68 +2517,56 @@ h1 {
   order: 50;
 }
 
-.text-annotation-review-note {
+.text-annotation-id {
   order: 1;
 }
 
-.text-annotation-theme {
+.text-annotation-concept {
   order: 2;
 }
 
-.text-annotation-related-theme {
+.text-annotation-main-word {
   order: 3;
 }
 
-.text-annotation-concept {
+.text-annotation-referent {
   order: 4;
 }
 
-.text-annotation-main-word {
+.text-annotation-matched-words {
   order: 5;
 }
 
-.text-annotation-matched-words {
+.text-annotation-theme {
   order: 6;
 }
 
-.text-annotation-realm {
+.text-annotation-related-theme {
   order: 7;
 }
 
-.text-annotation-oppositions {
+.text-annotation-realm {
   order: 8;
 }
 
-.text-annotation-action {
+.text-annotation-oppositions {
   order: 9;
 }
 
-.text-annotation-referent {
+.text-annotation-action {
   order: 10;
 }
 
-.text-annotation-relationship {
+.text-annotation-adjectives {
   order: 11;
 }
 
-.text-annotation-similarity {
+.text-annotation-metaphors {
   order: 12;
 }
 
-.text-annotation-difference {
+.text-annotation-review-note {
   order: 13;
-}
-
-.text-annotation-adjectives {
-  order: 14;
-}
-
-.text-annotation-metaphors {
-  order: 15;
-}
-
-.text-annotation-id {
-  order: 16;
 }
 
 .text-annotation-realm,

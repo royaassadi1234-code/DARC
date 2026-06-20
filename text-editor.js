@@ -112,14 +112,10 @@ const textPassageFields = {
   referent: Array.from(document.querySelectorAll("input[name='text-referent']")),
   referentCustom: document.querySelector("#text-field-referent-custom"),
   actionsUsedWithIt: document.querySelector("#text-field-actionsUsedWithIt"),
-  relationship: document.querySelector("#text-field-relationship"),
-  similarity: document.querySelector("#text-field-similarity"),
-  difference: document.querySelector("#text-field-difference"),
   id: document.querySelector("#text-field-id"),
   concept: document.querySelector("#text-field-concept"),
   mainWord: document.querySelector("#text-field-mainWord"),
   matchedWords: document.querySelector("#text-field-matchedWords"),
-  reviewStatus: document.querySelector("#text-field-reviewStatus"),
   adjectivesDescriptions: document.querySelector("#text-field-adjectivesDescriptions"),
   metaphors: document.querySelector("#text-field-metaphors"),
   theme: document.querySelector("#text-field-theme"),
@@ -128,25 +124,23 @@ const textPassageFields = {
 };
 
 const TEXT_ANNOTATION_OPTION_CARDS = [
-  { key: "reviewNote", label: "Review note", selector: ".text-annotation-review-note" },
-  { key: "theme", label: "Theme", selector: ".text-annotation-theme" },
-  { key: "relatedTheme", label: "Related theme", selector: ".text-annotation-related-theme" },
+  { key: "id", label: "ID", selector: ".text-annotation-id" },
   { key: "concept", label: "Concept", selector: ".text-annotation-concept" },
   { key: "mainWord", label: "Main word", selector: ".text-annotation-main-word" },
-  { key: "matchedWords", label: "Matched words", selector: ".text-annotation-matched-words" },
-  { key: "realm", label: "Realm", selector: ".text-annotation-realm" },
-  { key: "oppositions", label: "Opposition", selector: ".text-annotation-oppositions" },
-  { key: "actionsUsedWithIt", label: "Action", selector: ".text-annotation-action" },
   { key: "referent", label: "Referent", selector: ".text-annotation-referent" },
-  { key: "relationship", label: "Relationship", selector: ".text-annotation-relationship" },
-  { key: "similarity", label: "Similarity", selector: ".text-annotation-similarity" },
-  { key: "difference", label: "Difference", selector: ".text-annotation-difference" },
-  { key: "adjectivesDescriptions", label: "Adjectives / descriptions", selector: ".text-annotation-adjectives" },
-  { key: "metaphors", label: "Metaphors", selector: ".text-annotation-metaphors" },
-  { key: "id", label: "ID", selector: ".text-annotation-id" }
+  { key: "matchedWords", label: "Matched words", selector: ".text-annotation-matched-words" },
+  { key: "theme", label: "Main Theme", selector: ".text-annotation-theme" },
+  { key: "relatedTheme", label: "Related Theme", selector: ".text-annotation-related-theme" },
+  { key: "realm", label: "Realm", selector: ".text-annotation-realm" },
+  { key: "oppositions", label: "opposition", selector: ".text-annotation-oppositions" },
+  { key: "actionsUsedWithIt", label: "Action", selector: ".text-annotation-action" },
+  { key: "adjectivesDescriptions", label: "Adjective/descriptions", selector: ".text-annotation-adjectives" },
+  { key: "metaphors", label: "Metaphore", selector: ".text-annotation-metaphors" },
+  { key: "reviewNote", label: "Note", selector: ".text-annotation-review-note" }
 ];
 
 const PERMANENT_TEXT_ANNOTATION_KEYS = new Set(["realm", "oppositions", "referent"]);
+const REMOVED_TEXT_ANNOTATION_KEYS = ["relationship", "similarity", "difference", "reviewStatus"];
 
 const annotationFields = {
   sourceParagraph: document.querySelector("#field-sourceParagraph"),
@@ -1323,14 +1317,10 @@ function renderTextPassageMetadata(file, sourceRecord) {
   setChoiceSelection(textPassageFields.oppositions, textPassageFields.oppositionsCustom, metadata.oppositions);
   setChoiceSelection(textPassageFields.referent, textPassageFields.referentCustom, metadata.meaning);
   textPassageFields.actionsUsedWithIt.value = valueToEditable(metadata.actionsUsedWithIt);
-  textPassageFields.relationship.value = valueToEditable(metadata.relationship);
-  textPassageFields.similarity.value = valueToEditable(metadata.similarity);
-  textPassageFields.difference.value = valueToEditable(metadata.difference);
   textPassageFields.id.value = correspondenceId || metadata.id || "";
   textPassageFields.concept.value = metadata.concept || "";
   textPassageFields.mainWord.value = valueToEditable(metadata.mainWord);
   textPassageFields.matchedWords.value = valueToEditable(metadata.matchedWords);
-  textPassageFields.reviewStatus.value = metadata.reviewStatus || "machine draft";
   textPassageFields.adjectivesDescriptions.value = valueToEditable(metadata.adjectivesDescriptions);
   textPassageFields.metaphors.value = valueToEditable(metadata.metaphors);
   textPassageFields.theme.value = valueToEditable(metadata.theme);
@@ -1357,14 +1347,10 @@ function saveTextPassageMetadata(draft, sourceRecord, previousKey) {
     matchedWords: parseList(textPassageFields.matchedWords.value),
     meaning: getChoiceSelection(textPassageFields.referent, textPassageFields.referentCustom),
     actionsUsedWithIt: parseList(textPassageFields.actionsUsedWithIt.value),
-    relationship: parseList(textPassageFields.relationship.value),
-    similarity: parseList(textPassageFields.similarity.value),
-    difference: parseList(textPassageFields.difference.value),
     adjectivesDescriptions: parseList(textPassageFields.adjectivesDescriptions.value),
     metaphors: parseList(textPassageFields.metaphors.value),
     oppositions: getChoiceSelection(textPassageFields.oppositions, textPassageFields.oppositionsCustom),
     realm: singleOrList(getCheckedValues(textPassageFields.realm)),
-    reviewStatus: textPassageFields.reviewStatus.value,
     theme: parseList(textPassageFields.theme.value),
     relatedTheme: parseList(textPassageFields.relatedTheme.value),
     reviewNote: parseSingleOrList(textPassageFields.reviewNote.value),
@@ -1374,6 +1360,7 @@ function saveTextPassageMetadata(draft, sourceRecord, previousKey) {
       ...getCustomTextFieldCompletion()
     }
   };
+  REMOVED_TEXT_ANNOTATION_KEYS.forEach((key) => removeTextAnnotationValueFromMetadata(metadata, key));
   (editorState.annotationOptions.hidden || []).forEach((key) => {
     if (!PERMANENT_TEXT_ANNOTATION_KEYS.has(key)) {
       removeTextAnnotationValueFromMetadata(metadata, key);
@@ -1445,14 +1432,10 @@ function getTextPassageControls() {
     ...textPassageFields.referent,
     textPassageFields.referentCustom,
     textPassageFields.actionsUsedWithIt,
-    textPassageFields.relationship,
-    textPassageFields.similarity,
-    textPassageFields.difference,
     textPassageFields.id,
     textPassageFields.concept,
     textPassageFields.mainWord,
     textPassageFields.matchedWords,
-    textPassageFields.reviewStatus,
     textPassageFields.adjectivesDescriptions,
     textPassageFields.metaphors,
     textPassageFields.theme,
@@ -1520,14 +1503,10 @@ function hasMeaningfulTextPassageMetadata(metadata) {
     valueToLines(metadata.oppositions).length ||
     valueToLines(metadata.meaning).length ||
     valueToLines(metadata.actionsUsedWithIt).length ||
-    valueToLines(metadata.relationship).length ||
-    valueToLines(metadata.similarity).length ||
-    valueToLines(metadata.difference).length ||
     metadata.id ||
     metadata.concept ||
     valueToLines(metadata.mainWord).length ||
     valueToLines(metadata.matchedWords).length ||
-    metadata.reviewStatus !== "machine draft" ||
     valueToLines(metadata.adjectivesDescriptions).length ||
     valueToLines(metadata.metaphors).length ||
     valueToLines(metadata.theme).length ||

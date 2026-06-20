@@ -4115,6 +4115,11 @@ mark.term-6 {
   font-weight: 800;
 }
 
+.pseudo-card-body .plain-match {
+  color: var(--accent-strong);
+  font-weight: 900;
+}
+
 .dict-word {
   cursor: help;
   text-decoration: underline;

@@ -211,10 +211,10 @@ function populateTierFilter() {
 }
 
 function applyFilters() {
-  const terms = getQueryTerms();
+  const terms = getQueryTermValues();
   pseudoState.filtered = pseudoState.all
     .filter((record) => !pseudoState.tier || record.tier === pseudoState.tier)
-    .filter((record) => !terms.length || terms.some((term) => searchableText(record).includes(getTermValue(term))))
+    .filter((record) => !terms.length || terms.some((term) => searchableText(record).includes(term)))
     .sort(sortRecords);
 
   renderPseudo();
@@ -647,25 +647,32 @@ function getSharedPreviewTerms(record) {
     return [];
   }
 
-  const shared = previews
+  const sharedPhrases = previews
+    .map(getPreviewPhraseKeys)
+    .reduce(intersectSets, null);
+  const sharedWords = previews
     .map(getPreviewTokenKeys)
-    .reduce((intersection, keys) => {
-      if (!intersection) {
-        return keys;
-      }
-      return new Set([...intersection].filter((key) => keys.has(key)));
-    }, null);
+    .reduce(intersectSets, null);
 
-  return [...(shared || [])]
-    .filter(Boolean)
-    .map((value) => ({ value, type: "word" }));
+  return [
+    ...[...(sharedPhrases || [])]
+      .sort((a, b) => b.split(" ").length - a.split(" ").length || b.length - a.length)
+      .map((value) => ({ value, type: "phrase" })),
+    ...[...(sharedWords || [])]
+      .sort((a, b) => b.length - a.length)
+      .map((value) => ({ value, type: "word" }))
+  ];
 }
 
 function getQueryTerms() {
+  return getQueryTermValues()
+    .map((value) => ({ value, type: value.includes(" ") ? "phrase" : "word" }));
+}
+
+function getQueryTermValues() {
   return [...new Set(pseudoState.query.split(/[,\s;]+/)
     .map((term) => foldText(term.trim()).text)
-    .filter(Boolean))]
-    .map((value) => ({ value, type: value.includes(" ") ? "phrase" : "word" }));
+    .filter(Boolean))];
 }
 
 function getPreviewTokenKeys(value) {
@@ -678,8 +685,40 @@ function getPreviewTokenKeys(value) {
   return keys;
 }
 
+function getPreviewPhraseKeys(value) {
+  const tokenPattern = /[\p{L}\p{M}\p{N}=._-]+/gu;
+  const tokens = [];
+  let match;
+  while ((match = tokenPattern.exec(stripPreviewLocation(value))) !== null) {
+    const key = getTokenPhraseKey(match[0]);
+    if (key) {
+      tokens.push(key);
+    }
+  }
+
+  const phrases = new Set();
+  const maxLength = Math.min(6, tokens.length);
+  for (let length = 2; length <= maxLength; length += 1) {
+    for (let index = 0; index <= tokens.length - length; index += 1) {
+      phrases.add(tokens.slice(index, index + length).join(" "));
+    }
+  }
+  return phrases;
+}
+
+function intersectSets(intersection, keys) {
+  if (!intersection) {
+    return keys;
+  }
+  return new Set([...intersection].filter((key) => keys.has(key)));
+}
+
 function stripPreviewLocation(value) {
   return String(value || "").replace(/^\s*[^:]{1,40}:\s*/u, "");
+}
+
+function getTokenPhraseKey(token) {
+  return getTokenSearchKeys(token).sort((a, b) => a.length - b.length || a.localeCompare(b))[0] || "";
 }
 
 function getTokenSearchKeys(token) {

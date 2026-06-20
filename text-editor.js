@@ -29,7 +29,8 @@ const editorState = {
   },
   selectedId: "dd",
   query: "",
-  passageIndex: 0
+  passageIndex: 0,
+  annotationSeeds: []
 };
 
 const annotationState = {
@@ -70,6 +71,7 @@ const passagePositionEl = document.querySelector("#text-passage-position");
 const passagePrevButton = document.querySelector("#text-passage-prev");
 const passageNextButton = document.querySelector("#text-passage-next");
 const saveButton = document.querySelector("#text-editor-save");
+const autoFillButton = document.querySelector("#text-editor-autofill-annotations");
 const exportBackupButton = document.querySelector("#text-editor-export-backup");
 const annotationOptionsToggleButton = document.querySelector("#text-editor-annotation-options-toggle");
 const addTextPanelEl = document.querySelector("#text-editor-add-text-panel");
@@ -145,6 +147,26 @@ const TEXT_ANNOTATION_OPTION_CARDS = [
 
 const PERMANENT_TEXT_ANNOTATION_KEYS = new Set(["realm", "oppositions", "referent"]);
 const LEGACY_TEXT_ANNOTATION_KEYS = new Set(["relationship", "similarity", "difference", "reviewStatus", "reviewNote"]);
+const TARGET_TEXT_ANNOTATION_TERMS = [
+  "druz",
+  "druj",
+  "druzan",
+  "drujan",
+  "druj an",
+  "ahreman",
+  "ahriman",
+  "angra mainyu",
+  "gannag menog",
+  "ganag menog",
+  "ganak menog",
+  "gannak menog",
+  "gannag menok",
+  "ganag menok",
+  "gannag menoy",
+  "ganag menoy",
+  "ganag",
+  "gannag"
+];
 
 const annotationFields = {
   sourceParagraph: document.querySelector("#field-sourceParagraph"),
@@ -328,6 +350,7 @@ function bindTextEditorEvents() {
   });
 
   saveButton.addEventListener("click", () => saveDraft());
+  autoFillButton.addEventListener("click", autoFillCurrentTextAnnotations);
   exportBackupButton.addEventListener("click", exportTextEditorBackup);
   annotationOptionsToggleButton.addEventListener("click", () => {
     const hidden = annotationOptionsPanelEl.classList.toggle("hidden");
@@ -1349,6 +1372,277 @@ function renderTextPassageMetadata(file, sourceRecord) {
   textPassageFields.reviewNote.value = valueToEditable(metadata.reviewNote);
   renderTextFieldCompletion(metadata.completion || {});
   renderCustomTextPassageMetadata(metadata.customFields || {}, metadata.completion || {});
+}
+
+async function autoFillCurrentTextAnnotations() {
+  const file = getSelectedFile();
+  if (!file || sourceContentEl.disabled) {
+    return;
+  }
+  statusEl.textContent = "Auto-filling annotations...";
+  try {
+    const seeds = await loadTextAnnotationSeeds();
+    const sourceRecord = getSourceRecords(file)[editorState.passageIndex];
+    const translationRecord = findTranslationRecord(file, sourceRecord, getTranslationRecords(file));
+    const suggestion = buildTextAnnotationSuggestion(file, sourceRecord, translationRecord, seeds);
+    if (!suggestion) {
+      statusEl.textContent = "No Druz, Ahreman, or gannag menog pattern found";
+      return;
+    }
+    const changed = applyTextAnnotationSuggestion(suggestion);
+    if (!changed) {
+      statusEl.textContent = "Auto-fill found no empty annotation fields to update";
+      return;
+    }
+    saveDraft({ quiet: true });
+    renderTextEditorList();
+    renderCurrentMeta();
+    statusEl.textContent = suggestion.exact
+      ? "Auto-filled annotations from exact location match"
+      : "Auto-filled annotations from matched text and translation";
+  } catch (error) {
+    statusEl.textContent = "Auto-fill failed";
+    console.error(error);
+  }
+}
+
+async function loadTextAnnotationSeeds() {
+  if (editorState.annotationSeeds.length) {
+    return editorState.annotationSeeds;
+  }
+  if (annotationState.annotations.length) {
+    editorState.annotationSeeds = annotationState.annotations;
+    return editorState.annotationSeeds;
+  }
+  const response = await fetch(ANNOTATION_FILE);
+  if (!response.ok) {
+    throw new Error(`Could not load ${ANNOTATION_FILE}`);
+  }
+  editorState.annotationSeeds = await response.json();
+  return editorState.annotationSeeds;
+}
+
+function buildTextAnnotationSuggestion(file, sourceRecord, translationRecord, seeds) {
+  const sourceText = sourceContentEl.value || sourceRecord?.text || "";
+  const translationText = translationContentEl.value || translationRecord?.text || "";
+  const combinedText = [sourceText, translationText].filter(Boolean).join(" ");
+  const normalizedCombinedText = normalizeAnnotationText(combinedText);
+  const targetSeeds = seeds.filter(isTargetAnnotationSeed);
+  const locationKeys = new Set([
+    sourceRecord?.location,
+    sourceLocationEl.value,
+    formatTextLocationId(file, sourceRecord?.location || sourceLocationEl.value || "")
+  ].map(normalizeLocationSearch).filter(Boolean));
+  const exact = targetSeeds.find((annotation) => {
+    const annotationKeys = [
+      annotation.location,
+      annotation.id,
+      formatTextLocationId(file, annotation.location || annotation.id || "")
+    ].map(normalizeLocationSearch).filter(Boolean);
+    return annotationKeys.some((key) => locationKeys.has(key));
+  });
+  if (exact) {
+    return annotationToTextSuggestion(exact, true);
+  }
+  if (!hasTargetAnnotationTerm(normalizedCombinedText)) {
+    return null;
+  }
+
+  const matches = targetSeeds
+    .map((annotation) => {
+      const terms = getAnnotationSeedTerms(annotation);
+      const foundTerms = terms.filter((term) => containsNormalizedTerm(normalizedCombinedText, term));
+      const score = foundTerms.reduce((total, term) => total + Math.max(1, normalizeAnnotationText(term).length), 0);
+      return { annotation, foundTerms, score };
+    })
+    .filter((item) => item.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 10);
+
+  if (!matches.length) {
+    return null;
+  }
+
+  const matchedWords = uniqueValues(matches.flatMap((item) => item.foundTerms));
+  const concept = mostCommonValue(matches.map((item) => item.annotation.concept));
+  const mainWord = mostCommonValue(matches.flatMap((item) => valueToLines(item.annotation.mainWord))) || matchedWords[0] || concept;
+  return {
+    exact: false,
+    concept,
+    mainWord,
+    matchedWords,
+    meaning: uniqueValues(matches.flatMap((item) => valueToLines(item.annotation.meaning))).slice(0, 6),
+    actionsUsedWithIt: matchingFieldValues(matches, "actionsUsedWithIt", normalizedCombinedText),
+    adjectivesDescriptions: matchingFieldValues(matches, "adjectivesDescriptions", normalizedCombinedText),
+    metaphors: matchingFieldValues(matches, "metaphors", normalizedCombinedText),
+    oppositions: matchingFieldValues(matches, "oppositions", normalizedCombinedText),
+    realm: mostCommonValue(matches.map((item) => item.annotation.realm)),
+    theme: uniqueValues(matches.flatMap((item) => valueToLines(item.annotation.theme))).slice(0, 5),
+    relatedTheme: uniqueValues(matches.flatMap((item) => valueToLines(item.annotation.relatedTheme))).slice(0, 5),
+    reviewStatus: "machine draft"
+  };
+}
+
+function annotationToTextSuggestion(annotation, exact) {
+  return {
+    exact,
+    concept: annotation.concept || "",
+    mainWord: annotation.mainWord || "",
+    matchedWords: valueToLines(annotation.matchedWords),
+    meaning: annotation.meaning,
+    actionsUsedWithIt: annotation.actionsUsedWithIt,
+    adjectivesDescriptions: annotation.adjectivesDescriptions,
+    metaphors: annotation.metaphors,
+    oppositions: annotation.oppositions,
+    realm: annotation.realm,
+    theme: annotation.theme,
+    relatedTheme: annotation.relatedTheme,
+    relationship: annotation.relationship,
+    similarity: annotation.similarity,
+    difference: annotation.difference,
+    reviewStatus: annotation.reviewStatus || "machine draft",
+    reviewNote: annotation.reviewNote
+  };
+}
+
+function applyTextAnnotationSuggestion(suggestion) {
+  let changed = false;
+  changed = fillTextInputIfEmpty(textPassageFields.concept, suggestion.concept) || changed;
+  changed = mergeTextAreaValues(textPassageFields.mainWord, suggestion.mainWord) || changed;
+  changed = mergeTextAreaValues(textPassageFields.matchedWords, suggestion.matchedWords) || changed;
+  changed = mergeChoiceValues(textPassageFields.referent, textPassageFields.referentCustom, suggestion.meaning) || changed;
+  changed = mergeTextAreaValues(textPassageFields.actionsUsedWithIt, suggestion.actionsUsedWithIt) || changed;
+  changed = mergeTextAreaValues(textPassageFields.adjectivesDescriptions, suggestion.adjectivesDescriptions) || changed;
+  changed = mergeTextAreaValues(textPassageFields.metaphors, suggestion.metaphors) || changed;
+  changed = mergeChoiceValues(textPassageFields.oppositions, textPassageFields.oppositionsCustom, suggestion.oppositions) || changed;
+  changed = mergeChoiceValues(textPassageFields.realm, null, suggestion.realm) || changed;
+  changed = mergeTextAreaValues(textPassageFields.theme, suggestion.theme) || changed;
+  changed = mergeTextAreaValues(textPassageFields.relatedTheme, suggestion.relatedTheme) || changed;
+  changed = mergeTextAreaValues(textPassageFields.relationship, suggestion.relationship) || changed;
+  changed = mergeTextAreaValues(textPassageFields.similarity, suggestion.similarity) || changed;
+  changed = mergeTextAreaValues(textPassageFields.difference, suggestion.difference) || changed;
+  changed = fillTextInputIfEmpty(textPassageFields.reviewStatus, suggestion.reviewStatus) || changed;
+  changed = mergeTextAreaValues(textPassageFields.reviewNote, suggestion.reviewNote) || changed;
+  return changed;
+}
+
+function fillTextInputIfEmpty(field, value) {
+  const nextValue = valueToLines(value).join("\n").trim();
+  if (!field || !nextValue || String(field.value || "").trim()) {
+    return false;
+  }
+  field.value = nextValue;
+  return true;
+}
+
+function mergeTextAreaValues(field, value) {
+  if (!field) {
+    return false;
+  }
+  const existing = parseList(field.value || "");
+  const merged = uniqueValues([...existing, ...valueToLines(value)]);
+  if (merged.length === existing.length) {
+    return false;
+  }
+  field.value = merged.join("\n");
+  return true;
+}
+
+function mergeChoiceValues(inputs, customField, value) {
+  const values = uniqueValues(valueToLines(value));
+  if (!values.length) {
+    return false;
+  }
+  const existing = splitChoiceValues(getChoiceSelection(inputs, customField));
+  const merged = uniqueValues([...existing, ...values]);
+  if (merged.length === existing.length) {
+    return false;
+  }
+  setChoiceSelection(inputs, customField, merged);
+  return true;
+}
+
+function getAnnotationSeedTerms(annotation) {
+  return uniqueValues([
+    annotation.concept,
+    annotation.mainWord,
+    annotation.matchedWords,
+    TARGET_TEXT_ANNOTATION_TERMS.filter((term) => annotationHasTerm(annotation, term))
+  ].flat().flatMap(valueToLines));
+}
+
+function isTargetAnnotationSeed(annotation) {
+  return TARGET_TEXT_ANNOTATION_TERMS.some((term) => annotationHasTerm(annotation, term));
+}
+
+function annotationHasTerm(annotation, term) {
+  return containsNormalizedTerm(
+    normalizeAnnotationText([
+      annotation.concept,
+      annotation.mainWord,
+      annotation.matchedWords,
+      annotation.sourceParagraph,
+      annotation.translation
+    ].flat().join(" ")),
+    term
+  );
+}
+
+function hasTargetAnnotationTerm(normalizedText) {
+  return TARGET_TEXT_ANNOTATION_TERMS.some((term) => containsNormalizedTerm(normalizedText, term));
+}
+
+function containsNormalizedTerm(normalizedText, term) {
+  const normalizedTerm = normalizeAnnotationText(term);
+  if (!normalizedText || !normalizedTerm) {
+    return false;
+  }
+  const termPattern = normalizedTerm.split(/\s+/).map(escapeRegex).join("\\s+");
+  return new RegExp(`(^|\\s)${termPattern}(?=\\s|$)`).test(normalizedText);
+}
+
+function normalizeAnnotationText(value) {
+  return normalizeSearchText(value)
+    .replace(/[^a-z0-9]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function matchingFieldValues(matches, key, normalizedText) {
+  return uniqueValues(matches.flatMap((item) => {
+    const values = valueToLines(item.annotation[key]);
+    const matching = values.filter((value) => containsNormalizedTerm(normalizedText, value));
+    return matching.length ? matching : values.slice(0, 1);
+  })).slice(0, 8);
+}
+
+function mostCommonValue(values) {
+  const counts = new Map();
+  valueToLines(values).flatMap(valueToLines).forEach((value) => {
+    const normalized = String(value || "").trim();
+    if (!normalized) {
+      return;
+    }
+    counts.set(normalized, (counts.get(normalized) || 0) + 1);
+  });
+  return Array.from(counts.entries()).sort((a, b) => b[1] - a[1])[0]?.[0] || "";
+}
+
+function uniqueValues(values) {
+  const seen = new Set();
+  return valueToLines(values).flatMap(valueToLines).filter((value) => {
+    const normalized = String(value || "").trim();
+    const key = normalizeAnnotationText(normalized);
+    if (!normalized || seen.has(key)) {
+      return false;
+    }
+    seen.add(key);
+    return true;
+  });
+}
+
+function escapeRegex(value) {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 function saveTextPassageMetadata(draft, sourceRecord, previousKey) {

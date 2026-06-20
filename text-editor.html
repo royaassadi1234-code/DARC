@@ -417,6 +417,40 @@
                         <textarea id="text-field-relatedTheme" rows="4"></textarea>
                       </label>
                     </details>
+                    <details class="annotation-field-card text-annotation-item text-annotation-recovered">
+                      <summary>
+                        <span>Recovered old annotations</span>
+                      </summary>
+                      <div class="recovered-annotation-grid">
+                        <label class="annotation-field" for="text-field-relationship">
+                          <span>Relationship</span>
+                          <textarea id="text-field-relationship" rows="3"></textarea>
+                        </label>
+                        <label class="annotation-field" for="text-field-similarity">
+                          <span>Similarity</span>
+                          <textarea id="text-field-similarity" rows="3"></textarea>
+                        </label>
+                        <label class="annotation-field" for="text-field-difference">
+                          <span>Difference</span>
+                          <textarea id="text-field-difference" rows="3"></textarea>
+                        </label>
+                        <label class="annotation-field" for="text-field-reviewStatus">
+                          <span>Review status</span>
+                          <select id="text-field-reviewStatus">
+                            <option value="">No recovered status</option>
+                            <option value="machine draft">Machine draft</option>
+                            <option value="user seed">User seed</option>
+                            <option value="needs review">Needs review</option>
+                            <option value="reviewed">Reviewed</option>
+                            <option value="approved">Approved</option>
+                          </select>
+                        </label>
+                        <label class="annotation-field wide" for="text-field-reviewNote">
+                          <span>Old note</span>
+                          <textarea id="text-field-reviewNote" rows="4"></textarea>
+                        </label>
+                      </div>
+                    </details>
                     <div id="text-custom-annotation-fields"></div>
                   </div>
                 </aside>

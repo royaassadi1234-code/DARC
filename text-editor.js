@@ -119,7 +119,12 @@ const textPassageFields = {
   adjectivesDescriptions: document.querySelector("#text-field-adjectivesDescriptions"),
   metaphors: document.querySelector("#text-field-metaphors"),
   theme: document.querySelector("#text-field-theme"),
-  relatedTheme: document.querySelector("#text-field-relatedTheme")
+  relatedTheme: document.querySelector("#text-field-relatedTheme"),
+  relationship: document.querySelector("#text-field-relationship"),
+  similarity: document.querySelector("#text-field-similarity"),
+  difference: document.querySelector("#text-field-difference"),
+  reviewStatus: document.querySelector("#text-field-reviewStatus"),
+  reviewNote: document.querySelector("#text-field-reviewNote")
 };
 
 const TEXT_ANNOTATION_OPTION_CARDS = [
@@ -138,7 +143,7 @@ const TEXT_ANNOTATION_OPTION_CARDS = [
 ];
 
 const PERMANENT_TEXT_ANNOTATION_KEYS = new Set(["realm", "oppositions", "referent"]);
-const REMOVED_TEXT_ANNOTATION_KEYS = ["relationship", "similarity", "difference", "reviewStatus", "reviewNote"];
+const LEGACY_TEXT_ANNOTATION_KEYS = new Set(["relationship", "similarity", "difference", "reviewStatus", "reviewNote"]);
 
 const annotationFields = {
   sourceParagraph: document.querySelector("#field-sourceParagraph"),
@@ -1326,6 +1331,11 @@ function renderTextPassageMetadata(file, sourceRecord) {
   textPassageFields.metaphors.value = valueToEditable(metadata.metaphors);
   textPassageFields.theme.value = valueToEditable(metadata.theme);
   textPassageFields.relatedTheme.value = valueToEditable(metadata.relatedTheme);
+  textPassageFields.relationship.value = valueToEditable(metadata.relationship);
+  textPassageFields.similarity.value = valueToEditable(metadata.similarity);
+  textPassageFields.difference.value = valueToEditable(metadata.difference);
+  textPassageFields.reviewStatus.value = metadata.reviewStatus || "";
+  textPassageFields.reviewNote.value = valueToEditable(metadata.reviewNote);
   renderTextFieldCompletion(metadata.completion || {});
   renderCustomTextPassageMetadata(metadata.customFields || {}, metadata.completion || {});
 }
@@ -1355,15 +1365,20 @@ function saveTextPassageMetadata(draft, sourceRecord, previousKey) {
     realm: singleOrList(getCheckedValues(textPassageFields.realm)),
     theme: parseList(textPassageFields.theme.value),
     relatedTheme: parseList(textPassageFields.relatedTheme.value),
+    relationship: parseList(textPassageFields.relationship.value),
+    similarity: parseList(textPassageFields.similarity.value),
+    difference: parseList(textPassageFields.difference.value),
+    reviewStatus: textPassageFields.reviewStatus.value,
+    reviewNote: parseSingleOrList(textPassageFields.reviewNote.value),
     customFields: getCustomTextPassageMetadata(),
     completion: {
+      ...(existing.completion || {}),
       ...getTextFieldCompletion(),
       ...getCustomTextFieldCompletion()
     }
   };
-  REMOVED_TEXT_ANNOTATION_KEYS.forEach((key) => removeTextAnnotationValueFromMetadata(metadata, key));
   (editorState.annotationOptions.hidden || []).forEach((key) => {
-    if (!PERMANENT_TEXT_ANNOTATION_KEYS.has(key)) {
+    if (!PERMANENT_TEXT_ANNOTATION_KEYS.has(key) && !LEGACY_TEXT_ANNOTATION_KEYS.has(key)) {
       removeTextAnnotationValueFromMetadata(metadata, key);
     }
   });
@@ -1451,6 +1466,11 @@ function getTextPassageControls() {
     textPassageFields.metaphors,
     textPassageFields.theme,
     textPassageFields.relatedTheme,
+    textPassageFields.relationship,
+    textPassageFields.similarity,
+    textPassageFields.difference,
+    textPassageFields.reviewStatus,
+    textPassageFields.reviewNote,
     ...textFieldCompletionInputs,
     ...getCustomTextPassageControls()
   ].filter(Boolean);
@@ -1521,6 +1541,11 @@ function hasMeaningfulTextPassageMetadata(metadata) {
     valueToLines(metadata.metaphors).length ||
     valueToLines(metadata.theme).length ||
     valueToLines(metadata.relatedTheme).length ||
+    valueToLines(metadata.relationship).length ||
+    valueToLines(metadata.similarity).length ||
+    valueToLines(metadata.difference).length ||
+    metadata.reviewStatus ||
+    valueToLines(metadata.reviewNote).length ||
     Object.values(metadata.customFields || {}).some((value) => valueToLines(value).length) ||
     Object.keys(metadata.completion || {}).length
   );

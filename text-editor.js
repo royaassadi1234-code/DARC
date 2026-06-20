@@ -1269,7 +1269,7 @@ function fillAllTextPassageIdsFromLocations() {
       if (!location) {
         return;
       }
-      const key = getTextPassageMetadataKey(sourceRecord, index);
+      const key = getTextPassageMetadataKey(file, sourceRecord, index);
       draft.passageAnnotations[key] = {
         ...(draft.passageAnnotations[key] || {}),
         location,
@@ -1286,7 +1286,7 @@ function saveCurrentPassageToDraft() {
   }
   const draft = ensureStructuredDraft(file);
   const sourceRecord = draft.sourceRecords[editorState.passageIndex];
-  const previousMetadataKey = getTextPassageMetadataKey(sourceRecord, editorState.passageIndex);
+  const previousMetadataKey = getTextPassageMetadataKey(file, sourceRecord, editorState.passageIndex);
   if (sourceRecord) {
     sourceRecord.location = parseTextLocationInput(file, sourceLocationEl.value) || sourceRecord.location;
     sourceRecord.text = sourceContentEl.value;
@@ -1308,7 +1308,10 @@ function saveCurrentPassageToDraft() {
 }
 
 function renderTextPassageMetadata(file, sourceRecord) {
-  const metadata = getPassageAnnotations(file)[getTextPassageMetadataKey(sourceRecord, editorState.passageIndex)] || {};
+  const annotations = getPassageAnnotations(file);
+  const metadata = annotations[getTextPassageMetadataKey(file, sourceRecord, editorState.passageIndex)]
+    || annotations[getLegacyTextPassageMetadataKey(sourceRecord, editorState.passageIndex)]
+    || {};
   const correspondenceLocation = getCorrespondenceLocation(sourceRecord, editorState.passageIndex);
   const correspondenceId = formatTextLocationId(file, correspondenceLocation);
   setChoiceSelection(textPassageFields.realm, null, metadata.realm);
@@ -1331,10 +1334,12 @@ function saveTextPassageMetadata(draft, sourceRecord, previousKey) {
   if (!draft || !isPlainObject(draft.passageAnnotations)) {
     return;
   }
-  const nextKey = getTextPassageMetadataKey(sourceRecord, editorState.passageIndex);
-  const existing = draft.passageAnnotations[previousKey] || draft.passageAnnotations[nextKey] || {};
+  const selectedFile = getSelectedFile();
+  const nextKey = getTextPassageMetadataKey(selectedFile, sourceRecord, editorState.passageIndex);
+  const legacyKey = getLegacyTextPassageMetadataKey(sourceRecord, editorState.passageIndex);
+  const existing = draft.passageAnnotations[previousKey] || draft.passageAnnotations[nextKey] || draft.passageAnnotations[legacyKey] || {};
   const correspondenceLocation = getCorrespondenceLocation(sourceRecord, editorState.passageIndex);
-  const correspondenceId = formatTextLocationId(getSelectedFile(), correspondenceLocation);
+  const correspondenceId = formatTextLocationId(selectedFile, correspondenceLocation);
   const metadata = {
     ...existing,
     location: correspondenceLocation,
@@ -1365,6 +1370,9 @@ function saveTextPassageMetadata(draft, sourceRecord, previousKey) {
   if (previousKey && previousKey !== nextKey) {
     delete draft.passageAnnotations[previousKey];
   }
+  if (legacyKey && legacyKey !== nextKey) {
+    delete draft.passageAnnotations[legacyKey];
+  }
   if (hasMeaningfulTextPassageMetadata(metadata)) {
     draft.passageAnnotations[nextKey] = metadata;
   } else {
@@ -1372,7 +1380,14 @@ function saveTextPassageMetadata(draft, sourceRecord, previousKey) {
   }
 }
 
-function getTextPassageMetadataKey(sourceRecord, index) {
+function getTextPassageMetadataKey(file, sourceRecord, index) {
+  const location = getCorrespondenceLocation(sourceRecord, index);
+  const siglum = String(file?.siglum || file?.id || "").trim().toLowerCase();
+  const normalized = normalizeTextPassageKey(location || `passage-${index + 1}`);
+  return [siglum, normalized || `passage-${index + 1}`].filter(Boolean).join(":");
+}
+
+function getLegacyTextPassageMetadataKey(sourceRecord, index) {
   return normalizeLocation(sourceRecord?.location || sourceLocationEl.value || `passage-${index + 1}`) || `passage-${index + 1}`;
 }
 
@@ -1521,6 +1536,14 @@ function findTranslationRecord(file, sourceRecord, translationRecords) {
 
 function normalizeLocation(location) {
   return String(location || "").toLowerCase().replace(/^[a-z]+\s*/i, "").trim();
+}
+
+function normalizeTextPassageKey(location) {
+  return String(location || "")
+    .toLowerCase()
+    .replace(/\s+/g, "")
+    .replace(/[|]+/g, ":")
+    .replace(/[^a-z0-9_.:-]+/g, "");
 }
 
 function cloneRecords(records) {

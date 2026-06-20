@@ -214,7 +214,7 @@ function applyFilters() {
   const terms = getQueryTerms();
   pseudoState.filtered = pseudoState.all
     .filter((record) => !pseudoState.tier || record.tier === pseudoState.tier)
-    .filter((record) => !terms.length || terms.some((term) => searchableText(record).includes(term)))
+    .filter((record) => !terms.length || terms.some((term) => searchableText(record).includes(getTermValue(term))))
     .sort(sortRecords);
 
   renderPseudo();
@@ -388,6 +388,7 @@ function highlight(value) {
 function renderPreviewBlock(value, record, label) {
   const terms = [
     ...getPhraseTerms(record),
+    ...getSharedPreviewTerms(record),
     ...getQueryTerms()
   ];
   return `
@@ -409,6 +410,7 @@ function normalizeSiglum(label) {
 function highlightPreview(value, record) {
   const terms = [
     ...getPhraseTerms(record),
+    ...getSharedPreviewTerms(record),
     ...getQueryTerms()
   ];
   return highlightTerms(value, terms, { plain: IS_PHRASE_PAGE });
@@ -628,21 +630,75 @@ function getPhraseTerms(record) {
   }
 
   const phrase = foldText(record.sharedWords.trim()).text;
-  return phrase ? [phrase] : [];
+  return phrase ? [{ value: phrase, type: "phrase" }] : [];
+}
+
+function getSharedPreviewTerms(record) {
+  if (!IS_PHRASE_PAGE) {
+    return [];
+  }
+
+  const previews = [
+    record.sourcePreview,
+    record.targetPreview,
+    record.thirdPreview
+  ].filter((preview) => preview && preview !== "N/A");
+  if (previews.length < 2) {
+    return [];
+  }
+
+  const shared = previews
+    .map(getPreviewTokenKeys)
+    .reduce((intersection, keys) => {
+      if (!intersection) {
+        return keys;
+      }
+      return new Set([...intersection].filter((key) => keys.has(key)));
+    }, null);
+
+  return [...(shared || [])]
+    .filter(Boolean)
+    .map((value) => ({ value, type: "word" }));
 }
 
 function getQueryTerms() {
   return [...new Set(pseudoState.query.split(/[,\s;]+/)
     .map((term) => foldText(term.trim()).text)
-    .filter(Boolean))];
+    .filter(Boolean))]
+    .map((value) => ({ value, type: value.includes(" ") ? "phrase" : "word" }));
 }
 
-function buildPattern(terms) {
-  return terms
-    .slice()
-    .sort((a, b) => b.length - a.length)
-    .map(escapeRegExp)
-    .join("|");
+function getPreviewTokenKeys(value) {
+  const keys = new Set();
+  const tokenPattern = /[\p{L}\p{M}\p{N}=._-]+/gu;
+  let match;
+  while ((match = tokenPattern.exec(stripPreviewLocation(value))) !== null) {
+    getTokenSearchKeys(match[0]).forEach((key) => keys.add(key));
+  }
+  return keys;
+}
+
+function stripPreviewLocation(value) {
+  return String(value || "").replace(/^\s*[^:]{1,40}:\s*/u, "");
+}
+
+function getTokenSearchKeys(token) {
+  const folded = foldText(token).text;
+  const variants = new Set([
+    folded,
+    folded.replace(/^[=_.:-]+|[=_.:-]+$/g, ""),
+    folded.replace(/^=+/, ""),
+    folded.replace(/^u-/, ""),
+    folded.replace(/^i-/, ""),
+    folded.replace(/^pad-/, ""),
+    folded.replace(/^az-/, ""),
+    folded.replace(/^o-/, ""),
+    folded.replace(/^ud-/, ""),
+    folded.replace(/-(iz|is|im|it|san|man|tan)$/, "")
+  ]);
+  return [...variants]
+    .map((variant) => variant.replace(/^[=_.:-]+|[=_.:-]+$/g, ""))
+    .filter((variant) => variant && /\p{L}/u.test(variant));
 }
 
 function findMatchRanges(value, terms) {
@@ -650,22 +706,46 @@ function findMatchRanges(value, terms) {
   const matches = [];
 
   terms.forEach((term, termIndex) => {
-    if (!term) {
+    const pattern = termToRegexPattern(term);
+    if (!pattern) {
       return;
     }
 
-    const regex = new RegExp(buildPattern([term]), "gu");
+    const regex = new RegExp(pattern, "gu");
     let match;
     while ((match = regex.exec(folded.text)) !== null) {
+      const endMapIndex = Math.max(match.index, match.index + match[0].length - 1);
       matches.push({
         start: folded.map[match.index],
-        end: folded.map[match.index + match[0].length - 1] + 1,
+        end: folded.map[endMapIndex] + 1,
         termIndex
       });
     }
   });
 
   return mergeRanges(matches);
+}
+
+function termToRegexPattern(term) {
+  const value = getTermValue(term);
+  if (!value) {
+    return "";
+  }
+
+  const type = typeof term === "string"
+    ? (value.includes(" ") ? "phrase" : "word")
+    : term.type || (value.includes(" ") ? "phrase" : "word");
+  const escaped = escapeRegExp(value).replace(/(?:\s+|\\-|_|-)+/g, "[\\s_.=-]*");
+  if (type === "phrase") {
+    return escaped;
+  }
+
+  const boundary = "[\\p{L}\\p{M}\\p{N}_=-]";
+  return `(?<!${boundary})${escaped}(?!${boundary})`;
+}
+
+function getTermValue(term) {
+  return typeof term === "string" ? term : term?.value || "";
 }
 
 function mergeRanges(matches) {

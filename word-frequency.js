@@ -6,7 +6,23 @@ const FREQUENCY_TEXTS = [
 
 const PERSONAL_COMMON_STORAGE_KEY = "darcPersonalCommonWords";
 const PERSONAL_COMMON_BACKUP_STORAGE_KEY = "darcPersonalCommonWordsBackup";
-const DEFAULT_PERSONAL_COMMON_WORDS_URL = "personal-common-words.json";
+const DEFAULT_PERSONAL_COMMON_WORDS_URL = "personal-common-words.json?v=20260620-excluded-common-words";
+const BUILT_IN_PERSONAL_COMMON_WORDS = [
+  "abag", "abarig", "abayed", "abaz", "agar", "amad", "amah", "an-iz",
+  "and", "aniy", "anoh", "asmah", "ast", "awesan", "awis", "ayab",
+  "az-is", "azabar", "azis", "bawad", "bawed", "bawend", "bedaham",
+  "budan", "burd", "cahar", "caharom", "cand", "dah", "daham", "dahe",
+  "dahed", "dared", "darend", "dast", "dastan", "did", "didigar", "do",
+  "ec", "edon", "eg-is", "ek", "en", "estad", "ested", "ew", "ewen",
+  "ewenag", "fradom", "framud", "fraron", "fraronih", "fraz", "grift",
+  "guft", "had", "haft", "hamag", "hame", "harw", "harwisp", "he",
+  "hend", "hom", "i-s", "is", "iz", "ka-s", "kadar", "kas", "ke-s",
+  "ke-san", "kerd", "kerdan", "kird", "ku-s", "kunam", "kuned", "kunend",
+  "m", "ma", "mad", "man", "nest", "nibist", "nimud", "oh", "owon",
+  "oy", "pad-is", "pad-iz", "padis", "pahlom", "panj", "paydag", "pes",
+  "rased", "ray", "san", "sas", "sawed", "sayed", "se", "sidigar", "t",
+  "ta", "tis", "to", "u-s", "u-san", "ul", "was", "wes", "x", "xwes"
+];
 
 const TRANSLITERATION_MAP = {
   "\u0100": "A",
@@ -807,17 +823,19 @@ function readStoredPersonalCommonWords(key) {
 }
 
 async function loadDefaultPersonalCommonWords() {
+  const builtInWords = BUILT_IN_PERSONAL_COMMON_WORDS.map(normalizeWord).filter(Boolean);
   try {
     const response = await fetch(DEFAULT_PERSONAL_COMMON_WORDS_URL);
     if (!response.ok) {
-      return [];
+      return builtInWords;
     }
 
     const data = await response.json();
     const words = Array.isArray(data) ? data : data.words;
-    return Array.isArray(words) ? words.map(normalizeWord).filter(Boolean) : [];
+    const fileWords = Array.isArray(words) ? words.map(normalizeWord).filter(Boolean) : [];
+    return [...builtInWords, ...fileWords];
   } catch {
-    return [];
+    return builtInWords;
   }
 }
 

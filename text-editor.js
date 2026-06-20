@@ -71,6 +71,7 @@ const passagePrevButton = document.querySelector("#text-passage-prev");
 const passageNextButton = document.querySelector("#text-passage-next");
 const saveButton = document.querySelector("#text-editor-save");
 const annotationOptionsToggleButton = document.querySelector("#text-editor-annotation-options-toggle");
+const noteToggleButton = document.querySelector("#text-editor-note-toggle");
 const addTextPanelEl = document.querySelector("#text-editor-add-text-panel");
 const addTextDropboxEl = document.querySelector("#text-editor-dropbox");
 const newTextTitleEl = document.querySelector("#text-editor-new-title");
@@ -328,6 +329,7 @@ function bindTextEditorEvents() {
     const hidden = annotationOptionsPanelEl.classList.toggle("hidden");
     annotationOptionsToggleButton.setAttribute("aria-expanded", hidden ? "false" : "true");
   });
+  noteToggleButton.addEventListener("click", openTextNoteField);
   createTextButton.addEventListener("click", createCustomText);
   ["dragenter", "dragover"].forEach((eventName) => {
     addTextDropboxEl.addEventListener(eventName, (event) => {
@@ -497,6 +499,20 @@ function keepFixedTextAnnotationsVisible() {
   document.querySelectorAll(".text-annotation-realm, .text-annotation-oppositions, .text-annotation-referent").forEach((group) => {
     group.classList.remove("text-annotation-choice-collapsed");
   });
+}
+
+function openTextNoteField() {
+  const hidden = new Set(editorState.annotationOptions.hidden || []);
+  if (hidden.delete("reviewNote")) {
+    editorState.annotationOptions.hidden = Array.from(hidden);
+    persistTextAnnotationOptions();
+    renderTextAnnotationOptions();
+  }
+  const noteCard = document.querySelector(".text-annotation-review-note");
+  if (noteCard instanceof HTMLDetailsElement) {
+    noteCard.open = true;
+  }
+  textPassageFields.reviewNote?.focus();
 }
 
 function addCustomAnnotationOption() {

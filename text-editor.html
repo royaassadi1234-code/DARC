@@ -164,8 +164,6 @@
               <div class="text-editor-simple-header">
                 <h2 id="text-editor-title">No text selected</h2>
                 <div class="annotation-actions">
-                  <button class="copy-button" id="text-editor-save" type="button">Save</button>
-                  <button class="copy-button" id="text-editor-annotation-options-toggle" type="button" aria-expanded="false" aria-controls="text-editor-annotation-options-panel">Annotation options</button>
                   <button class="copy-button editor-hidden-control" id="text-editor-export" type="button">Export file</button>
                   <button class="copy-button editor-hidden-control" id="text-editor-export-all" type="button">Export all</button>
                   <label class="copy-button file-button editor-hidden-control" for="text-editor-import">Import drafts</label>
@@ -391,6 +389,11 @@
                         <textarea id="text-field-metaphors" rows="4"></textarea>
                       </label>
                     </details>
+                    <div class="text-annotation-item text-annotation-note-actions">
+                      <button class="copy-button" id="text-editor-annotation-options-toggle" type="button" aria-expanded="false" aria-controls="text-editor-annotation-options-panel">Add an annotation</button>
+                      <button class="copy-button secondary" id="text-editor-note-toggle" type="button">Add a note</button>
+                      <button class="copy-button" id="text-editor-save" type="button">Save</button>
+                    </div>
                     <details class="annotation-field-card text-annotation-item text-annotation-theme">
                       <summary>
                         <label class="field-complete">

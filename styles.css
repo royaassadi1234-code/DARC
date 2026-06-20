@@ -2565,8 +2565,17 @@ h1 {
   order: 12;
 }
 
-.text-annotation-review-note {
+.text-annotation-note-actions {
   order: 13;
+  display: flex;
+  grid-column: 1 / -1;
+  gap: 8px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.text-annotation-review-note {
+  order: 14;
 }
 
 .text-annotation-realm,

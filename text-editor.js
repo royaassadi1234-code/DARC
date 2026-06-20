@@ -70,6 +70,7 @@ const translationLocationDisplayEl = document.querySelector("#text-translation-l
 const passagePositionEl = document.querySelector("#text-passage-position");
 const passagePrevButton = document.querySelector("#text-passage-prev");
 const passageNextButton = document.querySelector("#text-passage-next");
+const copyPassagePairButton = document.querySelector("#text-copy-passage-pair");
 const saveButton = document.querySelector("#text-editor-save");
 const autoFillButton = document.querySelector("#text-editor-autofill-annotations");
 const exportBackupButton = document.querySelector("#text-editor-export-backup");
@@ -348,6 +349,7 @@ function bindTextEditorEvents() {
     renderTextEditorList();
     renderCurrentFile();
   });
+  copyPassagePairButton.addEventListener("click", copyCurrentPassagePair);
 
   saveButton.addEventListener("click", () => saveDraft());
   autoFillButton.addEventListener("click", autoFillCurrentTextAnnotations);
@@ -978,6 +980,34 @@ function renderTextPassagePosition(file, sourceDisplayLocation, sourceCount) {
   passagePositionEl.textContent = `${sourceDisplayLocation || "No passage"} | ${(editorState.passageIndex + 1).toLocaleString()} of ${sourceCount.toLocaleString()}`;
   passagePrevButton.disabled = editorState.passageIndex <= 0;
   passageNextButton.disabled = editorState.passageIndex >= sourceCount - 1;
+}
+
+async function copyCurrentPassagePair() {
+  const sourceText = sourceContentEl.value.trim();
+  const translationText = translationContentEl.value.trim();
+  if (!sourceText && !translationText) {
+    statusEl.textContent = "There is no text or translation to copy";
+    return;
+  }
+  const sourceLabel = sourceLabelEl.textContent.trim() || "Text";
+  const translationLabel = translationLabelEl.textContent.trim() || "Translation";
+  const sourceLocation = sourceLocationDisplayEl.textContent.trim() || sourceLocationEl.value.trim();
+  const translationLocation = translationLocationDisplayEl.textContent.trim() || translationLocationEl.value.trim();
+  const sections = [];
+  if (sourceText) {
+    sections.push(`${sourceLabel}${sourceLocation ? ` (${sourceLocation})` : ""}\n${sourceText}`);
+  }
+  if (translationText) {
+    sections.push(`${translationLabel}${translationLocation ? ` (${translationLocation})` : ""}\n${translationText}`);
+  }
+
+  try {
+    await writeClipboardText(sections.join("\n\n"));
+    statusEl.textContent = "Copied text and translation";
+  } catch (error) {
+    statusEl.textContent = "Copy failed";
+    console.error(error);
+  }
 }
 
 function getActiveTextSearchMatches(file) {
@@ -2404,6 +2434,30 @@ function downloadText(filename, content, type = "text/plain") {
   link.click();
   link.remove();
   URL.revokeObjectURL(url);
+}
+
+async function writeClipboardText(text) {
+  if (navigator.clipboard?.writeText && window.isSecureContext) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  textarea.setAttribute("readonly", "");
+  textarea.style.position = "fixed";
+  textarea.style.left = "-9999px";
+  document.body.appendChild(textarea);
+  textarea.select();
+
+  try {
+    const copied = document.execCommand("copy");
+    if (!copied) {
+      throw new Error("Clipboard command was not accepted");
+    }
+  } finally {
+    textarea.remove();
+  }
 }
 
 function countLines(text) {

@@ -70,6 +70,7 @@ const passagePositionEl = document.querySelector("#text-passage-position");
 const passagePrevButton = document.querySelector("#text-passage-prev");
 const passageNextButton = document.querySelector("#text-passage-next");
 const saveButton = document.querySelector("#text-editor-save");
+const exportBackupButton = document.querySelector("#text-editor-export-backup");
 const annotationOptionsToggleButton = document.querySelector("#text-editor-annotation-options-toggle");
 const addTextPanelEl = document.querySelector("#text-editor-add-text-panel");
 const addTextDropboxEl = document.querySelector("#text-editor-dropbox");
@@ -327,6 +328,7 @@ function bindTextEditorEvents() {
   });
 
   saveButton.addEventListener("click", () => saveDraft());
+  exportBackupButton.addEventListener("click", exportTextEditorBackup);
   annotationOptionsToggleButton.addEventListener("click", () => {
     const hidden = annotationOptionsPanelEl.classList.toggle("hidden");
     annotationOptionsToggleButton.setAttribute("aria-expanded", hidden ? "false" : "true");
@@ -1119,6 +1121,10 @@ function exportCurrentFile() {
 }
 
 function exportAllFiles() {
+  exportTextEditorBackup();
+}
+
+function exportTextEditorBackup() {
   saveDraft({ quiet: true });
   fillAllTextPassageIdsFromLocations();
   persistDrafts();
@@ -1141,8 +1147,13 @@ function exportAllFiles() {
       passageAnnotations: getPassageAnnotations(file)
     }))
   };
-  downloadText("druz-workspace-texts-edited.json", JSON.stringify(payload, null, 2) + "\n", "application/json");
-  statusEl.textContent = "Exported all edited texts";
+  downloadText(makeTextEditorBackupFilename(), JSON.stringify(payload, null, 2) + "\n", "application/json");
+  statusEl.textContent = "Exported text editor backup";
+}
+
+function makeTextEditorBackupFilename() {
+  const stamp = new Date().toISOString().slice(0, 10);
+  return `druz-text-editor-backup-${stamp}.json`;
 }
 
 function importDrafts(event) {

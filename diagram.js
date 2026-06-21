@@ -166,12 +166,7 @@ function syncSelectedTextsFromControls() {
 }
 
 function updateSearchModeControls() {
-  if (diagramState.phraseSearch && diagramState.multipleWords) {
-    diagramState.multipleWords = false;
-    multipleEl.checked = false;
-  }
-
-  multipleEl.disabled = diagramState.phraseSearch;
+  multipleEl.disabled = false;
 }
 
 async function loadText(config) {
@@ -632,11 +627,30 @@ function createSearch(query) {
 
 function getSearchTerms(query) {
   const terms = diagramState.phraseSearch
-    ? query.split(/[,;]+/)
+    ? parsePhraseSearchTerms(query)
     : diagramState.multipleWords
-      ? mergeKnownPhraseTerms(parseTermsWithQuotedPhrases(query))
+      ? parseMixedSearchTerms(query)
       : [query];
   return dedupeEquivalentTerms(terms.map((term) => term.trim()).filter(Boolean));
+}
+
+function parsePhraseSearchTerms(query) {
+  return query.split(/[,;]+/).flatMap((part) => {
+    const trimmed = part.trim();
+    if (!trimmed) {
+      return [];
+    }
+    const parsed = parseTermsWithQuotedPhrases(trimmed);
+    const merged = mergeKnownPhraseTerms(parsed);
+    const hasKnownPhrase = merged.some((term) => isPhraseTerm(term));
+    return hasKnownPhrase ? merged : [trimmed];
+  });
+}
+
+function parseMixedSearchTerms(query) {
+  return query
+    .split(/[,;]+/)
+    .flatMap((part) => mergeKnownPhraseTerms(parseTermsWithQuotedPhrases(part)));
 }
 
 function dedupeEquivalentTerms(terms) {

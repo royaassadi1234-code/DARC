@@ -584,7 +584,7 @@ function getLexicalVariantGroups() {
     ["druz", "druj", "drux", "drug", "draoga"],
     ["gannag", "ganag", "gannak", "ganak", "gandag", "gannay"],
     ["menog", "menoy", "menok", "minog", "mainyog"],
-    ["ohrmazd", "ormazd", "ahura mazda", "ahuramazda", "dadar"],
+    ["ohrmazd", "ormazd", "ahura mazda", "ahuramazda"],
     ["zadspram", "zadsparam", "zatspram", "zad-spram"],
     ["manuchihr", "manushchihr", "manuschihr", "manuscihr", "manushcihr"]
   ];
@@ -830,8 +830,7 @@ function getKnownSearchPhrases() {
   });
 
   [
-    "dadar i ohrmazd",
-    "dadar ohrmazd"
+    "dadar i ohrmazd"
   ].forEach((phrase) => {
     phrases.add(foldText(phrase, diagramState.caseSensitive).text);
   });

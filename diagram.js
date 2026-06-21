@@ -498,7 +498,7 @@ function getOccurrenceSummary(text, search) {
 
   text.records.forEach((record, recordIndex) => {
     findTermOccurrences(record.text, search.terms).forEach((occurrence) => {
-      const key = `${recordIndex}:${occurrence.start}:${occurrence.end}`;
+      const key = `${recordIndex}:${occurrence.termIndex}:${occurrence.start}:${occurrence.end}`;
       if (occurrenceMap.has(key)) {
         return;
       }

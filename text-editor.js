@@ -9,6 +9,9 @@ const TEXT_EDITOR_ANNOTATION_OPTIONS_KEY = "druzTextEditorAnnotationOptions";
 const ANNOTATION_FILE = "druz-concept-annotations.json";
 const ANNOTATION_DRAFT_KEY = "druzAnnotationReviewDraft";
 const ANNOTATION_COMPLETION_KEY = "druzAnnotationFieldCompletion";
+const TEXT_EDITOR_AUTOSAVE_DELAY = 700;
+
+let textEditorAutosaveTimer = 0;
 
 const TEXT_EDITOR_FILES = [
   { id: "dd", siglum: "DD", title: "Dādestān ī Dēnīg", file: "Dd.txt", translationFile: "DD-mahshid-aligned.txt", kind: "Middle Persian" },
@@ -261,6 +264,7 @@ function bindTextEditorEvents() {
       const file = getSelectedFile();
       if (file) {
         statusEl.textContent = `${file.siglum} passage has unsaved metadata`;
+        scheduleTextEditorAutosave();
       }
     });
   });
@@ -314,6 +318,7 @@ function bindTextEditorEvents() {
       const file = getSelectedFile();
       if (file) {
         statusEl.textContent = `${file.siglum} passage has unsaved changes`;
+        scheduleTextEditorAutosave();
       }
     });
   });
@@ -324,6 +329,7 @@ function bindTextEditorEvents() {
       const file = getSelectedFile();
       if (file) {
         statusEl.textContent = `${file.siglum} passage has unsaved metadata`;
+        scheduleTextEditorAutosave();
       }
     });
   });
@@ -333,7 +339,7 @@ function bindTextEditorEvents() {
     if (!file) {
       return;
     }
-    saveCurrentPassageToDraft();
+    saveDraft({ quiet: true });
     editorState.passageIndex = getPreviousPassageIndex(file);
     renderTextEditorList();
     renderCurrentFile();
@@ -344,7 +350,7 @@ function bindTextEditorEvents() {
     if (!file) {
       return;
     }
-    saveCurrentPassageToDraft();
+    saveDraft({ quiet: true });
     editorState.passageIndex = getNextPassageIndex(file);
     renderTextEditorList();
     renderCurrentFile();
@@ -377,14 +383,17 @@ function bindTextEditorEvents() {
     const file = getSelectedFile();
     if (file) {
       statusEl.textContent = `${file.siglum} passage has unsaved metadata`;
+      scheduleTextEditorAutosave();
     }
   });
   customAnnotationFieldsEl.addEventListener("change", () => {
     const file = getSelectedFile();
     if (file) {
       statusEl.textContent = `${file.siglum} passage has unsaved metadata`;
+      scheduleTextEditorAutosave();
     }
   });
+  window.addEventListener("pagehide", flushTextEditorAutosave);
   exportButton.addEventListener("click", exportCurrentFile);
   exportAllButton.addEventListener("click", exportAllFiles);
   importInput.addEventListener("change", importDrafts);
@@ -1093,6 +1102,8 @@ function hasDraft(file) {
 }
 
 function saveDraft(options = {}) {
+  window.clearTimeout(textEditorAutosaveTimer);
+  textEditorAutosaveTimer = 0;
   const file = getSelectedFile();
   if (!file || sourceContentEl.disabled) {
     return;
@@ -1106,12 +1117,39 @@ function saveDraft(options = {}) {
   if (sourceContent === file.original && translationContent === (file.translationOriginal || "") && !hasTextPassageMetadata(draft)) {
     delete editorState.drafts[file.id];
   }
-  persistDrafts();
+  const saved = persistDrafts();
   renderTextEditorList();
   renderCurrentMeta();
-  if (!options.quiet) {
+  if (!options.quiet && saved) {
     statusEl.textContent = `Draft saved for ${file.siglum}`;
   }
+}
+
+function scheduleTextEditorAutosave() {
+  window.clearTimeout(textEditorAutosaveTimer);
+  textEditorAutosaveTimer = window.setTimeout(() => {
+    textEditorAutosaveTimer = 0;
+    const file = getSelectedFile();
+    if (!file || sourceContentEl.disabled) {
+      return;
+    }
+    saveCurrentPassageToDraft();
+    if (persistDrafts()) {
+      renderCurrentMeta();
+      statusEl.textContent = `Draft saved automatically for ${file.siglum}`;
+    }
+  }, TEXT_EDITOR_AUTOSAVE_DELAY);
+}
+
+function flushTextEditorAutosave() {
+  window.clearTimeout(textEditorAutosaveTimer);
+  textEditorAutosaveTimer = 0;
+  const file = getSelectedFile();
+  if (!file || sourceContentEl.disabled) {
+    return;
+  }
+  saveCurrentPassageToDraft();
+  persistDrafts({ quiet: true });
 }
 
 function renderCurrentMeta() {
@@ -1271,11 +1309,13 @@ function importDrafts(event) {
       fillAllTextPassageIdsFromLocations();
       persistCustomTexts();
       persistTextAnnotationOptions();
-      persistDrafts();
+      const draftsSaved = persistDrafts();
       renderTextAnnotationOptions();
       renderTextEditorList();
       renderCurrentFile();
-      statusEl.textContent = `Imported ${files.length.toLocaleString()} text drafts`;
+      if (draftsSaved) {
+        statusEl.textContent = `Imported and saved ${files.length.toLocaleString()} text drafts`;
+      }
     } catch (error) {
       statusEl.textContent = "Import failed";
       console.error(error);
@@ -2420,8 +2460,55 @@ function persistTextAnnotationOptions() {
   localStorage.setItem(TEXT_EDITOR_ANNOTATION_OPTIONS_KEY, JSON.stringify(editorState.annotationOptions));
 }
 
-function persistDrafts() {
-  localStorage.setItem(TEXT_EDITOR_DRAFT_KEY, JSON.stringify(editorState.drafts));
+function persistDrafts(options = {}) {
+  try {
+    localStorage.setItem(TEXT_EDITOR_DRAFT_KEY, JSON.stringify(createCompactDraftSnapshot()));
+    return true;
+  } catch (error) {
+    console.error("Could not save text editor drafts", error);
+    if (!options.quiet) {
+      statusEl.textContent = "Browser storage is full. Export a backup, then clear old site data before continuing.";
+    }
+    return false;
+  }
+}
+
+function createCompactDraftSnapshot() {
+  const snapshot = {};
+  Object.entries(editorState.drafts).forEach(([fileId, draft]) => {
+    if (typeof draft === "string") {
+      snapshot[fileId] = draft;
+      return;
+    }
+    if (!isPlainObject(draft)) {
+      return;
+    }
+
+    const file = editorState.files.find((item) => item.id === fileId);
+    if (!file) {
+      snapshot[fileId] = draft;
+      return;
+    }
+
+    const compactDraft = {};
+    if (Array.isArray(draft.sourceRecords) && !recordsAreEqual(draft.sourceRecords, file.sourceRecords || [])) {
+      compactDraft.sourceRecords = draft.sourceRecords;
+    }
+    if (Array.isArray(draft.translationRecords) && !recordsAreEqual(draft.translationRecords, file.translationRecords || [])) {
+      compactDraft.translationRecords = draft.translationRecords;
+    }
+    if (isPlainObject(draft.passageAnnotations) && Object.keys(draft.passageAnnotations).length) {
+      compactDraft.passageAnnotations = draft.passageAnnotations;
+    }
+    if (Object.keys(compactDraft).length) {
+      snapshot[fileId] = compactDraft;
+    }
+  });
+  return snapshot;
+}
+
+function recordsAreEqual(left, right) {
+  return JSON.stringify(left) === JSON.stringify(right);
 }
 
 function downloadText(filename, content, type = "text/plain") {

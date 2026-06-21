@@ -220,6 +220,11 @@ function bindTextEditorEvents() {
   searchInput.addEventListener("input", () => {
     saveCurrentPassageToDraft();
     editorState.query = searchInput.value.trim();
+    const file = getSelectedFile();
+    const locationIndex = getDirectLocationMatchIndex(file, editorState.query);
+    if (locationIndex >= 0) {
+      editorState.passageIndex = locationIndex;
+    }
     updateTextEditorListVisibilityFromSearch();
     renderTextEditorList();
     renderCurrentFile();
@@ -855,6 +860,17 @@ function renderTextSearchLocations(query) {
   }
 
   const matches = getTextSearchMatches(file, query);
+  const directLocationIndex = getDirectLocationMatchIndex(file, query);
+  if (directLocationIndex >= 0) {
+    summaryEl.innerHTML = `
+      <span>Location found</span>
+      <span>${escapeHtml(file.siglum)}</span>
+      <span>${escapeHtml(query)}</span>
+    `;
+    listEl.innerHTML = "";
+    listEl.classList.add("hidden");
+    return;
+  }
   const currentMatchIndex = matches.findIndex((match) => match.index === editorState.passageIndex);
   summaryEl.innerHTML = `
     <span>${matches.length.toLocaleString()} visible passages</span>
@@ -979,6 +995,13 @@ function renderTextPassagePosition(file, sourceDisplayLocation, sourceCount) {
     return;
   }
 
+  if (getDirectLocationMatchIndex(file, editorState.query) >= 0) {
+    passagePositionEl.textContent = `${sourceDisplayLocation || "No passage"} | ${(editorState.passageIndex + 1).toLocaleString()} of ${sourceCount.toLocaleString()}`;
+    passagePrevButton.disabled = editorState.passageIndex <= 0;
+    passageNextButton.disabled = editorState.passageIndex >= sourceCount - 1;
+    return;
+  }
+
   if (editorState.query) {
     passagePositionEl.textContent = "No matching passage";
     passagePrevButton.disabled = true;
@@ -1020,7 +1043,31 @@ async function copyCurrentPassagePair() {
 }
 
 function getActiveTextSearchMatches(file) {
-  return editorState.query ? getTextSearchMatches(file, editorState.query) : [];
+  if (!editorState.query || getDirectLocationMatchIndex(file, editorState.query) >= 0) {
+    return [];
+  }
+  return getTextSearchMatches(file, editorState.query);
+}
+
+function getDirectLocationMatchIndex(file, query) {
+  if (!file) {
+    return -1;
+  }
+  const normalizedQuery = normalizeLocationSearch(query);
+  if (!normalizedQuery) {
+    return -1;
+  }
+
+  const translationRecords = getTranslationRecords(file);
+  return getSourceRecords(file).findIndex((record, index) => {
+    const translationRecord = findTranslationRecord(file, record, translationRecords);
+    return [
+      record.location,
+      formatTextLocationId(file, record.location || `passage ${index + 1}`),
+      translationRecord?.location,
+      formatTextLocationId(file, translationRecord?.location || "")
+    ].some((location) => normalizeLocationSearch(location) === normalizedQuery);
+  });
 }
 
 function getTextSearchMatches(file, query) {

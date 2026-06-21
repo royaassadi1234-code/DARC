@@ -32,6 +32,7 @@ const toolEl = document.querySelector("#diagram-tool");
 const HIGHLIGHT_CLASS_COUNT = 6;
 const DICTIONARY_URL = "mpcd-workspace-dictionary.json";
 const MAX_SEARCH_VARIANTS = 600;
+const OHRMAZD_SEARCH_FAMILY = ["ohrmazd", "dadar", "dadar ohrmazd", "dadar i ohrmazd"];
 const TRANSLITERATION_MAP = {
   "\u0100": "A",
   "\u0101": "a",
@@ -551,7 +552,31 @@ function findTermOccurrences(text, terms) {
     }
   });
 
-  return occurrences.sort((a, b) => a.start - b.start || a.termIndex - b.termIndex);
+  return classifyOhrmazdFamilyOccurrences(occurrences, terms)
+    .sort((a, b) => a.start - b.start || a.termIndex - b.termIndex);
+}
+
+function classifyOhrmazdFamilyOccurrences(occurrences, terms) {
+  const familyTermIndexes = new Set();
+  terms.forEach((term, termIndex) => {
+    const key = foldText(term, false).text;
+    if (OHRMAZD_SEARCH_FAMILY.includes(key)) {
+      familyTermIndexes.add(termIndex);
+    }
+  });
+
+  if (familyTermIndexes.size < OHRMAZD_SEARCH_FAMILY.length) {
+    return occurrences;
+  }
+
+  return occurrences.filter((occurrence) => !occurrences.some((other) =>
+    other !== occurrence &&
+    familyTermIndexes.has(occurrence.termIndex) &&
+    familyTermIndexes.has(other.termIndex) &&
+    other.start <= occurrence.start &&
+    other.end >= occurrence.end &&
+    other.end - other.start > occurrence.end - occurrence.start
+  ));
 }
 
 function getSearchVariants(term) {
@@ -703,7 +728,21 @@ function getSearchTerms(query) {
     : diagramState.multipleWords
       ? parseMixedSearchTerms(query)
       : [query];
-  return dedupeEquivalentTerms(terms.map((term) => term.trim()).filter(Boolean));
+  const cleanTerms = terms.map((term) => term.trim()).filter(Boolean);
+  return dedupeEquivalentTerms(expandOhrmazdSearchFamily(cleanTerms));
+}
+
+function expandOhrmazdSearchFamily(terms) {
+  if (diagramState.phraseSearch) {
+    return terms;
+  }
+
+  return terms.flatMap((term) => {
+    const key = foldText(term, false).text;
+    return ["ohrmazd", "ormazd", "ahura mazda", "ahuramazda"].includes(key)
+      ? OHRMAZD_SEARCH_FAMILY
+      : [term];
+  });
 }
 
 function parsePhraseSearchTerms(query) {

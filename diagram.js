@@ -31,6 +31,7 @@ const toolEl = document.querySelector("#diagram-tool");
 
 const HIGHLIGHT_CLASS_COUNT = 6;
 const DICTIONARY_URL = "mpcd-workspace-dictionary.json";
+const MAX_SEARCH_VARIANTS = 600;
 const TRANSLITERATION_MAP = {
   "\u0100": "A",
   "\u0101": "a",
@@ -235,6 +236,7 @@ function renderDiagram() {
           <span><i class="legend-swatch term-${(index % HIGHLIGHT_CLASS_COUNT) + 1}"></i>${renderDictionaryWord(term)}</span>
         `).join("")}
       </div>
+      <p class="diagram-note">Terms: ${diagramState.latestTerms.map((term) => escapeHtml(term)).join(", ")}</p>
 
       <section class="diagram-result-grid" aria-label="Diagram and occurrence locations">
         ${summaries.map((summary) => renderDiagramResultColumn(summary, diagramState.latestTerms, maxCount)).join("")}
@@ -550,13 +552,11 @@ function getSearchVariants(term) {
     return [];
   }
 
-  const lexicalVariants = getLexicalVariants(folded);
-  const hasLexicalVariantGroup = lexicalVariants.length > 1 || lexicalVariants[0] !== folded;
-  if (isPhraseTerm(folded) && !hasLexicalVariantGroup) {
+  if (isPhraseTerm(folded)) {
     return getPhraseVariants(folded);
   }
 
-  return [...new Set(lexicalVariants)].filter(Boolean);
+  return getLexicalVariants(folded);
 }
 
 function sameDisplayTerm(a, b) {
@@ -564,7 +564,10 @@ function sameDisplayTerm(a, b) {
 }
 
 function getLexicalVariants(term) {
-  return getVariantGroup(term, getLexicalVariantGroups());
+  return uniqueVariantList([
+    ...getVariantGroup(term, getLexicalVariantGroups()),
+    ...getGeneratedTermVariants(term)
+  ]);
 }
 
 function getLexicalVariantGroups() {
@@ -572,6 +575,7 @@ function getLexicalVariantGroups() {
     ["ahreman", "ahrimen", "ahriman", "aharman", "ahremn", "ahremanag"],
     ["druz", "druj", "drux", "drug", "draoga"],
     ["gannag", "ganag", "gannak", "ganak", "gandag", "gannay"],
+    ["menog", "menoy", "menok", "minog", "mainyog"],
     ["ohrmazd", "ormazd", "ahura mazda", "ahuramazda", "dadar"],
     ["zadspram", "zadsparam", "zatspram", "zad-spram"],
     ["manuchihr", "manushchihr", "manuschihr", "manuscihr", "manushcihr"]
@@ -584,20 +588,21 @@ function getPhraseVariants(term) {
     .map((part) => part.trim())
     .filter(Boolean);
   if (parts.length < 2) {
-    return [term];
+    return getLexicalVariants(term);
   }
 
-  const phraseVariantGroups = [
-    ["gannag", "ganag", "gannak", "ganak", "gandag", "gannay"],
-    ["menog", "menoy", "menok", "minog", "mainyog"]
-  ];
-  const partVariants = parts.map((part) => getVariantGroup(part, phraseVariantGroups));
+  const partVariants = parts.map(getLexicalVariants);
   const phrases = new Set();
 
   function combine(index, current) {
+    if (phrases.size >= MAX_SEARCH_VARIANTS) {
+      return;
+    }
     if (index === partVariants.length) {
       phrases.add(current.join(" "));
       phrases.add(current.join(""));
+      phrases.add(current.join("-"));
+      phrases.add(current.join("_"));
       return;
     }
 
@@ -605,11 +610,70 @@ function getPhraseVariants(term) {
   }
 
   combine(0, []);
-  return [...phrases];
+  return uniqueVariantList([...phrases]);
 }
 
 function getVariantGroup(term, groups) {
   return groups.find((group) => group.includes(term)) || [term];
+}
+
+function getGeneratedTermVariants(term) {
+  const clean = String(term || "").replace(/^[=_.:-]+|[=_.:-]+$/g, "");
+  if (!clean) {
+    return [];
+  }
+
+  const variants = new Set(getDictionaryKeys(clean).map((key) => foldText(key, diagramState.caseSensitive).text));
+  const prefixPatterns = [
+    /^u-/,
+    /^i-/,
+    /^pad-/,
+    /^az-/,
+    /^o-/,
+    /^ud-/,
+    /^be-/,
+    /^ham-/,
+    /^aba[g]?-/,
+    /^an-/
+  ];
+  const suffixPatterns = [
+    /-(iz|is|im|it|san|man|tan|ag|ih|an|om|tar|tom)$/
+  ];
+
+  [...variants].forEach((variant) => {
+    prefixPatterns.forEach((pattern) => {
+      const stripped = variant.replace(pattern, "");
+      if (stripped && stripped !== variant) {
+        variants.add(stripped);
+      }
+    });
+    suffixPatterns.forEach((pattern) => {
+      const stripped = variant.replace(pattern, "");
+      if (stripped && stripped !== variant) {
+        variants.add(stripped);
+      }
+    });
+  });
+
+  return [...variants].flatMap((variant) => [
+    variant,
+    variant.replace(/-/g, ""),
+    variant.replace(/-/g, " ")
+  ]);
+}
+
+function uniqueVariantList(variants) {
+  const seen = new Set();
+  const unique = [];
+  variants.forEach((variant) => {
+    const folded = foldText(variant, diagramState.caseSensitive).text.trim();
+    if (!folded || seen.has(folded)) {
+      return;
+    }
+    seen.add(folded);
+    unique.push(folded);
+  });
+  return unique.slice(0, MAX_SEARCH_VARIANTS);
 }
 
 function createSearch(query) {

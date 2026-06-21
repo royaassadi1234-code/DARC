@@ -635,22 +635,48 @@ function getSearchTerms(query) {
 }
 
 function parsePhraseSearchTerms(query) {
-  return query.split(/[,;]+/).flatMap((part) => {
-    const trimmed = part.trim();
-    if (!trimmed) {
-      return [];
-    }
-    const parsed = parseTermsWithQuotedPhrases(trimmed);
-    const merged = mergeKnownPhraseTerms(parsed);
-    const hasKnownPhrase = merged.some((term) => isPhraseTerm(term));
-    return hasKnownPhrase ? merged : [trimmed];
-  });
+  const separatedTerms = parseSeparatedSearchTerms(query);
+  return separatedTerms.length > 1 ? separatedTerms : [query.trim()];
 }
 
 function parseMixedSearchTerms(query) {
-  return query
-    .split(/[,;]+/)
-    .flatMap((part) => mergeKnownPhraseTerms(parseTermsWithQuotedPhrases(part)));
+  const separatedTerms = parseSeparatedSearchTerms(query);
+  if (separatedTerms.length > 1) {
+    return separatedTerms;
+  }
+  return mergeKnownPhraseTerms(parseTermsWithQuotedPhrases(query));
+}
+
+function parseSeparatedSearchTerms(query) {
+  const terms = [];
+  let current = "";
+  let quote = "";
+
+  Array.from(query).forEach((char) => {
+    if ((char === "\"" || char === "'") && !quote) {
+      quote = char;
+      return;
+    }
+    if (char === quote) {
+      quote = "";
+      return;
+    }
+    if (!quote && /[,;]/.test(char)) {
+      const trimmed = current.trim();
+      if (trimmed) {
+        terms.push(trimmed);
+      }
+      current = "";
+      return;
+    }
+    current += char;
+  });
+
+  const trimmed = current.trim();
+  if (trimmed) {
+    terms.push(trimmed);
+  }
+  return terms;
 }
 
 function dedupeEquivalentTerms(terms) {

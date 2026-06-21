@@ -104,12 +104,20 @@ function bindDiagramEvents() {
 
   multipleEl.addEventListener("change", () => {
     diagramState.multipleWords = multipleEl.checked;
+    if (diagramState.multipleWords) {
+      diagramState.phraseSearch = false;
+      phraseEl.checked = false;
+    }
     updateSearchModeControls();
     renderDiagram();
   });
 
   phraseEl.addEventListener("change", () => {
     diagramState.phraseSearch = phraseEl.checked;
+    if (diagramState.phraseSearch) {
+      diagramState.multipleWords = false;
+      multipleEl.checked = false;
+    }
     updateSearchModeControls();
     renderDiagram();
   });
@@ -167,7 +175,7 @@ function syncSelectedTextsFromControls() {
 }
 
 function updateSearchModeControls() {
-  multipleEl.disabled = false;
+  multipleEl.disabled = diagramState.phraseSearch;
 }
 
 async function loadText(config) {
@@ -214,7 +222,7 @@ function renderDiagram() {
   const maxCount = Math.max(1, ...summaries.flatMap((summary) => summary.termCounts));
   const total = summaries.reduce((sum, summary) => sum + summary.total, 0);
   const textsWithHits = summaries.filter((summary) => summary.total > 0).length;
-  const variantLabel = search.terms.length > 1 ? ` | ${search.terms.length} words` : "";
+  const variantLabel = search.terms.length > 1 ? ` | ${search.terms.length} terms` : "";
   const modeLabel = search.phraseSearch ? " | phrase" : "";
   statusEl.textContent = `${textsWithHits} of ${summaries.length} selected texts | ${total} occurrences${variantLabel}${modeLabel}`;
 
@@ -690,10 +698,10 @@ function createSearch(query) {
 }
 
 function getSearchTerms(query) {
-  const terms = diagramState.multipleWords
-    ? parseMixedSearchTerms(query)
-    : diagramState.phraseSearch
-      ? parsePhraseSearchTerms(query)
+  const terms = diagramState.phraseSearch
+    ? parsePhraseSearchTerms(query)
+    : diagramState.multipleWords
+      ? parseMixedSearchTerms(query)
       : [query];
   return dedupeEquivalentTerms(terms.map((term) => term.trim()).filter(Boolean));
 }

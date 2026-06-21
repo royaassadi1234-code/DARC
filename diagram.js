@@ -626,10 +626,10 @@ function createSearch(query) {
 }
 
 function getSearchTerms(query) {
-  const terms = diagramState.phraseSearch
-    ? parsePhraseSearchTerms(query)
-    : diagramState.multipleWords
-      ? parseMixedSearchTerms(query)
+  const terms = diagramState.multipleWords
+    ? parseMixedSearchTerms(query)
+    : diagramState.phraseSearch
+      ? parsePhraseSearchTerms(query)
       : [query];
   return dedupeEquivalentTerms(terms.map((term) => term.trim()).filter(Boolean));
 }

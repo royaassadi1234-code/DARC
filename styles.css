@@ -74,6 +74,7 @@ select {
 .resources-showcase .text-card,
 .sources-card,
 .theme-title-menu,
+.concept-info-card,
 .concept-card,
 .concept-source-row a,
 .concept-next-grid section,
@@ -83,6 +84,8 @@ select {
 .login-card,
 .text-editor-add-text-panel,
 .text-annotation-manager,
+.text-annotation-realm,
+.text-annotation-oppositions,
 .text-annotation-referent,
 .passage-edit-card,
 .annotation-side-fields,
@@ -100,6 +103,7 @@ select {
 .thematic-reader-passage,
 .thematic-page-nav,
 .thematic-page-nav button,
+.network-graph-card,
 .network-detail-card,
 .about-copy,
 .profile-card,
@@ -109,6 +113,8 @@ select {
 .pseudo-card,
 .page-dot,
 .seal-toolbar,
+.seal-image-panel,
+.seal-detail-panel,
 .seal-region-panel,
 .seal-popover,
 .seal-popover-close,
@@ -119,6 +125,7 @@ select {
 }
 
 .search-box input,
+.control,
 .select-control select,
 .action-button.secondary,
 .diagram-card > header,
@@ -139,11 +146,17 @@ select {
 .copy-tool-button,
 .annotation-list-item,
 .editor-tab,
+.annotation-field input,
+.annotation-field select,
 .annotation-field textarea,
 .passage-edit-card textarea,
 .annotation-field-card,
+.realm-choice-group label span,
+.option-choice-group label span,
 .option-other-toggle,
+.eng-trans summary,
 .trans-entry-list details summary,
+.eng-trans p,
 .trans-entry-list details p,
 .theme-column header,
 .matched-theme-columns div,
@@ -154,6 +167,7 @@ select {
 .pers-trans summary,
 .pers-trans p,
 .pseudo-card-header,
+.seal-editor-form input,
 .seal-region-button {
   background: var(--panel-soft) !important;
 }
@@ -252,6 +266,22 @@ textarea {
 
 .clear-button.danger {
   color: #e6a1a8 !important;
+}
+
+.thematic-reader-warning {
+  color: #d2b879 !important;
+  background: #2b261a !important;
+}
+
+.thematic-reader-passage mark.phrase-match {
+  color: #b7d7c0 !important;
+  background: #1e3326 !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #8994a2;
+  opacity: 1;
 }
 
 .masthead-title {

@@ -11,10 +11,12 @@ const DIAGRAM_TEXTS = [
 const diagramState = {
   texts: [],
   dictionary: new Map(),
+  avestanLexemes: new Map(),
   query: "",
   multipleWords: true,
   phraseSearch: false,
   wholeWord: true,
+  lemmaSearch: true,
   caseSensitive: false,
   selectedTextIds: new Set(DIAGRAM_TEXTS.map((text) => text.id)),
   latestSummaries: [],
@@ -25,6 +27,7 @@ const queryEl = document.querySelector("#diagram-query");
 const multipleEl = document.querySelector("#diagram-multiple");
 const phraseEl = document.querySelector("#diagram-phrase");
 const wholeWordEl = document.querySelector("#diagram-whole-word");
+const lemmaEl = document.querySelector("#diagram-lemma");
 const caseEl = document.querySelector("#diagram-case-sensitive");
 const textToggleEls = [...document.querySelectorAll(".diagram-text-toggle")];
 const statusEl = document.querySelector("#diagram-status");
@@ -32,6 +35,7 @@ const toolEl = document.querySelector("#diagram-tool");
 
 const HIGHLIGHT_CLASS_COUNT = 6;
 const DICTIONARY_URL = "mpcd-workspace-dictionary.json";
+const AVESTAN_LEXEMES_URL = "avestan-lexemes.json";
 const MAX_SEARCH_VARIANTS = 600;
 const OHRMAZD_SEARCH_FAMILY = ["ohrmazd", "dadar", "dadar ohrmazd", "dadar i ohrmazd"];
 const TRANSLITERATION_MAP = {
@@ -60,12 +64,14 @@ async function initDiagram() {
   bindDiagramEvents();
 
   try {
-    const [texts, dictionary] = await Promise.all([
+    const [texts, dictionary, avestanLexemes] = await Promise.all([
       Promise.all(DIAGRAM_TEXTS.map(loadText)),
-      loadDictionary()
+      loadDictionary(),
+      loadAvestanLexemes()
     ]);
     diagramState.texts = texts;
     diagramState.dictionary = dictionary;
+    diagramState.avestanLexemes = avestanLexemes;
     statusEl.textContent = `${diagramState.texts.length} texts ready`;
     renderDiagram();
   } catch (error) {
@@ -94,6 +100,29 @@ async function loadDictionary() {
     console.warn("Dictionary glosses unavailable", error);
     return new Map();
   }
+}
+
+async function loadAvestanLexemes() {
+  try {
+    const response = await fetch(AVESTAN_LEXEMES_URL);
+    if (!response.ok) {
+      return new Map();
+    }
+    return buildAvestanLexemeMap(await response.json());
+  } catch (error) {
+    console.warn("Avestan lemma forms unavailable", error);
+    return new Map();
+  }
+}
+
+function buildAvestanLexemeMap(data) {
+  const lexemes = new Map();
+  (data.entries || []).forEach((entry) => {
+    const forms = uniqueVariantList([entry.lemma, ...(entry.forms || [])]);
+    const keys = uniqueVariantList([entry.lemma, ...(entry.aliases || []), ...(entry.forms || [])]);
+    keys.forEach((key) => lexemes.set(key, forms));
+  });
+  return lexemes;
 }
 
 function bindDiagramEvents() {
@@ -126,6 +155,11 @@ function bindDiagramEvents() {
 
   wholeWordEl.addEventListener("change", () => {
     diagramState.wholeWord = wholeWordEl.checked;
+    renderDiagram();
+  });
+
+  lemmaEl.addEventListener("change", () => {
+    diagramState.lemmaSearch = lemmaEl.checked;
     renderDiagram();
   });
 
@@ -297,7 +331,8 @@ function renderDiagram() {
   const textsWithHits = summaries.filter((summary) => summary.total > 0).length;
   const variantLabel = search.terms.length > 1 ? ` | ${search.terms.length} terms` : "";
   const modeLabel = search.phraseSearch ? " | phrase" : "";
-  statusEl.textContent = `${textsWithHits} of ${summaries.length} selected texts | ${total} occurrences${variantLabel}${modeLabel}`;
+  const lemmaLabel = diagramState.lemmaSearch ? " | lemma/family" : "";
+  statusEl.textContent = `${textsWithHits} of ${summaries.length} selected texts | ${total} occurrences${variantLabel}${modeLabel}${lemmaLabel}`;
 
   toolEl.innerHTML = `
     <article class="diagram-card diagram-standalone-card">
@@ -317,7 +352,7 @@ function renderDiagram() {
           <span><i class="legend-swatch term-${(index % HIGHLIGHT_CLASS_COUNT) + 1}"></i>${renderDictionaryWord(term)}</span>
         `).join("")}
       </div>
-      <p class="diagram-note">Terms: ${diagramState.latestTerms.map((term) => escapeHtml(term)).join(", ")}</p>
+      <p class="diagram-note">Terms: ${diagramState.latestTerms.map((term) => escapeHtml(term)).join(", ")}${diagramState.lemmaSearch ? " · Curated lemma forms included" : ""}</p>
 
       <section class="diagram-result-grid" aria-label="Diagram and occurrence locations">
         ${summaries.map((summary) => renderDiagramResultColumn(summary, diagramState.latestTerms, maxCount)).join("")}
@@ -573,9 +608,10 @@ function closeAttestationDialog() {
 function getOccurrenceSummary(text, search) {
   const occurrenceMap = new Map();
   const occurrences = [];
+  const matchers = createTermMatchers(search.terms);
 
   text.records.forEach((record, recordIndex) => {
-    findTermOccurrences(record.text, search.terms).forEach((occurrence) => {
+    findTermOccurrences(record.text, search.terms, matchers).forEach((occurrence) => {
       const key = `${recordIndex}:${occurrence.termIndex}:${occurrence.start}:${occurrence.end}`;
       if (occurrenceMap.has(key)) {
         return;
@@ -599,17 +635,26 @@ function getOccurrenceSummary(text, search) {
   };
 }
 
-function findTermOccurrences(text, terms) {
+function createTermMatchers(terms) {
+  return terms.map((term, termIndex) => {
+    const variants = getSearchVariants(term);
+    return {
+      termIndex,
+      regex: variants.length ? new RegExp(buildPattern(variants), "gu") : null
+    };
+  });
+}
+
+function findTermOccurrences(text, terms, matchers = createTermMatchers(terms)) {
   const folded = foldText(text, diagramState.caseSensitive);
   const occurrences = [];
 
-  terms.forEach((term, termIndex) => {
-    const variants = getSearchVariants(term);
-    if (!variants.length) {
+  matchers.forEach(({ termIndex, regex }) => {
+    if (!regex) {
       return;
     }
 
-    const regex = new RegExp(buildPattern(variants), "gu");
+    regex.lastIndex = 0;
     let match;
     while ((match = regex.exec(folded.text)) !== null) {
       const start = folded.map[match.index];
@@ -671,8 +716,16 @@ function sameDisplayTerm(a, b) {
 function getLexicalVariants(term) {
   return uniqueVariantList([
     ...getVariantGroup(term, getLexicalVariantGroups()),
+    ...getAvestanLexemeVariants(term),
     ...getGeneratedTermVariants(term)
   ]);
+}
+
+function getAvestanLexemeVariants(term) {
+  if (!diagramState.lemmaSearch) {
+    return [term];
+  }
+  return diagramState.avestanLexemes.get(term) || [term];
 }
 
 function getLexicalVariantGroups() {
@@ -941,7 +994,11 @@ function getKnownSearchPhrases() {
   });
 
   [
-    "dadar i ohrmazd"
+    "dadar i ohrmazd",
+    "aŋra mainyu",
+    "angra mainyu",
+    "aŋra mainiiu",
+    "angra mainiiu"
   ].forEach((phrase) => {
     phrases.add(foldText(phrase, diagramState.caseSensitive).text);
   });
@@ -964,7 +1021,7 @@ function termToSearchPattern(term) {
   if (compoundPrefixPattern) {
     return compoundPrefixPattern;
   }
-  return escapeRegExp(term).replace(/(?:\s+|\\-|_|-)+/g, "[\\s_-]*");
+  return escapeRegExp(term).replace(/(?:\s+|\\-|_|-)+/g, "[\\s._·-]*");
 }
 
 function getJoinedCompoundPrefixPattern(term) {

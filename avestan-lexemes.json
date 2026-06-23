@@ -1,0 +1,32 @@
+{
+  "description": "Curated lemma-to-form index for CAB Avestan corpus searching. Forms are explicit to keep results philologically reviewable.",
+  "entries": [
+    {
+      "lemma": "druj",
+      "label": "druj- (noun)",
+      "aliases": ["druj", "druž", "druš"],
+      "forms": [
+        "druj", "druja", "drujā̊", "drująm", "drujas", "drujaskanąm",
+        "drujat̰", "drujahe", "druje", "drujəm", "drujə̄m", "drujəmca",
+        "drujim", "drujimca", "drujō", "drukahe"
+      ]
+    },
+    {
+      "lemma": "aŋra",
+      "label": "aŋra-",
+      "aliases": ["aŋra", "angra"],
+      "forms": ["aŋra", "aŋrāi", "aŋrō"]
+    },
+    {
+      "lemma": "mainiiu",
+      "label": "mainiiu-",
+      "aliases": ["mainiiu", "mainyu", "mainyō", "mainyus"],
+      "forms": [
+        "mainiiu", "mainiiuš", "mainiiū", "mainiiūmca", "mainiiə̄š",
+        "mainiiə̄uš", "maińiiə̄uš", "mainiiaiti", "mainiiaoiš",
+        "maińiiaōibiiascā", "maińiiaōiiehe", "mainiiaōm", "maińiiaōm",
+        "mainiiauua", "maińiiauuā̊ŋhō", "mainiuuā̊"
+      ]
+    }
+  ]
+}

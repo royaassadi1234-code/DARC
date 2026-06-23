@@ -101,6 +101,7 @@ select {
 .thematic-page-nav,
 .thematic-page-nav button,
 .network-detail-card,
+.about-copy,
 .profile-card,
 .tags span,
 .text-card,
@@ -187,9 +188,14 @@ select {
   background: var(--panel-soft) !important;
 }
 
-.resources-showcase,
-.about-panel {
+.resources-showcase {
   background: linear-gradient(90deg, rgba(27, 34, 44, 0.96), rgba(21, 27, 35, 0.9)) !important;
+}
+
+.about-panel {
+  background:
+    linear-gradient(90deg, rgba(17, 21, 27, 0.94), rgba(17, 21, 27, 0.78)),
+    url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Middle_Persian_%28Pahlavi%29_Manuscript_-_Matenadaran_Museum_Yerevan.jpg/1280px-Middle_Persian_%28Pahlavi%29_Manuscript_-_Matenadaran_Museum_Yerevan.jpg") center / cover !important;
 }
 
 input,

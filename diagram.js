@@ -4,7 +4,8 @@ const DIAGRAM_TEXTS = [
   { id: "py", siglum: "PY", title: "Pahlavi Yasna", file: "PY-Pt4.txt" },
   { id: "nm", siglum: "NM", title: "Namagiha i Manuscihr", file: "NM.txt" },
   { id: "gbd", siglum: "GBd", title: "Greater Bundahishn", file: "GBd.txt", parseMode: "section" },
-  { id: "prdd", siglum: "PRDd", title: "Pahlavi Rivayat Accompanying the Dadestan i Denig", file: "PRDd.txt", parseMode: "section" }
+  { id: "prdd", siglum: "PRDd", title: "Pahlavi Rivayat Accompanying the Dadestan i Denig", file: "PRDd.txt", parseMode: "section" },
+  { id: "av-corpus", siglum: "Av. Corpus", title: "CAB Linguistic Corpus", file: "CABLinguisticCorpus.json", parseMode: "cab-json" }
 ];
 
 const diagramState = {
@@ -185,12 +186,83 @@ async function loadText(config) {
     throw new Error(`Could not load ${config.file}`);
   }
 
+  if (config.parseMode === "cab-json") {
+    const data = await response.json();
+    return {
+      ...config,
+      raw: "",
+      records: parseCabCorpusRecords(data)
+    };
+  }
+
   const raw = await response.text();
   return {
     ...config,
     raw,
     records: parseRecords(raw, config.parseMode)
   };
+}
+
+function parseCabCorpusRecords(data) {
+  const records = [];
+  const excludedTypes = new Set(["pahltr", "pahltxt"]);
+  const structuralKeys = new Set(["div", "ab"]);
+
+  function visit(node, context = {}) {
+    if (Array.isArray(node)) {
+      node.forEach((item) => visit(item, context));
+      return;
+    }
+    if (!node || typeof node !== "object") {
+      return;
+    }
+
+    const type = String(node.type || "").toLowerCase();
+    const language = String(node["xml:lang"] || "").toLowerCase();
+    if (excludedTypes.has(type) || language === "pal") {
+      return;
+    }
+
+    const nextContext = {
+      work: node["xml:id"] && !context.work ? node["xml:id"] : context.work,
+      section: node.n || context.section,
+      id: node["xml:id"] || context.id
+    };
+    const text = [extractCabText(node["#text"]), extractCabText(node.l)]
+      .filter(Boolean)
+      .join(" ")
+      .replace(/\s+/g, " ")
+      .trim();
+
+    if (text) {
+      const locationParts = [nextContext.work, nextContext.section || nextContext.id].filter(Boolean);
+      records.push({
+        index: records.length,
+        location: locationParts.join(" · ") || `passage ${records.length + 1}`,
+        text,
+        searchable: true
+      });
+    }
+
+    Object.entries(node).forEach(([key, value]) => {
+      if (structuralKeys.has(key)) {
+        visit(value, nextContext);
+      }
+    });
+  }
+
+  visit(Array.isArray(data?.text) ? data.text : [], {});
+  return records;
+}
+
+function extractCabText(value) {
+  if (typeof value === "string") {
+    return value;
+  }
+  if (Array.isArray(value)) {
+    return value.filter((item) => typeof item === "string").join(" ");
+  }
+  return "";
 }
 
 function renderDiagram() {

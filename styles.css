@@ -1,15 +1,17 @@
 :root {
-  color-scheme: light;
+  color-scheme: dark;
   --bg: #111827;
-  --panel: #ffffff;
-  --ink: #17212b;
-  --muted: #5d6875;
-  --line: #d9dee5;
-  --accent: #245c73;
-  --accent-strong: #173f52;
+  --panel: #1f2937;
+  --panel-soft: #172033;
+  --panel-hover: #273449;
+  --ink: #f3f4f6;
+  --muted: #cbd5e1;
+  --line: #3b4758;
+  --accent: #38bdf8;
+  --accent-strong: #7dd3fc;
   --green: #267052;
   --red: #a83b3b;
-  --shadow: 0 18px 45px rgba(29, 43, 57, 0.12);
+  --shadow: 0 18px 45px rgba(0, 0, 0, 0.3);
 }
 
 * {
@@ -50,6 +52,150 @@ select {
   column-gap: 18px;
   row-gap: 12px;
   padding: 10px 2px 12px;
+}
+
+/* Dark site surfaces */
+.site-nav,
+.nav-menu-list,
+.sub-nav a,
+.status,
+.diagram-card,
+.term-legend span,
+.text-selection fieldset,
+.frequency-common-panel,
+.frequency-rank-compare-row,
+.frequency-row,
+.frequency-location-popover,
+.chapter-diagram-panel,
+.chapter-page-button,
+.chapter-bar-row,
+.linear-occurrence-card,
+.attestation-dialog-panel,
+.resources-showcase .text-card,
+.sources-card,
+.theme-title-menu,
+.concept-card,
+.concept-source-row a,
+.concept-next-grid section,
+.concept-review-preview,
+.context-cloud span,
+.concept-comment,
+.login-card,
+.text-editor-add-text-panel,
+.text-annotation-manager,
+.text-annotation-referent,
+.passage-edit-card,
+.annotation-side-fields,
+.annotation-list-fields,
+.option-custom-popover,
+.trans-heading,
+.trans-card,
+.theme-column,
+.theme-hit,
+.theme-stat,
+.matched-theme-card,
+.theme-relation-badge,
+.thematic-title-menu,
+.thematic-reader-card,
+.thematic-reader-passage,
+.thematic-page-nav,
+.thematic-page-nav button,
+.network-detail-card,
+.profile-card,
+.tags span,
+.text-card,
+.result-card,
+.pseudo-card,
+.page-dot,
+.seal-toolbar,
+.seal-region-panel,
+.seal-popover,
+.seal-popover-close,
+.seal-note,
+.seal-editor-form textarea,
+.seal-note-editor {
+  background: var(--panel) !important;
+}
+
+.search-box input,
+.select-control select,
+.action-button.secondary,
+.diagram-card > header,
+.text-selection summary,
+.frequency-common-panel[open] summary,
+.frequency-common-chip,
+.frequency-common-button,
+.frequency-location-popover::before,
+.frequency-location-popover > header,
+.chapter-diagram-panel > header,
+.chapter-page-nav,
+.attestation-dialog-panel > header,
+.theme-title-option,
+.concept-card > header,
+.concept-bar-track,
+.clear-button,
+.copy-button,
+.copy-tool-button,
+.annotation-list-item,
+.editor-tab,
+.annotation-field textarea,
+.passage-edit-card textarea,
+.annotation-field-card,
+.option-other-toggle,
+.trans-entry-list details summary,
+.trans-entry-list details p,
+.theme-column header,
+.matched-theme-columns div,
+.thematic-title-option,
+.network-title,
+.network-detail-card header,
+.result-card header,
+.pers-trans summary,
+.pers-trans p,
+.pseudo-card-header,
+.seal-region-button {
+  background: var(--panel-soft) !important;
+}
+
+.nav-menu-list a:hover,
+.text-selection[open] summary,
+.frequency-common-chip:focus-visible,
+.frequency-row.active,
+.frequency-common-button:focus-visible,
+.chapter-page-button:focus-visible,
+.chapter-bar-row.active,
+.linear-occurrence-card:focus-visible,
+.copy-button:hover:not(:disabled),
+.copy-tool-button:focus-visible,
+.annotation-list-item.active,
+.text-editor-dropbox.drag-over,
+.seal-popover-close:focus-visible,
+.seal-region-button.active {
+  background: var(--panel-hover) !important;
+}
+
+.annotation-summary span,
+.text-editor-dropbox,
+.text-editor-meta span,
+.passage-pager,
+.text-annotation-option-row,
+.passage-section-location,
+.source-card-media,
+.team-profile-photo,
+.acknowledgment-person,
+.empty-state {
+  background: var(--panel-soft) !important;
+}
+
+.resources-showcase,
+.about-panel {
+  background: linear-gradient(90deg, rgba(31, 41, 55, 0.96), rgba(23, 32, 51, 0.9)) !important;
+}
+
+input,
+select,
+textarea {
+  color: var(--ink);
 }
 
 .masthead-title {

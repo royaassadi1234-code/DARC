@@ -20,6 +20,8 @@ const statusEl = document.querySelector("#trans-status");
 const readerEl = document.querySelector("#trans-reader");
 const paginationTopEl = document.querySelector("#trans-pagination-top");
 const paginationBottomEl = document.querySelector("#trans-pagination-bottom");
+const TRANS_SEARCH_DEBOUNCE_MS = 300;
+let transSearchRenderTimer = null;
 
 initTrans();
 
@@ -43,7 +45,7 @@ function bindTransEvents() {
     clearTargetLocation();
     transState.searchByText[transState.selectedTextId] = queryEl.value;
     transState.currentPage = 1;
-    renderReader();
+    scheduleTransSearchRender();
   });
 
   clearEl.addEventListener("click", () => {
@@ -51,7 +53,7 @@ function bindTransEvents() {
     queryEl.value = "";
     transState.searchByText[transState.selectedTextId] = "";
     transState.currentPage = 1;
-    renderReader();
+    renderReaderImmediately();
     queryEl.focus();
   });
 
@@ -60,8 +62,22 @@ function bindTransEvents() {
     transState.targetLocation = getLocationFromUrl();
     transState.currentPage = 1;
     syncQueryInput();
-    renderReader();
+    renderReaderImmediately();
   });
+}
+
+function scheduleTransSearchRender() {
+  window.clearTimeout(transSearchRenderTimer);
+  transSearchRenderTimer = window.setTimeout(() => {
+    transSearchRenderTimer = null;
+    renderReader();
+  }, TRANS_SEARCH_DEBOUNCE_MS);
+}
+
+function renderReaderImmediately() {
+  window.clearTimeout(transSearchRenderTimer);
+  transSearchRenderTimer = null;
+  renderReader();
 }
 
 function getTextIdFromUrl() {
@@ -304,7 +320,7 @@ function renderPagination(pageCount) {
       button.addEventListener("click", () => {
         clearTargetLocation();
         transState.currentPage = Number(button.dataset.page);
-        renderReader();
+        renderReaderImmediately();
         readerEl.scrollIntoView({ behavior: "smooth", block: "start" });
       });
     });

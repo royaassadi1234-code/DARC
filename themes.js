@@ -31,6 +31,8 @@ const comparisonEl = document.querySelector("#theme-comparison");
 
 const THEME_PAGE_SIZE = 5;
 const DICTIONARY_URL = "mpcd-workspace-dictionary.json";
+const THEME_KEYWORD_DEBOUNCE_MS = 300;
+let themeKeywordRenderTimer = null;
 const TRANSLITERATION_MAP = {
   "\u0100": "A",
   "\u0101": "a",
@@ -130,26 +132,25 @@ function bindThemeEvents() {
 
   keywordEl.addEventListener("input", () => {
     themeState.keywords = keywordEl.value.trim();
-    resetPages();
-    renderThemes();
+    scheduleThemeKeywordRender();
   });
 
   wholeWordEl.addEventListener("change", () => {
     themeState.wholeWord = wholeWordEl.checked;
     resetPages();
-    renderThemes();
+    renderThemesImmediately();
   });
 
   caseSensitiveEl.addEventListener("change", () => {
     themeState.caseSensitive = caseSensitiveEl.checked;
     resetPages();
-    renderThemes();
+    renderThemesImmediately();
   });
 
   contextEl.addEventListener("change", () => {
     themeState.contextSize = Number(contextEl.value);
     resetPages();
-    renderThemes();
+    renderThemesImmediately();
   });
 
   comparisonEl.addEventListener("click", (event) => {
@@ -159,8 +160,23 @@ function bindThemeEvents() {
     }
 
     themeState.pages[button.dataset.textId] = Number(button.dataset.themePage);
-    renderThemes();
+    renderThemesImmediately();
   });
+}
+
+function scheduleThemeKeywordRender() {
+  window.clearTimeout(themeKeywordRenderTimer);
+  themeKeywordRenderTimer = window.setTimeout(() => {
+    themeKeywordRenderTimer = null;
+    resetPages();
+    renderThemes();
+  }, THEME_KEYWORD_DEBOUNCE_MS);
+}
+
+function renderThemesImmediately() {
+  window.clearTimeout(themeKeywordRenderTimer);
+  themeKeywordRenderTimer = null;
+  renderThemes();
 }
 
 async function loadThemes() {
@@ -244,7 +260,7 @@ function renderThemeTitleMenu() {
       syncKeywordInput();
       resetPages();
       renderThemeTitleMenu();
-      renderThemes();
+      renderThemesImmediately();
     });
   });
 }

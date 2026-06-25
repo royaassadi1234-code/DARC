@@ -112,6 +112,9 @@ const frequencySummaryEl = document.querySelector("#frequency-summary");
 const frequencyRankComparisonEl = document.querySelector("#frequency-rank-comparison");
 const frequencyChartEl = document.querySelector("#frequency-chart");
 
+const FREQUENCY_SEARCH_DEBOUNCE_MS = 300;
+let frequencySearchRenderTimer = null;
+
 initFrequency();
 
 async function initFrequency() {
@@ -136,30 +139,28 @@ async function initFrequency() {
 function bindFrequencyEvents() {
   frequencyFilterEl.addEventListener("input", () => {
     frequencyState.filter = frequencyFilterEl.value.trim();
-    resetFrequencyPages();
-    clearSelectedWord();
-    renderFrequency();
+    scheduleFrequencySearchRender();
   });
 
   frequencyLimitEl.addEventListener("change", () => {
     frequencyState.pageSize = Number(frequencyLimitEl.value);
     resetFrequencyPages();
     clearSelectedWord();
-    renderFrequency();
+    renderFrequencyImmediately();
   });
 
   frequencyMultipleEl.addEventListener("change", () => {
     frequencyState.multipleWords = frequencyMultipleEl.checked;
     resetFrequencyPages();
     clearSelectedWord();
-    renderFrequency();
+    renderFrequencyImmediately();
   });
 
   frequencyStopwordsEl.addEventListener("change", () => {
     frequencyState.hideStopwords = frequencyStopwordsEl.checked;
     resetFrequencyPages();
     clearSelectedWord();
-    renderFrequency();
+    renderFrequencyImmediately();
   });
 
   personalCommonAddEl.addEventListener("click", () => {
@@ -196,14 +197,14 @@ function bindFrequencyEvents() {
     if (pageButton) {
       frequencyState.pages[pageButton.dataset.textId] = Number(pageButton.dataset.frequencyPage);
       clearSelectedWord();
-      renderFrequency();
+      renderFrequencyImmediately();
       return;
     }
 
     const closeButton = event.target.closest("[data-close-locations]");
     if (closeButton) {
       clearSelectedWord();
-      renderFrequency();
+      renderFrequencyImmediately();
       return;
     }
 
@@ -216,15 +217,31 @@ function bindFrequencyEvents() {
       textId: button.dataset.textId,
       wordKey: button.dataset.wordKey
     };
-    renderFrequency();
+    renderFrequencyImmediately();
   });
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && frequencyState.selected) {
       clearSelectedWord();
-      renderFrequency();
+      renderFrequencyImmediately();
     }
   });
+}
+
+function scheduleFrequencySearchRender() {
+  window.clearTimeout(frequencySearchRenderTimer);
+  frequencySearchRenderTimer = window.setTimeout(() => {
+    frequencySearchRenderTimer = null;
+    resetFrequencyPages();
+    clearSelectedWord();
+    renderFrequency();
+  }, FREQUENCY_SEARCH_DEBOUNCE_MS);
+}
+
+function renderFrequencyImmediately() {
+  window.clearTimeout(frequencySearchRenderTimer);
+  frequencySearchRenderTimer = null;
+  renderFrequency();
 }
 
 async function loadFrequencyText(config) {
@@ -675,13 +692,13 @@ function addPersonalCommonWord(value) {
   if (frequencyState.selected && keys.includes(frequencyState.selected.wordKey)) {
     clearSelectedWord();
   }
-  renderFrequency();
+  renderFrequencyImmediately();
 }
 
 function removePersonalCommonWord(key) {
   frequencyState.personalCommonWords.delete(key);
   savePersonalCommonWords();
-  renderFrequency();
+  renderFrequencyImmediately();
 }
 
 function isCommonWord(key) {

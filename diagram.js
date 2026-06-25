@@ -37,6 +37,8 @@ const HIGHLIGHT_CLASS_COUNT = 6;
 const DICTIONARY_URL = "mpcd-workspace-dictionary.json";
 const AVESTAN_LEXEMES_URL = "avestan-lexemes.json";
 const MAX_SEARCH_VARIANTS = 600;
+const DIAGRAM_SEARCH_DEBOUNCE_MS = 300;
+let diagramSearchRenderTimer = null;
 const OHRMAZD_SEARCH_FAMILY = ["ohrmazd", "dadar", "dadar ohrmazd", "dadar i ohrmazd"];
 const TRANSLITERATION_MAP = {
   "\u0100": "A",
@@ -130,7 +132,7 @@ function bindDiagramEvents() {
 
   queryEl.addEventListener("input", () => {
     diagramState.query = queryEl.value.trim();
-    renderDiagram();
+    scheduleDiagramSearchRender();
   });
 
   multipleEl.addEventListener("change", () => {
@@ -140,7 +142,7 @@ function bindDiagramEvents() {
       phraseEl.checked = false;
     }
     updateSearchModeControls();
-    renderDiagram();
+    renderDiagramImmediately();
   });
 
   phraseEl.addEventListener("change", () => {
@@ -150,22 +152,22 @@ function bindDiagramEvents() {
       multipleEl.checked = false;
     }
     updateSearchModeControls();
-    renderDiagram();
+    renderDiagramImmediately();
   });
 
   wholeWordEl.addEventListener("change", () => {
     diagramState.wholeWord = wholeWordEl.checked;
-    renderDiagram();
+    renderDiagramImmediately();
   });
 
   lemmaEl.addEventListener("change", () => {
     diagramState.lemmaSearch = lemmaEl.checked;
-    renderDiagram();
+    renderDiagramImmediately();
   });
 
   caseEl.addEventListener("change", () => {
     diagramState.caseSensitive = caseEl.checked;
-    renderDiagram();
+    renderDiagramImmediately();
   });
 
   toolEl.addEventListener("click", (event) => {
@@ -196,11 +198,25 @@ function bindDiagramEvents() {
         return;
       }
       diagramState.selectedTextIds = nextSelection;
-      renderDiagram();
+      renderDiagramImmediately();
     });
   });
 
   updateSearchModeControls();
+}
+
+function scheduleDiagramSearchRender() {
+  window.clearTimeout(diagramSearchRenderTimer);
+  diagramSearchRenderTimer = window.setTimeout(() => {
+    diagramSearchRenderTimer = null;
+    renderDiagram();
+  }, DIAGRAM_SEARCH_DEBOUNCE_MS);
+}
+
+function renderDiagramImmediately() {
+  window.clearTimeout(diagramSearchRenderTimer);
+  diagramSearchRenderTimer = null;
+  renderDiagram();
 }
 
 function syncSelectedTextsFromControls() {

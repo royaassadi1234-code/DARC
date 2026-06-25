@@ -83,6 +83,8 @@ const TRANSLITERATION_MAP = {
 const HIGHLIGHT_CLASS_COUNT = 6;
 const RESULTS_PER_PAGE = 12;
 const DICTIONARY_URL = "mpcd-workspace-dictionary.json";
+const SEARCH_DEBOUNCE_MS = 300;
+let searchRenderTimer = null;
 
 init();
 
@@ -133,32 +135,31 @@ async function loadDictionary() {
 function bindEvents() {
   queryInput.addEventListener("input", () => {
     state.query = queryInput.value.trim();
-    resetResultPages();
-    render();
+    scheduleSearchRender();
   });
 
   variantInput.addEventListener("change", () => {
     state.variantSearch = variantInput.checked;
     resetResultPages();
-    render();
+    renderSearchImmediately();
   });
 
   wholeWordInput.addEventListener("change", () => {
     state.wholeWord = wholeWordInput.checked;
     resetResultPages();
-    render();
+    renderSearchImmediately();
   });
 
   caseInput.addEventListener("change", () => {
     state.caseSensitive = caseInput.checked;
     resetResultPages();
-    render();
+    renderSearchImmediately();
   });
 
   contextSelect.addEventListener("change", () => {
     state.contextSize = Number(contextSelect.value);
     resetResultPages();
-    render();
+    renderSearchImmediately();
   });
 
   copyResultsButton.addEventListener("click", async () => {
@@ -182,8 +183,23 @@ function bindEvents() {
     }
 
     state.resultPages[button.dataset.textId] = Number(button.dataset.resultPage);
-    render();
+    renderSearchImmediately();
   });
+}
+
+function scheduleSearchRender() {
+  window.clearTimeout(searchRenderTimer);
+  searchRenderTimer = window.setTimeout(() => {
+    searchRenderTimer = null;
+    resetResultPages();
+    render();
+  }, SEARCH_DEBOUNCE_MS);
+}
+
+function renderSearchImmediately() {
+  window.clearTimeout(searchRenderTimer);
+  searchRenderTimer = null;
+  render();
 }
 
 async function loadText(config) {

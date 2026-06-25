@@ -160,6 +160,9 @@ const chapterOrderEl = document.querySelector("#chapter-diagram-order");
 const chapterStatusEl = document.querySelector("#chapter-diagram-status");
 const chapterToolEl = document.querySelector("#chapter-diagram-tool");
 
+const CHAPTER_SEARCH_DEBOUNCE_MS = 300;
+let chapterSearchRenderTimer = null;
+
 const CHAPTER_TRANSLITERATION_MAP = {
   "\u0100": "A",
   "\u0101": "a",
@@ -199,9 +202,7 @@ async function initChapterDiagram() {
 function bindChapterDiagramEvents() {
   chapterQueryEl.addEventListener("input", () => {
     chapterDiagramState.query = chapterQueryEl.value.trim();
-    resetChapterPages();
-    closeChapterDetails();
-    renderChapterDiagram();
+    scheduleChapterSearchRender();
   });
 
   chapterMultipleEl.addEventListener("change", () => {
@@ -209,7 +210,7 @@ function bindChapterDiagramEvents() {
     resetChapterPages();
     closeChapterDetails();
     updateChapterSearchModeControls();
-    renderChapterDiagram();
+    renderChapterDiagramImmediately();
   });
 
   chapterPhraseEl.addEventListener("change", () => {
@@ -217,28 +218,28 @@ function bindChapterDiagramEvents() {
     resetChapterPages();
     closeChapterDetails();
     updateChapterSearchModeControls();
-    renderChapterDiagram();
+    renderChapterDiagramImmediately();
   });
 
   chapterWholeWordEl.addEventListener("change", () => {
     chapterDiagramState.wholeWord = chapterWholeWordEl.checked;
     resetChapterPages();
     closeChapterDetails();
-    renderChapterDiagram();
+    renderChapterDiagramImmediately();
   });
 
   chapterCaseEl.addEventListener("change", () => {
     chapterDiagramState.caseSensitive = chapterCaseEl.checked;
     resetChapterPages();
     closeChapterDetails();
-    renderChapterDiagram();
+    renderChapterDiagramImmediately();
   });
 
   chapterOrderEl.addEventListener("change", () => {
     chapterDiagramState.order = chapterOrderEl.value;
     resetChapterPages();
     closeChapterDetails();
-    renderChapterDiagram();
+    renderChapterDiagramImmediately();
   });
 
   chapterToolEl.addEventListener("click", (event) => {
@@ -284,6 +285,22 @@ function bindChapterDiagramEvents() {
   });
 
   updateChapterSearchModeControls();
+}
+
+function scheduleChapterSearchRender() {
+  window.clearTimeout(chapterSearchRenderTimer);
+  chapterSearchRenderTimer = window.setTimeout(() => {
+    chapterSearchRenderTimer = null;
+    resetChapterPages();
+    closeChapterDetails();
+    renderChapterDiagram();
+  }, CHAPTER_SEARCH_DEBOUNCE_MS);
+}
+
+function renderChapterDiagramImmediately() {
+  window.clearTimeout(chapterSearchRenderTimer);
+  chapterSearchRenderTimer = null;
+  renderChapterDiagram();
 }
 
 function updateChapterSearchModeControls() {

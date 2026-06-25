@@ -60,6 +60,8 @@ const nextEl = document.querySelector("#thematic-next");
 const pageStatusEl = document.querySelector("#thematic-page-status");
 const statusEl = document.querySelector("#thematic-reader-status");
 const gridEl = document.querySelector("#thematic-reader-grid");
+const THEMATIC_SEARCH_DEBOUNCE_MS = 300;
+let thematicSearchRenderTimer = null;
 
 initThematicReader();
 
@@ -106,15 +108,15 @@ function bindControls() {
     thematicState.filter = filterEl.value;
     thematicState.titleMenuOpen = true;
     renderThemeTitleMenu();
-    renderThematicReader();
+    scheduleThematicSearchRender();
   });
   showTranslationEl.addEventListener("change", () => {
     thematicState.showTranslation = showTranslationEl.checked;
-    renderThematicReader();
+    renderThematicReaderImmediately();
   });
   showEmptyEl.addEventListener("change", () => {
     thematicState.showEmpty = showEmptyEl.checked;
-    renderThematicReader();
+    renderThematicReaderImmediately();
   });
   prevEl.addEventListener("click", () => {
     selectTheme(Math.max(0, thematicState.selectedThemeIndex - 1));
@@ -128,6 +130,20 @@ function bindControls() {
       renderThemeTitleMenu();
     }
   });
+}
+
+function scheduleThematicSearchRender() {
+  window.clearTimeout(thematicSearchRenderTimer);
+  thematicSearchRenderTimer = window.setTimeout(() => {
+    thematicSearchRenderTimer = null;
+    renderThematicReader();
+  }, THEMATIC_SEARCH_DEBOUNCE_MS);
+}
+
+function renderThematicReaderImmediately() {
+  window.clearTimeout(thematicSearchRenderTimer);
+  thematicSearchRenderTimer = null;
+  renderThematicReader();
 }
 
 function renderThematicReader() {
@@ -208,7 +224,7 @@ function selectTheme(index) {
   thematicState.selectedThemeIndex = Math.min(Math.max(0, index), THEMATIC_TABLE.length - 1);
   filterEl.value = "";
   thematicState.filter = "";
-  renderThematicReader();
+  renderThematicReaderImmediately();
 }
 
 function filterThemeRecords(records) {

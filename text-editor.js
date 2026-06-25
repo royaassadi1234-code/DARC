@@ -10,8 +10,10 @@ const ANNOTATION_FILE = "druz-concept-annotations.json";
 const ANNOTATION_DRAFT_KEY = "druzAnnotationReviewDraft";
 const ANNOTATION_COMPLETION_KEY = "druzAnnotationFieldCompletion";
 const TEXT_EDITOR_AUTOSAVE_DELAY = 700;
+const TEXT_EDITOR_SEARCH_DEBOUNCE_MS = 300;
 
 let textEditorAutosaveTimer = 0;
+let textEditorSearchRenderTimer = null;
 
 const TEXT_EDITOR_FILES = [
   { id: "dd", siglum: "DD", title: "Dādestān ī Dēnīg", file: "Dd.txt", translationFile: "DD-mahshid-aligned.txt", kind: "Middle Persian" },
@@ -220,6 +222,18 @@ function bindTextEditorEvents() {
   searchInput.addEventListener("input", () => {
     saveCurrentPassageToDraft();
     editorState.query = searchInput.value.trim();
+    scheduleTextEditorSearchRender();
+  });
+
+  function scheduleTextEditorSearchRender() {
+    window.clearTimeout(textEditorSearchRenderTimer);
+    textEditorSearchRenderTimer = window.setTimeout(() => {
+      textEditorSearchRenderTimer = null;
+      renderTextEditorSearch();
+    }, TEXT_EDITOR_SEARCH_DEBOUNCE_MS);
+  }
+
+  function renderTextEditorSearch() {
     const file = getSelectedFile();
     const locationIndex = getDirectLocationMatchIndex(file, editorState.query);
     if (locationIndex >= 0) {
@@ -228,7 +242,7 @@ function bindTextEditorEvents() {
     updateTextEditorListVisibilityFromSearch();
     renderTextEditorList();
     renderCurrentFile();
-  });
+  }
 
   fileToggleButton.addEventListener("click", () => {
     const hidden = listEl.classList.toggle("hidden");

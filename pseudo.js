@@ -56,6 +56,8 @@ const TRANSLITERATION_MAP = {
   "\u01E7": "g"
 };
 const HIGHLIGHT_CLASS_COUNT = 6;
+const PSEUDO_SEARCH_DEBOUNCE_MS = 300;
+let pseudoSearchRenderTimer = null;
 
 initPseudo();
 
@@ -144,19 +146,19 @@ function bindPseudoEvents() {
   queryEl.addEventListener("input", () => {
     pseudoState.query = queryEl.value.trim();
     pseudoState.currentPage = 1;
-    applyFilters();
+    schedulePseudoSearchRender();
   });
 
   tierEl.addEventListener("change", () => {
     pseudoState.tier = tierEl.value;
     pseudoState.currentPage = 1;
-    applyFilters();
+    applyFiltersImmediately();
   });
 
   sortEl.addEventListener("change", () => {
     pseudoState.sort = sortEl.value;
     pseudoState.currentPage = 1;
-    applyFilters();
+    applyFiltersImmediately();
   });
 
   expandAllEl.addEventListener("click", () => {
@@ -168,6 +170,20 @@ function bindPseudoEvents() {
     pseudoState.expanded.clear();
     renderPseudo();
   });
+}
+
+function schedulePseudoSearchRender() {
+  window.clearTimeout(pseudoSearchRenderTimer);
+  pseudoSearchRenderTimer = window.setTimeout(() => {
+    pseudoSearchRenderTimer = null;
+    applyFilters();
+  }, PSEUDO_SEARCH_DEBOUNCE_MS);
+}
+
+function applyFiltersImmediately() {
+  window.clearTimeout(pseudoSearchRenderTimer);
+  pseudoSearchRenderTimer = null;
+  applyFilters();
 }
 
 function normalizeRecord(raw, index) {

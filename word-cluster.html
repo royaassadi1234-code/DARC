@@ -1,9 +1,9 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DARC (Dr&umacr;z-Ahreman Research Corpus) | DD-WZ Thematic Reader</title>
+    <title>DARC (Drūz-Ahreman Research Corpus) | Word Cluster Map</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/svg+xml" href="logos/druz-logo-fire-altar-resisting-smoke-seal-no-branches-black-white-vector.svg">
   </head>
@@ -16,7 +16,7 @@
           </a>
           <div class="masthead-title">
             <p class="eyebrow">DARC</p>
-            <h1 id="page-title"><span class="title-line">Dr&umacr;z-Ahreman Research Corpus</span></h1>
+            <h1 id="page-title"><span class="title-line">Drūz-Ahreman Research Corpus</span></h1>
             <p class="masthead-subtitle">
               <span>A digital tool for structured comparison and analysis of Middle Persian texts</span>
             </p>
@@ -35,21 +35,21 @@
                 </div>
               </details>
               <a href="search.html">Parallel Text Search</a>
-              <details class="nav-menu">
+              <details class="nav-menu" open>
                 <summary>Visualized Statistics</summary>
                 <div class="nav-menu-list">
-                  <details class="pattern-submenu statistics-submenu">
+                  <details class="pattern-submenu statistics-submenu" open>
                     <summary>Attestation Diagram</summary>
                     <div class="pattern-submenu-list">
                       <a href="diagram.html">1. Text based</a>
                       <a href="chapter-diagram.html">2. Chapter based</a>
                       <a href="word-frequency.html">3. Word based</a>
-                      <a href="word-cluster.html">4. Word cluster/map</a>
+                      <a class="active" href="word-cluster.html">4. Word cluster/map</a>
                     </div>
                   </details>
                 </div>
               </details>
-              <details class="nav-menu active">
+              <details class="nav-menu">
                 <summary>Pattern</summary>
                 <div class="nav-menu-list pattern-menu-list">
                   <details class="pattern-submenu">
@@ -70,11 +70,11 @@
                       <a href="dd-py-wz-phrases.html">DD vs PY vs WZ</a>
                     </div>
                   </details>
-                  <details class="pattern-submenu active" open>
+                  <details class="pattern-submenu">
                     <summary>Semantic Motif</summary>
                     <div class="pattern-submenu-list">
                       <a href="themes.html">Semantic Motif</a>
-                      <a class="active" href="dd-wz-themes.html">DD-WZ matched themes</a>
+                      <a href="dd-wz-themes.html">DD-WZ matched themes</a>
                     </div>
                   </details>
                 </div>
@@ -91,41 +91,68 @@
                 </div>
               </details>
             </nav>
-            <div class="status" id="thematic-reader-status">Loading thematic reader...</div>
+            <div class="status" id="word-cluster-status">Loading DD, PY, and WZ...</div>
           </div>
         </header>
 
-        <section class="search-panel thematic-reader-controls" aria-label="DD-WZ thematic reader controls">
-          <div class="thematic-search-wrap">
-            <label class="search-box" for="thematic-filter">
-              <span>Search theme</span>
-              <input id="thematic-filter" type="search" autocomplete="off" placeholder="Click to choose a theme">
+        <section class="search-panel word-cluster-controls" aria-label="Word cluster controls">
+          <label class="search-box" for="word-cluster-filter">
+            <span>Focus words or variants</span>
+            <input id="word-cluster-filter" type="search" placeholder="Type words: druz ahreman ohrmazd" autocomplete="off">
+          </label>
+
+          <div class="controls" role="group" aria-label="Cluster options">
+            <label class="select-control" for="word-cluster-limit">
+              <span>Words per text</span>
+              <select id="word-cluster-limit">
+                <option value="25">25</option>
+                <option value="40" selected>40</option>
+                <option value="60">60</option>
+                <option value="100">100</option>
+              </select>
             </label>
-            <div class="thematic-title-menu" id="thematic-title-menu" hidden></div>
-          </div>
-          <div class="controls" role="group" aria-label="Thematic reader options">
-            <label class="control">
-              <input id="thematic-show-translation" type="checkbox" checked>
-              <span>Show English translation</span>
+            <label class="select-control" for="word-cluster-min-texts">
+              <span>Minimum texts</span>
+              <select id="word-cluster-min-texts">
+                <option value="1">1 text</option>
+                <option value="2" selected>2 texts</option>
+                <option value="3">3 texts</option>
+              </select>
             </label>
             <label class="control">
-              <input id="thematic-show-empty" type="checkbox" checked>
-              <span>Show unmatched side</span>
+              <input id="word-cluster-stopwords" type="checkbox" checked>
+              <span>Hide common words</span>
             </label>
           </div>
         </section>
 
-        <section class="thematic-reader-grid" id="thematic-reader-grid" aria-label="DD-WZ thematic text replica" aria-live="polite"></section>
-        <nav class="thematic-page-nav" aria-label="Theme page navigation">
-          <button type="button" id="thematic-prev">Previous</button>
-          <span id="thematic-page-status"></span>
-          <button type="button" id="thematic-next">Next</button>
-        </nav>
+        <section class="word-cluster-summary" id="word-cluster-summary" aria-label="Word cluster summary"></section>
+
+        <section class="word-cluster-workspace">
+          <article class="diagram-card word-cluster-map-card">
+            <header>
+              <div>
+                <p class="eyebrow">Word cluster / map</p>
+                <h2>Shared and Distinct Frequent Words Across DD, PY, and WZ</h2>
+              </div>
+            </header>
+            <div class="word-cluster-map" id="word-cluster-map" aria-label="Word cluster map"></div>
+          </article>
+
+          <article class="diagram-card word-cluster-detail-card">
+            <header>
+              <div>
+                <p class="eyebrow">Cluster reading</p>
+                <h2>Ranked Word Relations</h2>
+              </div>
+            </header>
+            <div class="word-cluster-detail" id="word-cluster-detail"></div>
+          </article>
+        </section>
       </section>
     </main>
 
-    <script src="dd-wz-themes.js"></script>
-    <script src="copy-tools.js"></script>
+    <script src="word-cluster.js?v=20260626-word-cluster"></script>
     <script src="nav-menu.js"></script>
   </body>
 </html>

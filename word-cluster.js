@@ -5,6 +5,9 @@ const WORD_CLUSTER_TEXTS = [
 ];
 
 const WORD_CLUSTER_DEBOUNCE_MS = 300;
+const WORD_CLUSTER_PERSONAL_COMMON_STORAGE_KEY = "darcPersonalCommonWords";
+const WORD_CLUSTER_PERSONAL_COMMON_BACKUP_STORAGE_KEY = "darcPersonalCommonWordsBackup";
+const WORD_CLUSTER_DEFAULT_COMMON_WORDS_URL = "personal-common-words.json?v=20260620-excluded-common-words";
 
 const WORD_CLUSTER_COMMON_WORDS = new Set([
   "a", "abar", "an", "andar", "az", "be", "bud", "ce", "ceg", "cegon", "ciyon",
@@ -55,7 +58,8 @@ const clusterState = {
   limit: 40,
   minTexts: 2,
   hideStopwords: true,
-  selectedKey: ""
+  selectedKey: "",
+  personalCommonWords: loadClusterPersonalCommonWords()
 };
 
 let clusterRenderTimer = null;
@@ -75,7 +79,12 @@ async function initWordCluster() {
   bindWordClusterEvents();
 
   try {
-    clusterState.texts = await Promise.all(WORD_CLUSTER_TEXTS.map(loadClusterText));
+    const [texts, defaultCommonWords] = await Promise.all([
+      Promise.all(WORD_CLUSTER_TEXTS.map(loadClusterText)),
+      loadDefaultClusterCommonWords()
+    ]);
+    mergeClusterPersonalCommonWords(defaultCommonWords);
+    clusterState.texts = texts;
     clusterStatusEl.textContent = "Word cluster ready";
     renderWordCluster();
   } catch (error) {
@@ -217,7 +226,7 @@ function getClusterData() {
   const topByText = clusterState.texts.map((text) => ({
     text,
     words: text.ranked
-      .filter((item) => !clusterState.hideStopwords || !WORD_CLUSTER_COMMON_WORDS.has(item.key))
+      .filter((item) => !clusterState.hideStopwords || !isClusterCommonWord(item.key))
       .filter((item) => itemMatchesClusterSearch(item, searchTerms))
       .slice(0, clusterState.limit)
   }));
@@ -450,6 +459,68 @@ function foldClusterText(value) {
 
 function isClusterCountableWord(key) {
   return key.length > 0 && /[\p{L}\p{M}]/u.test(key);
+}
+
+function isClusterCommonWord(key) {
+  return WORD_CLUSTER_COMMON_WORDS.has(key) || clusterState.personalCommonWords.has(key);
+}
+
+function loadClusterPersonalCommonWords() {
+  try {
+    return new Set([
+      ...readStoredClusterCommonWords(WORD_CLUSTER_PERSONAL_COMMON_STORAGE_KEY),
+      ...readStoredClusterCommonWords(WORD_CLUSTER_PERSONAL_COMMON_BACKUP_STORAGE_KEY)
+    ]);
+  } catch {
+    return new Set();
+  }
+}
+
+function readStoredClusterCommonWords(key) {
+  const value = window.localStorage?.getItem(key);
+  if (!value) {
+    return [];
+  }
+
+  try {
+    const words = JSON.parse(value);
+    return Array.isArray(words) ? words.map(normalizeClusterWord).filter(Boolean) : [];
+  } catch {
+    return parseClusterCommonWords(value);
+  }
+}
+
+function parseClusterCommonWords(value) {
+  return [...new Set(
+    String(value || "")
+      .split(/[,;\n]+/)
+      .map((word) => normalizeClusterWord(word.trim()))
+      .filter(Boolean)
+  )];
+}
+
+async function loadDefaultClusterCommonWords() {
+  try {
+    const response = await fetch(WORD_CLUSTER_DEFAULT_COMMON_WORDS_URL);
+    if (!response.ok) {
+      return [];
+    }
+
+    const data = await response.json();
+    const words = Array.isArray(data) ? data : data.words;
+    return Array.isArray(words) ? words.map(normalizeClusterWord).filter(Boolean) : [];
+  } catch {
+    return [];
+  }
+}
+
+function mergeClusterPersonalCommonWords(words) {
+  words.forEach((word) => {
+    const key = normalizeClusterWord(word);
+    if (key) {
+      clusterState.personalCommonWords.add(key);
+    }
+  });
 }
 
 function escapeClusterHtml(value) {

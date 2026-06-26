@@ -52,6 +52,35 @@ const WORD_CLUSTER_COMPOUND_VARIANTS = WORD_CLUSTER_COMPOUNDS
   .flatMap((compound) => compound.variants.map((tokens) => ({ ...compound, tokens })))
   .sort((a, b) => b.tokens.length - a.tokens.length);
 
+const WORD_CLUSTER_VARIANT_GROUPS = [
+  {
+    key: "ahreman-complex",
+    label: "Ahreman / Gannāg Mēnōy complex",
+    variants: [
+      "ahreman", "ahrimen", "ahriman", "aharman", "ahremn", "ahremanag",
+      "gannāg mēnōy", "gannag menog", "gannag menoy", "gannagmenog", "gannagmenoy"
+    ]
+  },
+  {
+    key: "druz-complex",
+    label: "Druz / druj complex",
+    variants: ["druz", "drūz", "druj", "drūj", "drux", "drug", "draoga"]
+  },
+  {
+    key: "ohrmazd-complex",
+    label: "Ohrmazd complex",
+    variants: ["ohrmazd", "ormazd", "ahura mazda", "ahuramazda"]
+  },
+  {
+    key: "dadar-ohrmazd-complex",
+    label: "Dādār Ohrmazd complex",
+    variants: ["dadar i ohrmazd", "dādār ī ohrmazd", "dadar ohrmazd", "dādār ohrmazd"]
+  }
+].map((group) => ({
+  ...group,
+  variants: group.variants.map(normalizeClusterWord)
+}));
+
 const clusterState = {
   texts: [],
   filter: "",
@@ -211,7 +240,12 @@ function addClusterWordStat(stats, key, label) {
 function rankClusterWords(wordStats) {
   return [...wordStats.values()]
     .sort((a, b) => b.total - a.total || a.label.localeCompare(b.label))
-    .map((item, index) => ({ ...item, rank: index + 1 }));
+    .map((item, index) => ({
+      ...item,
+      rank: index + 1,
+      clusterKey: getClusterCanonicalKey(item.key),
+      clusterLabel: getClusterCanonicalLabel(item.key, item.label)
+    }));
 }
 
 function renderWordCluster() {
@@ -234,16 +268,32 @@ function getClusterData() {
   const byKey = new Map();
   topByText.forEach(({ text, words }) => {
     words.forEach((word) => {
-      if (!byKey.has(word.key)) {
-        byKey.set(word.key, {
-          key: word.key,
-          label: word.label,
+      const clusterKey = word.clusterKey || word.key;
+      if (!byKey.has(clusterKey)) {
+        byKey.set(clusterKey, {
+          key: clusterKey,
+          label: word.clusterLabel || word.label,
           texts: new Map(),
           total: 0
         });
       }
-      const cluster = byKey.get(word.key);
-      cluster.texts.set(text.id, { text, word });
+      const cluster = byKey.get(clusterKey);
+      const existing = cluster.texts.get(text.id);
+      if (existing) {
+        existing.word.total += word.total;
+        existing.word.rank = Math.min(existing.word.rank, word.rank);
+        existing.word.label = getCombinedVariantLabel(existing.word.variants, word);
+        existing.word.variants.push(word);
+      } else {
+        cluster.texts.set(text.id, {
+          text,
+          word: {
+            ...word,
+            label: word.clusterLabel || word.label,
+            variants: [word]
+          }
+        });
+      }
       cluster.total += word.total;
     });
   });
@@ -373,7 +423,7 @@ function renderClusterNode(node) {
       <text x="${labelX.toFixed(2)}" y="${labelY.toFixed(2)}" text-anchor="${labelAnchor}">
         ${escapeClusterHtml(node.word.label)} #${node.word.rank}
       </text>
-      <title>${escapeClusterHtml(node.text.siglum)} · ${escapeClusterHtml(node.word.label)} · rank #${node.word.rank} · ${node.word.total} occurrence${node.word.total === 1 ? "" : "s"}</title>
+      <title>${escapeClusterHtml(node.text.siglum)} · ${escapeClusterHtml(node.word.label)} · best rank #${node.word.rank} · ${node.word.total} occurrence${node.word.total === 1 ? "" : "s"}</title>
     </g>
   `;
 }
@@ -420,10 +470,15 @@ function renderClusterDetailCell(cluster, text) {
   if (!entry) {
     return `<td class="missing">—</td>`;
   }
+  const variants = entry.word.variants
+    .sort((a, b) => a.rank - b.rank || b.total - a.total)
+    .map((variant) => `${escapeClusterHtml(variant.label)} #${variant.rank.toLocaleString()} (${variant.total.toLocaleString()})`)
+    .join("; ");
   return `
     <td>
       <strong>#${entry.word.rank.toLocaleString()}</strong>
       <span>${entry.word.total.toLocaleString()} · ${escapeClusterHtml(entry.word.label)}</span>
+      ${entry.word.variants.length > 1 ? `<small>${variants}</small>` : ""}
     </td>
   `;
 }
@@ -442,7 +497,42 @@ function itemMatchesClusterSearch(item, searchTerms) {
     return true;
   }
   const label = foldClusterText(item.label).toLowerCase();
-  return searchTerms.some((term) => item.key.includes(term) || label.includes(term));
+  return searchTerms.some((term) => {
+    const variants = getClusterSearchVariantTerms(term);
+    return variants.some((variant) =>
+      item.key.includes(variant) ||
+      item.clusterKey.includes(variant) ||
+      label.includes(variant)
+    );
+  });
+}
+
+function getClusterCanonicalKey(key) {
+  const group = getClusterVariantGroup(key);
+  return group?.key || key;
+}
+
+function getClusterCanonicalLabel(key, fallbackLabel) {
+  const group = getClusterVariantGroup(key);
+  return group?.label || fallbackLabel;
+}
+
+function getClusterVariantGroup(key) {
+  return WORD_CLUSTER_VARIANT_GROUPS.find((group) =>
+    group.variants.some((variant) => key === variant || key.includes(variant))
+  ) || null;
+}
+
+function getClusterSearchVariantTerms(term) {
+  const group = getClusterVariantGroup(term);
+  return group ? [group.key, ...group.variants] : [term];
+}
+
+function getCombinedVariantLabel(existingVariants, word) {
+  const labels = [...existingVariants, word]
+    .sort((a, b) => a.rank - b.rank || b.total - a.total)
+    .map((variant) => variant.label);
+  return [...new Set(labels)].join(" / ");
 }
 
 function normalizeClusterWord(word) {

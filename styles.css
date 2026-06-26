@@ -1382,6 +1382,15 @@ h1 {
   display: block;
 }
 
+.word-cluster-table td small {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
 .word-cluster-table td strong {
   color: var(--ink);
   font-weight: 900;

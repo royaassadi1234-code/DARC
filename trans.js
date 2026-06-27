@@ -398,45 +398,44 @@ function scrollToTargetLocation() {
 
 function renderTransParagraph(record, englishText = "", persianTranslation = null, query = "", targetLocation = "") {
   const isTarget = targetLocation && isSameLocation(record.location, targetLocation);
+  const highlightedTranscription = highlightSearchTerms(record.text, query);
+  const highlightedEnglish = englishText
+    ? highlightSearchTerms(englishText, query)
+    : "English translation will be added later.";
   return `
-    <article class="trans-card${isTarget ? " trans-card-target" : ""}" data-trans-location="${escapeHtml(record.location)}">
-      <div class="theme-hit-meta">
-        <span>${escapeHtml(record.location)}</span>
-      </div>
-      <dl class="trans-entry-list">
-        <div>
-          <dt>Trans.</dt>
-          <dd>${highlightSearchTerms(record.text, query)}</dd>
-        </div>
-        <div>
-          <dt>Eng. Transl.</dt>
-          <dd>
-            <details>
-              <summary>Eng. Transl.</summary>
-              <p>${englishText ? highlightSearchTerms(englishText, query) : "English translation will be added later."}</p>
+    <article class="trans-card trans-book-spread${isTarget ? " trans-card-target" : ""}" data-trans-location="${escapeHtml(record.location)}">
+      <details class="trans-page trans-page-transcription">
+        <summary class="trans-page-bar">
+          <span>Transcription</span>
+          <strong>${escapeHtml(record.location)}</strong>
+        </summary>
+        <div class="trans-page-body">
+          <p>${highlightedTranscription}</p>
+          <details class="trans-inline-option persian-transcription">
+            <summary>Persian transcription</summary>
+            <p dir="rtl" lang="fa">${escapeHtml(toArabicTranscription(record.text))}</p>
+          </details>
+          ${persianTranslation ? `
+            <details class="trans-inline-option persian-translation">
+              <summary>Persian translation (OCR)</summary>
+              <p dir="rtl" lang="fa">${escapeHtml(persianTranslation.text || "")}</p>
+              <p class="translation-source-note" dir="ltr">
+                ${escapeHtml(persianTranslation.source || "DD2Mahshid.PDF OCR")}
+                ${persianTranslation.pdfPages?.length ? ` | PDF page(s): ${escapeHtml(persianTranslation.pdfPages.join(", "))}` : ""}
+              </p>
             </details>
-          </dd>
+          ` : ""}
         </div>
-        <div>
-          <dt>Pers. Trans.</dt>
-          <dd>
-            ${persianTranslation ? `
-              <details class="persian-translation">
-                <summary>Pers. Translation (OCR)</summary>
-                <p dir="rtl" lang="fa">${escapeHtml(persianTranslation.text || "")}</p>
-                <p class="translation-source-note" dir="ltr">
-                  ${escapeHtml(persianTranslation.source || "DD2Mahshid.PDF OCR")}
-                  ${persianTranslation.pdfPages?.length ? ` | PDF page(s): ${escapeHtml(persianTranslation.pdfPages.join(", "))}` : ""}
-                </p>
-              </details>
-            ` : ""}
-            <details>
-              <summary>Pers. Transcription</summary>
-              <p dir="rtl" lang="fa">${escapeHtml(toArabicTranscription(record.text))}</p>
-            </details>
-          </dd>
+      </details>
+      <details class="trans-page trans-page-translation">
+        <summary class="trans-page-bar">
+          <span>English translation</span>
+          <strong>${escapeHtml(record.location)}</strong>
+        </summary>
+        <div class="trans-page-body">
+          <p>${highlightedEnglish}</p>
         </div>
-      </dl>
+      </details>
     </article>
   `;
 }

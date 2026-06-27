@@ -18,7 +18,6 @@ const queryEl = document.querySelector("#trans-query");
 const clearEl = document.querySelector("#trans-clear");
 const statusEl = document.querySelector("#trans-status");
 const readerEl = document.querySelector("#trans-reader");
-const paginationTopEl = document.querySelector("#trans-pagination-top");
 const paginationBottomEl = document.querySelector("#trans-pagination-bottom");
 const TRANS_SEARCH_DEBOUNCE_MS = 300;
 let transSearchRenderTimer = null;
@@ -314,16 +313,13 @@ function mergeHighlightRanges(ranges) {
 
 function renderPagination(pageCount) {
   const markup = pageCount > 1 ? buildPaginationMarkup(pageCount) : "";
-  paginationTopEl.innerHTML = markup;
   paginationBottomEl.innerHTML = markup;
-  [paginationTopEl, paginationBottomEl].forEach((container) => {
-    container.querySelectorAll("button").forEach((button) => {
-      button.addEventListener("click", () => {
-        clearTargetLocation();
-        transState.currentPage = Number(button.dataset.page);
-        renderReaderImmediately();
-        readerEl.scrollIntoView({ behavior: "smooth", block: "start" });
-      });
+  paginationBottomEl.querySelectorAll("button").forEach((button) => {
+    button.addEventListener("click", () => {
+      clearTargetLocation();
+      transState.currentPage = Number(button.dataset.page);
+      renderReaderImmediately();
+      readerEl.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   });
 }

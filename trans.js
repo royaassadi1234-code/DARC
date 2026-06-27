@@ -410,6 +410,10 @@ function renderTransParagraph(record, englishText = "", persianTranslation = nul
           ${showColumnLabels ? "<header>Transcription</header>" : ""}
           <div class="trans-page-body">
             <p><span class="trans-location-inline">${escapeHtml(record.location)}</span> ${highlightedTranscription}</p>
+            <details class="trans-inline-option persian-transcription">
+              <summary>Pers. Transc.</summary>
+              <p dir="rtl" lang="fa">${escapeHtml(toArabicTranscription(record.text))}</p>
+            </details>
             ${persianTranslation ? `
               <details class="trans-inline-option persian-translation">
                 <summary>Persian translation (OCR)</summary>
@@ -426,12 +430,7 @@ function renderTransParagraph(record, englishText = "", persianTranslation = nul
           ${showColumnLabels ? "<header>English translation</header>" : ""}
           <div class="trans-page-body">
             <p>${highlightedEnglish}</p>
-            <div class="trans-card-actions">
-              <details class="trans-inline-option persian-transcription">
-                <summary>Pers. Transc.</summary>
-                <p dir="rtl" lang="fa">${escapeHtml(toArabicTranscription(record.text))}</p>
-              </details>
-            </div>
+            <div class="trans-card-actions"></div>
           </div>
         </section>
       </div>

@@ -64,13 +64,18 @@
         return;
       }
 
-      if (card.querySelector(":scope > .copy-tools-card-button")) {
+      if (card.querySelector(":scope .copy-tools-card-button")) {
         return;
       }
 
       const button = createCopyButton("Copy card", () => getCleanText(card));
       button.classList.add("copy-tools-card-button");
-      card.prepend(button);
+      const actionTarget = card.matches(".trans-card") ? card.querySelector(":scope .trans-card-actions") : null;
+      if (actionTarget) {
+        actionTarget.append(button);
+      } else {
+        card.prepend(button);
+      }
     });
   }
 

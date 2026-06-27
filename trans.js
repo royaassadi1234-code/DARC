@@ -185,12 +185,13 @@ function renderReader() {
     </article>
     ${pageRecords.length ? `
       <div class="trans-list">
-        ${pageRecords.map((record) => renderTransParagraph(
+        ${pageRecords.map((record, index) => renderTransParagraph(
           record,
           text.englishByLocation.get(record.location),
           getPersianTranslation(text, record.location),
           query,
-          transState.targetLocation
+          transState.targetLocation,
+          index === 0
         )).join("")}
       </div>
     ` : `<div class="empty-state">No paragraphs found in ${escapeHtml(text.siglum)}.</div>`}
@@ -396,7 +397,7 @@ function scrollToTargetLocation() {
   });
 }
 
-function renderTransParagraph(record, englishText = "", persianTranslation = null, query = "", targetLocation = "") {
+function renderTransParagraph(record, englishText = "", persianTranslation = null, query = "", targetLocation = "", showColumnLabels = false) {
   const isTarget = targetLocation && isSameLocation(record.location, targetLocation);
   const highlightedTranscription = highlightSearchTerms(record.text, query);
   const highlightedEnglish = englishText
@@ -404,18 +405,11 @@ function renderTransParagraph(record, englishText = "", persianTranslation = nul
     : "English translation will be added later.";
   return `
     <article class="trans-card trans-book-entry${isTarget ? " trans-card-target" : ""}" data-trans-location="${escapeHtml(record.location)}">
-      <header class="trans-location-bar">
-        <span>${escapeHtml(record.location)}</span>
-      </header>
       <div class="trans-book-spread">
         <section class="trans-page trans-page-transcription" aria-label="Transcription">
-          <header>Transcription</header>
+          ${showColumnLabels ? "<header>Transcription</header>" : ""}
           <div class="trans-page-body">
-            <p>${highlightedTranscription}</p>
-            <details class="trans-inline-option persian-transcription">
-              <summary>Persian transcription</summary>
-              <p dir="rtl" lang="fa">${escapeHtml(toArabicTranscription(record.text))}</p>
-            </details>
+            <p><span class="trans-location-inline">${escapeHtml(record.location)}</span> ${highlightedTranscription}</p>
             ${persianTranslation ? `
               <details class="trans-inline-option persian-translation">
                 <summary>Persian translation (OCR)</summary>
@@ -429,9 +423,15 @@ function renderTransParagraph(record, englishText = "", persianTranslation = nul
           </div>
         </section>
         <section class="trans-page trans-page-translation" aria-label="English translation">
-          <header>English translation</header>
+          ${showColumnLabels ? "<header>English translation</header>" : ""}
           <div class="trans-page-body">
             <p>${highlightedEnglish}</p>
+            <div class="trans-card-actions">
+              <details class="trans-inline-option persian-transcription">
+                <summary>Persian transcription</summary>
+                <p dir="rtl" lang="fa">${escapeHtml(toArabicTranscription(record.text))}</p>
+              </details>
+            </div>
           </div>
         </section>
       </div>

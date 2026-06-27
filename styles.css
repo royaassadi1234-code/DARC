@@ -2405,6 +2405,11 @@ h1 {
   z-index: 2;
 }
 
+.trans-card-actions .copy-tools-card-button {
+  float: none;
+  margin: 0;
+}
+
 .trans-reader {
   display: grid;
   gap: 12px;
@@ -3352,24 +3357,6 @@ h1 {
   box-shadow: 0 0 0 3px rgba(127, 166, 192, 0.18);
 }
 
-.trans-location-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 46px;
-  padding: 11px 16px;
-  color: var(--accent-strong);
-  background: var(--panel-soft);
-  border-bottom: 1px solid rgba(127, 166, 192, 0.22);
-}
-
-.trans-location-bar span {
-  color: var(--ink);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1rem;
-  font-weight: 800;
-}
-
 .trans-book-spread {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -3419,8 +3406,27 @@ h1 {
   overflow-wrap: anywhere;
 }
 
+.trans-location-inline {
+  color: var(--accent-strong);
+  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
 .trans-inline-option {
   margin-top: 16px;
+}
+
+.trans-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: flex-start;
+  margin-top: 16px;
+}
+
+.trans-card-actions .trans-inline-option {
+  margin-top: 0;
 }
 
 .trans-inline-option summary {
@@ -5594,15 +5600,6 @@ mark.term-6 {
   .trans-page-body {
     min-height: 0;
     padding: 15px;
-  }
-
-  .trans-location-bar {
-    min-height: 44px;
-    padding: 10px 12px;
-  }
-
-  .trans-location-bar span {
-    font-size: 0.94rem;
   }
 
   .matched-theme-summary,

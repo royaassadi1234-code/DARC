@@ -3358,37 +3358,9 @@ h1 {
   justify-content: space-between;
   min-height: 46px;
   padding: 11px 16px;
-  cursor: pointer;
-  user-select: none;
-  list-style: none;
   color: var(--accent-strong);
   background: var(--panel-soft);
-}
-
-.trans-location-bar::-webkit-details-marker {
-  display: none;
-}
-
-.trans-location-bar::after {
-  content: "+";
-  display: grid;
-  flex: 0 0 24px;
-  width: 24px;
-  height: 24px;
-  place-items: center;
-  border: 1px solid rgba(127, 166, 192, 0.42);
-  border-radius: 50%;
-  color: var(--ink);
-  font-weight: 800;
-  line-height: 1;
-}
-
-.trans-book-entry[open] > .trans-location-bar {
   border-bottom: 1px solid rgba(127, 166, 192, 0.22);
-}
-
-.trans-book-entry[open] > .trans-location-bar::after {
-  content: "-";
 }
 
 .trans-location-bar span {

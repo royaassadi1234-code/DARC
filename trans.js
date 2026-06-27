@@ -10,7 +10,7 @@ const transState = {
   selectedTextId: "dd",
   searchByText: {},
   currentPage: 1,
-  pageSize: 24,
+  pageSize: 5,
   targetLocation: ""
 };
 
@@ -403,10 +403,10 @@ function renderTransParagraph(record, englishText = "", persianTranslation = nul
     ? highlightSearchTerms(englishText, query)
     : "English translation will be added later.";
   return `
-    <details class="trans-card trans-book-entry${isTarget ? " trans-card-target" : ""}" data-trans-location="${escapeHtml(record.location)}">
-      <summary class="trans-location-bar">
+    <article class="trans-card trans-book-entry${isTarget ? " trans-card-target" : ""}" data-trans-location="${escapeHtml(record.location)}">
+      <header class="trans-location-bar">
         <span>${escapeHtml(record.location)}</span>
-      </summary>
+      </header>
       <div class="trans-book-spread">
         <section class="trans-page trans-page-transcription" aria-label="Transcription">
           <header>Transcription</header>
@@ -435,7 +435,7 @@ function renderTransParagraph(record, englishText = "", persianTranslation = nul
           </div>
         </section>
       </div>
-    </details>
+    </article>
   `;
 }
 

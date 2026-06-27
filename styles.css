@@ -2672,6 +2672,14 @@ h1 {
   text-transform: uppercase;
 }
 
+.annotation-help {
+  display: block;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
 .annotation-field input,
 .annotation-field select,
 .annotation-field textarea {

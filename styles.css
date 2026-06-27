@@ -3340,51 +3340,36 @@ h1 {
   box-shadow: 0 0 0 3px rgba(36, 92, 115, 0.14);
 }
 
-.trans-book-spread {
-  position: relative;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 0;
+.trans-book-entry {
+  display: block;
   overflow: hidden;
   padding: 0;
   border-color: rgba(127, 166, 192, 0.28);
-  background:
-    linear-gradient(90deg, transparent calc(50% - 1px), rgba(127, 166, 192, 0.32) 50%, transparent calc(50% + 1px)),
-    var(--panel) !important;
 }
 
-.trans-book-spread.trans-card-target {
+.trans-book-entry.trans-card-target {
   border-color: var(--accent);
   box-shadow: 0 0 0 3px rgba(127, 166, 192, 0.18);
 }
 
-.trans-page {
-  min-width: 0;
-}
-
-.trans-page + .trans-page {
-  border-left: 1px solid rgba(127, 166, 192, 0.22);
-}
-
-.trans-page-bar {
+.trans-location-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  min-height: 48px;
-  padding: 11px 14px;
+  min-height: 46px;
+  padding: 11px 16px;
   cursor: pointer;
   user-select: none;
   list-style: none;
   color: var(--accent-strong);
   background: var(--panel-soft);
-  border-bottom: 1px solid rgba(127, 166, 192, 0.18);
 }
 
-.trans-page-bar::-webkit-details-marker {
+.trans-location-bar::-webkit-details-marker {
   display: none;
 }
 
-.trans-page-bar::after {
+.trans-location-bar::after {
   content: "+";
   display: grid;
   flex: 0 0 24px;
@@ -3398,23 +3383,45 @@ h1 {
   line-height: 1;
 }
 
-.trans-page[open] > .trans-page-bar::after {
+.trans-book-entry[open] > .trans-location-bar {
+  border-bottom: 1px solid rgba(127, 166, 192, 0.22);
+}
+
+.trans-book-entry[open] > .trans-location-bar::after {
   content: "-";
 }
 
-.trans-page-bar span {
+.trans-location-bar span {
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.trans-book-spread {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0;
+  background:
+    linear-gradient(90deg, transparent calc(50% - 1px), rgba(127, 166, 192, 0.32) 50%, transparent calc(50% + 1px)),
+    var(--panel) !important;
+}
+
+.trans-page {
+  min-width: 0;
+}
+
+.trans-page + .trans-page {
+  border-left: 1px solid rgba(127, 166, 192, 0.22);
+}
+
+.trans-page header {
+  padding: 12px 20px 0;
   color: var(--muted);
   font-size: 0.76rem;
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-}
-
-.trans-page-bar strong {
-  margin-left: auto;
-  color: var(--ink);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1rem;
 }
 
 .trans-page-body {
@@ -5617,12 +5624,12 @@ mark.term-6 {
     padding: 15px;
   }
 
-  .trans-page-bar {
+  .trans-location-bar {
     min-height: 44px;
     padding: 10px 12px;
   }
 
-  .trans-page-bar strong {
+  .trans-location-bar span {
     font-size: 0.94rem;
   }
 

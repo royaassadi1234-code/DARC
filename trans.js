@@ -403,40 +403,39 @@ function renderTransParagraph(record, englishText = "", persianTranslation = nul
     ? highlightSearchTerms(englishText, query)
     : "English translation will be added later.";
   return `
-    <article class="trans-card trans-book-spread${isTarget ? " trans-card-target" : ""}" data-trans-location="${escapeHtml(record.location)}">
-      <details class="trans-page trans-page-transcription">
-        <summary class="trans-page-bar">
-          <span>Transcription</span>
-          <strong>${escapeHtml(record.location)}</strong>
-        </summary>
-        <div class="trans-page-body">
-          <p>${highlightedTranscription}</p>
-          <details class="trans-inline-option persian-transcription">
-            <summary>Persian transcription</summary>
-            <p dir="rtl" lang="fa">${escapeHtml(toArabicTranscription(record.text))}</p>
-          </details>
-          ${persianTranslation ? `
-            <details class="trans-inline-option persian-translation">
-              <summary>Persian translation (OCR)</summary>
-              <p dir="rtl" lang="fa">${escapeHtml(persianTranslation.text || "")}</p>
-              <p class="translation-source-note" dir="ltr">
-                ${escapeHtml(persianTranslation.source || "DD2Mahshid.PDF OCR")}
-                ${persianTranslation.pdfPages?.length ? ` | PDF page(s): ${escapeHtml(persianTranslation.pdfPages.join(", "))}` : ""}
-              </p>
+    <details class="trans-card trans-book-entry${isTarget ? " trans-card-target" : ""}" data-trans-location="${escapeHtml(record.location)}">
+      <summary class="trans-location-bar">
+        <span>${escapeHtml(record.location)}</span>
+      </summary>
+      <div class="trans-book-spread">
+        <section class="trans-page trans-page-transcription" aria-label="Transcription">
+          <header>Transcription</header>
+          <div class="trans-page-body">
+            <p>${highlightedTranscription}</p>
+            <details class="trans-inline-option persian-transcription">
+              <summary>Persian transcription</summary>
+              <p dir="rtl" lang="fa">${escapeHtml(toArabicTranscription(record.text))}</p>
             </details>
-          ` : ""}
-        </div>
-      </details>
-      <details class="trans-page trans-page-translation">
-        <summary class="trans-page-bar">
-          <span>English translation</span>
-          <strong>${escapeHtml(record.location)}</strong>
-        </summary>
-        <div class="trans-page-body">
-          <p>${highlightedEnglish}</p>
-        </div>
-      </details>
-    </article>
+            ${persianTranslation ? `
+              <details class="trans-inline-option persian-translation">
+                <summary>Persian translation (OCR)</summary>
+                <p dir="rtl" lang="fa">${escapeHtml(persianTranslation.text || "")}</p>
+                <p class="translation-source-note" dir="ltr">
+                  ${escapeHtml(persianTranslation.source || "DD2Mahshid.PDF OCR")}
+                  ${persianTranslation.pdfPages?.length ? ` | PDF page(s): ${escapeHtml(persianTranslation.pdfPages.join(", "))}` : ""}
+                </p>
+              </details>
+            ` : ""}
+          </div>
+        </section>
+        <section class="trans-page trans-page-translation" aria-label="English translation">
+          <header>English translation</header>
+          <div class="trans-page-body">
+            <p>${highlightedEnglish}</p>
+          </div>
+        </section>
+      </div>
+    </details>
   `;
 }
 

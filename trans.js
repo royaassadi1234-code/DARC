@@ -428,7 +428,7 @@ function renderTransParagraph(record, englishText = "", persianTranslation = nul
             <p>${highlightedEnglish}</p>
             <div class="trans-card-actions">
               <details class="trans-inline-option persian-transcription">
-                <summary>Persian transcription</summary>
+                <summary>Pers. Transc.</summary>
                 <p dir="rtl" lang="fa">${escapeHtml(toArabicTranscription(record.text))}</p>
               </details>
             </div>

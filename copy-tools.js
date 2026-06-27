@@ -68,7 +68,7 @@
         return;
       }
 
-      const button = createCopyButton("Copy card", () => getCleanText(card));
+      const button = createCopyButton(card.matches(".trans-card") ? "Copy" : "Copy card", () => getCleanText(card));
       button.classList.add("copy-tools-card-button");
       const actionTarget = card.matches(".trans-card") ? card.querySelector(":scope .trans-card-actions") : null;
       if (actionTarget) {

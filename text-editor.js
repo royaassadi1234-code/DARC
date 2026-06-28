@@ -2,7 +2,6 @@ const TEXT_EDITOR_LOGIN = "editor";
 const TEXT_EDITOR_PASSWORD = "druz-edit";
 const REVIEW_LOGIN = "reviewer";
 const REVIEW_PASSWORD = "druz-review";
-const TEXT_EDITOR_SESSION_KEY = "druzTextEditorLoggedIn";
 const TEXT_EDITOR_DRAFT_KEY = "druzTextEditorDrafts";
 const TEXT_EDITOR_CUSTOM_TEXTS_KEY = "druzTextEditorCustomTexts";
 const TEXT_EDITOR_ANNOTATION_OPTIONS_KEY = "druzTextEditorAnnotationOptions";
@@ -200,9 +199,6 @@ initTextEditor();
 
 function initTextEditor() {
   bindTextEditorEvents();
-  if (sessionStorage.getItem(TEXT_EDITOR_SESSION_KEY) === "true") {
-    unlockTextEditor();
-  }
 }
 
 function bindTextEditorEvents() {
@@ -212,7 +208,6 @@ function bindTextEditorEvents() {
     const textEditorAccess = login === TEXT_EDITOR_LOGIN && passwordInput.value === TEXT_EDITOR_PASSWORD;
     const reviewerAccess = login === REVIEW_LOGIN && passwordInput.value === REVIEW_PASSWORD;
     if (textEditorAccess || reviewerAccess) {
-      sessionStorage.setItem(TEXT_EDITOR_SESSION_KEY, "true");
       unlockTextEditor();
       return;
     }
@@ -2399,7 +2394,6 @@ function resetAnnotationDraft() {
 function logoutTextEditor() {
   saveDraft({ quiet: true });
   saveCurrentAnnotation({ quiet: true });
-  sessionStorage.removeItem(TEXT_EDITOR_SESSION_KEY);
   workspaceEl.classList.add("hidden");
   loginPanel.classList.remove("hidden");
   passwordInput.value = "";

@@ -225,9 +225,9 @@ function groupPhraseRecords(records) {
 
     existing.rank = Math.min(existing.rank, record.rank);
     existing.score = Math.max(existing.score, record.score);
-    existing.sharedPhrases = uniqueValues([...existing.sharedPhrases, ...record.sharedPhrases]);
+    existing.sharedPhrases = mergeOverlappingPhrases(uniqueValues([...existing.sharedPhrases, ...record.sharedPhrases]));
     existing.sharedWords = existing.sharedPhrases.join("; ") || existing.sharedWords;
-    existing.sharedCount = Math.max(existing.sharedCount, record.sharedCount, existing.sharedPhrases.length);
+    existing.sharedCount = Math.max(existing.sharedCount, record.sharedCount, getMaxPhraseTokenCount(existing.sharedPhrases));
     existing.sourceRanks.push(record.rank);
     existing.tier = getGroupedTier(existing.tier, record.tier);
   });
@@ -263,6 +263,100 @@ function uniqueValues(values) {
     seen.add(key);
     return true;
   });
+}
+
+function mergeOverlappingPhrases(values) {
+  let phrases = values
+    .map((value) => ({ value, ...getPhraseTokenData(value) }))
+    .filter((item) => item.tokens.length);
+  let merged = true;
+
+  while (merged) {
+    merged = false;
+
+    for (let index = 0; index < phrases.length && !merged; index += 1) {
+      for (let otherIndex = index + 1; otherIndex < phrases.length && !merged; otherIndex += 1) {
+        const combined = mergePhrasePair(phrases[index], phrases[otherIndex]);
+        if (!combined) {
+          continue;
+        }
+
+        phrases = phrases.filter((_, phraseIndex) => phraseIndex !== index && phraseIndex !== otherIndex);
+        phrases.push(combined);
+        merged = true;
+      }
+    }
+  }
+
+  return phrases
+    .sort((a, b) => b.tokens.length - a.tokens.length || a.value.localeCompare(b.value))
+    .map((item) => item.value);
+}
+
+function getPhraseTokenData(value) {
+  const rawTokens = String(value || "").trim().split(/\s+/).filter(Boolean);
+  const tokens = rawTokens.map((token) => foldText(token).text).filter(Boolean);
+  return { rawTokens, tokens };
+}
+
+function getMaxPhraseTokenCount(values) {
+  return values.reduce((max, value) => Math.max(max, getPhraseTokenData(value).tokens.length), 0);
+}
+
+function mergePhrasePair(a, b) {
+  if (containsTokenSequence(a.tokens, b.tokens)) {
+    return a;
+  }
+
+  if (containsTokenSequence(b.tokens, a.tokens)) {
+    return b;
+  }
+
+  const forwardOverlap = getTokenOverlap(a.tokens, b.tokens);
+  if (forwardOverlap >= 2) {
+    return phraseFromTokens([...a.rawTokens, ...b.rawTokens.slice(forwardOverlap)]);
+  }
+
+  const backwardOverlap = getTokenOverlap(b.tokens, a.tokens);
+  if (backwardOverlap >= 2) {
+    return phraseFromTokens([...b.rawTokens, ...a.rawTokens.slice(backwardOverlap)]);
+  }
+
+  return null;
+}
+
+function phraseFromTokens(tokens) {
+  const value = tokens.join(" ");
+  return { value, ...getPhraseTokenData(value) };
+}
+
+function containsTokenSequence(haystack, needle) {
+  return getTokenSequenceIndex(haystack, needle) !== -1;
+}
+
+function getTokenSequenceIndex(haystack, needle) {
+  if (!needle.length || needle.length > haystack.length) {
+    return -1;
+  }
+
+  for (let index = 0; index <= haystack.length - needle.length; index += 1) {
+    if (needle.every((token, offset) => haystack[index + offset] === token)) {
+      return index;
+    }
+  }
+
+  return -1;
+}
+
+function getTokenOverlap(left, right) {
+  const maxOverlap = Math.min(left.length, right.length);
+  for (let size = maxOverlap; size > 0; size -= 1) {
+    if (left.slice(-size).every((token, index) => token === right[index])) {
+      return size;
+    }
+  }
+
+  return 0;
 }
 
 function getGroupedTier(a, b) {

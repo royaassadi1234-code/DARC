@@ -2965,47 +2965,47 @@ h1 {
   order: 1;
 }
 
-.text-annotation-concept {
+.text-annotation-main-word {
   order: 2;
 }
 
-.text-annotation-main-word {
+.text-annotation-matched-words {
   order: 3;
 }
 
-.text-annotation-referent {
+.text-annotation-concept {
   order: 4;
 }
 
-.text-annotation-matched-words {
+.text-annotation-adjectives {
   order: 5;
 }
 
-.text-annotation-theme {
+.text-annotation-action {
   order: 6;
 }
 
-.text-annotation-related-theme {
+.text-annotation-realm {
   order: 7;
 }
 
-.text-annotation-realm {
+.text-annotation-oppositions {
   order: 8;
 }
 
-.text-annotation-oppositions {
+.text-annotation-theme {
   order: 9;
 }
 
-.text-annotation-action {
+.text-annotation-related-theme {
   order: 10;
 }
 
-.text-annotation-adjectives {
+.text-annotation-metaphors {
   order: 11;
 }
 
-.text-annotation-metaphors {
+.text-annotation-referent {
   order: 12;
 }
 

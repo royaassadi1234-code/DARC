@@ -138,17 +138,17 @@ const textPassageFields = {
 
 const TEXT_ANNOTATION_OPTION_CARDS = [
   { key: "id", label: "ID", selector: ".text-annotation-id" },
+  { key: "mainWord", label: "Word form", selector: ".text-annotation-main-word" },
+  { key: "matchedWords", label: "Lemma", selector: ".text-annotation-matched-words" },
   { key: "concept", label: "Concept", selector: ".text-annotation-concept" },
-  { key: "mainWord", label: "Main word", selector: ".text-annotation-main-word" },
-  { key: "referent", label: "Referent", selector: ".text-annotation-referent" },
-  { key: "matchedWords", label: "Matched words", selector: ".text-annotation-matched-words" },
-  { key: "theme", label: "Main Theme", selector: ".text-annotation-theme" },
-  { key: "relatedTheme", label: "Related Theme", selector: ".text-annotation-related-theme" },
-  { key: "realm", label: "Realm", selector: ".text-annotation-realm" },
-  { key: "oppositions", label: "opposition", selector: ".text-annotation-oppositions" },
-  { key: "actionsUsedWithIt", label: "Action", selector: ".text-annotation-action" },
-  { key: "adjectivesDescriptions", label: "Adjective/descriptions", selector: ".text-annotation-adjectives" },
-  { key: "metaphors", label: "Metaphore", selector: ".text-annotation-metaphors" }
+  { key: "adjectivesDescriptions", label: "Adjectives", selector: ".text-annotation-adjectives" },
+  { key: "actionsUsedWithIt", label: "Metaphor Role", selector: ".text-annotation-action" },
+  { key: "realm", label: "Realm of Activity", selector: ".text-annotation-realm" },
+  { key: "oppositions", label: "Adversary Against", selector: ".text-annotation-oppositions" },
+  { key: "theme", label: "Theme", selector: ".text-annotation-theme" },
+  { key: "relatedTheme", label: "Subthemes", selector: ".text-annotation-related-theme" },
+  { key: "metaphors", label: "Metaphors", selector: ".text-annotation-metaphors" },
+  { key: "referent", label: "Referent", selector: ".text-annotation-referent" }
 ];
 
 const PERMANENT_TEXT_ANNOTATION_KEYS = new Set(["realm", "oppositions", "referent"]);

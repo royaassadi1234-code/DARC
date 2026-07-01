@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DARC (Drūz-Ahreman Research Corpus) | Page inactive</title>
+    <title>DARC (Drūz-Ahreman Research Corpus) | Transc. &amp; Transl.</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/svg+xml" href="logos/druz-logo-fire-altar-resisting-smoke-seal-no-branches-black-white-vector.svg">
   </head>
@@ -24,6 +24,15 @@
           <div class="header-actions">
             <nav class="site-nav" aria-label="Research pages">
               <a href="index.html">Start</a>
+              <details class="nav-menu active" open>
+                <summary>Transc. &amp; Transl.</summary>
+                <div class="nav-menu-list">
+                  <a href="trans.html?text=dd">DD</a>
+                  <a href="trans.html?text=py">PY</a>
+                  <a href="trans.html?text=wz">WZ</a>
+                  <a href="trans.html?text=nm">NM</a>
+                </div>
+              </details>
               <a href="search.html">Parallel Text Search</a>
               <details class="nav-menu">
                 <summary>Visualized Statistics</summary>
@@ -82,23 +91,22 @@
                 </div>
               </details>
             </nav>
-            <div class="status">Inactive</div>
+            <div class="status" id="trans-status">Loading texts...</div>
           </div>
         </header>
-
-        <section class="start-hero about-panel" aria-label="Inactive reader notice">
-          <div class="about-copy start-copy">
-            <p class="eyebrow">Inactive page</p>
-            <h2>Transcription and translation reader is currently inactive</h2>
-            <p class="meta">Use the Pattern section for semantic annotation and comparison tools.</p>
-            <div class="hero-actions">
-              <a class="action-button" href="text-editor.html">Semantic annotation</a>
-              <a class="action-button secondary" href="index.html">Start</a>
-            </div>
-          </div>
+        <section class="search-panel trans-controls" aria-label="Selected translation search">
+          <label class="search-box" for="trans-query">
+            <span>Search in selected text</span>
+            <input id="trans-query" type="search" placeholder="Search this text" autocomplete="off">
+          </label>
+          <button class="clear-button" id="trans-clear" type="button">Clear</button>
         </section>
+
+        <section class="trans-reader" id="trans-reader" aria-live="polite"></section>
+        <nav class="rank-pagination trans-pagination" id="trans-pagination-bottom" aria-label="Text pages"></nav>
       </section>
     </main>
+    <script src="trans.js"></script>
     <script src="copy-tools.js"></script>
     <script src="nav-menu.js"></script>
   </body>
